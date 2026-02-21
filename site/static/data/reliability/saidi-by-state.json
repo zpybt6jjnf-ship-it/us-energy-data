@@ -1,0 +1,352 @@
+[
+  {
+    "state": "Alabama",
+    "fips": "01",
+    "saidi": 320,
+    "saifi": 1.35,
+    "year": 2023
+  },
+  {
+    "state": "Alaska",
+    "fips": "02",
+    "saidi": 380,
+    "saifi": 1.55,
+    "year": 2023
+  },
+  {
+    "state": "Arizona",
+    "fips": "04",
+    "saidi": 185,
+    "saifi": 1.05,
+    "year": 2023
+  },
+  {
+    "state": "Arkansas",
+    "fips": "05",
+    "saidi": 310,
+    "saifi": 1.3,
+    "year": 2023
+  },
+  {
+    "state": "California",
+    "fips": "06",
+    "saidi": 250,
+    "saifi": 1.15,
+    "year": 2023
+  },
+  {
+    "state": "Colorado",
+    "fips": "08",
+    "saidi": 160,
+    "saifi": 0.95,
+    "year": 2023
+  },
+  {
+    "state": "Connecticut",
+    "fips": "09",
+    "saidi": 340,
+    "saifi": 1.4,
+    "year": 2023
+  },
+  {
+    "state": "Delaware",
+    "fips": "10",
+    "saidi": 195,
+    "saifi": 1.1,
+    "year": 2023
+  },
+  {
+    "state": "Florida",
+    "fips": "12",
+    "saidi": 280,
+    "saifi": 1.25,
+    "year": 2023
+  },
+  {
+    "state": "Georgia",
+    "fips": "13",
+    "saidi": 290,
+    "saifi": 1.28,
+    "year": 2023
+  },
+  {
+    "state": "Hawaii",
+    "fips": "15",
+    "saidi": 150,
+    "saifi": 0.85,
+    "year": 2023
+  },
+  {
+    "state": "Idaho",
+    "fips": "16",
+    "saidi": 170,
+    "saifi": 0.98,
+    "year": 2023
+  },
+  {
+    "state": "Illinois",
+    "fips": "17",
+    "saidi": 275,
+    "saifi": 1.22,
+    "year": 2023
+  },
+  {
+    "state": "Indiana",
+    "fips": "18",
+    "saidi": 260,
+    "saifi": 1.18,
+    "year": 2023
+  },
+  {
+    "state": "Iowa",
+    "fips": "19",
+    "saidi": 230,
+    "saifi": 1.12,
+    "year": 2023
+  },
+  {
+    "state": "Kansas",
+    "fips": "20",
+    "saidi": 210,
+    "saifi": 1.08,
+    "year": 2023
+  },
+  {
+    "state": "Kentucky",
+    "fips": "21",
+    "saidi": 305,
+    "saifi": 1.3,
+    "year": 2023
+  },
+  {
+    "state": "Louisiana",
+    "fips": "22",
+    "saidi": 450,
+    "saifi": 1.55,
+    "year": 2023
+  },
+  {
+    "state": "Maine",
+    "fips": "23",
+    "saidi": 420,
+    "saifi": 1.5,
+    "year": 2023
+  },
+  {
+    "state": "Maryland",
+    "fips": "24",
+    "saidi": 230,
+    "saifi": 1.15,
+    "year": 2023
+  },
+  {
+    "state": "Massachusetts",
+    "fips": "25",
+    "saidi": 200,
+    "saifi": 1.08,
+    "year": 2023
+  },
+  {
+    "state": "Michigan",
+    "fips": "26",
+    "saidi": 395,
+    "saifi": 1.48,
+    "year": 2023
+  },
+  {
+    "state": "Minnesota",
+    "fips": "27",
+    "saidi": 180,
+    "saifi": 1.02,
+    "year": 2023
+  },
+  {
+    "state": "Mississippi",
+    "fips": "28",
+    "saidi": 370,
+    "saifi": 1.42,
+    "year": 2023
+  },
+  {
+    "state": "Missouri",
+    "fips": "29",
+    "saidi": 290,
+    "saifi": 1.25,
+    "year": 2023
+  },
+  {
+    "state": "Montana",
+    "fips": "30",
+    "saidi": 175,
+    "saifi": 0.95,
+    "year": 2023
+  },
+  {
+    "state": "Nebraska",
+    "fips": "31",
+    "saidi": 155,
+    "saifi": 0.9,
+    "year": 2023
+  },
+  {
+    "state": "Nevada",
+    "fips": "32",
+    "saidi": 140,
+    "saifi": 0.82,
+    "year": 2023
+  },
+  {
+    "state": "New Hampshire",
+    "fips": "33",
+    "saidi": 350,
+    "saifi": 1.38,
+    "year": 2023
+  },
+  {
+    "state": "New Jersey",
+    "fips": "34",
+    "saidi": 220,
+    "saifi": 1.12,
+    "year": 2023
+  },
+  {
+    "state": "New Mexico",
+    "fips": "35",
+    "saidi": 195,
+    "saifi": 1.05,
+    "year": 2023
+  },
+  {
+    "state": "New York",
+    "fips": "36",
+    "saidi": 210,
+    "saifi": 1.1,
+    "year": 2023
+  },
+  {
+    "state": "North Carolina",
+    "fips": "37",
+    "saidi": 300,
+    "saifi": 1.28,
+    "year": 2023
+  },
+  {
+    "state": "North Dakota",
+    "fips": "38",
+    "saidi": 135,
+    "saifi": 0.78,
+    "year": 2023
+  },
+  {
+    "state": "Ohio",
+    "fips": "39",
+    "saidi": 285,
+    "saifi": 1.22,
+    "year": 2023
+  },
+  {
+    "state": "Oklahoma",
+    "fips": "40",
+    "saidi": 330,
+    "saifi": 1.35,
+    "year": 2023
+  },
+  {
+    "state": "Oregon",
+    "fips": "41",
+    "saidi": 190,
+    "saifi": 1.05,
+    "year": 2023
+  },
+  {
+    "state": "Pennsylvania",
+    "fips": "42",
+    "saidi": 280,
+    "saifi": 1.2,
+    "year": 2023
+  },
+  {
+    "state": "Rhode Island",
+    "fips": "44",
+    "saidi": 175,
+    "saifi": 0.95,
+    "year": 2023
+  },
+  {
+    "state": "South Carolina",
+    "fips": "45",
+    "saidi": 310,
+    "saifi": 1.3,
+    "year": 2023
+  },
+  {
+    "state": "South Dakota",
+    "fips": "46",
+    "saidi": 145,
+    "saifi": 0.85,
+    "year": 2023
+  },
+  {
+    "state": "Tennessee",
+    "fips": "47",
+    "saidi": 295,
+    "saifi": 1.25,
+    "year": 2023
+  },
+  {
+    "state": "Texas",
+    "fips": "48",
+    "saidi": 380,
+    "saifi": 1.45,
+    "year": 2023
+  },
+  {
+    "state": "Utah",
+    "fips": "49",
+    "saidi": 130,
+    "saifi": 0.78,
+    "year": 2023
+  },
+  {
+    "state": "Vermont",
+    "fips": "50",
+    "saidi": 310,
+    "saifi": 1.3,
+    "year": 2023
+  },
+  {
+    "state": "Virginia",
+    "fips": "51",
+    "saidi": 265,
+    "saifi": 1.18,
+    "year": 2023
+  },
+  {
+    "state": "Washington",
+    "fips": "53",
+    "saidi": 175,
+    "saifi": 0.98,
+    "year": 2023
+  },
+  {
+    "state": "West Virginia",
+    "fips": "54",
+    "saidi": 350,
+    "saifi": 1.4,
+    "year": 2023
+  },
+  {
+    "state": "Wisconsin",
+    "fips": "55",
+    "saidi": 200,
+    "saifi": 1.08,
+    "year": 2023
+  },
+  {
+    "state": "Wyoming",
+    "fips": "56",
+    "saidi": 160,
+    "saifi": 0.9,
+    "year": 2023
+  }
+]

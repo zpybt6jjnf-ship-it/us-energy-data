@@ -1,0 +1,91 @@
+@import 'tailwindcss';
+
+@theme {
+	/* Brand */
+	--color-primary: #0f2b44;
+	--color-primary-light: #1a3f5c;
+	--color-primary-dark: #091c2e;
+	--color-accent: #e86c3a;
+	--color-accent-light: #f09060;
+	--color-accent-dark: #c85a2e;
+
+	/* Surfaces */
+	--color-surface: #fafaf8;
+	--color-surface-alt: #f3f2ef;
+	--color-surface-card: #ffffff;
+	--color-border: #e5e2dc;
+	--color-border-light: #efecea;
+
+	/* Text */
+	--color-text: #1a1a2e;
+	--color-text-secondary: #5a6270;
+	--color-text-muted: #8a919c;
+
+	/* Chart palette (unchanged) */
+	--color-chart-1: #2166ac;
+	--color-chart-2: #e86c3a;
+	--color-chart-3: #1b9e77;
+	--color-chart-4: #984ea3;
+	--color-chart-5: #e7a02f;
+	--color-chart-6: #a6611a;
+	--color-chart-7: #666666;
+	--color-chart-8: #e31a1c;
+
+	/* Typography */
+	--font-display: 'Instrument Serif', Georgia, serif;
+	--font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+	--font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+	/* Spacing */
+	--spacing-section: 3rem;
+	--spacing-chart: 2rem;
+}
+
+/* Smooth transitions for dark mode */
+* {
+	transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Base styles */
+body {
+	font-family: var(--font-sans);
+	color: var(--color-text);
+	background: var(--color-surface);
+	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-surface: #0f1419;
+		--color-surface-alt: #1a2028;
+		--color-surface-card: #1e252d;
+		--color-border: #2d3640;
+		--color-border-light: #252d36;
+		--color-text: #e8e6e3;
+		--color-text-secondary: #9ca3af;
+		--color-text-muted: #6b7280;
+		--color-primary: #4a9eda;
+		--color-primary-light: #6bb3e8;
+		--color-accent: #f09060;
+		--color-accent-light: #f4a880;
+	}
+}
+
+/* Chart SVG defaults */
+svg.chart {
+	overflow: visible;
+}
+
+svg.chart text {
+	font-family: var(--font-sans);
+	fill: var(--color-text-secondary);
+	font-size: 13px;
+}
+
+/* Display font utility */
+.font-display {
+	font-family: var(--font-display);
+}

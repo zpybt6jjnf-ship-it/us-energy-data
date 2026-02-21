@@ -1,0 +1,57 @@
+[
+  {
+    "year": 2013,
+    "saidi": 240,
+    "saifi": 1.21
+  },
+  {
+    "year": 2014,
+    "saidi": 198,
+    "saifi": 1.13
+  },
+  {
+    "year": 2015,
+    "saidi": 216,
+    "saifi": 1.18
+  },
+  {
+    "year": 2016,
+    "saidi": 250,
+    "saifi": 1.25
+  },
+  {
+    "year": 2017,
+    "saidi": 470,
+    "saifi": 1.45
+  },
+  {
+    "year": 2018,
+    "saidi": 360,
+    "saifi": 1.32
+  },
+  {
+    "year": 2019,
+    "saidi": 288,
+    "saifi": 1.22
+  },
+  {
+    "year": 2020,
+    "saidi": 480,
+    "saifi": 1.58
+  },
+  {
+    "year": 2021,
+    "saidi": 540,
+    "saifi": 1.62
+  },
+  {
+    "year": 2022,
+    "saidi": 310,
+    "saifi": 1.28
+  },
+  {
+    "year": 2023,
+    "saidi": 295,
+    "saifi": 1.24
+  }
+]

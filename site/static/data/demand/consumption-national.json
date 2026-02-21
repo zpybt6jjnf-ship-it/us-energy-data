@@ -1,0 +1,362 @@
+[
+  {
+    "year": 2001,
+    "sector": "Commercial",
+    "consumption": 3249205.548
+  },
+  {
+    "year": 2002,
+    "sector": "Commercial",
+    "consumption": 3313489.821
+  },
+  {
+    "year": 2003,
+    "sector": "Commercial",
+    "consumption": 3596182.803
+  },
+  {
+    "year": 2004,
+    "sector": "Commercial",
+    "consumption": 3691274.193
+  },
+  {
+    "year": 2005,
+    "sector": "Commercial",
+    "consumption": 3825237.06
+  },
+  {
+    "year": 2006,
+    "sector": "Commercial",
+    "consumption": 3899231.085
+  },
+  {
+    "year": 2007,
+    "sector": "Commercial",
+    "consumption": 4008945.588
+  },
+  {
+    "year": 2008,
+    "sector": "Commercial",
+    "consumption": 4008400.45524
+  },
+  {
+    "year": 2009,
+    "sector": "Commercial",
+    "consumption": 3920557.57177
+  },
+  {
+    "year": 2010,
+    "sector": "Commercial",
+    "consumption": 3990598.0918199997
+  },
+  {
+    "year": 2011,
+    "sector": "Commercial",
+    "consumption": 3984172.31717
+  },
+  {
+    "year": 2012,
+    "sector": "Commercial",
+    "consumption": 3981303.587
+  },
+  {
+    "year": 2013,
+    "sector": "Commercial",
+    "consumption": 4011236.33133
+  },
+  {
+    "year": 2014,
+    "sector": "Commercial",
+    "consumption": 4056474.78928
+  },
+  {
+    "year": 2015,
+    "sector": "Commercial",
+    "consumption": 4082254.57993
+  },
+  {
+    "year": 2016,
+    "sector": "Commercial",
+    "consumption": 4101574.15774
+  },
+  {
+    "year": 2017,
+    "sector": "Commercial",
+    "consumption": 4058663.08175
+  },
+  {
+    "year": 2018,
+    "sector": "Commercial",
+    "consumption": 4145264.53492
+  },
+  {
+    "year": 2019,
+    "sector": "Commercial",
+    "consumption": 4082629.66511
+  },
+  {
+    "year": 2020,
+    "sector": "Commercial",
+    "consumption": 3862318.74931
+  },
+  {
+    "year": 2021,
+    "sector": "Commercial",
+    "consumption": 3985318.4944800003
+  },
+  {
+    "year": 2022,
+    "sector": "Commercial",
+    "consumption": 4172618.43861
+  },
+  {
+    "year": 2023,
+    "sector": "Commercial",
+    "consumption": 4224326.26545
+  },
+  {
+    "year": 2024,
+    "sector": "Commercial",
+    "consumption": 4352823.64831
+  },
+  {
+    "year": 2001,
+    "sector": "Industrial",
+    "consumption": 2989827.93
+  },
+  {
+    "year": 2002,
+    "sector": "Industrial",
+    "consumption": 2970712.893
+  },
+  {
+    "year": 2003,
+    "sector": "Industrial",
+    "consumption": 3037119.741
+  },
+  {
+    "year": 2004,
+    "sector": "Industrial",
+    "consumption": 3053548.596
+  },
+  {
+    "year": 2005,
+    "sector": "Industrial",
+    "consumption": 3057468.195
+  },
+  {
+    "year": 2006,
+    "sector": "Industrial",
+    "consumption": 3033892.698
+  },
+  {
+    "year": 2007,
+    "sector": "Industrial",
+    "consumption": 3083495.7750000004
+  },
+  {
+    "year": 2008,
+    "sector": "Industrial",
+    "consumption": 3028548.53424
+  },
+  {
+    "year": 2009,
+    "sector": "Industrial",
+    "consumption": 2752249.40397
+  },
+  {
+    "year": 2010,
+    "sector": "Industrial",
+    "consumption": 2913663.56807
+  },
+  {
+    "year": 2011,
+    "sector": "Industrial",
+    "consumption": 2973946.69202
+  },
+  {
+    "year": 2012,
+    "sector": "Industrial",
+    "consumption": 2957141.5619799998
+  },
+  {
+    "year": 2013,
+    "sector": "Industrial",
+    "consumption": 2956055.62198
+  },
+  {
+    "year": 2014,
+    "sector": "Industrial",
+    "consumption": 2992728.41383
+  },
+  {
+    "year": 2015,
+    "sector": "Industrial",
+    "consumption": 2959523.19596
+  },
+  {
+    "year": 2016,
+    "sector": "Industrial",
+    "consumption": 2930145.54283
+  },
+  {
+    "year": 2017,
+    "sector": "Industrial",
+    "consumption": 2952893.8349800003
+  },
+  {
+    "year": 2018,
+    "sector": "Industrial",
+    "consumption": 3002017.65878
+  },
+  {
+    "year": 2019,
+    "sector": "Industrial",
+    "consumption": 3007058.54702
+  },
+  {
+    "year": 2020,
+    "sector": "Industrial",
+    "consumption": 2877246.08401
+  },
+  {
+    "year": 2021,
+    "sector": "Industrial",
+    "consumption": 3001840.47004
+  },
+  {
+    "year": 2022,
+    "sector": "Industrial",
+    "consumption": 3061391.95831
+  },
+  {
+    "year": 2023,
+    "sector": "Industrial",
+    "consumption": 3027766.90248
+  },
+  {
+    "year": 2024,
+    "sector": "Industrial",
+    "consumption": 3103752.56894
+  },
+  {
+    "year": 2001,
+    "sector": "Residential",
+    "consumption": 3604819.779
+  },
+  {
+    "year": 2002,
+    "sector": "Residential",
+    "consumption": 3795539.607
+  },
+  {
+    "year": 2003,
+    "sector": "Residential",
+    "consumption": 3827471.73
+  },
+  {
+    "year": 2004,
+    "sector": "Residential",
+    "consumption": 3875944.7339999997
+  },
+  {
+    "year": 2005,
+    "sector": "Residential",
+    "consumption": 4077681.321
+  },
+  {
+    "year": 2006,
+    "sector": "Residential",
+    "consumption": 4054560.108
+  },
+  {
+    "year": 2007,
+    "sector": "Residential",
+    "consumption": 4176722.988
+  },
+  {
+    "year": 2008,
+    "sector": "Residential",
+    "consumption": 4141985.2349300003
+  },
+  {
+    "year": 2009,
+    "sector": "Residential",
+    "consumption": 4094274.45897
+  },
+  {
+    "year": 2010,
+    "sector": "Residential",
+    "consumption": 4337125.2088
+  },
+  {
+    "year": 2011,
+    "sector": "Residential",
+    "consumption": 4268403.27906
+  },
+  {
+    "year": 2012,
+    "sector": "Residential",
+    "consumption": 4123544.12397
+  },
+  {
+    "year": 2013,
+    "sector": "Residential",
+    "consumption": 4184436.38684
+  },
+  {
+    "year": 2014,
+    "sector": "Residential",
+    "consumption": 4221624.93298
+  },
+  {
+    "year": 2015,
+    "sector": "Residential",
+    "consumption": 4212289.49625
+  },
+  {
+    "year": 2016,
+    "sector": "Residential",
+    "consumption": 4233174.45897
+  },
+  {
+    "year": 2017,
+    "sector": "Residential",
+    "consumption": 4135943.22628
+  },
+  {
+    "year": 2018,
+    "sector": "Residential",
+    "consumption": 4407279.17687
+  },
+  {
+    "year": 2019,
+    "sector": "Residential",
+    "consumption": 4320866.72706
+  },
+  {
+    "year": 2020,
+    "sector": "Residential",
+    "consumption": 4393815.1373499995
+  },
+  {
+    "year": 2021,
+    "sector": "Residential",
+    "consumption": 4411460.6461
+  },
+  {
+    "year": 2022,
+    "sector": "Residential",
+    "consumption": 4527699.4871
+  },
+  {
+    "year": 2023,
+    "sector": "Residential",
+    "consumption": 4350075.55169
+  },
+  {
+    "year": 2024,
+    "sector": "Residential",
+    "consumption": 4448620.7577
+  }
+]

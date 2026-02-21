@@ -1,0 +1,1154 @@
+[
+  {
+    "year": 2001,
+    "source": "Coal",
+    "generation": 23525582.775,
+    "share": 51.3
+  },
+  {
+    "year": 2002,
+    "source": "Coal",
+    "generation": 24116588.311,
+    "share": 50.47
+  },
+  {
+    "year": 2003,
+    "source": "Coal",
+    "generation": 16498234.08,
+    "share": 51.19
+  },
+  {
+    "year": 2004,
+    "source": "Coal",
+    "generation": 16506387.51545,
+    "share": 49.99
+  },
+  {
+    "year": 2005,
+    "source": "Coal",
+    "generation": 16889528.00053,
+    "share": 49.75
+  },
+  {
+    "year": 2006,
+    "source": "Coal",
+    "generation": 16681297.97854,
+    "share": 49.04
+  },
+  {
+    "year": 2007,
+    "source": "Coal",
+    "generation": 16915758.82583,
+    "share": 48.47
+  },
+  {
+    "year": 2008,
+    "source": "Coal",
+    "generation": 16659112.20882,
+    "share": 48.1
+  },
+  {
+    "year": 2009,
+    "source": "Coal",
+    "generation": 14677175.78827,
+    "share": 44.24
+  },
+  {
+    "year": 2010,
+    "source": "Coal",
+    "generation": 23264039.46245,
+    "share": 43.51
+  },
+  {
+    "year": 2011,
+    "source": "Coal",
+    "generation": 21817167.79162,
+    "share": 41.0
+  },
+  {
+    "year": 2012,
+    "source": "Coal",
+    "generation": 19035091.17512,
+    "share": 36.08
+  },
+  {
+    "year": 2013,
+    "source": "Coal",
+    "generation": 19935621.49564,
+    "share": 37.73
+  },
+  {
+    "year": 2014,
+    "source": "Coal",
+    "generation": 19981135.83403,
+    "share": 37.51
+  },
+  {
+    "year": 2015,
+    "source": "Coal",
+    "generation": 17095079.50293,
+    "share": 32.15
+  },
+  {
+    "year": 2016,
+    "source": "Coal",
+    "generation": 15634665.79075,
+    "share": 29.37
+  },
+  {
+    "year": 2017,
+    "source": "Coal",
+    "generation": 15254342.44497,
+    "share": 28.86
+  },
+  {
+    "year": 2018,
+    "source": "Coal",
+    "generation": 14494654.01238,
+    "share": 26.46
+  },
+  {
+    "year": 2019,
+    "source": "Coal",
+    "generation": 12212019.66808,
+    "share": 22.48
+  },
+  {
+    "year": 2020,
+    "source": "Coal",
+    "generation": 9761972.2896,
+    "share": 18.45
+  },
+  {
+    "year": 2021,
+    "source": "Coal",
+    "generation": 11320159.67653,
+    "share": 20.83
+  },
+  {
+    "year": 2022,
+    "source": "Coal",
+    "generation": 10472020.16725,
+    "share": 18.64
+  },
+  {
+    "year": 2023,
+    "source": "Coal",
+    "generation": 8460821.22484,
+    "share": 15.21
+  },
+  {
+    "year": 2024,
+    "source": "Coal",
+    "generation": 8149108.27105,
+    "share": 14.2
+  },
+  {
+    "year": 2001,
+    "source": "Hydro",
+    "generation": 2641733.187,
+    "share": 5.76
+  },
+  {
+    "year": 2002,
+    "source": "Hydro",
+    "generation": 3215001.601,
+    "share": 6.73
+  },
+  {
+    "year": 2003,
+    "source": "Hydro",
+    "generation": 2241640.614,
+    "share": 6.96
+  },
+  {
+    "year": 2004,
+    "source": "Hydro",
+    "generation": 2179667.31866,
+    "share": 6.6
+  },
+  {
+    "year": 2005,
+    "source": "Hydro",
+    "generation": 2198960.58885,
+    "share": 6.48
+  },
+  {
+    "year": 2006,
+    "source": "Hydro",
+    "generation": 2356751.34722,
+    "share": 6.93
+  },
+  {
+    "year": 2007,
+    "source": "Hydro",
+    "generation": 2014952.15198,
+    "share": 5.77
+  },
+  {
+    "year": 2008,
+    "source": "Hydro",
+    "generation": 2082063.5769,
+    "share": 6.01
+  },
+  {
+    "year": 2009,
+    "source": "Hydro",
+    "generation": 2232290.61944,
+    "share": 6.73
+  },
+  {
+    "year": 2010,
+    "source": "Hydro",
+    "generation": 3721118.31035,
+    "share": 6.96
+  },
+  {
+    "year": 2011,
+    "source": "Hydro",
+    "generation": 4620573.12404,
+    "share": 8.68
+  },
+  {
+    "year": 2012,
+    "source": "Hydro",
+    "generation": 4001930.92075,
+    "share": 7.59
+  },
+  {
+    "year": 2013,
+    "source": "Hydro",
+    "generation": 3825902.74838,
+    "share": 7.24
+  },
+  {
+    "year": 2014,
+    "source": "Hydro",
+    "generation": 3700748.75123,
+    "share": 6.95
+  },
+  {
+    "year": 2015,
+    "source": "Hydro",
+    "generation": 3520301.13373,
+    "share": 6.62
+  },
+  {
+    "year": 2016,
+    "source": "Hydro",
+    "generation": 3841424.59251,
+    "share": 7.22
+  },
+  {
+    "year": 2017,
+    "source": "Hydro",
+    "generation": 4329503.90532,
+    "share": 8.19
+  },
+  {
+    "year": 2018,
+    "source": "Hydro",
+    "generation": 4157133.44028,
+    "share": 7.59
+  },
+  {
+    "year": 2019,
+    "source": "Hydro",
+    "generation": 4071872.27476,
+    "share": 7.5
+  },
+  {
+    "year": 2020,
+    "source": "Hydro",
+    "generation": 4005605.31029,
+    "share": 7.57
+  },
+  {
+    "year": 2021,
+    "source": "Hydro",
+    "generation": 3543662.3214000002,
+    "share": 6.52
+  },
+  {
+    "year": 2022,
+    "source": "Hydro",
+    "generation": 3636003.70797,
+    "share": 6.47
+  },
+  {
+    "year": 2023,
+    "source": "Hydro",
+    "generation": 3498442.44387,
+    "share": 6.29
+  },
+  {
+    "year": 2024,
+    "source": "Hydro",
+    "generation": 3453765.97837,
+    "share": 6.02
+  },
+  {
+    "year": 2001,
+    "source": "Natural Gas",
+    "generation": 7923836.88,
+    "share": 17.28
+  },
+  {
+    "year": 2002,
+    "source": "Natural Gas",
+    "generation": 8743424.442,
+    "share": 18.3
+  },
+  {
+    "year": 2003,
+    "source": "Natural Gas",
+    "generation": 5514351.63,
+    "share": 17.11
+  },
+  {
+    "year": 2004,
+    "source": "Natural Gas",
+    "generation": 6109426.30148,
+    "share": 18.5
+  },
+  {
+    "year": 2005,
+    "source": "Natural Gas",
+    "generation": 6575836.46473,
+    "share": 19.37
+  },
+  {
+    "year": 2006,
+    "source": "Natural Gas",
+    "generation": 7053354.04267,
+    "share": 20.73
+  },
+  {
+    "year": 2007,
+    "source": "Natural Gas",
+    "generation": 7768806.61495,
+    "share": 22.26
+  },
+  {
+    "year": 2008,
+    "source": "Natural Gas",
+    "generation": 7643560.5523,
+    "share": 22.07
+  },
+  {
+    "year": 2009,
+    "source": "Natural Gas",
+    "generation": 7968121.79741,
+    "share": 24.02
+  },
+  {
+    "year": 2010,
+    "source": "Natural Gas",
+    "generation": 13363299.13045,
+    "share": 24.99
+  },
+  {
+    "year": 2011,
+    "source": "Natural Gas",
+    "generation": 13542535.18818,
+    "share": 25.45
+  },
+  {
+    "year": 2012,
+    "source": "Natural Gas",
+    "generation": 16544699.50516,
+    "share": 31.36
+  },
+  {
+    "year": 2013,
+    "source": "Natural Gas",
+    "generation": 15104505.97947,
+    "share": 28.59
+  },
+  {
+    "year": 2014,
+    "source": "Natural Gas",
+    "generation": 15125901.63591,
+    "share": 28.4
+  },
+  {
+    "year": 2015,
+    "source": "Natural Gas",
+    "generation": 17850954.55637,
+    "share": 33.57
+  },
+  {
+    "year": 2016,
+    "source": "Natural Gas",
+    "generation": 18281988.86443,
+    "share": 34.34
+  },
+  {
+    "year": 2017,
+    "source": "Natural Gas",
+    "generation": 17160937.39796,
+    "share": 32.46
+  },
+  {
+    "year": 2018,
+    "source": "Natural Gas",
+    "generation": 19454597.00946,
+    "share": 35.52
+  },
+  {
+    "year": 2019,
+    "source": "Natural Gas",
+    "generation": 20998049.59826,
+    "share": 38.66
+  },
+  {
+    "year": 2020,
+    "source": "Natural Gas",
+    "generation": 21532288.27313,
+    "share": 40.69
+  },
+  {
+    "year": 2021,
+    "source": "Natural Gas",
+    "generation": 21046385.33926,
+    "share": 38.73
+  },
+  {
+    "year": 2022,
+    "source": "Natural Gas",
+    "generation": 22463690.14412,
+    "share": 39.99
+  },
+  {
+    "year": 2023,
+    "source": "Natural Gas",
+    "generation": 24059138.452800002,
+    "share": 43.24
+  },
+  {
+    "year": 2024,
+    "source": "Natural Gas",
+    "generation": 24808785.08538,
+    "share": 43.24
+  },
+  {
+    "year": 2001,
+    "source": "Nuclear",
+    "generation": 9929772.957,
+    "share": 21.65
+  },
+  {
+    "year": 2002,
+    "source": "Nuclear",
+    "generation": 10178821.821,
+    "share": 21.3
+  },
+  {
+    "year": 2003,
+    "source": "Nuclear",
+    "generation": 6719669.307999999,
+    "share": 20.85
+  },
+  {
+    "year": 2004,
+    "source": "Nuclear",
+    "generation": 6933919.316,
+    "share": 21.0
+  },
+  {
+    "year": 2005,
+    "source": "Nuclear",
+    "generation": 6947271.576,
+    "share": 20.47
+  },
+  {
+    "year": 2006,
+    "source": "Nuclear",
+    "generation": 7021503.504,
+    "share": 20.64
+  },
+  {
+    "year": 2007,
+    "source": "Nuclear",
+    "generation": 7209136.852,
+    "share": 20.66
+  },
+  {
+    "year": 2008,
+    "source": "Nuclear",
+    "generation": 7213571.678,
+    "share": 20.83
+  },
+  {
+    "year": 2009,
+    "source": "Nuclear",
+    "generation": 7153995.62,
+    "share": 21.56
+  },
+  {
+    "year": 2010,
+    "source": "Nuclear",
+    "generation": 10995764.143720001,
+    "share": 20.56
+  },
+  {
+    "year": 2011,
+    "source": "Nuclear",
+    "generation": 10773048.978,
+    "share": 20.25
+  },
+  {
+    "year": 2012,
+    "source": "Nuclear",
+    "generation": 10466865.049,
+    "share": 19.84
+  },
+  {
+    "year": 2013,
+    "source": "Nuclear",
+    "generation": 10722395.8,
+    "share": 20.29
+  },
+  {
+    "year": 2014,
+    "source": "Nuclear",
+    "generation": 10803808.873,
+    "share": 20.28
+  },
+  {
+    "year": 2015,
+    "source": "Nuclear",
+    "generation": 10814294.72,
+    "share": 20.34
+  },
+  {
+    "year": 2016,
+    "source": "Nuclear",
+    "generation": 10926343.516999999,
+    "share": 20.52
+  },
+  {
+    "year": 2017,
+    "source": "Nuclear",
+    "generation": 10904907.186,
+    "share": 20.63
+  },
+  {
+    "year": 2018,
+    "source": "Nuclear",
+    "generation": 10945201.395,
+    "share": 19.98
+  },
+  {
+    "year": 2019,
+    "source": "Nuclear",
+    "generation": 10949251.731,
+    "share": 20.16
+  },
+  {
+    "year": 2020,
+    "source": "Nuclear",
+    "generation": 10664065.707,
+    "share": 20.15
+  },
+  {
+    "year": 2021,
+    "source": "Nuclear",
+    "generation": 10502573.26,
+    "share": 19.33
+  },
+  {
+    "year": 2022,
+    "source": "Nuclear",
+    "generation": 10399037.06688,
+    "share": 18.51
+  },
+  {
+    "year": 2023,
+    "source": "Nuclear",
+    "generation": 10403536.687,
+    "share": 18.7
+  },
+  {
+    "year": 2024,
+    "source": "Nuclear",
+    "generation": 10507801.542,
+    "share": 18.32
+  },
+  {
+    "year": 2001,
+    "source": "Other",
+    "generation": 143163.89819,
+    "share": 0.31
+  },
+  {
+    "year": 2002,
+    "source": "Other",
+    "generation": 170520.31377,
+    "share": 0.36
+  },
+  {
+    "year": 2003,
+    "source": "Other",
+    "generation": 115551.42990999999,
+    "share": 0.36
+  },
+  {
+    "year": 2004,
+    "source": "Other",
+    "generation": 116275.65871,
+    "share": 0.35
+  },
+  {
+    "year": 2005,
+    "source": "Other",
+    "generation": 101942.03714,
+    "share": 0.3
+  },
+  {
+    "year": 2006,
+    "source": "Other",
+    "generation": 103385.25039,
+    "share": 0.3
+  },
+  {
+    "year": 2007,
+    "source": "Other",
+    "generation": 97856.85784,
+    "share": 0.28
+  },
+  {
+    "year": 2008,
+    "source": "Other",
+    "generation": 95972.69303,
+    "share": 0.28
+  },
+  {
+    "year": 2009,
+    "source": "Other",
+    "generation": 95510.25604000001,
+    "share": 0.29
+  },
+  {
+    "year": 2010,
+    "source": "Other",
+    "generation": 157333.48844000002,
+    "share": 0.29
+  },
+  {
+    "year": 2011,
+    "source": "Other",
+    "generation": 174196.18921,
+    "share": 0.33
+  },
+  {
+    "year": 2012,
+    "source": "Other",
+    "generation": 170383.88104,
+    "share": 0.32
+  },
+  {
+    "year": 2013,
+    "source": "Other",
+    "generation": 167081.18308,
+    "share": 0.32
+  },
+  {
+    "year": 2014,
+    "source": "Other",
+    "generation": 164435.33838,
+    "share": 0.31
+  },
+  {
+    "year": 2015,
+    "source": "Other",
+    "generation": 169502.69873,
+    "share": 0.32
+  },
+  {
+    "year": 2016,
+    "source": "Other",
+    "generation": 166699.05578,
+    "share": 0.31
+  },
+  {
+    "year": 2017,
+    "source": "Other",
+    "generation": 159354.58468,
+    "share": 0.3
+  },
+  {
+    "year": 2018,
+    "source": "Other",
+    "generation": 160409.01963,
+    "share": 0.29
+  },
+  {
+    "year": 2019,
+    "source": "Other",
+    "generation": 166286.73242,
+    "share": 0.31
+  },
+  {
+    "year": 2020,
+    "source": "Other",
+    "generation": 160948.01742,
+    "share": 0.3
+  },
+  {
+    "year": 2021,
+    "source": "Other",
+    "generation": 149899.99422,
+    "share": 0.28
+  },
+  {
+    "year": 2022,
+    "source": "Other",
+    "generation": 121662.02322,
+    "share": 0.22
+  },
+  {
+    "year": 2023,
+    "source": "Other",
+    "generation": 104088.01899,
+    "share": 0.19
+  },
+  {
+    "year": 2024,
+    "source": "Other",
+    "generation": 77118.25948000001,
+    "share": 0.13
+  },
+  {
+    "year": 2001,
+    "source": "Petroleum",
+    "generation": 1584232.2719999999,
+    "share": 3.45
+  },
+  {
+    "year": 2002,
+    "source": "Petroleum",
+    "generation": 1192763.771,
+    "share": 2.5
+  },
+  {
+    "year": 2003,
+    "source": "Petroleum",
+    "generation": 1020974.866,
+    "share": 3.17
+  },
+  {
+    "year": 2004,
+    "source": "Petroleum",
+    "generation": 1027560.94649,
+    "share": 3.11
+  },
+  {
+    "year": 2005,
+    "source": "Petroleum",
+    "generation": 1049291.43735,
+    "share": 3.09
+  },
+  {
+    "year": 2006,
+    "source": "Petroleum",
+    "generation": 533097.34604,
+    "share": 1.57
+  },
+  {
+    "year": 2007,
+    "source": "Petroleum",
+    "generation": 549427.95871,
+    "share": 1.57
+  },
+  {
+    "year": 2008,
+    "source": "Petroleum",
+    "generation": 385510.31176,
+    "share": 1.11
+  },
+  {
+    "year": 2009,
+    "source": "Petroleum",
+    "generation": 318599.19188,
+    "share": 0.96
+  },
+  {
+    "year": 2010,
+    "source": "Petroleum",
+    "generation": 497969.7942,
+    "share": 0.93
+  },
+  {
+    "year": 2011,
+    "source": "Petroleum",
+    "generation": 411260.35898,
+    "share": 0.77
+  },
+  {
+    "year": 2012,
+    "source": "Petroleum",
+    "generation": 311810.03626,
+    "share": 0.59
+  },
+  {
+    "year": 2013,
+    "source": "Petroleum",
+    "generation": 360623.56831,
+    "share": 0.68
+  },
+  {
+    "year": 2014,
+    "source": "Petroleum",
+    "generation": 404148.74877,
+    "share": 0.76
+  },
+  {
+    "year": 2015,
+    "source": "Petroleum",
+    "generation": 381896.44572,
+    "share": 0.72
+  },
+  {
+    "year": 2016,
+    "source": "Petroleum",
+    "generation": 324996.21386,
+    "share": 0.61
+  },
+  {
+    "year": 2017,
+    "source": "Petroleum",
+    "generation": 315087.84056,
+    "share": 0.6
+  },
+  {
+    "year": 2018,
+    "source": "Petroleum",
+    "generation": 367881.33881,
+    "share": 0.67
+  },
+  {
+    "year": 2019,
+    "source": "Petroleum",
+    "generation": 281483.2892,
+    "share": 0.52
+  },
+  {
+    "year": 2020,
+    "source": "Petroleum",
+    "generation": 272703.55269,
+    "share": 0.52
+  },
+  {
+    "year": 2021,
+    "source": "Petroleum",
+    "generation": 286980.07033,
+    "share": 0.53
+  },
+  {
+    "year": 2022,
+    "source": "Petroleum",
+    "generation": 349955.14028,
+    "share": 0.62
+  },
+  {
+    "year": 2023,
+    "source": "Petroleum",
+    "generation": 255706.0194,
+    "share": 0.46
+  },
+  {
+    "year": 2024,
+    "source": "Petroleum",
+    "generation": 239881.24544,
+    "share": 0.42
+  },
+  {
+    "year": 2001,
+    "source": "Solar",
+    "generation": 8131.347,
+    "share": 0.02
+  },
+  {
+    "year": 2002,
+    "source": "Solar",
+    "generation": 8312.67,
+    "share": 0.02
+  },
+  {
+    "year": 2003,
+    "source": "Solar",
+    "generation": 8002.99155,
+    "share": 0.02
+  },
+  {
+    "year": 2004,
+    "source": "Solar",
+    "generation": 8608.65,
+    "share": 0.03
+  },
+  {
+    "year": 2005,
+    "source": "Solar",
+    "generation": 8207.6361,
+    "share": 0.02
+  },
+  {
+    "year": 2006,
+    "source": "Solar",
+    "generation": 7570.344,
+    "share": 0.02
+  },
+  {
+    "year": 2007,
+    "source": "Solar",
+    "generation": 9144.801,
+    "share": 0.03
+  },
+  {
+    "year": 2008,
+    "source": "Solar",
+    "generation": 12913.183710000001,
+    "share": 0.04
+  },
+  {
+    "year": 2009,
+    "source": "Solar",
+    "generation": 13282.57143,
+    "share": 0.04
+  },
+  {
+    "year": 2010,
+    "source": "Solar",
+    "generation": 21679.95134,
+    "share": 0.04
+  },
+  {
+    "year": 2011,
+    "source": "Solar",
+    "generation": 30441.10251,
+    "share": 0.06
+  },
+  {
+    "year": 2012,
+    "source": "Solar",
+    "generation": 68652.71081,
+    "share": 0.13
+  },
+  {
+    "year": 2013,
+    "source": "Solar",
+    "generation": 149571.75301,
+    "share": 0.28
+  },
+  {
+    "year": 2014,
+    "source": "Solar",
+    "generation": 308741.95292999997,
+    "share": 0.58
+  },
+  {
+    "year": 2015,
+    "source": "Solar",
+    "generation": 440051.88375,
+    "share": 0.83
+  },
+  {
+    "year": 2016,
+    "source": "Solar",
+    "generation": 625390.9451,
+    "share": 1.17
+  },
+  {
+    "year": 2017,
+    "source": "Solar",
+    "generation": 909345.85018,
+    "share": 1.72
+  },
+  {
+    "year": 2018,
+    "source": "Solar",
+    "generation": 1077307.57135,
+    "share": 1.97
+  },
+  {
+    "year": 2019,
+    "source": "Solar",
+    "generation": 1201713.20642,
+    "share": 2.21
+  },
+  {
+    "year": 2020,
+    "source": "Solar",
+    "generation": 1463881.46127,
+    "share": 2.77
+  },
+  {
+    "year": 2021,
+    "source": "Solar",
+    "generation": 1867564.89666,
+    "share": 3.44
+  },
+  {
+    "year": 2022,
+    "source": "Solar",
+    "generation": 2303365.02834,
+    "share": 4.1
+  },
+  {
+    "year": 2023,
+    "source": "Solar",
+    "generation": 2630213.56044,
+    "share": 4.73
+  },
+  {
+    "year": 2024,
+    "source": "Solar",
+    "generation": 3457527.41913,
+    "share": 6.03
+  },
+  {
+    "year": 2001,
+    "source": "Wind",
+    "generation": 100655.06999999999,
+    "share": 0.22
+  },
+  {
+    "year": 2002,
+    "source": "Wind",
+    "generation": 154674.732,
+    "share": 0.32
+  },
+  {
+    "year": 2003,
+    "source": "Wind",
+    "generation": 111167.137,
+    "share": 0.34
+  },
+  {
+    "year": 2004,
+    "source": "Wind",
+    "generation": 140627.45043,
+    "share": 0.43
+  },
+  {
+    "year": 2005,
+    "source": "Wind",
+    "generation": 176012.96413,
+    "share": 0.52
+  },
+  {
+    "year": 2006,
+    "source": "Wind",
+    "generation": 261189.72592,
+    "share": 0.77
+  },
+  {
+    "year": 2007,
+    "source": "Wind",
+    "generation": 335776.734,
+    "share": 0.96
+  },
+  {
+    "year": 2008,
+    "source": "Wind",
+    "generation": 539833.22732,
+    "share": 1.56
+  },
+  {
+    "year": 2009,
+    "source": "Wind",
+    "generation": 718165.0123,
+    "share": 2.16
+  },
+  {
+    "year": 2010,
+    "source": "Wind",
+    "generation": 1452045.22792,
+    "share": 2.72
+  },
+  {
+    "year": 2011,
+    "source": "Wind",
+    "generation": 1842588.27166,
+    "share": 3.46
+  },
+  {
+    "year": 2012,
+    "source": "Wind",
+    "generation": 2153223.80569,
+    "share": 4.08
+  },
+  {
+    "year": 2013,
+    "source": "Wind",
+    "generation": 2571634.54569,
+    "share": 4.87
+  },
+  {
+    "year": 2014,
+    "source": "Wind",
+    "generation": 2777694.71801,
+    "share": 5.21
+  },
+  {
+    "year": 2015,
+    "source": "Wind",
+    "generation": 2896243.58931,
+    "share": 5.45
+  },
+  {
+    "year": 2016,
+    "source": "Wind",
+    "generation": 3439604.12474,
+    "share": 6.46
+  },
+  {
+    "year": 2017,
+    "source": "Wind",
+    "generation": 3830289.76415,
+    "share": 7.25
+  },
+  {
+    "year": 2018,
+    "source": "Wind",
+    "generation": 4117719.11694,
+    "share": 7.52
+  },
+  {
+    "year": 2019,
+    "source": "Wind",
+    "generation": 4439388.5429,
+    "share": 8.17
+  },
+  {
+    "year": 2020,
+    "source": "Wind",
+    "generation": 5052849.18309,
+    "share": 9.55
+  },
+  {
+    "year": 2021,
+    "source": "Wind",
+    "generation": 5626830.63395,
+    "share": 10.35
+  },
+  {
+    "year": 2022,
+    "source": "Wind",
+    "generation": 6422557.75001,
+    "share": 11.43
+  },
+  {
+    "year": 2023,
+    "source": "Wind",
+    "generation": 6226395.83356,
+    "share": 11.19
+  },
+  {
+    "year": 2024,
+    "source": "Wind",
+    "generation": 6677986.33746,
+    "share": 11.64
+  }
+]

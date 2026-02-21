@@ -1,0 +1,7 @@
+{
+  "source": "Sample data based on IEEE 1366 / EIA-861 averages",
+  "url": "https://www.eia.gov/electricity/data/eia861/",
+  "last_updated": "2026-02-21T12:34:57.495522",
+  "unit": "minutes per customer per year (SAIDI)",
+  "note": "Sample data. Real integration with FERC Form 714 and EIA-861 planned for Phase 2."
+}

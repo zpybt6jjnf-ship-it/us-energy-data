@@ -1,0 +1,632 @@
+[
+  {
+    "year": 2001,
+    "fuel": "Coal",
+    "production": 755976661.0
+  },
+  {
+    "year": 2002,
+    "fuel": "Coal",
+    "production": 751202636.0
+  },
+  {
+    "year": 2003,
+    "fuel": "Coal",
+    "production": 755079368.0
+  },
+  {
+    "year": 2004,
+    "fuel": "Coal",
+    "production": 783316128.0
+  },
+  {
+    "year": 2005,
+    "fuel": "Coal",
+    "production": 790259006.0
+  },
+  {
+    "year": 2006,
+    "fuel": "Coal",
+    "production": 823070643.0
+  },
+  {
+    "year": 2007,
+    "fuel": "Coal",
+    "production": 812393802.0
+  },
+  {
+    "year": 2008,
+    "fuel": "Coal",
+    "production": 827771078.0
+  },
+  {
+    "year": 2009,
+    "fuel": "Coal",
+    "production": 770784119.0
+  },
+  {
+    "year": 2010,
+    "fuel": "Coal",
+    "production": 784830672.0
+  },
+  {
+    "year": 2011,
+    "fuel": "Coal",
+    "production": 791973544.0
+  },
+  {
+    "year": 2012,
+    "fuel": "Coal",
+    "production": 749561894.0
+  },
+  {
+    "year": 2013,
+    "fuel": "Coal",
+    "production": 736259185.0
+  },
+  {
+    "year": 2014,
+    "fuel": "Coal",
+    "production": 748516400.0
+  },
+  {
+    "year": 2015,
+    "fuel": "Coal",
+    "production": 689002317.0
+  },
+  {
+    "year": 2016,
+    "fuel": "Coal",
+    "production": 559775245.0
+  },
+  {
+    "year": 2017,
+    "fuel": "Coal",
+    "production": 590849502.0
+  },
+  {
+    "year": 2018,
+    "fuel": "Coal",
+    "production": 570948427.0
+  },
+  {
+    "year": 2019,
+    "fuel": "Coal",
+    "production": 526719338.0
+  },
+  {
+    "year": 2020,
+    "fuel": "Coal",
+    "production": 407533435.0
+  },
+  {
+    "year": 2021,
+    "fuel": "Coal",
+    "production": 429807644.0
+  },
+  {
+    "year": 2022,
+    "fuel": "Coal",
+    "production": 442249592.0
+  },
+  {
+    "year": 2023,
+    "fuel": "Coal",
+    "production": 422294602.0
+  },
+  {
+    "year": 2024,
+    "fuel": "Coal",
+    "production": 367763841.0
+  },
+  {
+    "year": 1981,
+    "fuel": "Crude Oil",
+    "production": 3402783.0
+  },
+  {
+    "year": 1982,
+    "fuel": "Crude Oil",
+    "production": 3433100.0
+  },
+  {
+    "year": 1983,
+    "fuel": "Crude Oil",
+    "production": 3421513.0
+  },
+  {
+    "year": 1984,
+    "fuel": "Crude Oil",
+    "production": 3477858.0
+  },
+  {
+    "year": 1985,
+    "fuel": "Crude Oil",
+    "production": 3550522.0
+  },
+  {
+    "year": 1986,
+    "fuel": "Crude Oil",
+    "production": 3453054.0
+  },
+  {
+    "year": 1987,
+    "fuel": "Crude Oil",
+    "production": 3390578.0
+  },
+  {
+    "year": 1988,
+    "fuel": "Crude Oil",
+    "production": 3370829.0
+  },
+  {
+    "year": 1989,
+    "fuel": "Crude Oil",
+    "production": 3135380.0
+  },
+  {
+    "year": 1990,
+    "fuel": "Crude Oil",
+    "production": 3021009.0
+  },
+  {
+    "year": 1991,
+    "fuel": "Crude Oil",
+    "production": 3024776.0
+  },
+  {
+    "year": 1992,
+    "fuel": "Crude Oil",
+    "production": 2893289.0
+  },
+  {
+    "year": 1993,
+    "fuel": "Crude Oil",
+    "production": 2710934.0
+  },
+  {
+    "year": 1994,
+    "fuel": "Crude Oil",
+    "production": 2613558.0
+  },
+  {
+    "year": 1995,
+    "fuel": "Crude Oil",
+    "production": 2504380.0
+  },
+  {
+    "year": 1996,
+    "fuel": "Crude Oil",
+    "production": 2423374.0
+  },
+  {
+    "year": 1997,
+    "fuel": "Crude Oil",
+    "production": 2349244.0
+  },
+  {
+    "year": 1998,
+    "fuel": "Crude Oil",
+    "production": 2204350.0
+  },
+  {
+    "year": 1999,
+    "fuel": "Crude Oil",
+    "production": 1985241.0
+  },
+  {
+    "year": 2000,
+    "fuel": "Crude Oil",
+    "production": 1917083.0
+  },
+  {
+    "year": 2001,
+    "fuel": "Crude Oil",
+    "production": 1865847.0
+  },
+  {
+    "year": 2002,
+    "fuel": "Crude Oil",
+    "production": 1845182.0
+  },
+  {
+    "year": 2003,
+    "fuel": "Crude Oil",
+    "production": 1816757.0
+  },
+  {
+    "year": 2004,
+    "fuel": "Crude Oil",
+    "production": 1752746.0
+  },
+  {
+    "year": 2005,
+    "fuel": "Crude Oil",
+    "production": 1706941.0
+  },
+  {
+    "year": 2006,
+    "fuel": "Crude Oil",
+    "production": 1622518.0
+  },
+  {
+    "year": 2007,
+    "fuel": "Crude Oil",
+    "production": 1617485.0
+  },
+  {
+    "year": 2008,
+    "fuel": "Crude Oil",
+    "production": 1627672.0
+  },
+  {
+    "year": 2009,
+    "fuel": "Crude Oil",
+    "production": 1595338.0
+  },
+  {
+    "year": 2010,
+    "fuel": "Crude Oil",
+    "production": 1628608.0
+  },
+  {
+    "year": 2011,
+    "fuel": "Crude Oil",
+    "production": 1771666.0
+  },
+  {
+    "year": 2012,
+    "fuel": "Crude Oil",
+    "production": 2095070.0
+  },
+  {
+    "year": 2013,
+    "fuel": "Crude Oil",
+    "production": 2441727.0
+  },
+  {
+    "year": 2014,
+    "fuel": "Crude Oil",
+    "production": 2851309.0
+  },
+  {
+    "year": 2015,
+    "fuel": "Crude Oil",
+    "production": 3048381.0
+  },
+  {
+    "year": 2016,
+    "fuel": "Crude Oil",
+    "production": 2821952.0
+  },
+  {
+    "year": 2017,
+    "fuel": "Crude Oil",
+    "production": 2972716.0
+  },
+  {
+    "year": 2018,
+    "fuel": "Crude Oil",
+    "production": 3520221.0
+  },
+  {
+    "year": 2019,
+    "fuel": "Crude Oil",
+    "production": 3962431.0
+  },
+  {
+    "year": 2020,
+    "fuel": "Crude Oil",
+    "production": 3693843.0
+  },
+  {
+    "year": 2021,
+    "fuel": "Crude Oil",
+    "production": 3657652.0
+  },
+  {
+    "year": 2022,
+    "fuel": "Crude Oil",
+    "production": 3903142.0
+  },
+  {
+    "year": 2023,
+    "fuel": "Crude Oil",
+    "production": 4193269.0
+  },
+  {
+    "year": 2024,
+    "fuel": "Crude Oil",
+    "production": 4336933.0
+  },
+  {
+    "year": 1967,
+    "fuel": "Natural Gas",
+    "production": 18171325.0
+  },
+  {
+    "year": 1968,
+    "fuel": "Natural Gas",
+    "production": 19322400.0
+  },
+  {
+    "year": 1969,
+    "fuel": "Natural Gas",
+    "production": 20698240.0
+  },
+  {
+    "year": 1970,
+    "fuel": "Natural Gas",
+    "production": 21920642.0
+  },
+  {
+    "year": 1971,
+    "fuel": "Natural Gas",
+    "production": 22493012.0
+  },
+  {
+    "year": 1972,
+    "fuel": "Natural Gas",
+    "production": 22531698.0
+  },
+  {
+    "year": 1973,
+    "fuel": "Natural Gas",
+    "production": 22647549.0
+  },
+  {
+    "year": 1974,
+    "fuel": "Natural Gas",
+    "production": 21600522.0
+  },
+  {
+    "year": 1975,
+    "fuel": "Natural Gas",
+    "production": 20108661.0
+  },
+  {
+    "year": 1976,
+    "fuel": "Natural Gas",
+    "production": 19952438.0
+  },
+  {
+    "year": 1977,
+    "fuel": "Natural Gas",
+    "production": 20025463.0
+  },
+  {
+    "year": 1978,
+    "fuel": "Natural Gas",
+    "production": 19974033.0
+  },
+  {
+    "year": 1979,
+    "fuel": "Natural Gas",
+    "production": 20471260.0
+  },
+  {
+    "year": 1980,
+    "fuel": "Natural Gas",
+    "production": 20179724.0
+  },
+  {
+    "year": 1981,
+    "fuel": "Natural Gas",
+    "production": 19955823.0
+  },
+  {
+    "year": 1982,
+    "fuel": "Natural Gas",
+    "production": 18582001.0
+  },
+  {
+    "year": 1983,
+    "fuel": "Natural Gas",
+    "production": 16884095.0
+  },
+  {
+    "year": 1984,
+    "fuel": "Natural Gas",
+    "production": 18304340.0
+  },
+  {
+    "year": 1985,
+    "fuel": "Natural Gas",
+    "production": 17270223.0
+  },
+  {
+    "year": 1986,
+    "fuel": "Natural Gas",
+    "production": 16858673.0
+  },
+  {
+    "year": 1987,
+    "fuel": "Natural Gas",
+    "production": 17432903.0
+  },
+  {
+    "year": 1988,
+    "fuel": "Natural Gas",
+    "production": 17918463.0
+  },
+  {
+    "year": 1989,
+    "fuel": "Natural Gas",
+    "production": 18095148.0
+  },
+  {
+    "year": 1990,
+    "fuel": "Natural Gas",
+    "production": 18593792.0
+  },
+  {
+    "year": 1991,
+    "fuel": "Natural Gas",
+    "production": 18532439.0
+  },
+  {
+    "year": 1992,
+    "fuel": "Natural Gas",
+    "production": 18711810.0
+  },
+  {
+    "year": 1993,
+    "fuel": "Natural Gas",
+    "production": 18981915.0
+  },
+  {
+    "year": 1994,
+    "fuel": "Natural Gas",
+    "production": 19709524.0
+  },
+  {
+    "year": 1995,
+    "fuel": "Natural Gas",
+    "production": 19506476.0
+  },
+  {
+    "year": 1996,
+    "fuel": "Natural Gas",
+    "production": 19812242.0
+  },
+  {
+    "year": 1997,
+    "fuel": "Natural Gas",
+    "production": 14660069.0
+  },
+  {
+    "year": 1998,
+    "fuel": "Natural Gas",
+    "production": 14884851.0
+  },
+  {
+    "year": 1999,
+    "fuel": "Natural Gas",
+    "production": 14775146.0
+  },
+  {
+    "year": 2000,
+    "fuel": "Natural Gas",
+    "production": 15263123.0
+  },
+  {
+    "year": 2001,
+    "fuel": "Natural Gas",
+    "production": 15542670.0
+  },
+  {
+    "year": 2002,
+    "fuel": "Natural Gas",
+    "production": 15372839.0
+  },
+  {
+    "year": 2003,
+    "fuel": "Natural Gas",
+    "production": 15567908.0
+  },
+  {
+    "year": 2004,
+    "fuel": "Natural Gas",
+    "production": 15548040.0
+  },
+  {
+    "year": 2005,
+    "fuel": "Natural Gas",
+    "production": 15795006.0
+  },
+  {
+    "year": 2006,
+    "fuel": "Natural Gas",
+    "production": 16507703.0
+  },
+  {
+    "year": 2007,
+    "fuel": "Natural Gas",
+    "production": 17397630.0
+  },
+  {
+    "year": 2008,
+    "fuel": "Natural Gas",
+    "production": 18797709.0
+  },
+  {
+    "year": 2009,
+    "fuel": "Natural Gas",
+    "production": 19219018.0
+  },
+  {
+    "year": 2010,
+    "fuel": "Natural Gas",
+    "production": 20136811.0
+  },
+  {
+    "year": 2011,
+    "fuel": "Natural Gas",
+    "production": 22224023.0
+  },
+  {
+    "year": 2012,
+    "fuel": "Natural Gas",
+    "production": 23775714.0
+  },
+  {
+    "year": 2013,
+    "fuel": "Natural Gas",
+    "production": 24252987.0
+  },
+  {
+    "year": 2014,
+    "fuel": "Natural Gas",
+    "production": 26244077.0
+  },
+  {
+    "year": 2015,
+    "fuel": "Natural Gas",
+    "production": 27480101.0
+  },
+  {
+    "year": 2016,
+    "fuel": "Natural Gas",
+    "production": 27199378.0
+  },
+  {
+    "year": 2017,
+    "fuel": "Natural Gas",
+    "production": 28177373.0
+  },
+  {
+    "year": 2018,
+    "fuel": "Natural Gas",
+    "production": 32034006.0
+  },
+  {
+    "year": 2019,
+    "fuel": "Natural Gas",
+    "production": 35431573.0
+  },
+  {
+    "year": 2020,
+    "fuel": "Natural Gas",
+    "production": 35729333.0
+  },
+  {
+    "year": 2021,
+    "fuel": "Natural Gas",
+    "production": 36557229.0
+  },
+  {
+    "year": 2022,
+    "fuel": "Natural Gas",
+    "production": 38558984.0
+  },
+  {
+    "year": 2023,
+    "fuel": "Natural Gas",
+    "production": 40301431.0
+  },
+  {
+    "year": 2024,
+    "fuel": "Natural Gas",
+    "production": 40713712.0
+  }
+]
