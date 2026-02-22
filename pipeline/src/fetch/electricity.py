@@ -83,7 +83,7 @@ def fetch_generation_by_source(api_key: str) -> list[dict]:
                 "api_key": api_key,
                 "data[]": "generation",
                 "facets[fueltypeid][]": [
-                    "COL", "NG", "NUC", "WND", "SUN", "HYC", "PET", "OTH",
+                    "COL", "NG", "NUC", "WND", "SUN", "HYC", "PET", "OTH", "GEO",
                 ],
                 "frequency": "annual",
                 "sort[0][column]": "period",

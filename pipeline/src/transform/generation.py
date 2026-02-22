@@ -1,7 +1,11 @@
 """Transform raw EIA generation data into chart-ready JSON."""
 
+import logging
 import pandas as pd
 
+from ..constants import US_STATES, US_TOTAL_LABELS
+
+logger = logging.getLogger(__name__)
 
 FUEL_MAP = {
     "COL": "Coal",
@@ -12,6 +16,7 @@ FUEL_MAP = {
     "HYC": "Hydro",
     "PET": "Petroleum",
     "OTH": "Other",
+    "GEO": "Geothermal",
 }
 
 
@@ -22,11 +27,35 @@ def transform_generation(raw_data: list[dict]) -> dict:
     df["period"] = pd.to_numeric(df["period"], errors="coerce")
     df = df.dropna(subset=["generation", "period"])
     df["source"] = df["fueltypeid"].map(FUEL_MAP)
+
+    # Log unmapped fuel type IDs
+    unmapped = df[df["source"].isna()]["fueltypeid"].unique()
+    if len(unmapped) > 0:
+        logger.warning("Unmapped fuel type IDs in generation data: %s", unmapped)
+
     df = df[df["source"].notna()]
 
-    # National generation by source and year (thousand MWh)
+    # Filter to sectorid 99 ("All Sectors") to avoid double-counting across
+    # producer types (utilities, IPPs, CHP, industrial, etc.)
+    if "sectorid" in df.columns:
+        sector_99 = df[df["sectorid"].astype(str) == "99"]
+        if not sector_99.empty:
+            df = sector_99
+        else:
+            logger.warning("No sectorid=99 rows found; using all rows (may double-count)")
+
+    # Identify state description column
+    state_col = "stateDescription"
+
+    # --- National generation: use only US Total rows ---
+    us_total_df = df[df[state_col].isin(US_TOTAL_LABELS)]
+    if us_total_df.empty:
+        logger.warning("No US Total rows found in generation data; falling back to summing state rows")
+        state_df = df[df[state_col].isin(US_STATES)]
+        us_total_df = state_df
+
     national = (
-        df.groupby(["period", "source"])["generation"]
+        us_total_df.groupby(["period", "source"])["generation"]
         .sum()
         .reset_index()
         .rename(columns={"period": "year"})
@@ -40,19 +69,20 @@ def transform_generation(raw_data: list[dict]) -> dict:
     national["share"] = (national["generation"] / national["total"] * 100).round(2)
     national = national.drop(columns=["total"])
 
-    # State-level generation by source and year
+    # --- State-level generation: filter to valid US states only ---
     by_state = (
-        df.groupby(["stateDescription", "period", "source"])["generation"]
+        df[df[state_col].isin(US_STATES)]
+        .groupby([state_col, "period", "source"])["generation"]
         .sum()
         .reset_index()
-        .rename(columns={"stateDescription": "state", "period": "year"})
+        .rename(columns={state_col: "state", "period": "year"})
         .sort_values(["state", "source", "year"])
     )
 
     # Calculate renewable share by state for latest year
     latest_year = int(by_state["year"].max())
     latest = by_state[by_state["year"] == latest_year].copy()
-    renewables = ["Wind", "Solar", "Hydro"]
+    renewables = ["Wind", "Solar", "Hydro", "Geothermal"]
     state_totals = latest.groupby("state")["generation"].sum().reset_index()
     state_totals.columns = ["state", "total"]
     renewable_totals = (
@@ -67,6 +97,15 @@ def transform_generation(raw_data: list[dict]) -> dict:
     renewable_share["renewable_share"] = (
         renewable_share["renewable"] / renewable_share["total"] * 100
     ).round(2)
+
+    # Validation: check national generation is in plausible range
+    latest_national = national[national["year"] == latest_year]["generation"].sum()
+    latest_twh = latest_national / 1_000  # thousand MWh / 1000 = million MWh = TWh
+    if latest_twh < 3000 or latest_twh > 6000:
+        logger.warning(
+            "National generation for %d is %.0f TWh — outside expected range (3,000-6,000 TWh)",
+            latest_year, latest_twh,
+        )
 
     return {
         "national": national.to_dict(orient="records"),

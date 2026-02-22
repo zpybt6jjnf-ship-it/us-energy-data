@@ -7,6 +7,7 @@ const DEFAULTS: ChartConfig = {
 	states: [],
 	sector: 'all',
 	metric: 'nominal',
+	med: 'with_med',
 	startYear: 2001,
 	endYear: 2024,
 };
@@ -19,6 +20,7 @@ export const chartConfig = derived(page, ($page) => {
 		states: params.get('state')?.split(',').filter(Boolean) ?? DEFAULTS.states,
 		sector: params.get('sector') ?? DEFAULTS.sector,
 		metric: params.get('metric') ?? DEFAULTS.metric,
+		med: params.get('med') ?? DEFAULTS.med,
 		startYear: Number(params.get('start')) || DEFAULTS.startYear,
 		endYear: Number(params.get('end')) || DEFAULTS.endYear,
 	} satisfies ChartConfig;

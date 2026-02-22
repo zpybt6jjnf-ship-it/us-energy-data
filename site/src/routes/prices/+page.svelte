@@ -5,10 +5,11 @@
 	import ChartWrapper from '$components/charts/ChartWrapper.svelte';
 	import Dropdown from '$components/ui/Dropdown.svelte';
 	import StateSelect from '$components/ui/StateSelect.svelte';
+	import TimeRangeSlider from '$components/ui/TimeRangeSlider.svelte';
 	import { chartConfig, updateConfig } from '$stores/chartConfig';
 	import { stateFips, stateFromAbbr } from '$utils/states';
 	import { CHART_COLORS } from '$utils/colors';
-	import { interpolateRdYlGn } from 'd3-scale-chromatic';
+	import { interpolateYlOrRd } from 'd3-scale-chromatic';
 	import { format } from 'd3-format';
 	import type { DataSeries, ChartMeta } from '$types/chart';
 
@@ -17,6 +18,7 @@
 	const priceAnnotations = [
 		{ date: 2008, label: '08 Recession' },
 		{ date: 2020, label: 'COVID-19', labelPosition: 'bottom' as const },
+		{ date: 2022, label: 'IRA' },
 	];
 
 	const sectorOptions = [
@@ -74,6 +76,16 @@
 
 	const combinedSeries = $derived([...filteredSeries, ...stateSeries]);
 
+	const startYear = $derived($chartConfig.startYear);
+	const endYear = $derived($chartConfig.endYear);
+
+	const timeFilteredSeries = $derived(
+		combinedSeries.map((s) => ({
+			...s,
+			values: s.values.filter((v) => v.date >= startYear && v.date <= endYear),
+		}))
+	);
+
 	const lineMeta: ChartMeta = {
 		title: 'Retail Electricity Prices by Sector',
 		subtitle: 'US national average, cents per kilowatt-hour, annual',
@@ -114,13 +126,17 @@
 		unit: 'cents/kWh',
 		lastUpdated: new Date().toISOString().split('T')[0],
 		description: 'Electricity prices vary widely across states, driven by differences in fuel mix, regulatory environment, and infrastructure costs. States with abundant hydropower (e.g., Washington) tend to have the lowest rates, while island states (Hawaii) and those with older infrastructure pay the most.',
-		caveats: 'Residential prices only. Commercial and industrial rates follow different patterns. Colors use a red-yellow-green scale where green indicates lower prices.',
+		caveats: 'Residential prices only. Commercial and industrial rates follow different patterns. Colors use a yellow-to-red scale where yellow indicates lower prices.',
 	});
 
-	// Reverse interpolator so green = cheap, red = expensive
-	function reverseRdYlGn(t: number): string {
-		return interpolateRdYlGn(1 - t);
+	function colorInterp(t: number): string {
+		return interpolateYlOrRd(t);
 	}
+
+	// Market structure map (state name → ISO/RTO)
+	const marketMap = $derived(new Map<string, string>(
+		data.marketStructure.map((d: any) => [d.state, d.market])
+	));
 
 	// Scatter: Prices vs Renewable Share by state
 	const priceVsMixData = $derived((() => {
@@ -140,7 +156,7 @@
 				x: renewMap.get(state)!,
 				y: price,
 				label: state,
-				group: (renewMap.get(state)! > 30) ? 'High renewable' : 'Low renewable',
+				group: marketMap.get(state) ?? 'Non-ISO',
 			}));
 	})());
 
@@ -174,6 +190,13 @@
 		},
 	]);
 
+	const timeFilteredBills = $derived(
+		billsSeries.map((s) => ({
+			...s,
+			values: s.values.filter((v) => v.date >= startYear && v.date <= endYear),
+		}))
+	);
+
 	const billsMeta: ChartMeta = {
 		title: 'Average Monthly Household Electricity Bill',
 		subtitle: 'Dollars per month',
@@ -193,9 +216,8 @@
 <div>
 	<!-- Header -->
 	<header>
-		<h1 class="text-3xl font-bold tracking-tight text-text" style="font-family: var(--font-display)">Prices & Bills</h1>
-		<div class="mt-2 h-1 w-16 rounded-full" style="background: #2166ac"></div>
-		<p class="mt-3 max-w-3xl text-lg leading-relaxed text-text-secondary" style="font-family: var(--font-display)">
+		<h1 class="text-2xl font-bold tracking-tight text-text font-display">Prices & Bills</h1>
+		<p class="mt-1 max-w-3xl text-base leading-relaxed text-text-secondary">
 			What does your electricity actually cost — and why?
 		</p>
 	</header>
@@ -221,8 +243,8 @@
 	</div>
 
 	<!-- Chart 1: National price trends (hero chart) -->
-	<section class="mt-10">
-		<div class="mb-4 rounded-xl border border-border bg-surface-alt/50 px-5 py-4">
+	<section class="mt-4">
+		<div class="mb-2 rounded-xl border border-border bg-surface-alt/50 px-4 py-2.5">
 			<div class="flex flex-wrap items-end gap-4">
 				<Dropdown
 					options={sectorOptions}
@@ -234,12 +256,13 @@
 					selected={selectedStates}
 					onchange={(states) => updateConfig('state', states)}
 				/>
+				<TimeRangeSlider {startYear} {endYear} />
 			</div>
 		</div>
 
-		<ChartWrapper meta={lineMeta} hero category="Prices" categoryColor="#2166ac" data={combinedSeries.flatMap((s) => s.values.map((v) => ({ series: s.name, year: v.date, price: v.value })))}>
+		<ChartWrapper meta={lineMeta} hero category="Prices" categoryColor="#2166ac" data={timeFilteredSeries.flatMap((s) => s.values.map((v) => ({ series: s.name, year: v.date, price: v.value })))}>
 			<LineChart
-				series={combinedSeries}
+				series={timeFilteredSeries}
 				xLabel="Year"
 				yLabel="cents/kWh"
 				yFormat={format(',.1f')}
@@ -250,10 +273,10 @@
 	</section>
 
 	<!-- Insight -->
-	<div class="insight-card my-8">
+	<div class="insight-card my-4">
 		<div class="flex items-start gap-4">
 			<div class="flex-shrink-0">
-				<span class="text-3xl font-bold text-accent" style="font-family: var(--font-mono)">50%</span>
+				<span class="text-xl font-bold text-accent" style="font-family: var(--font-mono)">50%</span>
 				<span class="block text-[10px] uppercase tracking-wider text-text-muted mt-0.5">price gap</span>
 			</div>
 			<p class="text-base leading-relaxed text-text-secondary">
@@ -265,12 +288,12 @@
 	<div class="section-divider"></div>
 
 	<!-- Chart 2: State map -->
-	<section class="-mx-6 bg-surface-alt px-6 py-12 sm:-mx-8 sm:px-8 md:rounded-xl mt-16">
+	<section class="-mx-6 bg-surface-alt px-6 py-6 sm:-mx-8 sm:px-8 md:rounded-xl mt-6">
 		<ChartWrapper meta={mapMeta} category="Prices" categoryColor="#2166ac" data={mapData.map((d: any) => ({ state: d.state, price: d.value }))}>
 			<ChoroplethMap
 				data={mapData}
 				topology={data.topology}
-				colorInterpolator={reverseRdYlGn}
+				colorInterpolator={colorInterp}
 				valueFormat={format(',.1f')}
 				unit="cents/kWh"
 			/>
@@ -278,7 +301,7 @@
 	</section>
 
 	<!-- Cross-link -->
-	<p class="my-2 mt-8 text-sm">
+	<p class="my-2 mt-4 text-sm">
 		<a href="/generation" class="text-accent/80 hover:text-accent transition-colors no-underline">See how these states generate their electricity &rarr;</a>
 	</p>
 
@@ -300,9 +323,9 @@
 
 	<!-- Chart 4: Household electricity bills -->
 	<section class="mt-8">
-		<ChartWrapper meta={billsMeta} category="Bills" categoryColor="#e86c3a" data={data.bills.map((d: any) => ({ year: d.year, nominal_bill: d.nominal_bill, real_bill: d.real_bill }))}>
+		<ChartWrapper meta={billsMeta} category="Bills" categoryColor="#e86c3a" data={timeFilteredBills.flatMap((s) => s.values.map((v) => ({ year: v.date, [s.name === 'Nominal' ? 'nominal_bill' : 'real_bill']: v.value })))}>
 			<LineChart
-				series={billsSeries}
+				series={timeFilteredBills}
 				xLabel="Year"
 				yLabel="$/month"
 				yFormat={format('$,.0f')}

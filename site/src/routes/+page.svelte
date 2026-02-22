@@ -204,27 +204,21 @@
 </script>
 
 <!-- Hero section -->
-<div class="hero-gradient noise-overlay py-20 sm:py-28">
-	<h1
-		class="text-5xl sm:text-7xl text-text leading-tight"
-		style="font-family: var(--font-display)"
-	>
+<div class="py-10 sm:py-14">
+	<h1 class="text-4xl sm:text-5xl text-text leading-tight font-display">
 		Explore U.S. Energy Data
 	</h1>
 
-	<!-- Animated accent line -->
-	<div class="mt-5 h-1 w-24 rounded-full animated-accent-line"></div>
-
-	<p class="mt-6 max-w-2xl text-lg text-text-secondary leading-relaxed">
+	<p class="mt-3 max-w-2xl text-base text-text-secondary leading-relaxed">
 		Interactive charts and maps covering electricity prices, demand, generation, and fossil fuels — powered by EIA data.
 	</p>
 
 	<!-- Dashboard-style stat cards -->
-	<div class="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-3" bind:this={statsEl}>
+	<div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3" bind:this={statsEl}>
 		{#each stats as stat, i}
 			<div class="stat-card" style="border-bottom: 3px solid {stat.color};">
 				<span class="text-[11px] font-medium uppercase tracking-wider text-text-muted">{stat.topLabel}</span>
-				<span class="text-4xl sm:text-5xl font-bold text-accent" style="font-family: var(--font-mono)">
+				<span class="text-3xl sm:text-4xl font-bold text-accent" style="font-family: var(--font-mono)">
 					{animateStat(stat.value, animProgress)}
 				</span>
 				<span class="text-xs text-text-secondary">{stat.label}</span>
@@ -234,7 +228,7 @@
 
 	<!-- Generation mix bar -->
 	{#if generationMix.length > 0}
-		<div class="mt-16 mb-4">
+		<div class="mt-8 mb-2">
 			<p class="text-sm font-semibold text-text-secondary mb-3">How America generates electricity</p>
 			<div class="flex h-8 w-full overflow-hidden rounded-lg">
 				{#each generationMix as segment}
@@ -258,9 +252,9 @@
 </div>
 
 <!-- Section cards -->
-<div class="mt-20">
+<div class="mt-10">
 	<div class="section-divider"></div>
-	<h2 class="mt-8 text-2xl font-bold text-text" style="font-family: var(--font-display)">Explore the data</h2>
+	<h2 class="mt-8 text-2xl font-bold text-text font-display">Explore the data</h2>
 	<p class="mt-1 text-sm text-text-secondary">Five perspectives on the American energy system</p>
 
 	<div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -268,7 +262,7 @@
 			<a
 				href={section.href}
 				class="group relative flex flex-col rounded-xl border border-border bg-surface-card p-6 no-underline transition-all duration-300 hover:-translate-y-1 hover:shadow-xl {i === 0 ? 'sm:col-span-2 lg:col-span-2' : ''}"
-				style="border-top: 3px solid {section.color}; animation: cardEntrance 0.5s ease-out {i * 50}ms both;"
+				style="border-top: 3px solid {section.color};"
 				onmouseenter={() => (hoveredCard = section.iconId)}
 				onmouseleave={() => (hoveredCard = null)}
 			>
@@ -312,7 +306,7 @@
 
 				<!-- Metric -->
 				{#if section.metric}
-					<span class="mt-auto pt-3 text-2xl font-bold" style="font-family: var(--font-mono); color: {section.color}">
+					<span class="mt-auto pt-3 text-2xl font-bold font-mono" style="color: {section.color}">
 						{section.metric}
 					</span>
 					<span class="text-[10px] uppercase tracking-wider text-text-muted">{section.metricLabel}</span>
@@ -345,30 +339,3 @@
 	</div>
 </div>
 
-<style>
-	.animated-accent-line {
-		background: linear-gradient(90deg, var(--color-accent), var(--color-primary), var(--color-accent));
-		background-size: 200% 100%;
-		animation: accent-shift 4s ease-in-out infinite;
-	}
-
-	@keyframes accent-shift {
-		0%, 100% {
-			background-position: 0% 50%;
-		}
-		50% {
-			background-position: 100% 50%;
-		}
-	}
-
-	@keyframes cardEntrance {
-		from {
-			opacity: 0;
-			transform: translateY(16px);
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0);
-		}
-	}
-</style>

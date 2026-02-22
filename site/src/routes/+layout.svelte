@@ -11,7 +11,7 @@
 
 <div class="flex min-h-screen flex-col bg-surface">
 	<Nav />
-	<main class="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
+	<main class="mx-auto w-full max-w-5xl flex-1 px-4 py-4">
 		{#key $page.url.pathname}
 			<div in:fade={{ duration: 200, delay: 100 }} out:fade={{ duration: 100 }}>
 				{@render children()}

@@ -25,23 +25,32 @@
 		yFormat?: (v: number) => string;
 		unit?: string;
 		annotations?: Annotation[];
+		includeZero?: boolean;
+		referenceSeries?: DataSeries;
 	}
 
 	let {
 		series,
 		width: propWidth = 800,
-		height = 400,
-		margin = { top: 20, right: 130, bottom: 40, left: 60 },
+		height: propHeight = 400,
+		margin = { top: 16, right: 120, bottom: 36, left: 52 },
 		xLabel = '',
 		yLabel = '',
 		yFormat = format(',.0f'),
 		unit = '',
 		annotations = [],
+		includeZero = true,
+		referenceSeries,
 	}: Props = $props();
 
-	// Use responsive width from ChartWrapper context if available
+	// Combine main series with optional reference series for scale calculations
+	const allSeries = $derived(referenceSeries ? [...series, referenceSeries] : series);
+
+	// Use responsive width/height from ChartWrapper context if available
 	const chartWidthCtx = getContext<Readable<number> | undefined>('chartWidth');
+	const chartHeightCtx = getContext<Readable<number> | undefined>('chartHeight');
 	const width = $derived(chartWidthCtx ? $chartWidthCtx : propWidth);
+	const height = $derived(chartHeightCtx ? $chartHeightCtx : propHeight);
 
 	const chartVisibleCtx = getContext<Writable<boolean> | undefined>('chartVisible');
 	const chartVisible = $derived(chartVisibleCtx ? $chartVisibleCtx : true);
@@ -49,17 +58,21 @@
 	let tooltip: TooltipData | null = $state(null);
 	let tooltipDate: number | null = $state(null);
 
+	// Unique filter ID per component instance to avoid SVG filter collisions
+	const filterId = `line-shadow-${Math.random().toString(36).slice(2, 8)}`;
+
 	const innerWidth = $derived(width - margin.left - margin.right);
 	const innerHeight = $derived(height - margin.top - margin.bottom);
 
-	const allDates = $derived(series.flatMap((s) => s.values.map((v) => v.date)));
-	const allValues = $derived(series.flatMap((s) => s.values.map((v) => v.value)));
+	const allDates = $derived(allSeries.flatMap((s) => s.values.map((v) => v.date)));
+	const allValues = $derived(allSeries.flatMap((s) => s.values.map((v) => v.value)));
 
 	const xDomain = $derived(extent(allDates) as [number, number]);
-	const yDomain = $derived([
-		Math.min(0, ...allValues),
-		Math.max(...allValues) * 1.05,
-	] as [number, number]);
+	const yDomain = $derived(
+		includeZero
+			? [Math.min(0, ...allValues), Math.max(...allValues) * 1.05] as [number, number]
+			: [Math.min(...allValues) * 0.95, Math.max(...allValues) * 1.05] as [number, number]
+	);
 
 	const xScale = $derived(scaleLinear().domain(xDomain).range([0, innerWidth]));
 	const yScale = $derived(scaleLinear().domain(yDomain).range([innerHeight, 0]).nice());
@@ -123,7 +136,7 @@
 			.filter((item): item is NonNullable<typeof item> => item !== null);
 
 		if (items.length > 0) {
-			tooltip = { x: event.clientX, y: event.clientY, items };
+			tooltip = { x: event.clientX, y: event.clientY, items, header: String(date) };
 			tooltipDate = date;
 		} else {
 			tooltipDate = null;
@@ -140,9 +153,11 @@
 	class="chart"
 	viewBox="0 0 {width} {height}"
 	style="max-width: {width}px; width: 100%; height: auto;"
+	role="img"
+	aria-label="Line chart showing {series.map(s => s.name).join(', ')} over time"
 >
 	<defs>
-		<filter id="line-shadow" x="-2%" y="-2%" width="104%" height="104%">
+		<filter id={filterId} x="-2%" y="-2%" width="104%" height="104%">
 			<feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-opacity="0.08"/>
 		</filter>
 	</defs>
@@ -226,7 +241,7 @@
 					stroke-linejoin="round"
 					stroke-linecap="round"
 					shape-rendering="geometricPrecision"
-					filter="url(#line-shadow)"
+					filter="url(#{filterId})"
 					stroke-dasharray="3000"
 					stroke-dashoffset={chartVisible ? 0 : 3000}
 					style="transition: stroke-dashoffset 1.2s cubic-bezier(0.22, 1, 0.36, 1) {si * 150}ms;"
@@ -234,13 +249,30 @@
 			{/if}
 		{/each}
 
+		<!-- Reference series (dashed national average line) -->
+		{#if referenceSeries}
+			{@const refPath = lineFn(referenceSeries.values)}
+			{#if refPath}
+				<path
+					d={refPath}
+					fill="none"
+					stroke={referenceSeries.color ?? '#999'}
+					stroke-width="2"
+					stroke-dasharray="6 4"
+					stroke-linejoin="round"
+					stroke-linecap="round"
+					opacity="0.6"
+				/>
+			{/if}
+		{/if}
+
 		<!-- End-of-line labels -->
 		{#each endLabels as label}
 			<text
 				x={label.x}
 				y={label.y}
 				fill={label.color}
-				font-size="12"
+				font-size="11"
 				font-weight="500"
 				dominant-baseline="middle"
 				font-family="var(--font-sans)"
@@ -288,10 +320,10 @@
 </svg>
 
 <!-- Legend -->
-<div class="mt-2 flex flex-wrap gap-4 px-2 text-sm">
+<div class="mt-1 flex flex-wrap gap-4 px-2 text-xs">
 	{#each series as s}
 		<div class="flex items-center gap-1.5">
-			<span class="inline-block h-0.5 w-4 rounded" style="background: {colorScale(s.name)};"></span>
+			<span class="inline-block h-2 w-2 rounded-sm" style="background: {colorScale(s.name)};"></span>
 			<span class="text-text-secondary">{s.name}</span>
 		</div>
 	{/each}

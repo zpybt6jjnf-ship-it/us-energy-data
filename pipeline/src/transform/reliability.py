@@ -1,94 +1,174 @@
-"""Generate curated sample SAIDI/SAIFI reliability data.
+"""Transform EIA-861 utility-level reliability data into chart-ready JSON.
 
-Real reliability data comes from FERC Form 714 and IEEE 1366 reports,
-which are not available via the EIA API. This module provides
-representative sample data for the platform prototype.
+Aggregates utility-level SAIDI/SAIFI to state and national level using
+customer-weighted averages. Coalesces IEEE Standard and Other Standard
+reporting (utilities use one or the other).
 """
 
 import pandas as pd
+import numpy as np
+
+# State abbreviation → FIPS code mapping
+STATE_ABBR_TO_FIPS = {
+    "AL": "01", "AK": "02", "AZ": "04", "AR": "05", "CA": "06",
+    "CO": "08", "CT": "09", "DE": "10", "DC": "11", "FL": "12",
+    "GA": "13", "HI": "15", "ID": "16", "IL": "17", "IN": "18",
+    "IA": "19", "KS": "20", "KY": "21", "LA": "22", "ME": "23",
+    "MD": "24", "MA": "25", "MI": "26", "MN": "27", "MS": "28",
+    "MO": "29", "MT": "30", "NE": "31", "NV": "32", "NH": "33",
+    "NJ": "34", "NM": "35", "NY": "36", "NC": "37", "ND": "38",
+    "OH": "39", "OK": "40", "OR": "41", "PA": "42", "RI": "44",
+    "SC": "45", "SD": "46", "TN": "47", "TX": "48", "UT": "49",
+    "VT": "50", "VA": "51", "WA": "53", "WV": "54", "WI": "55",
+    "WY": "56",
+}
+
+STATE_ABBR_TO_NAME = {
+    "AL": "Alabama", "AK": "Alaska", "AZ": "Arizona", "AR": "Arkansas",
+    "CA": "California", "CO": "Colorado", "CT": "Connecticut", "DE": "Delaware",
+    "DC": "District of Columbia", "FL": "Florida", "GA": "Georgia", "HI": "Hawaii",
+    "ID": "Idaho", "IL": "Illinois", "IN": "Indiana", "IA": "Iowa",
+    "KS": "Kansas", "KY": "Kentucky", "LA": "Louisiana", "ME": "Maine",
+    "MD": "Maryland", "MA": "Massachusetts", "MI": "Michigan", "MN": "Minnesota",
+    "MS": "Mississippi", "MO": "Missouri", "MT": "Montana", "NE": "Nebraska",
+    "NV": "Nevada", "NH": "New Hampshire", "NJ": "New Jersey", "NM": "New Mexico",
+    "NY": "New York", "NC": "North Carolina", "ND": "North Dakota", "OH": "Ohio",
+    "OK": "Oklahoma", "OR": "Oregon", "PA": "Pennsylvania", "RI": "Rhode Island",
+    "SC": "South Carolina", "SD": "South Dakota", "TN": "Tennessee", "TX": "Texas",
+    "UT": "Utah", "VT": "Vermont", "VA": "Virginia", "WA": "Washington",
+    "WV": "West Virginia", "WI": "Wisconsin", "WY": "Wyoming",
+}
 
 
-# National average SAIDI (System Average Interruption Duration Index)
-# in minutes per customer per year. Based on publicly reported averages.
-NATIONAL_SAIDI_TREND = [
-    {"year": 2013, "saidi": 240, "saifi": 1.21},
-    {"year": 2014, "saidi": 198, "saifi": 1.13},
-    {"year": 2015, "saidi": 216, "saifi": 1.18},
-    {"year": 2016, "saidi": 250, "saifi": 1.25},
-    {"year": 2017, "saidi": 470, "saifi": 1.45},  # Harvey/Irma year
-    {"year": 2018, "saidi": 360, "saifi": 1.32},
-    {"year": 2019, "saidi": 288, "saifi": 1.22},
-    {"year": 2020, "saidi": 480, "saifi": 1.58},  # Derecho + storms
-    {"year": 2021, "saidi": 540, "saifi": 1.62},  # Winter Storm Uri
-    {"year": 2022, "saidi": 310, "saifi": 1.28},
-    {"year": 2023, "saidi": 295, "saifi": 1.24},
-]
+def _coalesce_standards(df: pd.DataFrame) -> pd.DataFrame:
+    """Coalesce IEEE and Other standard values into unified columns.
 
-# State-level SAIDI estimates (latest available year, approximate)
-STATE_SAIDI = [
-    {"state": "Alabama", "fips": "01", "saidi": 320, "saifi": 1.35, "year": 2023},
-    {"state": "Alaska", "fips": "02", "saidi": 380, "saifi": 1.55, "year": 2023},
-    {"state": "Arizona", "fips": "04", "saidi": 185, "saifi": 1.05, "year": 2023},
-    {"state": "Arkansas", "fips": "05", "saidi": 310, "saifi": 1.30, "year": 2023},
-    {"state": "California", "fips": "06", "saidi": 250, "saifi": 1.15, "year": 2023},
-    {"state": "Colorado", "fips": "08", "saidi": 160, "saifi": 0.95, "year": 2023},
-    {"state": "Connecticut", "fips": "09", "saidi": 340, "saifi": 1.40, "year": 2023},
-    {"state": "Delaware", "fips": "10", "saidi": 195, "saifi": 1.10, "year": 2023},
-    {"state": "Florida", "fips": "12", "saidi": 280, "saifi": 1.25, "year": 2023},
-    {"state": "Georgia", "fips": "13", "saidi": 290, "saifi": 1.28, "year": 2023},
-    {"state": "Hawaii", "fips": "15", "saidi": 150, "saifi": 0.85, "year": 2023},
-    {"state": "Idaho", "fips": "16", "saidi": 170, "saifi": 0.98, "year": 2023},
-    {"state": "Illinois", "fips": "17", "saidi": 275, "saifi": 1.22, "year": 2023},
-    {"state": "Indiana", "fips": "18", "saidi": 260, "saifi": 1.18, "year": 2023},
-    {"state": "Iowa", "fips": "19", "saidi": 230, "saifi": 1.12, "year": 2023},
-    {"state": "Kansas", "fips": "20", "saidi": 210, "saifi": 1.08, "year": 2023},
-    {"state": "Kentucky", "fips": "21", "saidi": 305, "saifi": 1.30, "year": 2023},
-    {"state": "Louisiana", "fips": "22", "saidi": 450, "saifi": 1.55, "year": 2023},
-    {"state": "Maine", "fips": "23", "saidi": 420, "saifi": 1.50, "year": 2023},
-    {"state": "Maryland", "fips": "24", "saidi": 230, "saifi": 1.15, "year": 2023},
-    {"state": "Massachusetts", "fips": "25", "saidi": 200, "saifi": 1.08, "year": 2023},
-    {"state": "Michigan", "fips": "26", "saidi": 395, "saifi": 1.48, "year": 2023},
-    {"state": "Minnesota", "fips": "27", "saidi": 180, "saifi": 1.02, "year": 2023},
-    {"state": "Mississippi", "fips": "28", "saidi": 370, "saifi": 1.42, "year": 2023},
-    {"state": "Missouri", "fips": "29", "saidi": 290, "saifi": 1.25, "year": 2023},
-    {"state": "Montana", "fips": "30", "saidi": 175, "saifi": 0.95, "year": 2023},
-    {"state": "Nebraska", "fips": "31", "saidi": 155, "saifi": 0.90, "year": 2023},
-    {"state": "Nevada", "fips": "32", "saidi": 140, "saifi": 0.82, "year": 2023},
-    {"state": "New Hampshire", "fips": "33", "saidi": 350, "saifi": 1.38, "year": 2023},
-    {"state": "New Jersey", "fips": "34", "saidi": 220, "saifi": 1.12, "year": 2023},
-    {"state": "New Mexico", "fips": "35", "saidi": 195, "saifi": 1.05, "year": 2023},
-    {"state": "New York", "fips": "36", "saidi": 210, "saifi": 1.10, "year": 2023},
-    {"state": "North Carolina", "fips": "37", "saidi": 300, "saifi": 1.28, "year": 2023},
-    {"state": "North Dakota", "fips": "38", "saidi": 135, "saifi": 0.78, "year": 2023},
-    {"state": "Ohio", "fips": "39", "saidi": 285, "saifi": 1.22, "year": 2023},
-    {"state": "Oklahoma", "fips": "40", "saidi": 330, "saifi": 1.35, "year": 2023},
-    {"state": "Oregon", "fips": "41", "saidi": 190, "saifi": 1.05, "year": 2023},
-    {"state": "Pennsylvania", "fips": "42", "saidi": 280, "saifi": 1.20, "year": 2023},
-    {"state": "Rhode Island", "fips": "44", "saidi": 175, "saifi": 0.95, "year": 2023},
-    {"state": "South Carolina", "fips": "45", "saidi": 310, "saifi": 1.30, "year": 2023},
-    {"state": "South Dakota", "fips": "46", "saidi": 145, "saifi": 0.85, "year": 2023},
-    {"state": "Tennessee", "fips": "47", "saidi": 295, "saifi": 1.25, "year": 2023},
-    {"state": "Texas", "fips": "48", "saidi": 380, "saifi": 1.45, "year": 2023},
-    {"state": "Utah", "fips": "49", "saidi": 130, "saifi": 0.78, "year": 2023},
-    {"state": "Vermont", "fips": "50", "saidi": 310, "saifi": 1.30, "year": 2023},
-    {"state": "Virginia", "fips": "51", "saidi": 265, "saifi": 1.18, "year": 2023},
-    {"state": "Washington", "fips": "53", "saidi": 175, "saifi": 0.98, "year": 2023},
-    {"state": "West Virginia", "fips": "54", "saidi": 350, "saifi": 1.40, "year": 2023},
-    {"state": "Wisconsin", "fips": "55", "saidi": 200, "saifi": 1.08, "year": 2023},
-    {"state": "Wyoming", "fips": "56", "saidi": 160, "saifi": 0.90, "year": 2023},
-]
+    Most utilities report under one standard or the other. We prefer IEEE
+    when available, falling back to Other.
+    """
+    df = df.copy()
+    df["saidi"] = df["ieee_saidi_with_med"].fillna(df["other_saidi_with_med"])
+    df["saifi"] = df["ieee_saifi_with_med"].fillna(df["other_saifi_with_med"])
+    df["caidi"] = df["ieee_caidi_with_med"].fillna(df["other_caidi_with_med"])
+    df["saidi_no_med"] = df["ieee_saidi_no_med"].fillna(df["other_saidi_no_med"])
+    df["saifi_no_med"] = df["ieee_saifi_no_med"].fillna(df["other_saifi_no_med"])
+    df["customers"] = df["ieee_customers"].fillna(df["other_customers"])
+    return df
 
 
-def transform_reliability() -> dict:
-    """Generate curated reliability data (no API fetch needed)."""
+def _weighted_avg(group: pd.DataFrame, value_col: str, weight_col: str = "customers") -> float:
+    """Customer-weighted average, ignoring rows with missing values or zero customers."""
+    mask = group[value_col].notna() & group[weight_col].notna() & (group[weight_col] > 0)
+    subset = group[mask]
+    if subset.empty:
+        return np.nan
+    total_weight = subset[weight_col].sum()
+    if total_weight == 0:
+        return np.nan
+    return (subset[value_col] * subset[weight_col]).sum() / total_weight
+
+
+def transform_reliability(raw_df: pd.DataFrame) -> dict:
+    """Transform utility-level EIA-861 data into national trend + state-level aggregates.
+
+    Args:
+        raw_df: DataFrame from fetch_reliability() with canonical column names.
+
+    Returns:
+        dict with keys: national, by_state, by_state_trend, metadata
+    """
+    df = _coalesce_standards(raw_df)
+
+    # Filter to rows that have at least SAIDI and customers
+    df = df[df["saidi"].notna() & df["customers"].notna() & (df["customers"] > 0)].copy()
+
+    # --- National trend (customer-weighted average per year) ---
+    national_records = []
+    for year, group in df.groupby("data_year"):
+        saidi = _weighted_avg(group, "saidi")
+        saifi = _weighted_avg(group, "saifi")
+        saidi_no_med = _weighted_avg(group, "saidi_no_med")
+        saifi_no_med = _weighted_avg(group, "saifi_no_med")
+        total_customers = group["customers"].sum()
+        n_utilities = len(group)
+
+        national_records.append({
+            "year": int(year),
+            "saidi": round(saidi, 1) if not np.isnan(saidi) else None,
+            "saifi": round(saifi, 2) if not np.isnan(saifi) else None,
+            "saidi_no_med": round(saidi_no_med, 1) if not np.isnan(saidi_no_med) else None,
+            "saifi_no_med": round(saifi_no_med, 2) if not np.isnan(saifi_no_med) else None,
+            "customers": int(total_customers),
+            "utilities": n_utilities,
+        })
+
+    national_records.sort(key=lambda r: r["year"])
+
+    # --- State-level aggregates (latest year per state) ---
+    latest_year = df["data_year"].max()
+    latest_df = df[df["data_year"] == latest_year]
+
+    state_records = []
+    for state_abbr, group in latest_df.groupby("state"):
+        if state_abbr not in STATE_ABBR_TO_FIPS:
+            continue  # Skip territories
+
+        saidi = _weighted_avg(group, "saidi")
+        saifi = _weighted_avg(group, "saifi")
+        saidi_no_med = _weighted_avg(group, "saidi_no_med")
+        saifi_no_med = _weighted_avg(group, "saifi_no_med")
+        total_customers = group["customers"].sum()
+
+        if np.isnan(saidi):
+            continue
+
+        state_records.append({
+            "state": STATE_ABBR_TO_NAME.get(state_abbr, state_abbr),
+            "stateAbbr": state_abbr,
+            "fips": STATE_ABBR_TO_FIPS[state_abbr],
+            "saidi": round(saidi, 1),
+            "saifi": round(saifi, 2) if not np.isnan(saifi) else None,
+            "saidi_no_med": round(saidi_no_med, 1) if not np.isnan(saidi_no_med) else None,
+            "saifi_no_med": round(saifi_no_med, 2) if not np.isnan(saifi_no_med) else None,
+            "customers": int(total_customers),
+            "year": int(latest_year),
+        })
+
+    state_records.sort(key=lambda r: r["state"])
+
+    # --- State-level trend (for potential future use) ---
+    state_trend_records = []
+    for (year, state_abbr), group in df.groupby(["data_year", "state"]):
+        if state_abbr not in STATE_ABBR_TO_FIPS:
+            continue
+
+        saidi = _weighted_avg(group, "saidi")
+        saifi = _weighted_avg(group, "saifi")
+        if np.isnan(saidi):
+            continue
+
+        state_trend_records.append({
+            "year": int(year),
+            "stateAbbr": state_abbr,
+            "fips": STATE_ABBR_TO_FIPS[state_abbr],
+            "saidi": round(saidi, 1),
+            "saifi": round(saifi, 2) if not np.isnan(saifi) else None,
+        })
+
+    state_trend_records.sort(key=lambda r: (r["year"], r["stateAbbr"]))
+
     return {
-        "national": NATIONAL_SAIDI_TREND,
-        "by_state": STATE_SAIDI,
+        "national": national_records,
+        "by_state": state_records,
+        "by_state_trend": state_trend_records,
         "metadata": {
-            "source": "Sample data based on IEEE 1366 / EIA-861 averages",
+            "source": "EIA-861 Annual Electric Power Industry Report — Reliability",
             "url": "https://www.eia.gov/electricity/data/eia861/",
             "last_updated": pd.Timestamp.now().isoformat(),
             "unit": "minutes per customer per year (SAIDI)",
-            "note": "Sample data. Real integration with FERC Form 714 and EIA-861 planned for Phase 2.",
+            "years": f"2013-{int(latest_year)}",
+            "methodology": "Customer-weighted average of utility-level SAIDI/SAIFI. "
+                           "IEEE Standard preferred, with Other Standard as fallback. "
+                           "With Major Event Days (MED) variant shown by default.",
         },
     }

@@ -20,8 +20,8 @@
 <nav
 	class="sticky top-0 z-40 bg-primary/95 backdrop-blur-md border-b border-white/5 shadow-[0_1px_12px_rgba(232,108,58,0.08)]"
 >
-	<div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-		<a href="/" class="flex items-center gap-2 font-display text-xl text-white no-underline hover:text-white/90">
+	<div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-2">
+		<a href="/" class="flex items-center gap-2 font-display text-base text-white no-underline hover:text-white/90">
 			<!-- Energy bolt icon -->
 			<svg class="h-5 w-5 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
 				<polygon points="11,1 5,11 9,11 7,19 15,9 11,9 13,1" />
@@ -36,7 +36,7 @@
 				<a
 					href={section.href}
 					title={section.tooltip}
-					class="relative rounded-full px-3 py-1.5 text-sm font-medium no-underline transition-colors
+					class="relative rounded-full px-2.5 py-1 text-sm font-medium no-underline transition-colors
 						{isActive
 							? 'bg-accent/15 text-white'
 							: 'text-white/70 hover:text-white hover:bg-white/5'}"

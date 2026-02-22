@@ -28,8 +28,8 @@
 	let {
 		data,
 		width: propWidth = 800,
-		height = 400,
-		margin = { top: 20, right: 20, bottom: 60, left: 60 },
+		height: propHeight = 400,
+		margin = { top: 16, right: 16, bottom: 48, left: 52 },
 		horizontal = false,
 		xLabel = '',
 		yLabel = '',
@@ -38,7 +38,9 @@
 	}: Props = $props();
 
 	const chartWidthCtx = getContext<Readable<number> | undefined>('chartWidth');
+	const chartHeightCtx = getContext<Readable<number> | undefined>('chartHeight');
 	const width = $derived(chartWidthCtx ? $chartWidthCtx : propWidth);
+	const height = $derived(chartHeightCtx ? $chartHeightCtx : propHeight);
 
 	const chartVisibleCtx = getContext<Writable<boolean> | undefined>('chartVisible');
 	const chartVisible = $derived(chartVisibleCtx ? $chartVisibleCtx : true);
@@ -94,6 +96,8 @@
 	class="chart"
 	viewBox="0 0 {width} {height}"
 	style="max-width: {width}px; width: 100%; height: auto;"
+	role="img"
+	aria-label="Bar chart showing {data.map(d => d.label).join(', ')}"
 >
 	<g transform="translate({margin.left}, {margin.top})">
 		<!-- Grid lines -->
@@ -207,7 +211,7 @@
 
 <!-- Legend for multi-colored bars -->
 {#if hasMultipleColors}
-	<div class="mt-2 flex flex-wrap gap-4 px-2 text-sm">
+	<div class="mt-1 flex flex-wrap gap-4 px-2 text-xs">
 		{#each data as d, i}
 			<div class="flex items-center gap-1.5">
 				<span class="inline-block h-2.5 w-2.5 rounded" style="background: {colorScale(d.label)};"></span>

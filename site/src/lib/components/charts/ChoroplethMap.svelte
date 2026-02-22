@@ -111,6 +111,8 @@
 	class="chart choropleth-map"
 	viewBox="0 0 {width} {height}"
 	style="max-width: {width}px; width: 100%; height: auto;"
+	role="img"
+	aria-label="Choropleth map of the United States"
 >
 	<!-- Color legend — centered above the map -->
 	<g transform="translate({legendX}, 4)">
@@ -206,7 +208,7 @@
 					x={centroid[0]}
 					y={centroid[1]}
 					fill={labelFill(fips)}
-					font-size="8"
+					font-size="9"
 					font-weight="600"
 					font-family="var(--font-sans)"
 					text-anchor="middle"

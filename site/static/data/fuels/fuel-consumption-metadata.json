@@ -2,6 +2,6 @@
   "description": "Fuel consumption for electricity generation by fuel type (national total)",
   "source": "EIA Electric Power Operational Data",
   "url": "https://www.eia.gov/electricity/data.php",
-  "last_updated": "2026-02-21T21:44:34.095653",
+  "last_updated": "2026-02-22T10:52:39.894669",
   "unit": "thousand physical units (varies by fuel)"
 }

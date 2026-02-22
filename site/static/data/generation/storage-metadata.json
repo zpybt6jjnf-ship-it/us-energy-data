@@ -2,6 +2,6 @@
   "description": "US battery energy storage capacity deployment",
   "source": "EIA State Electricity Profiles - Generating Capacity",
   "url": "https://www.eia.gov/electricity/state/",
-  "last_updated": "2026-02-21T21:38:50.377749",
+  "last_updated": "2026-02-22T10:47:13.806468",
   "unit": "MW"
 }

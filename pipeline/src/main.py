@@ -1,15 +1,23 @@
 """Main pipeline entry point. Fetches, transforms, and exports EIA data."""
 
+import logging
 import os
 import sys
 import traceback
 from dotenv import load_dotenv
+
+# Configure logging for pipeline warnings (unmapped values, validation failures)
+logging.basicConfig(
+    level=logging.INFO,
+    format="  [%(levelname)s] %(name)s: %(message)s",
+)
 
 from .fetch.electricity import fetch_retail_prices, fetch_demand, fetch_generation_by_source
 from .fetch.fuels import fetch_coal_production, fetch_natural_gas_production, fetch_crude_oil_production
 from .fetch.capacity import fetch_capacity_by_source, fetch_co2_emissions, fetch_fuel_consumption, fetch_battery_storage
 from .fetch.census import fetch_state_population
 from .fetch.trade import fetch_petroleum_trade, fetch_natural_gas_trade
+from .fetch.reliability import fetch_reliability
 from .transform.prices import transform_retail_prices
 from .transform.demand import transform_demand
 from .transform.generation import transform_generation
@@ -121,14 +129,23 @@ def main() -> None:
     write_json(fuels["by_state"], "fuels", "production-by-state.json")
     write_json(fuels["metadata"], "fuels", "metadata.json")
 
-    # Reliability (sample data, no API fetch)
-    print("Generating reliability sample data...")
-    reliability = transform_reliability()
+    # Reliability (EIA-861 data download)
+    def stage_reliability():
+        print("Fetching EIA-861 reliability data (SAIDI/SAIFI)...")
+        raw_reliability = fetch_reliability()
+        print(f"  Got {len(raw_reliability)} utility-level records")
+        print("Transforming reliability data...")
+        reliability = transform_reliability(raw_reliability)
+        print(f"  National trend: {len(reliability['national'])} years")
+        print(f"  State data: {len(reliability['by_state'])} states")
+        print("Exporting reliability JSON files...")
+        write_json(reliability["national"], "reliability", "saidi-national.json")
+        write_json(reliability["by_state"], "reliability", "saidi-by-state.json")
+        write_json(reliability["by_state_trend"], "reliability", "saidi-by-state-trend.json")
+        write_json(reliability["metadata"], "reliability", "metadata.json")
 
-    print("Exporting reliability JSON files...")
-    write_json(reliability["national"], "reliability", "saidi-national.json")
-    write_json(reliability["by_state"], "reliability", "saidi-by-state.json")
-    write_json(reliability["metadata"], "reliability", "metadata.json")
+    if not run_stage("reliability", stage_reliability):
+        errors.append("reliability")
 
     # --- New Pipeline Stages (non-blocking) ---
 

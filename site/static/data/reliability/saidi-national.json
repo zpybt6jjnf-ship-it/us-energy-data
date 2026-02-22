@@ -1,57 +1,110 @@
 [
   {
     "year": 2013,
-    "saidi": 240,
-    "saifi": 1.21
+    "saidi": 215.7,
+    "saifi": 1.2,
+    "saidi_no_med": 105.5,
+    "saifi_no_med": 0.98,
+    "customers": 127913028,
+    "utilities": 891
   },
   {
     "year": 2014,
-    "saidi": 198,
-    "saifi": 1.13
+    "saidi": 219.0,
+    "saifi": 1.22,
+    "saidi_no_med": 108.5,
+    "saifi_no_med": 1.01,
+    "customers": 133438391,
+    "utilities": 956
   },
   {
     "year": 2015,
-    "saidi": 216,
-    "saifi": 1.18
+    "saidi": 205.0,
+    "saifi": 1.25,
+    "saidi_no_med": 113.2,
+    "saifi_no_med": 1.04,
+    "customers": 138167224,
+    "utilities": 1004
   },
   {
     "year": 2016,
-    "saidi": 250,
-    "saifi": 1.25
+    "saidi": 249.2,
+    "saifi": 1.29,
+    "saidi_no_med": 117.0,
+    "saifi_no_med": 1.06,
+    "customers": 140447056,
+    "utilities": 1038
   },
   {
     "year": 2017,
-    "saidi": 470,
-    "saifi": 1.45
+    "saidi": 473.1,
+    "saifi": 1.39,
+    "saidi_no_med": 114.5,
+    "saifi_no_med": 1.0,
+    "customers": 142251964,
+    "utilities": 1061
   },
   {
     "year": 2018,
-    "saidi": 360,
-    "saifi": 1.32
+    "saidi": 346.4,
+    "saifi": 1.32,
+    "saidi_no_med": 117.5,
+    "saifi_no_med": 1.03,
+    "customers": 144163843,
+    "utilities": 1097
   },
   {
     "year": 2019,
-    "saidi": 288,
-    "saifi": 1.22
+    "saidi": 284.6,
+    "saifi": 1.33,
+    "saidi_no_med": 119.0,
+    "saifi_no_med": 1.02,
+    "customers": 146624743,
+    "utilities": 1156
   },
   {
     "year": 2020,
-    "saidi": 480,
-    "saifi": 1.58
+    "saidi": 491.9,
+    "saifi": 1.44,
+    "saidi_no_med": 119.2,
+    "saifi_no_med": 1.04,
+    "customers": 147282351,
+    "utilities": 929
   },
   {
     "year": 2021,
-    "saidi": 540,
-    "saifi": 1.62
+    "saidi": 440.0,
+    "saifi": 1.43,
+    "saidi_no_med": 121.5,
+    "saifi_no_med": 1.02,
+    "customers": 149601957,
+    "utilities": 945
   },
   {
     "year": 2022,
-    "saidi": 310,
-    "saifi": 1.28
+    "saidi": 335.5,
+    "saifi": 1.4,
+    "saidi_no_med": 125.7,
+    "saifi_no_med": 1.06,
+    "customers": 151445198,
+    "utilities": 952
   },
   {
     "year": 2023,
-    "saidi": 295,
-    "saifi": 1.24
+    "saidi": 342.0,
+    "saifi": 1.33,
+    "saidi_no_med": 118.4,
+    "saifi_no_med": 1.0,
+    "customers": 153198841,
+    "utilities": 960
+  },
+  {
+    "year": 2024,
+    "saidi": 611.3,
+    "saifi": 1.52,
+    "saidi_no_med": 126.0,
+    "saifi_no_med": 1.04,
+    "customers": 155464237,
+    "utilities": 965
   }
 ]

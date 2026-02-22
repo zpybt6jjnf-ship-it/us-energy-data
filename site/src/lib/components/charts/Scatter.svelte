@@ -31,7 +31,7 @@
 		data,
 		width: propWidth = 800,
 		height = 500,
-		margin = { top: 20, right: 20, bottom: 50, left: 70 },
+		margin = { top: 16, right: 16, bottom: 44, left: 56 },
 		xLabel = '',
 		yLabel = '',
 		xFormat = format(',.0f'),
@@ -67,10 +67,16 @@
 		tooltip = {
 			x: event.clientX,
 			y: event.clientY,
+			header: d.label,
 			items: [
 				{
-					label: d.label,
-					value: `${xFormat(d.x)} / ${yFormat(d.y)}`,
+					label: xLabel || 'X',
+					value: xFormat(d.x),
+					color: colorScale(d.group ?? 'default'),
+				},
+				{
+					label: yLabel || 'Y',
+					value: yFormat(d.y),
 					color: colorScale(d.group ?? 'default'),
 				},
 			],
@@ -87,6 +93,8 @@
 	class="chart"
 	viewBox="0 0 {width} {height}"
 	style="max-width: {width}px; width: 100%; height: auto;"
+	role="img"
+	aria-label="Scatter plot of {xLabel} vs {yLabel} with {data.length} data points"
 >
 	<g transform="translate({margin.left}, {margin.top})">
 		<!-- Grid -->
@@ -186,7 +194,7 @@
 
 <!-- Legend -->
 {#if groups.length > 1}
-	<div class="mt-2 flex flex-wrap gap-4 px-2 text-sm">
+	<div class="mt-1 flex flex-wrap gap-4 px-2 text-xs">
 		{#each groups as group}
 			<div class="flex items-center gap-1.5">
 				<span class="inline-block h-2.5 w-2.5 rounded-full" style="background: {colorScale(group)};"></span>

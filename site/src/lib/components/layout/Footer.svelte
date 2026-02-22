@@ -1,5 +1,5 @@
-<footer class="mt-16 border-t border-white/10 bg-[#0f2b44]">
-	<div class="mx-auto flex max-w-6xl flex-col items-center gap-4 px-4 py-6 sm:flex-row sm:justify-between sm:gap-6">
+<footer class="mt-8 border-t border-white/10 bg-[#0f2b44]">
+	<div class="mx-auto flex max-w-5xl flex-col items-center gap-4 px-4 py-4 sm:flex-row sm:justify-between sm:gap-6">
 		<!-- Brand -->
 		<a href="/" class="flex items-center gap-2 font-display text-base text-white no-underline hover:text-white/90 shrink-0">
 			<svg class="h-4 w-4 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">

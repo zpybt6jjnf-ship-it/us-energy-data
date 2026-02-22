@@ -1,7 +1,11 @@
 """Transform raw EIA retail price data into chart-ready JSON."""
 
+import logging
 import pandas as pd
 
+from ..constants import US_STATES, US_TOTAL_LABELS
+
+logger = logging.getLogger(__name__)
 
 SECTOR_MAP = {
     "RES": "Residential",
@@ -21,24 +25,37 @@ def transform_retail_prices(raw_data: list[dict]) -> dict:
     df["period"] = pd.to_numeric(df["period"], errors="coerce")
     df = df.dropna(subset=["price", "period"])
     df["sector"] = df["sectorid"].map(SECTOR_MAP)
+    df = df[df["sector"].notna()]
 
-    # National averages by sector and year
+    state_col = "stateDescription"
+
+    # --- National averages: use US Total rows (already a weighted average from EIA) ---
+    us_total_df = df[df[state_col].isin(US_TOTAL_LABELS)]
+    if us_total_df.empty:
+        logger.warning("No US Total rows found in price data; falling back to unweighted state mean")
+        us_total_df = df[df[state_col].isin(US_STATES)]
+
     national = (
-        df.groupby(["period", "sector"])["price"]
+        us_total_df.groupby(["period", "sector"])["price"]
         .mean()
         .reset_index()
         .rename(columns={"period": "year"})
         .sort_values(["sector", "year"])
     )
 
-    # State-level data
+    # --- State-level: filter to valid US states only ---
     by_state = (
-        df.groupby(["stateDescription", "period", "sector"])["price"]
+        df[df[state_col].isin(US_STATES)]
+        .groupby([state_col, "period", "sector"])["price"]
         .first()
         .reset_index()
-        .rename(columns={"stateDescription": "state", "period": "year"})
+        .rename(columns={state_col: "state", "period": "year"})
         .sort_values(["state", "sector", "year"])
     )
+
+    n_states = by_state["state"].nunique()
+    if n_states != 51:
+        logger.warning("Expected 51 state entities (50 + DC), got %d", n_states)
 
     return {
         "national": national.to_dict(orient="records"),

@@ -1,9 +1,11 @@
 <script lang="ts">
 	import LineChart from '$components/charts/LineChart.svelte';
 	import BarChart from '$components/charts/BarChart.svelte';
+	import DivergingBarChart from '$components/charts/DivergingBarChart.svelte';
 	import ChartWrapper from '$components/charts/ChartWrapper.svelte';
 	import Dropdown from '$components/ui/Dropdown.svelte';
 	import StateSelect from '$components/ui/StateSelect.svelte';
+	import TimeRangeSlider from '$components/ui/TimeRangeSlider.svelte';
 	import { chartConfig, updateConfig } from '$stores/chartConfig';
 	import { format } from 'd3-format';
 	import { CHART_COLORS } from '$utils/colors';
@@ -16,11 +18,13 @@
 	const consumptionAnnotations = [
 		{ date: 2009, label: '09 Recession' },
 		{ date: 2020, label: 'COVID-19' },
+		{ date: 2022, label: 'IRA' },
 	];
 
 	const loadGrowthAnnotations = [
 		{ date: 2009, label: '09 Recession', labelPosition: 'bottom' as const },
 		{ date: 2020, label: 'COVID-19', labelPosition: 'bottom' as const },
+		{ date: 2022, label: 'IRA' },
 	];
 
 	const sectorOptions = [
@@ -77,6 +81,16 @@
 
 	const combinedSeries = $derived([...filteredSeries, ...stateSeries]);
 
+	const startYear = $derived($chartConfig.startYear);
+	const endYear = $derived($chartConfig.endYear);
+
+	const timeFilteredSeries = $derived(
+		combinedSeries.map((s) => ({
+			...s,
+			values: s.values.filter((v) => v.date >= startYear && v.date <= endYear),
+		}))
+	);
+
 	const lineMeta: ChartMeta = {
 		title: 'Electricity Consumption by Sector',
 		subtitle: 'US national total, million kilowatt-hours, annual',
@@ -109,7 +123,7 @@
 			.map(([state, consumption], i) => ({
 				label: state,
 				value: consumption,
-				color: CHART_COLORS[i % CHART_COLORS.length],
+				color: '#1b9e77',
 			}));
 	})());
 
@@ -129,6 +143,20 @@
 		});
 		return [{ name: 'YoY Growth', values: growth }];
 	})());
+
+	const timeFilteredGrowth = $derived(
+		loadGrowthSeries.map((s) => ({
+			...s,
+			values: s.values.filter((v) => v.date >= startYear && v.date <= endYear),
+		}))
+	);
+
+	const loadGrowthBars = $derived(
+		timeFilteredGrowth[0].values.map((v) => ({
+			label: String(v.date),
+			value: v.value,
+		}))
+	);
 
 	const loadGrowthMeta: ChartMeta = {
 		title: 'Electricity Demand Growth Rate',
@@ -163,7 +191,7 @@
 			.map((d: any, i: number) => ({
 				label: d.state,
 				value: d.per_capita_kwh,
-				color: CHART_COLORS[i % CHART_COLORS.length],
+				color: '#1b9e77',
 			}));
 	})());
 
@@ -185,9 +213,8 @@
 
 <div>
 	<header>
-		<h1 class="text-3xl font-bold tracking-tight text-text" style="font-family: var(--font-display)">Electricity Demand</h1>
-		<div class="mt-2 h-1 w-16 rounded-full" style="background: #1b9e77"></div>
-		<p class="mt-3 max-w-3xl text-lg leading-relaxed text-text-secondary" style="font-family: var(--font-display)">
+		<h1 class="text-2xl font-bold tracking-tight text-text font-display">Electricity Demand</h1>
+		<p class="mt-1 max-w-3xl text-base leading-relaxed text-text-secondary">
 			Where does all the electricity go?
 		</p>
 	</header>
@@ -213,8 +240,8 @@
 	</div>
 
 	<!-- Chart 1: Consumption trends (hero chart) -->
-	<section class="mt-10">
-		<div class="mb-4 rounded-xl border border-border bg-surface-alt/50 px-5 py-4">
+	<section class="mt-4">
+		<div class="mb-2 rounded-xl border border-border bg-surface-alt/50 px-4 py-2.5">
 			<div class="flex flex-wrap items-end gap-4">
 				<Dropdown
 					options={sectorOptions}
@@ -226,12 +253,13 @@
 					selected={selectedStates}
 					onchange={(states) => updateConfig('state', states)}
 				/>
+				<TimeRangeSlider {startYear} {endYear} />
 			</div>
 		</div>
 
-		<ChartWrapper meta={lineMeta} hero category="Demand" categoryColor="#1b9e77" data={combinedSeries.flatMap((s) => s.values.map((v) => ({ series: s.name, year: v.date, consumption: v.value })))}>
+		<ChartWrapper meta={lineMeta} hero category="Demand" categoryColor="#1b9e77" data={timeFilteredSeries.flatMap((s) => s.values.map((v) => ({ series: s.name, year: v.date, consumption: v.value })))}>
 			<LineChart
-				series={combinedSeries}
+				series={timeFilteredSeries}
 				xLabel="Year"
 				yLabel="million kWh"
 				yFormat={formatCompact}
@@ -244,23 +272,21 @@
 
 	<!-- Chart 2: Load Growth -->
 	<section class="mt-8">
-		<ChartWrapper meta={loadGrowthMeta} category="Demand" categoryColor="#1b9e77" data={loadGrowthSeries[0].values.map((v) => ({ year: v.date, growth_pct: v.value }))}>
-			<LineChart
-				series={loadGrowthSeries}
-				xLabel="Year"
+		<ChartWrapper meta={loadGrowthMeta} category="Demand" categoryColor="#1b9e77" data={loadGrowthBars.map((d) => ({ year: d.label, growth_pct: d.value }))}>
+			<DivergingBarChart
+				data={loadGrowthBars}
 				yLabel="% change"
 				yFormat={format('+.1f')}
 				unit="%"
-				annotations={loadGrowthAnnotations}
 			/>
 		</ChartWrapper>
 	</section>
 
 	<!-- Insight -->
-	<div class="insight-card my-8">
+	<div class="insight-card my-4">
 		<div class="flex items-start gap-4">
 			<div class="flex-shrink-0">
-				<span class="text-3xl font-bold text-accent" style="font-family: var(--font-mono)">&lt;1%</span>
+				<span class="text-xl font-bold text-accent" style="font-family: var(--font-mono)">&lt;1%</span>
 				<span class="block text-[10px] uppercase tracking-wider text-text-muted mt-0.5">annual growth</span>
 			</div>
 			<p class="text-base leading-relaxed text-text-secondary">
@@ -272,7 +298,7 @@
 	<div class="section-divider"></div>
 
 	<!-- Charts 3 & 4: State ranking + Per-Capita (2-column layout) -->
-	<div class="grid gap-6 lg:grid-cols-2 mt-16">
+	<div class="grid gap-6 lg:grid-cols-2 mt-6">
 		<section>
 			<ChartWrapper meta={barMeta} category="Demand" categoryColor="#1b9e77" data={stateRanking.map((d) => ({ state: d.label, consumption: d.value }))}>
 				<BarChart
@@ -301,7 +327,7 @@
 	</div>
 
 	<!-- Cross-links -->
-	<p class="mt-8 text-sm">
+	<p class="mt-4 text-sm">
 		<a href="/prices" class="text-accent/80 hover:text-accent transition-colors no-underline">How much does this electricity cost? Explore prices &rarr;</a>
 	</p>
 </div>

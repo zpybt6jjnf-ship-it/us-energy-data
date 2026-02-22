@@ -5,9 +5,12 @@
 		selected: string[];
 		onchange: (states: string[]) => void;
 		label?: string;
+		maxSelections?: number;
 	}
 
-	let { selected, onchange, label = 'Compare states' }: Props = $props();
+	let { selected, onchange, label = 'Compare states', maxSelections = 6 }: Props = $props();
+
+	const atLimit = $derived(selected.length >= maxSelections);
 
 	let open = $state(false);
 	let query = $state('');
@@ -25,7 +28,7 @@
 	function toggle(abbr: string) {
 		if (selected.includes(abbr)) {
 			onchange(selected.filter((s) => s !== abbr));
-		} else {
+		} else if (!atLimit) {
 			onchange([...selected, abbr]);
 		}
 		query = '';
@@ -96,7 +99,7 @@
 			bind:this={inputEl}
 			type="text"
 			class="min-w-[3rem] flex-1 border-0 bg-transparent px-1 py-0.5 text-sm text-text outline-none placeholder:text-text-muted"
-			placeholder={selected.length === 0 ? 'Add states...' : ''}
+			placeholder={selected.length === 0 ? 'Add states...' : atLimit ? `Max ${maxSelections} states` : ''}
 			bind:value={query}
 			onfocus={() => open = true}
 			onblur={handleBlur}

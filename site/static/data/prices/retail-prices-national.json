@@ -2,361 +2,361 @@
   {
     "year": 2001,
     "sector": "Commercial",
-    "price": 7.7054838709677425
+    "price": 7.92
   },
   {
     "year": 2002,
     "sector": "Commercial",
-    "price": 7.581774193548387
+    "price": 7.89
   },
   {
     "year": 2003,
     "sector": "Commercial",
-    "price": 7.770161290322581
+    "price": 8.03
   },
   {
     "year": 2004,
     "sector": "Commercial",
-    "price": 7.980967741935483
+    "price": 8.17
   },
   {
     "year": 2005,
     "sector": "Commercial",
-    "price": 8.518870967741934
+    "price": 8.67
   },
   {
     "year": 2006,
     "sector": "Commercial",
-    "price": 9.298064516129033
+    "price": 9.46
   },
   {
     "year": 2007,
     "sector": "Commercial",
-    "price": 9.537419354838711
+    "price": 9.65
   },
   {
     "year": 2008,
     "sector": "Commercial",
-    "price": 10.36774193548387
+    "price": 10.26
   },
   {
     "year": 2009,
     "sector": "Commercial",
-    "price": 10.169193548387097
+    "price": 10.16
   },
   {
     "year": 2010,
     "sector": "Commercial",
-    "price": 10.353387096774194
+    "price": 10.19
   },
   {
     "year": 2011,
     "sector": "Commercial",
-    "price": 10.612580645161291
+    "price": 10.24
   },
   {
     "year": 2012,
     "sector": "Commercial",
-    "price": 10.598709677419356
+    "price": 10.09
   },
   {
     "year": 2013,
     "sector": "Commercial",
-    "price": 10.835645161290321
+    "price": 10.26
   },
   {
     "year": 2014,
     "sector": "Commercial",
-    "price": 11.268548387096773
+    "price": 10.74
   },
   {
     "year": 2015,
     "sector": "Commercial",
-    "price": 11.112903225806452
+    "price": 10.64
   },
   {
     "year": 2016,
     "sector": "Commercial",
-    "price": 10.943709677419355
+    "price": 10.43
   },
   {
     "year": 2017,
     "sector": "Commercial",
-    "price": 11.221129032258066
+    "price": 10.66
   },
   {
     "year": 2018,
     "sector": "Commercial",
-    "price": 11.350645161290323
+    "price": 10.67
   },
   {
     "year": 2019,
     "sector": "Commercial",
-    "price": 11.405
+    "price": 10.68
   },
   {
     "year": 2020,
     "sector": "Commercial",
-    "price": 11.326451612903226
+    "price": 10.59
   },
   {
     "year": 2021,
     "sector": "Commercial",
-    "price": 11.819193548387096
+    "price": 11.22
   },
   {
     "year": 2022,
     "sector": "Commercial",
-    "price": 13.085645161290321
+    "price": 12.41
   },
   {
     "year": 2023,
     "sector": "Commercial",
-    "price": 13.383225806451613
+    "price": 12.59
   },
   {
     "year": 2024,
     "sector": "Commercial",
-    "price": 13.606935483870968
+    "price": 12.75
   },
   {
     "year": 2001,
     "sector": "Industrial",
-    "price": 5.455
+    "price": 5.05
   },
   {
     "year": 2002,
     "sector": "Industrial",
-    "price": 5.312096774193549
+    "price": 4.88
   },
   {
     "year": 2003,
     "sector": "Industrial",
-    "price": 5.571774193548387
+    "price": 5.11
   },
   {
     "year": 2004,
     "sector": "Industrial",
-    "price": 5.731290322580644
+    "price": 5.25
   },
   {
     "year": 2005,
     "sector": "Industrial",
-    "price": 6.3987096774193555
+    "price": 5.73
   },
   {
     "year": 2006,
     "sector": "Industrial",
-    "price": 7.06741935483871
+    "price": 6.16
   },
   {
     "year": 2007,
     "sector": "Industrial",
-    "price": 7.2706451612903225
+    "price": 6.39
   },
   {
     "year": 2008,
     "sector": "Industrial",
-    "price": 8.065000000000001
+    "price": 6.96
   },
   {
     "year": 2009,
     "sector": "Industrial",
-    "price": 7.701935483870967
+    "price": 6.83
   },
   {
     "year": 2010,
     "sector": "Industrial",
-    "price": 7.79
+    "price": 6.77
   },
   {
     "year": 2011,
     "sector": "Industrial",
-    "price": 7.9632258064516135
+    "price": 6.82
   },
   {
     "year": 2012,
     "sector": "Industrial",
-    "price": 7.896612903225807
+    "price": 6.67
   },
   {
     "year": 2013,
     "sector": "Industrial",
-    "price": 8.071774193548388
+    "price": 6.89
   },
   {
     "year": 2014,
     "sector": "Industrial",
-    "price": 8.33274193548387
+    "price": 7.1
   },
   {
     "year": 2015,
     "sector": "Industrial",
-    "price": 8.07
+    "price": 6.91
   },
   {
     "year": 2016,
     "sector": "Industrial",
-    "price": 7.894032258064517
+    "price": 6.76
   },
   {
     "year": 2017,
     "sector": "Industrial",
-    "price": 8.100483870967743
+    "price": 6.88
   },
   {
     "year": 2018,
     "sector": "Industrial",
-    "price": 8.27741935483871
+    "price": 6.92
   },
   {
     "year": 2019,
     "sector": "Industrial",
-    "price": 8.193548387096774
+    "price": 6.81
   },
   {
     "year": 2020,
     "sector": "Industrial",
-    "price": 7.9917741935483875
+    "price": 6.67
   },
   {
     "year": 2021,
     "sector": "Industrial",
-    "price": 8.446612903225807
+    "price": 7.18
   },
   {
     "year": 2022,
     "sector": "Industrial",
-    "price": 9.814032258064517
+    "price": 8.32
   },
   {
     "year": 2023,
     "sector": "Industrial",
-    "price": 9.818387096774194
+    "price": 8.04
   },
   {
     "year": 2024,
     "sector": "Industrial",
-    "price": 10.013064516129033
+    "price": 8.13
   },
   {
     "year": 2001,
     "sector": "Residential",
-    "price": 8.75
+    "price": 8.58
   },
   {
     "year": 2002,
     "sector": "Residential",
-    "price": 8.642096774193549
+    "price": 8.44
   },
   {
     "year": 2003,
     "sector": "Residential",
-    "price": 8.851451612903226
+    "price": 8.72
   },
   {
     "year": 2004,
     "sector": "Residential",
-    "price": 9.097096774193549
+    "price": 8.95
   },
   {
     "year": 2005,
     "sector": "Residential",
-    "price": 9.647096774193548
+    "price": 9.45
   },
   {
     "year": 2006,
     "sector": "Residential",
-    "price": 10.525483870967742
+    "price": 10.4
   },
   {
     "year": 2007,
     "sector": "Residential",
-    "price": 10.931290322580645
+    "price": 10.65
   },
   {
     "year": 2008,
     "sector": "Residential",
-    "price": 11.80225806451613
+    "price": 11.26
   },
   {
     "year": 2009,
     "sector": "Residential",
-    "price": 11.824516129032258
+    "price": 11.51
   },
   {
     "year": 2010,
     "sector": "Residential",
-    "price": 12.046129032258065
+    "price": 11.54
   },
   {
     "year": 2011,
     "sector": "Residential",
-    "price": 12.387419354838709
+    "price": 11.72
   },
   {
     "year": 2012,
     "sector": "Residential",
-    "price": 12.613387096774193
+    "price": 11.88
   },
   {
     "year": 2013,
     "sector": "Residential",
-    "price": 12.859516129032258
+    "price": 12.13
   },
   {
     "year": 2014,
     "sector": "Residential",
-    "price": 13.316612903225806
+    "price": 12.52
   },
   {
     "year": 2015,
     "sector": "Residential",
-    "price": 13.419516129032258
+    "price": 12.65
   },
   {
     "year": 2016,
     "sector": "Residential",
-    "price": 13.355161290322581
+    "price": 12.55
   },
   {
     "year": 2017,
     "sector": "Residential",
-    "price": 13.723709677419356
+    "price": 12.89
   },
   {
     "year": 2018,
     "sector": "Residential",
-    "price": 13.856451612903227
+    "price": 12.87
   },
   {
     "year": 2019,
     "sector": "Residential",
-    "price": 13.991451612903226
+    "price": 13.01
   },
   {
     "year": 2020,
     "sector": "Residential",
-    "price": 14.029516129032258
+    "price": 13.15
   },
   {
     "year": 2021,
     "sector": "Residential",
-    "price": 14.498870967741937
+    "price": 13.66
   },
   {
     "year": 2022,
     "sector": "Residential",
-    "price": 15.980967741935485
+    "price": 15.04
   },
   {
     "year": 2023,
     "sector": "Residential",
-    "price": 17.03774193548387
+    "price": 16.0
   },
   {
     "year": 2024,
     "sector": "Residential",
-    "price": 17.421774193548387
+    "price": 16.48
   }
 ]

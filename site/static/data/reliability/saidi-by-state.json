@@ -1,352 +1,563 @@
 [
   {
     "state": "Alabama",
+    "stateAbbr": "AL",
     "fips": "01",
-    "saidi": 320,
-    "saifi": 1.35,
-    "year": 2023
+    "saidi": 279.4,
+    "saifi": 1.87,
+    "saidi_no_med": 118.3,
+    "saifi_no_med": 1.04,
+    "customers": 2241281,
+    "year": 2024
   },
   {
     "state": "Alaska",
+    "stateAbbr": "AK",
     "fips": "02",
-    "saidi": 380,
-    "saifi": 1.55,
-    "year": 2023
+    "saidi": 327.1,
+    "saifi": 2.59,
+    "saidi_no_med": 192.4,
+    "saifi_no_med": 1.86,
+    "customers": 300295,
+    "year": 2024
   },
   {
     "state": "Arizona",
+    "stateAbbr": "AZ",
     "fips": "04",
-    "saidi": 185,
-    "saifi": 1.05,
-    "year": 2023
+    "saidi": 87.5,
+    "saifi": 0.99,
+    "saidi_no_med": 72.0,
+    "saifi_no_med": 0.9,
+    "customers": 3370976,
+    "year": 2024
   },
   {
     "state": "Arkansas",
+    "stateAbbr": "AR",
     "fips": "05",
-    "saidi": 310,
-    "saifi": 1.3,
-    "year": 2023
+    "saidi": 509.1,
+    "saifi": 2.13,
+    "saidi_no_med": 194.6,
+    "saifi_no_med": 1.59,
+    "customers": 1534416,
+    "year": 2024
   },
   {
     "state": "California",
+    "stateAbbr": "CA",
     "fips": "06",
-    "saidi": 250,
-    "saifi": 1.15,
-    "year": 2023
+    "saidi": 279.6,
+    "saifi": 1.34,
+    "saidi_no_med": 158.4,
+    "saifi_no_med": 1.16,
+    "customers": 16122565,
+    "year": 2024
   },
   {
     "state": "Colorado",
+    "stateAbbr": "CO",
     "fips": "08",
-    "saidi": 160,
-    "saifi": 0.95,
-    "year": 2023
+    "saidi": 255.1,
+    "saifi": 1.41,
+    "saidi_no_med": 119.0,
+    "saifi_no_med": 1.14,
+    "customers": 2790778,
+    "year": 2024
   },
   {
     "state": "Connecticut",
+    "stateAbbr": "CT",
     "fips": "09",
-    "saidi": 340,
-    "saifi": 1.4,
-    "year": 2023
+    "saidi": 153.6,
+    "saifi": 0.88,
+    "saidi_no_med": 73.1,
+    "saifi_no_med": 0.64,
+    "customers": 1734558,
+    "year": 2024
   },
   {
     "state": "Delaware",
+    "stateAbbr": "DE",
     "fips": "10",
-    "saidi": 195,
-    "saifi": 1.1,
-    "year": 2023
+    "saidi": 116.1,
+    "saifi": 0.84,
+    "saidi_no_med": 65.9,
+    "saifi_no_med": 0.72,
+    "customers": 477075,
+    "year": 2024
+  },
+  {
+    "state": "District of Columbia",
+    "stateAbbr": "DC",
+    "fips": "11",
+    "saidi": 32.6,
+    "saifi": 0.27,
+    "saidi_no_med": 26.4,
+    "saifi_no_med": 0.25,
+    "customers": 342495,
+    "year": 2024
   },
   {
     "state": "Florida",
+    "stateAbbr": "FL",
     "fips": "12",
-    "saidi": 280,
-    "saifi": 1.25,
-    "year": 2023
+    "saidi": 1321.5,
+    "saifi": 1.77,
+    "saidi_no_med": 66.4,
+    "saifi_no_med": 0.76,
+    "customers": 11793076,
+    "year": 2024
   },
   {
     "state": "Georgia",
+    "stateAbbr": "GA",
     "fips": "13",
-    "saidi": 290,
-    "saifi": 1.28,
-    "year": 2023
+    "saidi": 1229.1,
+    "saifi": 2.12,
+    "saidi_no_med": 212.3,
+    "saifi_no_med": 1.26,
+    "customers": 4850645,
+    "year": 2024
   },
   {
     "state": "Hawaii",
+    "stateAbbr": "HI",
     "fips": "15",
-    "saidi": 150,
-    "saifi": 0.85,
-    "year": 2023
+    "saidi": 320.6,
+    "saifi": 2.62,
+    "saidi_no_med": 225.6,
+    "saifi_no_med": 2.18,
+    "customers": 506381,
+    "year": 2024
   },
   {
     "state": "Idaho",
+    "stateAbbr": "ID",
     "fips": "16",
-    "saidi": 170,
-    "saifi": 0.98,
-    "year": 2023
+    "saidi": 232.8,
+    "saifi": 1.31,
+    "saidi_no_med": 174.0,
+    "saifi_no_med": 1.14,
+    "customers": 971668,
+    "year": 2024
   },
   {
     "state": "Illinois",
+    "stateAbbr": "IL",
     "fips": "17",
-    "saidi": 275,
-    "saifi": 1.22,
-    "year": 2023
+    "saidi": 156.9,
+    "saifi": 0.85,
+    "saidi_no_med": 59.4,
+    "saifi_no_med": 0.64,
+    "customers": 5923658,
+    "year": 2024
   },
   {
     "state": "Indiana",
+    "stateAbbr": "IN",
     "fips": "18",
-    "saidi": 260,
-    "saifi": 1.18,
-    "year": 2023
+    "saidi": 312.4,
+    "saifi": 1.28,
+    "saidi_no_med": 121.4,
+    "saifi_no_med": 1.0,
+    "customers": 3173193,
+    "year": 2024
   },
   {
     "state": "Iowa",
+    "stateAbbr": "IA",
     "fips": "19",
-    "saidi": 230,
-    "saifi": 1.12,
-    "year": 2023
+    "saidi": 166.7,
+    "saifi": 1.15,
+    "saidi_no_med": 89.8,
+    "saifi_no_med": 0.89,
+    "customers": 1460505,
+    "year": 2024
   },
   {
     "state": "Kansas",
+    "stateAbbr": "KS",
     "fips": "20",
-    "saidi": 210,
-    "saifi": 1.08,
-    "year": 2023
+    "saidi": 285.6,
+    "saifi": 1.51,
+    "saidi_no_med": 103.6,
+    "saifi_no_med": 1.0,
+    "customers": 1307131,
+    "year": 2024
   },
   {
     "state": "Kentucky",
+    "stateAbbr": "KY",
     "fips": "21",
-    "saidi": 305,
-    "saifi": 1.3,
-    "year": 2023
+    "saidi": 648.3,
+    "saifi": 1.95,
+    "saidi_no_med": 153.3,
+    "saifi_no_med": 1.32,
+    "customers": 2324465,
+    "year": 2024
   },
   {
     "state": "Louisiana",
+    "stateAbbr": "LA",
     "fips": "22",
-    "saidi": 450,
-    "saifi": 1.55,
-    "year": 2023
+    "saidi": 727.5,
+    "saifi": 2.72,
+    "saidi_no_med": 206.0,
+    "saifi_no_med": 1.75,
+    "customers": 2307468,
+    "year": 2024
   },
   {
     "state": "Maine",
+    "stateAbbr": "ME",
     "fips": "23",
-    "saidi": 420,
-    "saifi": 1.5,
-    "year": 2023
+    "saidi": 1748.6,
+    "saifi": 3.64,
+    "saidi_no_med": 274.0,
+    "saifi_no_med": 2.14,
+    "customers": 858340,
+    "year": 2024
   },
   {
     "state": "Maryland",
+    "stateAbbr": "MD",
     "fips": "24",
-    "saidi": 230,
-    "saifi": 1.15,
-    "year": 2023
+    "saidi": 118.1,
+    "saifi": 0.82,
+    "saidi_no_med": 75.1,
+    "saifi_no_med": 0.69,
+    "customers": 2685689,
+    "year": 2024
   },
   {
     "state": "Massachusetts",
+    "stateAbbr": "MA",
     "fips": "25",
-    "saidi": 200,
-    "saifi": 1.08,
-    "year": 2023
+    "saidi": 102.0,
+    "saifi": 0.84,
+    "saidi_no_med": 76.1,
+    "saifi_no_med": 0.74,
+    "customers": 3114594,
+    "year": 2024
   },
   {
     "state": "Michigan",
+    "stateAbbr": "MI",
     "fips": "26",
-    "saidi": 395,
-    "saifi": 1.48,
-    "year": 2023
+    "saidi": 470.4,
+    "saifi": 1.36,
+    "saidi_no_med": 160.1,
+    "saifi_no_med": 0.99,
+    "customers": 4960709,
+    "year": 2024
   },
   {
     "state": "Minnesota",
+    "stateAbbr": "MN",
     "fips": "27",
-    "saidi": 180,
-    "saifi": 1.02,
-    "year": 2023
+    "saidi": 219.6,
+    "saifi": 1.25,
+    "saidi_no_med": 92.2,
+    "saifi_no_med": 0.9,
+    "customers": 2580624,
+    "year": 2024
   },
   {
     "state": "Mississippi",
+    "stateAbbr": "MS",
     "fips": "28",
-    "saidi": 370,
-    "saifi": 1.42,
-    "year": 2023
+    "saidi": 567.1,
+    "saifi": 2.56,
+    "saidi_no_med": 266.3,
+    "saifi_no_med": 1.96,
+    "customers": 1330546,
+    "year": 2024
   },
   {
     "state": "Missouri",
+    "stateAbbr": "MO",
     "fips": "29",
-    "saidi": 290,
-    "saifi": 1.25,
-    "year": 2023
+    "saidi": 224.3,
+    "saifi": 1.19,
+    "saidi_no_med": 106.0,
+    "saifi_no_med": 0.92,
+    "customers": 2901016,
+    "year": 2024
   },
   {
     "state": "Montana",
+    "stateAbbr": "MT",
     "fips": "30",
-    "saidi": 175,
-    "saifi": 0.95,
-    "year": 2023
+    "saidi": 351.5,
+    "saifi": 1.62,
+    "saidi_no_med": 156.6,
+    "saifi_no_med": 1.16,
+    "customers": 517594,
+    "year": 2024
   },
   {
     "state": "Nebraska",
+    "stateAbbr": "NE",
     "fips": "31",
-    "saidi": 155,
-    "saifi": 0.9,
-    "year": 2023
+    "saidi": 641.7,
+    "saifi": 1.23,
+    "saidi_no_med": 73.6,
+    "saifi_no_med": 0.59,
+    "customers": 833928,
+    "year": 2024
   },
   {
     "state": "Nevada",
+    "stateAbbr": "NV",
     "fips": "32",
-    "saidi": 140,
-    "saifi": 0.82,
-    "year": 2023
+    "saidi": 158.9,
+    "saifi": 1.11,
+    "saidi_no_med": 63.8,
+    "saifi_no_med": 0.66,
+    "customers": 1540835,
+    "year": 2024
   },
   {
     "state": "New Hampshire",
+    "stateAbbr": "NH",
     "fips": "33",
-    "saidi": 350,
-    "saifi": 1.38,
-    "year": 2023
+    "saidi": 922.7,
+    "saifi": 2.02,
+    "saidi_no_med": 132.3,
+    "saifi_no_med": 0.98,
+    "customers": 761813,
+    "year": 2024
   },
   {
     "state": "New Jersey",
+    "stateAbbr": "NJ",
     "fips": "34",
-    "saidi": 220,
+    "saidi": 174.2,
     "saifi": 1.12,
-    "year": 2023
+    "saidi_no_med": 99.7,
+    "saifi_no_med": 0.95,
+    "customers": 4327439,
+    "year": 2024
   },
   {
     "state": "New Mexico",
+    "stateAbbr": "NM",
     "fips": "35",
-    "saidi": 195,
-    "saifi": 1.05,
-    "year": 2023
+    "saidi": 278.8,
+    "saifi": 1.32,
+    "saidi_no_med": 156.5,
+    "saifi_no_med": 1.11,
+    "customers": 985537,
+    "year": 2024
   },
   {
     "state": "New York",
+    "stateAbbr": "NY",
     "fips": "36",
-    "saidi": 210,
-    "saifi": 1.1,
-    "year": 2023
+    "saidi": 219.9,
+    "saifi": 0.91,
+    "saidi_no_med": 72.0,
+    "saifi_no_med": 0.61,
+    "customers": 8446236,
+    "year": 2024
   },
   {
     "state": "North Carolina",
+    "stateAbbr": "NC",
     "fips": "37",
-    "saidi": 300,
-    "saifi": 1.28,
-    "year": 2023
+    "saidi": 1441.0,
+    "saifi": 1.81,
+    "saidi_no_med": 141.4,
+    "saifi_no_med": 1.17,
+    "customers": 5591822,
+    "year": 2024
   },
   {
     "state": "North Dakota",
+    "stateAbbr": "ND",
     "fips": "38",
-    "saidi": 135,
-    "saifi": 0.78,
-    "year": 2023
+    "saidi": 99.1,
+    "saifi": 0.91,
+    "saidi_no_med": 84.2,
+    "saifi_no_med": 0.86,
+    "customers": 429988,
+    "year": 2024
   },
   {
     "state": "Ohio",
+    "stateAbbr": "OH",
     "fips": "39",
-    "saidi": 285,
-    "saifi": 1.22,
-    "year": 2023
+    "saidi": 510.5,
+    "saifi": 1.3,
+    "saidi_no_med": 133.2,
+    "saifi_no_med": 1.0,
+    "customers": 5590091,
+    "year": 2024
   },
   {
     "state": "Oklahoma",
+    "stateAbbr": "OK",
     "fips": "40",
-    "saidi": 330,
-    "saifi": 1.35,
-    "year": 2023
+    "saidi": 270.9,
+    "saifi": 1.73,
+    "saidi_no_med": 119.6,
+    "saifi_no_med": 1.15,
+    "customers": 1991748,
+    "year": 2024
   },
   {
     "state": "Oregon",
+    "stateAbbr": "OR",
     "fips": "41",
-    "saidi": 190,
-    "saifi": 1.05,
-    "year": 2023
+    "saidi": 591.0,
+    "saifi": 1.35,
+    "saidi_no_med": 130.9,
+    "saifi_no_med": 0.86,
+    "customers": 1991567,
+    "year": 2024
   },
   {
     "state": "Pennsylvania",
+    "stateAbbr": "PA",
     "fips": "42",
-    "saidi": 280,
-    "saifi": 1.2,
-    "year": 2023
+    "saidi": 336.1,
+    "saifi": 1.35,
+    "saidi_no_med": 131.0,
+    "saifi_no_med": 0.97,
+    "customers": 5942270,
+    "year": 2024
   },
   {
     "state": "Rhode Island",
+    "stateAbbr": "RI",
     "fips": "44",
-    "saidi": 175,
-    "saifi": 0.95,
-    "year": 2023
+    "saidi": 104.2,
+    "saifi": 0.9,
+    "saidi_no_med": 60.8,
+    "saifi_no_med": 0.76,
+    "customers": 509231,
+    "year": 2024
   },
   {
     "state": "South Carolina",
+    "stateAbbr": "SC",
     "fips": "45",
-    "saidi": 310,
-    "saifi": 1.3,
-    "year": 2023
+    "saidi": 3136.5,
+    "saifi": 2.36,
+    "saidi_no_med": 117.8,
+    "saifi_no_med": 1.21,
+    "customers": 2892839,
+    "year": 2024
   },
   {
     "state": "South Dakota",
+    "stateAbbr": "SD",
     "fips": "46",
-    "saidi": 145,
-    "saifi": 0.85,
-    "year": 2023
+    "saidi": 84.7,
+    "saifi": 0.82,
+    "saidi_no_med": 62.1,
+    "saifi_no_med": 0.72,
+    "customers": 389248,
+    "year": 2024
   },
   {
     "state": "Tennessee",
+    "stateAbbr": "TN",
     "fips": "47",
-    "saidi": 295,
-    "saifi": 1.25,
-    "year": 2023
+    "saidi": 278.6,
+    "saifi": 2.0,
+    "saidi_no_med": 159.5,
+    "saifi_no_med": 1.76,
+    "customers": 3185407,
+    "year": 2024
   },
   {
     "state": "Texas",
+    "stateAbbr": "TX",
     "fips": "48",
-    "saidi": 380,
-    "saifi": 1.45,
-    "year": 2023
+    "saidi": 1270.6,
+    "saifi": 2.11,
+    "saidi_no_med": 129.4,
+    "saifi_no_med": 1.22,
+    "customers": 14212345,
+    "year": 2024
   },
   {
     "state": "Utah",
+    "stateAbbr": "UT",
     "fips": "49",
-    "saidi": 130,
-    "saifi": 0.78,
-    "year": 2023
+    "saidi": 119.8,
+    "saifi": 1.03,
+    "saidi_no_med": 106.7,
+    "saifi_no_med": 0.97,
+    "customers": 1261553,
+    "year": 2024
   },
   {
     "state": "Vermont",
+    "stateAbbr": "VT",
     "fips": "50",
-    "saidi": 310,
-    "saifi": 1.3,
-    "year": 2023
+    "saidi": 696.7,
+    "saifi": 2.6,
+    "saidi_no_med": 275.0,
+    "saifi_no_med": 1.66,
+    "customers": 315974,
+    "year": 2024
   },
   {
     "state": "Virginia",
+    "stateAbbr": "VA",
     "fips": "51",
-    "saidi": 265,
-    "saifi": 1.18,
-    "year": 2023
+    "saidi": 418.3,
+    "saifi": 1.63,
+    "saidi_no_med": 166.4,
+    "saifi_no_med": 1.34,
+    "customers": 3937019,
+    "year": 2024
   },
   {
     "state": "Washington",
+    "stateAbbr": "WA",
     "fips": "53",
-    "saidi": 175,
-    "saifi": 0.98,
-    "year": 2023
+    "saidi": 623.5,
+    "saifi": 1.75,
+    "saidi_no_med": 158.6,
+    "saifi_no_med": 1.09,
+    "customers": 3618279,
+    "year": 2024
   },
   {
     "state": "West Virginia",
+    "stateAbbr": "WV",
     "fips": "54",
-    "saidi": 350,
-    "saifi": 1.4,
-    "year": 2023
+    "saidi": 1165.5,
+    "saifi": 2.83,
+    "saidi_no_med": 486.1,
+    "saifi_no_med": 2.29,
+    "customers": 1001747,
+    "year": 2024
   },
   {
     "state": "Wisconsin",
+    "stateAbbr": "WI",
     "fips": "55",
-    "saidi": 200,
-    "saifi": 1.08,
-    "year": 2023
+    "saidi": 266.1,
+    "saifi": 1.02,
+    "saidi_no_med": 91.3,
+    "saifi_no_med": 0.73,
+    "customers": 2970711,
+    "year": 2024
   },
   {
     "state": "Wyoming",
+    "stateAbbr": "WY",
     "fips": "56",
-    "saidi": 160,
-    "saifi": 0.9,
-    "year": 2023
+    "saidi": 137.8,
+    "saifi": 1.0,
+    "saidi_no_med": 116.0,
+    "saifi_no_med": 0.93,
+    "customers": 254862,
+    "year": 2024
   }
 ]
