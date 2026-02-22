@@ -6,6 +6,14 @@
 	import type { DataSeries, Margin, TooltipData } from '$types/chart';
 	import { CHART_COLORS } from '$utils/colors';
 	import Tooltip from './Tooltip.svelte';
+	import { getContext } from 'svelte';
+	import type { Readable, Writable } from 'svelte/store';
+
+	interface Annotation {
+		date: number;
+		label: string;
+		labelPosition?: 'top' | 'bottom';
+	}
 
 	interface Props {
 		series: DataSeries[];
@@ -16,18 +24,27 @@
 		yLabel?: string;
 		yFormat?: (v: number) => string;
 		unit?: string;
+		annotations?: Annotation[];
 	}
 
 	let {
 		series,
-		width = 800,
+		width: propWidth = 800,
 		height = 400,
-		margin = { top: 20, right: 100, bottom: 40, left: 60 },
+		margin = { top: 20, right: 130, bottom: 40, left: 60 },
 		xLabel = '',
 		yLabel = '',
 		yFormat = format(',.0f'),
 		unit = '',
+		annotations = [],
 	}: Props = $props();
+
+	// Use responsive width from ChartWrapper context if available
+	const chartWidthCtx = getContext<Readable<number> | undefined>('chartWidth');
+	const width = $derived(chartWidthCtx ? $chartWidthCtx : propWidth);
+
+	const chartVisibleCtx = getContext<Writable<boolean> | undefined>('chartVisible');
+	const chartVisible = $derived(chartVisibleCtx ? $chartVisibleCtx : true);
 
 	let tooltip: TooltipData | null = $state(null);
 	let tooltipDate: number | null = $state(null);
@@ -124,6 +141,11 @@
 	viewBox="0 0 {width} {height}"
 	style="max-width: {width}px; width: 100%; height: auto;"
 >
+	<defs>
+		<filter id="line-shadow" x="-2%" y="-2%" width="104%" height="104%">
+			<feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-opacity="0.08"/>
+		</filter>
+	</defs>
 	<g transform="translate({margin.left}, {margin.top})">
 		<!-- Grid lines -->
 		{#each yTicks as tick}
@@ -132,24 +154,24 @@
 				x2={innerWidth}
 				y1={yScale(tick)}
 				y2={yScale(tick)}
-				stroke="#efecea"
+				stroke="var(--color-border-light)"
 				stroke-width="1"
 			/>
 		{/each}
 
 		<!-- X axis -->
 		<g transform="translate(0, {innerHeight})">
-			<line x1={0} x2={innerWidth} y1={0} y2={0} stroke="#e5e2dc" />
+			<line x1={0} x2={innerWidth} y1={0} y2={0} stroke="var(--color-border)" />
 			{#each xTicks as tick}
 				<g transform="translate({xScale(tick)}, 0)">
-					<line y1={0} y2={5} stroke="#e5e2dc" />
-					<text y={20} text-anchor="middle" fill="#5a6270" font-size="13">
+					<line y1={0} y2={5} stroke="var(--color-border)" />
+					<text y={20} text-anchor="middle" fill="var(--color-text-secondary)" font-size="13" font-family="var(--font-mono)">
 						{tick}
 					</text>
 				</g>
 			{/each}
 			{#if xLabel}
-				<text x={innerWidth / 2} y={36} text-anchor="middle" fill="#9ca3af" font-size="11">
+				<text x={innerWidth / 2} y={36} text-anchor="middle" fill="var(--color-text-muted)" font-size="11">
 					{xLabel}
 				</text>
 			{/if}
@@ -158,24 +180,56 @@
 		<!-- Y axis -->
 		<g>
 			{#each yTicks as tick}
-				<text x={-8} y={yScale(tick)} text-anchor="end" dominant-baseline="middle" fill="#5a6270" font-size="13">
+				<text x={-8} y={yScale(tick)} text-anchor="end" dominant-baseline="middle" fill="var(--color-text-secondary)" font-size="13" font-family="var(--font-mono)">
 					{yFormat(tick)}
 				</text>
 			{/each}
 			</g>
 
+		<!-- Annotations -->
+		{#each annotations as anno}
+			{@const x = xScale(anno.date)}
+			{#if x >= 0 && x <= innerWidth}
+				<line
+					x1={x} x2={x}
+					y1={0} y2={innerHeight}
+					class="annotation-line"
+					stroke="var(--color-text-muted)"
+					stroke-width="1"
+					stroke-dasharray="4 3"
+					opacity="0.5"
+				/>
+				<text
+					x={x}
+					y={anno.labelPosition === 'bottom' ? innerHeight - 4 : 8}
+					text-anchor="middle"
+					class="annotation-label"
+					fill="var(--color-text-muted)"
+					font-size="9"
+					font-weight="500"
+					font-family="var(--font-sans)"
+				>
+					{anno.label}
+				</text>
+			{/if}
+		{/each}
+
 		<!-- Lines -->
-		{#each series as s}
+		{#each series as s, si}
 			{@const path = lineFn(s.values)}
 			{#if path}
 				<path
 					d={path}
 					fill="none"
 					stroke={colorScale(s.name)}
-					stroke-width="2"
+					stroke-width="2.5"
 					stroke-linejoin="round"
 					stroke-linecap="round"
 					shape-rendering="geometricPrecision"
+					filter="url(#line-shadow)"
+					stroke-dasharray="3000"
+					stroke-dashoffset={chartVisible ? 0 : 3000}
+					style="transition: stroke-dashoffset 1.2s cubic-bezier(0.22, 1, 0.36, 1) {si * 150}ms;"
 				/>
 			{/if}
 		{/each}
@@ -202,7 +256,7 @@
 				x2={xScale(tooltipDate)}
 				y1={0}
 				y2={innerHeight}
-				stroke="#e5e2dc"
+				stroke="var(--color-border)"
 				stroke-width="1"
 				stroke-dasharray="4,4"
 				pointer-events="none"
@@ -215,7 +269,7 @@
 						cy={yScale(point.value)}
 						r={4}
 						fill={colorScale(s.name)}
-						stroke="white"
+						stroke="var(--color-surface)"
 						stroke-width={2}
 						pointer-events="none"
 					/>
@@ -238,7 +292,7 @@
 	{#each series as s}
 		<div class="flex items-center gap-1.5">
 			<span class="inline-block h-0.5 w-4 rounded" style="background: {colorScale(s.name)};"></span>
-			<span class="text-gray-600">{s.name}</span>
+			<span class="text-text-secondary">{s.name}</span>
 		</div>
 	{/each}
 </div>

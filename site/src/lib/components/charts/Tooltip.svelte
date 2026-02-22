@@ -48,7 +48,7 @@
 					style="background: {item.color};"
 				></span>
 				<span class="text-text-muted">{item.label}</span>
-				<span class="font-semibold text-text">{item.value}{unit ? ` ${unit}` : ''}</span>
+				<span class="font-semibold text-text" style="font-family: var(--font-mono)">{item.value}{unit ? ` ${unit}` : ''}</span>
 			</div>
 		{/each}
 	</div>

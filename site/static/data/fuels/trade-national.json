@@ -1,0 +1,1306 @@
+[
+  {
+    "year": 1973,
+    "fuel": "Natural Gas",
+    "imports": 1032903.0,
+    "exports": 77169.0,
+    "net_imports": 955734.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 1974,
+    "fuel": "Natural Gas",
+    "imports": 959285.0,
+    "exports": 76789.0,
+    "net_imports": 882496.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 1975,
+    "fuel": "Natural Gas",
+    "imports": 953008.0,
+    "exports": 72675.0,
+    "net_imports": 880333.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 1976,
+    "fuel": "Natural Gas",
+    "imports": 963768.0,
+    "exports": 64710.0,
+    "net_imports": 899058.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 1977,
+    "fuel": "Natural Gas",
+    "imports": 1011002.0,
+    "exports": 55625.0,
+    "net_imports": 955377.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 1978,
+    "fuel": "Natural Gas",
+    "imports": 965545.0,
+    "exports": 52532.0,
+    "net_imports": 913013.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 1979,
+    "fuel": "Natural Gas",
+    "imports": 1253383.0,
+    "exports": 55673.0,
+    "net_imports": 1197710.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 1980,
+    "fuel": "Natural Gas",
+    "imports": 984767.0,
+    "exports": 48731.0,
+    "net_imports": 936036.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 1981,
+    "fuel": "Natural Gas",
+    "imports": 903949.0,
+    "exports": 59372.0,
+    "net_imports": 844577.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 1982,
+    "fuel": "Natural Gas",
+    "imports": 933336.0,
+    "exports": 51728.0,
+    "net_imports": 881608.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 1983,
+    "fuel": "Natural Gas",
+    "imports": 918407.0,
+    "exports": 54639.0,
+    "net_imports": 863768.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 1984,
+    "fuel": "Natural Gas",
+    "imports": 843060.0,
+    "exports": 54753.0,
+    "net_imports": 788307.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 1985,
+    "fuel": "Natural Gas",
+    "imports": 949715.0,
+    "exports": 55268.0,
+    "net_imports": 894447.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 1986,
+    "fuel": "Natural Gas",
+    "imports": 750449.0,
+    "exports": 61271.0,
+    "net_imports": 689178.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 1987,
+    "fuel": "Natural Gas",
+    "imports": 992532.0,
+    "exports": 54020.0,
+    "net_imports": 938512.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 1988,
+    "fuel": "Natural Gas",
+    "imports": 1293812.0,
+    "exports": 73638.0,
+    "net_imports": 1220174.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 1989,
+    "fuel": "Natural Gas",
+    "imports": 1381520.0,
+    "exports": 106871.0,
+    "net_imports": 1274649.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 1990,
+    "fuel": "Natural Gas",
+    "imports": 1532259.0,
+    "exports": 85565.0,
+    "net_imports": 1446694.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 1991,
+    "fuel": "Natural Gas",
+    "imports": 1773313.0,
+    "exports": 129244.0,
+    "net_imports": 1644069.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 1992,
+    "fuel": "Natural Gas",
+    "imports": 2137504.0,
+    "exports": 216282.0,
+    "net_imports": 1921222.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 1993,
+    "fuel": "Natural Gas",
+    "imports": 2350115.0,
+    "exports": 140183.0,
+    "net_imports": 2209932.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 1994,
+    "fuel": "Natural Gas",
+    "imports": 2623839.0,
+    "exports": 161738.0,
+    "net_imports": 2462101.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 1995,
+    "fuel": "Natural Gas",
+    "imports": 2841048.0,
+    "exports": 154119.0,
+    "net_imports": 2686929.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 1996,
+    "fuel": "Natural Gas",
+    "imports": 2937413.0,
+    "exports": 153393.0,
+    "net_imports": 2784020.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 1997,
+    "fuel": "Natural Gas",
+    "imports": 2994173.0,
+    "exports": 157006.0,
+    "net_imports": 2837167.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 1998,
+    "fuel": "Natural Gas",
+    "imports": 3152058.0,
+    "exports": 159007.0,
+    "net_imports": 2993051.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 1999,
+    "fuel": "Natural Gas",
+    "imports": 3585505.0,
+    "exports": 163415.0,
+    "net_imports": 3422090.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 2000,
+    "fuel": "Natural Gas",
+    "imports": 3781603.0,
+    "exports": 243716.0,
+    "net_imports": 3537887.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 2001,
+    "fuel": "Natural Gas",
+    "imports": 3976939.0,
+    "exports": 373278.0,
+    "net_imports": 3603661.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 2002,
+    "fuel": "Natural Gas",
+    "imports": 4015463.0,
+    "exports": 516233.0,
+    "net_imports": 3499230.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 2003,
+    "fuel": "Natural Gas",
+    "imports": 3943749.0,
+    "exports": 679922.0,
+    "net_imports": 3263827.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 2004,
+    "fuel": "Natural Gas",
+    "imports": 4258558.0,
+    "exports": 854138.0,
+    "net_imports": 3404420.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 2005,
+    "fuel": "Natural Gas",
+    "imports": 4341034.0,
+    "exports": 728601.0,
+    "net_imports": 3612433.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 2006,
+    "fuel": "Natural Gas",
+    "imports": 4186281.0,
+    "exports": 723958.0,
+    "net_imports": 3462323.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 2007,
+    "fuel": "Natural Gas",
+    "imports": 4607582.0,
+    "exports": 822454.0,
+    "net_imports": 3785128.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 2008,
+    "fuel": "Natural Gas",
+    "imports": 3984101.0,
+    "exports": 963263.0,
+    "net_imports": 3020838.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 2009,
+    "fuel": "Natural Gas",
+    "imports": 3751360.0,
+    "exports": 1072357.0,
+    "net_imports": 2679003.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 2010,
+    "fuel": "Natural Gas",
+    "imports": 3740757.0,
+    "exports": 1136789.0,
+    "net_imports": 2603968.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 2011,
+    "fuel": "Natural Gas",
+    "imports": 3468693.0,
+    "exports": 1505650.0,
+    "net_imports": 1963043.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 2012,
+    "fuel": "Natural Gas",
+    "imports": 3137789.0,
+    "exports": 1618828.0,
+    "net_imports": 1518961.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 2013,
+    "fuel": "Natural Gas",
+    "imports": 2883355.0,
+    "exports": 1572413.0,
+    "net_imports": 1310942.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 2014,
+    "fuel": "Natural Gas",
+    "imports": 2695378.0,
+    "exports": 1514242.0,
+    "net_imports": 1181136.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 2015,
+    "fuel": "Natural Gas",
+    "imports": 2718094.0,
+    "exports": 1783512.0,
+    "net_imports": 934582.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 2016,
+    "fuel": "Natural Gas",
+    "imports": 3006497.0,
+    "exports": 2335448.0,
+    "net_imports": 671049.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 2017,
+    "fuel": "Natural Gas",
+    "imports": 3033226.0,
+    "exports": 3153804.0,
+    "net_imports": -120578.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 2018,
+    "fuel": "Natural Gas",
+    "imports": 2888847.0,
+    "exports": 3607841.0,
+    "net_imports": -718994.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 2019,
+    "fuel": "Natural Gas",
+    "imports": 2741717.0,
+    "exports": 4657657.0,
+    "net_imports": -1915940.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 2020,
+    "fuel": "Natural Gas",
+    "imports": 2551175.0,
+    "exports": 5284678.0,
+    "net_imports": -2733503.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 2021,
+    "fuel": "Natural Gas",
+    "imports": 2807961.0,
+    "exports": 6652609.0,
+    "net_imports": -3844648.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 2022,
+    "fuel": "Natural Gas",
+    "imports": 3024143.0,
+    "exports": 6906432.0,
+    "net_imports": -3882289.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 2023,
+    "fuel": "Natural Gas",
+    "imports": 2927939.0,
+    "exports": 7610034.0,
+    "net_imports": -4682095.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 2024,
+    "fuel": "Natural Gas",
+    "imports": 3144546.0,
+    "exports": 7706568.0,
+    "net_imports": -4562022.0,
+    "unit": "million cubic feet"
+  },
+  {
+    "year": 1910,
+    "fuel": "Petroleum",
+    "imports": 2.0,
+    "exports": 0.0,
+    "net_imports": 2.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1911,
+    "fuel": "Petroleum",
+    "imports": 5.0,
+    "exports": 0.0,
+    "net_imports": 5.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1912,
+    "fuel": "Petroleum",
+    "imports": 20.0,
+    "exports": 0.0,
+    "net_imports": 20.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1913,
+    "fuel": "Petroleum",
+    "imports": 49.0,
+    "exports": 13.0,
+    "net_imports": 36.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1914,
+    "fuel": "Petroleum",
+    "imports": 46.0,
+    "exports": 8.0,
+    "net_imports": 38.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1915,
+    "fuel": "Petroleum",
+    "imports": 50.0,
+    "exports": 10.0,
+    "net_imports": 40.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1920,
+    "fuel": "Petroleum",
+    "imports": 290.0,
+    "exports": 24.0,
+    "net_imports": 266.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1921,
+    "fuel": "Petroleum",
+    "imports": 343.0,
+    "exports": 24.0,
+    "net_imports": 319.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1922,
+    "fuel": "Petroleum",
+    "imports": 349.0,
+    "exports": 28.0,
+    "net_imports": 321.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1923,
+    "fuel": "Petroleum",
+    "imports": 225.0,
+    "exports": 48.0,
+    "net_imports": 177.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1924,
+    "fuel": "Petroleum",
+    "imports": 213.0,
+    "exports": 50.0,
+    "net_imports": 163.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1925,
+    "fuel": "Petroleum",
+    "imports": 169.0,
+    "exports": 37.0,
+    "net_imports": 132.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1926,
+    "fuel": "Petroleum",
+    "imports": 165.0,
+    "exports": 42.0,
+    "net_imports": 123.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1927,
+    "fuel": "Petroleum",
+    "imports": 160.0,
+    "exports": 43.0,
+    "net_imports": 117.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1928,
+    "fuel": "Petroleum",
+    "imports": 218.0,
+    "exports": 52.0,
+    "net_imports": 166.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1929,
+    "fuel": "Petroleum",
+    "imports": 216.0,
+    "exports": 72.0,
+    "net_imports": 144.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1930,
+    "fuel": "Petroleum",
+    "imports": 170.0,
+    "exports": 65.0,
+    "net_imports": 105.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1931,
+    "fuel": "Petroleum",
+    "imports": 129.0,
+    "exports": 70.0,
+    "net_imports": 59.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1932,
+    "fuel": "Petroleum",
+    "imports": 122.0,
+    "exports": 75.0,
+    "net_imports": 47.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1933,
+    "fuel": "Petroleum",
+    "imports": 87.0,
+    "exports": 100.0,
+    "net_imports": -13.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1934,
+    "fuel": "Petroleum",
+    "imports": 97.0,
+    "exports": 113.0,
+    "net_imports": -16.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1935,
+    "fuel": "Petroleum",
+    "imports": 88.0,
+    "exports": 141.0,
+    "net_imports": -53.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1936,
+    "fuel": "Petroleum",
+    "imports": 88.0,
+    "exports": 137.0,
+    "net_imports": -49.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1937,
+    "fuel": "Petroleum",
+    "imports": 75.0,
+    "exports": 184.0,
+    "net_imports": -109.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1938,
+    "fuel": "Petroleum",
+    "imports": 72.0,
+    "exports": 212.0,
+    "net_imports": -140.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1939,
+    "fuel": "Petroleum",
+    "imports": 91.0,
+    "exports": 197.0,
+    "net_imports": -106.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1940,
+    "fuel": "Petroleum",
+    "imports": 117.0,
+    "exports": 105.0,
+    "net_imports": 12.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1941,
+    "fuel": "Petroleum",
+    "imports": 139.0,
+    "exports": 91.0,
+    "net_imports": 48.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1942,
+    "fuel": "Petroleum",
+    "imports": 34.0,
+    "exports": 93.0,
+    "net_imports": -59.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1943,
+    "fuel": "Petroleum",
+    "imports": 38.0,
+    "exports": 113.0,
+    "net_imports": -75.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1944,
+    "fuel": "Petroleum",
+    "imports": 122.0,
+    "exports": 94.0,
+    "net_imports": 28.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1945,
+    "fuel": "Petroleum",
+    "imports": 204.0,
+    "exports": 90.0,
+    "net_imports": 114.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1946,
+    "fuel": "Petroleum",
+    "imports": 236.0,
+    "exports": 112.0,
+    "net_imports": 124.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1947,
+    "fuel": "Petroleum",
+    "imports": 267.0,
+    "exports": 127.0,
+    "net_imports": 140.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1948,
+    "fuel": "Petroleum",
+    "imports": 353.0,
+    "exports": 109.0,
+    "net_imports": 244.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1949,
+    "fuel": "Petroleum",
+    "imports": 421.0,
+    "exports": 91.0,
+    "net_imports": 330.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1950,
+    "fuel": "Petroleum",
+    "imports": 487.0,
+    "exports": 95.0,
+    "net_imports": 392.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1951,
+    "fuel": "Petroleum",
+    "imports": 491.0,
+    "exports": 78.0,
+    "net_imports": 413.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1952,
+    "fuel": "Petroleum",
+    "imports": 573.0,
+    "exports": 73.0,
+    "net_imports": 500.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1953,
+    "fuel": "Petroleum",
+    "imports": 648.0,
+    "exports": 55.0,
+    "net_imports": 593.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1954,
+    "fuel": "Petroleum",
+    "imports": 656.0,
+    "exports": 37.0,
+    "net_imports": 619.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1955,
+    "fuel": "Petroleum",
+    "imports": 782.0,
+    "exports": 32.0,
+    "net_imports": 750.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1956,
+    "fuel": "Petroleum",
+    "imports": 934.0,
+    "exports": 78.0,
+    "net_imports": 856.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1957,
+    "fuel": "Petroleum",
+    "imports": 1023.0,
+    "exports": 138.0,
+    "net_imports": 885.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1958,
+    "fuel": "Petroleum",
+    "imports": 953.0,
+    "exports": 12.0,
+    "net_imports": 941.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1959,
+    "fuel": "Petroleum",
+    "imports": 965.0,
+    "exports": 7.0,
+    "net_imports": 958.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1960,
+    "fuel": "Petroleum",
+    "imports": 1015.0,
+    "exports": 8.0,
+    "net_imports": 1007.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1961,
+    "fuel": "Petroleum",
+    "imports": 1045.0,
+    "exports": 9.0,
+    "net_imports": 1036.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1962,
+    "fuel": "Petroleum",
+    "imports": 1126.0,
+    "exports": 5.0,
+    "net_imports": 1121.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1963,
+    "fuel": "Petroleum",
+    "imports": 1131.0,
+    "exports": 5.0,
+    "net_imports": 1126.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1964,
+    "fuel": "Petroleum",
+    "imports": 1198.0,
+    "exports": 4.0,
+    "net_imports": 1194.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1965,
+    "fuel": "Petroleum",
+    "imports": 1238.0,
+    "exports": 3.0,
+    "net_imports": 1235.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1966,
+    "fuel": "Petroleum",
+    "imports": 1225.0,
+    "exports": 4.0,
+    "net_imports": 1221.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1967,
+    "fuel": "Petroleum",
+    "imports": 1128.0,
+    "exports": 73.0,
+    "net_imports": 1055.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1968,
+    "fuel": "Petroleum",
+    "imports": 1291.0,
+    "exports": 5.0,
+    "net_imports": 1286.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1969,
+    "fuel": "Petroleum",
+    "imports": 1409.0,
+    "exports": 4.0,
+    "net_imports": 1405.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1970,
+    "fuel": "Petroleum",
+    "imports": 1324.0,
+    "exports": 14.0,
+    "net_imports": 1310.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1971,
+    "fuel": "Petroleum",
+    "imports": 1681.0,
+    "exports": 1.0,
+    "net_imports": 1680.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1972,
+    "fuel": "Petroleum",
+    "imports": 2216.0,
+    "exports": 1.0,
+    "net_imports": 2215.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1973,
+    "fuel": "Petroleum",
+    "imports": 3244.0,
+    "exports": 2.0,
+    "net_imports": 3242.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1974,
+    "fuel": "Petroleum",
+    "imports": 3477.0,
+    "exports": 3.0,
+    "net_imports": 3474.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1975,
+    "fuel": "Petroleum",
+    "imports": 4105.0,
+    "exports": 6.0,
+    "net_imports": 4099.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1976,
+    "fuel": "Petroleum",
+    "imports": 5287.0,
+    "exports": 8.0,
+    "net_imports": 5279.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1977,
+    "fuel": "Petroleum",
+    "imports": 6615.0,
+    "exports": 50.0,
+    "net_imports": 6565.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1978,
+    "fuel": "Petroleum",
+    "imports": 6356.0,
+    "exports": 158.0,
+    "net_imports": 6198.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1979,
+    "fuel": "Petroleum",
+    "imports": 6519.0,
+    "exports": 235.0,
+    "net_imports": 6284.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1980,
+    "fuel": "Petroleum",
+    "imports": 5263.0,
+    "exports": 287.0,
+    "net_imports": 4976.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1981,
+    "fuel": "Petroleum",
+    "imports": 4396.0,
+    "exports": 228.0,
+    "net_imports": 4168.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1982,
+    "fuel": "Petroleum",
+    "imports": 3488.0,
+    "exports": 236.0,
+    "net_imports": 3252.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1983,
+    "fuel": "Petroleum",
+    "imports": 4565.0,
+    "exports": 666.0,
+    "net_imports": 3899.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1984,
+    "fuel": "Petroleum",
+    "imports": 4882.0,
+    "exports": 671.0,
+    "net_imports": 4211.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1985,
+    "fuel": "Petroleum",
+    "imports": 4447.0,
+    "exports": 717.0,
+    "net_imports": 3730.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1986,
+    "fuel": "Petroleum",
+    "imports": 5636.0,
+    "exports": 740.0,
+    "net_imports": 4896.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1987,
+    "fuel": "Petroleum",
+    "imports": 6117.0,
+    "exports": 724.0,
+    "net_imports": 5393.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1988,
+    "fuel": "Petroleum",
+    "imports": 6765.0,
+    "exports": 765.0,
+    "net_imports": 6000.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1989,
+    "fuel": "Petroleum",
+    "imports": 7458.0,
+    "exports": 818.0,
+    "net_imports": 6640.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1990,
+    "fuel": "Petroleum",
+    "imports": 7345.0,
+    "exports": 816.0,
+    "net_imports": 6529.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1991,
+    "fuel": "Petroleum",
+    "imports": 7005.0,
+    "exports": 959.0,
+    "net_imports": 6046.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1992,
+    "fuel": "Petroleum",
+    "imports": 7239.0,
+    "exports": 900.0,
+    "net_imports": 6339.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1993,
+    "fuel": "Petroleum",
+    "imports": 7889.0,
+    "exports": 951.0,
+    "net_imports": 6938.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1994,
+    "fuel": "Petroleum",
+    "imports": 8301.0,
+    "exports": 887.0,
+    "net_imports": 7414.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1995,
+    "fuel": "Petroleum",
+    "imports": 8200.0,
+    "exports": 877.0,
+    "net_imports": 7323.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1996,
+    "fuel": "Petroleum",
+    "imports": 8683.0,
+    "exports": 906.0,
+    "net_imports": 7777.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1997,
+    "fuel": "Petroleum",
+    "imports": 9342.0,
+    "exports": 921.0,
+    "net_imports": 8421.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1998,
+    "fuel": "Petroleum",
+    "imports": 9905.0,
+    "exports": 844.0,
+    "net_imports": 9061.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 1999,
+    "fuel": "Petroleum",
+    "imports": 10020.0,
+    "exports": 847.0,
+    "net_imports": 9173.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 2000,
+    "fuel": "Petroleum",
+    "imports": 10627.0,
+    "exports": 913.0,
+    "net_imports": 9714.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 2001,
+    "fuel": "Petroleum",
+    "imports": 10865.0,
+    "exports": 889.0,
+    "net_imports": 9976.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 2002,
+    "fuel": "Petroleum",
+    "imports": 10549.0,
+    "exports": 851.0,
+    "net_imports": 9698.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 2003,
+    "fuel": "Petroleum",
+    "imports": 11247.0,
+    "exports": 909.0,
+    "net_imports": 10338.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 2004,
+    "fuel": "Petroleum",
+    "imports": 11852.0,
+    "exports": 940.0,
+    "net_imports": 10912.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 2005,
+    "fuel": "Petroleum",
+    "imports": 12201.0,
+    "exports": 1042.0,
+    "net_imports": 11159.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 2006,
+    "fuel": "Petroleum",
+    "imports": 11929.0,
+    "exports": 1169.0,
+    "net_imports": 10760.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 2007,
+    "fuel": "Petroleum",
+    "imports": 11693.0,
+    "exports": 1274.0,
+    "net_imports": 10419.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 2008,
+    "fuel": "Petroleum",
+    "imports": 11053.0,
+    "exports": 1637.0,
+    "net_imports": 9416.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 2009,
+    "fuel": "Petroleum",
+    "imports": 10086.0,
+    "exports": 1821.0,
+    "net_imports": 8265.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 2010,
+    "fuel": "Petroleum",
+    "imports": 10262.0,
+    "exports": 2067.0,
+    "net_imports": 8195.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 2011,
+    "fuel": "Petroleum",
+    "imports": 9830.0,
+    "exports": 2550.0,
+    "net_imports": 7280.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 2012,
+    "fuel": "Petroleum",
+    "imports": 9172.0,
+    "exports": 2676.0,
+    "net_imports": 6496.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 2013,
+    "fuel": "Petroleum",
+    "imports": 8361.0,
+    "exports": 2794.0,
+    "net_imports": 5567.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 2014,
+    "fuel": "Petroleum",
+    "imports": 7977.0,
+    "exports": 3068.0,
+    "net_imports": 4909.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 2015,
+    "fuel": "Petroleum",
+    "imports": 8099.0,
+    "exports": 3258.0,
+    "net_imports": 4841.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 2016,
+    "fuel": "Petroleum",
+    "imports": 8546.0,
+    "exports": 3563.0,
+    "net_imports": 4983.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 2017,
+    "fuel": "Petroleum",
+    "imports": 8656.0,
+    "exports": 4502.0,
+    "net_imports": 4154.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 2018,
+    "fuel": "Petroleum",
+    "imports": 8458.0,
+    "exports": 5487.0,
+    "net_imports": 2971.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 2019,
+    "fuel": "Petroleum",
+    "imports": 7547.0,
+    "exports": 6234.0,
+    "net_imports": 1313.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 2020,
+    "fuel": "Petroleum",
+    "imports": 6642.0,
+    "exports": 6008.0,
+    "net_imports": 634.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 2021,
+    "fuel": "Petroleum",
+    "imports": 7001.0,
+    "exports": 5694.0,
+    "net_imports": 1307.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 2022,
+    "fuel": "Petroleum",
+    "imports": 7045.0,
+    "exports": 6663.0,
+    "net_imports": 382.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 2023,
+    "fuel": "Petroleum",
+    "imports": 7157.0,
+    "exports": 7059.0,
+    "net_imports": 98.0,
+    "unit": "thousand barrels/day"
+  },
+  {
+    "year": 2024,
+    "fuel": "Petroleum",
+    "imports": 7194.0,
+    "exports": 7273.0,
+    "net_imports": -79.0,
+    "unit": "thousand barrels/day"
+  }
+]

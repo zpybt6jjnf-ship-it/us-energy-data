@@ -1,0 +1,6122 @@
+[
+  {
+    "state": "Alabama",
+    "year": 2001,
+    "per_capita_kwh": 15390.02
+  },
+  {
+    "state": "Alabama",
+    "year": 2002,
+    "per_capita_kwh": 16111.08
+  },
+  {
+    "state": "Alabama",
+    "year": 2003,
+    "per_capita_kwh": 16412.79
+  },
+  {
+    "state": "Alabama",
+    "year": 2004,
+    "per_capita_kwh": 17005.2
+  },
+  {
+    "state": "Alabama",
+    "year": 2005,
+    "per_capita_kwh": 17461.52
+  },
+  {
+    "state": "Alabama",
+    "year": 2006,
+    "per_capita_kwh": 17750.47
+  },
+  {
+    "state": "Alabama",
+    "year": 2007,
+    "per_capita_kwh": 17975.73
+  },
+  {
+    "state": "Alabama",
+    "year": 2008,
+    "per_capita_kwh": 17560.51
+  },
+  {
+    "state": "Alabama",
+    "year": 2009,
+    "per_capita_kwh": 16217.11
+  },
+  {
+    "state": "Alabama",
+    "year": 2010,
+    "per_capita_kwh": 17786.67
+  },
+  {
+    "state": "Alabama",
+    "year": 2011,
+    "per_capita_kwh": 17421.15
+  },
+  {
+    "state": "Alabama",
+    "year": 2012,
+    "per_capita_kwh": 16870.53
+  },
+  {
+    "state": "Alabama",
+    "year": 2013,
+    "per_capita_kwh": 17197.35
+  },
+  {
+    "state": "Alabama",
+    "year": 2014,
+    "per_capita_kwh": 17714.46
+  },
+  {
+    "state": "Alabama",
+    "year": 2015,
+    "per_capita_kwh": 17391.82
+  },
+  {
+    "state": "Alabama",
+    "year": 2016,
+    "per_capita_kwh": 17270.37
+  },
+  {
+    "state": "Alabama",
+    "year": 2017,
+    "per_capita_kwh": 16882.11
+  },
+  {
+    "state": "Alabama",
+    "year": 2018,
+    "per_capita_kwh": 17672.71
+  },
+  {
+    "state": "Alabama",
+    "year": 2019,
+    "per_capita_kwh": 17244.92
+  },
+  {
+    "state": "Alabama",
+    "year": 2020,
+    "per_capita_kwh": 16324.97
+  },
+  {
+    "state": "Alabama",
+    "year": 2021,
+    "per_capita_kwh": 16753.59
+  },
+  {
+    "state": "Alabama",
+    "year": 2022,
+    "per_capita_kwh": 17035.94
+  },
+  {
+    "state": "Alabama",
+    "year": 2023,
+    "per_capita_kwh": 16615.62
+  },
+  {
+    "state": "Alabama",
+    "year": 2024,
+    "per_capita_kwh": 17132.91
+  },
+  {
+    "state": "Alaska",
+    "year": 2001,
+    "per_capita_kwh": 7171.88
+  },
+  {
+    "state": "Alaska",
+    "year": 2002,
+    "per_capita_kwh": 7169.71
+  },
+  {
+    "state": "Alaska",
+    "year": 2003,
+    "per_capita_kwh": 7586.09
+  },
+  {
+    "state": "Alaska",
+    "year": 2004,
+    "per_capita_kwh": 7892.61
+  },
+  {
+    "state": "Alaska",
+    "year": 2005,
+    "per_capita_kwh": 8061.8
+  },
+  {
+    "state": "Alaska",
+    "year": 2006,
+    "per_capita_kwh": 8429.56
+  },
+  {
+    "state": "Alaska",
+    "year": 2007,
+    "per_capita_kwh": 8626.34
+  },
+  {
+    "state": "Alaska",
+    "year": 2008,
+    "per_capita_kwh": 8625.43
+  },
+  {
+    "state": "Alaska",
+    "year": 2009,
+    "per_capita_kwh": 8549.39
+  },
+  {
+    "state": "Alaska",
+    "year": 2010,
+    "per_capita_kwh": 8517.84
+  },
+  {
+    "state": "Alaska",
+    "year": 2011,
+    "per_capita_kwh": 8616.7
+  },
+  {
+    "state": "Alaska",
+    "year": 2012,
+    "per_capita_kwh": 8748.78
+  },
+  {
+    "state": "Alaska",
+    "year": 2013,
+    "per_capita_kwh": 8546.71
+  },
+  {
+    "state": "Alaska",
+    "year": 2014,
+    "per_capita_kwh": 8405.73
+  },
+  {
+    "state": "Alaska",
+    "year": 2015,
+    "per_capita_kwh": 8398.08
+  },
+  {
+    "state": "Alaska",
+    "year": 2016,
+    "per_capita_kwh": 8348.99
+  },
+  {
+    "state": "Alaska",
+    "year": 2017,
+    "per_capita_kwh": 8434.34
+  },
+  {
+    "state": "Alaska",
+    "year": 2018,
+    "per_capita_kwh": 8143.47
+  },
+  {
+    "state": "Alaska",
+    "year": 2019,
+    "per_capita_kwh": 7933.95
+  },
+  {
+    "state": "Alaska",
+    "year": 2020,
+    "per_capita_kwh": 8068.62
+  },
+  {
+    "state": "Alaska",
+    "year": 2021,
+    "per_capita_kwh": 8139.2
+  },
+  {
+    "state": "Alaska",
+    "year": 2022,
+    "per_capita_kwh": 8183.84
+  },
+  {
+    "state": "Alaska",
+    "year": 2023,
+    "per_capita_kwh": 8214.55
+  },
+  {
+    "state": "Alaska",
+    "year": 2024,
+    "per_capita_kwh": 8244.41
+  },
+  {
+    "state": "Arizona",
+    "year": 2001,
+    "per_capita_kwh": 8023.06
+  },
+  {
+    "state": "Arizona",
+    "year": 2002,
+    "per_capita_kwh": 8048.35
+  },
+  {
+    "state": "Arizona",
+    "year": 2003,
+    "per_capita_kwh": 8622.88
+  },
+  {
+    "state": "Arizona",
+    "year": 2004,
+    "per_capita_kwh": 9006.88
+  },
+  {
+    "state": "Arizona",
+    "year": 2005,
+    "per_capita_kwh": 9337.57
+  },
+  {
+    "state": "Arizona",
+    "year": 2006,
+    "per_capita_kwh": 9857.27
+  },
+  {
+    "state": "Arizona",
+    "year": 2007,
+    "per_capita_kwh": 10387.52
+  },
+  {
+    "state": "Arizona",
+    "year": 2008,
+    "per_capita_kwh": 10263.0
+  },
+  {
+    "state": "Arizona",
+    "year": 2009,
+    "per_capita_kwh": 9881.51
+  },
+  {
+    "state": "Arizona",
+    "year": 2010,
+    "per_capita_kwh": 9800.79
+  },
+  {
+    "state": "Arizona",
+    "year": 2011,
+    "per_capita_kwh": 10084.8
+  },
+  {
+    "state": "Arizona",
+    "year": 2012,
+    "per_capita_kwh": 10100.91
+  },
+  {
+    "state": "Arizona",
+    "year": 2013,
+    "per_capita_kwh": 10181.47
+  },
+  {
+    "state": "Arizona",
+    "year": 2014,
+    "per_capita_kwh": 10267.01
+  },
+  {
+    "state": "Arizona",
+    "year": 2015,
+    "per_capita_kwh": 10407.7
+  },
+  {
+    "state": "Arizona",
+    "year": 2016,
+    "per_capita_kwh": 10527.11
+  },
+  {
+    "state": "Arizona",
+    "year": 2017,
+    "per_capita_kwh": 10447.46
+  },
+  {
+    "state": "Arizona",
+    "year": 2018,
+    "per_capita_kwh": 10541.6
+  },
+  {
+    "state": "Arizona",
+    "year": 2019,
+    "per_capita_kwh": 10485.05
+  },
+  {
+    "state": "Arizona",
+    "year": 2020,
+    "per_capita_kwh": 11027.44
+  },
+  {
+    "state": "Arizona",
+    "year": 2021,
+    "per_capita_kwh": 10927.97
+  },
+  {
+    "state": "Arizona",
+    "year": 2022,
+    "per_capita_kwh": 11328.54
+  },
+  {
+    "state": "Arizona",
+    "year": 2023,
+    "per_capita_kwh": 11560.32
+  },
+  {
+    "state": "Arizona",
+    "year": 2024,
+    "per_capita_kwh": 12222.95
+  },
+  {
+    "state": "Arkansas",
+    "year": 2001,
+    "per_capita_kwh": 13362.22
+  },
+  {
+    "state": "Arkansas",
+    "year": 2002,
+    "per_capita_kwh": 13599.12
+  },
+  {
+    "state": "Arkansas",
+    "year": 2003,
+    "per_capita_kwh": 14052.16
+  },
+  {
+    "state": "Arkansas",
+    "year": 2004,
+    "per_capita_kwh": 14236.04
+  },
+  {
+    "state": "Arkansas",
+    "year": 2005,
+    "per_capita_kwh": 15048.55
+  },
+  {
+    "state": "Arkansas",
+    "year": 2006,
+    "per_capita_kwh": 15201.99
+  },
+  {
+    "state": "Arkansas",
+    "year": 2007,
+    "per_capita_kwh": 15338.66
+  },
+  {
+    "state": "Arkansas",
+    "year": 2008,
+    "per_capita_kwh": 15038.56
+  },
+  {
+    "state": "Arkansas",
+    "year": 2009,
+    "per_capita_kwh": 14073.17
+  },
+  {
+    "state": "Arkansas",
+    "year": 2010,
+    "per_capita_kwh": 15709.93
+  },
+  {
+    "state": "Arkansas",
+    "year": 2011,
+    "per_capita_kwh": 15623.07
+  },
+  {
+    "state": "Arkansas",
+    "year": 2012,
+    "per_capita_kwh": 15274.84
+  },
+  {
+    "state": "Arkansas",
+    "year": 2013,
+    "per_capita_kwh": 15217.31
+  },
+  {
+    "state": "Arkansas",
+    "year": 2014,
+    "per_capita_kwh": 15346.8
+  },
+  {
+    "state": "Arkansas",
+    "year": 2015,
+    "per_capita_kwh": 15146.28
+  },
+  {
+    "state": "Arkansas",
+    "year": 2016,
+    "per_capita_kwh": 15056.08
+  },
+  {
+    "state": "Arkansas",
+    "year": 2017,
+    "per_capita_kwh": 15022.68
+  },
+  {
+    "state": "Arkansas",
+    "year": 2018,
+    "per_capita_kwh": 16169.04
+  },
+  {
+    "state": "Arkansas",
+    "year": 2019,
+    "per_capita_kwh": 15676.93
+  },
+  {
+    "state": "Arkansas",
+    "year": 2020,
+    "per_capita_kwh": 14946.16
+  },
+  {
+    "state": "Arkansas",
+    "year": 2021,
+    "per_capita_kwh": 15862.84
+  },
+  {
+    "state": "Arkansas",
+    "year": 2022,
+    "per_capita_kwh": 15971.88
+  },
+  {
+    "state": "Arkansas",
+    "year": 2023,
+    "per_capita_kwh": 15858.31
+  },
+  {
+    "state": "Arkansas",
+    "year": 2024,
+    "per_capita_kwh": 16264.64
+  },
+  {
+    "state": "California",
+    "year": 2001,
+    "per_capita_kwh": 6061.0
+  },
+  {
+    "state": "California",
+    "year": 2002,
+    "per_capita_kwh": 5857.47
+  },
+  {
+    "state": "California",
+    "year": 2003,
+    "per_capita_kwh": 6221.26
+  },
+  {
+    "state": "California",
+    "year": 2004,
+    "per_capita_kwh": 6444.87
+  },
+  {
+    "state": "California",
+    "year": 2005,
+    "per_capita_kwh": 6503.32
+  },
+  {
+    "state": "California",
+    "year": 2006,
+    "per_capita_kwh": 6726.05
+  },
+  {
+    "state": "California",
+    "year": 2007,
+    "per_capita_kwh": 6759.55
+  },
+  {
+    "state": "California",
+    "year": 2008,
+    "per_capita_kwh": 6859.67
+  },
+  {
+    "state": "California",
+    "year": 2009,
+    "per_capita_kwh": 6640.27
+  },
+  {
+    "state": "California",
+    "year": 2010,
+    "per_capita_kwh": 6613.84
+  },
+  {
+    "state": "California",
+    "year": 2011,
+    "per_capita_kwh": 6701.24
+  },
+  {
+    "state": "California",
+    "year": 2012,
+    "per_capita_kwh": 6643.19
+  },
+  {
+    "state": "California",
+    "year": 2013,
+    "per_capita_kwh": 6685.37
+  },
+  {
+    "state": "California",
+    "year": 2014,
+    "per_capita_kwh": 6717.62
+  },
+  {
+    "state": "California",
+    "year": 2015,
+    "per_capita_kwh": 6681.16
+  },
+  {
+    "state": "California",
+    "year": 2016,
+    "per_capita_kwh": 6571.63
+  },
+  {
+    "state": "California",
+    "year": 2017,
+    "per_capita_kwh": 6581.09
+  },
+  {
+    "state": "California",
+    "year": 2018,
+    "per_capita_kwh": 6530.81
+  },
+  {
+    "state": "California",
+    "year": 2019,
+    "per_capita_kwh": 6406.0
+  },
+  {
+    "state": "California",
+    "year": 2020,
+    "per_capita_kwh": 6404.99
+  },
+  {
+    "state": "California",
+    "year": 2021,
+    "per_capita_kwh": 6329.47
+  },
+  {
+    "state": "California",
+    "year": 2022,
+    "per_capita_kwh": 6446.37
+  },
+  {
+    "state": "California",
+    "year": 2023,
+    "per_capita_kwh": 6127.39
+  },
+  {
+    "state": "California",
+    "year": 2024,
+    "per_capita_kwh": 6287.72
+  },
+  {
+    "state": "Colorado",
+    "year": 2001,
+    "per_capita_kwh": 7363.24
+  },
+  {
+    "state": "Colorado",
+    "year": 2002,
+    "per_capita_kwh": 7577.15
+  },
+  {
+    "state": "Colorado",
+    "year": 2003,
+    "per_capita_kwh": 7904.09
+  },
+  {
+    "state": "Colorado",
+    "year": 2004,
+    "per_capita_kwh": 7946.3
+  },
+  {
+    "state": "Colorado",
+    "year": 2005,
+    "per_capita_kwh": 8223.38
+  },
+  {
+    "state": "Colorado",
+    "year": 2006,
+    "per_capita_kwh": 8457.35
+  },
+  {
+    "state": "Colorado",
+    "year": 2007,
+    "per_capita_kwh": 8720.36
+  },
+  {
+    "state": "Colorado",
+    "year": 2008,
+    "per_capita_kwh": 8863.11
+  },
+  {
+    "state": "Colorado",
+    "year": 2009,
+    "per_capita_kwh": 8675.68
+  },
+  {
+    "state": "Colorado",
+    "year": 2010,
+    "per_capita_kwh": 8995.4
+  },
+  {
+    "state": "Colorado",
+    "year": 2011,
+    "per_capita_kwh": 9086.66
+  },
+  {
+    "state": "Colorado",
+    "year": 2012,
+    "per_capita_kwh": 9124.94
+  },
+  {
+    "state": "Colorado",
+    "year": 2013,
+    "per_capita_kwh": 9081.92
+  },
+  {
+    "state": "Colorado",
+    "year": 2014,
+    "per_capita_kwh": 9073.84
+  },
+  {
+    "state": "Colorado",
+    "year": 2015,
+    "per_capita_kwh": 9196.22
+  },
+  {
+    "state": "Colorado",
+    "year": 2016,
+    "per_capita_kwh": 9312.85
+  },
+  {
+    "state": "Colorado",
+    "year": 2017,
+    "per_capita_kwh": 9316.21
+  },
+  {
+    "state": "Colorado",
+    "year": 2018,
+    "per_capita_kwh": 9588.51
+  },
+  {
+    "state": "Colorado",
+    "year": 2019,
+    "per_capita_kwh": 9596.93
+  },
+  {
+    "state": "Colorado",
+    "year": 2020,
+    "per_capita_kwh": 9520.23
+  },
+  {
+    "state": "Colorado",
+    "year": 2021,
+    "per_capita_kwh": 9572.37
+  },
+  {
+    "state": "Colorado",
+    "year": 2022,
+    "per_capita_kwh": 9641.96
+  },
+  {
+    "state": "Colorado",
+    "year": 2023,
+    "per_capita_kwh": 9438.51
+  },
+  {
+    "state": "Colorado",
+    "year": 2024,
+    "per_capita_kwh": 9656.51
+  },
+  {
+    "state": "Connecticut",
+    "year": 2001,
+    "per_capita_kwh": 8290.74
+  },
+  {
+    "state": "Connecticut",
+    "year": 2002,
+    "per_capita_kwh": 8420.16
+  },
+  {
+    "state": "Connecticut",
+    "year": 2003,
+    "per_capita_kwh": 8746.57
+  },
+  {
+    "state": "Connecticut",
+    "year": 2004,
+    "per_capita_kwh": 8853.47
+  },
+  {
+    "state": "Connecticut",
+    "year": 2005,
+    "per_capita_kwh": 9096.94
+  },
+  {
+    "state": "Connecticut",
+    "year": 2006,
+    "per_capita_kwh": 8708.59
+  },
+  {
+    "state": "Connecticut",
+    "year": 2007,
+    "per_capita_kwh": 9380.67
+  },
+  {
+    "state": "Connecticut",
+    "year": 2008,
+    "per_capita_kwh": 8505.56
+  },
+  {
+    "state": "Connecticut",
+    "year": 2009,
+    "per_capita_kwh": 8163.16
+  },
+  {
+    "state": "Connecticut",
+    "year": 2010,
+    "per_capita_kwh": 8350.69
+  },
+  {
+    "state": "Connecticut",
+    "year": 2011,
+    "per_capita_kwh": 8203.64
+  },
+  {
+    "state": "Connecticut",
+    "year": 2012,
+    "per_capita_kwh": 8100.14
+  },
+  {
+    "state": "Connecticut",
+    "year": 2013,
+    "per_capita_kwh": 8192.77
+  },
+  {
+    "state": "Connecticut",
+    "year": 2014,
+    "per_capita_kwh": 8068.7
+  },
+  {
+    "state": "Connecticut",
+    "year": 2015,
+    "per_capita_kwh": 8095.66
+  },
+  {
+    "state": "Connecticut",
+    "year": 2016,
+    "per_capita_kwh": 7947.72
+  },
+  {
+    "state": "Connecticut",
+    "year": 2017,
+    "per_capita_kwh": 7729.39
+  },
+  {
+    "state": "Connecticut",
+    "year": 2018,
+    "per_capita_kwh": 7921.21
+  },
+  {
+    "state": "Connecticut",
+    "year": 2019,
+    "per_capita_kwh": 7664.3
+  },
+  {
+    "state": "Connecticut",
+    "year": 2020,
+    "per_capita_kwh": 7461.08
+  },
+  {
+    "state": "Connecticut",
+    "year": 2021,
+    "per_capita_kwh": 7628.19
+  },
+  {
+    "state": "Connecticut",
+    "year": 2022,
+    "per_capita_kwh": 7629.33
+  },
+  {
+    "state": "Connecticut",
+    "year": 2023,
+    "per_capita_kwh": 7327.89
+  },
+  {
+    "state": "Connecticut",
+    "year": 2024,
+    "per_capita_kwh": 7508.68
+  },
+  {
+    "state": "Delaware",
+    "year": 2001,
+    "per_capita_kwh": 10967.21
+  },
+  {
+    "state": "Delaware",
+    "year": 2002,
+    "per_capita_kwh": 11589.25
+  },
+  {
+    "state": "Delaware",
+    "year": 2003,
+    "per_capita_kwh": 12210.21
+  },
+  {
+    "state": "Delaware",
+    "year": 2004,
+    "per_capita_kwh": 11397.68
+  },
+  {
+    "state": "Delaware",
+    "year": 2005,
+    "per_capita_kwh": 11761.71
+  },
+  {
+    "state": "Delaware",
+    "year": 2006,
+    "per_capita_kwh": 11197.58
+  },
+  {
+    "state": "Delaware",
+    "year": 2007,
+    "per_capita_kwh": 11502.01
+  },
+  {
+    "state": "Delaware",
+    "year": 2008,
+    "per_capita_kwh": 11385.69
+  },
+  {
+    "state": "Delaware",
+    "year": 2009,
+    "per_capita_kwh": 10909.86
+  },
+  {
+    "state": "Delaware",
+    "year": 2010,
+    "per_capita_kwh": 11247.26
+  },
+  {
+    "state": "Delaware",
+    "year": 2011,
+    "per_capita_kwh": 11128.41
+  },
+  {
+    "state": "Delaware",
+    "year": 2012,
+    "per_capita_kwh": 11163.33
+  },
+  {
+    "state": "Delaware",
+    "year": 2013,
+    "per_capita_kwh": 10997.16
+  },
+  {
+    "state": "Delaware",
+    "year": 2014,
+    "per_capita_kwh": 10988.07
+  },
+  {
+    "state": "Delaware",
+    "year": 2015,
+    "per_capita_kwh": 11142.86
+  },
+  {
+    "state": "Delaware",
+    "year": 2016,
+    "per_capita_kwh": 10910.5
+  },
+  {
+    "state": "Delaware",
+    "year": 2017,
+    "per_capita_kwh": 10784.68
+  },
+  {
+    "state": "Delaware",
+    "year": 2018,
+    "per_capita_kwh": 11409.26
+  },
+  {
+    "state": "Delaware",
+    "year": 2019,
+    "per_capita_kwh": 11114.97
+  },
+  {
+    "state": "Delaware",
+    "year": 2020,
+    "per_capita_kwh": 10785.11
+  },
+  {
+    "state": "Delaware",
+    "year": 2021,
+    "per_capita_kwh": 11124.88
+  },
+  {
+    "state": "Delaware",
+    "year": 2022,
+    "per_capita_kwh": 11182.66
+  },
+  {
+    "state": "Delaware",
+    "year": 2023,
+    "per_capita_kwh": 10739.2
+  },
+  {
+    "state": "Delaware",
+    "year": 2024,
+    "per_capita_kwh": 11022.41
+  },
+  {
+    "state": "District of Columbia",
+    "year": 2001,
+    "per_capita_kwh": 15491.96
+  },
+  {
+    "state": "District of Columbia",
+    "year": 2002,
+    "per_capita_kwh": 15785.02
+  },
+  {
+    "state": "District of Columbia",
+    "year": 2003,
+    "per_capita_kwh": 15701.53
+  },
+  {
+    "state": "District of Columbia",
+    "year": 2004,
+    "per_capita_kwh": 16364.12
+  },
+  {
+    "state": "District of Columbia",
+    "year": 2005,
+    "per_capita_kwh": 16923.58
+  },
+  {
+    "state": "District of Columbia",
+    "year": 2006,
+    "per_capita_kwh": 16336.14
+  },
+  {
+    "state": "District of Columbia",
+    "year": 2007,
+    "per_capita_kwh": 17357.18
+  },
+  {
+    "state": "District of Columbia",
+    "year": 2008,
+    "per_capita_kwh": 16648.7
+  },
+  {
+    "state": "District of Columbia",
+    "year": 2009,
+    "per_capita_kwh": 16386.29
+  },
+  {
+    "state": "District of Columbia",
+    "year": 2010,
+    "per_capita_kwh": 17029.27
+  },
+  {
+    "state": "District of Columbia",
+    "year": 2011,
+    "per_capita_kwh": 16559.55
+  },
+  {
+    "state": "District of Columbia",
+    "year": 2012,
+    "per_capita_kwh": 16104.11
+  },
+  {
+    "state": "District of Columbia",
+    "year": 2013,
+    "per_capita_kwh": 15847.7
+  },
+  {
+    "state": "District of Columbia",
+    "year": 2014,
+    "per_capita_kwh": 15998.58
+  },
+  {
+    "state": "District of Columbia",
+    "year": 2015,
+    "per_capita_kwh": 16138.22
+  },
+  {
+    "state": "District of Columbia",
+    "year": 2016,
+    "per_capita_kwh": 16293.49
+  },
+  {
+    "state": "District of Columbia",
+    "year": 2017,
+    "per_capita_kwh": 15583.94
+  },
+  {
+    "state": "District of Columbia",
+    "year": 2018,
+    "per_capita_kwh": 16232.08
+  },
+  {
+    "state": "District of Columbia",
+    "year": 2019,
+    "per_capita_kwh": 15727.98
+  },
+  {
+    "state": "District of Columbia",
+    "year": 2020,
+    "per_capita_kwh": 13923.24
+  },
+  {
+    "state": "District of Columbia",
+    "year": 2021,
+    "per_capita_kwh": 14450.17
+  },
+  {
+    "state": "District of Columbia",
+    "year": 2022,
+    "per_capita_kwh": 14714.7
+  },
+  {
+    "state": "District of Columbia",
+    "year": 2023,
+    "per_capita_kwh": 14107.11
+  },
+  {
+    "state": "District of Columbia",
+    "year": 2024,
+    "per_capita_kwh": 14472.71
+  },
+  {
+    "state": "Florida",
+    "year": 2001,
+    "per_capita_kwh": 8632.58
+  },
+  {
+    "state": "Florida",
+    "year": 2002,
+    "per_capita_kwh": 9052.54
+  },
+  {
+    "state": "Florida",
+    "year": 2003,
+    "per_capita_kwh": 9609.66
+  },
+  {
+    "state": "Florida",
+    "year": 2004,
+    "per_capita_kwh": 9662.95
+  },
+  {
+    "state": "Florida",
+    "year": 2005,
+    "per_capita_kwh": 9945.64
+  },
+  {
+    "state": "Florida",
+    "year": 2006,
+    "per_capita_kwh": 10089.05
+  },
+  {
+    "state": "Florida",
+    "year": 2007,
+    "per_capita_kwh": 10215.88
+  },
+  {
+    "state": "Florida",
+    "year": 2008,
+    "per_capita_kwh": 9999.11
+  },
+  {
+    "state": "Florida",
+    "year": 2009,
+    "per_capita_kwh": 9936.26
+  },
+  {
+    "state": "Florida",
+    "year": 2010,
+    "per_capita_kwh": 10221.87
+  },
+  {
+    "state": "Florida",
+    "year": 2011,
+    "per_capita_kwh": 9951.24
+  },
+  {
+    "state": "Florida",
+    "year": 2012,
+    "per_capita_kwh": 9756.01
+  },
+  {
+    "state": "Florida",
+    "year": 2013,
+    "per_capita_kwh": 9810.74
+  },
+  {
+    "state": "Florida",
+    "year": 2014,
+    "per_capita_kwh": 9994.52
+  },
+  {
+    "state": "Florida",
+    "year": 2015,
+    "per_capita_kwh": 10415.58
+  },
+  {
+    "state": "Florida",
+    "year": 2016,
+    "per_capita_kwh": 10421.01
+  },
+  {
+    "state": "Florida",
+    "year": 2017,
+    "per_capita_kwh": 10307.86
+  },
+  {
+    "state": "Florida",
+    "year": 2018,
+    "per_capita_kwh": 10547.32
+  },
+  {
+    "state": "Florida",
+    "year": 2019,
+    "per_capita_kwh": 10626.04
+  },
+  {
+    "state": "Florida",
+    "year": 2020,
+    "per_capita_kwh": 10719.05
+  },
+  {
+    "state": "Florida",
+    "year": 2021,
+    "per_capita_kwh": 10680.33
+  },
+  {
+    "state": "Florida",
+    "year": 2022,
+    "per_capita_kwh": 11001.23
+  },
+  {
+    "state": "Florida",
+    "year": 2023,
+    "per_capita_kwh": 11095.14
+  },
+  {
+    "state": "Florida",
+    "year": 2024,
+    "per_capita_kwh": 11278.96
+  },
+  {
+    "state": "Georgia",
+    "year": 2001,
+    "per_capita_kwh": 10531.99
+  },
+  {
+    "state": "Georgia",
+    "year": 2002,
+    "per_capita_kwh": 11069.66
+  },
+  {
+    "state": "Georgia",
+    "year": 2003,
+    "per_capita_kwh": 11197.19
+  },
+  {
+    "state": "Georgia",
+    "year": 2004,
+    "per_capita_kwh": 11722.08
+  },
+  {
+    "state": "Georgia",
+    "year": 2005,
+    "per_capita_kwh": 11976.51
+  },
+  {
+    "state": "Georgia",
+    "year": 2006,
+    "per_capita_kwh": 12208.98
+  },
+  {
+    "state": "Georgia",
+    "year": 2007,
+    "per_capita_kwh": 12446.44
+  },
+  {
+    "state": "Georgia",
+    "year": 2008,
+    "per_capita_kwh": 12239.47
+  },
+  {
+    "state": "Georgia",
+    "year": 2009,
+    "per_capita_kwh": 11840.0
+  },
+  {
+    "state": "Georgia",
+    "year": 2010,
+    "per_capita_kwh": 12738.78
+  },
+  {
+    "state": "Georgia",
+    "year": 2011,
+    "per_capita_kwh": 12349.07
+  },
+  {
+    "state": "Georgia",
+    "year": 2012,
+    "per_capita_kwh": 11861.39
+  },
+  {
+    "state": "Georgia",
+    "year": 2013,
+    "per_capita_kwh": 11817.78
+  },
+  {
+    "state": "Georgia",
+    "year": 2014,
+    "per_capita_kwh": 12296.85
+  },
+  {
+    "state": "Georgia",
+    "year": 2015,
+    "per_capita_kwh": 12304.34
+  },
+  {
+    "state": "Georgia",
+    "year": 2016,
+    "per_capita_kwh": 12506.88
+  },
+  {
+    "state": "Georgia",
+    "year": 2017,
+    "per_capita_kwh": 12084.94
+  },
+  {
+    "state": "Georgia",
+    "year": 2018,
+    "per_capita_kwh": 12666.03
+  },
+  {
+    "state": "Georgia",
+    "year": 2019,
+    "per_capita_kwh": 12615.27
+  },
+  {
+    "state": "Georgia",
+    "year": 2020,
+    "per_capita_kwh": 12088.75
+  },
+  {
+    "state": "Georgia",
+    "year": 2021,
+    "per_capita_kwh": 12441.58
+  },
+  {
+    "state": "Georgia",
+    "year": 2022,
+    "per_capita_kwh": 13137.05
+  },
+  {
+    "state": "Georgia",
+    "year": 2023,
+    "per_capita_kwh": 12864.43
+  },
+  {
+    "state": "Georgia",
+    "year": 2024,
+    "per_capita_kwh": 13586.84
+  },
+  {
+    "state": "Hawaii",
+    "year": 2001,
+    "per_capita_kwh": 6774.13
+  },
+  {
+    "state": "Hawaii",
+    "year": 2002,
+    "per_capita_kwh": 6854.19
+  },
+  {
+    "state": "Hawaii",
+    "year": 2003,
+    "per_capita_kwh": 7240.3
+  },
+  {
+    "state": "Hawaii",
+    "year": 2004,
+    "per_capita_kwh": 7477.69
+  },
+  {
+    "state": "Hawaii",
+    "year": 2005,
+    "per_capita_kwh": 7343.48
+  },
+  {
+    "state": "Hawaii",
+    "year": 2006,
+    "per_capita_kwh": 7363.69
+  },
+  {
+    "state": "Hawaii",
+    "year": 2007,
+    "per_capita_kwh": 7375.81
+  },
+  {
+    "state": "Hawaii",
+    "year": 2008,
+    "per_capita_kwh": 7239.92
+  },
+  {
+    "state": "Hawaii",
+    "year": 2009,
+    "per_capita_kwh": 7055.9
+  },
+  {
+    "state": "Hawaii",
+    "year": 2010,
+    "per_capita_kwh": 6979.47
+  },
+  {
+    "state": "Hawaii",
+    "year": 2011,
+    "per_capita_kwh": 6941.25
+  },
+  {
+    "state": "Hawaii",
+    "year": 2012,
+    "per_capita_kwh": 6716.54
+  },
+  {
+    "state": "Hawaii",
+    "year": 2013,
+    "per_capita_kwh": 6621.78
+  },
+  {
+    "state": "Hawaii",
+    "year": 2014,
+    "per_capita_kwh": 6602.47
+  },
+  {
+    "state": "Hawaii",
+    "year": 2015,
+    "per_capita_kwh": 6627.48
+  },
+  {
+    "state": "Hawaii",
+    "year": 2016,
+    "per_capita_kwh": 6581.52
+  },
+  {
+    "state": "Hawaii",
+    "year": 2017,
+    "per_capita_kwh": 6497.08
+  },
+  {
+    "state": "Hawaii",
+    "year": 2018,
+    "per_capita_kwh": 6506.11
+  },
+  {
+    "state": "Hawaii",
+    "year": 2019,
+    "per_capita_kwh": 6586.74
+  },
+  {
+    "state": "Hawaii",
+    "year": 2020,
+    "per_capita_kwh": 6129.56
+  },
+  {
+    "state": "Hawaii",
+    "year": 2021,
+    "per_capita_kwh": 6226.91
+  },
+  {
+    "state": "Hawaii",
+    "year": 2022,
+    "per_capita_kwh": 6298.43
+  },
+  {
+    "state": "Hawaii",
+    "year": 2023,
+    "per_capita_kwh": 6220.48
+  },
+  {
+    "state": "Hawaii",
+    "year": 2024,
+    "per_capita_kwh": 6237.82
+  },
+  {
+    "state": "Idaho",
+    "year": 2001,
+    "per_capita_kwh": 10563.46
+  },
+  {
+    "state": "Idaho",
+    "year": 2002,
+    "per_capita_kwh": 10368.16
+  },
+  {
+    "state": "Idaho",
+    "year": 2003,
+    "per_capita_kwh": 10799.82
+  },
+  {
+    "state": "Idaho",
+    "year": 2004,
+    "per_capita_kwh": 11100.11
+  },
+  {
+    "state": "Idaho",
+    "year": 2005,
+    "per_capita_kwh": 11122.51
+  },
+  {
+    "state": "Idaho",
+    "year": 2006,
+    "per_capita_kwh": 11585.2
+  },
+  {
+    "state": "Idaho",
+    "year": 2007,
+    "per_capita_kwh": 12090.84
+  },
+  {
+    "state": "Idaho",
+    "year": 2008,
+    "per_capita_kwh": 12165.3
+  },
+  {
+    "state": "Idaho",
+    "year": 2009,
+    "per_capita_kwh": 11581.15
+  },
+  {
+    "state": "Idaho",
+    "year": 2010,
+    "per_capita_kwh": 11603.48
+  },
+  {
+    "state": "Idaho",
+    "year": 2011,
+    "per_capita_kwh": 11844.77
+  },
+  {
+    "state": "Idaho",
+    "year": 2012,
+    "per_capita_kwh": 12068.79
+  },
+  {
+    "state": "Idaho",
+    "year": 2013,
+    "per_capita_kwh": 12321.34
+  },
+  {
+    "state": "Idaho",
+    "year": 2014,
+    "per_capita_kwh": 11825.2
+  },
+  {
+    "state": "Idaho",
+    "year": 2015,
+    "per_capita_kwh": 11736.4
+  },
+  {
+    "state": "Idaho",
+    "year": 2016,
+    "per_capita_kwh": 11738.51
+  },
+  {
+    "state": "Idaho",
+    "year": 2017,
+    "per_capita_kwh": 12110.49
+  },
+  {
+    "state": "Idaho",
+    "year": 2018,
+    "per_capita_kwh": 12089.99
+  },
+  {
+    "state": "Idaho",
+    "year": 2019,
+    "per_capita_kwh": 12207.95
+  },
+  {
+    "state": "Idaho",
+    "year": 2020,
+    "per_capita_kwh": 12450.26
+  },
+  {
+    "state": "Idaho",
+    "year": 2021,
+    "per_capita_kwh": 12869.79
+  },
+  {
+    "state": "Idaho",
+    "year": 2022,
+    "per_capita_kwh": 13335.77
+  },
+  {
+    "state": "Idaho",
+    "year": 2023,
+    "per_capita_kwh": 13067.46
+  },
+  {
+    "state": "Idaho",
+    "year": 2024,
+    "per_capita_kwh": 13421.49
+  },
+  {
+    "state": "Illinois",
+    "year": 2001,
+    "per_capita_kwh": 10019.0
+  },
+  {
+    "state": "Illinois",
+    "year": 2002,
+    "per_capita_kwh": 10244.19
+  },
+  {
+    "state": "Illinois",
+    "year": 2003,
+    "per_capita_kwh": 10818.11
+  },
+  {
+    "state": "Illinois",
+    "year": 2004,
+    "per_capita_kwh": 11060.75
+  },
+  {
+    "state": "Illinois",
+    "year": 2005,
+    "per_capita_kwh": 11510.89
+  },
+  {
+    "state": "Illinois",
+    "year": 2006,
+    "per_capita_kwh": 11309.35
+  },
+  {
+    "state": "Illinois",
+    "year": 2007,
+    "per_capita_kwh": 11594.69
+  },
+  {
+    "state": "Illinois",
+    "year": 2008,
+    "per_capita_kwh": 11478.69
+  },
+  {
+    "state": "Illinois",
+    "year": 2009,
+    "per_capita_kwh": 10849.76
+  },
+  {
+    "state": "Illinois",
+    "year": 2010,
+    "per_capita_kwh": 11490.37
+  },
+  {
+    "state": "Illinois",
+    "year": 2011,
+    "per_capita_kwh": 11344.44
+  },
+  {
+    "state": "Illinois",
+    "year": 2012,
+    "per_capita_kwh": 11393.69
+  },
+  {
+    "state": "Illinois",
+    "year": 2013,
+    "per_capita_kwh": 11253.8
+  },
+  {
+    "state": "Illinois",
+    "year": 2014,
+    "per_capita_kwh": 11232.04
+  },
+  {
+    "state": "Illinois",
+    "year": 2015,
+    "per_capita_kwh": 11003.95
+  },
+  {
+    "state": "Illinois",
+    "year": 2016,
+    "per_capita_kwh": 11198.04
+  },
+  {
+    "state": "Illinois",
+    "year": 2017,
+    "per_capita_kwh": 10890.79
+  },
+  {
+    "state": "Illinois",
+    "year": 2018,
+    "per_capita_kwh": 11323.27
+  },
+  {
+    "state": "Illinois",
+    "year": 2019,
+    "per_capita_kwh": 10976.32
+  },
+  {
+    "state": "Illinois",
+    "year": 2020,
+    "per_capita_kwh": 10519.73
+  },
+  {
+    "state": "Illinois",
+    "year": 2021,
+    "per_capita_kwh": 10775.91
+  },
+  {
+    "state": "Illinois",
+    "year": 2022,
+    "per_capita_kwh": 10790.45
+  },
+  {
+    "state": "Illinois",
+    "year": 2023,
+    "per_capita_kwh": 10371.85
+  },
+  {
+    "state": "Illinois",
+    "year": 2024,
+    "per_capita_kwh": 10580.73
+  },
+  {
+    "state": "Indiana",
+    "year": 2001,
+    "per_capita_kwh": 14142.71
+  },
+  {
+    "state": "Indiana",
+    "year": 2002,
+    "per_capita_kwh": 14694.93
+  },
+  {
+    "state": "Indiana",
+    "year": 2003,
+    "per_capita_kwh": 14638.37
+  },
+  {
+    "state": "Indiana",
+    "year": 2004,
+    "per_capita_kwh": 15021.08
+  },
+  {
+    "state": "Indiana",
+    "year": 2005,
+    "per_capita_kwh": 15524.42
+  },
+  {
+    "state": "Indiana",
+    "year": 2006,
+    "per_capita_kwh": 15395.41
+  },
+  {
+    "state": "Indiana",
+    "year": 2007,
+    "per_capita_kwh": 15942.59
+  },
+  {
+    "state": "Indiana",
+    "year": 2008,
+    "per_capita_kwh": 15587.01
+  },
+  {
+    "state": "Indiana",
+    "year": 2009,
+    "per_capita_kwh": 14469.4
+  },
+  {
+    "state": "Indiana",
+    "year": 2010,
+    "per_capita_kwh": 15443.25
+  },
+  {
+    "state": "Indiana",
+    "year": 2011,
+    "per_capita_kwh": 15417.42
+  },
+  {
+    "state": "Indiana",
+    "year": 2012,
+    "per_capita_kwh": 15323.53
+  },
+  {
+    "state": "Indiana",
+    "year": 2013,
+    "per_capita_kwh": 15369.15
+  },
+  {
+    "state": "Indiana",
+    "year": 2014,
+    "per_capita_kwh": 15581.3
+  },
+  {
+    "state": "Indiana",
+    "year": 2015,
+    "per_capita_kwh": 15227.41
+  },
+  {
+    "state": "Indiana",
+    "year": 2016,
+    "per_capita_kwh": 15109.43
+  },
+  {
+    "state": "Indiana",
+    "year": 2017,
+    "per_capita_kwh": 14418.98
+  },
+  {
+    "state": "Indiana",
+    "year": 2018,
+    "per_capita_kwh": 15180.73
+  },
+  {
+    "state": "Indiana",
+    "year": 2019,
+    "per_capita_kwh": 14876.22
+  },
+  {
+    "state": "Indiana",
+    "year": 2020,
+    "per_capita_kwh": 14155.48
+  },
+  {
+    "state": "Indiana",
+    "year": 2021,
+    "per_capita_kwh": 14532.13
+  },
+  {
+    "state": "Indiana",
+    "year": 2022,
+    "per_capita_kwh": 14577.23
+  },
+  {
+    "state": "Indiana",
+    "year": 2023,
+    "per_capita_kwh": 13987.41
+  },
+  {
+    "state": "Indiana",
+    "year": 2024,
+    "per_capita_kwh": 14456.26
+  },
+  {
+    "state": "Iowa",
+    "year": 2001,
+    "per_capita_kwh": 11593.4
+  },
+  {
+    "state": "Iowa",
+    "year": 2002,
+    "per_capita_kwh": 11933.64
+  },
+  {
+    "state": "Iowa",
+    "year": 2003,
+    "per_capita_kwh": 12849.15
+  },
+  {
+    "state": "Iowa",
+    "year": 2004,
+    "per_capita_kwh": 12754.2
+  },
+  {
+    "state": "Iowa",
+    "year": 2005,
+    "per_capita_kwh": 13332.32
+  },
+  {
+    "state": "Iowa",
+    "year": 2006,
+    "per_capita_kwh": 13512.92
+  },
+  {
+    "state": "Iowa",
+    "year": 2007,
+    "per_capita_kwh": 14115.83
+  },
+  {
+    "state": "Iowa",
+    "year": 2008,
+    "per_capita_kwh": 14183.98
+  },
+  {
+    "state": "Iowa",
+    "year": 2009,
+    "per_capita_kwh": 13608.09
+  },
+  {
+    "state": "Iowa",
+    "year": 2010,
+    "per_capita_kwh": 14170.63
+  },
+  {
+    "state": "Iowa",
+    "year": 2011,
+    "per_capita_kwh": 14235.99
+  },
+  {
+    "state": "Iowa",
+    "year": 2012,
+    "per_capita_kwh": 14252.9
+  },
+  {
+    "state": "Iowa",
+    "year": 2013,
+    "per_capita_kwh": 14563.5
+  },
+  {
+    "state": "Iowa",
+    "year": 2014,
+    "per_capita_kwh": 14718.36
+  },
+  {
+    "state": "Iowa",
+    "year": 2015,
+    "per_capita_kwh": 14701.35
+  },
+  {
+    "state": "Iowa",
+    "year": 2016,
+    "per_capita_kwh": 15101.69
+  },
+  {
+    "state": "Iowa",
+    "year": 2017,
+    "per_capita_kwh": 15254.74
+  },
+  {
+    "state": "Iowa",
+    "year": 2018,
+    "per_capita_kwh": 15968.38
+  },
+  {
+    "state": "Iowa",
+    "year": 2019,
+    "per_capita_kwh": 15916.15
+  },
+  {
+    "state": "Iowa",
+    "year": 2020,
+    "per_capita_kwh": 15790.4
+  },
+  {
+    "state": "Iowa",
+    "year": 2021,
+    "per_capita_kwh": 16493.05
+  },
+  {
+    "state": "Iowa",
+    "year": 2022,
+    "per_capita_kwh": 16901.74
+  },
+  {
+    "state": "Iowa",
+    "year": 2023,
+    "per_capita_kwh": 16962.95
+  },
+  {
+    "state": "Iowa",
+    "year": 2024,
+    "per_capita_kwh": 17128.27
+  },
+  {
+    "state": "Kansas",
+    "year": 2001,
+    "per_capita_kwh": 12044.73
+  },
+  {
+    "state": "Kansas",
+    "year": 2002,
+    "per_capita_kwh": 12355.87
+  },
+  {
+    "state": "Kansas",
+    "year": 2003,
+    "per_capita_kwh": 12492.71
+  },
+  {
+    "state": "Kansas",
+    "year": 2004,
+    "per_capita_kwh": 12625.73
+  },
+  {
+    "state": "Kansas",
+    "year": 2005,
+    "per_capita_kwh": 13271.1
+  },
+  {
+    "state": "Kansas",
+    "year": 2006,
+    "per_capita_kwh": 13518.34
+  },
+  {
+    "state": "Kansas",
+    "year": 2007,
+    "per_capita_kwh": 13659.36
+  },
+  {
+    "state": "Kansas",
+    "year": 2008,
+    "per_capita_kwh": 13591.03
+  },
+  {
+    "state": "Kansas",
+    "year": 2009,
+    "per_capita_kwh": 13005.52
+  },
+  {
+    "state": "Kansas",
+    "year": 2010,
+    "per_capita_kwh": 13745.98
+  },
+  {
+    "state": "Kansas",
+    "year": 2011,
+    "per_capita_kwh": 13861.51
+  },
+  {
+    "state": "Kansas",
+    "year": 2012,
+    "per_capita_kwh": 13702.72
+  },
+  {
+    "state": "Kansas",
+    "year": 2013,
+    "per_capita_kwh": 13551.02
+  },
+  {
+    "state": "Kansas",
+    "year": 2014,
+    "per_capita_kwh": 13793.9
+  },
+  {
+    "state": "Kansas",
+    "year": 2015,
+    "per_capita_kwh": 13551.61
+  },
+  {
+    "state": "Kansas",
+    "year": 2016,
+    "per_capita_kwh": 13878.43
+  },
+  {
+    "state": "Kansas",
+    "year": 2017,
+    "per_capita_kwh": 13700.78
+  },
+  {
+    "state": "Kansas",
+    "year": 2018,
+    "per_capita_kwh": 14295.64
+  },
+  {
+    "state": "Kansas",
+    "year": 2019,
+    "per_capita_kwh": 13997.27
+  },
+  {
+    "state": "Kansas",
+    "year": 2020,
+    "per_capita_kwh": 13427.42
+  },
+  {
+    "state": "Kansas",
+    "year": 2021,
+    "per_capita_kwh": 13770.16
+  },
+  {
+    "state": "Kansas",
+    "year": 2022,
+    "per_capita_kwh": 14269.82
+  },
+  {
+    "state": "Kansas",
+    "year": 2023,
+    "per_capita_kwh": 13960.68
+  },
+  {
+    "state": "Kansas",
+    "year": 2024,
+    "per_capita_kwh": 14030.8
+  },
+  {
+    "state": "Kentucky",
+    "year": 2001,
+    "per_capita_kwh": 16948.74
+  },
+  {
+    "state": "Kentucky",
+    "year": 2002,
+    "per_capita_kwh": 18537.75
+  },
+  {
+    "state": "Kentucky",
+    "year": 2003,
+    "per_capita_kwh": 18828.27
+  },
+  {
+    "state": "Kentucky",
+    "year": 2004,
+    "per_capita_kwh": 19115.82
+  },
+  {
+    "state": "Kentucky",
+    "year": 2005,
+    "per_capita_kwh": 19741.15
+  },
+  {
+    "state": "Kentucky",
+    "year": 2006,
+    "per_capita_kwh": 19606.81
+  },
+  {
+    "state": "Kentucky",
+    "year": 2007,
+    "per_capita_kwh": 20415.59
+  },
+  {
+    "state": "Kentucky",
+    "year": 2008,
+    "per_capita_kwh": 20641.9
+  },
+  {
+    "state": "Kentucky",
+    "year": 2009,
+    "per_capita_kwh": 19640.68
+  },
+  {
+    "state": "Kentucky",
+    "year": 2010,
+    "per_capita_kwh": 20673.05
+  },
+  {
+    "state": "Kentucky",
+    "year": 2011,
+    "per_capita_kwh": 19782.43
+  },
+  {
+    "state": "Kentucky",
+    "year": 2012,
+    "per_capita_kwh": 19674.21
+  },
+  {
+    "state": "Kentucky",
+    "year": 2013,
+    "per_capita_kwh": 18727.56
+  },
+  {
+    "state": "Kentucky",
+    "year": 2014,
+    "per_capita_kwh": 17418.52
+  },
+  {
+    "state": "Kentucky",
+    "year": 2015,
+    "per_capita_kwh": 16799.83
+  },
+  {
+    "state": "Kentucky",
+    "year": 2016,
+    "per_capita_kwh": 16471.73
+  },
+  {
+    "state": "Kentucky",
+    "year": 2017,
+    "per_capita_kwh": 16047.71
+  },
+  {
+    "state": "Kentucky",
+    "year": 2018,
+    "per_capita_kwh": 16926.21
+  },
+  {
+    "state": "Kentucky",
+    "year": 2019,
+    "per_capita_kwh": 16646.67
+  },
+  {
+    "state": "Kentucky",
+    "year": 2020,
+    "per_capita_kwh": 15863.45
+  },
+  {
+    "state": "Kentucky",
+    "year": 2021,
+    "per_capita_kwh": 16463.64
+  },
+  {
+    "state": "Kentucky",
+    "year": 2022,
+    "per_capita_kwh": 16645.2
+  },
+  {
+    "state": "Kentucky",
+    "year": 2023,
+    "per_capita_kwh": 15735.88
+  },
+  {
+    "state": "Kentucky",
+    "year": 2024,
+    "per_capita_kwh": 16439.09
+  },
+  {
+    "state": "Louisiana",
+    "year": 2001,
+    "per_capita_kwh": 15763.15
+  },
+  {
+    "state": "Louisiana",
+    "year": 2002,
+    "per_capita_kwh": 16726.91
+  },
+  {
+    "state": "Louisiana",
+    "year": 2003,
+    "per_capita_kwh": 17002.79
+  },
+  {
+    "state": "Louisiana",
+    "year": 2004,
+    "per_capita_kwh": 17430.18
+  },
+  {
+    "state": "Louisiana",
+    "year": 2005,
+    "per_capita_kwh": 16917.72
+  },
+  {
+    "state": "Louisiana",
+    "year": 2006,
+    "per_capita_kwh": 16936.91
+  },
+  {
+    "state": "Louisiana",
+    "year": 2007,
+    "per_capita_kwh": 17395.76
+  },
+  {
+    "state": "Louisiana",
+    "year": 2008,
+    "per_capita_kwh": 17211.39
+  },
+  {
+    "state": "Louisiana",
+    "year": 2009,
+    "per_capita_kwh": 17198.26
+  },
+  {
+    "state": "Louisiana",
+    "year": 2010,
+    "per_capita_kwh": 18599.38
+  },
+  {
+    "state": "Louisiana",
+    "year": 2011,
+    "per_capita_kwh": 18881.28
+  },
+  {
+    "state": "Louisiana",
+    "year": 2012,
+    "per_capita_kwh": 18523.13
+  },
+  {
+    "state": "Louisiana",
+    "year": 2013,
+    "per_capita_kwh": 18758.48
+  },
+  {
+    "state": "Louisiana",
+    "year": 2014,
+    "per_capita_kwh": 19812.37
+  },
+  {
+    "state": "Louisiana",
+    "year": 2015,
+    "per_capita_kwh": 20041.47
+  },
+  {
+    "state": "Louisiana",
+    "year": 2016,
+    "per_capita_kwh": 19992.45
+  },
+  {
+    "state": "Louisiana",
+    "year": 2017,
+    "per_capita_kwh": 19938.35
+  },
+  {
+    "state": "Louisiana",
+    "year": 2018,
+    "per_capita_kwh": 20589.93
+  },
+  {
+    "state": "Louisiana",
+    "year": 2019,
+    "per_capita_kwh": 20358.93
+  },
+  {
+    "state": "Louisiana",
+    "year": 2020,
+    "per_capita_kwh": 19484.21
+  },
+  {
+    "state": "Louisiana",
+    "year": 2021,
+    "per_capita_kwh": 19854.58
+  },
+  {
+    "state": "Louisiana",
+    "year": 2022,
+    "per_capita_kwh": 20798.87
+  },
+  {
+    "state": "Louisiana",
+    "year": 2023,
+    "per_capita_kwh": 20850.29
+  },
+  {
+    "state": "Louisiana",
+    "year": 2024,
+    "per_capita_kwh": 20846.53
+  },
+  {
+    "state": "Maine",
+    "year": 2001,
+    "per_capita_kwh": 8665.46
+  },
+  {
+    "state": "Maine",
+    "year": 2002,
+    "per_capita_kwh": 8155.0
+  },
+  {
+    "state": "Maine",
+    "year": 2003,
+    "per_capita_kwh": 8577.52
+  },
+  {
+    "state": "Maine",
+    "year": 2004,
+    "per_capita_kwh": 8861.13
+  },
+  {
+    "state": "Maine",
+    "year": 2005,
+    "per_capita_kwh": 8857.69
+  },
+  {
+    "state": "Maine",
+    "year": 2006,
+    "per_capita_kwh": 8801.73
+  },
+  {
+    "state": "Maine",
+    "year": 2007,
+    "per_capita_kwh": 8497.54
+  },
+  {
+    "state": "Maine",
+    "year": 2008,
+    "per_capita_kwh": 8363.9
+  },
+  {
+    "state": "Maine",
+    "year": 2009,
+    "per_capita_kwh": 8083.96
+  },
+  {
+    "state": "Maine",
+    "year": 2010,
+    "per_capita_kwh": 8262.08
+  },
+  {
+    "state": "Maine",
+    "year": 2011,
+    "per_capita_kwh": 8178.81
+  },
+  {
+    "state": "Maine",
+    "year": 2012,
+    "per_capita_kwh": 8283.21
+  },
+  {
+    "state": "Maine",
+    "year": 2013,
+    "per_capita_kwh": 8493.85
+  },
+  {
+    "state": "Maine",
+    "year": 2014,
+    "per_capita_kwh": 8599.61
+  },
+  {
+    "state": "Maine",
+    "year": 2015,
+    "per_capita_kwh": 8517.58
+  },
+  {
+    "state": "Maine",
+    "year": 2016,
+    "per_capita_kwh": 8202.89
+  },
+  {
+    "state": "Maine",
+    "year": 2017,
+    "per_capita_kwh": 8034.32
+  },
+  {
+    "state": "Maine",
+    "year": 2018,
+    "per_capita_kwh": 8851.92
+  },
+  {
+    "state": "Maine",
+    "year": 2019,
+    "per_capita_kwh": 8405.71
+  },
+  {
+    "state": "Maine",
+    "year": 2020,
+    "per_capita_kwh": 8129.66
+  },
+  {
+    "state": "Maine",
+    "year": 2021,
+    "per_capita_kwh": 8300.13
+  },
+  {
+    "state": "Maine",
+    "year": 2022,
+    "per_capita_kwh": 8508.65
+  },
+  {
+    "state": "Maine",
+    "year": 2023,
+    "per_capita_kwh": 8121.98
+  },
+  {
+    "state": "Maine",
+    "year": 2024,
+    "per_capita_kwh": 8125.97
+  },
+  {
+    "state": "Maryland",
+    "year": 2001,
+    "per_capita_kwh": 9823.94
+  },
+  {
+    "state": "Maryland",
+    "year": 2002,
+    "per_capita_kwh": 10906.97
+  },
+  {
+    "state": "Maryland",
+    "year": 2003,
+    "per_capita_kwh": 11455.38
+  },
+  {
+    "state": "Maryland",
+    "year": 2004,
+    "per_capita_kwh": 10745.63
+  },
+  {
+    "state": "Maryland",
+    "year": 2005,
+    "per_capita_kwh": 10984.67
+  },
+  {
+    "state": "Maryland",
+    "year": 2006,
+    "per_capita_kwh": 10143.83
+  },
+  {
+    "state": "Maryland",
+    "year": 2007,
+    "per_capita_kwh": 10495.74
+  },
+  {
+    "state": "Maryland",
+    "year": 2008,
+    "per_capita_kwh": 10160.94
+  },
+  {
+    "state": "Maryland",
+    "year": 2009,
+    "per_capita_kwh": 10037.84
+  },
+  {
+    "state": "Maryland",
+    "year": 2010,
+    "per_capita_kwh": 10483.15
+  },
+  {
+    "state": "Maryland",
+    "year": 2011,
+    "per_capita_kwh": 10202.28
+  },
+  {
+    "state": "Maryland",
+    "year": 2012,
+    "per_capita_kwh": 9916.34
+  },
+  {
+    "state": "Maryland",
+    "year": 2013,
+    "per_capita_kwh": 9928.15
+  },
+  {
+    "state": "Maryland",
+    "year": 2014,
+    "per_capita_kwh": 9892.79
+  },
+  {
+    "state": "Maryland",
+    "year": 2015,
+    "per_capita_kwh": 9909.91
+  },
+  {
+    "state": "Maryland",
+    "year": 2016,
+    "per_capita_kwh": 9840.11
+  },
+  {
+    "state": "Maryland",
+    "year": 2017,
+    "per_capita_kwh": 9510.14
+  },
+  {
+    "state": "Maryland",
+    "year": 2018,
+    "per_capita_kwh": 9960.14
+  },
+  {
+    "state": "Maryland",
+    "year": 2019,
+    "per_capita_kwh": 9731.87
+  },
+  {
+    "state": "Maryland",
+    "year": 2020,
+    "per_capita_kwh": 9245.6
+  },
+  {
+    "state": "Maryland",
+    "year": 2021,
+    "per_capita_kwh": 9527.44
+  },
+  {
+    "state": "Maryland",
+    "year": 2022,
+    "per_capita_kwh": 9593.52
+  },
+  {
+    "state": "Maryland",
+    "year": 2023,
+    "per_capita_kwh": 9162.25
+  },
+  {
+    "state": "Maryland",
+    "year": 2024,
+    "per_capita_kwh": 9482.25
+  },
+  {
+    "state": "Massachusetts",
+    "year": 2001,
+    "per_capita_kwh": 7408.17
+  },
+  {
+    "state": "Massachusetts",
+    "year": 2002,
+    "per_capita_kwh": 7574.36
+  },
+  {
+    "state": "Massachusetts",
+    "year": 2003,
+    "per_capita_kwh": 7887.39
+  },
+  {
+    "state": "Massachusetts",
+    "year": 2004,
+    "per_capita_kwh": 7960.64
+  },
+  {
+    "state": "Massachusetts",
+    "year": 2005,
+    "per_capita_kwh": 8116.29
+  },
+  {
+    "state": "Massachusetts",
+    "year": 2006,
+    "per_capita_kwh": 7921.82
+  },
+  {
+    "state": "Massachusetts",
+    "year": 2007,
+    "per_capita_kwh": 8103.49
+  },
+  {
+    "state": "Massachusetts",
+    "year": 2008,
+    "per_capita_kwh": 7934.47
+  },
+  {
+    "state": "Massachusetts",
+    "year": 2009,
+    "per_capita_kwh": 7713.27
+  },
+  {
+    "state": "Massachusetts",
+    "year": 2010,
+    "per_capita_kwh": 8108.15
+  },
+  {
+    "state": "Massachusetts",
+    "year": 2011,
+    "per_capita_kwh": 7885.94
+  },
+  {
+    "state": "Massachusetts",
+    "year": 2012,
+    "per_capita_kwh": 7850.36
+  },
+  {
+    "state": "Massachusetts",
+    "year": 2013,
+    "per_capita_kwh": 7841.87
+  },
+  {
+    "state": "Massachusetts",
+    "year": 2014,
+    "per_capita_kwh": 7728.21
+  },
+  {
+    "state": "Massachusetts",
+    "year": 2015,
+    "per_capita_kwh": 7750.99
+  },
+  {
+    "state": "Massachusetts",
+    "year": 2016,
+    "per_capita_kwh": 7589.07
+  },
+  {
+    "state": "Massachusetts",
+    "year": 2017,
+    "per_capita_kwh": 7450.66
+  },
+  {
+    "state": "Massachusetts",
+    "year": 2018,
+    "per_capita_kwh": 7560.84
+  },
+  {
+    "state": "Massachusetts",
+    "year": 2019,
+    "per_capita_kwh": 7283.27
+  },
+  {
+    "state": "Massachusetts",
+    "year": 2020,
+    "per_capita_kwh": 7096.59
+  },
+  {
+    "state": "Massachusetts",
+    "year": 2021,
+    "per_capita_kwh": 7210.5
+  },
+  {
+    "state": "Massachusetts",
+    "year": 2022,
+    "per_capita_kwh": 7239.18
+  },
+  {
+    "state": "Massachusetts",
+    "year": 2023,
+    "per_capita_kwh": 7103.24
+  },
+  {
+    "state": "Massachusetts",
+    "year": 2024,
+    "per_capita_kwh": 7016.79
+  },
+  {
+    "state": "Michigan",
+    "year": 2001,
+    "per_capita_kwh": 10112.76
+  },
+  {
+    "state": "Michigan",
+    "year": 2002,
+    "per_capita_kwh": 10336.88
+  },
+  {
+    "state": "Michigan",
+    "year": 2003,
+    "per_capita_kwh": 10846.96
+  },
+  {
+    "state": "Michigan",
+    "year": 2004,
+    "per_capita_kwh": 10620.73
+  },
+  {
+    "state": "Michigan",
+    "year": 2005,
+    "per_capita_kwh": 11002.96
+  },
+  {
+    "state": "Michigan",
+    "year": 2006,
+    "per_capita_kwh": 10761.31
+  },
+  {
+    "state": "Michigan",
+    "year": 2007,
+    "per_capita_kwh": 10888.6
+  },
+  {
+    "state": "Michigan",
+    "year": 2008,
+    "per_capita_kwh": 10538.37
+  },
+  {
+    "state": "Michigan",
+    "year": 2009,
+    "per_capita_kwh": 9775.14
+  },
+  {
+    "state": "Michigan",
+    "year": 2010,
+    "per_capita_kwh": 10325.96
+  },
+  {
+    "state": "Michigan",
+    "year": 2011,
+    "per_capita_kwh": 10465.83
+  },
+  {
+    "state": "Michigan",
+    "year": 2012,
+    "per_capita_kwh": 10442.22
+  },
+  {
+    "state": "Michigan",
+    "year": 2013,
+    "per_capita_kwh": 10264.97
+  },
+  {
+    "state": "Michigan",
+    "year": 2014,
+    "per_capita_kwh": 10292.63
+  },
+  {
+    "state": "Michigan",
+    "year": 2015,
+    "per_capita_kwh": 10209.52
+  },
+  {
+    "state": "Michigan",
+    "year": 2016,
+    "per_capita_kwh": 10407.58
+  },
+  {
+    "state": "Michigan",
+    "year": 2017,
+    "per_capita_kwh": 10151.5
+  },
+  {
+    "state": "Michigan",
+    "year": 2018,
+    "per_capita_kwh": 10447.34
+  },
+  {
+    "state": "Michigan",
+    "year": 2019,
+    "per_capita_kwh": 10086.71
+  },
+  {
+    "state": "Michigan",
+    "year": 2020,
+    "per_capita_kwh": 9664.77
+  },
+  {
+    "state": "Michigan",
+    "year": 2021,
+    "per_capita_kwh": 9943.95
+  },
+  {
+    "state": "Michigan",
+    "year": 2022,
+    "per_capita_kwh": 10026.14
+  },
+  {
+    "state": "Michigan",
+    "year": 2023,
+    "per_capita_kwh": 9722.1
+  },
+  {
+    "state": "Michigan",
+    "year": 2024,
+    "per_capita_kwh": 9861.81
+  },
+  {
+    "state": "Minnesota",
+    "year": 2001,
+    "per_capita_kwh": 10450.88
+  },
+  {
+    "state": "Minnesota",
+    "year": 2002,
+    "per_capita_kwh": 10704.63
+  },
+  {
+    "state": "Minnesota",
+    "year": 2003,
+    "per_capita_kwh": 10994.82
+  },
+  {
+    "state": "Minnesota",
+    "year": 2004,
+    "per_capita_kwh": 11037.03
+  },
+  {
+    "state": "Minnesota",
+    "year": 2005,
+    "per_capita_kwh": 11501.44
+  },
+  {
+    "state": "Minnesota",
+    "year": 2006,
+    "per_capita_kwh": 11632.94
+  },
+  {
+    "state": "Minnesota",
+    "year": 2007,
+    "per_capita_kwh": 11887.62
+  },
+  {
+    "state": "Minnesota",
+    "year": 2008,
+    "per_capita_kwh": 11985.59
+  },
+  {
+    "state": "Minnesota",
+    "year": 2009,
+    "per_capita_kwh": 11150.84
+  },
+  {
+    "state": "Minnesota",
+    "year": 2010,
+    "per_capita_kwh": 11812.29
+  },
+  {
+    "state": "Minnesota",
+    "year": 2011,
+    "per_capita_kwh": 11940.5
+  },
+  {
+    "state": "Minnesota",
+    "year": 2012,
+    "per_capita_kwh": 11845.98
+  },
+  {
+    "state": "Minnesota",
+    "year": 2013,
+    "per_capita_kwh": 11959.92
+  },
+  {
+    "state": "Minnesota",
+    "year": 2014,
+    "per_capita_kwh": 11972.23
+  },
+  {
+    "state": "Minnesota",
+    "year": 2015,
+    "per_capita_kwh": 11599.17
+  },
+  {
+    "state": "Minnesota",
+    "year": 2016,
+    "per_capita_kwh": 11593.47
+  },
+  {
+    "state": "Minnesota",
+    "year": 2017,
+    "per_capita_kwh": 11699.13
+  },
+  {
+    "state": "Minnesota",
+    "year": 2018,
+    "per_capita_kwh": 11969.95
+  },
+  {
+    "state": "Minnesota",
+    "year": 2019,
+    "per_capita_kwh": 11666.34
+  },
+  {
+    "state": "Minnesota",
+    "year": 2020,
+    "per_capita_kwh": 11159.84
+  },
+  {
+    "state": "Minnesota",
+    "year": 2021,
+    "per_capita_kwh": 11601.15
+  },
+  {
+    "state": "Minnesota",
+    "year": 2022,
+    "per_capita_kwh": 11609.7
+  },
+  {
+    "state": "Minnesota",
+    "year": 2023,
+    "per_capita_kwh": 11536.9
+  },
+  {
+    "state": "Minnesota",
+    "year": 2024,
+    "per_capita_kwh": 11249.17
+  },
+  {
+    "state": "Mississippi",
+    "year": 2001,
+    "per_capita_kwh": 14791.16
+  },
+  {
+    "state": "Mississippi",
+    "year": 2002,
+    "per_capita_kwh": 15184.35
+  },
+  {
+    "state": "Mississippi",
+    "year": 2003,
+    "per_capita_kwh": 15492.75
+  },
+  {
+    "state": "Mississippi",
+    "year": 2004,
+    "per_capita_kwh": 15658.98
+  },
+  {
+    "state": "Mississippi",
+    "year": 2005,
+    "per_capita_kwh": 15614.25
+  },
+  {
+    "state": "Mississippi",
+    "year": 2006,
+    "per_capita_kwh": 15966.46
+  },
+  {
+    "state": "Mississippi",
+    "year": 2007,
+    "per_capita_kwh": 16380.36
+  },
+  {
+    "state": "Mississippi",
+    "year": 2008,
+    "per_capita_kwh": 16233.42
+  },
+  {
+    "state": "Mississippi",
+    "year": 2009,
+    "per_capita_kwh": 15664.63
+  },
+  {
+    "state": "Mississippi",
+    "year": 2010,
+    "per_capita_kwh": 16902.18
+  },
+  {
+    "state": "Mississippi",
+    "year": 2011,
+    "per_capita_kwh": 16783.25
+  },
+  {
+    "state": "Mississippi",
+    "year": 2012,
+    "per_capita_kwh": 16460.13
+  },
+  {
+    "state": "Mississippi",
+    "year": 2013,
+    "per_capita_kwh": 16594.26
+  },
+  {
+    "state": "Mississippi",
+    "year": 2014,
+    "per_capita_kwh": 16807.43
+  },
+  {
+    "state": "Mississippi",
+    "year": 2015,
+    "per_capita_kwh": 16563.49
+  },
+  {
+    "state": "Mississippi",
+    "year": 2016,
+    "per_capita_kwh": 16685.49
+  },
+  {
+    "state": "Mississippi",
+    "year": 2017,
+    "per_capita_kwh": 16270.01
+  },
+  {
+    "state": "Mississippi",
+    "year": 2018,
+    "per_capita_kwh": 17141.29
+  },
+  {
+    "state": "Mississippi",
+    "year": 2019,
+    "per_capita_kwh": 16651.76
+  },
+  {
+    "state": "Mississippi",
+    "year": 2020,
+    "per_capita_kwh": 15811.88
+  },
+  {
+    "state": "Mississippi",
+    "year": 2021,
+    "per_capita_kwh": 16333.48
+  },
+  {
+    "state": "Mississippi",
+    "year": 2022,
+    "per_capita_kwh": 16661.46
+  },
+  {
+    "state": "Mississippi",
+    "year": 2023,
+    "per_capita_kwh": 16471.72
+  },
+  {
+    "state": "Mississippi",
+    "year": 2024,
+    "per_capita_kwh": 16561.14
+  },
+  {
+    "state": "Missouri",
+    "year": 2001,
+    "per_capita_kwh": 11622.01
+  },
+  {
+    "state": "Missouri",
+    "year": 2002,
+    "per_capita_kwh": 11914.14
+  },
+  {
+    "state": "Missouri",
+    "year": 2003,
+    "per_capita_kwh": 11981.6
+  },
+  {
+    "state": "Missouri",
+    "year": 2004,
+    "per_capita_kwh": 11950.06
+  },
+  {
+    "state": "Missouri",
+    "year": 2005,
+    "per_capita_kwh": 13059.88
+  },
+  {
+    "state": "Missouri",
+    "year": 2006,
+    "per_capita_kwh": 13233.41
+  },
+  {
+    "state": "Missouri",
+    "year": 2007,
+    "per_capita_kwh": 13801.03
+  },
+  {
+    "state": "Missouri",
+    "year": 2008,
+    "per_capita_kwh": 13614.56
+  },
+  {
+    "state": "Missouri",
+    "year": 2009,
+    "per_capita_kwh": 12891.23
+  },
+  {
+    "state": "Missouri",
+    "year": 2010,
+    "per_capita_kwh": 13889.76
+  },
+  {
+    "state": "Missouri",
+    "year": 2011,
+    "per_capita_kwh": 13594.39
+  },
+  {
+    "state": "Missouri",
+    "year": 2012,
+    "per_capita_kwh": 13300.79
+  },
+  {
+    "state": "Missouri",
+    "year": 2013,
+    "per_capita_kwh": 13457.5
+  },
+  {
+    "state": "Missouri",
+    "year": 2014,
+    "per_capita_kwh": 13533.66
+  },
+  {
+    "state": "Missouri",
+    "year": 2015,
+    "per_capita_kwh": 13150.65
+  },
+  {
+    "state": "Missouri",
+    "year": 2016,
+    "per_capita_kwh": 12684.74
+  },
+  {
+    "state": "Missouri",
+    "year": 2017,
+    "per_capita_kwh": 12336.45
+  },
+  {
+    "state": "Missouri",
+    "year": 2018,
+    "per_capita_kwh": 13239.22
+  },
+  {
+    "state": "Missouri",
+    "year": 2019,
+    "per_capita_kwh": 12723.09
+  },
+  {
+    "state": "Missouri",
+    "year": 2020,
+    "per_capita_kwh": 12218.1
+  },
+  {
+    "state": "Missouri",
+    "year": 2021,
+    "per_capita_kwh": 12546.88
+  },
+  {
+    "state": "Missouri",
+    "year": 2022,
+    "per_capita_kwh": 12956.61
+  },
+  {
+    "state": "Missouri",
+    "year": 2023,
+    "per_capita_kwh": 12419.34
+  },
+  {
+    "state": "Missouri",
+    "year": 2024,
+    "per_capita_kwh": 12548.2
+  },
+  {
+    "state": "Montana",
+    "year": 2001,
+    "per_capita_kwh": 9818.19
+  },
+  {
+    "state": "Montana",
+    "year": 2002,
+    "per_capita_kwh": 11031.46
+  },
+  {
+    "state": "Montana",
+    "year": 2003,
+    "per_capita_kwh": 11321.08
+  },
+  {
+    "state": "Montana",
+    "year": 2004,
+    "per_capita_kwh": 11437.72
+  },
+  {
+    "state": "Montana",
+    "year": 2005,
+    "per_capita_kwh": 11898.57
+  },
+  {
+    "state": "Montana",
+    "year": 2006,
+    "per_capita_kwh": 12195.3
+  },
+  {
+    "state": "Montana",
+    "year": 2007,
+    "per_capita_kwh": 13711.0
+  },
+  {
+    "state": "Montana",
+    "year": 2008,
+    "per_capita_kwh": 13529.52
+  },
+  {
+    "state": "Montana",
+    "year": 2009,
+    "per_capita_kwh": 12670.92
+  },
+  {
+    "state": "Montana",
+    "year": 2010,
+    "per_capita_kwh": 12156.87
+  },
+  {
+    "state": "Montana",
+    "year": 2011,
+    "per_capita_kwh": 12171.55
+  },
+  {
+    "state": "Montana",
+    "year": 2012,
+    "per_capita_kwh": 12238.03
+  },
+  {
+    "state": "Montana",
+    "year": 2013,
+    "per_capita_kwh": 12398.5
+  },
+  {
+    "state": "Montana",
+    "year": 2014,
+    "per_capita_kwh": 12449.01
+  },
+  {
+    "state": "Montana",
+    "year": 2015,
+    "per_capita_kwh": 12541.28
+  },
+  {
+    "state": "Montana",
+    "year": 2016,
+    "per_capita_kwh": 12447.43
+  },
+  {
+    "state": "Montana",
+    "year": 2017,
+    "per_capita_kwh": 12985.08
+  },
+  {
+    "state": "Montana",
+    "year": 2018,
+    "per_capita_kwh": 13099.12
+  },
+  {
+    "state": "Montana",
+    "year": 2019,
+    "per_capita_kwh": 13524.99
+  },
+  {
+    "state": "Montana",
+    "year": 2020,
+    "per_capita_kwh": 12874.32
+  },
+  {
+    "state": "Montana",
+    "year": 2021,
+    "per_capita_kwh": 13207.45
+  },
+  {
+    "state": "Montana",
+    "year": 2022,
+    "per_capita_kwh": 13756.72
+  },
+  {
+    "state": "Montana",
+    "year": 2023,
+    "per_capita_kwh": 13686.91
+  },
+  {
+    "state": "Montana",
+    "year": 2024,
+    "per_capita_kwh": 13741.92
+  },
+  {
+    "state": "Nebraska",
+    "year": 2001,
+    "per_capita_kwh": 11725.73
+  },
+  {
+    "state": "Nebraska",
+    "year": 2002,
+    "per_capita_kwh": 12082.23
+  },
+  {
+    "state": "Nebraska",
+    "year": 2003,
+    "per_capita_kwh": 13069.57
+  },
+  {
+    "state": "Nebraska",
+    "year": 2004,
+    "per_capita_kwh": 13079.36
+  },
+  {
+    "state": "Nebraska",
+    "year": 2005,
+    "per_capita_kwh": 13635.38
+  },
+  {
+    "state": "Nebraska",
+    "year": 2006,
+    "per_capita_kwh": 13787.19
+  },
+  {
+    "state": "Nebraska",
+    "year": 2007,
+    "per_capita_kwh": 14278.56
+  },
+  {
+    "state": "Nebraska",
+    "year": 2008,
+    "per_capita_kwh": 14568.0
+  },
+  {
+    "state": "Nebraska",
+    "year": 2009,
+    "per_capita_kwh": 14381.57
+  },
+  {
+    "state": "Nebraska",
+    "year": 2010,
+    "per_capita_kwh": 15087.84
+  },
+  {
+    "state": "Nebraska",
+    "year": 2011,
+    "per_capita_kwh": 15000.2
+  },
+  {
+    "state": "Nebraska",
+    "year": 2012,
+    "per_capita_kwh": 15582.42
+  },
+  {
+    "state": "Nebraska",
+    "year": 2013,
+    "per_capita_kwh": 15518.06
+  },
+  {
+    "state": "Nebraska",
+    "year": 2014,
+    "per_capita_kwh": 15276.23
+  },
+  {
+    "state": "Nebraska",
+    "year": 2015,
+    "per_capita_kwh": 14908.71
+  },
+  {
+    "state": "Nebraska",
+    "year": 2016,
+    "per_capita_kwh": 15264.7
+  },
+  {
+    "state": "Nebraska",
+    "year": 2017,
+    "per_capita_kwh": 15345.39
+  },
+  {
+    "state": "Nebraska",
+    "year": 2018,
+    "per_capita_kwh": 15638.81
+  },
+  {
+    "state": "Nebraska",
+    "year": 2019,
+    "per_capita_kwh": 15357.62
+  },
+  {
+    "state": "Nebraska",
+    "year": 2020,
+    "per_capita_kwh": 15756.1
+  },
+  {
+    "state": "Nebraska",
+    "year": 2021,
+    "per_capita_kwh": 16347.31
+  },
+  {
+    "state": "Nebraska",
+    "year": 2022,
+    "per_capita_kwh": 17106.99
+  },
+  {
+    "state": "Nebraska",
+    "year": 2023,
+    "per_capita_kwh": 16969.04
+  },
+  {
+    "state": "Nebraska",
+    "year": 2024,
+    "per_capita_kwh": 17787.82
+  },
+  {
+    "state": "Nevada",
+    "year": 2001,
+    "per_capita_kwh": 8621.6
+  },
+  {
+    "state": "Nevada",
+    "year": 2002,
+    "per_capita_kwh": 8957.73
+  },
+  {
+    "state": "Nevada",
+    "year": 2003,
+    "per_capita_kwh": 9433.31
+  },
+  {
+    "state": "Nevada",
+    "year": 2004,
+    "per_capita_kwh": 9802.94
+  },
+  {
+    "state": "Nevada",
+    "year": 2005,
+    "per_capita_kwh": 10172.47
+  },
+  {
+    "state": "Nevada",
+    "year": 2006,
+    "per_capita_kwh": 10825.35
+  },
+  {
+    "state": "Nevada",
+    "year": 2007,
+    "per_capita_kwh": 11156.21
+  },
+  {
+    "state": "Nevada",
+    "year": 2008,
+    "per_capita_kwh": 11015.12
+  },
+  {
+    "state": "Nevada",
+    "year": 2009,
+    "per_capita_kwh": 10730.57
+  },
+  {
+    "state": "Nevada",
+    "year": 2010,
+    "per_capita_kwh": 10570.52
+  },
+  {
+    "state": "Nevada",
+    "year": 2011,
+    "per_capita_kwh": 10615.7
+  },
+  {
+    "state": "Nevada",
+    "year": 2012,
+    "per_capita_kwh": 11011.22
+  },
+  {
+    "state": "Nevada",
+    "year": 2013,
+    "per_capita_kwh": 11020.98
+  },
+  {
+    "state": "Nevada",
+    "year": 2014,
+    "per_capita_kwh": 10978.51
+  },
+  {
+    "state": "Nevada",
+    "year": 2015,
+    "per_capita_kwh": 11274.06
+  },
+  {
+    "state": "Nevada",
+    "year": 2016,
+    "per_capita_kwh": 11313.17
+  },
+  {
+    "state": "Nevada",
+    "year": 2017,
+    "per_capita_kwh": 11473.72
+  },
+  {
+    "state": "Nevada",
+    "year": 2018,
+    "per_capita_kwh": 11825.24
+  },
+  {
+    "state": "Nevada",
+    "year": 2019,
+    "per_capita_kwh": 11575.55
+  },
+  {
+    "state": "Nevada",
+    "year": 2020,
+    "per_capita_kwh": 11968.64
+  },
+  {
+    "state": "Nevada",
+    "year": 2021,
+    "per_capita_kwh": 12218.09
+  },
+  {
+    "state": "Nevada",
+    "year": 2022,
+    "per_capita_kwh": 12307.66
+  },
+  {
+    "state": "Nevada",
+    "year": 2023,
+    "per_capita_kwh": 11972.47
+  },
+  {
+    "state": "Nevada",
+    "year": 2024,
+    "per_capita_kwh": 12728.48
+  },
+  {
+    "state": "New Hampshire",
+    "year": 2001,
+    "per_capita_kwh": 7262.64
+  },
+  {
+    "state": "New Hampshire",
+    "year": 2002,
+    "per_capita_kwh": 7310.21
+  },
+  {
+    "state": "New Hampshire",
+    "year": 2003,
+    "per_capita_kwh": 7826.05
+  },
+  {
+    "state": "New Hampshire",
+    "year": 2004,
+    "per_capita_kwh": 7826.6
+  },
+  {
+    "state": "New Hampshire",
+    "year": 2005,
+    "per_capita_kwh": 8020.11
+  },
+  {
+    "state": "New Hampshire",
+    "year": 2006,
+    "per_capita_kwh": 7912.92
+  },
+  {
+    "state": "New Hampshire",
+    "year": 2007,
+    "per_capita_kwh": 8013.85
+  },
+  {
+    "state": "New Hampshire",
+    "year": 2008,
+    "per_capita_kwh": 7829.43
+  },
+  {
+    "state": "New Hampshire",
+    "year": 2009,
+    "per_capita_kwh": 7630.59
+  },
+  {
+    "state": "New Hampshire",
+    "year": 2010,
+    "per_capita_kwh": 7767.23
+  },
+  {
+    "state": "New Hampshire",
+    "year": 2011,
+    "per_capita_kwh": 7751.92
+  },
+  {
+    "state": "New Hampshire",
+    "year": 2012,
+    "per_capita_kwh": 7753.1
+  },
+  {
+    "state": "New Hampshire",
+    "year": 2013,
+    "per_capita_kwh": 7876.5
+  },
+  {
+    "state": "New Hampshire",
+    "year": 2014,
+    "per_capita_kwh": 7805.75
+  },
+  {
+    "state": "New Hampshire",
+    "year": 2015,
+    "per_capita_kwh": 7845.03
+  },
+  {
+    "state": "New Hampshire",
+    "year": 2016,
+    "per_capita_kwh": 7777.84
+  },
+  {
+    "state": "New Hampshire",
+    "year": 2017,
+    "per_capita_kwh": 7693.9
+  },
+  {
+    "state": "New Hampshire",
+    "year": 2018,
+    "per_capita_kwh": 7878.64
+  },
+  {
+    "state": "New Hampshire",
+    "year": 2019,
+    "per_capita_kwh": 7639.97
+  },
+  {
+    "state": "New Hampshire",
+    "year": 2020,
+    "per_capita_kwh": 7627.05
+  },
+  {
+    "state": "New Hampshire",
+    "year": 2021,
+    "per_capita_kwh": 7750.96
+  },
+  {
+    "state": "New Hampshire",
+    "year": 2022,
+    "per_capita_kwh": 7715.92
+  },
+  {
+    "state": "New Hampshire",
+    "year": 2023,
+    "per_capita_kwh": 7582.67
+  },
+  {
+    "state": "New Hampshire",
+    "year": 2024,
+    "per_capita_kwh": 7784.27
+  },
+  {
+    "state": "New Jersey",
+    "year": 2001,
+    "per_capita_kwh": 7818.8
+  },
+  {
+    "state": "New Jersey",
+    "year": 2002,
+    "per_capita_kwh": 7973.07
+  },
+  {
+    "state": "New Jersey",
+    "year": 2003,
+    "per_capita_kwh": 8201.43
+  },
+  {
+    "state": "New Jersey",
+    "year": 2004,
+    "per_capita_kwh": 8320.37
+  },
+  {
+    "state": "New Jersey",
+    "year": 2005,
+    "per_capita_kwh": 8782.64
+  },
+  {
+    "state": "New Jersey",
+    "year": 2006,
+    "per_capita_kwh": 8544.93
+  },
+  {
+    "state": "New Jersey",
+    "year": 2007,
+    "per_capita_kwh": 8787.27
+  },
+  {
+    "state": "New Jersey",
+    "year": 2008,
+    "per_capita_kwh": 8634.1
+  },
+  {
+    "state": "New Jersey",
+    "year": 2009,
+    "per_capita_kwh": 8121.99
+  },
+  {
+    "state": "New Jersey",
+    "year": 2010,
+    "per_capita_kwh": 8487.76
+  },
+  {
+    "state": "New Jersey",
+    "year": 2011,
+    "per_capita_kwh": 8239.28
+  },
+  {
+    "state": "New Jersey",
+    "year": 2012,
+    "per_capita_kwh": 8047.26
+  },
+  {
+    "state": "New Jersey",
+    "year": 2013,
+    "per_capita_kwh": 8001.59
+  },
+  {
+    "state": "New Jersey",
+    "year": 2014,
+    "per_capita_kwh": 7917.83
+  },
+  {
+    "state": "New Jersey",
+    "year": 2015,
+    "per_capita_kwh": 8092.42
+  },
+  {
+    "state": "New Jersey",
+    "year": 2016,
+    "per_capita_kwh": 8078.52
+  },
+  {
+    "state": "New Jersey",
+    "year": 2017,
+    "per_capita_kwh": 7865.41
+  },
+  {
+    "state": "New Jersey",
+    "year": 2018,
+    "per_capita_kwh": 8148.55
+  },
+  {
+    "state": "New Jersey",
+    "year": 2019,
+    "per_capita_kwh": 7923.43
+  },
+  {
+    "state": "New Jersey",
+    "year": 2020,
+    "per_capita_kwh": 7720.28
+  },
+  {
+    "state": "New Jersey",
+    "year": 2021,
+    "per_capita_kwh": 7837.94
+  },
+  {
+    "state": "New Jersey",
+    "year": 2022,
+    "per_capita_kwh": 7985.29
+  },
+  {
+    "state": "New Jersey",
+    "year": 2023,
+    "per_capita_kwh": 7611.95
+  },
+  {
+    "state": "New Jersey",
+    "year": 2024,
+    "per_capita_kwh": 7871.26
+  },
+  {
+    "state": "New Mexico",
+    "year": 2001,
+    "per_capita_kwh": 8094.57
+  },
+  {
+    "state": "New Mexico",
+    "year": 2002,
+    "per_capita_kwh": 8301.96
+  },
+  {
+    "state": "New Mexico",
+    "year": 2003,
+    "per_capita_kwh": 9142.43
+  },
+  {
+    "state": "New Mexico",
+    "year": 2004,
+    "per_capita_kwh": 9386.12
+  },
+  {
+    "state": "New Mexico",
+    "year": 2005,
+    "per_capita_kwh": 9761.27
+  },
+  {
+    "state": "New Mexico",
+    "year": 2006,
+    "per_capita_kwh": 10137.75
+  },
+  {
+    "state": "New Mexico",
+    "year": 2007,
+    "per_capita_kwh": 10531.45
+  },
+  {
+    "state": "New Mexico",
+    "year": 2008,
+    "per_capita_kwh": 10423.01
+  },
+  {
+    "state": "New Mexico",
+    "year": 2009,
+    "per_capita_kwh": 10238.1
+  },
+  {
+    "state": "New Mexico",
+    "year": 2010,
+    "per_capita_kwh": 10607.57
+  },
+  {
+    "state": "New Mexico",
+    "year": 2011,
+    "per_capita_kwh": 10897.65
+  },
+  {
+    "state": "New Mexico",
+    "year": 2012,
+    "per_capita_kwh": 10962.39
+  },
+  {
+    "state": "New Mexico",
+    "year": 2013,
+    "per_capita_kwh": 10908.69
+  },
+  {
+    "state": "New Mexico",
+    "year": 2014,
+    "per_capita_kwh": 10932.43
+  },
+  {
+    "state": "New Mexico",
+    "year": 2015,
+    "per_capita_kwh": 10922.19
+  },
+  {
+    "state": "New Mexico",
+    "year": 2016,
+    "per_capita_kwh": 10896.64
+  },
+  {
+    "state": "New Mexico",
+    "year": 2017,
+    "per_capita_kwh": 10882.47
+  },
+  {
+    "state": "New Mexico",
+    "year": 2018,
+    "per_capita_kwh": 11373.88
+  },
+  {
+    "state": "New Mexico",
+    "year": 2019,
+    "per_capita_kwh": 11767.16
+  },
+  {
+    "state": "New Mexico",
+    "year": 2020,
+    "per_capita_kwh": 11718.45
+  },
+  {
+    "state": "New Mexico",
+    "year": 2021,
+    "per_capita_kwh": 12010.07
+  },
+  {
+    "state": "New Mexico",
+    "year": 2022,
+    "per_capita_kwh": 12843.62
+  },
+  {
+    "state": "New Mexico",
+    "year": 2023,
+    "per_capita_kwh": 13407.06
+  },
+  {
+    "state": "New Mexico",
+    "year": 2024,
+    "per_capita_kwh": 14328.78
+  },
+  {
+    "state": "New York",
+    "year": 2001,
+    "per_capita_kwh": 6667.52
+  },
+  {
+    "state": "New York",
+    "year": 2002,
+    "per_capita_kwh": 6840.43
+  },
+  {
+    "state": "New York",
+    "year": 2003,
+    "per_capita_kwh": 7222.63
+  },
+  {
+    "state": "New York",
+    "year": 2004,
+    "per_capita_kwh": 7277.62
+  },
+  {
+    "state": "New York",
+    "year": 2005,
+    "per_capita_kwh": 7526.42
+  },
+  {
+    "state": "New York",
+    "year": 2006,
+    "per_capita_kwh": 7124.33
+  },
+  {
+    "state": "New York",
+    "year": 2007,
+    "per_capita_kwh": 7397.61
+  },
+  {
+    "state": "New York",
+    "year": 2008,
+    "per_capita_kwh": 7211.35
+  },
+  {
+    "state": "New York",
+    "year": 2009,
+    "per_capita_kwh": 7000.56
+  },
+  {
+    "state": "New York",
+    "year": 2010,
+    "per_capita_kwh": 7240.32
+  },
+  {
+    "state": "New York",
+    "year": 2011,
+    "per_capita_kwh": 7207.81
+  },
+  {
+    "state": "New York",
+    "year": 2012,
+    "per_capita_kwh": 7174.56
+  },
+  {
+    "state": "New York",
+    "year": 2013,
+    "per_capita_kwh": 7410.41
+  },
+  {
+    "state": "New York",
+    "year": 2014,
+    "per_capita_kwh": 7384.25
+  },
+  {
+    "state": "New York",
+    "year": 2015,
+    "per_capita_kwh": 7464.92
+  },
+  {
+    "state": "New York",
+    "year": 2016,
+    "per_capita_kwh": 7411.27
+  },
+  {
+    "state": "New York",
+    "year": 2017,
+    "per_capita_kwh": 7267.09
+  },
+  {
+    "state": "New York",
+    "year": 2018,
+    "per_capita_kwh": 7509.78
+  },
+  {
+    "state": "New York",
+    "year": 2019,
+    "per_capita_kwh": 7295.42
+  },
+  {
+    "state": "New York",
+    "year": 2020,
+    "per_capita_kwh": 7043.84
+  },
+  {
+    "state": "New York",
+    "year": 2021,
+    "per_capita_kwh": 7100.66
+  },
+  {
+    "state": "New York",
+    "year": 2022,
+    "per_capita_kwh": 7184.57
+  },
+  {
+    "state": "New York",
+    "year": 2023,
+    "per_capita_kwh": 6985.21
+  },
+  {
+    "state": "New York",
+    "year": 2024,
+    "per_capita_kwh": 7036.62
+  },
+  {
+    "state": "North Carolina",
+    "year": 2001,
+    "per_capita_kwh": 10786.41
+  },
+  {
+    "state": "North Carolina",
+    "year": 2002,
+    "per_capita_kwh": 11122.0
+  },
+  {
+    "state": "North Carolina",
+    "year": 2003,
+    "per_capita_kwh": 11197.93
+  },
+  {
+    "state": "North Carolina",
+    "year": 2004,
+    "per_capita_kwh": 11596.78
+  },
+  {
+    "state": "North Carolina",
+    "year": 2005,
+    "per_capita_kwh": 11843.98
+  },
+  {
+    "state": "North Carolina",
+    "year": 2006,
+    "per_capita_kwh": 11692.96
+  },
+  {
+    "state": "North Carolina",
+    "year": 2007,
+    "per_capita_kwh": 12171.18
+  },
+  {
+    "state": "North Carolina",
+    "year": 2008,
+    "per_capita_kwh": 12003.53
+  },
+  {
+    "state": "North Carolina",
+    "year": 2009,
+    "per_capita_kwh": 11780.85
+  },
+  {
+    "state": "North Carolina",
+    "year": 2010,
+    "per_capita_kwh": 12588.99
+  },
+  {
+    "state": "North Carolina",
+    "year": 2011,
+    "per_capita_kwh": 12097.07
+  },
+  {
+    "state": "North Carolina",
+    "year": 2012,
+    "per_capita_kwh": 11820.21
+  },
+  {
+    "state": "North Carolina",
+    "year": 2013,
+    "per_capita_kwh": 11976.61
+  },
+  {
+    "state": "North Carolina",
+    "year": 2014,
+    "per_capita_kwh": 12285.93
+  },
+  {
+    "state": "North Carolina",
+    "year": 2015,
+    "per_capita_kwh": 12351.9
+  },
+  {
+    "state": "North Carolina",
+    "year": 2016,
+    "per_capita_kwh": 12403.49
+  },
+  {
+    "state": "North Carolina",
+    "year": 2017,
+    "per_capita_kwh": 12128.46
+  },
+  {
+    "state": "North Carolina",
+    "year": 2018,
+    "per_capita_kwh": 12761.25
+  },
+  {
+    "state": "North Carolina",
+    "year": 2019,
+    "per_capita_kwh": 12589.82
+  },
+  {
+    "state": "North Carolina",
+    "year": 2020,
+    "per_capita_kwh": 12032.21
+  },
+  {
+    "state": "North Carolina",
+    "year": 2021,
+    "per_capita_kwh": 12521.71
+  },
+  {
+    "state": "North Carolina",
+    "year": 2022,
+    "per_capita_kwh": 12845.94
+  },
+  {
+    "state": "North Carolina",
+    "year": 2023,
+    "per_capita_kwh": 12281.71
+  },
+  {
+    "state": "North Carolina",
+    "year": 2024,
+    "per_capita_kwh": 12633.68
+  },
+  {
+    "state": "North Dakota",
+    "year": 2001,
+    "per_capita_kwh": 11868.09
+  },
+  {
+    "state": "North Dakota",
+    "year": 2002,
+    "per_capita_kwh": 12378.21
+  },
+  {
+    "state": "North Dakota",
+    "year": 2003,
+    "per_capita_kwh": 13344.51
+  },
+  {
+    "state": "North Dakota",
+    "year": 2004,
+    "per_capita_kwh": 13415.04
+  },
+  {
+    "state": "North Dakota",
+    "year": 2005,
+    "per_capita_kwh": 13827.82
+  },
+  {
+    "state": "North Dakota",
+    "year": 2006,
+    "per_capita_kwh": 14344.77
+  },
+  {
+    "state": "North Dakota",
+    "year": 2007,
+    "per_capita_kwh": 15187.27
+  },
+  {
+    "state": "North Dakota",
+    "year": 2008,
+    "per_capita_kwh": 15838.32
+  },
+  {
+    "state": "North Dakota",
+    "year": 2009,
+    "per_capita_kwh": 16134.92
+  },
+  {
+    "state": "North Dakota",
+    "year": 2010,
+    "per_capita_kwh": 16527.41
+  },
+  {
+    "state": "North Dakota",
+    "year": 2011,
+    "per_capita_kwh": 17523.36
+  },
+  {
+    "state": "North Dakota",
+    "year": 2012,
+    "per_capita_kwh": 18773.4
+  },
+  {
+    "state": "North Dakota",
+    "year": 2013,
+    "per_capita_kwh": 20452.14
+  },
+  {
+    "state": "North Dakota",
+    "year": 2014,
+    "per_capita_kwh": 23267.16
+  },
+  {
+    "state": "North Dakota",
+    "year": 2015,
+    "per_capita_kwh": 23125.84
+  },
+  {
+    "state": "North Dakota",
+    "year": 2016,
+    "per_capita_kwh": 23624.92
+  },
+  {
+    "state": "North Dakota",
+    "year": 2017,
+    "per_capita_kwh": 25691.74
+  },
+  {
+    "state": "North Dakota",
+    "year": 2018,
+    "per_capita_kwh": 26366.65
+  },
+  {
+    "state": "North Dakota",
+    "year": 2019,
+    "per_capita_kwh": 27501.65
+  },
+  {
+    "state": "North Dakota",
+    "year": 2020,
+    "per_capita_kwh": 27833.56
+  },
+  {
+    "state": "North Dakota",
+    "year": 2021,
+    "per_capita_kwh": 29164.88
+  },
+  {
+    "state": "North Dakota",
+    "year": 2022,
+    "per_capita_kwh": 32391.93
+  },
+  {
+    "state": "North Dakota",
+    "year": 2023,
+    "per_capita_kwh": 35975.56
+  },
+  {
+    "state": "North Dakota",
+    "year": 2024,
+    "per_capita_kwh": 37975.14
+  },
+  {
+    "state": "Ohio",
+    "year": 2001,
+    "per_capita_kwh": 12881.2
+  },
+  {
+    "state": "Ohio",
+    "year": 2002,
+    "per_capita_kwh": 12664.19
+  },
+  {
+    "state": "Ohio",
+    "year": 2003,
+    "per_capita_kwh": 12912.4
+  },
+  {
+    "state": "Ohio",
+    "year": 2004,
+    "per_capita_kwh": 13081.0
+  },
+  {
+    "state": "Ohio",
+    "year": 2005,
+    "per_capita_kwh": 13586.4
+  },
+  {
+    "state": "Ohio",
+    "year": 2006,
+    "per_capita_kwh": 13014.26
+  },
+  {
+    "state": "Ohio",
+    "year": 2007,
+    "per_capita_kwh": 13721.71
+  },
+  {
+    "state": "Ohio",
+    "year": 2008,
+    "per_capita_kwh": 13519.62
+  },
+  {
+    "state": "Ohio",
+    "year": 2009,
+    "per_capita_kwh": 12409.77
+  },
+  {
+    "state": "Ohio",
+    "year": 2010,
+    "per_capita_kwh": 13075.7
+  },
+  {
+    "state": "Ohio",
+    "year": 2011,
+    "per_capita_kwh": 13126.86
+  },
+  {
+    "state": "Ohio",
+    "year": 2012,
+    "per_capita_kwh": 12932.61
+  },
+  {
+    "state": "Ohio",
+    "year": 2013,
+    "per_capita_kwh": 12749.35
+  },
+  {
+    "state": "Ohio",
+    "year": 2014,
+    "per_capita_kwh": 12781.18
+  },
+  {
+    "state": "Ohio",
+    "year": 2015,
+    "per_capita_kwh": 12656.91
+  },
+  {
+    "state": "Ohio",
+    "year": 2016,
+    "per_capita_kwh": 12774.3
+  },
+  {
+    "state": "Ohio",
+    "year": 2017,
+    "per_capita_kwh": 12438.95
+  },
+  {
+    "state": "Ohio",
+    "year": 2018,
+    "per_capita_kwh": 12971.33
+  },
+  {
+    "state": "Ohio",
+    "year": 2019,
+    "per_capita_kwh": 12598.42
+  },
+  {
+    "state": "Ohio",
+    "year": 2020,
+    "per_capita_kwh": 12097.5
+  },
+  {
+    "state": "Ohio",
+    "year": 2021,
+    "per_capita_kwh": 12530.28
+  },
+  {
+    "state": "Ohio",
+    "year": 2022,
+    "per_capita_kwh": 12681.7
+  },
+  {
+    "state": "Ohio",
+    "year": 2023,
+    "per_capita_kwh": 12439.46
+  },
+  {
+    "state": "Ohio",
+    "year": 2024,
+    "per_capita_kwh": 13038.91
+  },
+  {
+    "state": "Oklahoma",
+    "year": 2001,
+    "per_capita_kwh": 11520.98
+  },
+  {
+    "state": "Oklahoma",
+    "year": 2002,
+    "per_capita_kwh": 11328.04
+  },
+  {
+    "state": "Oklahoma",
+    "year": 2003,
+    "per_capita_kwh": 12439.65
+  },
+  {
+    "state": "Oklahoma",
+    "year": 2004,
+    "per_capita_kwh": 12566.42
+  },
+  {
+    "state": "Oklahoma",
+    "year": 2005,
+    "per_capita_kwh": 13248.5
+  },
+  {
+    "state": "Oklahoma",
+    "year": 2006,
+    "per_capita_kwh": 13544.08
+  },
+  {
+    "state": "Oklahoma",
+    "year": 2007,
+    "per_capita_kwh": 13615.1
+  },
+  {
+    "state": "Oklahoma",
+    "year": 2008,
+    "per_capita_kwh": 13882.91
+  },
+  {
+    "state": "Oklahoma",
+    "year": 2009,
+    "per_capita_kwh": 13455.09
+  },
+  {
+    "state": "Oklahoma",
+    "year": 2010,
+    "per_capita_kwh": 14269.48
+  },
+  {
+    "state": "Oklahoma",
+    "year": 2011,
+    "per_capita_kwh": 14763.05
+  },
+  {
+    "state": "Oklahoma",
+    "year": 2012,
+    "per_capita_kwh": 14638.18
+  },
+  {
+    "state": "Oklahoma",
+    "year": 2013,
+    "per_capita_kwh": 14783.37
+  },
+  {
+    "state": "Oklahoma",
+    "year": 2014,
+    "per_capita_kwh": 15188.96
+  },
+  {
+    "state": "Oklahoma",
+    "year": 2015,
+    "per_capita_kwh": 15130.5
+  },
+  {
+    "state": "Oklahoma",
+    "year": 2016,
+    "per_capita_kwh": 15174.94
+  },
+  {
+    "state": "Oklahoma",
+    "year": 2017,
+    "per_capita_kwh": 14922.24
+  },
+  {
+    "state": "Oklahoma",
+    "year": 2018,
+    "per_capita_kwh": 15929.48
+  },
+  {
+    "state": "Oklahoma",
+    "year": 2019,
+    "per_capita_kwh": 15983.91
+  },
+  {
+    "state": "Oklahoma",
+    "year": 2020,
+    "per_capita_kwh": 15368.03
+  },
+  {
+    "state": "Oklahoma",
+    "year": 2021,
+    "per_capita_kwh": 15917.1
+  },
+  {
+    "state": "Oklahoma",
+    "year": 2022,
+    "per_capita_kwh": 17141.09
+  },
+  {
+    "state": "Oklahoma",
+    "year": 2023,
+    "per_capita_kwh": 17015.75
+  },
+  {
+    "state": "Oklahoma",
+    "year": 2024,
+    "per_capita_kwh": 17781.67
+  },
+  {
+    "state": "Oregon",
+    "year": 2001,
+    "per_capita_kwh": 10725.22
+  },
+  {
+    "state": "Oregon",
+    "year": 2002,
+    "per_capita_kwh": 10571.22
+  },
+  {
+    "state": "Oregon",
+    "year": 2003,
+    "per_capita_kwh": 10672.25
+  },
+  {
+    "state": "Oregon",
+    "year": 2004,
+    "per_capita_kwh": 10776.53
+  },
+  {
+    "state": "Oregon",
+    "year": 2005,
+    "per_capita_kwh": 10961.11
+  },
+  {
+    "state": "Oregon",
+    "year": 2006,
+    "per_capita_kwh": 11350.61
+  },
+  {
+    "state": "Oregon",
+    "year": 2007,
+    "per_capita_kwh": 11498.79
+  },
+  {
+    "state": "Oregon",
+    "year": 2008,
+    "per_capita_kwh": 11614.52
+  },
+  {
+    "state": "Oregon",
+    "year": 2009,
+    "per_capita_kwh": 11230.61
+  },
+  {
+    "state": "Oregon",
+    "year": 2010,
+    "per_capita_kwh": 10866.24
+  },
+  {
+    "state": "Oregon",
+    "year": 2011,
+    "per_capita_kwh": 11136.92
+  },
+  {
+    "state": "Oregon",
+    "year": 2012,
+    "per_capita_kwh": 11022.94
+  },
+  {
+    "state": "Oregon",
+    "year": 2013,
+    "per_capita_kwh": 11248.4
+  },
+  {
+    "state": "Oregon",
+    "year": 2014,
+    "per_capita_kwh": 11175.88
+  },
+  {
+    "state": "Oregon",
+    "year": 2015,
+    "per_capita_kwh": 11158.95
+  },
+  {
+    "state": "Oregon",
+    "year": 2016,
+    "per_capita_kwh": 11179.15
+  },
+  {
+    "state": "Oregon",
+    "year": 2017,
+    "per_capita_kwh": 11815.32
+  },
+  {
+    "state": "Oregon",
+    "year": 2018,
+    "per_capita_kwh": 11645.58
+  },
+  {
+    "state": "Oregon",
+    "year": 2019,
+    "per_capita_kwh": 11900.11
+  },
+  {
+    "state": "Oregon",
+    "year": 2020,
+    "per_capita_kwh": 12045.69
+  },
+  {
+    "state": "Oregon",
+    "year": 2021,
+    "per_capita_kwh": 12782.43
+  },
+  {
+    "state": "Oregon",
+    "year": 2022,
+    "per_capita_kwh": 13300.13
+  },
+  {
+    "state": "Oregon",
+    "year": 2023,
+    "per_capita_kwh": 13691.81
+  },
+  {
+    "state": "Oregon",
+    "year": 2024,
+    "per_capita_kwh": 14092.49
+  },
+  {
+    "state": "Pennsylvania",
+    "year": 2001,
+    "per_capita_kwh": 10335.54
+  },
+  {
+    "state": "Pennsylvania",
+    "year": 2002,
+    "per_capita_kwh": 10681.59
+  },
+  {
+    "state": "Pennsylvania",
+    "year": 2003,
+    "per_capita_kwh": 10773.47
+  },
+  {
+    "state": "Pennsylvania",
+    "year": 2004,
+    "per_capita_kwh": 11007.68
+  },
+  {
+    "state": "Pennsylvania",
+    "year": 2005,
+    "per_capita_kwh": 11371.47
+  },
+  {
+    "state": "Pennsylvania",
+    "year": 2006,
+    "per_capita_kwh": 11212.59
+  },
+  {
+    "state": "Pennsylvania",
+    "year": 2007,
+    "per_capita_kwh": 11626.37
+  },
+  {
+    "state": "Pennsylvania",
+    "year": 2008,
+    "per_capita_kwh": 11536.89
+  },
+  {
+    "state": "Pennsylvania",
+    "year": 2009,
+    "per_capita_kwh": 11022.4
+  },
+  {
+    "state": "Pennsylvania",
+    "year": 2010,
+    "per_capita_kwh": 11424.2
+  },
+  {
+    "state": "Pennsylvania",
+    "year": 2011,
+    "per_capita_kwh": 11411.86
+  },
+  {
+    "state": "Pennsylvania",
+    "year": 2012,
+    "per_capita_kwh": 11096.91
+  },
+  {
+    "state": "Pennsylvania",
+    "year": 2013,
+    "per_capita_kwh": 11220.76
+  },
+  {
+    "state": "Pennsylvania",
+    "year": 2014,
+    "per_capita_kwh": 11253.24
+  },
+  {
+    "state": "Pennsylvania",
+    "year": 2015,
+    "per_capita_kwh": 11230.65
+  },
+  {
+    "state": "Pennsylvania",
+    "year": 2016,
+    "per_capita_kwh": 11151.37
+  },
+  {
+    "state": "Pennsylvania",
+    "year": 2017,
+    "per_capita_kwh": 10973.59
+  },
+  {
+    "state": "Pennsylvania",
+    "year": 2018,
+    "per_capita_kwh": 11439.37
+  },
+  {
+    "state": "Pennsylvania",
+    "year": 2019,
+    "per_capita_kwh": 11183.86
+  },
+  {
+    "state": "Pennsylvania",
+    "year": 2020,
+    "per_capita_kwh": 10746.71
+  },
+  {
+    "state": "Pennsylvania",
+    "year": 2021,
+    "per_capita_kwh": 11027.35
+  },
+  {
+    "state": "Pennsylvania",
+    "year": 2022,
+    "per_capita_kwh": 11149.4
+  },
+  {
+    "state": "Pennsylvania",
+    "year": 2023,
+    "per_capita_kwh": 10668.12
+  },
+  {
+    "state": "Pennsylvania",
+    "year": 2024,
+    "per_capita_kwh": 10928.5
+  },
+  {
+    "state": "Rhode Island",
+    "year": 2001,
+    "per_capita_kwh": 6683.65
+  },
+  {
+    "state": "Rhode Island",
+    "year": 2002,
+    "per_capita_kwh": 6821.38
+  },
+  {
+    "state": "Rhode Island",
+    "year": 2003,
+    "per_capita_kwh": 7113.96
+  },
+  {
+    "state": "Rhode Island",
+    "year": 2004,
+    "per_capita_kwh": 7196.94
+  },
+  {
+    "state": "Rhode Island",
+    "year": 2005,
+    "per_capita_kwh": 7344.33
+  },
+  {
+    "state": "Rhode Island",
+    "year": 2006,
+    "per_capita_kwh": 7116.24
+  },
+  {
+    "state": "Rhode Island",
+    "year": 2007,
+    "per_capita_kwh": 7311.4
+  },
+  {
+    "state": "Rhode Island",
+    "year": 2008,
+    "per_capita_kwh": 7134.0
+  },
+  {
+    "state": "Rhode Island",
+    "year": 2009,
+    "per_capita_kwh": 6950.63
+  },
+  {
+    "state": "Rhode Island",
+    "year": 2010,
+    "per_capita_kwh": 7091.42
+  },
+  {
+    "state": "Rhode Island",
+    "year": 2011,
+    "per_capita_kwh": 7030.76
+  },
+  {
+    "state": "Rhode Island",
+    "year": 2012,
+    "per_capita_kwh": 7011.84
+  },
+  {
+    "state": "Rhode Island",
+    "year": 2013,
+    "per_capita_kwh": 7075.7
+  },
+  {
+    "state": "Rhode Island",
+    "year": 2014,
+    "per_capita_kwh": 6948.39
+  },
+  {
+    "state": "Rhode Island",
+    "year": 2015,
+    "per_capita_kwh": 6970.0
+  },
+  {
+    "state": "Rhode Island",
+    "year": 2016,
+    "per_capita_kwh": 6840.72
+  },
+  {
+    "state": "Rhode Island",
+    "year": 2017,
+    "per_capita_kwh": 6712.93
+  },
+  {
+    "state": "Rhode Island",
+    "year": 2018,
+    "per_capita_kwh": 6894.74
+  },
+  {
+    "state": "Rhode Island",
+    "year": 2019,
+    "per_capita_kwh": 6681.72
+  },
+  {
+    "state": "Rhode Island",
+    "year": 2020,
+    "per_capita_kwh": 6691.82
+  },
+  {
+    "state": "Rhode Island",
+    "year": 2021,
+    "per_capita_kwh": 6733.65
+  },
+  {
+    "state": "Rhode Island",
+    "year": 2022,
+    "per_capita_kwh": 6891.95
+  },
+  {
+    "state": "Rhode Island",
+    "year": 2023,
+    "per_capita_kwh": 6637.62
+  },
+  {
+    "state": "Rhode Island",
+    "year": 2024,
+    "per_capita_kwh": 6745.06
+  },
+  {
+    "state": "South Carolina",
+    "year": 2001,
+    "per_capita_kwh": 13750.03
+  },
+  {
+    "state": "South Carolina",
+    "year": 2002,
+    "per_capita_kwh": 14305.12
+  },
+  {
+    "state": "South Carolina",
+    "year": 2003,
+    "per_capita_kwh": 14339.5
+  },
+  {
+    "state": "South Carolina",
+    "year": 2004,
+    "per_capita_kwh": 14870.67
+  },
+  {
+    "state": "South Carolina",
+    "year": 2005,
+    "per_capita_kwh": 15121.1
+  },
+  {
+    "state": "South Carolina",
+    "year": 2006,
+    "per_capita_kwh": 15050.99
+  },
+  {
+    "state": "South Carolina",
+    "year": 2007,
+    "per_capita_kwh": 15250.27
+  },
+  {
+    "state": "South Carolina",
+    "year": 2008,
+    "per_capita_kwh": 15008.79
+  },
+  {
+    "state": "South Carolina",
+    "year": 2009,
+    "per_capita_kwh": 14221.03
+  },
+  {
+    "state": "South Carolina",
+    "year": 2010,
+    "per_capita_kwh": 15349.11
+  },
+  {
+    "state": "South Carolina",
+    "year": 2011,
+    "per_capita_kwh": 14978.64
+  },
+  {
+    "state": "South Carolina",
+    "year": 2012,
+    "per_capita_kwh": 14474.77
+  },
+  {
+    "state": "South Carolina",
+    "year": 2013,
+    "per_capita_kwh": 14627.58
+  },
+  {
+    "state": "South Carolina",
+    "year": 2014,
+    "per_capita_kwh": 15189.16
+  },
+  {
+    "state": "South Carolina",
+    "year": 2015,
+    "per_capita_kwh": 15134.91
+  },
+  {
+    "state": "South Carolina",
+    "year": 2016,
+    "per_capita_kwh": 14809.11
+  },
+  {
+    "state": "South Carolina",
+    "year": 2017,
+    "per_capita_kwh": 14533.54
+  },
+  {
+    "state": "South Carolina",
+    "year": 2018,
+    "per_capita_kwh": 15193.13
+  },
+  {
+    "state": "South Carolina",
+    "year": 2019,
+    "per_capita_kwh": 14925.99
+  },
+  {
+    "state": "South Carolina",
+    "year": 2020,
+    "per_capita_kwh": 14280.52
+  },
+  {
+    "state": "South Carolina",
+    "year": 2021,
+    "per_capita_kwh": 14849.04
+  },
+  {
+    "state": "South Carolina",
+    "year": 2022,
+    "per_capita_kwh": 15401.06
+  },
+  {
+    "state": "South Carolina",
+    "year": 2023,
+    "per_capita_kwh": 15111.45
+  },
+  {
+    "state": "South Carolina",
+    "year": 2024,
+    "per_capita_kwh": 15624.93
+  },
+  {
+    "state": "South Dakota",
+    "year": 2001,
+    "per_capita_kwh": 8877.87
+  },
+  {
+    "state": "South Dakota",
+    "year": 2002,
+    "per_capita_kwh": 9136.12
+  },
+  {
+    "state": "South Dakota",
+    "year": 2003,
+    "per_capita_kwh": 9876.88
+  },
+  {
+    "state": "South Dakota",
+    "year": 2004,
+    "per_capita_kwh": 10022.48
+  },
+  {
+    "state": "South Dakota",
+    "year": 2005,
+    "per_capita_kwh": 10672.06
+  },
+  {
+    "state": "South Dakota",
+    "year": 2006,
+    "per_capita_kwh": 10938.96
+  },
+  {
+    "state": "South Dakota",
+    "year": 2007,
+    "per_capita_kwh": 11533.88
+  },
+  {
+    "state": "South Dakota",
+    "year": 2008,
+    "per_capita_kwh": 11937.2
+  },
+  {
+    "state": "South Dakota",
+    "year": 2009,
+    "per_capita_kwh": 11976.4
+  },
+  {
+    "state": "South Dakota",
+    "year": 2010,
+    "per_capita_kwh": 12352.8
+  },
+  {
+    "state": "South Dakota",
+    "year": 2011,
+    "per_capita_kwh": 12704.64
+  },
+  {
+    "state": "South Dakota",
+    "year": 2012,
+    "per_capita_kwh": 12764.04
+  },
+  {
+    "state": "South Dakota",
+    "year": 2013,
+    "per_capita_kwh": 13281.37
+  },
+  {
+    "state": "South Dakota",
+    "year": 2014,
+    "per_capita_kwh": 13439.01
+  },
+  {
+    "state": "South Dakota",
+    "year": 2015,
+    "per_capita_kwh": 13164.08
+  },
+  {
+    "state": "South Dakota",
+    "year": 2016,
+    "per_capita_kwh": 13194.05
+  },
+  {
+    "state": "South Dakota",
+    "year": 2017,
+    "per_capita_kwh": 13394.36
+  },
+  {
+    "state": "South Dakota",
+    "year": 2018,
+    "per_capita_kwh": 13985.3
+  },
+  {
+    "state": "South Dakota",
+    "year": 2019,
+    "per_capita_kwh": 13998.35
+  },
+  {
+    "state": "South Dakota",
+    "year": 2020,
+    "per_capita_kwh": 13810.07
+  },
+  {
+    "state": "South Dakota",
+    "year": 2021,
+    "per_capita_kwh": 14185.94
+  },
+  {
+    "state": "South Dakota",
+    "year": 2022,
+    "per_capita_kwh": 14648.97
+  },
+  {
+    "state": "South Dakota",
+    "year": 2023,
+    "per_capita_kwh": 14691.32
+  },
+  {
+    "state": "South Dakota",
+    "year": 2024,
+    "per_capita_kwh": 14834.04
+  },
+  {
+    "state": "Tennessee",
+    "year": 2001,
+    "per_capita_kwh": 13338.13
+  },
+  {
+    "state": "Tennessee",
+    "year": 2002,
+    "per_capita_kwh": 13628.1
+  },
+  {
+    "state": "Tennessee",
+    "year": 2003,
+    "per_capita_kwh": 13675.15
+  },
+  {
+    "state": "Tennessee",
+    "year": 2004,
+    "per_capita_kwh": 13984.39
+  },
+  {
+    "state": "Tennessee",
+    "year": 2005,
+    "per_capita_kwh": 14579.99
+  },
+  {
+    "state": "Tennessee",
+    "year": 2006,
+    "per_capita_kwh": 14583.66
+  },
+  {
+    "state": "Tennessee",
+    "year": 2007,
+    "per_capita_kwh": 14974.47
+  },
+  {
+    "state": "Tennessee",
+    "year": 2008,
+    "per_capita_kwh": 14617.0
+  },
+  {
+    "state": "Tennessee",
+    "year": 2009,
+    "per_capita_kwh": 13317.64
+  },
+  {
+    "state": "Tennessee",
+    "year": 2010,
+    "per_capita_kwh": 14526.04
+  },
+  {
+    "state": "Tennessee",
+    "year": 2011,
+    "per_capita_kwh": 14134.82
+  },
+  {
+    "state": "Tennessee",
+    "year": 2012,
+    "per_capita_kwh": 13524.15
+  },
+  {
+    "state": "Tennessee",
+    "year": 2013,
+    "per_capita_kwh": 13603.08
+  },
+  {
+    "state": "Tennessee",
+    "year": 2014,
+    "per_capita_kwh": 14062.75
+  },
+  {
+    "state": "Tennessee",
+    "year": 2015,
+    "per_capita_kwh": 13980.53
+  },
+  {
+    "state": "Tennessee",
+    "year": 2016,
+    "per_capita_kwh": 14138.58
+  },
+  {
+    "state": "Tennessee",
+    "year": 2017,
+    "per_capita_kwh": 13644.85
+  },
+  {
+    "state": "Tennessee",
+    "year": 2018,
+    "per_capita_kwh": 14440.66
+  },
+  {
+    "state": "Tennessee",
+    "year": 2019,
+    "per_capita_kwh": 14008.17
+  },
+  {
+    "state": "Tennessee",
+    "year": 2020,
+    "per_capita_kwh": 13331.09
+  },
+  {
+    "state": "Tennessee",
+    "year": 2021,
+    "per_capita_kwh": 13978.99
+  },
+  {
+    "state": "Tennessee",
+    "year": 2022,
+    "per_capita_kwh": 14328.52
+  },
+  {
+    "state": "Tennessee",
+    "year": 2023,
+    "per_capita_kwh": 13898.29
+  },
+  {
+    "state": "Tennessee",
+    "year": 2024,
+    "per_capita_kwh": 14447.85
+  },
+  {
+    "state": "Texas",
+    "year": 2001,
+    "per_capita_kwh": 9948.54
+  },
+  {
+    "state": "Texas",
+    "year": 2002,
+    "per_capita_kwh": 10209.78
+  },
+  {
+    "state": "Texas",
+    "year": 2003,
+    "per_capita_kwh": 10575.77
+  },
+  {
+    "state": "Texas",
+    "year": 2004,
+    "per_capita_kwh": 10508.16
+  },
+  {
+    "state": "Texas",
+    "year": 2005,
+    "per_capita_kwh": 10955.79
+  },
+  {
+    "state": "Texas",
+    "year": 2006,
+    "per_capita_kwh": 11233.62
+  },
+  {
+    "state": "Texas",
+    "year": 2007,
+    "per_capita_kwh": 11269.65
+  },
+  {
+    "state": "Texas",
+    "year": 2008,
+    "per_capita_kwh": 11400.28
+  },
+  {
+    "state": "Texas",
+    "year": 2009,
+    "per_capita_kwh": 11319.45
+  },
+  {
+    "state": "Texas",
+    "year": 2010,
+    "per_capita_kwh": 11748.99
+  },
+  {
+    "state": "Texas",
+    "year": 2011,
+    "per_capita_kwh": 12326.43
+  },
+  {
+    "state": "Texas",
+    "year": 2012,
+    "per_capita_kwh": 11967.03
+  },
+  {
+    "state": "Texas",
+    "year": 2013,
+    "per_capita_kwh": 12416.9
+  },
+  {
+    "state": "Texas",
+    "year": 2014,
+    "per_capita_kwh": 12769.02
+  },
+  {
+    "state": "Texas",
+    "year": 2015,
+    "per_capita_kwh": 12856.24
+  },
+  {
+    "state": "Texas",
+    "year": 2016,
+    "per_capita_kwh": 13063.51
+  },
+  {
+    "state": "Texas",
+    "year": 2017,
+    "per_capita_kwh": 13169.0
+  },
+  {
+    "state": "Texas",
+    "year": 2018,
+    "per_capita_kwh": 13907.72
+  },
+  {
+    "state": "Texas",
+    "year": 2019,
+    "per_capita_kwh": 14069.19
+  },
+  {
+    "state": "Texas",
+    "year": 2020,
+    "per_capita_kwh": 13988.31
+  },
+  {
+    "state": "Texas",
+    "year": 2021,
+    "per_capita_kwh": 14275.44
+  },
+  {
+    "state": "Texas",
+    "year": 2022,
+    "per_capita_kwh": 15579.35
+  },
+  {
+    "state": "Texas",
+    "year": 2023,
+    "per_capita_kwh": 16150.77
+  },
+  {
+    "state": "Texas",
+    "year": 2024,
+    "per_capita_kwh": 16569.35
+  },
+  {
+    "state": "Utah",
+    "year": 2001,
+    "per_capita_kwh": 6544.26
+  },
+  {
+    "state": "Utah",
+    "year": 2002,
+    "per_capita_kwh": 6560.11
+  },
+  {
+    "state": "Utah",
+    "year": 2003,
+    "per_capita_kwh": 6974.13
+  },
+  {
+    "state": "Utah",
+    "year": 2004,
+    "per_capita_kwh": 7164.5
+  },
+  {
+    "state": "Utah",
+    "year": 2005,
+    "per_capita_kwh": 7306.84
+  },
+  {
+    "state": "Utah",
+    "year": 2006,
+    "per_capita_kwh": 7705.84
+  },
+  {
+    "state": "Utah",
+    "year": 2007,
+    "per_capita_kwh": 8119.85
+  },
+  {
+    "state": "Utah",
+    "year": 2008,
+    "per_capita_kwh": 8238.95
+  },
+  {
+    "state": "Utah",
+    "year": 2009,
+    "per_capita_kwh": 8062.17
+  },
+  {
+    "state": "Utah",
+    "year": 2010,
+    "per_capita_kwh": 8195.57
+  },
+  {
+    "state": "Utah",
+    "year": 2011,
+    "per_capita_kwh": 8433.68
+  },
+  {
+    "state": "Utah",
+    "year": 2012,
+    "per_capita_kwh": 8685.64
+  },
+  {
+    "state": "Utah",
+    "year": 2013,
+    "per_capita_kwh": 8900.61
+  },
+  {
+    "state": "Utah",
+    "year": 2014,
+    "per_capita_kwh": 8772.58
+  },
+  {
+    "state": "Utah",
+    "year": 2015,
+    "per_capita_kwh": 8817.75
+  },
+  {
+    "state": "Utah",
+    "year": 2016,
+    "per_capita_kwh": 8813.72
+  },
+  {
+    "state": "Utah",
+    "year": 2017,
+    "per_capita_kwh": 8933.68
+  },
+  {
+    "state": "Utah",
+    "year": 2018,
+    "per_capita_kwh": 9126.24
+  },
+  {
+    "state": "Utah",
+    "year": 2019,
+    "per_capita_kwh": 9096.91
+  },
+  {
+    "state": "Utah",
+    "year": 2020,
+    "per_capita_kwh": 9249.97
+  },
+  {
+    "state": "Utah",
+    "year": 2021,
+    "per_capita_kwh": 9546.87
+  },
+  {
+    "state": "Utah",
+    "year": 2022,
+    "per_capita_kwh": 9749.0
+  },
+  {
+    "state": "Utah",
+    "year": 2023,
+    "per_capita_kwh": 9740.13
+  },
+  {
+    "state": "Utah",
+    "year": 2024,
+    "per_capita_kwh": 10133.91
+  },
+  {
+    "state": "Vermont",
+    "year": 2001,
+    "per_capita_kwh": 8561.7
+  },
+  {
+    "state": "Vermont",
+    "year": 2002,
+    "per_capita_kwh": 8624.94
+  },
+  {
+    "state": "Vermont",
+    "year": 2003,
+    "per_capita_kwh": 8266.76
+  },
+  {
+    "state": "Vermont",
+    "year": 2004,
+    "per_capita_kwh": 8747.62
+  },
+  {
+    "state": "Vermont",
+    "year": 2005,
+    "per_capita_kwh": 9086.3
+  },
+  {
+    "state": "Vermont",
+    "year": 2006,
+    "per_capita_kwh": 8950.35
+  },
+  {
+    "state": "Vermont",
+    "year": 2007,
+    "per_capita_kwh": 9056.88
+  },
+  {
+    "state": "Vermont",
+    "year": 2008,
+    "per_capita_kwh": 8867.22
+  },
+  {
+    "state": "Vermont",
+    "year": 2009,
+    "per_capita_kwh": 8489.3
+  },
+  {
+    "state": "Vermont",
+    "year": 2010,
+    "per_capita_kwh": 8641.15
+  },
+  {
+    "state": "Vermont",
+    "year": 2011,
+    "per_capita_kwh": 8572.19
+  },
+  {
+    "state": "Vermont",
+    "year": 2012,
+    "per_capita_kwh": 8511.31
+  },
+  {
+    "state": "Vermont",
+    "year": 2013,
+    "per_capita_kwh": 8630.15
+  },
+  {
+    "state": "Vermont",
+    "year": 2014,
+    "per_capita_kwh": 8602.58
+  },
+  {
+    "state": "Vermont",
+    "year": 2015,
+    "per_capita_kwh": 8527.28
+  },
+  {
+    "state": "Vermont",
+    "year": 2016,
+    "per_capita_kwh": 8520.09
+  },
+  {
+    "state": "Vermont",
+    "year": 2017,
+    "per_capita_kwh": 8376.78
+  },
+  {
+    "state": "Vermont",
+    "year": 2018,
+    "per_capita_kwh": 8542.48
+  },
+  {
+    "state": "Vermont",
+    "year": 2019,
+    "per_capita_kwh": 8382.96
+  },
+  {
+    "state": "Vermont",
+    "year": 2020,
+    "per_capita_kwh": 8234.37
+  },
+  {
+    "state": "Vermont",
+    "year": 2021,
+    "per_capita_kwh": 8359.84
+  },
+  {
+    "state": "Vermont",
+    "year": 2022,
+    "per_capita_kwh": 8449.07
+  },
+  {
+    "state": "Vermont",
+    "year": 2023,
+    "per_capita_kwh": 8284.67
+  },
+  {
+    "state": "Vermont",
+    "year": 2024,
+    "per_capita_kwh": 8431.27
+  },
+  {
+    "state": "Virginia",
+    "year": 2001,
+    "per_capita_kwh": 9961.84
+  },
+  {
+    "state": "Virginia",
+    "year": 2002,
+    "per_capita_kwh": 10399.84
+  },
+  {
+    "state": "Virginia",
+    "year": 2003,
+    "per_capita_kwh": 11725.86
+  },
+  {
+    "state": "Virginia",
+    "year": 2004,
+    "per_capita_kwh": 12179.96
+  },
+  {
+    "state": "Virginia",
+    "year": 2005,
+    "per_capita_kwh": 12576.1
+  },
+  {
+    "state": "Virginia",
+    "year": 2006,
+    "per_capita_kwh": 12329.85
+  },
+  {
+    "state": "Virginia",
+    "year": 2007,
+    "per_capita_kwh": 12887.45
+  },
+  {
+    "state": "Virginia",
+    "year": 2008,
+    "per_capita_kwh": 12717.98
+  },
+  {
+    "state": "Virginia",
+    "year": 2009,
+    "per_capita_kwh": 12527.84
+  },
+  {
+    "state": "Virginia",
+    "year": 2010,
+    "per_capita_kwh": 13146.67
+  },
+  {
+    "state": "Virginia",
+    "year": 2011,
+    "per_capita_kwh": 12732.83
+  },
+  {
+    "state": "Virginia",
+    "year": 2012,
+    "per_capita_kwh": 12451.25
+  },
+  {
+    "state": "Virginia",
+    "year": 2013,
+    "per_capita_kwh": 12764.84
+  },
+  {
+    "state": "Virginia",
+    "year": 2014,
+    "per_capita_kwh": 12947.56
+  },
+  {
+    "state": "Virginia",
+    "year": 2015,
+    "per_capita_kwh": 12937.87
+  },
+  {
+    "state": "Virginia",
+    "year": 2016,
+    "per_capita_kwh": 12970.88
+  },
+  {
+    "state": "Virginia",
+    "year": 2017,
+    "per_capita_kwh": 12884.55
+  },
+  {
+    "state": "Virginia",
+    "year": 2018,
+    "per_capita_kwh": 13650.08
+  },
+  {
+    "state": "Virginia",
+    "year": 2019,
+    "per_capita_kwh": 13682.23
+  },
+  {
+    "state": "Virginia",
+    "year": 2020,
+    "per_capita_kwh": 13548.51
+  },
+  {
+    "state": "Virginia",
+    "year": 2021,
+    "per_capita_kwh": 14471.95
+  },
+  {
+    "state": "Virginia",
+    "year": 2022,
+    "per_capita_kwh": 15289.36
+  },
+  {
+    "state": "Virginia",
+    "year": 2023,
+    "per_capita_kwh": 15282.89
+  },
+  {
+    "state": "Virginia",
+    "year": 2024,
+    "per_capita_kwh": 15940.14
+  },
+  {
+    "state": "Washington",
+    "year": 2001,
+    "per_capita_kwh": 9572.39
+  },
+  {
+    "state": "Washington",
+    "year": 2002,
+    "per_capita_kwh": 9236.94
+  },
+  {
+    "state": "Washington",
+    "year": 2003,
+    "per_capita_kwh": 9995.21
+  },
+  {
+    "state": "Washington",
+    "year": 2004,
+    "per_capita_kwh": 10231.81
+  },
+  {
+    "state": "Washington",
+    "year": 2005,
+    "per_capita_kwh": 10677.7
+  },
+  {
+    "state": "Washington",
+    "year": 2006,
+    "per_capita_kwh": 10883.59
+  },
+  {
+    "state": "Washington",
+    "year": 2007,
+    "per_capita_kwh": 10974.24
+  },
+  {
+    "state": "Washington",
+    "year": 2008,
+    "per_capita_kwh": 11177.87
+  },
+  {
+    "state": "Washington",
+    "year": 2009,
+    "per_capita_kwh": 11545.98
+  },
+  {
+    "state": "Washington",
+    "year": 2010,
+    "per_capita_kwh": 11567.18
+  },
+  {
+    "state": "Washington",
+    "year": 2011,
+    "per_capita_kwh": 11995.3
+  },
+  {
+    "state": "Washington",
+    "year": 2012,
+    "per_capita_kwh": 11817.6
+  },
+  {
+    "state": "Washington",
+    "year": 2013,
+    "per_capita_kwh": 11887.65
+  },
+  {
+    "state": "Washington",
+    "year": 2014,
+    "per_capita_kwh": 11792.84
+  },
+  {
+    "state": "Washington",
+    "year": 2015,
+    "per_capita_kwh": 11533.62
+  },
+  {
+    "state": "Washington",
+    "year": 2016,
+    "per_capita_kwh": 11375.99
+  },
+  {
+    "state": "Washington",
+    "year": 2017,
+    "per_capita_kwh": 11767.88
+  },
+  {
+    "state": "Washington",
+    "year": 2018,
+    "per_capita_kwh": 11519.27
+  },
+  {
+    "state": "Washington",
+    "year": 2019,
+    "per_capita_kwh": 11641.54
+  },
+  {
+    "state": "Washington",
+    "year": 2020,
+    "per_capita_kwh": 11085.34
+  },
+  {
+    "state": "Washington",
+    "year": 2021,
+    "per_capita_kwh": 11275.62
+  },
+  {
+    "state": "Washington",
+    "year": 2022,
+    "per_capita_kwh": 11619.71
+  },
+  {
+    "state": "Washington",
+    "year": 2023,
+    "per_capita_kwh": 11451.12
+  },
+  {
+    "state": "Washington",
+    "year": 2024,
+    "per_capita_kwh": 11505.08
+  },
+  {
+    "state": "West Virginia",
+    "year": 2001,
+    "per_capita_kwh": 15588.04
+  },
+  {
+    "state": "West Virginia",
+    "year": 2002,
+    "per_capita_kwh": 16036.2
+  },
+  {
+    "state": "West Virginia",
+    "year": 2003,
+    "per_capita_kwh": 15986.36
+  },
+  {
+    "state": "West Virginia",
+    "year": 2004,
+    "per_capita_kwh": 16335.04
+  },
+  {
+    "state": "West Virginia",
+    "year": 2005,
+    "per_capita_kwh": 17031.89
+  },
+  {
+    "state": "West Virginia",
+    "year": 2006,
+    "per_capita_kwh": 18252.25
+  },
+  {
+    "state": "West Virginia",
+    "year": 2007,
+    "per_capita_kwh": 19309.61
+  },
+  {
+    "state": "West Virginia",
+    "year": 2008,
+    "per_capita_kwh": 19330.68
+  },
+  {
+    "state": "West Virginia",
+    "year": 2009,
+    "per_capita_kwh": 17099.46
+  },
+  {
+    "state": "West Virginia",
+    "year": 2010,
+    "per_capita_kwh": 18093.86
+  },
+  {
+    "state": "West Virginia",
+    "year": 2011,
+    "per_capita_kwh": 17645.91
+  },
+  {
+    "state": "West Virginia",
+    "year": 2012,
+    "per_capita_kwh": 17407.82
+  },
+  {
+    "state": "West Virginia",
+    "year": 2013,
+    "per_capita_kwh": 17737.07
+  },
+  {
+    "state": "West Virginia",
+    "year": 2014,
+    "per_capita_kwh": 18471.64
+  },
+  {
+    "state": "West Virginia",
+    "year": 2015,
+    "per_capita_kwh": 18249.57
+  },
+  {
+    "state": "West Virginia",
+    "year": 2016,
+    "per_capita_kwh": 18121.39
+  },
+  {
+    "state": "West Virginia",
+    "year": 2017,
+    "per_capita_kwh": 17913.98
+  },
+  {
+    "state": "West Virginia",
+    "year": 2018,
+    "per_capita_kwh": 19008.74
+  },
+  {
+    "state": "West Virginia",
+    "year": 2019,
+    "per_capita_kwh": 18782.87
+  },
+  {
+    "state": "West Virginia",
+    "year": 2020,
+    "per_capita_kwh": 18121.64
+  },
+  {
+    "state": "West Virginia",
+    "year": 2021,
+    "per_capita_kwh": 18517.89
+  },
+  {
+    "state": "West Virginia",
+    "year": 2022,
+    "per_capita_kwh": 18635.57
+  },
+  {
+    "state": "West Virginia",
+    "year": 2023,
+    "per_capita_kwh": 18118.31
+  },
+  {
+    "state": "West Virginia",
+    "year": 2024,
+    "per_capita_kwh": 18637.99
+  },
+  {
+    "state": "Wisconsin",
+    "year": 2001,
+    "per_capita_kwh": 10906.22
+  },
+  {
+    "state": "Wisconsin",
+    "year": 2002,
+    "per_capita_kwh": 11208.52
+  },
+  {
+    "state": "Wisconsin",
+    "year": 2003,
+    "per_capita_kwh": 11375.74
+  },
+  {
+    "state": "Wisconsin",
+    "year": 2004,
+    "per_capita_kwh": 11499.95
+  },
+  {
+    "state": "Wisconsin",
+    "year": 2005,
+    "per_capita_kwh": 11899.21
+  },
+  {
+    "state": "Wisconsin",
+    "year": 2006,
+    "per_capita_kwh": 11812.09
+  },
+  {
+    "state": "Wisconsin",
+    "year": 2007,
+    "per_capita_kwh": 12062.57
+  },
+  {
+    "state": "Wisconsin",
+    "year": 2008,
+    "per_capita_kwh": 11863.03
+  },
+  {
+    "state": "Wisconsin",
+    "year": 2009,
+    "per_capita_kwh": 11214.17
+  },
+  {
+    "state": "Wisconsin",
+    "year": 2010,
+    "per_capita_kwh": 11631.36
+  },
+  {
+    "state": "Wisconsin",
+    "year": 2011,
+    "per_capita_kwh": 11607.54
+  },
+  {
+    "state": "Wisconsin",
+    "year": 2012,
+    "per_capita_kwh": 11642.8
+  },
+  {
+    "state": "Wisconsin",
+    "year": 2013,
+    "per_capita_kwh": 11694.23
+  },
+  {
+    "state": "Wisconsin",
+    "year": 2014,
+    "per_capita_kwh": 11756.94
+  },
+  {
+    "state": "Wisconsin",
+    "year": 2015,
+    "per_capita_kwh": 11622.27
+  },
+  {
+    "state": "Wisconsin",
+    "year": 2016,
+    "per_capita_kwh": 11797.78
+  },
+  {
+    "state": "Wisconsin",
+    "year": 2017,
+    "per_capita_kwh": 11686.59
+  },
+  {
+    "state": "Wisconsin",
+    "year": 2018,
+    "per_capita_kwh": 12004.72
+  },
+  {
+    "state": "Wisconsin",
+    "year": 2019,
+    "per_capita_kwh": 11699.68
+  },
+  {
+    "state": "Wisconsin",
+    "year": 2020,
+    "per_capita_kwh": 11410.58
+  },
+  {
+    "state": "Wisconsin",
+    "year": 2021,
+    "per_capita_kwh": 11745.24
+  },
+  {
+    "state": "Wisconsin",
+    "year": 2022,
+    "per_capita_kwh": 11821.23
+  },
+  {
+    "state": "Wisconsin",
+    "year": 2023,
+    "per_capita_kwh": 11599.27
+  },
+  {
+    "state": "Wisconsin",
+    "year": 2024,
+    "per_capita_kwh": 11553.14
+  },
+  {
+    "state": "Wyoming",
+    "year": 2001,
+    "per_capita_kwh": 21848.73
+  },
+  {
+    "state": "Wyoming",
+    "year": 2002,
+    "per_capita_kwh": 21765.52
+  },
+  {
+    "state": "Wyoming",
+    "year": 2003,
+    "per_capita_kwh": 22692.71
+  },
+  {
+    "state": "Wyoming",
+    "year": 2004,
+    "per_capita_kwh": 23181.83
+  },
+  {
+    "state": "Wyoming",
+    "year": 2005,
+    "per_capita_kwh": 24206.07
+  },
+  {
+    "state": "Wyoming",
+    "year": 2006,
+    "per_capita_kwh": 25591.02
+  },
+  {
+    "state": "Wyoming",
+    "year": 2007,
+    "per_capita_kwh": 26599.38
+  },
+  {
+    "state": "Wyoming",
+    "year": 2008,
+    "per_capita_kwh": 28576.4
+  },
+  {
+    "state": "Wyoming",
+    "year": 2009,
+    "per_capita_kwh": 28356.71
+  },
+  {
+    "state": "Wyoming",
+    "year": 2010,
+    "per_capita_kwh": 29301.01
+  },
+  {
+    "state": "Wyoming",
+    "year": 2011,
+    "per_capita_kwh": 29822.02
+  },
+  {
+    "state": "Wyoming",
+    "year": 2012,
+    "per_capita_kwh": 29057.7
+  },
+  {
+    "state": "Wyoming",
+    "year": 2013,
+    "per_capita_kwh": 29198.37
+  },
+  {
+    "state": "Wyoming",
+    "year": 2014,
+    "per_capita_kwh": 29336.31
+  },
+  {
+    "state": "Wyoming",
+    "year": 2015,
+    "per_capita_kwh": 28977.93
+  },
+  {
+    "state": "Wyoming",
+    "year": 2016,
+    "per_capita_kwh": 28344.61
+  },
+  {
+    "state": "Wyoming",
+    "year": 2017,
+    "per_capita_kwh": 28726.76
+  },
+  {
+    "state": "Wyoming",
+    "year": 2018,
+    "per_capita_kwh": 28875.05
+  },
+  {
+    "state": "Wyoming",
+    "year": 2019,
+    "per_capita_kwh": 28701.82
+  },
+  {
+    "state": "Wyoming",
+    "year": 2020,
+    "per_capita_kwh": 26249.18
+  },
+  {
+    "state": "Wyoming",
+    "year": 2021,
+    "per_capita_kwh": 27025.98
+  },
+  {
+    "state": "Wyoming",
+    "year": 2022,
+    "per_capita_kwh": 28249.69
+  },
+  {
+    "state": "Wyoming",
+    "year": 2023,
+    "per_capita_kwh": 28747.39
+  },
+  {
+    "state": "Wyoming",
+    "year": 2024,
+    "per_capita_kwh": 29478.12
+  }
+]

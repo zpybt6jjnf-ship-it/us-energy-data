@@ -32,3 +32,13 @@ export const FIPS_TO_ABBR: Record<string, string> = {
 	'50': 'VT', '51': 'VA', '53': 'WA', '54': 'WV', '55': 'WI',
 	'56': 'WY',
 };
+
+/** 2-letter abbreviation to full state name */
+export const ABBR_TO_STATE: Record<string, string> = Object.fromEntries(
+	Object.entries(STATE_FIPS).map(([name, fips]) => [FIPS_TO_ABBR[fips], name])
+);
+
+/** Convert state abbreviation to full name */
+export function stateFromAbbr(abbr: string): string {
+	return ABBR_TO_STATE[abbr.toUpperCase()] ?? abbr;
+}

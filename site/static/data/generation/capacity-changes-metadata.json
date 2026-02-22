@@ -1,0 +1,7 @@
+{
+  "description": "Net capacity additions by energy source (year-over-year change in installed capacity)",
+  "source": "EIA State Electricity Profiles - Generating Capacity",
+  "url": "https://www.eia.gov/electricity/state/",
+  "last_updated": "2026-02-21T21:38:49.770492",
+  "unit": "MW (net change)"
+}

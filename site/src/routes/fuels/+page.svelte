@@ -3,12 +3,20 @@
 	import BarChart from '$components/charts/BarChart.svelte';
 	import ChartWrapper from '$components/charts/ChartWrapper.svelte';
 	import Dropdown from '$components/ui/Dropdown.svelte';
+	import StateSelect from '$components/ui/StateSelect.svelte';
+	import { chartConfig, updateConfig } from '$stores/chartConfig';
 	import { CHART_COLORS } from '$utils/colors';
 	import { formatCompact } from '$utils/formatting';
+	import { stateFromAbbr } from '$utils/states';
 	import { format } from 'd3-format';
 	import type { DataSeries, ChartMeta } from '$types/chart';
 
 	let { data } = $props();
+
+	const productionAnnotations = [
+		{ date: 2008, label: 'Shale revolution' },
+		{ date: 2020, label: 'COVID-19' },
+	];
 
 	const FUEL_COLORS: Record<string, string> = {
 		'Coal': '#4a4a4a',
@@ -58,6 +66,64 @@
 			: allFuelSeries.filter((s) => s.name === selectedFuel)
 	);
 
+	// State comparison series
+	const selectedStates = $derived($chartConfig.states);
+
+	const stateSeries: DataSeries[] = $derived(
+		selectedStates.map((abbr, i) => {
+			const fullName = stateFromAbbr(abbr);
+
+			if (selectedFuel === 'all') {
+				// Index each fuel for this state, then average across fuels
+				// Or more useful: sum production per year across fuels, then index
+				// Since units differ, index each fuel separately then average the indices
+				const fuels = [...new Set(data.byState.filter((d: any) => d.state === fullName).map((d: any) => d.fuel))] as string[];
+				const fuelIndices = fuels.map((fuel) => {
+					const rows = data.byState
+						.filter((d: any) => d.state === fullName && d.fuel === fuel)
+						.sort((a: any, b: any) => a.year - b.year);
+					if (rows.length === 0) return [];
+					const baseValue = rows[0].production;
+					return rows.map((r: any) => ({
+						date: r.year,
+						value: baseValue !== 0 ? (r.production / baseValue) * 100 : 0,
+					}));
+				}).filter((v) => v.length > 0);
+
+				// Average the indexed values across fuels for each year
+				const yearMap = new Map<number, { sum: number; count: number }>();
+				for (const series of fuelIndices) {
+					for (const pt of series) {
+						const entry = yearMap.get(pt.date) ?? { sum: 0, count: 0 };
+						entry.sum += pt.value;
+						entry.count += 1;
+						yearMap.set(pt.date, entry);
+					}
+				}
+
+				return {
+					name: `${abbr} (Indexed)`,
+					color: CHART_COLORS[(filteredFuelSeries.length + i) % CHART_COLORS.length],
+					values: [...yearMap.entries()]
+						.map(([date, { sum, count }]) => ({ date, value: sum / count }))
+						.sort((a, b) => a.date - b.date),
+				};
+			} else {
+				// Single fuel: use raw production values
+				const rows = data.byState
+					.filter((d: any) => d.state === fullName && d.fuel === selectedFuel)
+					.sort((a: any, b: any) => a.year - b.year);
+				return {
+					name: `${abbr} (${selectedFuel})`,
+					color: CHART_COLORS[(filteredFuelSeries.length + i) % CHART_COLORS.length],
+					values: rows.map((r: any) => ({ date: r.year, value: r.production })),
+				};
+			}
+		}).filter((s) => s.values.length > 0)
+	);
+
+	const combinedSeries = $derived([...filteredFuelSeries, ...stateSeries]);
+
 	const lineYLabel = $derived(
 		selectedFuel === 'all'
 			? 'Index (base year = 100)'
@@ -71,8 +137,8 @@
 		sourceUrl: 'https://www.eia.gov/',
 		unit: 'varies by fuel',
 		lastUpdated: new Date().toISOString().split('T')[0],
-		description: 'US fossil fuel production has evolved significantly, with natural gas and crude oil production reaching record levels while coal has declined.',
-		caveats: 'Units differ by fuel type: coal (short tons), natural gas (million cubic feet), crude oil (thousand barrels). Trends shown on separate scales when viewing individual fuels.',
+		description: 'US fossil fuel production has evolved significantly. The shale revolution (post-2008) drove natural gas and crude oil to record levels, while coal production has declined steadily as power plants switch to cheaper gas and renewables.',
+		caveats: 'Units differ by fuel type: coal (short tons), natural gas (million cubic feet), crude oil (thousand barrels). When "All Fuels" is selected, values are indexed to the first available year (= 100) to enable fair cross-fuel comparison despite different units.',
 	};
 
 	// Bar chart: Top 10 producing states for selected fuel
@@ -98,6 +164,87 @@
 		barFuel === 'Coal' ? 'short tons' : barFuel === 'Natural Gas' ? 'million cu ft' : 'thousand barrels'
 	);
 
+	// Chart 3: Fossil fuel generation over time (from generation data)
+	const GEN_FUEL_COLORS: Record<string, string> = {
+		Coal: '#4a4a4a',
+		'Natural Gas': '#e86c3a',
+		Petroleum: '#a6611a',
+	};
+
+	const fuelGenSeries: DataSeries[] = $derived((() => {
+		const fossilSources = ['Coal', 'Natural Gas', 'Petroleum'];
+		return fossilSources.map((source) => ({
+			name: source,
+			color: GEN_FUEL_COLORS[source] ?? '#999',
+			values: data.generation
+				.filter((d: any) => d.source === source)
+				.map((d: any) => ({ date: d.year, value: d.generation }))
+				.sort((a: any, b: any) => a.date - b.date),
+		})).filter((s) => s.values.length > 0);
+	})());
+
+	const fuelGenMeta: ChartMeta = {
+		title: 'Electricity Generation from Fossil Fuels',
+		subtitle: 'Thousand megawatt-hours by fuel type, annual',
+		source: 'US Energy Information Administration',
+		sourceUrl: 'https://www.eia.gov/electricity/data.php',
+		unit: 'thousand MWh',
+		lastUpdated: new Date().toISOString().split('T')[0],
+		description: 'How much electricity does each fossil fuel generate? Coal-fired generation has declined sharply since its peak around 2007, while natural gas generation has surged. Petroleum (oil) plays a minimal and declining role in US electricity generation.',
+		caveats: 'Generation data represents net generation at utility-scale power plants. Combined heat and power (CHP) facilities are included. Some natural gas generation comes from plants that can also burn oil as backup fuel.',
+	};
+
+	// Chart 4: US Petroleum Trade (Imports, Exports, Net Imports)
+	const TRADE_COLORS: Record<string, string> = {
+		Imports: '#e31a1c',
+		Exports: '#2166ac',
+		'Net Imports': '#1b9e77',
+	};
+
+	const tradeSeries: DataSeries[] = $derived((() => {
+		const petTrade = data.trade
+			.filter((d: any) => d.fuel === 'Petroleum' && d.year >= 2000)
+			.sort((a: any, b: any) => a.year - b.year);
+
+		return [
+			{
+				name: 'Imports',
+				color: TRADE_COLORS['Imports'],
+				values: petTrade.map((d: any) => ({ date: d.year, value: d.imports })),
+			},
+			{
+				name: 'Exports',
+				color: TRADE_COLORS['Exports'],
+				values: petTrade.map((d: any) => ({ date: d.year, value: d.exports })),
+			},
+			{
+				name: 'Net Imports',
+				color: TRADE_COLORS['Net Imports'],
+				values: petTrade.map((d: any) => ({ date: d.year, value: d.net_imports })),
+			},
+		];
+	})());
+
+	const tradeAnnotations = [
+		{ date: 2008, label: 'Shale revolution' },
+		{ date: 2020, label: 'COVID-19' },
+	];
+
+	const tradeMeta: ChartMeta = {
+		title: 'US Petroleum Trade',
+		subtitle: 'Thousand barrels per day',
+		source: 'US Energy Information Administration',
+		sourceUrl: 'https://www.eia.gov/petroleum/move/',
+		unit: 'thousand barrels/day',
+		lastUpdated: new Date().toISOString().split('T')[0],
+		description: 'The US was a major net petroleum importer for decades, but the shale revolution and increased domestic production have dramatically reduced net imports. Since roughly 2020 the US has been close to energy self-sufficiency in petroleum, with exports rising sharply even as imports have moderated.',
+		caveats: 'Includes crude oil and finished petroleum products. Net imports = imports minus exports. A negative net imports value indicates the US is a net exporter. Data from EIA petroleum movement series.',
+	};
+
+	// Key figures
+	const kfTopProducer = $derived(stateRanking.length > 0 ? stateRanking[0].label : '—');
+	const kfNumFuels = 3; // Coal, Natural Gas, Crude Oil
+
 	const barMeta: ChartMeta = $derived({
 		title: `Top 10 ${barFuel} Producing States (${latestYear})`,
 		subtitle: barUnit,
@@ -105,6 +252,8 @@
 		sourceUrl: 'https://www.eia.gov/',
 		unit: barUnit,
 		lastUpdated: new Date().toISOString().split('T')[0],
+		description: `Fossil fuel production is highly concentrated geographically. ${barFuel === 'Coal' ? 'Wyoming alone produces roughly 40% of US coal, primarily from Powder River Basin surface mines.' : barFuel === 'Natural Gas' ? 'Texas and Pennsylvania lead natural gas production, driven by the Permian Basin and Marcellus Shale respectively.' : 'Texas dominates crude oil production, followed by New Mexico (Permian Basin) and North Dakota (Bakken formation).'}`,
+		caveats: 'State-level production data may include estimates for months not yet reported. Rankings can shift year-to-year based on market conditions and weather.',
 	});
 </script>
 
@@ -112,33 +261,61 @@
 	<title>Fossil Fuels — US Energy Data</title>
 </svelte:head>
 
-<div class="space-y-16">
+<div>
 	<header>
 		<h1 class="text-3xl font-bold tracking-tight text-text" style="font-family: var(--font-display)">Fossil Fuels</h1>
-		<p class="mt-3 max-w-3xl text-base leading-relaxed text-text-secondary">
-			Coal, natural gas, and crude oil production across the United States. The US is one of the world's largest fossil fuel producers, with production patterns that vary significantly by region.
+		<div class="mt-2 h-1 w-16 rounded-full" style="background: #a6611a"></div>
+		<p class="mt-3 max-w-3xl text-lg leading-relaxed text-text-secondary" style="font-family: var(--font-display)">
+			How much fossil fuel does the US actually produce?
 		</p>
 	</header>
 
-	<!-- Chart 1: Production trends -->
-	<section>
-		<div class="mb-5 flex flex-wrap items-end gap-4">
-			<Dropdown
-				options={fuelOptions}
-				value={selectedFuel}
-				label="Fuel Type"
-				onchange={(v) => selectedFuel = v}
-			/>
+	<!-- Key Figures -->
+	<div class="key-figures">
+		<div class="key-figure">
+			<span class="kf-value" style="color: #a6611a">{kfNumFuels}</span>
+			<span class="kf-label">fuel types tracked</span>
+		</div>
+		<div class="key-figure">
+			<span class="kf-value" style="color: #a6611a">2x</span>
+			<span class="kf-label">gas growth since '08</span>
+		</div>
+		<div class="key-figure">
+			<span class="kf-value" style="color: #a6611a">{kfTopProducer.slice(0, 7)}</span>
+			<span class="kf-label">top {barFuel.toLowerCase()} state</span>
+		</div>
+		<div class="key-figure">
+			<span class="kf-value" style="color: #a6611a">{latestYear}</span>
+			<span class="kf-label">latest year</span>
+		</div>
+	</div>
+
+	<!-- Chart 1: Production trends (hero chart) -->
+	<section class="mt-10">
+		<div class="mb-4 rounded-xl border border-border bg-surface-alt/50 px-5 py-4">
+			<div class="flex flex-wrap items-end gap-4">
+				<Dropdown
+					options={fuelOptions}
+					value={selectedFuel}
+					label="Fuel Type"
+					onchange={(v) => selectedFuel = v}
+				/>
+				<StateSelect
+					selected={selectedStates}
+					onchange={(states) => updateConfig('state', states)}
+				/>
+			</div>
 		</div>
 
-		<ChartWrapper meta={lineMeta} data={filteredFuelSeries.flatMap((s) => s.values.map((v) => ({ fuel: s.name, year: v.date, production: v.value })))}>
+		<ChartWrapper meta={lineMeta} hero category="Fuels" categoryColor="#a6611a" data={combinedSeries.flatMap((s) => s.values.map((v) => ({ fuel: s.name, year: v.date, production: v.value })))}>
 			<LineChart
-				series={filteredFuelSeries}
+				series={combinedSeries}
 				xLabel="Year"
 				yLabel={lineYLabel}
 				yFormat={selectedFuel === 'all' ? format(',.0f') : formatCompact}
 				unit={selectedFuel === 'all' ? '' : barUnit}
 				margin={{ top: 20, right: 20, bottom: 40, left: 70 }}
+				annotations={productionAnnotations}
 			/>
 		</ChartWrapper>
 		{#if selectedFuel === 'all'}
@@ -149,8 +326,8 @@
 	</section>
 
 	<!-- Chart 2: Top producing states -->
-	<section class="-mx-6 bg-surface-alt px-6 py-12 sm:-mx-8 sm:px-8 md:rounded-xl">
-		<ChartWrapper meta={barMeta} data={stateRanking.map((d) => ({ state: d.label, production: d.value }))}>
+	<section class="-mx-6 bg-surface-alt px-6 py-12 sm:-mx-8 sm:px-8 md:rounded-xl mt-16">
+		<ChartWrapper meta={barMeta} category="Fuels" categoryColor="#a6611a" data={stateRanking.map((d) => ({ state: d.label, production: d.value }))}>
 			<BarChart
 				data={stateRanking}
 				horizontal
@@ -158,6 +335,51 @@
 				yFormat={formatCompact}
 				unit={barUnit}
 				margin={{ top: 20, right: 20, bottom: 60, left: 120 }}
+			/>
+		</ChartWrapper>
+	</section>
+
+	<!-- Insight -->
+	<div class="insight-card my-8">
+		<div class="flex items-start gap-4">
+			<div class="flex-shrink-0">
+				<span class="text-3xl font-bold text-accent" style="font-family: var(--font-mono)">2x</span>
+				<span class="block text-[10px] uppercase tracking-wider text-text-muted mt-0.5">gas growth</span>
+			</div>
+			<p class="text-base leading-relaxed text-text-secondary">
+				US natural gas production has roughly doubled since 2008, while coal output has declined by nearly half — a seismic shift driven by the shale revolution.
+			</p>
+		</div>
+	</div>
+
+	<!-- Chart 3: Fossil fuel generation -->
+	<section class="mt-8">
+		<ChartWrapper meta={fuelGenMeta} category="Fuels" categoryColor="#a6611a" data={fuelGenSeries.flatMap((s) => s.values.map((v) => ({ fuel: s.name, year: v.date, generation: v.value })))}>
+			<LineChart
+				series={fuelGenSeries}
+				xLabel="Year"
+				yLabel="thousand MWh"
+				yFormat={formatCompact}
+				unit="thousand MWh"
+			/>
+		</ChartWrapper>
+
+		<!-- Cross-link -->
+		<p class="mt-4 text-sm">
+			<a href="/generation" class="text-accent/80 hover:text-accent transition-colors no-underline">See how these fuels translate into electricity generation &rarr;</a>
+		</p>
+	</section>
+
+	<!-- Chart 4: US Petroleum Trade -->
+	<section class="-mx-6 bg-surface-alt px-6 py-12 sm:-mx-8 sm:px-8 md:rounded-xl mt-16">
+		<ChartWrapper meta={tradeMeta} category="Fuels" categoryColor="#a6611a" data={tradeSeries.flatMap((s) => s.values.map((v) => ({ series: s.name, year: v.date, value: v.value })))}>
+			<LineChart
+				series={tradeSeries}
+				xLabel="Year"
+				yLabel="thousand barrels/day"
+				yFormat={formatCompact}
+				unit="thousand barrels/day"
+				annotations={tradeAnnotations}
 			/>
 		</ChartWrapper>
 	</section>

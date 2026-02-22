@@ -6,6 +6,8 @@
 	import type { Margin, TooltipData } from '$types/chart';
 	import Tooltip from './Tooltip.svelte';
 	import { FIPS_TO_ABBR } from '$lib/utils/states';
+	import { getContext } from 'svelte';
+	import type { Readable } from 'svelte/store';
 
 	interface MapData {
 		state: string;
@@ -29,12 +31,16 @@
 	let {
 		data,
 		topology,
-		width = 960,
-		height = 600,
+		width: propWidth = 960,
+		height: propHeight = 600,
 		colorInterpolator = brandInterpolator,
 		valueFormat = format(',.1f'),
 		unit = '',
 	}: Props = $props();
+
+	const chartWidthCtx = getContext<Readable<number> | undefined>('chartWidth');
+	const width = $derived(chartWidthCtx ? $chartWidthCtx : propWidth);
+	const height = $derived(Math.round(width * 0.625));
 
 	let tooltip: TooltipData | null = $state(null);
 	let hoveredFips: string | null = $state(null);
@@ -64,7 +70,7 @@
 	const legendSteps = 8;
 	const legendWidth = 300;
 	const legendHeight = 12;
-	const noDataColor = '#e5e2dc';
+	const noDataColor = 'var(--color-border)';
 
 	const legendX = $derived((width - legendWidth) / 2);
 
@@ -77,11 +83,11 @@
 	 */
 	function labelFill(fips: string): string {
 		const val = valueMap.get(fips);
-		if (!val) return '#1a1a2e';
+		if (!val) return 'var(--color-text)';
 		const range = domain[1] - domain[0];
-		if (range === 0) return '#1a1a2e';
+		if (range === 0) return 'var(--color-text)';
 		const t = (val.value - domain[0]) / range;
-		return t > 0.5 ? '#ffffff' : '#1a1a2e';
+		return t > 0.5 ? '#ffffff' : 'var(--color-text)';
 	}
 
 	function handleStateHover(event: PointerEvent, fips: string) {
@@ -113,7 +119,7 @@
 			<text
 				x={legendWidth / 2}
 				y={0}
-				fill="#5a6270"
+				fill="var(--color-text-secondary)"
 				font-size="11"
 				font-family="var(--font-sans)"
 				text-anchor="middle"
@@ -137,7 +143,7 @@
 		<text
 			x={0}
 			y={unit ? 16 + legendHeight + 14 : legendHeight + 14}
-			fill="#5a6270"
+			fill="var(--color-text-secondary)"
 			font-size="12"
 			font-family="var(--font-sans)"
 			text-anchor="start"
@@ -145,7 +151,7 @@
 		<text
 			x={legendWidth}
 			y={unit ? 16 + legendHeight + 14 : legendHeight + 14}
-			fill="#5a6270"
+			fill="var(--color-text-secondary)"
 			font-size="12"
 			font-family="var(--font-sans)"
 			text-anchor="end"
@@ -163,7 +169,7 @@
 		<text
 			x={legendWidth + 16 + legendHeight + 6}
 			y={unit ? 16 + legendHeight / 2 : legendHeight / 2}
-			fill="#5a6270"
+			fill="var(--color-text-secondary)"
 			font-size="11"
 			font-family="var(--font-sans)"
 			dominant-baseline="central"
@@ -181,7 +187,7 @@
 				<path
 					{d}
 					fill={val ? colorScale(val.value) : noDataColor}
-					stroke={isHovered ? '#0f2b44' : '#fafaf8'}
+					stroke={isHovered ? 'var(--color-text)' : 'var(--color-surface)'}
 					stroke-width={isHovered ? 2 : 1}
 					class="state-path"
 					onpointermove={(e) => handleStateHover(e, fips)}

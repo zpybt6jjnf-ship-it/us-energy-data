@@ -37,7 +37,7 @@ us-energy-data/
 └── .env.example           # EIA_API_KEY placeholder
 ```
 
-## Current Status: Sprint 2 Complete (Design Overhaul)
+## Current Status: Sprint 3 In Progress
 ### Sprint 0 (scaffold)
 - [x] Git repo + monorepo structure
 - [x] SvelteKit project scaffolded, builds successfully
@@ -85,48 +85,52 @@ us-energy-data/
 - [x] FIPS_TO_ABBR mapping added to utils/states.ts
 - [x] Production build passes (Cloudflare adapter)
 
-## Next: Sprint 3 — Full Proposal Coverage
+## Sprint 3 — Full Proposal Coverage (In Progress)
 Goal: close all remaining gaps against the Hannah Ritchie proposal (Feb 2026).
 Reference: `/Users/skarl/Desktop/Data Explorer Hannah /US Energy Data Platform Proposal (HR, Feb2026).docx`
 
 ### 3a. Missing Charts — Prices & Bills (2 new charts)
-- [ ] Household electricity bills: nominal + inflation-adjusted (line chart). Pipeline: multiply avg price × avg consumption from EIA retail-sales data; CPI adjustment via BLS API or static CPI table.
-- [ ] Prices vs. electricity mix scatter: state-level scatterplot (x = renewable share or fuel mix metric, y = avg retail price). Data: join state prices with state generation mix.
+- [x] Household electricity bills: nominal + inflation-adjusted (line chart). Pipeline transform (bills.py) computes avg monthly bill from residential price × 900 kWh, with CPI-U inflation adjustment. Added to Prices page.
+- [x] Prices vs. electricity mix scatter: state-level scatterplot (x = renewable share, y = avg retail price). Data: joins state prices with state generation mix. Added to Prices page.
 
 ### 3b. Missing Charts — Electricity Demand (2 new charts)
-- [ ] Per-capita electricity demand (line chart). Pipeline: Census population data (annual state estimates) → divide total consumption by population. Toggle: national + state-level.
-- [ ] Load growth (line chart or bar chart). Pipeline: year-over-year % change in total consumption. National + state-level.
+- [x] Per-capita electricity demand (bar chart). Census population data + EIA consumption → per_capita_kwh by state. Pipeline run complete, chart added to Demand page showing top 15 states.
+- [x] Load growth (line chart). Year-over-year % change in total consumption, computed client-side from existing national consumption data. Added to Demand page.
 
 ### 3c. Missing Charts — Generation & Resources (5 new charts)
-- [ ] Carbon intensity of electricity (line chart). Pipeline: EIA CO2 emissions from electricity generation ÷ total generation (kg CO2/MWh). API: `/electricity/electric-power-operational-data/data` with data[]=co2-emissions or `/environment/` endpoints.
-- [ ] Installed capacity by source (bar chart, horizontal). Pipeline: EIA capacity data → `/electricity/operating-generator-capacity/data`. Grouped by fuel type.
-- [ ] Capacity additions and retirements over time (stacked bar or grouped bar). Pipeline: EIA planned/retired generators data. Positive bars = additions, negative = retirements, grouped by fuel type.
-- [ ] Energy storage capacity and deployment (line or bar chart). Pipeline: EIA battery storage data → `/electricity/operating-generator-capacity/data` filtered to battery storage.
-- [ ] Capacity factors by technology over time (line chart). Pipeline: generation ÷ (capacity × 8760 hours). Per source: wind, solar, nuclear, gas, coal.
+- [x] Carbon intensity of electricity (line chart). Pipeline fetches CO2 data from EIA state-electricity-profiles/emissions endpoint. Chart shows kg CO2 per MWh declining over time. Added to Generation page.
+- [x] Installed capacity by source (bar chart, horizontal). Pipeline fetches from state-electricity-profiles/capability endpoint. Chart shows net summer capacity (MW) by source. Added to Generation page.
+- [x] Capacity additions and retirements over time (line chart). Computed as year-over-year diff from capability endpoint data. Shows coal retirements, wind/solar additions. Added to Generation page.
+- [x] Energy storage capacity and deployment (line chart). Pipeline fetches from capability endpoint with BAT filter. Shows exponential growth from 28 MW (2010) to 27,020 MW (2024). Added to Generation page.
+- [x] Capacity factors by technology over time (line chart). Computed from capacity + generation data. Shows Nuclear ~93%, Gas ~41%, Coal ~40%, Wind ~36%. Added to Generation page.
+- [x] Generation volume by source over time (line chart). Added to Generation page using existing data — shows absolute generation values for coal, gas, nuclear, wind, solar.
 
 ### 3d. Missing Charts — Fossil Fuels (2 new charts)
-- [ ] Fuel consumption for power generation (line chart). Pipeline: EIA `/electricity/electric-power-operational-data/data` with data[]=consumption-for-eg. By fuel type over time.
-- [ ] Imports and exports (line or grouped bar). Pipeline: EIA petroleum imports/exports + natural gas trade data. Show net position over time.
+- [x] Fuel consumption for power generation (line chart). Added to Fuels page — shows electricity generation from coal, natural gas, and petroleum over time using existing generation data.
+- [x] Imports and exports (line chart). Pipeline fetches from petroleum/move and natural-gas/sum/lsum endpoints. Chart shows US petroleum imports, exports, and net imports (thousand barrels/day) from 2000-2024. Added to Fuels page.
 
 ### 3e. Missing Charts — Reliability (1 new chart + real data)
-- [ ] Real FERC/EIA-861 reliability data: replace sample SAIDI/SAIFI with actual EIA-861 reliability metrics. Source: EIA-861 annual electric power industry report or IEEE 1366 data.
-- [ ] Reliability vs. prices/load/mix scatter: state-level scatterplot (x = SAIDI or SAIFI, y = avg price or renewable share). Exploratory cross-cutting analysis.
+- [ ] Real FERC/EIA-861 reliability data: replace sample SAIDI/SAIFI with actual EIA-861 reliability metrics.
+- [ ] Reliability vs. prices/load/mix scatter: state-level scatterplot.
 
 ### 3f. Interactivity — State Multi-Select
-- [ ] State-level multi-select toggling for line charts: allow users to add/remove specific states (e.g., TX, CA, NY) as overlaid series on any line chart. Dropdown or search-select UI component. URL state preserved (e.g., `?states=TX,CA,NY`).
-- [ ] State comparison across all sections: prices, demand, generation share, fuel production where state data exists.
+- [x] StateSelect.svelte component: searchable multi-select with tag-style selected states, checkbox dropdown, clear all, keyboard support. URL state preserved via `?state=TX,CA,NY`.
+- [x] Integrated into Prices page: overlays state-level price series on national trend chart.
+- [x] Integrated into Demand page: overlays state total consumption on national chart.
+- [x] Integrated into Generation page: overlays state total generation on volume trend chart.
+- [x] Integrated into Fuels page: overlays state fuel production on national trend chart (indexed when "All Fuels" selected).
 
 ### 3g. Chart Annotations & Context
-- [ ] Each chart accompanied by concise explanatory text: "What is being shown? Why does it matter? Key caveats?" (per proposal). Audit all existing charts for completeness; add missing context.
-- [ ] Definitions and units documented at chart level (tooltip or expandable info icon).
-- [ ] Methodological notes where relevant (e.g., CPI adjustment method, capacity factor calculation).
+- [x] All existing charts audited and updated with detailed descriptions, caveats, and methodological notes.
+- [x] Units documented in chart subtitles across all pages.
+- [ ] Expandable info icon for definitions (optional enhancement).
 
 ### 3h. Infrastructure & Reliability
 - [ ] GitHub Actions CI: automated build on push, deploy to Cloudflare Pages.
-- [ ] Scheduled weekly data updates: GitHub Actions cron job runs pipeline, commits new JSON, triggers rebuild.
-- [ ] Data archiving: snapshot all source data in repo (or separate storage) to protect against federal API changes/retraction. Pipeline should cache raw API responses.
-- [ ] Responsive chart width: pass ResizeObserver width from ChartWrapper to chart components so tick density adapts to screen size.
-- [ ] Homepage hero stats pulled dynamically from data JSON files (not hardcoded).
+- [ ] Scheduled weekly data updates: GitHub Actions cron job runs pipeline.
+- [ ] Data archiving: snapshot source data to protect against federal API changes.
+- [x] Responsive chart width: ChartWrapper passes width via Svelte context to all chart components (LineChart, BarChart, Scatter, ChoroplethMap). Tick density adapts to screen size.
+- [x] Homepage hero stats pulled dynamically from data JSON files via +page.ts loader.
 
 ### 3i. Responsive & Cross-Browser Testing
 - [ ] Mobile layout testing: nav hamburger, chart readability, tooltip usability, map zoom/pan on touch.
@@ -135,26 +139,43 @@ Reference: `/Users/skarl/Desktop/Data Explorer Hannah /US Energy Data Platform P
 - [ ] Accessibility: ARIA labels on chart SVGs, keyboard navigation for dropdowns/toggles, screen reader support for chart data.
 
 ### 3j. Data Sources to Add (Pipeline Expansion)
-New EIA API endpoints needed:
-- [ ] CO2 emissions: `/electricity/electric-power-operational-data/data` (data[]=co2-emissions) or `/environment/` endpoints
-- [ ] Capacity: `/electricity/operating-generator-capacity/data`
-- [ ] Battery storage: same capacity endpoint filtered to energy_source_code=BA
-- [ ] Fuel consumption for generation: `/electricity/electric-power-operational-data/data` (data[]=consumption-for-eg)
-- [ ] Petroleum trade: `/petroleum/move/imp/data` and `/petroleum/move/exp/data`
-- [ ] Natural gas trade: `/natural-gas/move/` endpoints
-- [ ] Census population: Census Bureau API (annual state population estimates)
-- [ ] CPI data: BLS API or static CPI-U annual table for inflation adjustment
+All pipeline stages run successfully (`python -m src.main`). New stages wrapped in try/except for resilience.
+- [x] CO2 emissions: `fetch_co2_emissions()` in capacity.py → `/electricity/state-electricity-profiles/emissions-by-state-by-fuel/data` (data[]=co2-thousand-metric-tons, co2-rate-lbs-mwh)
+- [x] Capacity: `fetch_capacity_by_source()` in capacity.py → `/electricity/state-electricity-profiles/capability/data` (22K records, annual, facet producertypeid=TOT)
+- [x] Fuel consumption: `fetch_fuel_consumption()` in capacity.py → `/electricity/electric-power-operational-data/data` (data[]=consumption-for-eg). Transform aggregates 354K raw records → 72 records (by year + fuel).
+- [x] Census population: `fetch_state_population()` in census.py → static 2023 population estimates (50 states + DC)
+- [x] Load growth: `transform_load_growth()` in load_growth.py → computed from existing demand data
+- [x] Per-capita consumption: `transform_per_capita()` in per_capita.py → demand ÷ population
+- [x] Battery storage: `fetch_battery_storage()` in capacity.py → `/electricity/state-electricity-profiles/capability/data` (facet energysourceid=BAT)
+- [x] Petroleum trade: `fetch_petroleum_trade()` in trade.py → `/petroleum/move/imp/data` + `/petroleum/move/exp/data` (crude + products)
+- [x] Natural gas trade: `fetch_natural_gas_trade()` in trade.py → `/natural-gas/sum/lsum/data` (imports + exports)
+- [x] CPI data: static CPI-U annual table (2001-2024) in bills.py for inflation adjustment
+- [x] Capacity changes: `transform_capacity_changes()` in capacity_changes.py → year-over-year diffs from capability data
 - [ ] EIA-861 reliability: download and parse annual EIA-861 CSV files
 
-### Sprint 3 Chart Inventory (when complete)
-| Section | Charts (current) | Charts (target) | New |
-|---|---|---|---|
-| Prices & Bills | 2 | 4 | +2 |
-| Electricity Demand | 2 | 4 | +2 |
-| Generation & Resources | 3 | 8 | +5 |
-| Fossil Fuels | 2 | 4 | +2 |
-| Reliability & Outages | 2 | 4 | +2 |
-| **Total** | **11** | **24** | **+13** |
+### 3k. Design Polish
+- [x] Homepage hero: headline "Explore U.S. Energy Data" (action-oriented), shortened subtitle
+- [x] Stat cards: enlarged (text-4xl/5xl), top labels, section-colored bottom borders
+- [x] Generation mix bar: readable label (text-sm font-semibold, not tiny uppercase)
+- [x] Section cards: staggered entrance animation, sparkline opacity 0.4→0.6
+- [x] Key figures stat strip on all 5 data pages (4 metrics each below page header)
+- [x] Header text trimmed: removed second description paragraph on all data pages
+- [x] ChartWrapper: `hero` prop (larger title, no category badge), collapsible descriptions/caveats under "About this chart", ghost-style download buttons
+- [x] Nav: hover tooltips with brief descriptions, section color bar 2px→3px
+- [x] Spacing standardized: mt-10 after header, mt-8 between charts, mt-16 for major sections
+- [x] Control panel: "Customize your view" label removed, spacing tightened (mb-6→mb-4)
+- [x] Reliability: sample-badge in key figures, condensed sample data banner
+- [x] CSS: `.key-figures`, `.key-figure`, `.kf-value`, `.kf-label`, `.sample-badge` classes added
+
+### Sprint 3 Chart Inventory (current progress)
+| Section | Sprint 2 | Added in Sprint 3 | Current | Target |
+|---|---|---|---|---|
+| Prices & Bills | 2 | +2 (price-vs-mix scatter, household bills) | 4 | 4 |
+| Electricity Demand | 2 | +2 (load growth, per-capita) | 4 | 4 |
+| Generation & Resources | 3 | +6 (gen volume, capacity bar, carbon intensity, capacity factors, cap additions, storage) | 9 | 8 |
+| Fossil Fuels | 2 | +2 (fossil fuel generation, petroleum trade) | 4 | 4 |
+| Reliability & Outages | 2 | — | 2 | 4 |
+| **Total** | **11** | **+12** | **23** | **24** |
 
 ## Key Architecture Decisions
 - **Pipeline and site are decoupled**: Python pipeline → JSON → SvelteKit prebuild. Site never calls EIA API at runtime.

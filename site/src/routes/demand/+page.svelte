@@ -3,13 +3,25 @@
 	import BarChart from '$components/charts/BarChart.svelte';
 	import ChartWrapper from '$components/charts/ChartWrapper.svelte';
 	import Dropdown from '$components/ui/Dropdown.svelte';
+	import StateSelect from '$components/ui/StateSelect.svelte';
 	import { chartConfig, updateConfig } from '$stores/chartConfig';
 	import { format } from 'd3-format';
 	import { CHART_COLORS } from '$utils/colors';
 	import { formatCompact } from '$utils/formatting';
+	import { stateFromAbbr } from '$utils/states';
 	import type { DataSeries, ChartMeta } from '$types/chart';
 
 	let { data } = $props();
+
+	const consumptionAnnotations = [
+		{ date: 2009, label: '09 Recession' },
+		{ date: 2020, label: 'COVID-19' },
+	];
+
+	const loadGrowthAnnotations = [
+		{ date: 2009, label: '09 Recession', labelPosition: 'bottom' as const },
+		{ date: 2020, label: 'COVID-19', labelPosition: 'bottom' as const },
+	];
 
 	const sectorOptions = [
 		{ value: 'all', label: 'All Sectors' },
@@ -42,18 +54,48 @@
 			: allSeries.filter((s) => s.name.toLowerCase() === activeSector)
 	);
 
+	// State comparison series
+	const selectedStates = $derived($chartConfig.states);
+
+	const stateSeries: DataSeries[] = $derived(
+		selectedStates.map((abbr, i) => {
+			const fullName = stateFromAbbr(abbr);
+			const rows = data.byState.filter((d: any) => d.state === fullName);
+			const total = new Map<number, number>();
+			for (const row of rows) {
+				total.set(row.year, (total.get(row.year) ?? 0) + row.consumption);
+			}
+			return {
+				name: `${abbr} (Total)`,
+				color: CHART_COLORS[(filteredSeries.length + i) % CHART_COLORS.length],
+				values: [...total.entries()]
+					.map(([year, value]) => ({ date: year, value }))
+					.sort((a, b) => a.date - b.date),
+			};
+		}).filter((s) => s.values.length > 0)
+	);
+
+	const combinedSeries = $derived([...filteredSeries, ...stateSeries]);
+
 	const lineMeta: ChartMeta = {
 		title: 'Electricity Consumption by Sector',
-		subtitle: 'US national total, annual',
+		subtitle: 'US national total, million kilowatt-hours, annual',
 		source: 'US Energy Information Administration',
 		sourceUrl: 'https://www.eia.gov/electricity/data.php',
 		unit: 'million kWh',
 		lastUpdated: new Date().toISOString().split('T')[0],
-		description: 'Total US electricity consumption has grown modestly over the past two decades, with commercial and residential sectors driving most of the increase.',
+		description: 'Total US electricity consumption has grown modestly over the past two decades, with commercial and residential sectors driving most of the increase. Energy efficiency gains have partially offset growth in economic activity and population. Select states to compare against the national totals.',
+		caveats: 'Consumption data represents retail sales to end-use customers. It excludes direct-use generation and transmission losses, which can add 5-7% to total electricity demand.',
 	};
 
 	// Bar chart: Top 10 states by total consumption (latest year)
 	const latestYear = $derived(Math.max(...data.national.map((d: any) => d.year)));
+
+	// Key figures (computed in script to avoid @const in template)
+	const latestTotal = $derived(data.national.filter((d: any) => d.year === latestYear).reduce((sum: number, d: any) => sum + d.consumption, 0));
+	const latestTWh = $derived((latestTotal / 1_000_000).toFixed(1));
+	const prevYearTotal = $derived(data.national.filter((d: any) => d.year === latestYear - 1).reduce((sum: number, d: any) => sum + d.consumption, 0));
+	const yoyGrowth = $derived(prevYearTotal > 0 ? (((latestTotal - prevYearTotal) / prevYearTotal) * 100).toFixed(1) : '0');
 
 	const stateRanking = $derived((() => {
 		const latestState = data.byState.filter((d: any) => d.year === latestYear);
@@ -71,14 +113,69 @@
 			}));
 	})());
 
+	const topState = $derived(stateRanking.length > 0 ? stateRanking[0] : null);
+
+	// Load Growth chart: year-over-year % change in total consumption
+	const loadGrowthSeries: DataSeries[] = $derived((() => {
+		// Aggregate all sectors by year
+		const yearTotals = new Map<number, number>();
+		for (const d of data.national) {
+			yearTotals.set(d.year, (yearTotals.get(d.year) ?? 0) + d.consumption);
+		}
+		const years = [...yearTotals.entries()].sort((a, b) => a[0] - b[0]);
+		const growth = years.slice(1).map(([year, total], i) => {
+			const prev = years[i][1];
+			return { date: year, value: prev > 0 ? ((total - prev) / prev) * 100 : 0 };
+		});
+		return [{ name: 'YoY Growth', values: growth }];
+	})());
+
+	const loadGrowthMeta: ChartMeta = {
+		title: 'Electricity Demand Growth Rate',
+		subtitle: 'Year-over-year change in total US consumption, %',
+		source: 'US Energy Information Administration',
+		sourceUrl: 'https://www.eia.gov/electricity/data.php',
+		unit: '%',
+		lastUpdated: new Date().toISOString().split('T')[0],
+		description: 'Annual electricity demand growth has slowed significantly since the 2000s. The 2009 recession caused a sharp drop, followed by tepid growth. Recent years show signs of acceleration driven by data centers, electrification, and economic activity.',
+		caveats: 'Growth rates are calculated from total retail sales across all sectors. Negative values indicate years where consumption declined year-over-year.',
+	};
+
 	const barMeta: ChartMeta = $derived({
 		title: `Top 10 States by Electricity Consumption (${latestYear})`,
-		subtitle: 'Total across all sectors',
+		subtitle: 'Total across all sectors, million kWh',
 		source: 'US Energy Information Administration',
 		sourceUrl: 'https://www.eia.gov/electricity/data.php',
 		unit: 'million kWh',
 		lastUpdated: new Date().toISOString().split('T')[0],
-		description: 'Texas and California dominate electricity consumption, driven by large populations, industrial activity, and climate-related demand.',
+		description: 'Texas and California dominate electricity consumption, driven by large populations, industrial activity, and climate-related demand. Texas leads due to its large industrial base, air conditioning load, and oil/gas operations.',
+		caveats: 'Rankings reflect total consumption, not per-capita usage. States with smaller populations but high per-capita demand (e.g., Wyoming) do not appear in the top 10 by total volume.',
+	});
+
+	// Chart 4: Per-Capita Electricity Consumption by State
+	const perCapitaLatestYear = $derived(Math.max(...data.perCapita.map((d: any) => d.year)));
+
+	const perCapitaRanking = $derived((() => {
+		return data.perCapita
+			.filter((d: any) => d.year === perCapitaLatestYear)
+			.sort((a: any, b: any) => b.per_capita_kwh - a.per_capita_kwh)
+			.slice(0, 15)
+			.map((d: any, i: number) => ({
+				label: d.state,
+				value: d.per_capita_kwh,
+				color: CHART_COLORS[i % CHART_COLORS.length],
+			}));
+	})());
+
+	const perCapitaMeta: ChartMeta = $derived({
+		title: `Per-Capita Electricity Consumption by State (${perCapitaLatestYear})`,
+		subtitle: 'kWh per person per year',
+		source: 'US Energy Information Administration',
+		sourceUrl: 'https://www.eia.gov/electricity/data.php',
+		unit: 'kWh',
+		lastUpdated: new Date().toISOString().split('T')[0],
+		description: 'Some states like Wyoming and Louisiana have very high per-capita electricity consumption due to energy-intensive heavy industry (mining, refining, petrochemicals) that inflates usage well beyond household needs. Meanwhile, states like Hawaii and California rank low thanks to mild climates, aggressive efficiency standards, and service-oriented economies.',
+		caveats: 'Uses 2023 Census population estimates for all years. Commercial and industrial consumption is included in per-capita calculation.',
 	});
 </script>
 
@@ -86,48 +183,125 @@
 	<title>Electricity Demand — US Energy Data</title>
 </svelte:head>
 
-<div class="space-y-16">
+<div>
 	<header>
 		<h1 class="text-3xl font-bold tracking-tight text-text" style="font-family: var(--font-display)">Electricity Demand</h1>
-		<p class="mt-3 max-w-3xl text-base leading-relaxed text-text-secondary">
-			How much electricity does the US consume, and where is demand highest? Consumption patterns reveal the structure of the economy and the impact of efficiency gains.
+		<div class="mt-2 h-1 w-16 rounded-full" style="background: #1b9e77"></div>
+		<p class="mt-3 max-w-3xl text-lg leading-relaxed text-text-secondary" style="font-family: var(--font-display)">
+			Where does all the electricity go?
 		</p>
 	</header>
 
-	<!-- Chart 1: Consumption trends -->
-	<section>
-		<div class="mb-5 flex flex-wrap items-end gap-4">
-			<Dropdown
-				options={sectorOptions}
-				value={activeSector}
-				label="Sector"
-				onchange={(v) => updateConfig('sector', v)}
-			/>
+	<!-- Key Figures -->
+	<div class="key-figures">
+		<div class="key-figure">
+			<span class="kf-value" style="color: #1b9e77">{latestTWh}T</span>
+			<span class="kf-label">kWh consumed ({latestYear})</span>
+		</div>
+		<div class="key-figure">
+			<span class="kf-value" style="color: #1b9e77">{yoyGrowth}%</span>
+			<span class="kf-label">year-over-year growth</span>
+		</div>
+		<div class="key-figure">
+			<span class="kf-value" style="color: #1b9e77">{topState ? topState.label.slice(0, 5) : '—'}</span>
+			<span class="kf-label">top consumer</span>
+		</div>
+		<div class="key-figure">
+			<span class="kf-value" style="color: #1b9e77">{latestYear}</span>
+			<span class="kf-label">latest year</span>
+		</div>
+	</div>
+
+	<!-- Chart 1: Consumption trends (hero chart) -->
+	<section class="mt-10">
+		<div class="mb-4 rounded-xl border border-border bg-surface-alt/50 px-5 py-4">
+			<div class="flex flex-wrap items-end gap-4">
+				<Dropdown
+					options={sectorOptions}
+					value={activeSector}
+					label="Sector"
+					onchange={(v) => updateConfig('sector', v)}
+				/>
+				<StateSelect
+					selected={selectedStates}
+					onchange={(states) => updateConfig('state', states)}
+				/>
+			</div>
 		</div>
 
-		<ChartWrapper meta={lineMeta} data={filteredSeries.flatMap((s) => s.values.map((v) => ({ series: s.name, year: v.date, consumption: v.value })))}>
+		<ChartWrapper meta={lineMeta} hero category="Demand" categoryColor="#1b9e77" data={combinedSeries.flatMap((s) => s.values.map((v) => ({ series: s.name, year: v.date, consumption: v.value })))}>
 			<LineChart
-				series={filteredSeries}
+				series={combinedSeries}
 				xLabel="Year"
 				yLabel="million kWh"
 				yFormat={formatCompact}
 				unit="million kWh"
 				margin={{ top: 20, right: 20, bottom: 40, left: 70 }}
+				annotations={consumptionAnnotations}
 			/>
 		</ChartWrapper>
 	</section>
 
-	<!-- Chart 2: State ranking -->
-	<section class="-mx-6 bg-surface-alt px-6 py-12 sm:-mx-8 sm:px-8 md:rounded-xl">
-		<ChartWrapper meta={barMeta} data={stateRanking.map((d) => ({ state: d.label, consumption: d.value }))}>
-			<BarChart
-				data={stateRanking}
-				horizontal
-				yLabel="million kWh"
-				yFormat={formatCompact}
-				unit="million kWh"
-				margin={{ top: 20, right: 20, bottom: 60, left: 120 }}
+	<!-- Chart 2: Load Growth -->
+	<section class="mt-8">
+		<ChartWrapper meta={loadGrowthMeta} category="Demand" categoryColor="#1b9e77" data={loadGrowthSeries[0].values.map((v) => ({ year: v.date, growth_pct: v.value }))}>
+			<LineChart
+				series={loadGrowthSeries}
+				xLabel="Year"
+				yLabel="% change"
+				yFormat={format('+.1f')}
+				unit="%"
+				annotations={loadGrowthAnnotations}
 			/>
 		</ChartWrapper>
 	</section>
+
+	<!-- Insight -->
+	<div class="insight-card my-8">
+		<div class="flex items-start gap-4">
+			<div class="flex-shrink-0">
+				<span class="text-3xl font-bold text-accent" style="font-family: var(--font-mono)">&lt;1%</span>
+				<span class="block text-[10px] uppercase tracking-wider text-text-muted mt-0.5">annual growth</span>
+			</div>
+			<p class="text-base leading-relaxed text-text-secondary">
+				US electricity demand grew less than 1% per year from 2010 to 2020 — but data centers and electrification are accelerating growth again.
+			</p>
+		</div>
+	</div>
+
+	<div class="section-divider"></div>
+
+	<!-- Charts 3 & 4: State ranking + Per-Capita (2-column layout) -->
+	<div class="grid gap-6 lg:grid-cols-2 mt-16">
+		<section>
+			<ChartWrapper meta={barMeta} category="Demand" categoryColor="#1b9e77" data={stateRanking.map((d) => ({ state: d.label, consumption: d.value }))}>
+				<BarChart
+					data={stateRanking}
+					horizontal
+					yLabel="million kWh"
+					yFormat={formatCompact}
+					unit="million kWh"
+					margin={{ top: 20, right: 20, bottom: 60, left: 120 }}
+				/>
+			</ChartWrapper>
+		</section>
+
+		<section>
+			<ChartWrapper meta={perCapitaMeta} category="Demand" categoryColor="#1b9e77" data={perCapitaRanking.map((d) => ({ state: d.label, per_capita_kwh: d.value }))}>
+				<BarChart
+					data={perCapitaRanking}
+					horizontal
+					yLabel="kWh"
+					yFormat={formatCompact}
+					unit="kWh"
+					margin={{ top: 20, right: 20, bottom: 60, left: 120 }}
+				/>
+			</ChartWrapper>
+		</section>
+	</div>
+
+	<!-- Cross-links -->
+	<p class="mt-8 text-sm">
+		<a href="/prices" class="text-accent/80 hover:text-accent transition-colors no-underline">How much does this electricity cost? Explore prices &rarr;</a>
+	</p>
 </div>

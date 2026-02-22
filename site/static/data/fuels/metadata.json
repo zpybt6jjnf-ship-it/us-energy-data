@@ -1,7 +1,7 @@
 {
   "source": "EIA Coal, Natural Gas, and Petroleum Data",
   "url": "https://www.eia.gov/",
-  "last_updated": "2026-02-21T12:34:57.487389",
+  "last_updated": "2026-02-21T21:38:42.054489",
   "fuels": {
     "Coal": "short tons",
     "Natural Gas": "million cubic feet",

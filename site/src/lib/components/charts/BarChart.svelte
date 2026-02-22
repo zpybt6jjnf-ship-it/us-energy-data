@@ -4,6 +4,8 @@
 	import type { Margin, TooltipData } from '$types/chart';
 	import { CHART_COLORS } from '$utils/colors';
 	import Tooltip from './Tooltip.svelte';
+	import { getContext } from 'svelte';
+	import type { Readable, Writable } from 'svelte/store';
 
 	interface BarData {
 		label: string;
@@ -25,7 +27,7 @@
 
 	let {
 		data,
-		width = 800,
+		width: propWidth = 800,
 		height = 400,
 		margin = { top: 20, right: 20, bottom: 60, left: 60 },
 		horizontal = false,
@@ -34,6 +36,12 @@
 		yFormat = format(',.0f'),
 		unit = '',
 	}: Props = $props();
+
+	const chartWidthCtx = getContext<Readable<number> | undefined>('chartWidth');
+	const width = $derived(chartWidthCtx ? $chartWidthCtx : propWidth);
+
+	const chartVisibleCtx = getContext<Writable<boolean> | undefined>('chartVisible');
+	const chartVisible = $derived(chartVisibleCtx ? $chartVisibleCtx : true);
 
 	let tooltip: TooltipData | null = $state(null);
 	let hoveredIndex: number | null = $state(null);
@@ -96,7 +104,7 @@
 					x2={valueScale(tick)}
 					y1={0}
 					y2={innerHeight}
-					stroke="#efecea"
+					stroke="var(--color-border-light)"
 				/>
 			{:else}
 				<line
@@ -104,7 +112,7 @@
 					x2={innerWidth}
 					y1={valueScale(tick)}
 					y2={valueScale(tick)}
-					stroke="#efecea"
+					stroke="var(--color-border-light)"
 				/>
 			{/if}
 		{/each}
@@ -118,27 +126,27 @@
 				<rect
 					x={0}
 					y={bandPos}
-					width={valueScale(d.value)}
+					width={chartVisible ? valueScale(d.value) : 0}
 					height={bandWidth}
 					fill={colorScale(d.label)}
 					rx="3"
 					shape-rendering="crispEdges"
 					opacity={barOpacity}
-					style="transition: opacity 0.2s ease;"
+					style="transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1) {i * 50}ms, opacity 0.2s ease;"
 					onpointermove={(e) => handleBarHover(e, d, i)}
 					onpointerleave={handlePointerLeave}
 				/>
 			{:else}
 				<rect
 					x={bandPos}
-					y={valueScale(d.value)}
+					y={chartVisible ? valueScale(d.value) : innerHeight}
 					width={bandWidth}
-					height={innerHeight - valueScale(d.value)}
+					height={chartVisible ? innerHeight - valueScale(d.value) : 0}
 					fill={colorScale(d.label)}
 					rx="3"
 					shape-rendering="crispEdges"
 					opacity={barOpacity}
-					style="transition: opacity 0.2s ease;"
+					style="transition: y 0.5s cubic-bezier(0.22, 1, 0.36, 1) {i * 50}ms, height 0.5s cubic-bezier(0.22, 1, 0.36, 1) {i * 50}ms, opacity 0.2s ease;"
 					onpointermove={(e) => handleBarHover(e, d, i)}
 					onpointerleave={handlePointerLeave}
 				/>
@@ -149,9 +157,9 @@
 		{#if horizontal}
 			<!-- Value axis (bottom) -->
 			<g transform="translate(0, {innerHeight})">
-				<line x1={0} x2={innerWidth} stroke="#e5e2dc" />
+				<line x1={0} x2={innerWidth} stroke="var(--color-border)" />
 				{#each valueTicks as tick}
-					<text x={valueScale(tick)} y={20} text-anchor="middle" fill="#5a6270" font-size="13">
+					<text x={valueScale(tick)} y={20} text-anchor="middle" fill="var(--color-text-secondary)" font-size="13" font-family="var(--font-mono)">
 						{yFormat(tick)}
 					</text>
 				{/each}
@@ -163,7 +171,7 @@
 					y={(bandScale(d.label) ?? 0) + bandScale.bandwidth() / 2}
 					text-anchor="end"
 					dominant-baseline="middle"
-					fill="#5a6270"
+					fill="var(--color-text-secondary)"
 					font-size="13"
 				>
 					{d.label}
@@ -172,19 +180,19 @@
 		{:else}
 			<!-- Value axis (left) -->
 			{#each valueTicks as tick}
-				<text x={-8} y={valueScale(tick)} text-anchor="end" dominant-baseline="middle" fill="#5a6270" font-size="13">
+				<text x={-8} y={valueScale(tick)} text-anchor="end" dominant-baseline="middle" fill="var(--color-text-secondary)" font-size="13" font-family="var(--font-mono)">
 					{yFormat(tick)}
 				</text>
 			{/each}
 			<!-- Category axis (bottom) -->
 			<g transform="translate(0, {innerHeight})">
-				<line x1={0} x2={innerWidth} stroke="#e5e2dc" />
+				<line x1={0} x2={innerWidth} stroke="var(--color-border)" />
 				{#each data as d}
 					<text
 						x={(bandScale(d.label) ?? 0) + bandScale.bandwidth() / 2}
 						y={20}
 						text-anchor="middle"
-						fill="#5a6270"
+						fill="var(--color-text-secondary)"
 						font-size="13"
 						class="truncate"
 					>
@@ -203,7 +211,7 @@
 		{#each data as d, i}
 			<div class="flex items-center gap-1.5">
 				<span class="inline-block h-2.5 w-2.5 rounded" style="background: {colorScale(d.label)};"></span>
-				<span class="text-gray-600">{d.label}</span>
+				<span class="text-text-secondary">{d.label}</span>
 			</div>
 		{/each}
 	</div>

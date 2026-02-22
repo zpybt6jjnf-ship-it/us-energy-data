@@ -1,0 +1,7 @@
+{
+  "description": "Year-over-year percentage change in electricity consumption by sector",
+  "source": "EIA Electricity Retail Sales",
+  "url": "https://www.eia.gov/electricity/data.php",
+  "last_updated": "2026-02-21T21:44:48.867337",
+  "unit": "percent change"
+}

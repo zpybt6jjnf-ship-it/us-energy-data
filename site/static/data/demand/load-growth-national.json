@@ -1,0 +1,416 @@
+[
+  {
+    "year": 2002,
+    "sector": "Commercial",
+    "consumption": 3313489.821,
+    "yoy_change_pct": 1.98
+  },
+  {
+    "year": 2003,
+    "sector": "Commercial",
+    "consumption": 3596182.803,
+    "yoy_change_pct": 8.53
+  },
+  {
+    "year": 2004,
+    "sector": "Commercial",
+    "consumption": 3691274.193,
+    "yoy_change_pct": 2.64
+  },
+  {
+    "year": 2005,
+    "sector": "Commercial",
+    "consumption": 3825237.06,
+    "yoy_change_pct": 3.63
+  },
+  {
+    "year": 2006,
+    "sector": "Commercial",
+    "consumption": 3899231.085,
+    "yoy_change_pct": 1.93
+  },
+  {
+    "year": 2007,
+    "sector": "Commercial",
+    "consumption": 4008945.588,
+    "yoy_change_pct": 2.81
+  },
+  {
+    "year": 2008,
+    "sector": "Commercial",
+    "consumption": 4008400.45524,
+    "yoy_change_pct": -0.01
+  },
+  {
+    "year": 2009,
+    "sector": "Commercial",
+    "consumption": 3920557.57177,
+    "yoy_change_pct": -2.19
+  },
+  {
+    "year": 2010,
+    "sector": "Commercial",
+    "consumption": 3990598.0918199997,
+    "yoy_change_pct": 1.79
+  },
+  {
+    "year": 2011,
+    "sector": "Commercial",
+    "consumption": 3984172.31717,
+    "yoy_change_pct": -0.16
+  },
+  {
+    "year": 2012,
+    "sector": "Commercial",
+    "consumption": 3981303.587,
+    "yoy_change_pct": -0.07
+  },
+  {
+    "year": 2013,
+    "sector": "Commercial",
+    "consumption": 4011236.33133,
+    "yoy_change_pct": 0.75
+  },
+  {
+    "year": 2014,
+    "sector": "Commercial",
+    "consumption": 4056474.78928,
+    "yoy_change_pct": 1.13
+  },
+  {
+    "year": 2015,
+    "sector": "Commercial",
+    "consumption": 4082254.57993,
+    "yoy_change_pct": 0.64
+  },
+  {
+    "year": 2016,
+    "sector": "Commercial",
+    "consumption": 4101574.15774,
+    "yoy_change_pct": 0.47
+  },
+  {
+    "year": 2017,
+    "sector": "Commercial",
+    "consumption": 4058663.08175,
+    "yoy_change_pct": -1.05
+  },
+  {
+    "year": 2018,
+    "sector": "Commercial",
+    "consumption": 4145264.53492,
+    "yoy_change_pct": 2.13
+  },
+  {
+    "year": 2019,
+    "sector": "Commercial",
+    "consumption": 4082629.66511,
+    "yoy_change_pct": -1.51
+  },
+  {
+    "year": 2020,
+    "sector": "Commercial",
+    "consumption": 3862318.74931,
+    "yoy_change_pct": -5.4
+  },
+  {
+    "year": 2021,
+    "sector": "Commercial",
+    "consumption": 3985318.4944800003,
+    "yoy_change_pct": 3.18
+  },
+  {
+    "year": 2022,
+    "sector": "Commercial",
+    "consumption": 4172618.43861,
+    "yoy_change_pct": 4.7
+  },
+  {
+    "year": 2023,
+    "sector": "Commercial",
+    "consumption": 4224326.26545,
+    "yoy_change_pct": 1.24
+  },
+  {
+    "year": 2024,
+    "sector": "Commercial",
+    "consumption": 4352823.64831,
+    "yoy_change_pct": 3.04
+  },
+  {
+    "year": 2002,
+    "sector": "Industrial",
+    "consumption": 2970712.893,
+    "yoy_change_pct": -0.64
+  },
+  {
+    "year": 2003,
+    "sector": "Industrial",
+    "consumption": 3037119.741,
+    "yoy_change_pct": 2.24
+  },
+  {
+    "year": 2004,
+    "sector": "Industrial",
+    "consumption": 3053548.596,
+    "yoy_change_pct": 0.54
+  },
+  {
+    "year": 2005,
+    "sector": "Industrial",
+    "consumption": 3057468.195,
+    "yoy_change_pct": 0.13
+  },
+  {
+    "year": 2006,
+    "sector": "Industrial",
+    "consumption": 3033892.698,
+    "yoy_change_pct": -0.77
+  },
+  {
+    "year": 2007,
+    "sector": "Industrial",
+    "consumption": 3083495.7750000004,
+    "yoy_change_pct": 1.63
+  },
+  {
+    "year": 2008,
+    "sector": "Industrial",
+    "consumption": 3028548.53424,
+    "yoy_change_pct": -1.78
+  },
+  {
+    "year": 2009,
+    "sector": "Industrial",
+    "consumption": 2752249.40397,
+    "yoy_change_pct": -9.12
+  },
+  {
+    "year": 2010,
+    "sector": "Industrial",
+    "consumption": 2913663.56807,
+    "yoy_change_pct": 5.86
+  },
+  {
+    "year": 2011,
+    "sector": "Industrial",
+    "consumption": 2973946.69202,
+    "yoy_change_pct": 2.07
+  },
+  {
+    "year": 2012,
+    "sector": "Industrial",
+    "consumption": 2957141.5619799998,
+    "yoy_change_pct": -0.57
+  },
+  {
+    "year": 2013,
+    "sector": "Industrial",
+    "consumption": 2956055.62198,
+    "yoy_change_pct": -0.04
+  },
+  {
+    "year": 2014,
+    "sector": "Industrial",
+    "consumption": 2992728.41383,
+    "yoy_change_pct": 1.24
+  },
+  {
+    "year": 2015,
+    "sector": "Industrial",
+    "consumption": 2959523.19596,
+    "yoy_change_pct": -1.11
+  },
+  {
+    "year": 2016,
+    "sector": "Industrial",
+    "consumption": 2930145.54283,
+    "yoy_change_pct": -0.99
+  },
+  {
+    "year": 2017,
+    "sector": "Industrial",
+    "consumption": 2952893.8349800003,
+    "yoy_change_pct": 0.78
+  },
+  {
+    "year": 2018,
+    "sector": "Industrial",
+    "consumption": 3002017.65878,
+    "yoy_change_pct": 1.66
+  },
+  {
+    "year": 2019,
+    "sector": "Industrial",
+    "consumption": 3007058.54702,
+    "yoy_change_pct": 0.17
+  },
+  {
+    "year": 2020,
+    "sector": "Industrial",
+    "consumption": 2877246.08401,
+    "yoy_change_pct": -4.32
+  },
+  {
+    "year": 2021,
+    "sector": "Industrial",
+    "consumption": 3001840.47004,
+    "yoy_change_pct": 4.33
+  },
+  {
+    "year": 2022,
+    "sector": "Industrial",
+    "consumption": 3061391.95831,
+    "yoy_change_pct": 1.98
+  },
+  {
+    "year": 2023,
+    "sector": "Industrial",
+    "consumption": 3027766.90248,
+    "yoy_change_pct": -1.1
+  },
+  {
+    "year": 2024,
+    "sector": "Industrial",
+    "consumption": 3103752.56894,
+    "yoy_change_pct": 2.51
+  },
+  {
+    "year": 2002,
+    "sector": "Residential",
+    "consumption": 3795539.607,
+    "yoy_change_pct": 5.29
+  },
+  {
+    "year": 2003,
+    "sector": "Residential",
+    "consumption": 3827471.73,
+    "yoy_change_pct": 0.84
+  },
+  {
+    "year": 2004,
+    "sector": "Residential",
+    "consumption": 3875944.7339999997,
+    "yoy_change_pct": 1.27
+  },
+  {
+    "year": 2005,
+    "sector": "Residential",
+    "consumption": 4077681.321,
+    "yoy_change_pct": 5.2
+  },
+  {
+    "year": 2006,
+    "sector": "Residential",
+    "consumption": 4054560.108,
+    "yoy_change_pct": -0.57
+  },
+  {
+    "year": 2007,
+    "sector": "Residential",
+    "consumption": 4176722.988,
+    "yoy_change_pct": 3.01
+  },
+  {
+    "year": 2008,
+    "sector": "Residential",
+    "consumption": 4141985.2349300003,
+    "yoy_change_pct": -0.83
+  },
+  {
+    "year": 2009,
+    "sector": "Residential",
+    "consumption": 4094274.45897,
+    "yoy_change_pct": -1.15
+  },
+  {
+    "year": 2010,
+    "sector": "Residential",
+    "consumption": 4337125.2088,
+    "yoy_change_pct": 5.93
+  },
+  {
+    "year": 2011,
+    "sector": "Residential",
+    "consumption": 4268403.27906,
+    "yoy_change_pct": -1.58
+  },
+  {
+    "year": 2012,
+    "sector": "Residential",
+    "consumption": 4123544.12397,
+    "yoy_change_pct": -3.39
+  },
+  {
+    "year": 2013,
+    "sector": "Residential",
+    "consumption": 4184436.38684,
+    "yoy_change_pct": 1.48
+  },
+  {
+    "year": 2014,
+    "sector": "Residential",
+    "consumption": 4221624.93298,
+    "yoy_change_pct": 0.89
+  },
+  {
+    "year": 2015,
+    "sector": "Residential",
+    "consumption": 4212289.49625,
+    "yoy_change_pct": -0.22
+  },
+  {
+    "year": 2016,
+    "sector": "Residential",
+    "consumption": 4233174.45897,
+    "yoy_change_pct": 0.5
+  },
+  {
+    "year": 2017,
+    "sector": "Residential",
+    "consumption": 4135943.22628,
+    "yoy_change_pct": -2.3
+  },
+  {
+    "year": 2018,
+    "sector": "Residential",
+    "consumption": 4407279.17687,
+    "yoy_change_pct": 6.56
+  },
+  {
+    "year": 2019,
+    "sector": "Residential",
+    "consumption": 4320866.72706,
+    "yoy_change_pct": -1.96
+  },
+  {
+    "year": 2020,
+    "sector": "Residential",
+    "consumption": 4393815.1373499995,
+    "yoy_change_pct": 1.69
+  },
+  {
+    "year": 2021,
+    "sector": "Residential",
+    "consumption": 4411460.6461,
+    "yoy_change_pct": 0.4
+  },
+  {
+    "year": 2022,
+    "sector": "Residential",
+    "consumption": 4527699.4871,
+    "yoy_change_pct": 2.63
+  },
+  {
+    "year": 2023,
+    "sector": "Residential",
+    "consumption": 4350075.55169,
+    "yoy_change_pct": -3.92
+  },
+  {
+    "year": 2024,
+    "sector": "Residential",
+    "consumption": 4448620.7577,
+    "yoy_change_pct": 2.27
+  }
+]

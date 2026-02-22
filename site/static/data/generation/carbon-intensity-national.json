@@ -1,0 +1,212 @@
+[
+  {
+    "year": 1990,
+    "co2_thousand_metric_tons": 3907401,
+    "co2_rate_lbs_per_mwh": 1441.3076923076924,
+    "carbon_intensity_kg_per_mwh": 653.77
+  },
+  {
+    "year": 1991,
+    "co2_thousand_metric_tons": 3900931,
+    "co2_rate_lbs_per_mwh": 1419.8846153846155,
+    "carbon_intensity_kg_per_mwh": 644.05
+  },
+  {
+    "year": 1992,
+    "co2_thousand_metric_tons": 3944551,
+    "co2_rate_lbs_per_mwh": 1441.7115384615386,
+    "carbon_intensity_kg_per_mwh": 653.95
+  },
+  {
+    "year": 1993,
+    "co2_thousand_metric_tons": 4114105,
+    "co2_rate_lbs_per_mwh": 1425.4807692307693,
+    "carbon_intensity_kg_per_mwh": 646.59
+  },
+  {
+    "year": 1994,
+    "co2_thousand_metric_tons": 4176277,
+    "co2_rate_lbs_per_mwh": 1418.1153846153845,
+    "carbon_intensity_kg_per_mwh": 643.25
+  },
+  {
+    "year": 1995,
+    "co2_thousand_metric_tons": 4216012,
+    "co2_rate_lbs_per_mwh": 1404.8461538461538,
+    "carbon_intensity_kg_per_mwh": 637.23
+  },
+  {
+    "year": 1996,
+    "co2_thousand_metric_tons": 4373962,
+    "co2_rate_lbs_per_mwh": 1411.5384615384614,
+    "carbon_intensity_kg_per_mwh": 640.26
+  },
+  {
+    "year": 1997,
+    "co2_thousand_metric_tons": 4518645,
+    "co2_rate_lbs_per_mwh": 1453.8846153846155,
+    "carbon_intensity_kg_per_mwh": 659.47
+  },
+  {
+    "year": 1998,
+    "co2_thousand_metric_tons": 4703201,
+    "co2_rate_lbs_per_mwh": 1446.7307692307693,
+    "carbon_intensity_kg_per_mwh": 656.23
+  },
+  {
+    "year": 1999,
+    "co2_thousand_metric_tons": 4732605,
+    "co2_rate_lbs_per_mwh": 1430.0192307692307,
+    "carbon_intensity_kg_per_mwh": 648.65
+  },
+  {
+    "year": 2000,
+    "co2_thousand_metric_tons": 4941672,
+    "co2_rate_lbs_per_mwh": 1452.7115384615386,
+    "carbon_intensity_kg_per_mwh": 658.94
+  },
+  {
+    "year": 2001,
+    "co2_thousand_metric_tons": 4837216,
+    "co2_rate_lbs_per_mwh": 1453.1346153846155,
+    "carbon_intensity_kg_per_mwh": 659.13
+  },
+  {
+    "year": 2002,
+    "co2_thousand_metric_tons": 4847923,
+    "co2_rate_lbs_per_mwh": 1398.9423076923076,
+    "carbon_intensity_kg_per_mwh": 634.55
+  },
+  {
+    "year": 2003,
+    "co2_thousand_metric_tons": 4890188,
+    "co2_rate_lbs_per_mwh": 1407.826923076923,
+    "carbon_intensity_kg_per_mwh": 638.58
+  },
+  {
+    "year": 2004,
+    "co2_thousand_metric_tons": 4973964,
+    "co2_rate_lbs_per_mwh": 1421.5576923076924,
+    "carbon_intensity_kg_per_mwh": 644.81
+  },
+  {
+    "year": 2005,
+    "co2_thousand_metric_tons": 5087675,
+    "co2_rate_lbs_per_mwh": 1397.2692307692307,
+    "carbon_intensity_kg_per_mwh": 633.79
+  },
+  {
+    "year": 2006,
+    "co2_thousand_metric_tons": 4977834,
+    "co2_rate_lbs_per_mwh": 1367.2115384615386,
+    "carbon_intensity_kg_per_mwh": 620.16
+  },
+  {
+    "year": 2007,
+    "co2_thousand_metric_tons": 5094062,
+    "co2_rate_lbs_per_mwh": 1360.423076923077,
+    "carbon_intensity_kg_per_mwh": 617.08
+  },
+  {
+    "year": 2008,
+    "co2_thousand_metric_tons": 4968025,
+    "co2_rate_lbs_per_mwh": 1336.6153846153845,
+    "carbon_intensity_kg_per_mwh": 606.28
+  },
+  {
+    "year": 2009,
+    "co2_thousand_metric_tons": 4539017,
+    "co2_rate_lbs_per_mwh": 1281.8846153846155,
+    "carbon_intensity_kg_per_mwh": 581.45
+  },
+  {
+    "year": 2010,
+    "co2_thousand_metric_tons": 4777192,
+    "co2_rate_lbs_per_mwh": 1271.6153846153845,
+    "carbon_intensity_kg_per_mwh": 576.79
+  },
+  {
+    "year": 2011,
+    "co2_thousand_metric_tons": 4574138,
+    "co2_rate_lbs_per_mwh": 1218.3653846153845,
+    "carbon_intensity_kg_per_mwh": 552.64
+  },
+  {
+    "year": 2012,
+    "co2_thousand_metric_tons": 4313750,
+    "co2_rate_lbs_per_mwh": 1176.7692307692307,
+    "carbon_intensity_kg_per_mwh": 533.77
+  },
+  {
+    "year": 2013,
+    "co2_thousand_metric_tons": 4347614,
+    "co2_rate_lbs_per_mwh": 1178.2307692307693,
+    "carbon_intensity_kg_per_mwh": 534.44
+  },
+  {
+    "year": 2014,
+    "co2_thousand_metric_tons": 4336572,
+    "co2_rate_lbs_per_mwh": 1158.173076923077,
+    "carbon_intensity_kg_per_mwh": 525.34
+  },
+  {
+    "year": 2015,
+    "co2_thousand_metric_tons": 4062905,
+    "co2_rate_lbs_per_mwh": 1104.9423076923076,
+    "carbon_intensity_kg_per_mwh": 501.19
+  },
+  {
+    "year": 2016,
+    "co2_thousand_metric_tons": 3856805,
+    "co2_rate_lbs_per_mwh": 1054.326923076923,
+    "carbon_intensity_kg_per_mwh": 478.23
+  },
+  {
+    "year": 2017,
+    "co2_thousand_metric_tons": 3699499,
+    "co2_rate_lbs_per_mwh": 1013.7692307692307,
+    "carbon_intensity_kg_per_mwh": 459.84
+  },
+  {
+    "year": 2018,
+    "co2_thousand_metric_tons": 3744660,
+    "co2_rate_lbs_per_mwh": 1001.3846153846154,
+    "carbon_intensity_kg_per_mwh": 454.22
+  },
+  {
+    "year": 2019,
+    "co2_thousand_metric_tons": 3449749,
+    "co2_rate_lbs_per_mwh": 959.6538461538462,
+    "carbon_intensity_kg_per_mwh": 435.29
+  },
+  {
+    "year": 2020,
+    "co2_thousand_metric_tons": 3107173,
+    "co2_rate_lbs_per_mwh": 894.8653846153846,
+    "carbon_intensity_kg_per_mwh": 405.9
+  },
+  {
+    "year": 2021,
+    "co2_thousand_metric_tons": 3303824,
+    "co2_rate_lbs_per_mwh": 918.5769230769231,
+    "carbon_intensity_kg_per_mwh": 416.66
+  },
+  {
+    "year": 2022,
+    "co2_thousand_metric_tons": 3300736,
+    "co2_rate_lbs_per_mwh": 888.8269230769231,
+    "carbon_intensity_kg_per_mwh": 403.16
+  },
+  {
+    "year": 2023,
+    "co2_thousand_metric_tons": 3063106,
+    "co2_rate_lbs_per_mwh": 851.2884615384615,
+    "carbon_intensity_kg_per_mwh": 386.14
+  },
+  {
+    "year": 2024,
+    "co2_thousand_metric_tons": 3074145,
+    "co2_rate_lbs_per_mwh": 833.0576923076923,
+    "carbon_intensity_kg_per_mwh": 377.87
+  }
+]

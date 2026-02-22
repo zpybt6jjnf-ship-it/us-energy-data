@@ -1,0 +1,1227 @@
+[
+  {
+    "year": 1990,
+    "source": "Coal",
+    "capacity_mw": 608669.0
+  },
+  {
+    "year": 1991,
+    "source": "Coal",
+    "capacity_mw": 613458.0
+  },
+  {
+    "year": 1992,
+    "source": "Coal",
+    "capacity_mw": 618225.0
+  },
+  {
+    "year": 1993,
+    "source": "Coal",
+    "capacity_mw": 617847.0
+  },
+  {
+    "year": 1994,
+    "source": "Coal",
+    "capacity_mw": 619238.0
+  },
+  {
+    "year": 1995,
+    "source": "Coal",
+    "capacity_mw": 622877.0
+  },
+  {
+    "year": 1996,
+    "source": "Coal",
+    "capacity_mw": 626801.0
+  },
+  {
+    "year": 1997,
+    "source": "Coal",
+    "capacity_mw": 628897.0
+  },
+  {
+    "year": 1998,
+    "source": "Coal",
+    "capacity_mw": 632889.0
+  },
+  {
+    "year": 1999,
+    "source": "Coal",
+    "capacity_mw": 631387.0
+  },
+  {
+    "year": 2000,
+    "source": "Coal",
+    "capacity_mw": 631860.0
+  },
+  {
+    "year": 2001,
+    "source": "Coal",
+    "capacity_mw": 628461.0
+  },
+  {
+    "year": 2002,
+    "source": "Coal",
+    "capacity_mw": 630566.0
+  },
+  {
+    "year": 2003,
+    "source": "Coal",
+    "capacity_mw": 624949.0
+  },
+  {
+    "year": 2004,
+    "source": "Coal",
+    "capacity_mw": 625261.0
+  },
+  {
+    "year": 2005,
+    "source": "Coal",
+    "capacity_mw": 626764.0
+  },
+  {
+    "year": 2006,
+    "source": "Coal",
+    "capacity_mw": 625914.0
+  },
+  {
+    "year": 2007,
+    "source": "Coal",
+    "capacity_mw": 625475.0
+  },
+  {
+    "year": 2008,
+    "source": "Coal",
+    "capacity_mw": 626643.2
+  },
+  {
+    "year": 2009,
+    "source": "Coal",
+    "capacity_mw": 628588.2
+  },
+  {
+    "year": 2010,
+    "source": "Coal",
+    "capacity_mw": 634678.2
+  },
+  {
+    "year": 2011,
+    "source": "Coal",
+    "capacity_mw": 635280.6
+  },
+  {
+    "year": 2012,
+    "source": "Coal",
+    "capacity_mw": 619360.8
+  },
+  {
+    "year": 2013,
+    "source": "Coal",
+    "capacity_mw": 606612.6
+  },
+  {
+    "year": 2014,
+    "source": "Coal",
+    "capacity_mw": 598188.4
+  },
+  {
+    "year": 2015,
+    "source": "Coal",
+    "capacity_mw": 559439.8
+  },
+  {
+    "year": 2016,
+    "source": "Coal",
+    "capacity_mw": 533239.8
+  },
+  {
+    "year": 2017,
+    "source": "Coal",
+    "capacity_mw": 513094.6
+  },
+  {
+    "year": 2018,
+    "source": "Coal",
+    "capacity_mw": 485571.2
+  },
+  {
+    "year": 2019,
+    "source": "Coal",
+    "capacity_mw": 457314.8
+  },
+  {
+    "year": 2020,
+    "source": "Coal",
+    "capacity_mw": 431108.4
+  },
+  {
+    "year": 2021,
+    "source": "Coal",
+    "capacity_mw": 419651.4
+  },
+  {
+    "year": 2022,
+    "source": "Coal",
+    "capacity_mw": 378632.6
+  },
+  {
+    "year": 2023,
+    "source": "Coal",
+    "capacity_mw": 356883.4
+  },
+  {
+    "year": 2024,
+    "source": "Coal",
+    "capacity_mw": 348355.2
+  },
+  {
+    "year": 1990,
+    "source": "Geothermal",
+    "capacity_mw": 5147.0
+  },
+  {
+    "year": 1991,
+    "source": "Geothermal",
+    "capacity_mw": 5140.0
+  },
+  {
+    "year": 1992,
+    "source": "Geothermal",
+    "capacity_mw": 5665.0
+  },
+  {
+    "year": 1993,
+    "source": "Geothermal",
+    "capacity_mw": 5784.0
+  },
+  {
+    "year": 1994,
+    "source": "Geothermal",
+    "capacity_mw": 5840.0
+  },
+  {
+    "year": 1995,
+    "source": "Geothermal",
+    "capacity_mw": 5936.0
+  },
+  {
+    "year": 1996,
+    "source": "Geothermal",
+    "capacity_mw": 5786.0
+  },
+  {
+    "year": 1997,
+    "source": "Geothermal",
+    "capacity_mw": 5786.0
+  },
+  {
+    "year": 1998,
+    "source": "Geothermal",
+    "capacity_mw": 5788.0
+  },
+  {
+    "year": 1999,
+    "source": "Geothermal",
+    "capacity_mw": 5693.0
+  },
+  {
+    "year": 2000,
+    "source": "Geothermal",
+    "capacity_mw": 5586.0
+  },
+  {
+    "year": 2001,
+    "source": "Geothermal",
+    "capacity_mw": 4433.0
+  },
+  {
+    "year": 2002,
+    "source": "Geothermal",
+    "capacity_mw": 4475.0
+  },
+  {
+    "year": 2003,
+    "source": "Geothermal",
+    "capacity_mw": 4267.0
+  },
+  {
+    "year": 2004,
+    "source": "Geothermal",
+    "capacity_mw": 4202.0
+  },
+  {
+    "year": 2005,
+    "source": "Geothermal",
+    "capacity_mw": 4570.0
+  },
+  {
+    "year": 2006,
+    "source": "Geothermal",
+    "capacity_mw": 4548.0
+  },
+  {
+    "year": 2007,
+    "source": "Geothermal",
+    "capacity_mw": 4429.0
+  },
+  {
+    "year": 2008,
+    "source": "Geothermal",
+    "capacity_mw": 4457.6
+  },
+  {
+    "year": 2009,
+    "source": "Geothermal",
+    "capacity_mw": 4763.8
+  },
+  {
+    "year": 2010,
+    "source": "Geothermal",
+    "capacity_mw": 4809.2
+  },
+  {
+    "year": 2011,
+    "source": "Geothermal",
+    "capacity_mw": 4818.4
+  },
+  {
+    "year": 2012,
+    "source": "Geothermal",
+    "capacity_mw": 5184.200000000001
+  },
+  {
+    "year": 2013,
+    "source": "Geothermal",
+    "capacity_mw": 5214.0
+  },
+  {
+    "year": 2014,
+    "source": "Geothermal",
+    "capacity_mw": 5028.6
+  },
+  {
+    "year": 2015,
+    "source": "Geothermal",
+    "capacity_mw": 5083.0
+  },
+  {
+    "year": 2016,
+    "source": "Geothermal",
+    "capacity_mw": 5033.2
+  },
+  {
+    "year": 2017,
+    "source": "Geothermal",
+    "capacity_mw": 4966.6
+  },
+  {
+    "year": 2018,
+    "source": "Geothermal",
+    "capacity_mw": 4888.6
+  },
+  {
+    "year": 2019,
+    "source": "Geothermal",
+    "capacity_mw": 5110.8
+  },
+  {
+    "year": 2020,
+    "source": "Geothermal",
+    "capacity_mw": 5143.8
+  },
+  {
+    "year": 2021,
+    "source": "Geothermal",
+    "capacity_mw": 5193.4
+  },
+  {
+    "year": 2022,
+    "source": "Geothermal",
+    "capacity_mw": 5297.2
+  },
+  {
+    "year": 2023,
+    "source": "Geothermal",
+    "capacity_mw": 5391.6
+  },
+  {
+    "year": 2024,
+    "source": "Geothermal",
+    "capacity_mw": 5391.0
+  },
+  {
+    "year": 1990,
+    "source": "Hydro",
+    "capacity_mw": 147836.0
+  },
+  {
+    "year": 1991,
+    "source": "Hydro",
+    "capacity_mw": 147772.0
+  },
+  {
+    "year": 1992,
+    "source": "Hydro",
+    "capacity_mw": 153688.0
+  },
+  {
+    "year": 1993,
+    "source": "Hydro",
+    "capacity_mw": 154396.0
+  },
+  {
+    "year": 1994,
+    "source": "Hydro",
+    "capacity_mw": 156105.0
+  },
+  {
+    "year": 1995,
+    "source": "Hydro",
+    "capacity_mw": 157146.0
+  },
+  {
+    "year": 1996,
+    "source": "Hydro",
+    "capacity_mw": 152893.0
+  },
+  {
+    "year": 1997,
+    "source": "Hydro",
+    "capacity_mw": 158896.0
+  },
+  {
+    "year": 1998,
+    "source": "Hydro",
+    "capacity_mw": 158323.0
+  },
+  {
+    "year": 1999,
+    "source": "Hydro",
+    "capacity_mw": 158822.0
+  },
+  {
+    "year": 2000,
+    "source": "Hydro",
+    "capacity_mw": 158748.0
+  },
+  {
+    "year": 2001,
+    "source": "Hydro",
+    "capacity_mw": 157832.0
+  },
+  {
+    "year": 2002,
+    "source": "Hydro",
+    "capacity_mw": 158602.0
+  },
+  {
+    "year": 2003,
+    "source": "Hydro",
+    "capacity_mw": 157348.0
+  },
+  {
+    "year": 2004,
+    "source": "Hydro",
+    "capacity_mw": 155246.0
+  },
+  {
+    "year": 2005,
+    "source": "Hydro",
+    "capacity_mw": 155083.0
+  },
+  {
+    "year": 2006,
+    "source": "Hydro",
+    "capacity_mw": 155644.0
+  },
+  {
+    "year": 2007,
+    "source": "Hydro",
+    "capacity_mw": 155772.0
+  },
+  {
+    "year": 2008,
+    "source": "Hydro",
+    "capacity_mw": 155860.4
+  },
+  {
+    "year": 2009,
+    "source": "Hydro",
+    "capacity_mw": 157035.4
+  },
+  {
+    "year": 2010,
+    "source": "Hydro",
+    "capacity_mw": 157649.4
+  },
+  {
+    "year": 2011,
+    "source": "Hydro",
+    "capacity_mw": 157303.2
+  },
+  {
+    "year": 2012,
+    "source": "Hydro",
+    "capacity_mw": 157476.0
+  },
+  {
+    "year": 2013,
+    "source": "Hydro",
+    "capacity_mw": 158400.0
+  },
+  {
+    "year": 2014,
+    "source": "Hydro",
+    "capacity_mw": 159354.6
+  },
+  {
+    "year": 2015,
+    "source": "Hydro",
+    "capacity_mw": 159328.4
+  },
+  {
+    "year": 2016,
+    "source": "Hydro",
+    "capacity_mw": 159825.8
+  },
+  {
+    "year": 2017,
+    "source": "Hydro",
+    "capacity_mw": 159589.0
+  },
+  {
+    "year": 2018,
+    "source": "Hydro",
+    "capacity_mw": 159743.6
+  },
+  {
+    "year": 2019,
+    "source": "Hydro",
+    "capacity_mw": 159546.2
+  },
+  {
+    "year": 2020,
+    "source": "Hydro",
+    "capacity_mw": 159848.6
+  },
+  {
+    "year": 2021,
+    "source": "Hydro",
+    "capacity_mw": 159819.4
+  },
+  {
+    "year": 2022,
+    "source": "Hydro",
+    "capacity_mw": 160135.2
+  },
+  {
+    "year": 2023,
+    "source": "Hydro",
+    "capacity_mw": 159970.6
+  },
+  {
+    "year": 2024,
+    "source": "Hydro",
+    "capacity_mw": 159793.8
+  },
+  {
+    "year": 1990,
+    "source": "Natural Gas",
+    "capacity_mw": 267372.0
+  },
+  {
+    "year": 1991,
+    "source": "Natural Gas",
+    "capacity_mw": 281189.0
+  },
+  {
+    "year": 1992,
+    "source": "Natural Gas",
+    "capacity_mw": 294108.0
+  },
+  {
+    "year": 1993,
+    "source": "Natural Gas",
+    "capacity_mw": 305683.0
+  },
+  {
+    "year": 1994,
+    "source": "Natural Gas",
+    "capacity_mw": 319330.0
+  },
+  {
+    "year": 1995,
+    "source": "Natural Gas",
+    "capacity_mw": 347742.0
+  },
+  {
+    "year": 1996,
+    "source": "Natural Gas",
+    "capacity_mw": 336152.0
+  },
+  {
+    "year": 1997,
+    "source": "Natural Gas",
+    "capacity_mw": 341360.0
+  },
+  {
+    "year": 1998,
+    "source": "Natural Gas",
+    "capacity_mw": 348711.0
+  },
+  {
+    "year": 1999,
+    "source": "Natural Gas",
+    "capacity_mw": 376871.0
+  },
+  {
+    "year": 2000,
+    "source": "Natural Gas",
+    "capacity_mw": 427457.0
+  },
+  {
+    "year": 2001,
+    "source": "Natural Gas",
+    "capacity_mw": 466022.0
+  },
+  {
+    "year": 2002,
+    "source": "Natural Gas",
+    "capacity_mw": 623943.0
+  },
+  {
+    "year": 2003,
+    "source": "Natural Gas",
+    "capacity_mw": 703434.0
+  },
+  {
+    "year": 2004,
+    "source": "Natural Gas",
+    "capacity_mw": 738052.0
+  },
+  {
+    "year": 2005,
+    "source": "Natural Gas",
+    "capacity_mw": 765451.0
+  },
+  {
+    "year": 2006,
+    "source": "Natural Gas",
+    "capacity_mw": 776094.0
+  },
+  {
+    "year": 2007,
+    "source": "Natural Gas",
+    "capacity_mw": 784988.0
+  },
+  {
+    "year": 2008,
+    "source": "Natural Gas",
+    "capacity_mw": 794368.0
+  },
+  {
+    "year": 2009,
+    "source": "Natural Gas",
+    "capacity_mw": 801860.6
+  },
+  {
+    "year": 2010,
+    "source": "Natural Gas",
+    "capacity_mw": 810224.8
+  },
+  {
+    "year": 2011,
+    "source": "Natural Gas",
+    "capacity_mw": 830382.6
+  },
+  {
+    "year": 2012,
+    "source": "Natural Gas",
+    "capacity_mw": 844728.8
+  },
+  {
+    "year": 2013,
+    "source": "Natural Gas",
+    "capacity_mw": 850779.4
+  },
+  {
+    "year": 2014,
+    "source": "Natural Gas",
+    "capacity_mw": 864300.6
+  },
+  {
+    "year": 2015,
+    "source": "Natural Gas",
+    "capacity_mw": 878850.8
+  },
+  {
+    "year": 2016,
+    "source": "Natural Gas",
+    "capacity_mw": 893646.4
+  },
+  {
+    "year": 2017,
+    "source": "Natural Gas",
+    "capacity_mw": 912023.2
+  },
+  {
+    "year": 2018,
+    "source": "Natural Gas",
+    "capacity_mw": 940473.8
+  },
+  {
+    "year": 2019,
+    "source": "Natural Gas",
+    "capacity_mw": 953134.8
+  },
+  {
+    "year": 2020,
+    "source": "Natural Gas",
+    "capacity_mw": 971614.4
+  },
+  {
+    "year": 2021,
+    "source": "Natural Gas",
+    "capacity_mw": 983740.4
+  },
+  {
+    "year": 2022,
+    "source": "Natural Gas",
+    "capacity_mw": 1004793.8
+  },
+  {
+    "year": 2023,
+    "source": "Natural Gas",
+    "capacity_mw": 1015071.6
+  },
+  {
+    "year": 2024,
+    "source": "Natural Gas",
+    "capacity_mw": 1012742.4
+  },
+  {
+    "year": 1990,
+    "source": "Nuclear",
+    "capacity_mw": 199248.0
+  },
+  {
+    "year": 1991,
+    "source": "Nuclear",
+    "capacity_mw": 199178.0
+  },
+  {
+    "year": 1992,
+    "source": "Nuclear",
+    "capacity_mw": 198082.0
+  },
+  {
+    "year": 1993,
+    "source": "Nuclear",
+    "capacity_mw": 198082.0
+  },
+  {
+    "year": 1994,
+    "source": "Nuclear",
+    "capacity_mw": 198296.0
+  },
+  {
+    "year": 1995,
+    "source": "Nuclear",
+    "capacity_mw": 199030.0
+  },
+  {
+    "year": 1996,
+    "source": "Nuclear",
+    "capacity_mw": 202243.0
+  },
+  {
+    "year": 1997,
+    "source": "Nuclear",
+    "capacity_mw": 199432.0
+  },
+  {
+    "year": 1998,
+    "source": "Nuclear",
+    "capacity_mw": 194140.0
+  },
+  {
+    "year": 1999,
+    "source": "Nuclear",
+    "capacity_mw": 194822.0
+  },
+  {
+    "year": 2000,
+    "source": "Nuclear",
+    "capacity_mw": 195718.0
+  },
+  {
+    "year": 2001,
+    "source": "Nuclear",
+    "capacity_mw": 196318.0
+  },
+  {
+    "year": 2002,
+    "source": "Nuclear",
+    "capacity_mw": 197315.0
+  },
+  {
+    "year": 2003,
+    "source": "Nuclear",
+    "capacity_mw": 198418.0
+  },
+  {
+    "year": 2004,
+    "source": "Nuclear",
+    "capacity_mw": 199256.0
+  },
+  {
+    "year": 2005,
+    "source": "Nuclear",
+    "capacity_mw": 199976.0
+  },
+  {
+    "year": 2006,
+    "source": "Nuclear",
+    "capacity_mw": 200668.0
+  },
+  {
+    "year": 2007,
+    "source": "Nuclear",
+    "capacity_mw": 200532.0
+  },
+  {
+    "year": 2008,
+    "source": "Nuclear",
+    "capacity_mw": 201509.8
+  },
+  {
+    "year": 2009,
+    "source": "Nuclear",
+    "capacity_mw": 202007.4
+  },
+  {
+    "year": 2010,
+    "source": "Nuclear",
+    "capacity_mw": 202334.8
+  },
+  {
+    "year": 2011,
+    "source": "Nuclear",
+    "capacity_mw": 202837.6
+  },
+  {
+    "year": 2012,
+    "source": "Nuclear",
+    "capacity_mw": 203770.0
+  },
+  {
+    "year": 2013,
+    "source": "Nuclear",
+    "capacity_mw": 198480.6
+  },
+  {
+    "year": 2014,
+    "source": "Nuclear",
+    "capacity_mw": 197138.6
+  },
+  {
+    "year": 2015,
+    "source": "Nuclear",
+    "capacity_mw": 197344.0
+  },
+  {
+    "year": 2016,
+    "source": "Nuclear",
+    "capacity_mw": 199129.6
+  },
+  {
+    "year": 2017,
+    "source": "Nuclear",
+    "capacity_mw": 199257.8
+  },
+  {
+    "year": 2018,
+    "source": "Nuclear",
+    "capacity_mw": 198865.8
+  },
+  {
+    "year": 2019,
+    "source": "Nuclear",
+    "capacity_mw": 196238.0
+  },
+  {
+    "year": 2020,
+    "source": "Nuclear",
+    "capacity_mw": 193001.2
+  },
+  {
+    "year": 2021,
+    "source": "Nuclear",
+    "capacity_mw": 191092.8
+  },
+  {
+    "year": 2022,
+    "source": "Nuclear",
+    "capacity_mw": 189317.8
+  },
+  {
+    "year": 2023,
+    "source": "Nuclear",
+    "capacity_mw": 191424.4
+  },
+  {
+    "year": 2024,
+    "source": "Nuclear",
+    "capacity_mw": 196782.4
+  },
+  {
+    "year": 1990,
+    "source": "Petroleum",
+    "capacity_mw": 155006.0
+  },
+  {
+    "year": 1991,
+    "source": "Petroleum",
+    "capacity_mw": 146912.0
+  },
+  {
+    "year": 1992,
+    "source": "Petroleum",
+    "capacity_mw": 139617.0
+  },
+  {
+    "year": 1993,
+    "source": "Petroleum",
+    "capacity_mw": 140436.0
+  },
+  {
+    "year": 1994,
+    "source": "Petroleum",
+    "capacity_mw": 140344.0
+  },
+  {
+    "year": 1995,
+    "source": "Petroleum",
+    "capacity_mw": 134130.0
+  },
+  {
+    "year": 1996,
+    "source": "Petroleum",
+    "capacity_mw": 146108.0
+  },
+  {
+    "year": 1997,
+    "source": "Petroleum",
+    "capacity_mw": 151399.0
+  },
+  {
+    "year": 1998,
+    "source": "Petroleum",
+    "capacity_mw": 133969.0
+  },
+  {
+    "year": 1999,
+    "source": "Petroleum",
+    "capacity_mw": 118732.0
+  },
+  {
+    "year": 2000,
+    "source": "Petroleum",
+    "capacity_mw": 120745.0
+  },
+  {
+    "year": 2001,
+    "source": "Petroleum",
+    "capacity_mw": 132174.0
+  },
+  {
+    "year": 2002,
+    "source": "Petroleum",
+    "capacity_mw": 119269.0
+  },
+  {
+    "year": 2003,
+    "source": "Petroleum",
+    "capacity_mw": 120872.0
+  },
+  {
+    "year": 2004,
+    "source": "Petroleum",
+    "capacity_mw": 118035.0
+  },
+  {
+    "year": 2005,
+    "source": "Petroleum",
+    "capacity_mw": 117096.0
+  },
+  {
+    "year": 2006,
+    "source": "Petroleum",
+    "capacity_mw": 116197.0
+  },
+  {
+    "year": 2007,
+    "source": "Petroleum",
+    "capacity_mw": 112140.0
+  },
+  {
+    "year": 2008,
+    "source": "Petroleum",
+    "capacity_mw": 114889.0
+  },
+  {
+    "year": 2009,
+    "source": "Petroleum",
+    "capacity_mw": 113561.0
+  },
+  {
+    "year": 2010,
+    "source": "Petroleum",
+    "capacity_mw": 111293.8
+  },
+  {
+    "year": 2011,
+    "source": "Petroleum",
+    "capacity_mw": 102963.2
+  },
+  {
+    "year": 2012,
+    "source": "Petroleum",
+    "capacity_mw": 94334.4
+  },
+  {
+    "year": 2013,
+    "source": "Petroleum",
+    "capacity_mw": 87046.0
+  },
+  {
+    "year": 2014,
+    "source": "Petroleum",
+    "capacity_mw": 82270.8
+  },
+  {
+    "year": 2015,
+    "source": "Petroleum",
+    "capacity_mw": 73660.6
+  },
+  {
+    "year": 2016,
+    "source": "Petroleum",
+    "capacity_mw": 68764.8
+  },
+  {
+    "year": 2017,
+    "source": "Petroleum",
+    "capacity_mw": 66613.40000000001
+  },
+  {
+    "year": 2018,
+    "source": "Petroleum",
+    "capacity_mw": 64436.4
+  },
+  {
+    "year": 2019,
+    "source": "Petroleum",
+    "capacity_mw": 62802.6
+  },
+  {
+    "year": 2020,
+    "source": "Petroleum",
+    "capacity_mw": 55140.6
+  },
+  {
+    "year": 2021,
+    "source": "Petroleum",
+    "capacity_mw": 56411.0
+  },
+  {
+    "year": 2022,
+    "source": "Petroleum",
+    "capacity_mw": 61550.2
+  },
+  {
+    "year": 2023,
+    "source": "Petroleum",
+    "capacity_mw": 58881.0
+  },
+  {
+    "year": 2024,
+    "source": "Petroleum",
+    "capacity_mw": 57299.2
+  },
+  {
+    "year": 1990,
+    "source": "Wind",
+    "capacity_mw": 3599.0
+  },
+  {
+    "year": 1991,
+    "source": "Wind",
+    "capacity_mw": 3772.0
+  },
+  {
+    "year": 1992,
+    "source": "Wind",
+    "capacity_mw": 3646.0
+  },
+  {
+    "year": 1993,
+    "source": "Wind",
+    "capacity_mw": 3594.0
+  },
+  {
+    "year": 1994,
+    "source": "Wind",
+    "capacity_mw": 3491.0
+  },
+  {
+    "year": 1995,
+    "source": "Wind",
+    "capacity_mw": 3464.0
+  },
+  {
+    "year": 1996,
+    "source": "Wind",
+    "capacity_mw": 3356.0
+  },
+  {
+    "year": 1997,
+    "source": "Wind",
+    "capacity_mw": 3220.0
+  },
+  {
+    "year": 1998,
+    "source": "Wind",
+    "capacity_mw": 3443.0
+  },
+  {
+    "year": 1999,
+    "source": "Wind",
+    "capacity_mw": 4507.0
+  },
+  {
+    "year": 2000,
+    "source": "Wind",
+    "capacity_mw": 4756.0
+  },
+  {
+    "year": 2001,
+    "source": "Wind",
+    "capacity_mw": 7728.0
+  },
+  {
+    "year": 2002,
+    "source": "Wind",
+    "capacity_mw": 8698.0
+  },
+  {
+    "year": 2003,
+    "source": "Wind",
+    "capacity_mw": 11426.0
+  },
+  {
+    "year": 2004,
+    "source": "Wind",
+    "capacity_mw": 12862.0
+  },
+  {
+    "year": 2005,
+    "source": "Wind",
+    "capacity_mw": 17412.0
+  },
+  {
+    "year": 2006,
+    "source": "Wind",
+    "capacity_mw": 22658.0
+  },
+  {
+    "year": 2007,
+    "source": "Wind",
+    "capacity_mw": 33031.0
+  },
+  {
+    "year": 2008,
+    "source": "Wind",
+    "capacity_mw": 49302.6
+  },
+  {
+    "year": 2009,
+    "source": "Wind",
+    "capacity_mw": 68591.6
+  },
+  {
+    "year": 2010,
+    "source": "Wind",
+    "capacity_mw": 78269.0
+  },
+  {
+    "year": 2011,
+    "source": "Wind",
+    "capacity_mw": 91351.8
+  },
+  {
+    "year": 2012,
+    "source": "Wind",
+    "capacity_mw": 118149.6
+  },
+  {
+    "year": 2013,
+    "source": "Wind",
+    "capacity_mw": 119946.8
+  },
+  {
+    "year": 2014,
+    "source": "Wind",
+    "capacity_mw": 128463.0
+  },
+  {
+    "year": 2015,
+    "source": "Wind",
+    "capacity_mw": 145146.8
+  },
+  {
+    "year": 2016,
+    "source": "Wind",
+    "capacity_mw": 162573.2
+  },
+  {
+    "year": 2017,
+    "source": "Wind",
+    "capacity_mw": 175195.0
+  },
+  {
+    "year": 2018,
+    "source": "Wind",
+    "capacity_mw": 188835.4
+  },
+  {
+    "year": 2019,
+    "source": "Wind",
+    "capacity_mw": 207142.4
+  },
+  {
+    "year": 2020,
+    "source": "Wind",
+    "capacity_mw": 236757.4
+  },
+  {
+    "year": 2021,
+    "source": "Wind",
+    "capacity_mw": 265506.8
+  },
+  {
+    "year": 2022,
+    "source": "Wind",
+    "capacity_mw": 282804.4
+  },
+  {
+    "year": 2023,
+    "source": "Wind",
+    "capacity_mw": 294889.4
+  },
+  {
+    "year": 2024,
+    "source": "Wind",
+    "capacity_mw": 304194.6
+  }
+]
