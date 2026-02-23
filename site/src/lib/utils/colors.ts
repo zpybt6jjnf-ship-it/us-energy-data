@@ -39,9 +39,9 @@ export const FUEL_GEN_COLORS: Record<string, string> = {
 };
 
 export const TRADE_COLORS: Record<string, string> = {
-	Imports: '#D14040',
-	Exports: '#286EA8',
-	'Net Imports': '#18A865',
+	Imports: '#286EA8',
+	Exports: '#D4660A',
+	'Net Imports': '#6B7280',
 };
 
 export const CATEGORY_COLORS: Record<string, string> = {

@@ -1,15 +1,15 @@
 [
   {
     "state": "Alabama",
-    "renewable_share": 6.88
+    "renewable_share": 6.9
   },
   {
     "state": "Alaska",
-    "renewable_share": 28.12
+    "renewable_share": 28.1
   },
   {
     "state": "Arizona",
-    "renewable_share": 16.13
+    "renewable_share": 16.1
   },
   {
     "state": "Arkansas",
@@ -17,55 +17,55 @@
   },
   {
     "state": "California",
-    "renewable_share": 49.96
+    "renewable_share": 50.0
   },
   {
     "state": "Colorado",
-    "renewable_share": 41.27
+    "renewable_share": 41.3
   },
   {
     "state": "Connecticut",
-    "renewable_share": 1.94
+    "renewable_share": 1.9
   },
   {
     "state": "Delaware",
-    "renewable_share": 3.71
+    "renewable_share": 3.7
   },
   {
     "state": "District of Columbia",
-    "renewable_share": 24.11
+    "renewable_share": 24.1
   },
   {
     "state": "Florida",
-    "renewable_share": 7.15
+    "renewable_share": 7.2
   },
   {
     "state": "Georgia",
-    "renewable_share": 8.97
+    "renewable_share": 9.0
   },
   {
     "state": "Hawaii",
-    "renewable_share": 19.32
+    "renewable_share": 19.3
   },
   {
     "state": "Idaho",
-    "renewable_share": 67.63
+    "renewable_share": 67.6
   },
   {
     "state": "Illinois",
-    "renewable_share": 15.19
+    "renewable_share": 15.2
   },
   {
     "state": "Indiana",
-    "renewable_share": 14.55
+    "renewable_share": 14.6
   },
   {
     "state": "Iowa",
-    "renewable_share": 65.44
+    "renewable_share": 65.4
   },
   {
     "state": "Kansas",
-    "renewable_share": 51.94
+    "renewable_share": 51.9
   },
   {
     "state": "Kentucky",
@@ -73,75 +73,75 @@
   },
   {
     "state": "Louisiana",
-    "renewable_share": 2.17
+    "renewable_share": 2.2
   },
   {
     "state": "Maine",
-    "renewable_share": 47.98
+    "renewable_share": 48.0
   },
   {
     "state": "Maryland",
-    "renewable_share": 9.81
+    "renewable_share": 9.8
   },
   {
     "state": "Massachusetts",
-    "renewable_share": 15.52
+    "renewable_share": 15.5
   },
   {
     "state": "Michigan",
-    "renewable_share": 10.59
+    "renewable_share": 10.6
   },
   {
     "state": "Minnesota",
-    "renewable_share": 31.23
+    "renewable_share": 31.2
   },
   {
     "state": "Mississippi",
-    "renewable_share": 2.68
+    "renewable_share": 2.7
   },
   {
     "state": "Missouri",
-    "renewable_share": 12.04
+    "renewable_share": 12.0
   },
   {
     "state": "Montana",
-    "renewable_share": 58.02
+    "renewable_share": 58.0
   },
   {
     "state": "Nebraska",
-    "renewable_share": 35.72
+    "renewable_share": 35.7
   },
   {
     "state": "Nevada",
-    "renewable_share": 40.17
+    "renewable_share": 40.2
   },
   {
     "state": "New Hampshire",
-    "renewable_share": 11.42
+    "renewable_share": 11.4
   },
   {
     "state": "New Jersey",
-    "renewable_share": 2.72
+    "renewable_share": 2.7
   },
   {
     "state": "New Mexico",
-    "renewable_share": 49.41
+    "renewable_share": 49.4
   },
   {
     "state": "New York",
-    "renewable_share": 29.03
+    "renewable_share": 29.0
   },
   {
     "state": "North Carolina",
-    "renewable_share": 12.89
+    "renewable_share": 12.9
   },
   {
     "state": "North Dakota",
-    "renewable_share": 39.56
+    "renewable_share": 39.6
   },
   {
     "state": "Ohio",
-    "renewable_share": 5.15
+    "renewable_share": 5.2
   },
   {
     "state": "Oklahoma",
@@ -149,15 +149,15 @@
   },
   {
     "state": "Oregon",
-    "renewable_share": 60.75
+    "renewable_share": 60.8
   },
   {
     "state": "Pennsylvania",
-    "renewable_share": 3.01
+    "renewable_share": 3.0
   },
   {
     "state": "Rhode Island",
-    "renewable_share": 8.15
+    "renewable_share": 8.2
   },
   {
     "state": "South Carolina",
@@ -165,27 +165,27 @@
   },
   {
     "state": "South Dakota",
-    "renewable_share": 81.59
+    "renewable_share": 81.6
   },
   {
     "state": "Tennessee",
-    "renewable_share": 13.15
+    "renewable_share": 13.2
   },
   {
     "state": "Texas",
-    "renewable_share": 29.41
+    "renewable_share": 29.4
   },
   {
     "state": "Utah",
-    "renewable_share": 20.94
+    "renewable_share": 20.9
   },
   {
     "state": "Vermont",
-    "renewable_share": 99.72
+    "renewable_share": 99.7
   },
   {
     "state": "Virginia",
-    "renewable_share": 8.23
+    "renewable_share": 8.2
   },
   {
     "state": "Washington",
@@ -197,10 +197,10 @@
   },
   {
     "state": "Wisconsin",
-    "renewable_share": 10.82
+    "renewable_share": 10.8
   },
   {
     "state": "Wyoming",
-    "renewable_share": 25.86
+    "renewable_share": 25.9
   }
 ]

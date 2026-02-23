@@ -4,4283 +4,5507 @@
     "stateAbbr": "AK",
     "fips": "02",
     "saidi": 360.7,
-    "saifi": 2.3
+    "saifi": 2.3,
+    "saidi_no_med": 135.9,
+    "saifi_no_med": 1.4
   },
   {
     "year": 2013,
     "stateAbbr": "AL",
     "fips": "01",
     "saidi": 237.3,
-    "saifi": 1.44
+    "saifi": 1.4,
+    "saidi_no_med": 121.6,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2013,
     "stateAbbr": "AR",
     "fips": "05",
     "saidi": 276.7,
-    "saifi": 1.8
+    "saifi": 1.8,
+    "saidi_no_med": 147.1,
+    "saifi_no_med": 1.4
   },
   {
     "year": 2013,
     "stateAbbr": "AZ",
     "fips": "04",
     "saidi": 75.2,
-    "saifi": 0.82
+    "saifi": 0.8,
+    "saidi_no_med": 61.7,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2013,
     "stateAbbr": "CA",
     "fips": "06",
     "saidi": 98.9,
-    "saifi": 0.83
+    "saifi": 0.8,
+    "saidi_no_med": 89.1,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2013,
     "stateAbbr": "CO",
     "fips": "08",
     "saidi": 129.0,
-    "saifi": 1.07
+    "saifi": 1.1,
+    "saidi_no_med": 84.9,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2013,
     "stateAbbr": "CT",
     "fips": "09",
     "saidi": 179.6,
-    "saifi": 0.93
+    "saifi": 0.9,
+    "saidi_no_med": 88.8,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2013,
     "stateAbbr": "DC",
     "fips": "11",
     "saidi": 124.0,
-    "saifi": 0.88
+    "saifi": 0.9,
+    "saidi_no_med": 124.0,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2013,
     "stateAbbr": "DE",
     "fips": "10",
     "saidi": 157.7,
-    "saifi": 1.46
+    "saifi": 1.5,
+    "saidi_no_med": 128.8,
+    "saifi_no_med": 1.3
   },
   {
     "year": 2013,
     "stateAbbr": "FL",
     "fips": "12",
     "saidi": 87.0,
-    "saifi": 1.12
+    "saifi": 1.1,
+    "saidi_no_med": 78.4,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2013,
     "stateAbbr": "GA",
     "fips": "13",
     "saidi": 151.6,
-    "saifi": 1.33
+    "saifi": 1.3,
+    "saidi_no_med": 95.6,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2013,
     "stateAbbr": "HI",
     "fips": "15",
     "saidi": 145.0,
-    "saifi": 2.13
+    "saifi": 2.1,
+    "saidi_no_med": 116.2,
+    "saifi_no_med": 1.6
   },
   {
     "year": 2013,
     "stateAbbr": "IA",
     "fips": "19",
     "saidi": 124.6,
-    "saifi": 0.96
+    "saifi": 1.0,
+    "saidi_no_med": 79.0,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2013,
     "stateAbbr": "ID",
     "fips": "16",
     "saidi": 261.0,
-    "saifi": 1.64
+    "saifi": 1.6,
+    "saidi_no_med": 174.4,
+    "saifi_no_med": 1.4
   },
   {
     "year": 2013,
     "stateAbbr": "IL",
     "fips": "17",
     "saidi": 181.8,
-    "saifi": 1.1
+    "saifi": 1.1,
+    "saidi_no_med": 83.3,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2013,
     "stateAbbr": "IN",
     "fips": "18",
     "saidi": 231.8,
-    "saifi": 1.18
+    "saifi": 1.2,
+    "saidi_no_med": 109.6,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2013,
     "stateAbbr": "KS",
     "fips": "20",
     "saidi": 255.5,
-    "saifi": 1.57
+    "saifi": 1.6,
+    "saidi_no_med": 121.0,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2013,
     "stateAbbr": "KY",
     "fips": "21",
     "saidi": 176.1,
-    "saifi": 1.5
+    "saifi": 1.5,
+    "saidi_no_med": 133.8,
+    "saifi_no_med": 1.3
   },
   {
     "year": 2013,
     "stateAbbr": "LA",
     "fips": "22",
     "saidi": 327.8,
-    "saifi": 2.54
+    "saifi": 2.5,
+    "saidi_no_med": 168.4,
+    "saifi_no_med": 2.1
   },
   {
     "year": 2013,
     "stateAbbr": "MA",
     "fips": "25",
     "saidi": 427.3,
-    "saifi": 1.13
+    "saifi": 1.1,
+    "saidi_no_med": 85.9,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2013,
     "stateAbbr": "MD",
     "fips": "24",
     "saidi": 116.8,
-    "saifi": 1.12
+    "saifi": 1.1,
+    "saidi_no_med": 111.4,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2013,
     "stateAbbr": "ME",
     "fips": "23",
     "saidi": 971.3,
-    "saifi": 2.89
+    "saifi": 2.9,
+    "saidi_no_med": 249.5,
+    "saifi_no_med": 2.0
   },
   {
     "year": 2013,
     "stateAbbr": "MI",
     "fips": "26",
     "saidi": 782.3,
-    "saifi": 1.52
+    "saifi": 1.5,
+    "saidi_no_med": 199.1,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2013,
     "stateAbbr": "MN",
     "fips": "27",
     "saidi": 367.2,
-    "saifi": 1.22
+    "saifi": 1.2,
+    "saidi_no_med": 86.4,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2013,
     "stateAbbr": "MO",
     "fips": "29",
     "saidi": 319.9,
-    "saifi": 1.13
+    "saifi": 1.1,
+    "saidi_no_med": 98.2,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2013,
     "stateAbbr": "MS",
     "fips": "28",
     "saidi": 198.4,
-    "saifi": 1.71
+    "saifi": 1.7,
+    "saidi_no_med": 113.4,
+    "saifi_no_med": 1.4
   },
   {
     "year": 2013,
     "stateAbbr": "MT",
     "fips": "30",
     "saidi": 161.7,
-    "saifi": 1.36
+    "saifi": 1.4,
+    "saidi_no_med": 139.4,
+    "saifi_no_med": 1.3
   },
   {
     "year": 2013,
     "stateAbbr": "NC",
     "fips": "37",
     "saidi": 226.6,
-    "saifi": 1.34
+    "saifi": 1.3,
+    "saidi_no_med": 111.6,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2013,
     "stateAbbr": "ND",
     "fips": "38",
     "saidi": 108.3,
-    "saifi": 2.76
+    "saifi": 2.8,
+    "saidi_no_med": 88.9,
+    "saifi_no_med": 3.4
   },
   {
     "year": 2013,
     "stateAbbr": "NE",
     "fips": "31",
     "saidi": 125.7,
-    "saifi": 0.84
+    "saifi": 0.8,
+    "saidi_no_med": 54.1,
+    "saifi_no_med": 0.6
   },
   {
     "year": 2013,
     "stateAbbr": "NH",
     "fips": "33",
     "saidi": 249.7,
-    "saifi": 2.17
+    "saifi": 2.2,
+    "saidi_no_med": 162.8,
+    "saifi_no_med": 1.3
   },
   {
     "year": 2013,
     "stateAbbr": "NJ",
     "fips": "34",
     "saidi": 165.8,
-    "saifi": 1.33
+    "saifi": 1.3,
+    "saidi_no_med": 123.4,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2013,
     "stateAbbr": "NM",
     "fips": "35",
     "saidi": 149.2,
-    "saifi": 1.04
+    "saifi": 1.0,
+    "saidi_no_med": 104.7,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2013,
     "stateAbbr": "NV",
     "fips": "32",
     "saidi": 68.2,
-    "saifi": 0.62
+    "saifi": 0.6,
+    "saidi_no_med": 53.3,
+    "saifi_no_med": 0.6
   },
   {
     "year": 2013,
     "stateAbbr": "NY",
     "fips": "36",
     "saidi": 124.1,
-    "saifi": 0.72
+    "saifi": 0.7,
+    "saidi_no_med": 65.1,
+    "saifi_no_med": 0.6
   },
   {
     "year": 2013,
     "stateAbbr": "OH",
     "fips": "39",
     "saidi": 217.2,
-    "saifi": 1.18
+    "saifi": 1.2,
+    "saidi_no_med": 112.0,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2013,
     "stateAbbr": "OK",
     "fips": "40",
     "saidi": 620.9,
-    "saifi": 1.55
+    "saifi": 1.6,
+    "saidi_no_med": 115.6,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2013,
     "stateAbbr": "OR",
     "fips": "41",
     "saidi": 170.7,
-    "saifi": 0.79
+    "saifi": 0.8,
+    "saidi_no_med": 86.1,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2013,
     "stateAbbr": "PA",
     "fips": "42",
     "saidi": 138.6,
-    "saifi": 0.97
+    "saifi": 1.0,
+    "saidi_no_med": 99.5,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2013,
     "stateAbbr": "RI",
     "fips": "44",
     "saidi": 783.2,
-    "saifi": 1.26
+    "saifi": 1.3,
+    "saidi_no_med": 57.3,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2013,
     "stateAbbr": "SC",
     "fips": "45",
     "saidi": 117.0,
-    "saifi": 1.04
+    "saifi": 1.0,
+    "saidi_no_med": 102.4,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2013,
     "stateAbbr": "SD",
     "fips": "46",
     "saidi": 959.8,
-    "saifi": 1.87
+    "saifi": 1.9,
+    "saidi_no_med": 94.9,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2013,
     "stateAbbr": "TN",
     "fips": "47",
     "saidi": 171.1,
-    "saifi": 1.77
+    "saifi": 1.8,
+    "saidi_no_med": 127.4,
+    "saifi_no_med": 1.6
   },
   {
     "year": 2013,
     "stateAbbr": "TX",
     "fips": "48",
     "saidi": 185.5,
-    "saifi": 1.54
+    "saifi": 1.5,
+    "saidi_no_med": 109.0,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2013,
     "stateAbbr": "UT",
     "fips": "49",
     "saidi": 189.7,
-    "saifi": 1.35
+    "saifi": 1.4,
+    "saidi_no_med": 176.7,
+    "saifi_no_med": 1.3
   },
   {
     "year": 2013,
     "stateAbbr": "VA",
     "fips": "51",
     "saidi": 467.8,
-    "saifi": 1.62
+    "saifi": 1.6,
+    "saidi_no_med": 142.8,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2013,
     "stateAbbr": "VT",
     "fips": "50",
     "saidi": 436.0,
-    "saifi": 2.32
+    "saifi": 2.3,
+    "saidi_no_med": 258.6,
+    "saifi_no_med": 1.9
   },
   {
     "year": 2013,
     "stateAbbr": "WA",
     "fips": "53",
     "saidi": 154.8,
-    "saifi": 1.03
+    "saifi": 1.0,
+    "saidi_no_med": 95.6,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2013,
     "stateAbbr": "WI",
     "fips": "55",
     "saidi": 146.2,
-    "saifi": 0.82
+    "saifi": 0.8,
+    "saidi_no_med": 77.9,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2013,
     "stateAbbr": "WV",
     "fips": "54",
     "saidi": 542.1,
-    "saifi": 2.29
+    "saifi": 2.3,
+    "saidi_no_med": 417.6,
+    "saifi_no_med": 1.7
   },
   {
     "year": 2013,
     "stateAbbr": "WY",
     "fips": "56",
     "saidi": 363.4,
-    "saifi": 1.81
+    "saifi": 1.8,
+    "saidi_no_med": 170.9,
+    "saifi_no_med": 1.6
   },
   {
     "year": 2014,
     "stateAbbr": "AK",
     "fips": "02",
     "saidi": 313.8,
-    "saifi": 2.48
+    "saifi": 2.5,
+    "saidi_no_med": 161.5,
+    "saifi_no_med": 1.6
   },
   {
     "year": 2014,
     "stateAbbr": "AL",
     "fips": "01",
     "saidi": 206.1,
-    "saifi": 1.48
+    "saifi": 1.5,
+    "saidi_no_med": 125.4,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2014,
     "stateAbbr": "AR",
     "fips": "05",
     "saidi": 235.1,
-    "saifi": 1.79
+    "saifi": 1.8,
+    "saidi_no_med": 155.6,
+    "saifi_no_med": 1.4
   },
   {
     "year": 2014,
     "stateAbbr": "AZ",
     "fips": "04",
     "saidi": 87.2,
-    "saifi": 0.84
+    "saifi": 0.8,
+    "saidi_no_med": 59.7,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2014,
     "stateAbbr": "CA",
     "fips": "06",
     "saidi": 108.8,
-    "saifi": 0.91
+    "saifi": 0.9,
+    "saidi_no_med": 99.9,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2014,
     "stateAbbr": "CO",
     "fips": "08",
     "saidi": 84.0,
-    "saifi": 0.93
+    "saifi": 0.9,
+    "saidi_no_med": 79.0,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2014,
     "stateAbbr": "CT",
     "fips": "09",
     "saidi": 86.3,
-    "saifi": 0.74
+    "saifi": 0.7,
+    "saidi_no_med": 86.3,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2014,
     "stateAbbr": "DC",
     "fips": "11",
     "saidi": 96.0,
-    "saifi": 0.69
+    "saifi": 0.7,
+    "saidi_no_med": 82.0,
+    "saifi_no_med": 0.6
   },
   {
     "year": 2014,
     "stateAbbr": "DE",
     "fips": "10",
     "saidi": 169.1,
-    "saifi": 1.42
+    "saifi": 1.4,
+    "saidi_no_med": 113.7,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2014,
     "stateAbbr": "FL",
     "fips": "12",
     "saidi": 92.1,
-    "saifi": 1.15
+    "saifi": 1.2,
+    "saidi_no_med": 85.1,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2014,
     "stateAbbr": "GA",
     "fips": "13",
     "saidi": 246.3,
-    "saifi": 1.51
+    "saifi": 1.5,
+    "saidi_no_med": 99.1,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2014,
     "stateAbbr": "HI",
     "fips": "15",
     "saidi": 262.5,
-    "saifi": 2.31
+    "saifi": 2.3,
+    "saidi_no_med": 117.0,
+    "saifi_no_med": 1.8
   },
   {
     "year": 2014,
     "stateAbbr": "IA",
     "fips": "19",
     "saidi": 164.7,
-    "saifi": 1.2
+    "saifi": 1.2,
+    "saidi_no_med": 93.6,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2014,
     "stateAbbr": "ID",
     "fips": "16",
     "saidi": 245.2,
-    "saifi": 1.29
+    "saifi": 1.3,
+    "saidi_no_med": 183.8,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2014,
     "stateAbbr": "IL",
     "fips": "17",
     "saidi": 195.7,
-    "saifi": 1.13
+    "saifi": 1.1,
+    "saidi_no_med": 92.5,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2014,
     "stateAbbr": "IN",
     "fips": "18",
     "saidi": 239.9,
-    "saifi": 1.28
+    "saifi": 1.3,
+    "saidi_no_med": 120.9,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2014,
     "stateAbbr": "KS",
     "fips": "20",
     "saidi": 152.4,
-    "saifi": 1.35
+    "saifi": 1.4,
+    "saidi_no_med": 114.9,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2014,
     "stateAbbr": "KY",
     "fips": "21",
     "saidi": 246.8,
-    "saifi": 1.65
+    "saifi": 1.6,
+    "saidi_no_med": 145.1,
+    "saifi_no_med": 1.3
   },
   {
     "year": 2014,
     "stateAbbr": "LA",
     "fips": "22",
     "saidi": 310.4,
-    "saifi": 2.39
+    "saifi": 2.4,
+    "saidi_no_med": 191.5,
+    "saifi_no_med": 2.0
   },
   {
     "year": 2014,
     "stateAbbr": "MA",
     "fips": "25",
     "saidi": 124.5,
-    "saifi": 0.96
+    "saifi": 1.0,
+    "saidi_no_med": 83.2,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2014,
     "stateAbbr": "MD",
     "fips": "24",
     "saidi": 244.8,
-    "saifi": 1.27
+    "saifi": 1.3,
+    "saidi_no_med": 93.0,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2014,
     "stateAbbr": "ME",
     "fips": "23",
     "saidi": 1049.3,
-    "saifi": 5.12
+    "saifi": 5.1,
+    "saidi_no_med": 235.3,
+    "saifi_no_med": 2.0
   },
   {
     "year": 2014,
     "stateAbbr": "MI",
     "fips": "26",
     "saidi": 574.7,
-    "saifi": 1.21
+    "saifi": 1.2,
+    "saidi_no_med": 180.0,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2014,
     "stateAbbr": "MN",
     "fips": "27",
     "saidi": 119.4,
-    "saifi": 1.0
+    "saifi": 1.0,
+    "saidi_no_med": 76.4,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2014,
     "stateAbbr": "MO",
     "fips": "29",
     "saidi": 136.7,
-    "saifi": 1.08
+    "saifi": 1.1,
+    "saidi_no_med": 101.0,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2014,
     "stateAbbr": "MS",
     "fips": "28",
     "saidi": 226.0,
-    "saifi": 1.73
+    "saifi": 1.7,
+    "saidi_no_med": 138.0,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2014,
     "stateAbbr": "MT",
     "fips": "30",
     "saidi": 138.8,
-    "saifi": 1.13
+    "saifi": 1.1,
+    "saidi_no_med": 123.5,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2014,
     "stateAbbr": "NC",
     "fips": "37",
     "saidi": 481.9,
-    "saifi": 1.47
+    "saifi": 1.5,
+    "saidi_no_med": 118.6,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2014,
     "stateAbbr": "ND",
     "fips": "38",
     "saidi": 87.0,
-    "saifi": 1.42
+    "saifi": 1.4,
+    "saidi_no_med": 87.0,
+    "saifi_no_med": 1.7
   },
   {
     "year": 2014,
     "stateAbbr": "NE",
     "fips": "31",
     "saidi": 123.0,
-    "saifi": 0.87
+    "saifi": 0.9,
+    "saidi_no_med": 66.7,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2014,
     "stateAbbr": "NH",
     "fips": "33",
     "saidi": 862.9,
-    "saifi": 2.26
+    "saifi": 2.3,
+    "saidi_no_med": 172.5,
+    "saifi_no_med": 1.6
   },
   {
     "year": 2014,
     "stateAbbr": "NJ",
     "fips": "34",
     "saidi": 112.0,
-    "saifi": 0.95
+    "saifi": 1.0,
+    "saidi_no_med": 78.7,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2014,
     "stateAbbr": "NM",
     "fips": "35",
     "saidi": 82.4,
-    "saifi": 0.85
+    "saifi": 0.8,
+    "saidi_no_med": 79.8,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2014,
     "stateAbbr": "NV",
     "fips": "32",
     "saidi": 75.7,
-    "saifi": 0.7
+    "saifi": 0.7,
+    "saidi_no_med": 62.6,
+    "saifi_no_med": 0.6
   },
   {
     "year": 2014,
     "stateAbbr": "NY",
     "fips": "36",
     "saidi": 92.7,
-    "saifi": 0.64
+    "saifi": 0.6,
+    "saidi_no_med": 63.4,
+    "saifi_no_med": 0.6
   },
   {
     "year": 2014,
     "stateAbbr": "OH",
     "fips": "39",
     "saidi": 187.9,
-    "saifi": 1.21
+    "saifi": 1.2,
+    "saidi_no_med": 131.8,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2014,
     "stateAbbr": "OK",
     "fips": "40",
     "saidi": 119.1,
-    "saifi": 1.08
+    "saifi": 1.1,
+    "saidi_no_med": 104.1,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2014,
     "stateAbbr": "OR",
     "fips": "41",
     "saidi": 289.3,
-    "saifi": 1.27
+    "saifi": 1.3,
+    "saidi_no_med": 107.0,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2014,
     "stateAbbr": "PA",
     "fips": "42",
     "saidi": 399.6,
-    "saifi": 1.22
+    "saifi": 1.2,
+    "saidi_no_med": 99.7,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2014,
     "stateAbbr": "RI",
     "fips": "44",
     "saidi": 54.2,
-    "saifi": 0.76
+    "saifi": 0.8,
+    "saidi_no_med": 54.2,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2014,
     "stateAbbr": "SC",
     "fips": "45",
     "saidi": 799.5,
-    "saifi": 1.82
+    "saifi": 1.8,
+    "saidi_no_med": 100.1,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2014,
     "stateAbbr": "SD",
     "fips": "46",
     "saidi": 115.8,
-    "saifi": 1.01
+    "saifi": 1.0,
+    "saidi_no_med": 106.2,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2014,
     "stateAbbr": "TN",
     "fips": "47",
     "saidi": 225.0,
-    "saifi": 1.8
+    "saifi": 1.8,
+    "saidi_no_med": 131.0,
+    "saifi_no_med": 1.6
   },
   {
     "year": 2014,
     "stateAbbr": "TX",
     "fips": "48",
     "saidi": 192.5,
-    "saifi": 1.44
+    "saifi": 1.4,
+    "saidi_no_med": 115.4,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2014,
     "stateAbbr": "UT",
     "fips": "49",
     "saidi": 187.2,
-    "saifi": 1.36
+    "saifi": 1.4,
+    "saidi_no_med": 148.9,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2014,
     "stateAbbr": "VA",
     "fips": "51",
     "saidi": 187.3,
-    "saifi": 1.38
+    "saifi": 1.4,
+    "saidi_no_med": 148.3,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2014,
     "stateAbbr": "VT",
     "fips": "50",
     "saidi": 745.0,
-    "saifi": 2.2
+    "saifi": 2.2,
+    "saidi_no_med": 216.4,
+    "saifi_no_med": 1.5
   },
   {
     "year": 2014,
     "stateAbbr": "WA",
     "fips": "53",
     "saidi": 330.5,
-    "saifi": 1.51
+    "saifi": 1.5,
+    "saidi_no_med": 117.9,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2014,
     "stateAbbr": "WI",
     "fips": "55",
     "saidi": 144.7,
-    "saifi": 0.84
+    "saifi": 0.8,
+    "saidi_no_med": 75.9,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2014,
     "stateAbbr": "WV",
     "fips": "54",
     "saidi": 662.8,
-    "saifi": 2.37
+    "saifi": 2.4,
+    "saidi_no_med": 449.8,
+    "saifi_no_med": 2.1
   },
   {
     "year": 2014,
     "stateAbbr": "WY",
     "fips": "56",
     "saidi": 193.2,
-    "saifi": 1.5
+    "saifi": 1.5,
+    "saidi_no_med": 177.6,
+    "saifi_no_med": 1.5
   },
   {
     "year": 2015,
     "stateAbbr": "AK",
     "fips": "02",
     "saidi": 605.4,
-    "saifi": 2.56
+    "saifi": 2.6,
+    "saidi_no_med": 155.1,
+    "saifi_no_med": 1.5
   },
   {
     "year": 2015,
     "stateAbbr": "AL",
     "fips": "01",
     "saidi": 212.3,
-    "saifi": 1.7
+    "saifi": 1.7,
+    "saidi_no_med": 125.1,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2015,
     "stateAbbr": "AR",
     "fips": "05",
     "saidi": 306.7,
-    "saifi": 1.98
+    "saifi": 2.0,
+    "saidi_no_med": 216.8,
+    "saifi_no_med": 1.8
   },
   {
     "year": 2015,
     "stateAbbr": "AZ",
     "fips": "04",
     "saidi": 90.9,
-    "saifi": 0.86
+    "saifi": 0.9,
+    "saidi_no_med": 66.0,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2015,
     "stateAbbr": "CA",
     "fips": "06",
     "saidi": 118.4,
-    "saifi": 0.92
+    "saifi": 0.9,
+    "saidi_no_med": 92.0,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2015,
     "stateAbbr": "CO",
     "fips": "08",
     "saidi": 110.1,
-    "saifi": 1.01
+    "saifi": 1.0,
+    "saidi_no_med": 83.4,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2015,
     "stateAbbr": "CT",
     "fips": "09",
     "saidi": 103.3,
-    "saifi": 0.7
+    "saifi": 0.7,
+    "saidi_no_med": 70.2,
+    "saifi_no_med": 0.6
   },
   {
     "year": 2015,
     "stateAbbr": "DC",
     "fips": "11",
     "saidi": 112.4,
-    "saifi": 0.69
+    "saifi": 0.7,
+    "saidi_no_med": 112.4,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2015,
     "stateAbbr": "DE",
     "fips": "10",
     "saidi": 189.9,
-    "saifi": 1.52
+    "saifi": 1.5,
+    "saidi_no_med": 114.7,
+    "saifi_no_med": 1.3
   },
   {
     "year": 2015,
     "stateAbbr": "FL",
     "fips": "12",
     "saidi": 85.4,
-    "saifi": 1.09
+    "saifi": 1.1,
+    "saidi_no_med": 77.7,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2015,
     "stateAbbr": "GA",
     "fips": "13",
     "saidi": 243.7,
-    "saifi": 1.54
+    "saifi": 1.5,
+    "saidi_no_med": 109.1,
+    "saifi_no_med": 1.3
   },
   {
     "year": 2015,
     "stateAbbr": "HI",
     "fips": "15",
     "saidi": 266.1,
-    "saifi": 2.99
+    "saifi": 3.0,
+    "saidi_no_med": 116.7,
+    "saifi_no_med": 1.7
   },
   {
     "year": 2015,
     "stateAbbr": "IA",
     "fips": "19",
     "saidi": 96.8,
-    "saifi": 0.96
+    "saifi": 1.0,
+    "saidi_no_med": 85.5,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2015,
     "stateAbbr": "ID",
     "fips": "16",
     "saidi": 465.3,
-    "saifi": 1.74
+    "saifi": 1.7,
+    "saidi_no_med": 266.4,
+    "saifi_no_med": 1.4
   },
   {
     "year": 2015,
     "stateAbbr": "IL",
     "fips": "17",
     "saidi": 169.3,
-    "saifi": 1.11
+    "saifi": 1.1,
+    "saidi_no_med": 88.8,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2015,
     "stateAbbr": "IN",
     "fips": "18",
     "saidi": 244.0,
-    "saifi": 1.26
+    "saifi": 1.3,
+    "saidi_no_med": 120.6,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2015,
     "stateAbbr": "KS",
     "fips": "20",
     "saidi": 347.3,
-    "saifi": 1.63
+    "saifi": 1.6,
+    "saidi_no_med": 130.7,
+    "saifi_no_med": 1.3
   },
   {
     "year": 2015,
     "stateAbbr": "KY",
     "fips": "21",
     "saidi": 243.9,
-    "saifi": 1.59
+    "saifi": 1.6,
+    "saidi_no_med": 139.7,
+    "saifi_no_med": 1.3
   },
   {
     "year": 2015,
     "stateAbbr": "LA",
     "fips": "22",
     "saidi": 361.1,
-    "saifi": 2.27
+    "saifi": 2.3,
+    "saidi_no_med": 188.9,
+    "saifi_no_med": 1.8
   },
   {
     "year": 2015,
     "stateAbbr": "MA",
     "fips": "25",
     "saidi": 91.2,
-    "saifi": 0.79
+    "saifi": 0.8,
+    "saidi_no_med": 75.6,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2015,
     "stateAbbr": "MD",
     "fips": "24",
     "saidi": 124.4,
-    "saifi": 1.09
+    "saifi": 1.1,
+    "saidi_no_med": 109.0,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2015,
     "stateAbbr": "ME",
     "fips": "23",
     "saidi": 213.6,
-    "saifi": 1.87
+    "saifi": 1.9,
+    "saidi_no_med": 198.7,
+    "saifi_no_med": 1.8
   },
   {
     "year": 2015,
     "stateAbbr": "MI",
     "fips": "26",
     "saidi": 363.4,
-    "saifi": 1.14
+    "saifi": 1.1,
+    "saidi_no_med": 178.8,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2015,
     "stateAbbr": "MN",
     "fips": "27",
     "saidi": 154.5,
-    "saifi": 0.97
+    "saifi": 1.0,
+    "saidi_no_med": 77.8,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2015,
     "stateAbbr": "MO",
     "fips": "29",
     "saidi": 171.1,
-    "saifi": 1.06
+    "saifi": 1.1,
+    "saidi_no_med": 98.2,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2015,
     "stateAbbr": "MS",
     "fips": "28",
     "saidi": 310.4,
-    "saifi": 1.97
+    "saifi": 2.0,
+    "saidi_no_med": 197.5,
+    "saifi_no_med": 1.6
   },
   {
     "year": 2015,
     "stateAbbr": "MT",
     "fips": "30",
     "saidi": 287.9,
-    "saifi": 1.75
+    "saifi": 1.8,
+    "saidi_no_med": 142.3,
+    "saifi_no_med": 1.4
   },
   {
     "year": 2015,
     "stateAbbr": "NC",
     "fips": "37",
     "saidi": 210.6,
-    "saifi": 1.34
+    "saifi": 1.3,
+    "saidi_no_med": 128.2,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2015,
     "stateAbbr": "ND",
     "fips": "38",
     "saidi": 113.9,
-    "saifi": 2.07
+    "saifi": 2.1,
+    "saidi_no_med": 99.0,
+    "saifi_no_med": 2.3
   },
   {
     "year": 2015,
     "stateAbbr": "NE",
     "fips": "31",
     "saidi": 86.2,
-    "saifi": 0.73
+    "saifi": 0.7,
+    "saidi_no_med": 51.9,
+    "saifi_no_med": 0.6
   },
   {
     "year": 2015,
     "stateAbbr": "NH",
     "fips": "33",
     "saidi": 149.3,
-    "saifi": 1.38
+    "saifi": 1.4,
+    "saidi_no_med": 138.2,
+    "saifi_no_med": 1.4
   },
   {
     "year": 2015,
     "stateAbbr": "NJ",
     "fips": "34",
     "saidi": 260.6,
-    "saifi": 0.99
+    "saifi": 1.0,
+    "saidi_no_med": 64.6,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2015,
     "stateAbbr": "NM",
     "fips": "35",
     "saidi": 122.3,
-    "saifi": 1.13
+    "saifi": 1.1,
+    "saidi_no_med": 99.2,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2015,
     "stateAbbr": "NV",
     "fips": "32",
     "saidi": 107.0,
-    "saifi": 0.73
+    "saifi": 0.7,
+    "saidi_no_med": 55.4,
+    "saifi_no_med": 0.6
   },
   {
     "year": 2015,
     "stateAbbr": "NY",
     "fips": "36",
     "saidi": 86.5,
-    "saifi": 0.67
+    "saifi": 0.7,
+    "saidi_no_med": 76.0,
+    "saifi_no_med": 0.6
   },
   {
     "year": 2015,
     "stateAbbr": "OH",
     "fips": "39",
     "saidi": 172.1,
-    "saifi": 1.21
+    "saifi": 1.2,
+    "saidi_no_med": 141.0,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2015,
     "stateAbbr": "OK",
     "fips": "40",
     "saidi": 831.4,
-    "saifi": 1.78
+    "saifi": 1.8,
+    "saidi_no_med": 166.8,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2015,
     "stateAbbr": "OR",
     "fips": "41",
     "saidi": 212.6,
-    "saifi": 1.01
+    "saifi": 1.0,
+    "saidi_no_med": 102.1,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2015,
     "stateAbbr": "PA",
     "fips": "42",
     "saidi": 156.7,
-    "saifi": 0.99
+    "saifi": 1.0,
+    "saidi_no_med": 98.8,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2015,
     "stateAbbr": "RI",
     "fips": "44",
     "saidi": 341.8,
-    "saifi": 1.23
+    "saifi": 1.2,
+    "saidi_no_med": 64.3,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2015,
     "stateAbbr": "SC",
     "fips": "45",
     "saidi": 224.1,
-    "saifi": 1.45
+    "saifi": 1.4,
+    "saidi_no_med": 119.3,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2015,
     "stateAbbr": "SD",
     "fips": "46",
     "saidi": 133.3,
-    "saifi": 1.13
+    "saifi": 1.1,
+    "saidi_no_med": 106.5,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2015,
     "stateAbbr": "TN",
     "fips": "47",
     "saidi": 222.4,
-    "saifi": 1.77
+    "saifi": 1.8,
+    "saidi_no_med": 125.6,
+    "saifi_no_med": 1.5
   },
   {
     "year": 2015,
     "stateAbbr": "TX",
     "fips": "48",
     "saidi": 271.7,
-    "saifi": 1.78
+    "saifi": 1.8,
+    "saidi_no_med": 139.1,
+    "saifi_no_med": 1.3
   },
   {
     "year": 2015,
     "stateAbbr": "UT",
     "fips": "49",
     "saidi": 199.6,
-    "saifi": 1.35
+    "saifi": 1.4,
+    "saidi_no_med": 155.5,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2015,
     "stateAbbr": "VA",
     "fips": "51",
     "saidi": 203.5,
-    "saifi": 1.43
+    "saifi": 1.4,
+    "saidi_no_med": 148.0,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2015,
     "stateAbbr": "VT",
     "fips": "50",
     "saidi": 204.2,
-    "saifi": 1.73
+    "saifi": 1.7,
+    "saidi_no_med": 205.6,
+    "saifi_no_med": 1.7
   },
   {
     "year": 2015,
     "stateAbbr": "WA",
     "fips": "53",
     "saidi": 646.3,
-    "saifi": 1.7
+    "saifi": 1.7,
+    "saidi_no_med": 110.9,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2015,
     "stateAbbr": "WI",
     "fips": "55",
     "saidi": 105.0,
-    "saifi": 1.32
+    "saifi": 1.3,
+    "saidi_no_med": 70.3,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2015,
     "stateAbbr": "WV",
     "fips": "54",
     "saidi": 814.6,
-    "saifi": 2.42
+    "saifi": 2.4,
+    "saidi_no_med": 458.0,
+    "saifi_no_med": 2.2
   },
   {
     "year": 2015,
     "stateAbbr": "WY",
     "fips": "56",
     "saidi": 184.6,
-    "saifi": 1.49
+    "saifi": 1.5,
+    "saidi_no_med": 165.7,
+    "saifi_no_med": 1.4
   },
   {
     "year": 2016,
     "stateAbbr": "AK",
     "fips": "02",
     "saidi": 192.5,
-    "saifi": 2.26
+    "saifi": 2.3,
+    "saidi_no_med": 176.9,
+    "saifi_no_med": 1.9
   },
   {
     "year": 2016,
     "stateAbbr": "AL",
     "fips": "01",
     "saidi": 174.8,
-    "saifi": 1.57
+    "saifi": 1.6,
+    "saidi_no_med": 116.0,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2016,
     "stateAbbr": "AR",
     "fips": "05",
     "saidi": 397.3,
-    "saifi": 2.03
+    "saifi": 2.0,
+    "saidi_no_med": 208.3,
+    "saifi_no_med": 1.7
   },
   {
     "year": 2016,
     "stateAbbr": "AZ",
     "fips": "04",
     "saidi": 86.3,
-    "saifi": 0.83
+    "saifi": 0.8,
+    "saidi_no_med": 67.5,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2016,
     "stateAbbr": "CA",
     "fips": "06",
     "saidi": 117.1,
-    "saifi": 1.03
+    "saifi": 1.0,
+    "saidi_no_med": 98.7,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2016,
     "stateAbbr": "CO",
     "fips": "08",
     "saidi": 165.5,
-    "saifi": 1.16
+    "saifi": 1.2,
+    "saidi_no_med": 82.5,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2016,
     "stateAbbr": "CT",
     "fips": "09",
     "saidi": 174.0,
-    "saifi": 1.06
+    "saifi": 1.1,
+    "saidi_no_med": 92.0,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2016,
     "stateAbbr": "DC",
     "fips": "11",
     "saidi": 115.0,
-    "saifi": 0.82
+    "saifi": 0.8,
+    "saidi_no_med": 115.0,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2016,
     "stateAbbr": "DE",
     "fips": "10",
     "saidi": 149.1,
-    "saifi": 1.35
+    "saifi": 1.4,
+    "saidi_no_med": 103.2,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2016,
     "stateAbbr": "FL",
     "fips": "12",
     "saidi": 352.1,
-    "saifi": 1.36
+    "saifi": 1.4,
+    "saidi_no_med": 81.5,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2016,
     "stateAbbr": "GA",
     "fips": "13",
     "saidi": 424.4,
-    "saifi": 1.53
+    "saifi": 1.5,
+    "saidi_no_med": 134.5,
+    "saifi_no_med": 1.3
   },
   {
     "year": 2016,
     "stateAbbr": "HI",
     "fips": "15",
     "saidi": 128.7,
-    "saifi": 1.9
+    "saifi": 1.9,
+    "saidi_no_med": 103.9,
+    "saifi_no_med": 1.4
   },
   {
     "year": 2016,
     "stateAbbr": "IA",
     "fips": "19",
     "saidi": 117.7,
-    "saifi": 1.05
+    "saifi": 1.0,
+    "saidi_no_med": 92.1,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2016,
     "stateAbbr": "ID",
     "fips": "16",
     "saidi": 197.2,
-    "saifi": 1.35
+    "saifi": 1.4,
+    "saidi_no_med": 166.0,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2016,
     "stateAbbr": "IL",
     "fips": "17",
     "saidi": 134.9,
-    "saifi": 1.02
+    "saifi": 1.0,
+    "saidi_no_med": 80.8,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2016,
     "stateAbbr": "IN",
     "fips": "18",
     "saidi": 252.5,
-    "saifi": 1.34
+    "saifi": 1.3,
+    "saidi_no_med": 127.9,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2016,
     "stateAbbr": "KS",
     "fips": "20",
     "saidi": 167.8,
-    "saifi": 1.41
+    "saifi": 1.4,
+    "saidi_no_med": 131.9,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2016,
     "stateAbbr": "KY",
     "fips": "21",
     "saidi": 191.9,
-    "saifi": 1.46
+    "saifi": 1.5,
+    "saidi_no_med": 137.2,
+    "saifi_no_med": 1.3
   },
   {
     "year": 2016,
     "stateAbbr": "LA",
     "fips": "22",
     "saidi": 392.9,
-    "saifi": 2.12
+    "saifi": 2.1,
+    "saidi_no_med": 185.7,
+    "saifi_no_med": 1.8
   },
   {
     "year": 2016,
     "stateAbbr": "MA",
     "fips": "25",
     "saidi": 144.9,
-    "saifi": 0.99
+    "saifi": 1.0,
+    "saidi_no_med": 113.1,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2016,
     "stateAbbr": "MD",
     "fips": "24",
     "saidi": 120.3,
-    "saifi": 1.09
+    "saifi": 1.1,
+    "saidi_no_med": 105.3,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2016,
     "stateAbbr": "ME",
     "fips": "23",
     "saidi": 535.4,
-    "saifi": 2.69
+    "saifi": 2.7,
+    "saidi_no_med": 264.4,
+    "saifi_no_med": 2.2
   },
   {
     "year": 2016,
     "stateAbbr": "MI",
     "fips": "26",
     "saidi": 267.8,
-    "saifi": 1.15
+    "saifi": 1.2,
+    "saidi_no_med": 193.1,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2016,
     "stateAbbr": "MN",
     "fips": "27",
     "saidi": 301.2,
-    "saifi": 1.19
+    "saifi": 1.2,
+    "saidi_no_med": 87.7,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2016,
     "stateAbbr": "MO",
     "fips": "29",
     "saidi": 205.7,
-    "saifi": 1.05
+    "saifi": 1.0,
+    "saidi_no_med": 86.7,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2016,
     "stateAbbr": "MS",
     "fips": "28",
     "saidi": 277.4,
-    "saifi": 1.93
+    "saifi": 1.9,
+    "saidi_no_med": 187.3,
+    "saifi_no_med": 1.7
   },
   {
     "year": 2016,
     "stateAbbr": "MT",
     "fips": "30",
     "saidi": 160.7,
-    "saifi": 1.26
+    "saifi": 1.3,
+    "saidi_no_med": 129.9,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2016,
     "stateAbbr": "NC",
     "fips": "37",
     "saidi": 824.6,
-    "saifi": 1.79
+    "saifi": 1.8,
+    "saidi_no_med": 148.6,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2016,
     "stateAbbr": "ND",
     "fips": "38",
     "saidi": 123.8,
-    "saifi": 1.61
+    "saifi": 1.6,
+    "saidi_no_med": 108.3,
+    "saifi_no_med": 1.8
   },
   {
     "year": 2016,
     "stateAbbr": "NE",
     "fips": "31",
     "saidi": 83.6,
-    "saifi": 0.67
+    "saifi": 0.7,
+    "saidi_no_med": 52.0,
+    "saifi_no_med": 0.6
   },
   {
     "year": 2016,
     "stateAbbr": "NH",
     "fips": "33",
     "saidi": 192.0,
-    "saifi": 1.54
+    "saifi": 1.5,
+    "saidi_no_med": 141.1,
+    "saifi_no_med": 1.4
   },
   {
     "year": 2016,
     "stateAbbr": "NJ",
     "fips": "34",
     "saidi": 137.2,
-    "saifi": 1.15
+    "saifi": 1.2,
+    "saidi_no_med": 85.7,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2016,
     "stateAbbr": "NM",
     "fips": "35",
     "saidi": 136.3,
-    "saifi": 1.45
+    "saifi": 1.4,
+    "saidi_no_med": 104.1,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2016,
     "stateAbbr": "NV",
     "fips": "32",
     "saidi": 95.7,
-    "saifi": 0.84
+    "saifi": 0.8,
+    "saidi_no_med": 73.7,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2016,
     "stateAbbr": "NY",
     "fips": "36",
     "saidi": 107.2,
-    "saifi": 0.78
+    "saifi": 0.8,
+    "saidi_no_med": 82.2,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2016,
     "stateAbbr": "OH",
     "fips": "39",
     "saidi": 174.1,
-    "saifi": 1.18
+    "saifi": 1.2,
+    "saidi_no_med": 128.9,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2016,
     "stateAbbr": "OK",
     "fips": "40",
     "saidi": 316.6,
-    "saifi": 1.58
+    "saifi": 1.6,
+    "saidi_no_med": 149.5,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2016,
     "stateAbbr": "OR",
     "fips": "41",
     "saidi": 240.3,
-    "saifi": 1.09
+    "saifi": 1.1,
+    "saidi_no_med": 100.5,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2016,
     "stateAbbr": "PA",
     "fips": "42",
     "saidi": 126.2,
-    "saifi": 1.07
+    "saifi": 1.1,
+    "saidi_no_med": 101.4,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2016,
     "stateAbbr": "RI",
     "fips": "44",
     "saidi": 168.9,
-    "saifi": 1.21
+    "saifi": 1.2,
+    "saidi_no_med": 69.1,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2016,
     "stateAbbr": "SC",
     "fips": "45",
     "saidi": 1645.4,
-    "saifi": 2.42
+    "saifi": 2.4,
+    "saidi_no_med": 121.3,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2016,
     "stateAbbr": "SD",
     "fips": "46",
     "saidi": 252.2,
-    "saifi": 1.4
+    "saifi": 1.4,
+    "saidi_no_med": 83.8,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2016,
     "stateAbbr": "TN",
     "fips": "47",
     "saidi": 197.2,
-    "saifi": 1.78
+    "saifi": 1.8,
+    "saidi_no_med": 144.4,
+    "saifi_no_med": 1.6
   },
   {
     "year": 2016,
     "stateAbbr": "TX",
     "fips": "48",
     "saidi": 210.8,
-    "saifi": 1.6
+    "saifi": 1.6,
+    "saidi_no_med": 129.3,
+    "saifi_no_med": 1.3
   },
   {
     "year": 2016,
     "stateAbbr": "UT",
     "fips": "49",
     "saidi": 190.1,
-    "saifi": 1.31
+    "saifi": 1.3,
+    "saidi_no_med": 105.6,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2016,
     "stateAbbr": "VA",
     "fips": "51",
     "saidi": 237.7,
-    "saifi": 1.55
+    "saifi": 1.6,
+    "saidi_no_med": 164.8,
+    "saifi_no_med": 1.4
   },
   {
     "year": 2016,
     "stateAbbr": "VT",
     "fips": "50",
     "saidi": 359.4,
-    "saifi": 1.94
+    "saifi": 1.9,
+    "saidi_no_med": 273.2,
+    "saifi_no_med": 1.8
   },
   {
     "year": 2016,
     "stateAbbr": "WA",
     "fips": "53",
     "saidi": 226.0,
-    "saifi": 1.17
+    "saifi": 1.2,
+    "saidi_no_med": 109.3,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2016,
     "stateAbbr": "WI",
     "fips": "55",
     "saidi": 136.5,
-    "saifi": 0.84
+    "saifi": 0.8,
+    "saidi_no_med": 79.2,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2016,
     "stateAbbr": "WV",
     "fips": "54",
     "saidi": 743.4,
-    "saifi": 2.35
+    "saifi": 2.4,
+    "saidi_no_med": 439.1,
+    "saifi_no_med": 2.1
   },
   {
     "year": 2016,
     "stateAbbr": "WY",
     "fips": "56",
     "saidi": 192.5,
-    "saifi": 1.49
+    "saifi": 1.5,
+    "saidi_no_med": 150.2,
+    "saifi_no_med": 1.4
   },
   {
     "year": 2017,
     "stateAbbr": "AK",
     "fips": "02",
     "saidi": 152.7,
-    "saifi": 1.71
+    "saifi": 1.7,
+    "saidi_no_med": 136.9,
+    "saifi_no_med": 1.8
   },
   {
     "year": 2017,
     "stateAbbr": "AL",
     "fips": "01",
     "saidi": 314.5,
-    "saifi": 1.95
+    "saifi": 2.0,
+    "saidi_no_med": 115.7,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2017,
     "stateAbbr": "AR",
     "fips": "05",
     "saidi": 395.4,
-    "saifi": 2.05
+    "saifi": 2.0,
+    "saidi_no_med": 178.3,
+    "saifi_no_med": 1.4
   },
   {
     "year": 2017,
     "stateAbbr": "AZ",
     "fips": "04",
     "saidi": 90.7,
-    "saifi": 0.88
+    "saifi": 0.9,
+    "saidi_no_med": 51.4,
+    "saifi_no_med": 0.6
   },
   {
     "year": 2017,
     "stateAbbr": "CA",
     "fips": "06",
     "saidi": 233.4,
-    "saifi": 1.28
+    "saifi": 1.3,
+    "saidi_no_med": 100.9,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2017,
     "stateAbbr": "CO",
     "fips": "08",
     "saidi": 228.5,
-    "saifi": 1.19
+    "saifi": 1.2,
+    "saidi_no_med": 78.6,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2017,
     "stateAbbr": "CT",
     "fips": "09",
     "saidi": 291.3,
-    "saifi": 0.95
+    "saifi": 1.0,
+    "saidi_no_med": 68.2,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2017,
     "stateAbbr": "DC",
     "fips": "11",
     "saidi": 57.5,
-    "saifi": 0.55
+    "saifi": 0.6,
+    "saidi_no_med": 57.5,
+    "saifi_no_med": 0.6
   },
   {
     "year": 2017,
     "stateAbbr": "DE",
     "fips": "10",
     "saidi": 153.9,
-    "saifi": 1.13
+    "saifi": 1.1,
+    "saidi_no_med": 83.2,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2017,
     "stateAbbr": "FL",
     "fips": "12",
     "saidi": 2504.2,
-    "saifi": 2.02
+    "saifi": 2.0,
+    "saidi_no_med": 77.4,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2017,
     "stateAbbr": "GA",
     "fips": "13",
     "saidi": 1049.2,
-    "saifi": 2.45
+    "saifi": 2.4,
+    "saidi_no_med": 122.1,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2017,
     "stateAbbr": "HI",
     "fips": "15",
     "saidi": 252.3,
-    "saifi": 2.09
+    "saifi": 2.1,
+    "saidi_no_med": 112.0,
+    "saifi_no_med": 1.3
   },
   {
     "year": 2017,
     "stateAbbr": "IA",
     "fips": "19",
     "saidi": 119.0,
-    "saifi": 1.0
+    "saifi": 1.0,
+    "saidi_no_med": 95.4,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2017,
     "stateAbbr": "ID",
     "fips": "16",
     "saidi": 313.8,
-    "saifi": 1.69
+    "saifi": 1.7,
+    "saidi_no_med": 248.5,
+    "saifi_no_med": 1.6
   },
   {
     "year": 2017,
     "stateAbbr": "IL",
     "fips": "17",
     "saidi": 119.7,
-    "saifi": 0.92
+    "saifi": 0.9,
+    "saidi_no_med": 73.3,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2017,
     "stateAbbr": "IN",
     "fips": "18",
     "saidi": 212.4,
-    "saifi": 1.27
+    "saifi": 1.3,
+    "saidi_no_med": 131.6,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2017,
     "stateAbbr": "KS",
     "fips": "20",
     "saidi": 364.8,
-    "saifi": 1.48
+    "saifi": 1.5,
+    "saidi_no_med": 131.0,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2017,
     "stateAbbr": "KY",
     "fips": "21",
     "saidi": 194.1,
-    "saifi": 1.35
+    "saifi": 1.4,
+    "saidi_no_med": 120.1,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2017,
     "stateAbbr": "LA",
     "fips": "22",
     "saidi": 390.6,
-    "saifi": 2.29
+    "saifi": 2.3,
+    "saidi_no_med": 192.1,
+    "saifi_no_med": 1.7
   },
   {
     "year": 2017,
     "stateAbbr": "MA",
     "fips": "25",
     "saidi": 275.5,
-    "saifi": 1.09
+    "saifi": 1.1,
+    "saidi_no_med": 92.2,
+    "saifi_no_med": 0.6
   },
   {
     "year": 2017,
     "stateAbbr": "MD",
     "fips": "24",
     "saidi": 116.5,
-    "saifi": 0.97
+    "saifi": 1.0,
+    "saidi_no_med": 85.6,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2017,
     "stateAbbr": "ME",
     "fips": "23",
     "saidi": 2492.6,
-    "saifi": 2.81
+    "saifi": 2.8,
+    "saidi_no_med": 238.5,
+    "saifi_no_med": 1.9
   },
   {
     "year": 2017,
     "stateAbbr": "MI",
     "fips": "26",
     "saidi": 778.8,
-    "saifi": 1.41
+    "saifi": 1.4,
+    "saidi_no_med": 179.4,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2017,
     "stateAbbr": "MN",
     "fips": "27",
     "saidi": 129.7,
-    "saifi": 0.95
+    "saifi": 1.0,
+    "saidi_no_med": 73.5,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2017,
     "stateAbbr": "MO",
     "fips": "29",
     "saidi": 305.8,
-    "saifi": 1.2
+    "saifi": 1.2,
+    "saidi_no_med": 93.3,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2017,
     "stateAbbr": "MS",
     "fips": "28",
     "saidi": 566.8,
-    "saifi": 2.2
+    "saifi": 2.2,
+    "saidi_no_med": 211.3,
+    "saifi_no_med": 1.6
   },
   {
     "year": 2017,
     "stateAbbr": "MT",
     "fips": "30",
     "saidi": 215.4,
-    "saifi": 1.58
+    "saifi": 1.6,
+    "saidi_no_med": 161.4,
+    "saifi_no_med": 1.4
   },
   {
     "year": 2017,
     "stateAbbr": "NC",
     "fips": "37",
     "saidi": 264.0,
-    "saifi": 1.33
+    "saifi": 1.3,
+    "saidi_no_med": 146.3,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2017,
     "stateAbbr": "ND",
     "fips": "38",
     "saidi": 85.9,
-    "saifi": 0.97
+    "saifi": 1.0,
+    "saidi_no_med": 67.5,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2017,
     "stateAbbr": "NE",
     "fips": "31",
     "saidi": 154.3,
-    "saifi": 0.88
+    "saifi": 0.9,
+    "saidi_no_med": 69.9,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2017,
     "stateAbbr": "NH",
     "fips": "33",
     "saidi": 1113.3,
-    "saifi": 2.3
+    "saifi": 2.3,
+    "saidi_no_med": 151.1,
+    "saifi_no_med": 1.3
   },
   {
     "year": 2017,
     "stateAbbr": "NJ",
     "fips": "34",
     "saidi": 85.8,
-    "saifi": 0.93
+    "saifi": 0.9,
+    "saidi_no_med": 71.4,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2017,
     "stateAbbr": "NM",
     "fips": "35",
     "saidi": 140.6,
-    "saifi": 1.3
+    "saifi": 1.3,
+    "saidi_no_med": 115.7,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2017,
     "stateAbbr": "NV",
     "fips": "32",
     "saidi": 114.4,
-    "saifi": 0.9
+    "saifi": 0.9,
+    "saidi_no_med": 87.7,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2017,
     "stateAbbr": "NY",
     "fips": "36",
     "saidi": 227.3,
-    "saifi": 0.84
+    "saifi": 0.8,
+    "saidi_no_med": 72.0,
+    "saifi_no_med": 0.6
   },
   {
     "year": 2017,
     "stateAbbr": "OH",
     "fips": "39",
     "saidi": 248.4,
-    "saifi": 1.35
+    "saifi": 1.4,
+    "saidi_no_med": 143.4,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2017,
     "stateAbbr": "OK",
     "fips": "40",
     "saidi": 291.2,
-    "saifi": 1.44
+    "saifi": 1.4,
+    "saidi_no_med": 140.6,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2017,
     "stateAbbr": "OR",
     "fips": "41",
     "saidi": 295.7,
-    "saifi": 1.32
+    "saifi": 1.3,
+    "saidi_no_med": 111.2,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2017,
     "stateAbbr": "PA",
     "fips": "42",
     "saidi": 176.8,
-    "saifi": 1.11
+    "saifi": 1.1,
+    "saidi_no_med": 108.7,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2017,
     "stateAbbr": "RI",
     "fips": "44",
     "saidi": 728.3,
-    "saifi": 1.18
+    "saifi": 1.2,
+    "saidi_no_med": 59.1,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2017,
     "stateAbbr": "SC",
     "fips": "45",
     "saidi": 372.8,
-    "saifi": 1.58
+    "saifi": 1.6,
+    "saidi_no_med": 117.8,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2017,
     "stateAbbr": "SD",
     "fips": "46",
     "saidi": 100.6,
-    "saifi": 1.15
+    "saifi": 1.2,
+    "saidi_no_med": 81.2,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2017,
     "stateAbbr": "TN",
     "fips": "47",
     "saidi": 512.8,
-    "saifi": 1.81
+    "saifi": 1.8,
+    "saidi_no_med": 142.4,
+    "saifi_no_med": 1.5
   },
   {
     "year": 2017,
     "stateAbbr": "TX",
     "fips": "48",
     "saidi": 477.6,
-    "saifi": 1.67
+    "saifi": 1.7,
+    "saidi_no_med": 133.8,
+    "saifi_no_med": 1.3
   },
   {
     "year": 2017,
     "stateAbbr": "UT",
     "fips": "49",
     "saidi": 139.0,
-    "saifi": 1.06
+    "saifi": 1.1,
+    "saidi_no_med": 114.6,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2017,
     "stateAbbr": "VA",
     "fips": "51",
     "saidi": 192.9,
-    "saifi": 1.38
+    "saifi": 1.4,
+    "saidi_no_med": 142.2,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2017,
     "stateAbbr": "VT",
     "fips": "50",
     "saidi": 873.9,
-    "saifi": 2.53
+    "saifi": 2.5,
+    "saidi_no_med": 246.4,
+    "saifi_no_med": 1.9
   },
   {
     "year": 2017,
     "stateAbbr": "WA",
     "fips": "53",
     "saidi": 269.5,
-    "saifi": 1.32
+    "saifi": 1.3,
+    "saidi_no_med": 129.9,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2017,
     "stateAbbr": "WI",
     "fips": "55",
     "saidi": 203.5,
-    "saifi": 0.91
+    "saifi": 0.9,
+    "saidi_no_med": 78.8,
+    "saifi_no_med": 0.6
   },
   {
     "year": 2017,
     "stateAbbr": "WV",
     "fips": "54",
     "saidi": 690.8,
-    "saifi": 2.33
+    "saifi": 2.3,
+    "saidi_no_med": 451.8,
+    "saifi_no_med": 2.1
   },
   {
     "year": 2017,
     "stateAbbr": "WY",
     "fips": "56",
     "saidi": 217.6,
-    "saifi": 1.66
+    "saifi": 1.7,
+    "saidi_no_med": 191.1,
+    "saifi_no_med": 1.6
   },
   {
     "year": 2018,
     "stateAbbr": "AK",
     "fips": "02",
     "saidi": 335.3,
-    "saifi": 3.14
+    "saifi": 3.1,
+    "saidi_no_med": 193.1,
+    "saifi_no_med": 2.6
   },
   {
     "year": 2018,
     "stateAbbr": "AL",
     "fips": "01",
     "saidi": 308.0,
-    "saifi": 1.52
+    "saifi": 1.5,
+    "saidi_no_med": 123.8,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2018,
     "stateAbbr": "AR",
     "fips": "05",
     "saidi": 322.9,
-    "saifi": 1.77
+    "saifi": 1.8,
+    "saidi_no_med": 210.0,
+    "saifi_no_med": 1.5
   },
   {
     "year": 2018,
     "stateAbbr": "AZ",
     "fips": "04",
     "saidi": 114.6,
-    "saifi": 0.94
+    "saifi": 0.9,
+    "saidi_no_med": 61.1,
+    "saifi_no_med": 0.6
   },
   {
     "year": 2018,
     "stateAbbr": "CA",
     "fips": "06",
     "saidi": 195.2,
-    "saifi": 0.95
+    "saifi": 1.0,
+    "saidi_no_med": 96.0,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2018,
     "stateAbbr": "CO",
     "fips": "08",
     "saidi": 113.3,
-    "saifi": 0.97
+    "saifi": 1.0,
+    "saidi_no_med": 85.5,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2018,
     "stateAbbr": "CT",
     "fips": "09",
     "saidi": 655.5,
-    "saifi": 1.25
+    "saifi": 1.2,
+    "saidi_no_med": 75.8,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2018,
     "stateAbbr": "DC",
     "fips": "11",
     "saidi": 109.2,
-    "saifi": 0.64
+    "saifi": 0.6,
+    "saidi_no_med": 52.9,
+    "saifi_no_med": 0.5
   },
   {
     "year": 2018,
     "stateAbbr": "DE",
     "fips": "10",
     "saidi": 135.9,
-    "saifi": 1.03
+    "saifi": 1.0,
+    "saidi_no_med": 74.1,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2018,
     "stateAbbr": "FL",
     "fips": "12",
     "saidi": 325.4,
-    "saifi": 1.13
+    "saifi": 1.1,
+    "saidi_no_med": 78.4,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2018,
     "stateAbbr": "GA",
     "fips": "13",
     "saidi": 373.2,
-    "saifi": 1.56
+    "saifi": 1.6,
+    "saidi_no_med": 122.5,
+    "saifi_no_med": 1.3
   },
   {
     "year": 2018,
     "stateAbbr": "HI",
     "fips": "15",
     "saidi": 191.4,
-    "saifi": 1.96
+    "saifi": 2.0,
+    "saidi_no_med": 151.9,
+    "saifi_no_med": 1.7
   },
   {
     "year": 2018,
     "stateAbbr": "IA",
     "fips": "19",
     "saidi": 126.8,
-    "saifi": 1.01
+    "saifi": 1.0,
+    "saidi_no_med": 92.6,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2018,
     "stateAbbr": "ID",
     "fips": "16",
     "saidi": 174.1,
-    "saifi": 1.2
+    "saifi": 1.2,
+    "saidi_no_med": 144.9,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2018,
     "stateAbbr": "IL",
     "fips": "17",
     "saidi": 142.9,
-    "saifi": 0.91
+    "saifi": 0.9,
+    "saidi_no_med": 72.6,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2018,
     "stateAbbr": "IN",
     "fips": "18",
     "saidi": 285.9,
-    "saifi": 1.46
+    "saifi": 1.5,
+    "saidi_no_med": 142.3,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2018,
     "stateAbbr": "KS",
     "fips": "20",
     "saidi": 154.8,
-    "saifi": 1.17
+    "saifi": 1.2,
+    "saidi_no_med": 108.9,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2018,
     "stateAbbr": "KY",
     "fips": "21",
     "saidi": 406.2,
-    "saifi": 1.78
+    "saifi": 1.8,
+    "saidi_no_med": 146.7,
+    "saifi_no_med": 1.3
   },
   {
     "year": 2018,
     "stateAbbr": "LA",
     "fips": "22",
     "saidi": 276.0,
-    "saifi": 2.1
+    "saifi": 2.1,
+    "saidi_no_med": 206.1,
+    "saifi_no_med": 1.8
   },
   {
     "year": 2018,
     "stateAbbr": "MA",
     "fips": "25",
     "saidi": 813.3,
-    "saifi": 1.55
+    "saifi": 1.6,
+    "saidi_no_med": 99.0,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2018,
     "stateAbbr": "MD",
     "fips": "24",
     "saidi": 337.1,
-    "saifi": 1.3
+    "saifi": 1.3,
+    "saidi_no_med": 95.0,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2018,
     "stateAbbr": "ME",
     "fips": "23",
     "saidi": 665.3,
-    "saifi": 2.8
+    "saifi": 2.8,
+    "saidi_no_med": 273.0,
+    "saifi_no_med": 2.0
   },
   {
     "year": 2018,
     "stateAbbr": "MI",
     "fips": "26",
     "saidi": 442.9,
-    "saifi": 1.37
+    "saifi": 1.4,
+    "saidi_no_med": 185.0,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2018,
     "stateAbbr": "MN",
     "fips": "27",
     "saidi": 127.4,
-    "saifi": 1.02
+    "saifi": 1.0,
+    "saidi_no_med": 87.4,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2018,
     "stateAbbr": "MO",
     "fips": "29",
     "saidi": 149.6,
-    "saifi": 0.97
+    "saifi": 1.0,
+    "saidi_no_med": 94.6,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2018,
     "stateAbbr": "MS",
     "fips": "28",
     "saidi": 267.5,
-    "saifi": 1.76
+    "saifi": 1.8,
+    "saidi_no_med": 211.9,
+    "saifi_no_med": 1.6
   },
   {
     "year": 2018,
     "stateAbbr": "MT",
     "fips": "30",
     "saidi": 142.7,
-    "saifi": 1.28
+    "saifi": 1.3,
+    "saidi_no_med": 118.0,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2018,
     "stateAbbr": "NC",
     "fips": "37",
     "saidi": 1761.5,
-    "saifi": 2.17
+    "saifi": 2.2,
+    "saidi_no_med": 162.3,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2018,
     "stateAbbr": "ND",
     "fips": "38",
     "saidi": 94.4,
-    "saifi": 0.91
+    "saifi": 0.9,
+    "saidi_no_med": 95.2,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2018,
     "stateAbbr": "NE",
     "fips": "31",
     "saidi": 188.2,
-    "saifi": 1.09
+    "saifi": 1.1,
+    "saidi_no_med": 74.2,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2018,
     "stateAbbr": "NH",
     "fips": "33",
     "saidi": 508.8,
-    "saifi": 2.17
+    "saifi": 2.2,
+    "saidi_no_med": 151.7,
+    "saifi_no_med": 1.3
   },
   {
     "year": 2018,
     "stateAbbr": "NJ",
     "fips": "34",
     "saidi": 509.7,
-    "saifi": 1.42
+    "saifi": 1.4,
+    "saidi_no_med": 87.7,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2018,
     "stateAbbr": "NM",
     "fips": "35",
     "saidi": 138.3,
-    "saifi": 1.15
+    "saifi": 1.2,
+    "saidi_no_med": 126.0,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2018,
     "stateAbbr": "NV",
     "fips": "32",
     "saidi": 126.2,
-    "saifi": 0.98
+    "saifi": 1.0,
+    "saidi_no_med": 76.7,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2018,
     "stateAbbr": "NY",
     "fips": "36",
     "saidi": 405.5,
-    "saifi": 1.01
+    "saifi": 1.0,
+    "saidi_no_med": 79.2,
+    "saifi_no_med": 0.6
   },
   {
     "year": 2018,
     "stateAbbr": "OH",
     "fips": "39",
     "saidi": 242.0,
-    "saifi": 1.41
+    "saifi": 1.4,
+    "saidi_no_med": 151.5,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2018,
     "stateAbbr": "OK",
     "fips": "40",
     "saidi": 175.6,
-    "saifi": 1.33
+    "saifi": 1.3,
+    "saidi_no_med": 127.2,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2018,
     "stateAbbr": "OR",
     "fips": "41",
     "saidi": 113.1,
-    "saifi": 0.92
+    "saifi": 0.9,
+    "saidi_no_med": 92.5,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2018,
     "stateAbbr": "PA",
     "fips": "42",
     "saidi": 518.0,
-    "saifi": 1.43
+    "saifi": 1.4,
+    "saidi_no_med": 119.3,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2018,
     "stateAbbr": "RI",
     "fips": "44",
     "saidi": 594.8,
-    "saifi": 1.57
+    "saifi": 1.6,
+    "saidi_no_med": 65.1,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2018,
     "stateAbbr": "SC",
     "fips": "45",
     "saidi": 470.5,
-    "saifi": 1.75
+    "saifi": 1.8,
+    "saidi_no_med": 137.0,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2018,
     "stateAbbr": "SD",
     "fips": "46",
     "saidi": 92.1,
-    "saifi": 1.08
+    "saifi": 1.1,
+    "saidi_no_med": 74.0,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2018,
     "stateAbbr": "TN",
     "fips": "47",
     "saidi": 199.8,
-    "saifi": 1.9
+    "saifi": 1.9,
+    "saidi_no_med": 139.6,
+    "saifi_no_med": 1.7
   },
   {
     "year": 2018,
     "stateAbbr": "TX",
     "fips": "48",
     "saidi": 167.2,
-    "saifi": 1.39
+    "saifi": 1.4,
+    "saidi_no_med": 113.7,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2018,
     "stateAbbr": "UT",
     "fips": "49",
     "saidi": 125.3,
-    "saifi": 1.02
+    "saifi": 1.0,
+    "saidi_no_med": 126.6,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2018,
     "stateAbbr": "VA",
     "fips": "51",
     "saidi": 507.4,
-    "saifi": 1.82
+    "saifi": 1.8,
+    "saidi_no_med": 187.8,
+    "saifi_no_med": 1.4
   },
   {
     "year": 2018,
     "stateAbbr": "VT",
     "fips": "50",
     "saidi": 897.6,
-    "saifi": 2.77
+    "saifi": 2.8,
+    "saidi_no_med": 262.1,
+    "saifi_no_med": 1.9
   },
   {
     "year": 2018,
     "stateAbbr": "WA",
     "fips": "53",
     "saidi": 270.4,
-    "saifi": 1.21
+    "saifi": 1.2,
+    "saidi_no_med": 114.0,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2018,
     "stateAbbr": "WI",
     "fips": "55",
     "saidi": 122.8,
-    "saifi": 0.81
+    "saifi": 0.8,
+    "saidi_no_med": 79.6,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2018,
     "stateAbbr": "WV",
     "fips": "54",
     "saidi": 739.7,
-    "saifi": 2.65
+    "saifi": 2.6,
+    "saidi_no_med": 513.1,
+    "saifi_no_med": 2.4
   },
   {
     "year": 2018,
     "stateAbbr": "WY",
     "fips": "56",
     "saidi": 136.7,
-    "saifi": 1.27
+    "saifi": 1.3,
+    "saidi_no_med": 117.6,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2019,
     "stateAbbr": "AK",
     "fips": "02",
     "saidi": 280.1,
-    "saifi": 2.19
+    "saifi": 2.2,
+    "saidi_no_med": 184.1,
+    "saifi_no_med": 1.6
   },
   {
     "year": 2019,
     "stateAbbr": "AL",
     "fips": "01",
     "saidi": 174.1,
-    "saifi": 1.41
+    "saifi": 1.4,
+    "saidi_no_med": 130.2,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2019,
     "stateAbbr": "AR",
     "fips": "05",
     "saidi": 437.7,
-    "saifi": 1.93
+    "saifi": 1.9,
+    "saidi_no_med": 221.9,
+    "saifi_no_med": 1.5
   },
   {
     "year": 2019,
     "stateAbbr": "AZ",
     "fips": "04",
     "saidi": 85.8,
-    "saifi": 0.89
+    "saifi": 0.9,
+    "saidi_no_med": 67.2,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2019,
     "stateAbbr": "CA",
     "fips": "06",
     "saidi": 587.6,
-    "saifi": 1.26
+    "saifi": 1.3,
+    "saidi_no_med": 104.0,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2019,
     "stateAbbr": "CO",
     "fips": "08",
     "saidi": 180.5,
-    "saifi": 1.08
+    "saifi": 1.1,
+    "saidi_no_med": 83.6,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2019,
     "stateAbbr": "CT",
     "fips": "09",
     "saidi": 236.4,
-    "saifi": 0.97
+    "saifi": 1.0,
+    "saidi_no_med": 60.9,
+    "saifi_no_med": 0.6
   },
   {
     "year": 2019,
     "stateAbbr": "DC",
     "fips": "11",
     "saidi": 77.0,
-    "saifi": 0.59
+    "saifi": 0.6,
+    "saidi_no_med": 55.0,
+    "saifi_no_med": 0.5
   },
   {
     "year": 2019,
     "stateAbbr": "DE",
     "fips": "10",
     "saidi": 101.6,
-    "saifi": 0.98
+    "saifi": 1.0,
+    "saidi_no_med": 74.0,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2019,
     "stateAbbr": "FL",
     "fips": "12",
     "saidi": 89.0,
-    "saifi": 1.01
+    "saifi": 1.0,
+    "saidi_no_med": 74.2,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2019,
     "stateAbbr": "GA",
     "fips": "13",
     "saidi": 152.3,
-    "saifi": 1.38
+    "saifi": 1.4,
+    "saidi_no_med": 127.7,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2019,
     "stateAbbr": "HI",
     "fips": "15",
     "saidi": 195.2,
-    "saifi": 2.05
+    "saifi": 2.0,
+    "saidi_no_med": 113.4,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2019,
     "stateAbbr": "IA",
     "fips": "19",
     "saidi": 122.8,
-    "saifi": 1.08
+    "saifi": 1.1,
+    "saidi_no_med": 89.8,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2019,
     "stateAbbr": "ID",
     "fips": "16",
     "saidi": 166.6,
-    "saifi": 1.24
+    "saifi": 1.2,
+    "saidi_no_med": 143.9,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2019,
     "stateAbbr": "IL",
     "fips": "17",
     "saidi": 116.2,
-    "saifi": 0.93
+    "saifi": 0.9,
+    "saidi_no_med": 73.9,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2019,
     "stateAbbr": "IN",
     "fips": "18",
     "saidi": 260.6,
-    "saifi": 1.5
+    "saifi": 1.5,
+    "saidi_no_med": 146.4,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2019,
     "stateAbbr": "KS",
     "fips": "20",
     "saidi": 240.0,
-    "saifi": 1.37
+    "saifi": 1.4,
+    "saidi_no_med": 117.3,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2019,
     "stateAbbr": "KY",
     "fips": "21",
     "saidi": 203.3,
-    "saifi": 1.61
+    "saifi": 1.6,
+    "saidi_no_med": 148.5,
+    "saifi_no_med": 1.4
   },
   {
     "year": 2019,
     "stateAbbr": "LA",
     "fips": "22",
     "saidi": 472.3,
-    "saifi": 2.17
+    "saifi": 2.2,
+    "saidi_no_med": 208.1,
+    "saifi_no_med": 1.6
   },
   {
     "year": 2019,
     "stateAbbr": "MA",
     "fips": "25",
     "saidi": 250.2,
-    "saifi": 1.22
+    "saifi": 1.2,
+    "saidi_no_med": 96.1,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2019,
     "stateAbbr": "MD",
     "fips": "24",
     "saidi": 141.3,
-    "saifi": 1.05
+    "saifi": 1.0,
+    "saidi_no_med": 90.6,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2019,
     "stateAbbr": "ME",
     "fips": "23",
     "saidi": 908.1,
-    "saifi": 2.53
+    "saifi": 2.5,
+    "saidi_no_med": 213.7,
+    "saifi_no_med": 1.7
   },
   {
     "year": 2019,
     "stateAbbr": "MI",
     "fips": "26",
     "saidi": 554.9,
-    "saifi": 1.53
+    "saifi": 1.5,
+    "saidi_no_med": 211.1,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2019,
     "stateAbbr": "MN",
     "fips": "27",
     "saidi": 150.1,
-    "saifi": 0.99
+    "saifi": 1.0,
+    "saidi_no_med": 81.2,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2019,
     "stateAbbr": "MO",
     "fips": "29",
     "saidi": 255.2,
-    "saifi": 1.3
+    "saifi": 1.3,
+    "saidi_no_med": 112.8,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2019,
     "stateAbbr": "MS",
     "fips": "28",
     "saidi": 536.5,
-    "saifi": 2.1
+    "saifi": 2.1,
+    "saidi_no_med": 220.0,
+    "saifi_no_med": 1.6
   },
   {
     "year": 2019,
     "stateAbbr": "MT",
     "fips": "30",
     "saidi": 169.3,
-    "saifi": 1.33
+    "saifi": 1.3,
+    "saidi_no_med": 127.0,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2019,
     "stateAbbr": "NC",
     "fips": "37",
     "saidi": 287.6,
-    "saifi": 1.44
+    "saifi": 1.4,
+    "saidi_no_med": 146.2,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2019,
     "stateAbbr": "ND",
     "fips": "38",
     "saidi": 107.1,
-    "saifi": 0.87
+    "saifi": 0.9,
+    "saidi_no_med": 74.3,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2019,
     "stateAbbr": "NE",
     "fips": "31",
     "saidi": 84.0,
-    "saifi": 0.65
+    "saifi": 0.6,
+    "saidi_no_med": 62.4,
+    "saifi_no_med": 0.6
   },
   {
     "year": 2019,
     "stateAbbr": "NH",
     "fips": "33",
     "saidi": 292.0,
-    "saifi": 1.43
+    "saifi": 1.4,
+    "saidi_no_med": 111.0,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2019,
     "stateAbbr": "NJ",
     "fips": "34",
     "saidi": 247.7,
-    "saifi": 1.19
+    "saifi": 1.2,
+    "saidi_no_med": 86.8,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2019,
     "stateAbbr": "NM",
     "fips": "35",
     "saidi": 170.2,
-    "saifi": 1.21
+    "saifi": 1.2,
+    "saidi_no_med": 128.4,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2019,
     "stateAbbr": "NV",
     "fips": "32",
     "saidi": 87.0,
-    "saifi": 0.81
+    "saifi": 0.8,
+    "saidi_no_med": 77.5,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2019,
     "stateAbbr": "NY",
     "fips": "36",
     "saidi": 171.0,
-    "saifi": 0.88
+    "saifi": 0.9,
+    "saidi_no_med": 78.9,
+    "saifi_no_med": 0.6
   },
   {
     "year": 2019,
     "stateAbbr": "OH",
     "fips": "39",
     "saidi": 305.2,
-    "saifi": 1.47
+    "saifi": 1.5,
+    "saidi_no_med": 146.0,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2019,
     "stateAbbr": "OK",
     "fips": "40",
     "saidi": 334.9,
-    "saifi": 1.53
+    "saifi": 1.5,
+    "saidi_no_med": 139.0,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2019,
     "stateAbbr": "OR",
     "fips": "41",
     "saidi": 221.6,
-    "saifi": 1.0
+    "saifi": 1.0,
+    "saidi_no_med": 103.6,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2019,
     "stateAbbr": "PA",
     "fips": "42",
     "saidi": 249.1,
-    "saifi": 1.31
+    "saifi": 1.3,
+    "saidi_no_med": 127.7,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2019,
     "stateAbbr": "RI",
     "fips": "44",
     "saidi": 236.5,
-    "saifi": 1.4
+    "saifi": 1.4,
+    "saidi_no_med": 68.2,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2019,
     "stateAbbr": "SC",
     "fips": "45",
     "saidi": 326.5,
-    "saifi": 1.48
+    "saifi": 1.5,
+    "saidi_no_med": 105.6,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2019,
     "stateAbbr": "SD",
     "fips": "46",
     "saidi": 295.0,
-    "saifi": 1.58
+    "saifi": 1.6,
+    "saidi_no_med": 106.7,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2019,
     "stateAbbr": "TN",
     "fips": "47",
     "saidi": 266.9,
-    "saifi": 2.15
+    "saifi": 2.2,
+    "saidi_no_med": 165.7,
+    "saifi_no_med": 1.8
   },
   {
     "year": 2019,
     "stateAbbr": "TX",
     "fips": "48",
     "saidi": 290.7,
-    "saifi": 1.67
+    "saifi": 1.7,
+    "saidi_no_med": 121.8,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2019,
     "stateAbbr": "UT",
     "fips": "49",
     "saidi": 146.2,
-    "saifi": 1.0
+    "saifi": 1.0,
+    "saidi_no_med": 115.4,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2019,
     "stateAbbr": "VA",
     "fips": "51",
     "saidi": 309.0,
-    "saifi": 1.73
+    "saifi": 1.7,
+    "saidi_no_med": 182.1,
+    "saifi_no_med": 1.3
   },
   {
     "year": 2019,
     "stateAbbr": "VT",
     "fips": "50",
     "saidi": 443.8,
-    "saifi": 2.07
+    "saifi": 2.1,
+    "saidi_no_med": 170.1,
+    "saifi_no_med": 1.5
   },
   {
     "year": 2019,
     "stateAbbr": "WA",
     "fips": "53",
     "saidi": 300.0,
-    "saifi": 1.17
+    "saifi": 1.2,
+    "saidi_no_med": 105.6,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2019,
     "stateAbbr": "WI",
     "fips": "55",
     "saidi": 356.2,
-    "saifi": 1.09
+    "saifi": 1.1,
+    "saidi_no_med": 93.0,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2019,
     "stateAbbr": "WV",
     "fips": "54",
     "saidi": 755.2,
-    "saifi": 2.8
+    "saifi": 2.8,
+    "saidi_no_med": 472.0,
+    "saifi_no_med": 2.4
   },
   {
     "year": 2019,
     "stateAbbr": "WY",
     "fips": "56",
     "saidi": 164.5,
-    "saifi": 1.49
+    "saifi": 1.5,
+    "saidi_no_med": 138.1,
+    "saifi_no_med": 1.4
   },
   {
     "year": 2020,
     "stateAbbr": "AK",
     "fips": "02",
     "saidi": 268.0,
-    "saifi": 2.19
+    "saifi": 2.2,
+    "saidi_no_med": 245.5,
+    "saifi_no_med": 2.2
   },
   {
     "year": 2020,
     "stateAbbr": "AL",
     "fips": "01",
     "saidi": 1743.5,
-    "saifi": 2.38
+    "saifi": 2.4,
+    "saidi_no_med": 132.0,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2020,
     "stateAbbr": "AR",
     "fips": "05",
     "saidi": 708.4,
-    "saifi": 1.83
+    "saifi": 1.8,
+    "saidi_no_med": 204.7,
+    "saifi_no_med": 1.4
   },
   {
     "year": 2020,
     "stateAbbr": "AZ",
     "fips": "04",
     "saidi": 71.9,
-    "saifi": 0.82
+    "saifi": 0.8,
+    "saidi_no_med": 63.6,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2020,
     "stateAbbr": "CA",
     "fips": "06",
     "saidi": 267.1,
-    "saifi": 1.08
+    "saifi": 1.1,
+    "saidi_no_med": 104.1,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2020,
     "stateAbbr": "CO",
     "fips": "08",
     "saidi": 134.2,
-    "saifi": 1.0
+    "saifi": 1.0,
+    "saidi_no_med": 82.6,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2020,
     "stateAbbr": "CT",
     "fips": "09",
     "saidi": 2642.6,
-    "saifi": 1.83
+    "saifi": 1.8,
+    "saidi_no_med": 64.6,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2020,
     "stateAbbr": "DC",
     "fips": "11",
     "saidi": 44.0,
-    "saifi": 0.4
+    "saifi": 0.4,
+    "saidi_no_med": 39.0,
+    "saifi_no_med": 0.4
   },
   {
     "year": 2020,
     "stateAbbr": "DE",
     "fips": "10",
     "saidi": 271.9,
-    "saifi": 1.51
+    "saifi": 1.5,
+    "saidi_no_med": 84.9,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2020,
     "stateAbbr": "FL",
     "fips": "12",
     "saidi": 188.7,
-    "saifi": 1.17
+    "saifi": 1.2,
+    "saidi_no_med": 72.7,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2020,
     "stateAbbr": "GA",
     "fips": "13",
     "saidi": 509.9,
-    "saifi": 1.96
+    "saifi": 2.0,
+    "saidi_no_med": 133.3,
+    "saifi_no_med": 1.4
   },
   {
     "year": 2020,
     "stateAbbr": "HI",
     "fips": "15",
     "saidi": 118.7,
-    "saifi": 1.22
+    "saifi": 1.2,
+    "saidi_no_med": 97.3,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2020,
     "stateAbbr": "IA",
     "fips": "19",
     "saidi": 1758.7,
-    "saifi": 1.49
+    "saifi": 1.5,
+    "saidi_no_med": 87.9,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2020,
     "stateAbbr": "ID",
     "fips": "16",
     "saidi": 324.9,
-    "saifi": 1.59
+    "saifi": 1.6,
+    "saidi_no_med": 180.7,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2020,
     "stateAbbr": "IL",
     "fips": "17",
     "saidi": 331.1,
-    "saifi": 0.92
+    "saifi": 0.9,
+    "saidi_no_med": 57.1,
+    "saifi_no_med": 0.6
   },
   {
     "year": 2020,
     "stateAbbr": "IN",
     "fips": "18",
     "saidi": 280.1,
-    "saifi": 1.29
+    "saifi": 1.3,
+    "saidi_no_med": 124.8,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2020,
     "stateAbbr": "KS",
     "fips": "20",
     "saidi": 107.1,
-    "saifi": 0.95
+    "saifi": 1.0,
+    "saidi_no_med": 92.3,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2020,
     "stateAbbr": "KY",
     "fips": "21",
     "saidi": 282.4,
-    "saifi": 1.35
+    "saifi": 1.4,
+    "saidi_no_med": 125.1,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2020,
     "stateAbbr": "LA",
     "fips": "22",
     "saidi": 3624.4,
-    "saifi": 3.23
+    "saifi": 3.2,
+    "saidi_no_med": 216.4,
+    "saifi_no_med": 1.7
   },
   {
     "year": 2020,
     "stateAbbr": "MA",
     "fips": "25",
     "saidi": 318.9,
-    "saifi": 1.3
+    "saifi": 1.3,
+    "saidi_no_med": 168.1,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2020,
     "stateAbbr": "MD",
     "fips": "24",
     "saidi": 120.3,
-    "saifi": 0.96
+    "saifi": 1.0,
+    "saidi_no_med": 80.9,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2020,
     "stateAbbr": "ME",
     "fips": "23",
     "saidi": 1725.0,
-    "saifi": 3.86
+    "saifi": 3.9,
+    "saidi_no_med": 244.8,
+    "saifi_no_med": 2.1
   },
   {
     "year": 2020,
     "stateAbbr": "MI",
     "fips": "26",
     "saidi": 410.7,
-    "saifi": 1.38
+    "saifi": 1.4,
+    "saidi_no_med": 167.2,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2020,
     "stateAbbr": "MN",
     "fips": "27",
     "saidi": 127.6,
-    "saifi": 1.04
+    "saifi": 1.0,
+    "saidi_no_med": 85.2,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2020,
     "stateAbbr": "MO",
     "fips": "29",
     "saidi": 152.6,
-    "saifi": 1.0
+    "saifi": 1.0,
+    "saidi_no_med": 95.1,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2020,
     "stateAbbr": "MS",
     "fips": "28",
     "saidi": 1496.7,
-    "saifi": 2.51
+    "saifi": 2.5,
+    "saidi_no_med": 211.3,
+    "saifi_no_med": 1.5
   },
   {
     "year": 2020,
     "stateAbbr": "MT",
     "fips": "30",
     "saidi": 271.3,
-    "saifi": 1.36
+    "saifi": 1.4,
+    "saidi_no_med": 140.9,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2020,
     "stateAbbr": "NC",
     "fips": "37",
     "saidi": 417.9,
-    "saifi": 1.7
+    "saifi": 1.7,
+    "saidi_no_med": 143.7,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2020,
     "stateAbbr": "ND",
     "fips": "38",
     "saidi": 101.1,
-    "saifi": 0.97
+    "saifi": 1.0,
+    "saidi_no_med": 82.5,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2020,
     "stateAbbr": "NE",
     "fips": "31",
     "saidi": 113.4,
-    "saifi": 0.79
+    "saifi": 0.8,
+    "saidi_no_med": 68.8,
+    "saifi_no_med": 0.6
   },
   {
     "year": 2020,
     "stateAbbr": "NH",
     "fips": "33",
     "saidi": 499.4,
-    "saifi": 1.82
+    "saifi": 1.8,
+    "saidi_no_med": 121.8,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2020,
     "stateAbbr": "NJ",
     "fips": "34",
     "saidi": 965.2,
-    "saifi": 1.58
+    "saifi": 1.6,
+    "saidi_no_med": 87.0,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2020,
     "stateAbbr": "NM",
     "fips": "35",
     "saidi": 148.2,
-    "saifi": 1.01
+    "saifi": 1.0,
+    "saidi_no_med": 118.8,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2020,
     "stateAbbr": "NV",
     "fips": "32",
     "saidi": 73.3,
-    "saifi": 0.72
+    "saifi": 0.7,
+    "saidi_no_med": 55.3,
+    "saifi_no_med": 0.6
   },
   {
     "year": 2020,
     "stateAbbr": "NY",
     "fips": "36",
     "saidi": 407.7,
-    "saifi": 0.98
+    "saifi": 1.0,
+    "saidi_no_med": 79.8,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2020,
     "stateAbbr": "OH",
     "fips": "39",
     "saidi": 283.4,
-    "saifi": 1.36
+    "saifi": 1.4,
+    "saidi_no_med": 129.2,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2020,
     "stateAbbr": "OK",
     "fips": "40",
     "saidi": 2922.0,
-    "saifi": 2.11
+    "saifi": 2.1,
+    "saidi_no_med": 144.3,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2020,
     "stateAbbr": "OR",
     "fips": "41",
     "saidi": 311.0,
-    "saifi": 1.14
+    "saifi": 1.1,
+    "saidi_no_med": 104.4,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2020,
     "stateAbbr": "PA",
     "fips": "42",
     "saidi": 334.2,
-    "saifi": 1.3
+    "saifi": 1.3,
+    "saidi_no_med": 107.8,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2020,
     "stateAbbr": "RI",
     "fips": "44",
     "saidi": 548.4,
-    "saifi": 1.97
+    "saifi": 2.0,
+    "saidi_no_med": 69.1,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2020,
     "stateAbbr": "SC",
     "fips": "45",
     "saidi": 323.8,
-    "saifi": 1.47
+    "saifi": 1.5,
+    "saidi_no_med": 119.9,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2020,
     "stateAbbr": "SD",
     "fips": "46",
     "saidi": 97.3,
-    "saifi": 1.1
+    "saifi": 1.1,
+    "saidi_no_med": 73.2,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2020,
     "stateAbbr": "TN",
     "fips": "47",
     "saidi": 588.0,
-    "saifi": 2.14
+    "saifi": 2.1,
+    "saidi_no_med": 148.4,
+    "saifi_no_med": 1.6
   },
   {
     "year": 2020,
     "stateAbbr": "TX",
     "fips": "48",
     "saidi": 432.7,
-    "saifi": 2.22
+    "saifi": 2.2,
+    "saidi_no_med": 163.7,
+    "saifi_no_med": 1.5
   },
   {
     "year": 2020,
     "stateAbbr": "UT",
     "fips": "49",
     "saidi": 575.1,
-    "saifi": 1.32
+    "saifi": 1.3,
+    "saidi_no_med": 101.5,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2020,
     "stateAbbr": "VA",
     "fips": "51",
     "saidi": 308.6,
-    "saifi": 1.63
+    "saifi": 1.6,
+    "saidi_no_med": 165.3,
+    "saifi_no_med": 1.3
   },
   {
     "year": 2020,
     "stateAbbr": "VT",
     "fips": "50",
     "saidi": 255.6,
-    "saifi": 1.93
+    "saifi": 1.9,
+    "saidi_no_med": 255.6,
+    "saifi_no_med": 1.9
   },
   {
     "year": 2020,
     "stateAbbr": "WA",
     "fips": "53",
     "saidi": 261.6,
-    "saifi": 1.3
+    "saifi": 1.3,
+    "saidi_no_med": 127.0,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2020,
     "stateAbbr": "WI",
     "fips": "55",
     "saidi": 113.3,
-    "saifi": 0.8
+    "saifi": 0.8,
+    "saidi_no_med": 86.4,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2020,
     "stateAbbr": "WV",
     "fips": "54",
     "saidi": 604.2,
-    "saifi": 2.44
+    "saifi": 2.4,
+    "saidi_no_med": 467.9,
+    "saifi_no_med": 2.2
   },
   {
     "year": 2020,
     "stateAbbr": "WY",
     "fips": "56",
     "saidi": 289.7,
-    "saifi": 1.84
+    "saifi": 1.8,
+    "saidi_no_med": 118.3,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2021,
     "stateAbbr": "AK",
     "fips": "02",
     "saidi": 379.1,
-    "saifi": 2.13
+    "saifi": 2.1,
+    "saidi_no_med": 230.6,
+    "saifi_no_med": 1.7
   },
   {
     "year": 2021,
     "stateAbbr": "AL",
     "fips": "01",
     "saidi": 234.9,
-    "saifi": 1.43
+    "saifi": 1.4,
+    "saidi_no_med": 119.2,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2021,
     "stateAbbr": "AR",
     "fips": "05",
     "saidi": 315.9,
-    "saifi": 1.66
+    "saifi": 1.7,
+    "saidi_no_med": 195.9,
+    "saifi_no_med": 1.4
   },
   {
     "year": 2021,
     "stateAbbr": "AZ",
     "fips": "04",
     "saidi": 106.2,
-    "saifi": 1.22
+    "saifi": 1.2,
+    "saidi_no_med": 71.7,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2021,
     "stateAbbr": "CA",
     "fips": "06",
     "saidi": 325.2,
-    "saifi": 1.31
+    "saifi": 1.3,
+    "saidi_no_med": 142.7,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2021,
     "stateAbbr": "CO",
     "fips": "08",
     "saidi": 180.9,
-    "saifi": 1.1
+    "saifi": 1.1,
+    "saidi_no_med": 102.6,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2021,
     "stateAbbr": "CT",
     "fips": "09",
     "saidi": 145.2,
-    "saifi": 0.9
+    "saifi": 0.9,
+    "saidi_no_med": 68.6,
+    "saifi_no_med": 0.6
   },
   {
     "year": 2021,
     "stateAbbr": "DC",
     "fips": "11",
     "saidi": 52.0,
-    "saifi": 0.45
+    "saifi": 0.4,
+    "saidi_no_med": 42.0,
+    "saifi_no_med": 0.4
   },
   {
     "year": 2021,
     "stateAbbr": "DE",
     "fips": "10",
     "saidi": 64.3,
-    "saifi": 0.96
+    "saifi": 1.0,
+    "saidi_no_med": 64.3,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2021,
     "stateAbbr": "FL",
     "fips": "12",
     "saidi": 80.8,
-    "saifi": 0.93
+    "saifi": 0.9,
+    "saidi_no_med": 64.6,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2021,
     "stateAbbr": "GA",
     "fips": "13",
     "saidi": 145.8,
-    "saifi": 1.32
+    "saifi": 1.3,
+    "saidi_no_med": 129.4,
+    "saifi_no_med": 1.3
   },
   {
     "year": 2021,
     "stateAbbr": "HI",
     "fips": "15",
     "saidi": 229.7,
-    "saifi": 1.6
+    "saifi": 1.6,
+    "saidi_no_med": 115.7,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2021,
     "stateAbbr": "IA",
     "fips": "19",
     "saidi": 133.1,
-    "saifi": 0.92
+    "saifi": 0.9,
+    "saidi_no_med": 79.5,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2021,
     "stateAbbr": "ID",
     "fips": "16",
     "saidi": 475.2,
-    "saifi": 1.78
+    "saifi": 1.8,
+    "saidi_no_med": 162.1,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2021,
     "stateAbbr": "IL",
     "fips": "17",
     "saidi": 127.0,
-    "saifi": 0.91
+    "saifi": 0.9,
+    "saidi_no_med": 63.5,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2021,
     "stateAbbr": "IN",
     "fips": "18",
     "saidi": 285.8,
-    "saifi": 1.36
+    "saifi": 1.4,
+    "saidi_no_med": 133.1,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2021,
     "stateAbbr": "KS",
     "fips": "20",
     "saidi": 341.5,
-    "saifi": 1.53
+    "saifi": 1.5,
+    "saidi_no_med": 113.0,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2021,
     "stateAbbr": "KY",
     "fips": "21",
     "saidi": 707.8,
-    "saifi": 1.53
+    "saifi": 1.5,
+    "saidi_no_med": 129.8,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2021,
     "stateAbbr": "LA",
     "fips": "22",
     "saidi": 4811.1,
-    "saifi": 3.3
+    "saifi": 3.3,
+    "saidi_no_med": 228.2,
+    "saifi_no_med": 1.8
   },
   {
     "year": 2021,
     "stateAbbr": "MA",
     "fips": "25",
     "saidi": 518.7,
-    "saifi": 1.22
+    "saifi": 1.2,
+    "saidi_no_med": 87.2,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2021,
     "stateAbbr": "MD",
     "fips": "24",
     "saidi": 127.1,
-    "saifi": 0.96
+    "saifi": 1.0,
+    "saidi_no_med": 80.2,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2021,
     "stateAbbr": "ME",
     "fips": "23",
     "saidi": 325.2,
-    "saifi": 2.49
+    "saifi": 2.5,
+    "saidi_no_med": 223.5,
+    "saifi_no_med": 2.1
   },
   {
     "year": 2021,
     "stateAbbr": "MI",
     "fips": "26",
     "saidi": 873.3,
-    "saifi": 1.66
+    "saifi": 1.7,
+    "saidi_no_med": 178.4,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2021,
     "stateAbbr": "MN",
     "fips": "27",
     "saidi": 120.9,
-    "saifi": 1.04
+    "saifi": 1.0,
+    "saidi_no_med": 82.4,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2021,
     "stateAbbr": "MO",
     "fips": "29",
     "saidi": 259.7,
-    "saifi": 1.24
+    "saifi": 1.2,
+    "saidi_no_med": 97.3,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2021,
     "stateAbbr": "MS",
     "fips": "28",
     "saidi": 1134.4,
-    "saifi": 2.37
+    "saifi": 2.4,
+    "saidi_no_med": 220.6,
+    "saifi_no_med": 1.6
   },
   {
     "year": 2021,
     "stateAbbr": "MT",
     "fips": "30",
     "saidi": 309.9,
-    "saifi": 1.71
+    "saifi": 1.7,
+    "saidi_no_med": 146.0,
+    "saifi_no_med": 1.3
   },
   {
     "year": 2021,
     "stateAbbr": "NC",
     "fips": "37",
     "saidi": 205.5,
-    "saifi": 1.24
+    "saifi": 1.2,
+    "saidi_no_med": 123.6,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2021,
     "stateAbbr": "ND",
     "fips": "38",
     "saidi": 85.4,
-    "saifi": 0.88
+    "saifi": 0.9,
+    "saidi_no_med": 85.9,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2021,
     "stateAbbr": "NE",
     "fips": "31",
     "saidi": 516.0,
-    "saifi": 1.15
+    "saifi": 1.2,
+    "saidi_no_med": 60.8,
+    "saifi_no_med": 0.5
   },
   {
     "year": 2021,
     "stateAbbr": "NH",
     "fips": "33",
     "saidi": 234.4,
-    "saifi": 1.37
+    "saifi": 1.4,
+    "saidi_no_med": 127.1,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2021,
     "stateAbbr": "NJ",
     "fips": "34",
     "saidi": 138.8,
-    "saifi": 1.0
+    "saifi": 1.0,
+    "saidi_no_med": 84.7,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2021,
     "stateAbbr": "NM",
     "fips": "35",
     "saidi": 221.2,
-    "saifi": 1.45
+    "saifi": 1.4,
+    "saidi_no_med": 131.7,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2021,
     "stateAbbr": "NV",
     "fips": "32",
     "saidi": 102.4,
-    "saifi": 0.84
+    "saifi": 0.8,
+    "saidi_no_med": 69.6,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2021,
     "stateAbbr": "NY",
     "fips": "36",
     "saidi": 142.0,
-    "saifi": 0.85
+    "saifi": 0.8,
+    "saidi_no_med": 80.3,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2021,
     "stateAbbr": "OH",
     "fips": "39",
     "saidi": 244.2,
-    "saifi": 1.33
+    "saifi": 1.3,
+    "saidi_no_med": 135.9,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2021,
     "stateAbbr": "OK",
     "fips": "40",
     "saidi": 179.4,
-    "saifi": 1.4
+    "saifi": 1.4,
+    "saidi_no_med": 146.5,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2021,
     "stateAbbr": "OR",
     "fips": "41",
     "saidi": 1489.2,
-    "saifi": 1.57
+    "saifi": 1.6,
+    "saidi_no_med": 116.5,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2021,
     "stateAbbr": "PA",
     "fips": "42",
     "saidi": 217.8,
-    "saifi": 1.2
+    "saifi": 1.2,
+    "saidi_no_med": 130.2,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2021,
     "stateAbbr": "RI",
     "fips": "44",
     "saidi": 448.6,
-    "saifi": 1.43
+    "saifi": 1.4,
+    "saidi_no_med": 68.8,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2021,
     "stateAbbr": "SC",
     "fips": "45",
     "saidi": 120.9,
-    "saifi": 1.16
+    "saifi": 1.2,
+    "saidi_no_med": 100.7,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2021,
     "stateAbbr": "SD",
     "fips": "46",
     "saidi": 105.6,
-    "saifi": 1.01
+    "saifi": 1.0,
+    "saidi_no_med": 62.7,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2021,
     "stateAbbr": "TN",
     "fips": "47",
     "saidi": 302.7,
-    "saifi": 2.02
+    "saifi": 2.0,
+    "saidi_no_med": 149.4,
+    "saifi_no_med": 1.7
   },
   {
     "year": 2021,
     "stateAbbr": "TX",
     "fips": "48",
     "saidi": 1175.3,
-    "saifi": 2.9
+    "saifi": 2.9,
+    "saidi_no_med": 147.4,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2021,
     "stateAbbr": "UT",
     "fips": "49",
     "saidi": 116.0,
-    "saifi": 0.93
+    "saifi": 0.9,
+    "saidi_no_med": 100.9,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2021,
     "stateAbbr": "VA",
     "fips": "51",
     "saidi": 434.4,
-    "saifi": 1.58
+    "saifi": 1.6,
+    "saidi_no_med": 164.9,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2021,
     "stateAbbr": "VT",
     "fips": "50",
     "saidi": 313.2,
-    "saifi": 2.21
+    "saifi": 2.2,
+    "saidi_no_med": 262.4,
+    "saifi_no_med": 2.1
   },
   {
     "year": 2021,
     "stateAbbr": "WA",
     "fips": "53",
     "saidi": 527.3,
-    "saifi": 1.69
+    "saifi": 1.7,
+    "saidi_no_med": 150.4,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2021,
     "stateAbbr": "WI",
     "fips": "55",
     "saidi": 311.6,
-    "saifi": 1.01
+    "saifi": 1.0,
+    "saidi_no_med": 86.4,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2021,
     "stateAbbr": "WV",
     "fips": "54",
     "saidi": 1117.2,
-    "saifi": 2.38
+    "saifi": 2.4,
+    "saidi_no_med": 451.6,
+    "saifi_no_med": 2.1
   },
   {
     "year": 2021,
     "stateAbbr": "WY",
     "fips": "56",
     "saidi": 170.5,
-    "saifi": 1.16
+    "saifi": 1.2,
+    "saidi_no_med": 124.0,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2022,
     "stateAbbr": "AK",
     "fips": "02",
     "saidi": 575.2,
-    "saifi": 3.52
+    "saifi": 3.5,
+    "saidi_no_med": 334.9,
+    "saifi_no_med": 3.4
   },
   {
     "year": 2022,
     "stateAbbr": "AL",
     "fips": "01",
     "saidi": 210.1,
-    "saifi": 1.45
+    "saifi": 1.4,
+    "saidi_no_med": 139.3,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2022,
     "stateAbbr": "AR",
     "fips": "05",
     "saidi": 415.5,
-    "saifi": 2.11
+    "saifi": 2.1,
+    "saidi_no_med": 274.7,
+    "saifi_no_med": 1.8
   },
   {
     "year": 2022,
     "stateAbbr": "AZ",
     "fips": "04",
     "saidi": 139.7,
-    "saifi": 1.05
+    "saifi": 1.0,
+    "saidi_no_med": 72.3,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2022,
     "stateAbbr": "CA",
     "fips": "06",
     "saidi": 198.5,
-    "saifi": 1.25
+    "saifi": 1.2,
+    "saidi_no_med": 150.7,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2022,
     "stateAbbr": "CO",
     "fips": "08",
     "saidi": 141.5,
-    "saifi": 1.03
+    "saifi": 1.0,
+    "saidi_no_med": 96.2,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2022,
     "stateAbbr": "CT",
     "fips": "09",
     "saidi": 157.4,
-    "saifi": 0.82
+    "saifi": 0.8,
+    "saidi_no_med": 66.1,
+    "saifi_no_med": 0.6
   },
   {
     "year": 2022,
     "stateAbbr": "DC",
     "fips": "11",
     "saidi": 33.7,
-    "saifi": 0.3
+    "saifi": 0.3,
+    "saidi_no_med": 26.3,
+    "saifi_no_med": 0.3
   },
   {
     "year": 2022,
     "stateAbbr": "DE",
     "fips": "10",
     "saidi": 79.8,
-    "saifi": 0.85
+    "saifi": 0.8,
+    "saidi_no_med": 66.4,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2022,
     "stateAbbr": "FL",
     "fips": "12",
     "saidi": 1146.3,
-    "saifi": 1.48
+    "saifi": 1.5,
+    "saidi_no_med": 69.5,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2022,
     "stateAbbr": "GA",
     "fips": "13",
     "saidi": 264.3,
-    "saifi": 1.7
+    "saifi": 1.7,
+    "saidi_no_med": 134.6,
+    "saifi_no_med": 1.3
   },
   {
     "year": 2022,
     "stateAbbr": "HI",
     "fips": "15",
     "saidi": 187.2,
-    "saifi": 1.65
+    "saifi": 1.6,
+    "saidi_no_med": 105.9,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2022,
     "stateAbbr": "IA",
     "fips": "19",
     "saidi": 85.8,
-    "saifi": 0.89
+    "saifi": 0.9,
+    "saidi_no_med": 75.5,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2022,
     "stateAbbr": "ID",
     "fips": "16",
     "saidi": 180.7,
-    "saifi": 1.17
+    "saifi": 1.2,
+    "saidi_no_med": 158.3,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2022,
     "stateAbbr": "IL",
     "fips": "17",
     "saidi": 90.4,
-    "saifi": 0.76
+    "saifi": 0.8,
+    "saidi_no_med": 59.0,
+    "saifi_no_med": 0.6
   },
   {
     "year": 2022,
     "stateAbbr": "IN",
     "fips": "18",
     "saidi": 279.3,
-    "saifi": 1.43
+    "saifi": 1.4,
+    "saidi_no_med": 137.4,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2022,
     "stateAbbr": "KS",
     "fips": "20",
     "saidi": 178.8,
-    "saifi": 1.32
+    "saifi": 1.3,
+    "saidi_no_med": 108.1,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2022,
     "stateAbbr": "KY",
     "fips": "21",
     "saidi": 345.8,
-    "saifi": 1.78
+    "saifi": 1.8,
+    "saidi_no_med": 151.7,
+    "saifi_no_med": 1.3
   },
   {
     "year": 2022,
     "stateAbbr": "LA",
     "fips": "22",
     "saidi": 304.0,
-    "saifi": 2.08
+    "saifi": 2.1,
+    "saidi_no_med": 246.1,
+    "saifi_no_med": 1.9
   },
   {
     "year": 2022,
     "stateAbbr": "MA",
     "fips": "25",
     "saidi": 163.2,
-    "saifi": 1.08
+    "saifi": 1.1,
+    "saidi_no_med": 83.0,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2022,
     "stateAbbr": "MD",
     "fips": "24",
     "saidi": 259.1,
-    "saifi": 1.16
+    "saifi": 1.2,
+    "saidi_no_med": 84.2,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2022,
     "stateAbbr": "ME",
     "fips": "23",
     "saidi": 963.6,
-    "saifi": 3.0
+    "saifi": 3.0,
+    "saidi_no_med": 216.7,
+    "saifi_no_med": 2.0
   },
   {
     "year": 2022,
     "stateAbbr": "MI",
     "fips": "26",
     "saidi": 513.1,
-    "saifi": 1.34
+    "saifi": 1.3,
+    "saidi_no_med": 166.0,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2022,
     "stateAbbr": "MN",
     "fips": "27",
     "saidi": 273.7,
-    "saifi": 1.21
+    "saifi": 1.2,
+    "saidi_no_med": 81.7,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2022,
     "stateAbbr": "MO",
     "fips": "29",
     "saidi": 148.0,
-    "saifi": 1.05
+    "saifi": 1.0,
+    "saidi_no_med": 97.0,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2022,
     "stateAbbr": "MS",
     "fips": "28",
     "saidi": 448.5,
-    "saifi": 2.43
+    "saifi": 2.4,
+    "saidi_no_med": 246.7,
+    "saifi_no_med": 2.0
   },
   {
     "year": 2022,
     "stateAbbr": "MT",
     "fips": "30",
     "saidi": 225.6,
-    "saifi": 1.38
+    "saifi": 1.4,
+    "saidi_no_med": 146.1,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2022,
     "stateAbbr": "NC",
     "fips": "37",
     "saidi": 456.3,
-    "saifi": 1.93
+    "saifi": 1.9,
+    "saidi_no_med": 148.6,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2022,
     "stateAbbr": "ND",
     "fips": "38",
     "saidi": 559.6,
-    "saifi": 1.3
+    "saifi": 1.3,
+    "saidi_no_med": 99.6,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2022,
     "stateAbbr": "NE",
     "fips": "31",
     "saidi": 82.1,
-    "saifi": 0.61
+    "saifi": 0.6,
+    "saidi_no_med": 62.3,
+    "saifi_no_med": 0.5
   },
   {
     "year": 2022,
     "stateAbbr": "NH",
     "fips": "33",
     "saidi": 616.7,
-    "saifi": 1.78
+    "saifi": 1.8,
+    "saidi_no_med": 107.5,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2022,
     "stateAbbr": "NJ",
     "fips": "34",
     "saidi": 89.7,
-    "saifi": 0.88
+    "saifi": 0.9,
+    "saidi_no_med": 79.0,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2022,
     "stateAbbr": "NM",
     "fips": "35",
     "saidi": 182.6,
-    "saifi": 1.17
+    "saifi": 1.2,
+    "saidi_no_med": 129.1,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2022,
     "stateAbbr": "NV",
     "fips": "32",
     "saidi": 195.1,
-    "saifi": 0.98
+    "saifi": 1.0,
+    "saidi_no_med": 77.0,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2022,
     "stateAbbr": "NY",
     "fips": "36",
     "saidi": 203.0,
-    "saifi": 0.87
+    "saifi": 0.9,
+    "saidi_no_med": 77.6,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2022,
     "stateAbbr": "OH",
     "fips": "39",
     "saidi": 413.2,
-    "saifi": 1.52
+    "saifi": 1.5,
+    "saidi_no_med": 144.0,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2022,
     "stateAbbr": "OK",
     "fips": "40",
     "saidi": 195.6,
-    "saifi": 1.44
+    "saifi": 1.4,
+    "saidi_no_med": 144.2,
+    "saifi_no_med": 1.3
   },
   {
     "year": 2022,
     "stateAbbr": "OR",
     "fips": "41",
     "saidi": 322.9,
-    "saifi": 1.29
+    "saifi": 1.3,
+    "saidi_no_med": 123.4,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2022,
     "stateAbbr": "PA",
     "fips": "42",
     "saidi": 200.4,
-    "saifi": 1.14
+    "saifi": 1.1,
+    "saidi_no_med": 126.1,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2022,
     "stateAbbr": "RI",
     "fips": "44",
     "saidi": 81.9,
-    "saifi": 0.96
+    "saifi": 1.0,
+    "saidi_no_med": 63.2,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2022,
     "stateAbbr": "SC",
     "fips": "45",
     "saidi": 301.1,
-    "saifi": 1.87
+    "saifi": 1.9,
+    "saidi_no_med": 114.8,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2022,
     "stateAbbr": "SD",
     "fips": "46",
     "saidi": 327.1,
-    "saifi": 1.23
+    "saifi": 1.2,
+    "saidi_no_med": 123.5,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2022,
     "stateAbbr": "TN",
     "fips": "47",
     "saidi": 404.5,
-    "saifi": 3.2
+    "saifi": 3.2,
+    "saidi_no_med": 188.3,
+    "saifi_no_med": 2.0
   },
   {
     "year": 2022,
     "stateAbbr": "TX",
     "fips": "48",
     "saidi": 212.0,
-    "saifi": 1.65
+    "saifi": 1.6,
+    "saidi_no_med": 127.5,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2022,
     "stateAbbr": "UT",
     "fips": "49",
     "saidi": 111.3,
-    "saifi": 0.89
+    "saifi": 0.9,
+    "saidi_no_med": 100.4,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2022,
     "stateAbbr": "VA",
     "fips": "51",
     "saidi": 593.9,
-    "saifi": 1.85
+    "saifi": 1.8,
+    "saidi_no_med": 187.5,
+    "saifi_no_med": 1.3
   },
   {
     "year": 2022,
     "stateAbbr": "VT",
     "fips": "50",
     "saidi": 963.5,
-    "saifi": 2.73
+    "saifi": 2.7,
+    "saidi_no_med": 267.6,
+    "saifi_no_med": 2.0
   },
   {
     "year": 2022,
     "stateAbbr": "WA",
     "fips": "53",
     "saidi": 395.3,
-    "saifi": 1.48
+    "saifi": 1.5,
+    "saidi_no_med": 154.9,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2022,
     "stateAbbr": "WI",
     "fips": "55",
     "saidi": 273.5,
-    "saifi": 1.04
+    "saifi": 1.0,
+    "saidi_no_med": 99.6,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2022,
     "stateAbbr": "WV",
     "fips": "54",
     "saidi": 1003.2,
-    "saifi": 2.74
+    "saifi": 2.7,
+    "saidi_no_med": 543.6,
+    "saifi_no_med": 2.2
   },
   {
     "year": 2022,
     "stateAbbr": "WY",
     "fips": "56",
     "saidi": 170.1,
-    "saifi": 1.33
+    "saifi": 1.3,
+    "saidi_no_med": 120.4,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2023,
     "stateAbbr": "AK",
     "fips": "02",
     "saidi": 374.8,
-    "saifi": 2.7
+    "saifi": 2.7,
+    "saidi_no_med": 325.7,
+    "saifi_no_med": 2.4
   },
   {
     "year": 2023,
     "stateAbbr": "AL",
     "fips": "01",
     "saidi": 294.2,
-    "saifi": 1.57
+    "saifi": 1.6,
+    "saidi_no_med": 120.7,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2023,
     "stateAbbr": "AR",
     "fips": "05",
     "saidi": 911.2,
-    "saifi": 2.1
+    "saifi": 2.1,
+    "saidi_no_med": 221.7,
+    "saifi_no_med": 1.5
   },
   {
     "year": 2023,
     "stateAbbr": "AZ",
     "fips": "04",
     "saidi": 106.8,
-    "saifi": 0.98
+    "saifi": 1.0,
+    "saidi_no_med": 69.3,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2023,
     "stateAbbr": "CA",
     "fips": "06",
     "saidi": 346.6,
-    "saifi": 1.4
+    "saifi": 1.4,
+    "saidi_no_med": 152.1,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2023,
     "stateAbbr": "CO",
     "fips": "08",
     "saidi": 99.2,
-    "saifi": 0.92
+    "saifi": 0.9,
+    "saidi_no_med": 88.4,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2023,
     "stateAbbr": "CT",
     "fips": "09",
     "saidi": 164.6,
-    "saifi": 0.87
+    "saifi": 0.9,
+    "saidi_no_med": 70.3,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2023,
     "stateAbbr": "DC",
     "fips": "11",
     "saidi": 71.9,
-    "saifi": 0.37
+    "saifi": 0.4,
+    "saidi_no_med": 33.3,
+    "saifi_no_med": 0.3
   },
   {
     "year": 2023,
     "stateAbbr": "DE",
     "fips": "10",
     "saidi": 108.2,
-    "saifi": 0.83
+    "saifi": 0.8,
+    "saidi_no_med": 60.4,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2023,
     "stateAbbr": "FL",
     "fips": "12",
     "saidi": 160.1,
-    "saifi": 1.01
+    "saifi": 1.0,
+    "saidi_no_med": 69.1,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2023,
     "stateAbbr": "GA",
     "fips": "13",
     "saidi": 349.2,
-    "saifi": 1.89
+    "saifi": 1.9,
+    "saidi_no_med": 136.8,
+    "saifi_no_med": 1.4
   },
   {
     "year": 2023,
     "stateAbbr": "HI",
     "fips": "15",
     "saidi": 491.8,
-    "saifi": 1.79
+    "saifi": 1.8,
+    "saidi_no_med": 148.6,
+    "saifi_no_med": 1.4
   },
   {
     "year": 2023,
     "stateAbbr": "IA",
     "fips": "19",
     "saidi": 104.9,
-    "saifi": 0.91
+    "saifi": 0.9,
+    "saidi_no_med": 70.4,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2023,
     "stateAbbr": "ID",
     "fips": "16",
     "saidi": 137.5,
-    "saifi": 1.07
+    "saifi": 1.1,
+    "saidi_no_med": 119.4,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2023,
     "stateAbbr": "IL",
     "fips": "17",
     "saidi": 208.2,
-    "saifi": 0.84
+    "saifi": 0.8,
+    "saidi_no_med": 56.2,
+    "saifi_no_med": 0.6
   },
   {
     "year": 2023,
     "stateAbbr": "IN",
     "fips": "18",
     "saidi": 455.4,
-    "saifi": 1.45
+    "saifi": 1.4,
+    "saidi_no_med": 110.3,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2023,
     "stateAbbr": "KS",
     "fips": "20",
     "saidi": 283.1,
-    "saifi": 1.32
+    "saifi": 1.3,
+    "saidi_no_med": 101.7,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2023,
     "stateAbbr": "KY",
     "fips": "21",
     "saidi": 868.2,
-    "saifi": 1.9
+    "saifi": 1.9,
+    "saidi_no_med": 143.4,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2023,
     "stateAbbr": "LA",
     "fips": "22",
     "saidi": 584.2,
-    "saifi": 2.12
+    "saifi": 2.1,
+    "saidi_no_med": 195.0,
+    "saifi_no_med": 1.6
   },
   {
     "year": 2023,
     "stateAbbr": "MA",
     "fips": "25",
     "saidi": 259.4,
-    "saifi": 1.06
+    "saifi": 1.1,
+    "saidi_no_med": 82.2,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2023,
     "stateAbbr": "MD",
     "fips": "24",
     "saidi": 166.2,
-    "saifi": 0.92
+    "saifi": 0.9,
+    "saidi_no_med": 66.9,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2023,
     "stateAbbr": "ME",
     "fips": "23",
     "saidi": 1863.0,
-    "saifi": 3.31
+    "saifi": 3.3,
+    "saidi_no_med": 247.4,
+    "saifi_no_med": 2.0
   },
   {
     "year": 2023,
     "stateAbbr": "MI",
     "fips": "26",
     "saidi": 1093.6,
-    "saifi": 1.51
+    "saifi": 1.5,
+    "saidi_no_med": 162.7,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2023,
     "stateAbbr": "MN",
     "fips": "27",
     "saidi": 126.4,
-    "saifi": 0.97
+    "saifi": 1.0,
+    "saidi_no_med": 73.4,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2023,
     "stateAbbr": "MO",
     "fips": "29",
     "saidi": 371.8,
-    "saifi": 1.31
+    "saifi": 1.3,
+    "saidi_no_med": 106.7,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2023,
     "stateAbbr": "MS",
     "fips": "28",
     "saidi": 802.1,
-    "saifi": 2.72
+    "saifi": 2.7,
+    "saidi_no_med": 252.8,
+    "saifi_no_med": 2.1
   },
   {
     "year": 2023,
     "stateAbbr": "MT",
     "fips": "30",
     "saidi": 118.7,
-    "saifi": 1.07
+    "saifi": 1.1,
+    "saidi_no_med": 117.1,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2023,
     "stateAbbr": "NC",
     "fips": "37",
     "saidi": 252.0,
-    "saifi": 1.51
+    "saifi": 1.5,
+    "saidi_no_med": 153.5,
+    "saifi_no_med": 1.3
   },
   {
     "year": 2023,
     "stateAbbr": "ND",
     "fips": "38",
     "saidi": 208.6,
-    "saifi": 1.05
+    "saifi": 1.0,
+    "saidi_no_med": 89.9,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2023,
     "stateAbbr": "NE",
     "fips": "31",
     "saidi": 72.6,
-    "saifi": 0.56
+    "saifi": 0.6,
+    "saidi_no_med": 56.8,
+    "saifi_no_med": 0.5
   },
   {
     "year": 2023,
     "stateAbbr": "NH",
     "fips": "33",
     "saidi": 645.8,
-    "saifi": 1.75
+    "saifi": 1.8,
+    "saidi_no_med": 124.6,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2023,
     "stateAbbr": "NJ",
     "fips": "34",
     "saidi": 108.3,
-    "saifi": 0.88
+    "saifi": 0.9,
+    "saidi_no_med": 88.5,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2023,
     "stateAbbr": "NM",
     "fips": "35",
     "saidi": 168.9,
-    "saifi": 1.24
+    "saifi": 1.2,
+    "saidi_no_med": 132.3,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2023,
     "stateAbbr": "NV",
     "fips": "32",
     "saidi": 138.7,
-    "saifi": 0.94
+    "saifi": 0.9,
+    "saidi_no_med": 81.2,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2023,
     "stateAbbr": "NY",
     "fips": "36",
     "saidi": 120.0,
-    "saifi": 0.72
+    "saifi": 0.7,
+    "saidi_no_med": 70.0,
+    "saifi_no_med": 0.6
   },
   {
     "year": 2023,
     "stateAbbr": "OH",
     "fips": "39",
     "saidi": 366.2,
-    "saifi": 1.25
+    "saifi": 1.2,
+    "saidi_no_med": 127.0,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2023,
     "stateAbbr": "OK",
     "fips": "40",
     "saidi": 896.6,
-    "saifi": 1.86
+    "saifi": 1.9,
+    "saidi_no_med": 139.3,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2023,
     "stateAbbr": "OR",
     "fips": "41",
     "saidi": 126.9,
-    "saifi": 0.83
+    "saifi": 0.8,
+    "saidi_no_med": 108.0,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2023,
     "stateAbbr": "PA",
     "fips": "42",
     "saidi": 252.7,
-    "saifi": 1.11
+    "saifi": 1.1,
+    "saidi_no_med": 119.2,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2023,
     "stateAbbr": "RI",
     "fips": "44",
     "saidi": 104.6,
-    "saifi": 0.78
+    "saifi": 0.8,
+    "saidi_no_med": 52.2,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2023,
     "stateAbbr": "SC",
     "fips": "45",
     "saidi": 167.2,
-    "saifi": 1.51
+    "saifi": 1.5,
+    "saidi_no_med": 126.1,
+    "saifi_no_med": 1.3
   },
   {
     "year": 2023,
     "stateAbbr": "SD",
     "fips": "46",
     "saidi": 77.0,
-    "saifi": 1.01
+    "saifi": 1.0,
+    "saidi_no_med": 63.2,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2023,
     "stateAbbr": "TN",
     "fips": "47",
     "saidi": 857.9,
-    "saifi": 2.81
+    "saifi": 2.8,
+    "saidi_no_med": 186.1,
+    "saifi_no_med": 1.9
   },
   {
     "year": 2023,
     "stateAbbr": "TX",
     "fips": "48",
     "saidi": 496.2,
-    "saifi": 1.76
+    "saifi": 1.8,
+    "saidi_no_med": 124.7,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2023,
     "stateAbbr": "UT",
     "fips": "49",
     "saidi": 127.1,
-    "saifi": 0.92
+    "saifi": 0.9,
+    "saidi_no_med": 109.8,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2023,
     "stateAbbr": "VA",
     "fips": "51",
     "saidi": 221.1,
-    "saifi": 1.46
+    "saifi": 1.5,
+    "saidi_no_med": 159.3,
+    "saifi_no_med": 1.3
   },
   {
     "year": 2023,
     "stateAbbr": "VT",
     "fips": "50",
     "saidi": 744.4,
-    "saifi": 2.48
+    "saifi": 2.5,
+    "saidi_no_med": 221.3,
+    "saifi_no_med": 1.6
   },
   {
     "year": 2023,
     "stateAbbr": "WA",
     "fips": "53",
     "saidi": 151.7,
-    "saifi": 1.03
+    "saifi": 1.0,
+    "saidi_no_med": 130.6,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2023,
     "stateAbbr": "WI",
     "fips": "55",
     "saidi": 183.0,
-    "saifi": 0.88
+    "saifi": 0.9,
+    "saidi_no_med": 72.4,
+    "saifi_no_med": 0.6
   },
   {
     "year": 2023,
     "stateAbbr": "WV",
     "fips": "54",
     "saidi": 751.5,
-    "saifi": 2.35
+    "saifi": 2.4,
+    "saidi_no_med": 385.7,
+    "saifi_no_med": 1.9
   },
   {
     "year": 2023,
     "stateAbbr": "WY",
     "fips": "56",
     "saidi": 127.0,
-    "saifi": 0.99
+    "saifi": 1.0,
+    "saidi_no_med": 102.6,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2024,
     "stateAbbr": "AK",
     "fips": "02",
     "saidi": 327.1,
-    "saifi": 2.59
+    "saifi": 2.6,
+    "saidi_no_med": 192.4,
+    "saifi_no_med": 1.9
   },
   {
     "year": 2024,
     "stateAbbr": "AL",
     "fips": "01",
     "saidi": 279.4,
-    "saifi": 1.87
+    "saifi": 1.9,
+    "saidi_no_med": 118.3,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2024,
     "stateAbbr": "AR",
     "fips": "05",
     "saidi": 509.1,
-    "saifi": 2.13
+    "saifi": 2.1,
+    "saidi_no_med": 194.6,
+    "saifi_no_med": 1.6
   },
   {
     "year": 2024,
     "stateAbbr": "AZ",
     "fips": "04",
     "saidi": 87.5,
-    "saifi": 0.99
+    "saifi": 1.0,
+    "saidi_no_med": 72.0,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2024,
     "stateAbbr": "CA",
     "fips": "06",
     "saidi": 279.6,
-    "saifi": 1.34
+    "saifi": 1.3,
+    "saidi_no_med": 158.4,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2024,
     "stateAbbr": "CO",
     "fips": "08",
     "saidi": 255.1,
-    "saifi": 1.41
+    "saifi": 1.4,
+    "saidi_no_med": 119.0,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2024,
     "stateAbbr": "CT",
     "fips": "09",
     "saidi": 153.6,
-    "saifi": 0.88
+    "saifi": 0.9,
+    "saidi_no_med": 73.1,
+    "saifi_no_med": 0.6
   },
   {
     "year": 2024,
     "stateAbbr": "DC",
     "fips": "11",
     "saidi": 32.6,
-    "saifi": 0.27
+    "saifi": 0.3,
+    "saidi_no_med": 26.4,
+    "saifi_no_med": 0.2
   },
   {
     "year": 2024,
     "stateAbbr": "DE",
     "fips": "10",
     "saidi": 116.1,
-    "saifi": 0.84
+    "saifi": 0.8,
+    "saidi_no_med": 65.9,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2024,
     "stateAbbr": "FL",
     "fips": "12",
     "saidi": 1321.5,
-    "saifi": 1.77
+    "saifi": 1.8,
+    "saidi_no_med": 66.4,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2024,
     "stateAbbr": "GA",
     "fips": "13",
     "saidi": 1229.1,
-    "saifi": 2.12
+    "saifi": 2.1,
+    "saidi_no_med": 212.3,
+    "saifi_no_med": 1.3
   },
   {
     "year": 2024,
     "stateAbbr": "HI",
     "fips": "15",
     "saidi": 320.6,
-    "saifi": 2.62
+    "saifi": 2.6,
+    "saidi_no_med": 225.6,
+    "saifi_no_med": 2.2
   },
   {
     "year": 2024,
     "stateAbbr": "IA",
     "fips": "19",
     "saidi": 166.7,
-    "saifi": 1.15
+    "saifi": 1.2,
+    "saidi_no_med": 89.8,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2024,
     "stateAbbr": "ID",
     "fips": "16",
     "saidi": 232.8,
-    "saifi": 1.31
+    "saifi": 1.3,
+    "saidi_no_med": 174.0,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2024,
     "stateAbbr": "IL",
     "fips": "17",
     "saidi": 156.9,
-    "saifi": 0.85
+    "saifi": 0.8,
+    "saidi_no_med": 59.4,
+    "saifi_no_med": 0.6
   },
   {
     "year": 2024,
     "stateAbbr": "IN",
     "fips": "18",
     "saidi": 312.4,
-    "saifi": 1.28
+    "saifi": 1.3,
+    "saidi_no_med": 121.4,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2024,
     "stateAbbr": "KS",
     "fips": "20",
     "saidi": 285.6,
-    "saifi": 1.51
+    "saifi": 1.5,
+    "saidi_no_med": 103.6,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2024,
     "stateAbbr": "KY",
     "fips": "21",
     "saidi": 648.3,
-    "saifi": 1.95
+    "saifi": 2.0,
+    "saidi_no_med": 153.3,
+    "saifi_no_med": 1.3
   },
   {
     "year": 2024,
     "stateAbbr": "LA",
     "fips": "22",
     "saidi": 727.5,
-    "saifi": 2.72
+    "saifi": 2.7,
+    "saidi_no_med": 206.0,
+    "saifi_no_med": 1.8
   },
   {
     "year": 2024,
     "stateAbbr": "MA",
     "fips": "25",
     "saidi": 102.0,
-    "saifi": 0.84
+    "saifi": 0.8,
+    "saidi_no_med": 76.1,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2024,
     "stateAbbr": "MD",
     "fips": "24",
     "saidi": 118.1,
-    "saifi": 0.82
+    "saifi": 0.8,
+    "saidi_no_med": 75.1,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2024,
     "stateAbbr": "ME",
     "fips": "23",
     "saidi": 1748.6,
-    "saifi": 3.64
+    "saifi": 3.6,
+    "saidi_no_med": 274.0,
+    "saifi_no_med": 2.1
   },
   {
     "year": 2024,
     "stateAbbr": "MI",
     "fips": "26",
     "saidi": 470.4,
-    "saifi": 1.36
+    "saifi": 1.4,
+    "saidi_no_med": 160.1,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2024,
     "stateAbbr": "MN",
     "fips": "27",
     "saidi": 219.6,
-    "saifi": 1.25
+    "saifi": 1.2,
+    "saidi_no_med": 92.2,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2024,
     "stateAbbr": "MO",
     "fips": "29",
     "saidi": 224.3,
-    "saifi": 1.19
+    "saifi": 1.2,
+    "saidi_no_med": 106.0,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2024,
     "stateAbbr": "MS",
     "fips": "28",
     "saidi": 567.1,
-    "saifi": 2.56
+    "saifi": 2.6,
+    "saidi_no_med": 266.3,
+    "saifi_no_med": 2.0
   },
   {
     "year": 2024,
     "stateAbbr": "MT",
     "fips": "30",
     "saidi": 351.5,
-    "saifi": 1.62
+    "saifi": 1.6,
+    "saidi_no_med": 156.6,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2024,
     "stateAbbr": "NC",
     "fips": "37",
     "saidi": 1441.0,
-    "saifi": 1.81
+    "saifi": 1.8,
+    "saidi_no_med": 141.4,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2024,
     "stateAbbr": "ND",
     "fips": "38",
     "saidi": 99.1,
-    "saifi": 0.91
+    "saifi": 0.9,
+    "saidi_no_med": 84.2,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2024,
     "stateAbbr": "NE",
     "fips": "31",
     "saidi": 641.7,
-    "saifi": 1.23
+    "saifi": 1.2,
+    "saidi_no_med": 73.6,
+    "saifi_no_med": 0.6
   },
   {
     "year": 2024,
     "stateAbbr": "NH",
     "fips": "33",
     "saidi": 922.7,
-    "saifi": 2.02
+    "saifi": 2.0,
+    "saidi_no_med": 132.3,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2024,
     "stateAbbr": "NJ",
     "fips": "34",
     "saidi": 174.2,
-    "saifi": 1.12
+    "saifi": 1.1,
+    "saidi_no_med": 99.7,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2024,
     "stateAbbr": "NM",
     "fips": "35",
     "saidi": 278.8,
-    "saifi": 1.32
+    "saifi": 1.3,
+    "saidi_no_med": 156.5,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2024,
     "stateAbbr": "NV",
     "fips": "32",
     "saidi": 158.9,
-    "saifi": 1.11
+    "saifi": 1.1,
+    "saidi_no_med": 63.8,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2024,
     "stateAbbr": "NY",
     "fips": "36",
     "saidi": 219.9,
-    "saifi": 0.91
+    "saifi": 0.9,
+    "saidi_no_med": 72.0,
+    "saifi_no_med": 0.6
   },
   {
     "year": 2024,
     "stateAbbr": "OH",
     "fips": "39",
     "saidi": 510.5,
-    "saifi": 1.3
+    "saifi": 1.3,
+    "saidi_no_med": 133.2,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2024,
     "stateAbbr": "OK",
     "fips": "40",
     "saidi": 270.9,
-    "saifi": 1.73
+    "saifi": 1.7,
+    "saidi_no_med": 119.6,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2024,
     "stateAbbr": "OR",
     "fips": "41",
     "saidi": 591.0,
-    "saifi": 1.35
+    "saifi": 1.4,
+    "saidi_no_med": 130.9,
+    "saifi_no_med": 0.9
   },
   {
     "year": 2024,
     "stateAbbr": "PA",
     "fips": "42",
     "saidi": 336.1,
-    "saifi": 1.35
+    "saifi": 1.4,
+    "saidi_no_med": 131.0,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2024,
     "stateAbbr": "RI",
     "fips": "44",
     "saidi": 104.2,
-    "saifi": 0.9
+    "saifi": 0.9,
+    "saidi_no_med": 60.8,
+    "saifi_no_med": 0.8
   },
   {
     "year": 2024,
     "stateAbbr": "SC",
     "fips": "45",
     "saidi": 3136.5,
-    "saifi": 2.36
+    "saifi": 2.4,
+    "saidi_no_med": 117.8,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2024,
     "stateAbbr": "SD",
     "fips": "46",
     "saidi": 84.7,
-    "saifi": 0.82
+    "saifi": 0.8,
+    "saidi_no_med": 62.1,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2024,
     "stateAbbr": "TN",
     "fips": "47",
     "saidi": 278.6,
-    "saifi": 2.0
+    "saifi": 2.0,
+    "saidi_no_med": 159.5,
+    "saifi_no_med": 1.8
   },
   {
     "year": 2024,
     "stateAbbr": "TX",
     "fips": "48",
     "saidi": 1270.6,
-    "saifi": 2.11
+    "saifi": 2.1,
+    "saidi_no_med": 129.4,
+    "saifi_no_med": 1.2
   },
   {
     "year": 2024,
     "stateAbbr": "UT",
     "fips": "49",
     "saidi": 119.8,
-    "saifi": 1.03
+    "saifi": 1.0,
+    "saidi_no_med": 106.7,
+    "saifi_no_med": 1.0
   },
   {
     "year": 2024,
     "stateAbbr": "VA",
     "fips": "51",
     "saidi": 418.3,
-    "saifi": 1.63
+    "saifi": 1.6,
+    "saidi_no_med": 166.4,
+    "saifi_no_med": 1.3
   },
   {
     "year": 2024,
     "stateAbbr": "VT",
     "fips": "50",
     "saidi": 696.7,
-    "saifi": 2.6
+    "saifi": 2.6,
+    "saidi_no_med": 275.0,
+    "saifi_no_med": 1.7
   },
   {
     "year": 2024,
     "stateAbbr": "WA",
     "fips": "53",
     "saidi": 623.5,
-    "saifi": 1.75
+    "saifi": 1.8,
+    "saidi_no_med": 158.6,
+    "saifi_no_med": 1.1
   },
   {
     "year": 2024,
     "stateAbbr": "WI",
     "fips": "55",
     "saidi": 266.1,
-    "saifi": 1.02
+    "saifi": 1.0,
+    "saidi_no_med": 91.3,
+    "saifi_no_med": 0.7
   },
   {
     "year": 2024,
     "stateAbbr": "WV",
     "fips": "54",
     "saidi": 1165.5,
-    "saifi": 2.83
+    "saifi": 2.8,
+    "saidi_no_med": 486.1,
+    "saifi_no_med": 2.3
   },
   {
     "year": 2024,
     "stateAbbr": "WY",
     "fips": "56",
     "saidi": 137.8,
-    "saifi": 1.0
+    "saifi": 1.0,
+    "saidi_no_med": 116.0,
+    "saifi_no_med": 0.9
   }
 ]

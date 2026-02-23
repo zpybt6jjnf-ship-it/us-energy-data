@@ -144,6 +144,8 @@ def transform_reliability(raw_df: pd.DataFrame) -> dict:
 
         saidi = _weighted_avg(group, "saidi")
         saifi = _weighted_avg(group, "saifi")
+        saidi_no_med = _weighted_avg(group, "saidi_no_med")
+        saifi_no_med = _weighted_avg(group, "saifi_no_med")
         if np.isnan(saidi):
             continue
 
@@ -153,6 +155,8 @@ def transform_reliability(raw_df: pd.DataFrame) -> dict:
             "fips": STATE_ABBR_TO_FIPS[state_abbr],
             "saidi": round(saidi, 1),
             "saifi": round(saifi, 2) if not np.isnan(saifi) else None,
+            "saidi_no_med": round(saidi_no_med, 1) if not np.isnan(saidi_no_med) else None,
+            "saifi_no_med": round(saifi_no_med, 2) if not np.isnan(saifi_no_med) else None,
         })
 
     state_trend_records.sort(key=lambda r: (r["year"], r["stateAbbr"]))

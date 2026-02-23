@@ -6,7 +6,7 @@
 	import Dropdown from '$components/ui/Dropdown.svelte';
 	import StateSelect from '$components/ui/StateSelect.svelte';
 	import TimeRangeSlider from '$components/ui/TimeRangeSlider.svelte';
-	import { chartConfig, updateConfig } from '$stores/chartConfig';
+	import { chartConfig, updateConfig, toggleState, hasActiveFilters, resetConfig } from '$stores/chartConfig';
 	import { stateFips, stateFromAbbr } from '$utils/states';
 	import { CHART_COLORS, BILLS_COLORS } from '$utils/colors';
 	import { interpolateYlOrRd } from 'd3-scale-chromatic';
@@ -16,7 +16,7 @@
 	let { data } = $props();
 
 	const priceAnnotations = [
-		{ date: 2008, label: '08 Recession' },
+		{ date: 2009, label: '08–09 Recession' },
 		{ date: 2020, label: 'COVID-19', labelPosition: 'bottom' as const },
 		{ date: 2022, label: 'IRA' },
 	];
@@ -92,7 +92,7 @@
 		source: 'US Energy Information Administration',
 		sourceUrl: 'https://www.eia.gov/electricity/data.php',
 		unit: 'cents/kWh',
-		lastUpdated: new Date().toISOString().split('T')[0],
+		lastUpdated: data.lastUpdated,
 		description: 'Average retail electricity prices vary significantly across sectors. Residential customers typically pay the highest rates due to distribution costs, while industrial users benefit from bulk pricing and direct market access. Use the state selector to compare individual states against the national average.',
 		caveats: 'Prices are nominal (not adjusted for inflation). National averages are revenue-weighted across all utilities. Some state-level data may be incomplete for earlier years.',
 	};
@@ -124,7 +124,7 @@
 		source: 'US Energy Information Administration',
 		sourceUrl: 'https://www.eia.gov/electricity/data.php',
 		unit: 'cents/kWh',
-		lastUpdated: new Date().toISOString().split('T')[0],
+		lastUpdated: data.lastUpdated,
 		description: 'Electricity prices vary widely across states, driven by differences in fuel mix, regulatory environment, and infrastructure costs. States with abundant hydropower (e.g., Washington) tend to have the lowest rates, while island states (Hawaii) and those with older infrastructure pay the most.',
 		caveats: 'Residential prices only. Commercial and industrial rates follow different patterns. Colors use a yellow-to-red scale where yellow indicates lower prices.',
 	});
@@ -166,7 +166,7 @@
 		source: 'US Energy Information Administration',
 		sourceUrl: 'https://www.eia.gov/electricity/data.php',
 		unit: '',
-		lastUpdated: new Date().toISOString().split('T')[0],
+		lastUpdated: data.lastUpdated,
 		description: 'Is there a relationship between renewable energy adoption and electricity prices? This scatter plot shows each state\'s residential electricity price against its renewable generation share. The relationship is complex — states with cheap hydro tend to have both high renewables and low prices, while other factors like grid infrastructure and regulation also play major roles.',
 		caveats: 'Correlation does not imply causation. States with high renewable shares include those with abundant hydropower (historically cheap) and those with newer wind/solar capacity (varying cost impact). Residential prices reflect many factors beyond generation mix.',
 	});
@@ -203,7 +203,7 @@
 		source: 'US Energy Information Administration + CPI-U',
 		sourceUrl: 'https://www.eia.gov/electricity/data.php',
 		unit: '$',
-		lastUpdated: new Date().toISOString().split('T')[0],
+		lastUpdated: data.lastUpdated,
 		description: 'Electricity bills have risen in nominal terms but the increase is more modest after adjusting for inflation. The average US household consumes about 900 kWh per month.',
 		caveats: 'Bills estimated as average residential price × 900 kWh/month. Real values adjusted to 2024 dollars using CPI-U.',
 	};
@@ -241,6 +241,9 @@
 				onchange={(states) => updateConfig('state', states)}
 			/>
 			<TimeRangeSlider {startYear} {endYear} />
+			{#if hasActiveFilters($chartConfig)}
+				<button onclick={resetConfig} class="text-xs text-text-muted hover:text-accent transition-colors ml-auto">Reset</button>
+			{/if}
 		</div>
 	</div>
 
@@ -269,11 +272,11 @@
 	<div class="prose-width mt-6 insight-card">
 		<div class="flex items-start gap-4">
 			<div class="flex-shrink-0">
-				<span class="text-xl font-bold text-accent" style="font-family: var(--font-mono)">50%</span>
+				<span class="text-xl font-bold text-accent" style="font-family: var(--font-mono)">{sectorGap}%</span>
 				<span class="block text-[10px] uppercase tracking-wider text-text-muted mt-0.5">price gap</span>
 			</div>
 			<p class="text-sm leading-relaxed text-text-secondary">
-				Residential customers pay roughly 50% more per kWh than industrial users — a gap that has widened over the past decade.
+				Residential customers pay roughly {sectorGap}% more per kWh than industrial users — a gap that has widened over the past decade.
 			</p>
 		</div>
 	</div>
@@ -294,8 +297,12 @@
 				colorInterpolator={colorInterp}
 				valueFormat={format(',.1f')}
 				unit="cents/kWh"
+				onStateClick={toggleState}
 			/>
 		</ChartWrapper>
+		{#if selectedStates.length > 0}
+			<p class="text-xs text-text-muted mt-1">Shows all states — click a state to add it to the line chart filter</p>
+		{/if}
 	</section>
 
 	<!-- Section: Renewables and prices -->

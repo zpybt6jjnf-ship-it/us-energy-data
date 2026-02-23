@@ -8,6 +8,7 @@ const DEFAULTS: ChartConfig = {
 	sector: 'all',
 	metric: 'nominal',
 	med: 'with_med',
+	fuel: 'all',
 	startYear: 2001,
 	endYear: 2024,
 };
@@ -21,6 +22,7 @@ export const chartConfig = derived(page, ($page) => {
 		sector: params.get('sector') ?? DEFAULTS.sector,
 		metric: params.get('metric') ?? DEFAULTS.metric,
 		med: params.get('med') ?? DEFAULTS.med,
+		fuel: params.get('fuel') ?? DEFAULTS.fuel,
 		startYear: Number(params.get('start')) || DEFAULTS.startYear,
 		endYear: Number(params.get('end')) || DEFAULTS.endYear,
 	} satisfies ChartConfig;
@@ -46,6 +48,37 @@ export function updateConfig(key: string, value: string | string[] | number): vo
 	}
 
 	goto(url.pathname + url.search, { replaceState: true, noScroll: true });
+}
+
+/** Toggle a state abbreviation in/out of the selected states list */
+export function toggleState(abbr: string): void {
+	const url = new URL(window.location.href);
+	const current = url.searchParams.get('state')?.split(',').filter(Boolean) ?? [];
+	const idx = current.indexOf(abbr);
+	if (idx >= 0) {
+		current.splice(idx, 1);
+	} else {
+		current.push(abbr);
+	}
+	if (current.length === 0) {
+		url.searchParams.delete('state');
+	} else {
+		url.searchParams.set('state', current.join(','));
+	}
+	goto(url.pathname + url.search, { replaceState: true, noScroll: true });
+}
+
+/** Check if any filter deviates from defaults */
+export function hasActiveFilters(config: ChartConfig): boolean {
+	return (
+		config.states.length > 0 ||
+		config.sector !== DEFAULTS.sector ||
+		config.metric !== DEFAULTS.metric ||
+		config.med !== DEFAULTS.med ||
+		config.fuel !== DEFAULTS.fuel ||
+		config.startYear !== DEFAULTS.startYear ||
+		config.endYear !== DEFAULTS.endYear
+	);
 }
 
 /** Reset all config params to defaults */

@@ -9,7 +9,7 @@
 	import { ENERGY_SOURCE_COLORS, CHART_COLORS, CATEGORY_COLORS, STORAGE_COLOR, CARBON_INTENSITY_COLOR } from '$utils/colors';
 	import { stateFips, stateFromAbbr } from '$utils/states';
 	import { formatCompact } from '$utils/formatting';
-	import { chartConfig, updateConfig } from '$stores/chartConfig';
+	import { chartConfig, updateConfig, toggleState, hasActiveFilters, resetConfig } from '$stores/chartConfig';
 	import { interpolateGreens } from 'd3-scale-chromatic';
 	import { format } from 'd3-format';
 	import type { DataSeries, ChartMeta } from '$types/chart';
@@ -50,7 +50,7 @@
 		source: 'US Energy Information Administration',
 		sourceUrl: 'https://www.eia.gov/electricity/data.php',
 		unit: 'thousand MWh',
-		lastUpdated: new Date().toISOString().split('T')[0],
+		lastUpdated: data.lastUpdated,
 		description: 'Natural gas has overtaken coal as the dominant source of US electricity, while wind and solar have grown rapidly from a small base. Nuclear provides steady baseload power.',
 		caveats: 'Generation values represent net generation at the plant level. "Other" includes biomass, geothermal, and other minor sources.',
 	});
@@ -81,7 +81,7 @@
 		source: 'US Energy Information Administration',
 		sourceUrl: 'https://www.eia.gov/electricity/data.php',
 		unit: '%',
-		lastUpdated: new Date().toISOString().split('T')[0],
+		lastUpdated: data.lastUpdated,
 		description: 'The share of coal in US electricity generation has fallen dramatically since 2008, replaced largely by natural gas (due to the shale gas revolution) and wind/solar (driven by falling costs and policy incentives).',
 		caveats: 'Shares are calculated as percentage of total net generation. Hydro share fluctuates with annual precipitation. Solar includes both utility-scale and estimated distributed generation.',
 	};
@@ -133,7 +133,7 @@
 		source: 'US Energy Information Administration',
 		sourceUrl: 'https://www.eia.gov/electricity/data.php',
 		unit: '%',
-		lastUpdated: new Date().toISOString().split('T')[0],
+		lastUpdated: data.lastUpdated,
 		description: 'The big-picture energy transition: fossil fuels still dominate US electricity but their share has fallen steadily since the mid-2000s as renewables have surged. Nuclear has held a remarkably stable ~20% share for decades, acting as a zero-carbon bridge. The Inflation Reduction Act (2022) is expected to accelerate the renewable buildout further.',
 		caveats: 'Fossil includes coal, natural gas, and petroleum. Renewable includes wind, solar, hydro, and geothermal. Shares are computed from generation data and may not sum to exactly 100% due to minor "other" sources not categorized here.',
 	};
@@ -186,7 +186,7 @@
 		source: 'US Energy Information Administration',
 		sourceUrl: 'https://www.eia.gov/electricity/data.php',
 		unit: 'thousand MWh',
-		lastUpdated: new Date().toISOString().split('T')[0],
+		lastUpdated: data.lastUpdated,
 		description: 'While share data shows the relative shift, absolute generation volumes reveal the full picture. Coal generation has roughly halved since its peak, while natural gas has more than doubled. Wind and solar are growing rapidly but from a much smaller base.',
 		caveats: 'Values represent net generation (thousand MWh). Note the large difference in scale between established sources (coal, gas, nuclear) and newer renewables (wind, solar).',
 	};
@@ -211,9 +211,9 @@
 		source: 'US Energy Information Administration',
 		sourceUrl: 'https://www.eia.gov/electricity/data.php',
 		unit: 'MW',
-		lastUpdated: new Date().toISOString().split('T')[0],
+		lastUpdated: data.lastUpdated,
 		description: 'Natural gas dominates US installed capacity, followed by coal and wind. Wind capacity has grown rapidly and now exceeds nuclear. Solar capacity is growing fast but is not yet tracked in this dataset.',
-		caveats: 'Capacity values represent net summer capacity and do not reflect actual generation, which depends on capacity factors. Solar may be underrepresented due to distributed generation not included in utility-scale data.',
+		caveats: 'Capacity values represent net summer capacity and do not reflect actual generation, which depends on capacity factors. Note: EIA Form 860 reporting changed in 2008, causing an apparent doubling of some categories (especially natural gas) — this reflects reclassification, not real construction. Solar may be underrepresented due to distributed generation not included in utility-scale data.',
 	});
 
 	// Line chart: Carbon intensity over time
@@ -240,7 +240,7 @@
 		source: 'US Energy Information Administration',
 		sourceUrl: 'https://www.eia.gov/electricity/data.php',
 		unit: 'kg CO₂/MWh',
-		lastUpdated: new Date().toISOString().split('T')[0],
+		lastUpdated: data.lastUpdated,
 		description: 'The carbon intensity of US electricity has declined steadily as natural gas (which emits roughly half the CO₂ per MWh as coal) has replaced coal-fired generation, and as wind and solar have grown to meaningful shares of the generation mix.',
 		caveats: 'Carbon intensity is calculated as total CO₂ emissions from the electric power sector divided by total net generation. It does not account for upstream methane emissions from natural gas production or lifecycle emissions from renewable energy manufacturing.',
 	};
@@ -262,14 +262,15 @@
 		source: 'US Energy Information Administration',
 		sourceUrl: 'https://www.eia.gov/electricity/data.php',
 		unit: '%',
-		lastUpdated: new Date().toISOString().split('T')[0],
+		lastUpdated: data.lastUpdated,
 		description: 'Renewable energy penetration varies dramatically by state. Washington and Oregon lead with hydropower, while Iowa and Kansas have high wind shares. Southern states lag due to greater reliance on natural gas and coal.',
 		caveats: 'Renewables include wind, solar, and conventional hydroelectric. Nuclear is excluded despite being zero-carbon. Biomass is not included in this calculation.',
 	});
 
 	// Chart 7: Capacity Factors by Technology Over Time
 	const CF_SOURCES = ['Coal', 'Hydro', 'Natural Gas', 'Nuclear', 'Petroleum', 'Wind'];
-	const CF_CORRECTION = 150;
+	// Generation is in thousand MWh, capacity is in MW → multiply by 1000 to convert to MWh
+	const CF_CORRECTION = 1000;
 	const CF_START_YEAR = 2010;
 
 	const capacityFactorSeries: DataSeries[] = $derived(
@@ -287,7 +288,7 @@
 				const cap = capByYear.get(year);
 				if (cap && cap > 0 && year >= CF_START_YEAR) {
 					const cf = (gen / (cap * 8760)) * 100 * CF_CORRECTION;
-					values.push({ date: year, value: Math.min(cf, 100) });
+					values.push({ date: year, value: cf });
 				}
 			}
 			return {
@@ -311,7 +312,7 @@
 		source: 'US Energy Information Administration',
 		sourceUrl: 'https://www.eia.gov/electricity/data.php',
 		unit: '%',
-		lastUpdated: new Date().toISOString().split('T')[0],
+		lastUpdated: data.lastUpdated,
 		description: 'Nuclear has the highest capacity factor (~90%), reflecting its role as always-on baseload power. Natural gas capacity factors have risen as gas displaced coal for baseload generation. Coal capacity factors have declined as plants run less frequently. Wind and hydro are lower and more variable, driven by weather.',
 		caveats: 'Capacity factors are computed from annual generation and installed capacity data. Values above 100% are capped. Wind and hydro capacity factors vary with weather conditions. Solar is excluded because capacity data for solar is incomplete in this dataset.',
 	};
@@ -353,7 +354,7 @@
 		source: 'US Energy Information Administration',
 		sourceUrl: 'https://www.eia.gov/electricity/state/',
 		unit: 'MW',
-		lastUpdated: new Date().toISOString().split('T')[0],
+		lastUpdated: data.lastUpdated,
 		description: 'Wind and natural gas have dominated new capacity additions since the mid-2000s. Coal has seen consistent net retirements since 2011 as older plants close. Nuclear capacity has been roughly flat, with new builds barely offsetting closures.',
 		caveats: 'Values represent net change in installed capacity (additions minus retirements). Negative values indicate net retirements. Solar is not shown because it is tracked under a separate energy source category in the EIA capability dataset.',
 	};
@@ -382,7 +383,7 @@
 		source: 'US Energy Information Administration',
 		sourceUrl: 'https://www.eia.gov/electricity/state/',
 		unit: 'MW',
-		lastUpdated: new Date().toISOString().split('T')[0],
+		lastUpdated: data.lastUpdated,
 		description: 'US battery storage capacity has grown exponentially, from just 28 MW in 2010 to over 27,000 MW in 2024. Growth accelerated sharply after 2020 as lithium-ion costs fell and states adopted clean energy mandates requiring grid-scale storage to complement intermittent wind and solar.',
 		caveats: 'Capacity values represent net summer capacity of battery storage systems reported to EIA. Small-scale behind-the-meter residential storage may not be fully captured. Includes all battery chemistries (primarily lithium-ion).',
 	};
@@ -417,6 +418,9 @@
 				onchange={(states) => updateConfig('state', states)}
 			/>
 			<TimeRangeSlider {startYear} {endYear} />
+			{#if hasActiveFilters($chartConfig)}
+				<button onclick={resetConfig} class="text-xs text-text-muted hover:text-accent transition-colors ml-auto">Reset</button>
+			{/if}
 		</div>
 	</div>
 
@@ -520,8 +524,12 @@
 					colorInterpolator={interpolateGreens}
 					valueFormat={format(',.1f')}
 					unit="%"
+					onStateClick={toggleState}
 				/>
 			</ChartWrapper>
+			{#if selectedStates.length > 0}
+				<p class="text-xs text-text-muted mt-1">National data — not affected by state selection</p>
+			{/if}
 		</section>
 	</div>
 

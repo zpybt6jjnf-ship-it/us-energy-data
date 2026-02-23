@@ -62,7 +62,7 @@
   {
     "year": 2023,
     "source": "Battery Storage",
-    "net_change_mw": 7014.0
+    "net_change_mw": 7015.0
   },
   {
     "year": 2024,
@@ -207,12 +207,12 @@
   {
     "year": 2018,
     "source": "Coal",
-    "net_change_mw": -13762.0
+    "net_change_mw": -13761.0
   },
   {
     "year": 2019,
     "source": "Coal",
-    "net_change_mw": -14128.0
+    "net_change_mw": -14129.0
   },
   {
     "year": 2020,
@@ -227,12 +227,12 @@
   {
     "year": 2022,
     "source": "Coal",
-    "net_change_mw": -20509.0
+    "net_change_mw": -20510.0
   },
   {
     "year": 2023,
     "source": "Coal",
-    "net_change_mw": -10875.0
+    "net_change_mw": -10874.0
   },
   {
     "year": 2024,
@@ -512,7 +512,7 @@
   {
     "year": 2011,
     "source": "Hydro",
-    "net_change_mw": -79.0
+    "net_change_mw": -80.0
   },
   {
     "year": 2012,
@@ -537,7 +537,7 @@
   {
     "year": 2016,
     "source": "Hydro",
-    "net_change_mw": 452.0
+    "net_change_mw": 453.0
   },
   {
     "year": 2017,
@@ -567,7 +567,7 @@
   {
     "year": 2022,
     "source": "Hydro",
-    "net_change_mw": 194.0
+    "net_change_mw": 195.0
   },
   {
     "year": 2023,
@@ -580,174 +580,84 @@
     "net_change_mw": -79.0
   },
   {
-    "year": 1991,
-    "source": "Natural Gas",
-    "net_change_mw": 6908.0
-  },
-  {
-    "year": 1992,
-    "source": "Natural Gas",
-    "net_change_mw": 6461.0
-  },
-  {
-    "year": 1993,
-    "source": "Natural Gas",
-    "net_change_mw": 5786.0
-  },
-  {
-    "year": 1994,
-    "source": "Natural Gas",
-    "net_change_mw": 6825.0
-  },
-  {
-    "year": 1995,
-    "source": "Natural Gas",
-    "net_change_mw": 14204.0
-  },
-  {
-    "year": 1996,
-    "source": "Natural Gas",
-    "net_change_mw": -5794.0
-  },
-  {
-    "year": 1997,
-    "source": "Natural Gas",
-    "net_change_mw": 2605.0
-  },
-  {
-    "year": 1998,
-    "source": "Natural Gas",
-    "net_change_mw": 3675.0
-  },
-  {
-    "year": 1999,
-    "source": "Natural Gas",
-    "net_change_mw": 14080.0
-  },
-  {
-    "year": 2000,
-    "source": "Natural Gas",
-    "net_change_mw": 25295.0
-  },
-  {
-    "year": 2001,
-    "source": "Natural Gas",
-    "net_change_mw": 19280.0
-  },
-  {
-    "year": 2002,
-    "source": "Natural Gas",
-    "net_change_mw": 78961.0
-  },
-  {
-    "year": 2003,
-    "source": "Natural Gas",
-    "net_change_mw": 39743.0
-  },
-  {
-    "year": 2004,
-    "source": "Natural Gas",
-    "net_change_mw": 17311.0
-  },
-  {
-    "year": 2005,
-    "source": "Natural Gas",
-    "net_change_mw": 13699.0
-  },
-  {
-    "year": 2006,
-    "source": "Natural Gas",
-    "net_change_mw": 5321.0
-  },
-  {
-    "year": 2007,
-    "source": "Natural Gas",
-    "net_change_mw": 4450.0
-  },
-  {
-    "year": 2008,
-    "source": "Natural Gas",
-    "net_change_mw": 401871.0
-  },
-  {
     "year": 2009,
     "source": "Natural Gas",
-    "net_change_mw": 7493.0
+    "net_change_mw": 3746.0
   },
   {
     "year": 2010,
     "source": "Natural Gas",
-    "net_change_mw": 8364.0
+    "net_change_mw": 4182.0
   },
   {
     "year": 2011,
     "source": "Natural Gas",
-    "net_change_mw": 20158.0
+    "net_change_mw": 10079.0
   },
   {
     "year": 2012,
     "source": "Natural Gas",
-    "net_change_mw": 14346.0
+    "net_change_mw": 7173.0
   },
   {
     "year": 2013,
     "source": "Natural Gas",
-    "net_change_mw": 6051.0
+    "net_change_mw": 3026.0
   },
   {
     "year": 2014,
     "source": "Natural Gas",
-    "net_change_mw": 13521.0
+    "net_change_mw": 6760.0
   },
   {
     "year": 2015,
     "source": "Natural Gas",
-    "net_change_mw": 14550.0
+    "net_change_mw": 7275.0
   },
   {
     "year": 2016,
     "source": "Natural Gas",
-    "net_change_mw": 14796.0
+    "net_change_mw": 7398.0
   },
   {
     "year": 2017,
     "source": "Natural Gas",
-    "net_change_mw": 18377.0
+    "net_change_mw": 9189.0
   },
   {
     "year": 2018,
     "source": "Natural Gas",
-    "net_change_mw": 28451.0
+    "net_change_mw": 14225.0
   },
   {
     "year": 2019,
     "source": "Natural Gas",
-    "net_change_mw": 12661.0
+    "net_change_mw": 6330.0
   },
   {
     "year": 2020,
     "source": "Natural Gas",
-    "net_change_mw": 18480.0
+    "net_change_mw": 9240.0
   },
   {
     "year": 2021,
     "source": "Natural Gas",
-    "net_change_mw": 12126.0
+    "net_change_mw": 6063.0
   },
   {
     "year": 2022,
     "source": "Natural Gas",
-    "net_change_mw": 21053.0
+    "net_change_mw": 10527.0
   },
   {
     "year": 2023,
     "source": "Natural Gas",
-    "net_change_mw": 10278.0
+    "net_change_mw": 5139.0
   },
   {
     "year": 2024,
     "source": "Natural Gas",
-    "net_change_mw": -2329.0
+    "net_change_mw": -1165.0
   },
   {
     "year": 1991,
@@ -847,12 +757,12 @@
   {
     "year": 2010,
     "source": "Nuclear",
-    "net_change_mw": 164.0
+    "net_change_mw": 163.0
   },
   {
     "year": 2011,
     "source": "Nuclear",
-    "net_change_mw": 251.0
+    "net_change_mw": 252.0
   },
   {
     "year": 2012,
@@ -902,12 +812,12 @@
   {
     "year": 2021,
     "source": "Nuclear",
-    "net_change_mw": -954.0
+    "net_change_mw": -955.0
   },
   {
     "year": 2022,
     "source": "Nuclear",
-    "net_change_mw": -888.0
+    "net_change_mw": -887.0
   },
   {
     "year": 2023,
@@ -1012,7 +922,7 @@
   {
     "year": 2009,
     "source": "Other",
-    "net_change_mw": 155.0
+    "net_change_mw": 156.0
   },
   {
     "year": 2010,
@@ -1032,7 +942,7 @@
   {
     "year": 2013,
     "source": "Other",
-    "net_change_mw": 1816.0
+    "net_change_mw": 1815.0
   },
   {
     "year": 2014,
@@ -1090,344 +1000,164 @@
     "net_change_mw": -643.0
   },
   {
-    "year": 1991,
-    "source": "Petroleum",
-    "net_change_mw": -4046.0
-  },
-  {
-    "year": 1992,
-    "source": "Petroleum",
-    "net_change_mw": -3647.0
-  },
-  {
-    "year": 1993,
-    "source": "Petroleum",
-    "net_change_mw": 408.0
-  },
-  {
-    "year": 1994,
-    "source": "Petroleum",
-    "net_change_mw": -44.0
-  },
-  {
-    "year": 1995,
-    "source": "Petroleum",
-    "net_change_mw": -3107.0
-  },
-  {
-    "year": 1996,
-    "source": "Petroleum",
-    "net_change_mw": 5989.0
-  },
-  {
-    "year": 1997,
-    "source": "Petroleum",
-    "net_change_mw": 2644.0
-  },
-  {
-    "year": 1998,
-    "source": "Petroleum",
-    "net_change_mw": -8715.0
-  },
-  {
-    "year": 1999,
-    "source": "Petroleum",
-    "net_change_mw": -7618.0
-  },
-  {
-    "year": 2000,
-    "source": "Petroleum",
-    "net_change_mw": 1005.0
-  },
-  {
-    "year": 2001,
-    "source": "Petroleum",
-    "net_change_mw": 5715.0
-  },
-  {
-    "year": 2002,
-    "source": "Petroleum",
-    "net_change_mw": -6451.0
-  },
-  {
-    "year": 2003,
-    "source": "Petroleum",
-    "net_change_mw": 799.0
-  },
-  {
-    "year": 2004,
-    "source": "Petroleum",
-    "net_change_mw": -1418.0
-  },
-  {
-    "year": 2005,
-    "source": "Petroleum",
-    "net_change_mw": -470.0
-  },
-  {
-    "year": 2006,
-    "source": "Petroleum",
-    "net_change_mw": -448.0
-  },
-  {
-    "year": 2007,
-    "source": "Petroleum",
-    "net_change_mw": -2028.0
-  },
-  {
-    "year": 2008,
-    "source": "Petroleum",
-    "net_change_mw": 58817.0
-  },
-  {
     "year": 2009,
     "source": "Petroleum",
-    "net_change_mw": -1328.0
+    "net_change_mw": -664.0
   },
   {
     "year": 2010,
     "source": "Petroleum",
-    "net_change_mw": -2267.0
+    "net_change_mw": -1133.0
   },
   {
     "year": 2011,
     "source": "Petroleum",
-    "net_change_mw": -8331.0
+    "net_change_mw": -4165.0
   },
   {
     "year": 2012,
     "source": "Petroleum",
-    "net_change_mw": -8629.0
+    "net_change_mw": -4315.0
   },
   {
     "year": 2013,
     "source": "Petroleum",
-    "net_change_mw": -7288.0
+    "net_change_mw": -3644.0
   },
   {
     "year": 2014,
     "source": "Petroleum",
-    "net_change_mw": -4775.0
+    "net_change_mw": -2388.0
   },
   {
     "year": 2015,
     "source": "Petroleum",
-    "net_change_mw": -8610.0
+    "net_change_mw": -4305.0
   },
   {
     "year": 2016,
     "source": "Petroleum",
-    "net_change_mw": -4896.0
+    "net_change_mw": -2448.0
   },
   {
     "year": 2017,
     "source": "Petroleum",
-    "net_change_mw": -2151.0
+    "net_change_mw": -1075.0
   },
   {
     "year": 2018,
     "source": "Petroleum",
-    "net_change_mw": -2177.0
+    "net_change_mw": -1089.0
   },
   {
     "year": 2019,
     "source": "Petroleum",
-    "net_change_mw": -1634.0
+    "net_change_mw": -817.0
   },
   {
     "year": 2020,
     "source": "Petroleum",
-    "net_change_mw": -7662.0
+    "net_change_mw": -3831.0
   },
   {
     "year": 2021,
     "source": "Petroleum",
-    "net_change_mw": 1270.0
+    "net_change_mw": 636.0
   },
   {
     "year": 2022,
     "source": "Petroleum",
-    "net_change_mw": 5139.0
+    "net_change_mw": 2569.0
   },
   {
     "year": 2023,
     "source": "Petroleum",
-    "net_change_mw": -2669.0
+    "net_change_mw": -1335.0
   },
   {
     "year": 2024,
     "source": "Petroleum",
-    "net_change_mw": -1582.0
-  },
-  {
-    "year": 1991,
-    "source": "Solar",
-    "net_change_mw": 9.0
-  },
-  {
-    "year": 1992,
-    "source": "Solar",
-    "net_change_mw": 16.0
-  },
-  {
-    "year": 1993,
-    "source": "Solar",
-    "net_change_mw": 1.0
-  },
-  {
-    "year": 1994,
-    "source": "Solar",
-    "net_change_mw": -6.0
-  },
-  {
-    "year": 1995,
-    "source": "Solar",
-    "net_change_mw": 0.0
-  },
-  {
-    "year": 1996,
-    "source": "Solar",
-    "net_change_mw": 0.0
-  },
-  {
-    "year": 1997,
-    "source": "Solar",
-    "net_change_mw": 1.0
-  },
-  {
-    "year": 1998,
-    "source": "Solar",
-    "net_change_mw": 1.0
-  },
-  {
-    "year": 1999,
-    "source": "Solar",
-    "net_change_mw": 54.0
-  },
-  {
-    "year": 2000,
-    "source": "Solar",
-    "net_change_mw": -3.0
-  },
-  {
-    "year": 2001,
-    "source": "Solar",
-    "net_change_mw": 6.0
-  },
-  {
-    "year": 2002,
-    "source": "Solar",
-    "net_change_mw": 5.0
-  },
-  {
-    "year": 2003,
-    "source": "Solar",
-    "net_change_mw": -1.0
-  },
-  {
-    "year": 2004,
-    "source": "Solar",
-    "net_change_mw": 2.0
-  },
-  {
-    "year": 2005,
-    "source": "Solar",
-    "net_change_mw": 13.0
-  },
-  {
-    "year": 2006,
-    "source": "Solar",
-    "net_change_mw": 0.0
-  },
-  {
-    "year": 2007,
-    "source": "Solar",
-    "net_change_mw": 92.0
-  },
-  {
-    "year": 2008,
-    "source": "Solar",
-    "net_change_mw": 568.0
+    "net_change_mw": -790.0
   },
   {
     "year": 2009,
     "source": "Solar",
-    "net_change_mw": 166.0
+    "net_change_mw": 83.0
   },
   {
     "year": 2010,
     "source": "Solar",
-    "net_change_mw": 496.0
+    "net_change_mw": 248.0
   },
   {
     "year": 2011,
     "source": "Solar",
-    "net_change_mw": 1314.0
+    "net_change_mw": 657.0
   },
   {
     "year": 2012,
     "source": "Solar",
-    "net_change_mw": 3293.0
+    "net_change_mw": 1647.0
   },
   {
     "year": 2013,
     "source": "Solar",
-    "net_change_mw": 6905.0
+    "net_change_mw": 3452.0
   },
   {
     "year": 2014,
     "source": "Solar",
-    "net_change_mw": 7402.0
+    "net_change_mw": 3700.0
   },
   {
     "year": 2015,
     "source": "Solar",
-    "net_change_mw": 6680.0
+    "net_change_mw": 3340.0
   },
   {
     "year": 2016,
     "source": "Solar",
-    "net_change_mw": 16575.0
+    "net_change_mw": 8288.0
   },
   {
     "year": 2017,
     "source": "Solar",
-    "net_change_mw": 10032.0
+    "net_change_mw": 5016.0
   },
   {
     "year": 2018,
     "source": "Solar",
-    "net_change_mw": 9823.0
+    "net_change_mw": 4911.0
   },
   {
     "year": 2019,
     "source": "Solar",
-    "net_change_mw": 11180.0
+    "net_change_mw": 5590.0
   },
   {
     "year": 2020,
     "source": "Solar",
-    "net_change_mw": 21172.0
+    "net_change_mw": 10586.0
   },
   {
     "year": 2021,
     "source": "Solar",
-    "net_change_mw": 26992.0
+    "net_change_mw": 13496.0
   },
   {
     "year": 2022,
     "source": "Solar",
-    "net_change_mw": 22632.0
+    "net_change_mw": 11316.0
   },
   {
     "year": 2023,
     "source": "Solar",
-    "net_change_mw": 38283.0
+    "net_change_mw": 19142.0
   },
   {
     "year": 2024,
     "source": "Solar",
-    "net_change_mw": 62893.0
+    "net_change_mw": 31446.0
   },
   {
     "year": 1991,
@@ -1522,17 +1252,17 @@
   {
     "year": 2009,
     "source": "Wind",
-    "net_change_mw": 9644.0
+    "net_change_mw": 9645.0
   },
   {
     "year": 2010,
     "source": "Wind",
-    "net_change_mw": 4839.0
+    "net_change_mw": 4838.0
   },
   {
     "year": 2011,
     "source": "Wind",
-    "net_change_mw": 6541.0
+    "net_change_mw": 6542.0
   },
   {
     "year": 2012,
@@ -1542,22 +1272,22 @@
   {
     "year": 2013,
     "source": "Wind",
-    "net_change_mw": 899.0
+    "net_change_mw": 898.0
   },
   {
     "year": 2014,
     "source": "Wind",
-    "net_change_mw": 4258.0
+    "net_change_mw": 4259.0
   },
   {
     "year": 2015,
     "source": "Wind",
-    "net_change_mw": 8342.0
+    "net_change_mw": 8341.0
   },
   {
     "year": 2016,
     "source": "Wind",
-    "net_change_mw": 8713.0
+    "net_change_mw": 8714.0
   },
   {
     "year": 2017,
@@ -1572,7 +1302,7 @@
   {
     "year": 2019,
     "source": "Wind",
-    "net_change_mw": 9154.0
+    "net_change_mw": 9153.0
   },
   {
     "year": 2020,
@@ -1582,7 +1312,7 @@
   {
     "year": 2021,
     "source": "Wind",
-    "net_change_mw": 14375.0
+    "net_change_mw": 14374.0
   },
   {
     "year": 2022,
@@ -1592,11 +1322,11 @@
   {
     "year": 2023,
     "source": "Wind",
-    "net_change_mw": 6042.0
+    "net_change_mw": 6043.0
   },
   {
     "year": 2024,
     "source": "Wind",
-    "net_change_mw": 4653.0
+    "net_change_mw": 4652.0
   }
 ]

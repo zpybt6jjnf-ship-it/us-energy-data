@@ -6,7 +6,7 @@
 	import Dropdown from '$components/ui/Dropdown.svelte';
 	import StateSelect from '$components/ui/StateSelect.svelte';
 	import TimeRangeSlider from '$components/ui/TimeRangeSlider.svelte';
-	import { chartConfig, updateConfig } from '$stores/chartConfig';
+	import { chartConfig, updateConfig, hasActiveFilters, resetConfig } from '$stores/chartConfig';
 	import { format } from 'd3-format';
 	import { CHART_COLORS } from '$utils/colors';
 	import { formatCompact } from '$utils/formatting';
@@ -16,7 +16,7 @@
 	let { data } = $props();
 
 	const consumptionAnnotations = [
-		{ date: 2009, label: '09 Recession' },
+		{ date: 2009, label: '08–09 Recession' },
 		{ date: 2020, label: 'COVID-19' },
 		{ date: 2022, label: 'IRA' },
 	];
@@ -91,7 +91,7 @@
 		source: 'US Energy Information Administration',
 		sourceUrl: 'https://www.eia.gov/electricity/data.php',
 		unit: 'million kWh',
-		lastUpdated: new Date().toISOString().split('T')[0],
+		lastUpdated: data.lastUpdated,
 		description: 'Total US electricity consumption has grown modestly over the past two decades, with commercial and residential sectors driving most of the increase. Energy efficiency gains have partially offset growth in economic activity and population. Select states to compare against the national totals.',
 		caveats: 'Consumption data represents retail sales to end-use customers. It excludes direct-use generation and transmission losses, which can add 5-7% to total electricity demand.',
 	};
@@ -156,7 +156,7 @@
 		source: 'US Energy Information Administration',
 		sourceUrl: 'https://www.eia.gov/electricity/data.php',
 		unit: '%',
-		lastUpdated: new Date().toISOString().split('T')[0],
+		lastUpdated: data.lastUpdated,
 		description: 'Annual electricity demand growth has slowed significantly since the 2000s. The 2009 recession caused a sharp drop, followed by tepid growth. Recent years show signs of acceleration driven by data centers, electrification, and economic activity.',
 		caveats: 'Growth rates are calculated from total retail sales across all sectors. Negative values indicate years where consumption declined year-over-year.',
 	};
@@ -167,7 +167,7 @@
 		source: 'US Energy Information Administration',
 		sourceUrl: 'https://www.eia.gov/electricity/data.php',
 		unit: 'million kWh',
-		lastUpdated: new Date().toISOString().split('T')[0],
+		lastUpdated: data.lastUpdated,
 		description: 'Texas and California dominate electricity consumption, driven by large populations, industrial activity, and climate-related demand. Texas leads due to its large industrial base, air conditioning load, and oil/gas operations.',
 		caveats: 'Rankings reflect total consumption, not per-capita usage. States with smaller populations but high per-capita demand (e.g., Wyoming) do not appear in the top 10 by total volume.',
 	});
@@ -192,9 +192,9 @@
 		source: 'US Energy Information Administration',
 		sourceUrl: 'https://www.eia.gov/electricity/data.php',
 		unit: 'kWh',
-		lastUpdated: new Date().toISOString().split('T')[0],
+		lastUpdated: data.lastUpdated,
 		description: 'Some states like Wyoming and Louisiana have very high per-capita electricity consumption due to energy-intensive heavy industry (mining, refining, petrochemicals) that inflates usage well beyond household needs. Meanwhile, states like Hawaii and California rank low thanks to mild climates, aggressive efficiency standards, and service-oriented economies.',
-		caveats: 'Uses 2023 Census population estimates for all years. Commercial and industrial consumption is included in per-capita calculation.',
+		caveats: '⚠️ Uses 2023 Census population estimates for all years — per-capita figures for earlier years are approximate. Commercial and industrial consumption is included in per-capita calculation, which inflates values for states with heavy industry.',
 	});
 </script>
 
@@ -226,6 +226,9 @@
 				onchange={(states) => updateConfig('state', states)}
 			/>
 			<TimeRangeSlider {startYear} {endYear} />
+			{#if hasActiveFilters($chartConfig)}
+				<button onclick={resetConfig} class="text-xs text-text-muted hover:text-accent transition-colors ml-auto">Reset</button>
+			{/if}
 		</div>
 	</div>
 

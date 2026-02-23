@@ -98,7 +98,30 @@ def transform_capacity(raw_data: list[dict]) -> dict:
                 source_col = col
                 break
 
+    # Aggregate codes that duplicate their subtypes (e.g. NG = NGCC + NGGT + NGIC + NGST).
+    # The EIA capability endpoint returns both levels — keep only the subtypes to avoid
+    # double-counting.
+    AGGREGATE_CODES = {"NG", "PET", "SOL"}
+
     if source_col is not None:
+        # Drop aggregate rows when subtypes exist in the same (period, state) group
+        has_subtypes = set()
+        subtype_prefixes = {"NG": "NG", "PET": "PET", "SOL": "SOL"}
+        for code in df[source_col].unique():
+            for agg, prefix in subtype_prefixes.items():
+                if code != agg and isinstance(code, str) and code.startswith(prefix):
+                    has_subtypes.add(agg)
+
+        if has_subtypes:
+            pre_len = len(df)
+            df = df[~df[source_col].isin(has_subtypes)]
+            dropped = pre_len - len(df)
+            if dropped > 0:
+                logger.info(
+                    "Dropped %d aggregate rows (%s) to avoid double-counting with subtypes",
+                    dropped, has_subtypes,
+                )
+
         df["source"] = df[source_col].map(SOURCE_MAP)
         # Log unmapped source codes
         unmapped = df[df["source"].isna() & df[source_col].notna()][source_col].unique()
@@ -152,7 +175,7 @@ def transform_capacity(raw_data: list[dict]) -> dict:
     return {
         "national": national.to_dict(orient="records"),
         "metadata": {
-            "description": "Installed nameplate generating capacity by energy source",
+            "description": "Installed net summer generating capacity by energy source",
             "source": "EIA Operating Generator Capacity",
             "url": "https://www.eia.gov/electricity/data/eia860/",
             "last_updated": pd.Timestamp.now().isoformat(),

@@ -24,6 +24,7 @@
 		colorInterpolator?: (t: number) => string;
 		valueFormat?: (v: number) => string;
 		unit?: string;
+		onStateClick?: (stateAbbr: string) => void;
 	}
 
 	/** Custom brand-aligned interpolator: cream → blue */
@@ -37,6 +38,7 @@
 		colorInterpolator = brandInterpolator,
 		valueFormat = format(',.1f'),
 		unit = '',
+		onStateClick,
 	}: Props = $props();
 
 	const chartWidthCtx = getContext<Readable<number> | undefined>('chartWidth');
@@ -187,14 +189,28 @@
 			{@const val = valueMap.get(fips)}
 			{@const isHovered = hoveredFips === fips}
 			{#if d}
+				<!-- svelte-ignore a11y_click_events_have_key_events a11y_no_static_element_interactions -->
 				<path
 					{d}
 					fill={val ? colorScale(val.value) : noDataColor}
 					stroke={isHovered ? 'var(--color-text)' : 'var(--color-surface)'}
 					stroke-width={isHovered ? 2 : 1}
 					class="state-path"
+					role={onStateClick ? 'button' : undefined}
+					tabindex={onStateClick ? 0 : undefined}
 					onpointermove={(e) => handleStateHover(e, fips)}
 					onpointerleave={handlePointerLeave}
+					onclick={() => {
+						const abbr = FIPS_TO_ABBR[fips];
+						if (abbr && onStateClick) onStateClick(abbr);
+					}}
+					onkeydown={(e) => {
+						if (e.key === 'Enter' || e.key === ' ') {
+							e.preventDefault();
+							const abbr = FIPS_TO_ABBR[fips];
+							if (abbr && onStateClick) onStateClick(abbr);
+						}
+					}}
 				/>
 			{/if}
 		{/each}

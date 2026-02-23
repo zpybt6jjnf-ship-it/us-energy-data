@@ -5,7 +5,7 @@
 	import Dropdown from '$components/ui/Dropdown.svelte';
 	import StateSelect from '$components/ui/StateSelect.svelte';
 	import TimeRangeSlider from '$components/ui/TimeRangeSlider.svelte';
-	import { chartConfig, updateConfig } from '$stores/chartConfig';
+	import { chartConfig, updateConfig, hasActiveFilters, resetConfig } from '$stores/chartConfig';
 	import { CHART_COLORS, FUEL_COLORS, FUEL_GEN_COLORS, TRADE_COLORS, STATE_BAR_COLOR } from '$utils/colors';
 	import { formatCompact } from '$utils/formatting';
 	import { stateFromAbbr } from '$utils/states';
@@ -27,7 +27,7 @@
 		{ value: 'Crude Oil', label: 'Crude Oil' },
 	];
 
-	let selectedFuel = $state('all');
+	const selectedFuel = $derived($chartConfig.fuel);
 
 	const startYear = $derived($chartConfig.startYear);
 	const endYear = $derived($chartConfig.endYear);
@@ -134,7 +134,7 @@
 		source: 'US Energy Information Administration',
 		sourceUrl: 'https://www.eia.gov/',
 		unit: 'varies by fuel',
-		lastUpdated: new Date().toISOString().split('T')[0],
+		lastUpdated: data.lastUpdated,
 		description: 'US fossil fuel production has evolved significantly. The shale revolution (post-2008) drove natural gas and crude oil to record levels, while coal production has declined steadily as power plants switch to cheaper gas and renewables.',
 		caveats: 'Units differ by fuel type: coal (short tons), natural gas (million cubic feet), crude oil (thousand barrels). When "All Fuels" is selected, values are indexed to the first available year (= 100) to enable fair cross-fuel comparison despite different units.',
 	};
@@ -187,7 +187,7 @@
 		source: 'US Energy Information Administration',
 		sourceUrl: 'https://www.eia.gov/electricity/data.php',
 		unit: 'thousand MWh',
-		lastUpdated: new Date().toISOString().split('T')[0],
+		lastUpdated: data.lastUpdated,
 		description: 'How much electricity does each fossil fuel generate? Coal-fired generation has declined sharply since its peak around 2007, while natural gas generation has surged. Petroleum (oil) plays a minimal and declining role in US electricity generation.',
 		caveats: 'Generation data represents net generation at utility-scale power plants. Combined heat and power (CHP) facilities are included. Some natural gas generation comes from plants that can also burn oil as backup fuel.',
 	};
@@ -224,7 +224,7 @@
 		source: 'US Energy Information Administration',
 		sourceUrl: 'https://www.eia.gov/petroleum/move/',
 		unit: 'thousand barrels/day',
-		lastUpdated: new Date().toISOString().split('T')[0],
+		lastUpdated: data.lastUpdated,
 		description: 'The US was a major net petroleum importer for decades, but the shale revolution and increased domestic production have dramatically reduced net imports. Since roughly 2020 the US has been close to energy self-sufficiency in petroleum, with exports rising sharply even as imports have moderated.',
 		caveats: 'Includes crude oil and finished petroleum products. Net imports = imports minus exports. A negative net imports value indicates the US is a net exporter. Data from EIA petroleum movement series.',
 	};
@@ -254,7 +254,7 @@
 		source: 'US Energy Information Administration',
 		sourceUrl: 'https://www.eia.gov/naturalgas/data.php',
 		unit: 'million cu ft',
-		lastUpdated: new Date().toISOString().split('T')[0],
+		lastUpdated: data.lastUpdated,
 		description: 'The US was a net natural gas importer for decades, relying on pipeline imports from Canada. The shale revolution unlocked vast domestic gas reserves, and the buildout of LNG export terminals transformed the US into a net gas exporter by around 2017 — a historic reversal.',
 		caveats: 'Includes pipeline trade (primarily with Canada and Mexico) and LNG shipments. Net imports = imports minus exports. A negative net imports value indicates the US is a net exporter.',
 	};
@@ -269,7 +269,7 @@
 		source: 'US Energy Information Administration',
 		sourceUrl: 'https://www.eia.gov/',
 		unit: barUnit,
-		lastUpdated: new Date().toISOString().split('T')[0],
+		lastUpdated: data.lastUpdated,
 		description: `Fossil fuel production is highly concentrated geographically. ${barFuel === 'Coal' ? 'Wyoming alone produces roughly 40% of US coal, primarily from Powder River Basin surface mines.' : barFuel === 'Natural Gas' ? 'Texas and Pennsylvania lead natural gas production, driven by the Permian Basin and Marcellus Shale respectively.' : 'Texas dominates crude oil production, followed by New Mexico (Permian Basin) and North Dakota (Bakken formation).'}`,
 		caveats: 'State-level production data may include estimates for months not yet reported. Rankings can shift year-to-year based on market conditions and weather.',
 	});
@@ -296,13 +296,16 @@
 				options={fuelOptions}
 				value={selectedFuel}
 				label="Fuel Type"
-				onchange={(v) => selectedFuel = v}
+				onchange={(v) => updateConfig('fuel', v)}
 			/>
 			<StateSelect
 				selected={selectedStates}
 				onchange={(states) => updateConfig('state', states)}
 			/>
 			<TimeRangeSlider {startYear} {endYear} />
+			{#if hasActiveFilters($chartConfig)}
+				<button onclick={resetConfig} class="text-xs text-text-muted hover:text-accent transition-colors ml-auto">Reset</button>
+			{/if}
 		</div>
 	</div>
 

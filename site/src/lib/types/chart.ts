@@ -14,6 +14,7 @@ export interface ChartConfig {
 	sector: string;
 	metric: string;
 	med: string;
+	fuel: string;
 	startYear: number;
 	endYear: number;
 }

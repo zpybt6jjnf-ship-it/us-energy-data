@@ -1,7 +1,7 @@
 {
   "source": "EIA-861 Annual Electric Power Industry Report \u2014 Reliability",
   "url": "https://www.eia.gov/electricity/data/eia861/",
-  "last_updated": "2026-02-22T10:47:05.242400",
+  "last_updated": "2026-02-23T12:10:04.899646",
   "unit": "minutes per customer per year (SAIDI)",
   "years": "2013-2024",
   "methodology": "Customer-weighted average of utility-level SAIDI/SAIFI. IEEE Standard preferred, with Other Standard as fallback. With Major Event Days (MED) variant shown by default."

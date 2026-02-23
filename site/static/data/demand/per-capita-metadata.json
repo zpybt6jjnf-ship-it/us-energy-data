@@ -2,6 +2,6 @@
   "description": "Per-capita electricity consumption by state",
   "source": "EIA Electricity Retail Sales + U.S. Census Bureau Population Estimates",
   "url": "https://www.eia.gov/electricity/data.php",
-  "last_updated": "2026-02-22T10:52:58.652098",
+  "last_updated": "2026-02-23T12:19:03.566946",
   "unit": "kWh per person"
 }

@@ -2,6 +2,6 @@
   "description": "Carbon intensity of electricity generation (CO2 emissions per MWh)",
   "source": "EIA State Electricity Profiles - Emissions by State by Fuel",
   "url": "https://www.eia.gov/electricity/state/",
-  "last_updated": "2026-02-22T10:47:17.178621",
+  "last_updated": "2026-02-23T12:10:53.103449",
   "unit": "kg CO2 per MWh (also lbs CO2 per MWh)"
 }

@@ -1,122 +1,122 @@
 [
   {
     "year": 2001,
-    "nominal_bill": 77.22,
-    "real_bill": 135.11
+    "nominal_bill": 77.2,
+    "real_bill": 135.1
   },
   {
     "year": 2002,
-    "nominal_bill": 75.96,
-    "real_bill": 130.76
+    "nominal_bill": 76.0,
+    "real_bill": 130.8
   },
   {
     "year": 2003,
-    "nominal_bill": 78.48,
-    "real_bill": 132.19
+    "nominal_bill": 78.5,
+    "real_bill": 132.2
   },
   {
     "year": 2004,
-    "nominal_bill": 80.55,
-    "real_bill": 132.08
+    "nominal_bill": 80.5,
+    "real_bill": 132.1
   },
   {
     "year": 2005,
-    "nominal_bill": 85.05,
-    "real_bill": 134.93
+    "nominal_bill": 85.0,
+    "real_bill": 134.9
   },
   {
     "year": 2006,
     "nominal_bill": 93.6,
-    "real_bill": 144.02
+    "real_bill": 144.0
   },
   {
     "year": 2007,
-    "nominal_bill": 95.85,
-    "real_bill": 143.35
+    "nominal_bill": 95.8,
+    "real_bill": 143.3
   },
   {
     "year": 2008,
-    "nominal_bill": 101.34,
-    "real_bill": 145.98
+    "nominal_bill": 101.3,
+    "real_bill": 146.0
   },
   {
     "year": 2009,
-    "nominal_bill": 103.59,
-    "real_bill": 149.77
+    "nominal_bill": 103.6,
+    "real_bill": 149.8
   },
   {
     "year": 2010,
-    "nominal_bill": 103.86,
+    "nominal_bill": 103.9,
     "real_bill": 147.8
   },
   {
     "year": 2011,
-    "nominal_bill": 105.48,
-    "real_bill": 145.52
+    "nominal_bill": 105.5,
+    "real_bill": 145.5
   },
   {
     "year": 2012,
-    "nominal_bill": 106.92,
-    "real_bill": 144.45
+    "nominal_bill": 106.9,
+    "real_bill": 144.4
   },
   {
     "year": 2013,
-    "nominal_bill": 109.17,
-    "real_bill": 145.48
+    "nominal_bill": 109.2,
+    "real_bill": 145.5
   },
   {
     "year": 2014,
-    "nominal_bill": 112.68,
-    "real_bill": 147.64
+    "nominal_bill": 112.7,
+    "real_bill": 147.6
   },
   {
     "year": 2015,
-    "nominal_bill": 113.85,
-    "real_bill": 149.01
+    "nominal_bill": 113.8,
+    "real_bill": 149.0
   },
   {
     "year": 2016,
-    "nominal_bill": 112.95,
-    "real_bill": 146.04
+    "nominal_bill": 113.0,
+    "real_bill": 146.0
   },
   {
     "year": 2017,
-    "nominal_bill": 116.01,
-    "real_bill": 146.92
+    "nominal_bill": 116.0,
+    "real_bill": 146.9
   },
   {
     "year": 2018,
-    "nominal_bill": 115.83,
-    "real_bill": 143.14
+    "nominal_bill": 115.8,
+    "real_bill": 143.1
   },
   {
     "year": 2019,
-    "nominal_bill": 117.09,
-    "real_bill": 142.15
+    "nominal_bill": 117.1,
+    "real_bill": 142.2
   },
   {
     "year": 2020,
-    "nominal_bill": 118.35,
-    "real_bill": 141.92
+    "nominal_bill": 118.3,
+    "real_bill": 141.9
   },
   {
     "year": 2021,
-    "nominal_bill": 122.94,
-    "real_bill": 140.81
+    "nominal_bill": 122.9,
+    "real_bill": 140.8
   },
   {
     "year": 2022,
-    "nominal_bill": 135.36,
-    "real_bill": 143.55
+    "nominal_bill": 135.4,
+    "real_bill": 143.6
   },
   {
     "year": 2023,
     "nominal_bill": 144.0,
-    "real_bill": 147.91
+    "real_bill": 147.9
   },
   {
     "year": 2024,
-    "nominal_bill": 148.32,
-    "real_bill": 148.32
+    "nominal_bill": 148.3,
+    "real_bill": 148.3
   }
 ]

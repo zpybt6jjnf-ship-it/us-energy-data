@@ -2,361 +2,361 @@
   {
     "year": 2001,
     "fuel": "Coal",
-    "consumption": 1915630.146
+    "consumption": 1915630.0
   },
   {
     "year": 2002,
     "fuel": "Coal",
-    "consumption": 1945635.863
+    "consumption": 1945636.0
   },
   {
     "year": 2003,
     "fuel": "Coal",
-    "consumption": 1998655.712
+    "consumption": 1998656.0
   },
   {
     "year": 2004,
     "fuel": "Coal",
-    "consumption": 2012318.8121500001
+    "consumption": 2012319.0
   },
   {
     "year": 2005,
     "fuel": "Coal",
-    "consumption": 2050753.4800200001
+    "consumption": 2050753.0
   },
   {
     "year": 2006,
     "fuel": "Coal",
-    "consumption": 2026979.3848
+    "consumption": 2026979.0
   },
   {
     "year": 2007,
     "fuel": "Coal",
-    "consumption": 2062227.936
+    "consumption": 2062228.0
   },
   {
     "year": 2008,
     "fuel": "Coal",
-    "consumption": 2052655.678
+    "consumption": 2052656.0
   },
   {
     "year": 2009,
     "fuel": "Coal",
-    "consumption": 1838641.9309999999
+    "consumption": 1838642.0
   },
   {
     "year": 2010,
     "fuel": "Coal",
-    "consumption": 1924978.75
+    "consumption": 1924979.0
   },
   {
     "year": 2011,
     "fuel": "Coal",
-    "consumption": 1838963.925
+    "consumption": 1838964.0
   },
   {
     "year": 2012,
     "fuel": "Coal",
-    "consumption": 1626036.249
+    "consumption": 1626036.0
   },
   {
     "year": 2013,
     "fuel": "Coal",
-    "consumption": 1695653.2827400002
+    "consumption": 1695653.0
   },
   {
     "year": 2014,
     "fuel": "Coal",
-    "consumption": 1679605.02898
+    "consumption": 1679605.0
   },
   {
     "year": 2015,
     "fuel": "Coal",
-    "consumption": 1457031.89336
+    "consumption": 1457032.0
   },
   {
     "year": 2016,
     "fuel": "Coal",
-    "consumption": 1332176.5807
+    "consumption": 1332177.0
   },
   {
     "year": 2017,
     "fuel": "Coal",
-    "consumption": 1305896.1516200001
+    "consumption": 1305896.0
   },
   {
     "year": 2018,
     "fuel": "Coal",
-    "consumption": 1249715.16598
+    "consumption": 1249715.0
   },
   {
     "year": 2019,
     "fuel": "Coal",
-    "consumption": 1057455.1978799999
+    "consumption": 1057455.0
   },
   {
     "year": 2020,
     "fuel": "Coal",
-    "consumption": 855266.2712600001
+    "consumption": 855266.0
   },
   {
     "year": 2021,
     "fuel": "Coal",
-    "consumption": 983833.1753799999
+    "consumption": 983833.0
   },
   {
     "year": 2022,
     "fuel": "Coal",
-    "consumption": 923852.4088399999
+    "consumption": 923852.0
   },
   {
     "year": 2023,
     "fuel": "Coal",
-    "consumption": 755590.51248
+    "consumption": 755591.0
   },
   {
     "year": 2024,
     "fuel": "Coal",
-    "consumption": 728931.4925599999
+    "consumption": 728931.0
   },
   {
     "year": 2001,
     "fuel": "Natural Gas",
-    "consumption": 10974797.986
+    "consumption": 10974798.0
   },
   {
     "year": 2002,
     "fuel": "Natural Gas",
-    "consumption": 11534341.168
+    "consumption": 11534341.0
   },
   {
     "year": 2003,
     "fuel": "Natural Gas",
-    "consumption": 10525383.722
+    "consumption": 10525384.0
   },
   {
     "year": 2004,
     "fuel": "Natural Gas",
-    "consumption": 10749918.64958
+    "consumption": 10749919.0
   },
   {
     "year": 2005,
     "fuel": "Natural Gas",
-    "consumption": 11521149.73736
+    "consumption": 11521150.0
   },
   {
     "year": 2006,
     "fuel": "Natural Gas",
-    "consumption": 12352836.98085
+    "consumption": 12352837.0
   },
   {
     "year": 2007,
     "fuel": "Natural Gas",
-    "consumption": 13590954.309
+    "consumption": 13590954.0
   },
   {
     "year": 2008,
     "fuel": "Natural Gas",
-    "consumption": 13238173.938000001
+    "consumption": 13238174.0
   },
   {
     "year": 2009,
     "fuel": "Natural Gas",
-    "consumption": 13688059.828
+    "consumption": 13688060.0
   },
   {
     "year": 2010,
     "fuel": "Natural Gas",
-    "consumption": 14765600.56
+    "consumption": 14765601.0
   },
   {
     "year": 2011,
     "fuel": "Natural Gas",
-    "consumption": 15149059.133000001
+    "consumption": 15149059.0
   },
   {
     "year": 2012,
     "fuel": "Natural Gas",
-    "consumption": 18272895.982
+    "consumption": 18272896.0
   },
   {
     "year": 2013,
     "fuel": "Natural Gas",
-    "consumption": 16483877.674
+    "consumption": 16483878.0
   },
   {
     "year": 2014,
     "fuel": "Natural Gas",
-    "consumption": 16393426.7
+    "consumption": 16393427.0
   },
   {
     "year": 2015,
     "fuel": "Natural Gas",
-    "consumption": 19338513.919
+    "consumption": 19338514.0
   },
   {
     "year": 2016,
     "fuel": "Natural Gas",
-    "consumption": 19760378.542
+    "consumption": 19760379.0
   },
   {
     "year": 2017,
     "fuel": "Natural Gas",
-    "consumption": 18424938.979000002
+    "consumption": 18424939.0
   },
   {
     "year": 2018,
     "fuel": "Natural Gas",
-    "consumption": 21048159.214
+    "consumption": 21048159.0
   },
   {
     "year": 2019,
     "fuel": "Natural Gas",
-    "consumption": 22529820.332
+    "consumption": 22529820.0
   },
   {
     "year": 2020,
     "fuel": "Natural Gas",
-    "consumption": 23164861.906999998
+    "consumption": 23164862.0
   },
   {
     "year": 2021,
     "fuel": "Natural Gas",
-    "consumption": 22374257.763
+    "consumption": 22374258.0
   },
   {
     "year": 2022,
     "fuel": "Natural Gas",
-    "consumption": 24124176.297
+    "consumption": 24124176.0
   },
   {
     "year": 2023,
     "fuel": "Natural Gas",
-    "consumption": 25833795.566
+    "consumption": 25833796.0
   },
   {
     "year": 2024,
     "fuel": "Natural Gas",
-    "consumption": 26869130.906000003
+    "consumption": 26869131.0
   },
   {
     "year": 2001,
     "fuel": "Petroleum",
-    "consumption": 421791.47400000005
+    "consumption": 421791.0
   },
   {
     "year": 2002,
     "fuel": "Petroleum",
-    "consumption": 324751.152
+    "consumption": 324751.0
   },
   {
     "year": 2003,
     "fuel": "Petroleum",
-    "consumption": 401989.02300000004
+    "consumption": 401989.0
   },
   {
     "year": 2004,
     "fuel": "Petroleum",
-    "consumption": 399303.82023
+    "consumption": 399304.0
   },
   {
     "year": 2005,
     "fuel": "Petroleum",
-    "consumption": 406545.42331
+    "consumption": 406545.0
   },
   {
     "year": 2006,
     "fuel": "Petroleum",
-    "consumption": 215868.93615000002
+    "consumption": 215869.0
   },
   {
     "year": 2007,
     "fuel": "Petroleum",
-    "consumption": 219931.017
+    "consumption": 219931.0
   },
   {
     "year": 2008,
     "fuel": "Petroleum",
-    "consumption": 158080.601
+    "consumption": 158081.0
   },
   {
     "year": 2009,
     "fuel": "Petroleum",
-    "consumption": 131818.805
+    "consumption": 131819.0
   },
   {
     "year": 2010,
     "fuel": "Petroleum",
-    "consumption": 127547.84
+    "consumption": 127548.0
   },
   {
     "year": 2011,
     "fuel": "Petroleum",
-    "consumption": 102491.06822
+    "consumption": 102491.0
   },
   {
     "year": 2012,
     "fuel": "Petroleum",
-    "consumption": 76914.42420000001
+    "consumption": 76914.0
   },
   {
     "year": 2013,
     "fuel": "Petroleum",
-    "consumption": 90756.60892
+    "consumption": 90757.0
   },
   {
     "year": 2014,
     "fuel": "Petroleum",
-    "consumption": 104130.47556
+    "consumption": 104130.0
   },
   {
     "year": 2015,
     "fuel": "Petroleum",
-    "consumption": 96123.78672
+    "consumption": 96124.0
   },
   {
     "year": 2016,
     "fuel": "Petroleum",
-    "consumption": 85524.12872000001
+    "consumption": 85524.0
   },
   {
     "year": 2017,
     "fuel": "Petroleum",
-    "consumption": 76538.00945000001
+    "consumption": 76538.0
   },
   {
     "year": 2018,
     "fuel": "Petroleum",
-    "consumption": 91757.47379
+    "consumption": 91757.0
   },
   {
     "year": 2019,
     "fuel": "Petroleum",
-    "consumption": 67321.63977000001
+    "consumption": 67322.0
   },
   {
     "year": 2020,
     "fuel": "Petroleum",
-    "consumption": 65338.10262
+    "consumption": 65338.0
   },
   {
     "year": 2021,
     "fuel": "Petroleum",
-    "consumption": 72642.15681
+    "consumption": 72642.0
   },
   {
     "year": 2022,
     "fuel": "Petroleum",
-    "consumption": 85779.50039
+    "consumption": 85780.0
   },
   {
     "year": 2023,
     "fuel": "Petroleum",
-    "consumption": 61702.807830000005
+    "consumption": 61703.0
   },
   {
     "year": 2024,
     "fuel": "Petroleum",
-    "consumption": 57073.02557
+    "consumption": 57073.0
   }
 ]

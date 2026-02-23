@@ -5,7 +5,7 @@
 	import ChartWrapper from '$components/charts/ChartWrapper.svelte';
 	import Dropdown from '$components/ui/Dropdown.svelte';
 	import StateSelect from '$components/ui/StateSelect.svelte';
-	import { chartConfig, updateConfig } from '$stores/chartConfig';
+	import { chartConfig, updateConfig, toggleState, hasActiveFilters, resetConfig } from '$stores/chartConfig';
 	import { stateFromAbbr } from '$utils/states';
 	import { CHART_COLORS } from '$utils/colors';
 	import { format } from 'd3-format';
@@ -53,7 +53,7 @@
 		source: 'EIA-861 Annual Electric Power Industry Report',
 		sourceUrl: 'https://www.eia.gov/electricity/data/eia861/',
 		unit: 'minutes/customer/year',
-		lastUpdated: '2024',
+		lastUpdated: data.lastUpdated,
 		description: 'SAIDI measures the average total duration of power interruptions per customer per year, weighted by number of customers served. Data aggregated from ~950 utility reports filed annually with the EIA.',
 		caveats: activeMed === 'with_med'
 			? 'Including major event days (hurricanes, ice storms, etc.) causes large year-to-year variation. Toggle to "Without Major Event Days" for a steadier trend.'
@@ -69,8 +69,8 @@
 				name: abbr,
 				color: CHART_COLORS[(1 + i) % CHART_COLORS.length],
 				values: data.byStateTrend
-					.filter((d: any) => d.stateAbbr === abbr && d.saidi != null)
-					.map((d: any) => ({ date: d.year, value: d.saidi }))
+					.filter((d: any) => d.stateAbbr === abbr && d[saidiField] != null)
+					.map((d: any) => ({ date: d.year, value: d[saidiField] }))
 					.sort((a: any, b: any) => a.date - b.date),
 			};
 		}).filter((s) => s.values.length > 0)
@@ -91,7 +91,7 @@
 		source: 'EIA-861 Annual Electric Power Industry Report',
 		sourceUrl: 'https://www.eia.gov/electricity/data/eia861/',
 		unit: 'minutes/customer/year',
-		lastUpdated: String(data.byState[0]?.year || 2024),
+		lastUpdated: data.lastUpdated,
 		description: 'Customer-weighted average outage duration (SAIDI) for each state. Darker colors indicate longer average outages. Southeastern and Gulf Coast states tend to experience more outage minutes due to hurricane and severe weather exposure.',
 		caveats: 'State averages are computed from individual utility reports weighted by customers served. States with few reporting utilities may have less reliable averages.',
 	});
@@ -114,7 +114,7 @@
 		source: 'EIA-861 Annual Electric Power Industry Report',
 		sourceUrl: 'https://www.eia.gov/electricity/data/eia861/',
 		unit: '',
-		lastUpdated: String(data.byState[0]?.year || 2024),
+		lastUpdated: data.lastUpdated,
 		description: 'Each dot is a US state. States with longer average outage duration (SAIDI) tend to also have more frequent interruptions (SAIFI). Data is customer-weighted from utility reports.',
 		caveats: 'Southeastern and Gulf Coast states often appear in the upper right due to hurricane exposure. Some states have few reporting utilities, which can skew averages.',
 	});
@@ -158,7 +158,7 @@
 		source: 'EIA-861 (reliability) + EIA Retail Sales (prices)',
 		sourceUrl: 'https://www.eia.gov/electricity/data/eia861/',
 		unit: '',
-		lastUpdated: String(latestYear),
+		lastUpdated: data.lastUpdated,
 		description: 'Compares each state\'s average outage duration (SAIDI) against its residential electricity price. If poor reliability correlated with higher prices, points would trend upward to the right.',
 		caveats: 'Electricity prices are driven by many factors (fuel mix, regulation, geography) beyond grid reliability. This chart shows correlation, not causation.',
 	});
@@ -199,6 +199,9 @@
 				selected={selectedStates}
 				onchange={(states) => updateConfig('state', states)}
 			/>
+			{#if hasActiveFilters($chartConfig)}
+				<button onclick={resetConfig} class="text-xs text-text-muted hover:text-accent transition-colors ml-auto">Reset</button>
+			{/if}
 		</div>
 	</div>
 
@@ -249,8 +252,12 @@
 				colorInterpolator={interpolateYlOrRd}
 				valueFormat={format(',.0f')}
 				unit="min"
+				onStateClick={toggleState}
 			/>
 		</ChartWrapper>
+		{#if selectedStates.length > 0}
+			<p class="text-xs text-text-muted mt-1">Shows all states — click a state to add it to the trend chart filter</p>
+		{/if}
 	</div>
 
 	<!-- Section: Do outages and prices correlate? -->

@@ -1,7 +1,7 @@
 {
-  "description": "Installed nameplate generating capacity by energy source",
+  "description": "Installed net summer generating capacity by energy source",
   "source": "EIA Operating Generator Capacity",
   "url": "https://www.eia.gov/electricity/data/eia860/",
-  "last_updated": "2026-02-22T10:47:13.330497",
+  "last_updated": "2026-02-23T12:10:47.057953",
   "unit": "MW"
 }
