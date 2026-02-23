@@ -40,9 +40,13 @@
 		bind:this={tooltipEl}
 		class="pointer-events-none fixed z-50 rounded-lg px-2.5 py-1.5 shadow-md"
 		style="left: {tooltipLeft}px; top: {data.y - 8}px; opacity: {visible ? 1 : 0}; transform: translateY({visible ? 0 : 4}px); transition: opacity 0.15s ease, transform 0.15s ease; font-size: 11px; background: var(--color-tooltip-bg); border: 1px solid var(--color-border); backdrop-filter: blur(8px);"
+		role="tooltip"
 	>
 		{#if data.header}
 			<div class="mb-1 text-xs font-bold text-text" style="font-family: var(--font-mono)">{data.header}</div>
+		{/if}
+		{#if data.subtitle}
+			<div class="mb-1 text-[10px] text-text-muted" style="margin-top: -2px;">{data.subtitle}</div>
 		{/if}
 		{#each data.items as item}
 			<div class="flex items-center gap-2 whitespace-nowrap">

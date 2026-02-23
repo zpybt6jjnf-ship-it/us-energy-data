@@ -55,8 +55,13 @@
 	const chartVisibleCtx = getContext<Writable<boolean> | undefined>('chartVisible');
 	const chartVisible = $derived(chartVisibleCtx ? $chartVisibleCtx : true);
 
+	const chartTitleCtx = getContext<Readable<string> | undefined>('chartTitle');
+	const chartTitle = $derived(chartTitleCtx ? $chartTitleCtx : '');
+
 	let tooltip: TooltipData | null = $state(null);
 	let tooltipDate: number | null = $state(null);
+	let focusedDateIndex: number | null = $state(null);
+	let svgEl: SVGSVGElement | undefined = $state();
 
 	// Unique filter ID per component instance to avoid SVG filter collisions
 	const filterId = `line-shadow-${Math.random().toString(36).slice(2, 8)}`;
@@ -131,12 +136,20 @@
 					label: s.name,
 					value: yFormat(point.value),
 					color: colorScale(s.name),
+					_numericValue: point.value,
 				};
 			})
-			.filter((item): item is NonNullable<typeof item> => item !== null);
+			.filter((item): item is NonNullable<typeof item> => item !== null)
+			.sort((a, b) => b._numericValue - a._numericValue);
 
 		if (items.length > 0) {
-			tooltip = { x: event.clientX, y: event.clientY, items, header: String(date) };
+			tooltip = {
+				x: event.clientX,
+				y: event.clientY,
+				items,
+				header: String(date),
+				subtitle: unit || undefined,
+			};
 			tooltipDate = date;
 		} else {
 			tooltipDate = null;
@@ -147,14 +160,76 @@
 		tooltip = null;
 		tooltipDate = null;
 	}
+
+	const uniqueDates = $derived([...new Set(series.flatMap((s) => s.values.map((v) => v.date)))].sort((a, b) => a - b));
+
+	function updateTooltipForDate(date: number) {
+		const items = series
+			.map((s) => {
+				const point = s.values.find((v) => v.date === date);
+				if (!point) return null;
+				return {
+					label: s.name,
+					value: yFormat(point.value),
+					color: colorScale(s.name),
+					_numericValue: point.value,
+				};
+			})
+			.filter((item): item is NonNullable<typeof item> => item !== null)
+			.sort((a, b) => b._numericValue - a._numericValue);
+
+		if (items.length > 0 && svgEl) {
+			const rect = svgEl.getBoundingClientRect();
+			tooltip = {
+				x: rect.left + margin.left + xScale(date),
+				y: rect.top + margin.top + innerHeight / 2,
+				items,
+				header: String(date),
+				subtitle: unit || undefined,
+			};
+			tooltipDate = date;
+		}
+	}
+
+	function handleKeydown(event: KeyboardEvent) {
+		if (uniqueDates.length === 0) return;
+
+		if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+			event.preventDefault();
+			if (focusedDateIndex === null) {
+				focusedDateIndex = event.key === 'ArrowRight' ? 0 : uniqueDates.length - 1;
+			} else {
+				focusedDateIndex = event.key === 'ArrowRight'
+					? Math.min(focusedDateIndex + 1, uniqueDates.length - 1)
+					: Math.max(focusedDateIndex - 1, 0);
+			}
+			updateTooltipForDate(uniqueDates[focusedDateIndex]);
+		} else if (event.key === 'Escape') {
+			tooltip = null;
+			tooltipDate = null;
+			focusedDateIndex = null;
+			svgEl?.blur();
+		}
+	}
+
+	function handleFocusOut() {
+		tooltip = null;
+		tooltipDate = null;
+		focusedDateIndex = null;
+	}
 </script>
 
+<!-- svelte-ignore a11y_no_noninteractive_tabindex a11y_no_noninteractive_element_interactions -->
 <svg
+	bind:this={svgEl}
 	class="chart"
 	viewBox="0 0 {width} {height}"
-	style="max-width: {width}px; width: 100%; height: auto;"
+	style="max-width: {width}px; width: 100%; height: auto; outline-offset: 2px;"
 	role="img"
-	aria-label="Line chart showing {series.map(s => s.name).join(', ')} over time"
+	aria-label={chartTitle || `Line chart showing ${series.map(s => s.name).join(', ')} over time`}
+	tabindex="0"
+	onkeydown={handleKeydown}
+	onfocusout={handleFocusOut}
 >
 	<defs>
 		<filter id={filterId} x="-2%" y="-2%" width="104%" height="104%">

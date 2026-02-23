@@ -5,7 +5,7 @@
     import { SEMANTIC_COLORS } from '$utils/colors';
     import Tooltip from './Tooltip.svelte';
     import { getContext } from 'svelte';
-    import type { Readable } from 'svelte/store';
+    import type { Readable, Writable } from 'svelte/store';
 
     interface BarData {
         label: string;
@@ -23,6 +23,8 @@
         unit?: string;
         positiveColor?: string;
         negativeColor?: string;
+        positiveLabel?: string;
+        negativeLabel?: string;
     }
 
     let {
@@ -35,12 +37,20 @@
         unit = '',
         positiveColor = SEMANTIC_COLORS.positive,
         negativeColor = SEMANTIC_COLORS.negative,
+        positiveLabel = 'Growth',
+        negativeLabel = 'Decline',
     }: Props = $props();
 
     const chartWidthCtx = getContext<Readable<number> | undefined>('chartWidth');
     const chartHeightCtx = getContext<Readable<number> | undefined>('chartHeight');
     const width = $derived(chartWidthCtx ? $chartWidthCtx : propWidth);
     const height = $derived(chartHeightCtx ? $chartHeightCtx : propHeight);
+
+    const chartVisibleCtx = getContext<Writable<boolean> | undefined>('chartVisible');
+    const chartVisible = $derived(chartVisibleCtx ? $chartVisibleCtx : true);
+
+    const chartTitleCtx = getContext<Readable<string> | undefined>('chartTitle');
+    const chartTitle = $derived(chartTitleCtx ? $chartTitleCtx : '');
 
     let tooltip: TooltipData | null = $state(null);
     let hoveredIndex: number | null = $state(null);
@@ -69,13 +79,16 @@
 
     function handleBarHover(event: PointerEvent, d: BarData, index: number) {
         hoveredIndex = index;
+        const barColor = d.value >= 0 ? (d.color ?? positiveColor) : (d.color ?? negativeColor);
         tooltip = {
             x: event.clientX,
             y: event.clientY,
+            header: d.label,
+            subtitle: unit || undefined,
             items: [{
-                label: d.label,
-                value: yFormat(d.value),
-                color: d.value >= 0 ? (d.color ?? positiveColor) : (d.color ?? negativeColor),
+                label: yFormat(d.value),
+                value: unit || '',
+                color: barColor,
             }],
         };
     }
@@ -91,7 +104,7 @@
     viewBox="0 0 {width} {height}"
     style="max-width: {width}px; width: 100%; height: auto;"
     role="img"
-    aria-label="Diverging bar chart showing {data.length} values"
+    aria-label={chartTitle || `Diverging bar chart showing ${data.length} values`}
 >
     <g transform="translate({margin.left}, {margin.top})">
         <!-- Grid lines -->
@@ -121,18 +134,20 @@
             {@const barX = xScale(d.label) ?? 0}
             {@const barWidth = xScale.bandwidth()}
             {@const barColor = d.value >= 0 ? (d.color ?? positiveColor) : (d.color ?? negativeColor)}
-            {@const barY = d.value >= 0 ? yScale(d.value) : zeroY}
-            {@const barHeight = Math.abs(yScale(d.value) - zeroY)}
+            {@const targetY = d.value >= 0 ? yScale(d.value) : zeroY}
+            {@const targetHeight = Math.abs(yScale(d.value) - zeroY)}
             {@const isHovered = hoveredIndex === i}
             <rect
                 x={barX}
-                y={barY}
+                y={chartVisible ? targetY : zeroY}
                 width={barWidth}
-                height={barHeight}
+                height={chartVisible ? targetHeight : 0}
                 fill={barColor}
                 fill-opacity={hoveredIndex === null ? 0.85 : isHovered ? 1 : 0.4}
+                stroke={isHovered ? 'var(--color-accent)' : 'none'}
+                stroke-width={isHovered ? 1.5 : 0}
                 rx="1"
-                style="transition: fill-opacity 0.15s ease;"
+                style="transition: y 0.5s cubic-bezier(0.22, 1, 0.36, 1) {i * 50}ms, height 0.5s cubic-bezier(0.22, 1, 0.36, 1) {i * 50}ms, fill-opacity 0.15s ease, stroke 0.15s ease;"
                 onpointermove={(e) => handleBarHover(e, d, i)}
                 onpointerleave={handlePointerLeave}
             />
@@ -173,4 +188,16 @@
     </g>
 </svg>
 
-<Tooltip data={tooltip} {unit} />
+<!-- +/- Legend -->
+<div class="mt-1 flex flex-wrap gap-4 px-2 text-xs">
+    <div class="flex items-center gap-1.5">
+        <span class="inline-block h-2.5 w-2.5 rounded-full" style="background: {positiveColor};"></span>
+        <span class="text-text-secondary">{positiveLabel}</span>
+    </div>
+    <div class="flex items-center gap-1.5">
+        <span class="inline-block h-2.5 w-2.5 rounded-full" style="background: {negativeColor};"></span>
+        <span class="text-text-secondary">{negativeLabel}</span>
+    </div>
+</div>
+
+<Tooltip data={tooltip} />

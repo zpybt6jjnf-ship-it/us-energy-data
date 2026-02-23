@@ -8,7 +8,7 @@
 	import { MAP_DEFAULT_RANGE, MAP_LABEL_COLORS } from '$utils/colors';
 	import { FIPS_TO_ABBR } from '$lib/utils/states';
 	import { getContext } from 'svelte';
-	import type { Readable } from 'svelte/store';
+	import type { Readable, Writable } from 'svelte/store';
 
 	interface MapData {
 		state: string;
@@ -44,6 +44,12 @@
 	const chartWidthCtx = getContext<Readable<number> | undefined>('chartWidth');
 	const width = $derived(chartWidthCtx ? $chartWidthCtx : propWidth);
 	const height = $derived(Math.round(width * 0.625));
+
+	const chartVisibleCtx = getContext<Writable<boolean> | undefined>('chartVisible');
+	const chartVisible = $derived(chartVisibleCtx ? $chartVisibleCtx : true);
+
+	const chartTitleCtx = getContext<Readable<string> | undefined>('chartTitle');
+	const chartTitle = $derived(chartTitleCtx ? $chartTitleCtx : '');
 
 	let tooltip: TooltipData | null = $state(null);
 	let hoveredFips: string | null = $state(null);
@@ -100,7 +106,9 @@
 		tooltip = {
 			x: event.clientX,
 			y: event.clientY,
-			items: [{ label: d.state, value: valueFormat(d.value), color: colorScale(d.value) }],
+			header: d.state,
+			subtitle: unit || undefined,
+			items: [{ label: valueFormat(d.value), value: unit || '', color: colorScale(d.value) }],
 		};
 	}
 
@@ -115,7 +123,7 @@
 	viewBox="0 0 {width} {height}"
 	style="max-width: {width}px; width: 100%; height: auto;"
 	role="img"
-	aria-label="Choropleth map of the United States"
+	aria-label={chartTitle || 'Choropleth map of the United States'}
 >
 	<!-- Color legend — centered above the map -->
 	<g transform="translate({legendX}, 4)">
@@ -182,7 +190,7 @@
 	</g>
 
 	<!-- State paths — offset down to make room for legend -->
-	<g transform="translate(0, {legendAreaHeight})">
+	<g transform="translate(0, {legendAreaHeight})" opacity={chartVisible ? 1 : 0} style="transition: opacity 0.6s ease;">
 		{#each topology.features as feature}
 			{@const d = pathGenerator(feature)}
 			{@const fips = feature.id ?? feature.properties?.STATEFP}
@@ -237,7 +245,7 @@
 	</g>
 </svg>
 
-<Tooltip data={tooltip} {unit} />
+<Tooltip data={tooltip} />
 
 <style>
 	.state-path {

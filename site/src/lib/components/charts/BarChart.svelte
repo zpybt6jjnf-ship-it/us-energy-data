@@ -45,8 +45,12 @@
 	const chartVisibleCtx = getContext<Writable<boolean> | undefined>('chartVisible');
 	const chartVisible = $derived(chartVisibleCtx ? $chartVisibleCtx : true);
 
+	const chartTitleCtx = getContext<Readable<string> | undefined>('chartTitle');
+	const chartTitle = $derived(chartTitleCtx ? $chartTitleCtx : '');
+
 	let tooltip: TooltipData | null = $state(null);
 	let hoveredIndex: number | null = $state(null);
+	let svgEl: SVGSVGElement | undefined = $state();
 
 	const innerWidth = $derived(width - margin.left - margin.right);
 	const innerHeight = $derived(height - margin.top - margin.bottom);
@@ -82,7 +86,9 @@
 		tooltip = {
 			x: event.clientX,
 			y: event.clientY,
-			items: [{ label: d.label, value: yFormat(d.value), color: colorScale(d.label) }],
+			header: d.label,
+			subtitle: unit || undefined,
+			items: [{ label: yFormat(d.value), value: unit || '', color: colorScale(d.label) }],
 		};
 	}
 
@@ -90,14 +96,58 @@
 		hoveredIndex = null;
 		tooltip = null;
 	}
+
+	function updateTooltipForIndex(index: number) {
+		const d = data[index];
+		if (!d || !svgEl) return;
+		const rect = svgEl.getBoundingClientRect();
+		const bandPos = bandScale(d.label) ?? 0;
+		const bandWidth = bandScale.bandwidth();
+		hoveredIndex = index;
+		tooltip = {
+			x: rect.left + margin.left + (horizontal ? valueScale(d.value) / 2 : bandPos + bandWidth / 2),
+			y: rect.top + margin.top + (horizontal ? bandPos + bandWidth / 2 : valueScale(d.value)),
+			header: d.label,
+			subtitle: unit || undefined,
+			items: [{ label: yFormat(d.value), value: unit || '', color: colorScale(d.label) }],
+		};
+	}
+
+	function handleKeydown(event: KeyboardEvent) {
+		if (data.length === 0) return;
+
+		if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+			event.preventDefault();
+			const next = hoveredIndex === null ? 0 : Math.min(hoveredIndex + 1, data.length - 1);
+			updateTooltipForIndex(next);
+		} else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+			event.preventDefault();
+			const prev = hoveredIndex === null ? data.length - 1 : Math.max(hoveredIndex - 1, 0);
+			updateTooltipForIndex(prev);
+		} else if (event.key === 'Escape') {
+			hoveredIndex = null;
+			tooltip = null;
+			svgEl?.blur();
+		}
+	}
+
+	function handleFocusOut() {
+		hoveredIndex = null;
+		tooltip = null;
+	}
 </script>
 
+<!-- svelte-ignore a11y_no_noninteractive_tabindex a11y_no_noninteractive_element_interactions -->
 <svg
+	bind:this={svgEl}
 	class="chart"
 	viewBox="0 0 {width} {height}"
-	style="max-width: {width}px; width: 100%; height: auto;"
+	style="max-width: {width}px; width: 100%; height: auto; outline-offset: 2px;"
 	role="img"
-	aria-label="Bar chart showing {data.map(d => d.label).join(', ')}"
+	aria-label={chartTitle || `Bar chart showing ${data.map(d => d.label).join(', ')}`}
+	tabindex="0"
+	onkeydown={handleKeydown}
+	onfocusout={handleFocusOut}
 >
 	<g transform="translate({margin.left}, {margin.top})">
 		<!-- Grid lines -->
@@ -126,6 +176,7 @@
 			{@const bandPos = bandScale(d.label) ?? 0}
 			{@const bandWidth = bandScale.bandwidth()}
 			{@const barOpacity = hoveredIndex === null ? 1 : hoveredIndex === i ? 1 : 0.4}
+			{@const isHovered = hoveredIndex === i}
 			{#if horizontal}
 				<rect
 					x={0}
@@ -136,7 +187,9 @@
 					rx="3"
 					shape-rendering="crispEdges"
 					opacity={barOpacity}
-					style="transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1) {i * 50}ms, opacity 0.2s ease;"
+					stroke={isHovered ? 'var(--color-accent)' : 'none'}
+					stroke-width={isHovered ? 1.5 : 0}
+					style="transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1) {i * 50}ms, opacity 0.2s ease, stroke 0.15s ease;"
 					onpointermove={(e) => handleBarHover(e, d, i)}
 					onpointerleave={handlePointerLeave}
 				/>
@@ -150,7 +203,9 @@
 					rx="3"
 					shape-rendering="crispEdges"
 					opacity={barOpacity}
-					style="transition: y 0.5s cubic-bezier(0.22, 1, 0.36, 1) {i * 50}ms, height 0.5s cubic-bezier(0.22, 1, 0.36, 1) {i * 50}ms, opacity 0.2s ease;"
+					stroke={isHovered ? 'var(--color-accent)' : 'none'}
+					stroke-width={isHovered ? 1.5 : 0}
+					style="transition: y 0.5s cubic-bezier(0.22, 1, 0.36, 1) {i * 50}ms, height 0.5s cubic-bezier(0.22, 1, 0.36, 1) {i * 50}ms, opacity 0.2s ease, stroke 0.15s ease;"
 					onpointermove={(e) => handleBarHover(e, d, i)}
 					onpointerleave={handlePointerLeave}
 				/>
@@ -221,4 +276,4 @@
 	</div>
 {/if}
 
-<Tooltip data={tooltip} {unit} />
+<Tooltip data={tooltip} />

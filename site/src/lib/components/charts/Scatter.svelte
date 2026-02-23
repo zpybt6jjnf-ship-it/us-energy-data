@@ -6,7 +6,7 @@
 	import { CHART_COLORS } from '$utils/colors';
 	import Tooltip from './Tooltip.svelte';
 	import { getContext } from 'svelte';
-	import type { Readable } from 'svelte/store';
+	import type { Readable, Writable } from 'svelte/store';
 
 	interface ScatterPoint {
 		x: number;
@@ -30,7 +30,7 @@
 	let {
 		data,
 		width: propWidth = 800,
-		height = 500,
+		height: propHeight = 500,
 		margin = { top: 16, right: 16, bottom: 44, left: 56 },
 		xLabel = '',
 		yLabel = '',
@@ -40,7 +40,15 @@
 	}: Props = $props();
 
 	const chartWidthCtx = getContext<Readable<number> | undefined>('chartWidth');
+	const chartHeightCtx = getContext<Readable<number> | undefined>('chartHeight');
 	const width = $derived(chartWidthCtx ? $chartWidthCtx : propWidth);
+	const height = $derived(chartHeightCtx ? $chartHeightCtx : propHeight);
+
+	const chartVisibleCtx = getContext<Writable<boolean> | undefined>('chartVisible');
+	const chartVisible = $derived(chartVisibleCtx ? $chartVisibleCtx : true);
+
+	const chartTitleCtx = getContext<Readable<string> | undefined>('chartTitle');
+	const chartTitle = $derived(chartTitleCtx ? $chartTitleCtx : '');
 
 	let tooltip: TooltipData | null = $state(null);
 	let hoveredIndex: number | null = $state(null);
@@ -94,7 +102,7 @@
 	viewBox="0 0 {width} {height}"
 	style="max-width: {width}px; width: 100%; height: auto;"
 	role="img"
-	aria-label="Scatter plot of {xLabel} vs {yLabel} with {data.length} data points"
+	aria-label={chartTitle || `Scatter plot of ${xLabel} vs ${yLabel} with ${data.length} data points`}
 >
 	<g transform="translate({margin.left}, {margin.top})">
 		<!-- Grid -->
@@ -109,16 +117,17 @@
 		{#each data as d, i}
 			{@const isHovered = hoveredIndex === i}
 			{@const pointOpacity = hoveredIndex === null ? 0.75 : isHovered ? 1 : 0.3}
-			{@const pointR = isHovered ? 8 : 6}
+			{@const baseR = isHovered ? 8 : 6}
+			{@const pointR = chartVisible ? baseR : 0}
 			<circle
 				cx={xScale(d.x)}
 				cy={yScale(d.y)}
 				r={pointR}
 				fill={colorScale(d.group ?? 'default')}
-				fill-opacity={pointOpacity}
+				fill-opacity={chartVisible ? pointOpacity : 0}
 				stroke="var(--color-surface)"
 				stroke-width="2"
-				style="transition: r 0.15s ease, opacity 0.15s ease;"
+				style="transition: r 0.4s cubic-bezier(0.22, 1, 0.36, 1) {i * 20}ms, fill-opacity 0.4s ease {i * 20}ms;"
 				onpointermove={(e) => handleDotHover(e, d, i)}
 				onpointerleave={handlePointerLeave}
 			/>

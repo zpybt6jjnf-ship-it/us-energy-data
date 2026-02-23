@@ -41,5 +41,6 @@ export interface TooltipData {
 	x: number;
 	y: number;
 	header?: string;
+	subtitle?: string;
 	items: { label: string; value: string; color: string }[];
 }

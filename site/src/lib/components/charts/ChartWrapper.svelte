@@ -18,6 +18,7 @@
 	let width = $state(800);
 	let visible = $state(false);
 	let linkCopied = $state(false);
+	let isFullscreen = $state(false);
 
 	const chartWidth = writable(800);
 	setContext('chartWidth', chartWidth);
@@ -27,6 +28,10 @@
 
 	const chartVisible = writable(false);
 	setContext('chartVisible', chartVisible);
+
+	const chartTitle = writable('');
+	setContext('chartTitle', chartTitle);
+	$effect(() => { chartTitle.set(meta.title); });
 
 	$effect(() => {
 		if (!containerEl) return;
@@ -72,6 +77,23 @@
 		}
 	}
 
+	async function handleFullscreen() {
+		if (!containerEl) return;
+		if (document.fullscreenElement) {
+			await document.exitFullscreen();
+		} else {
+			await containerEl.requestFullscreen();
+		}
+	}
+
+	$effect(() => {
+		function onFullscreenChange() {
+			isFullscreen = !!document.fullscreenElement;
+		}
+		document.addEventListener('fullscreenchange', onFullscreenChange);
+		return () => document.removeEventListener('fullscreenchange', onFullscreenChange);
+	});
+
 	async function handleCopyLink() {
 		try {
 			await navigator.clipboard.writeText(window.location.href);
@@ -92,6 +114,7 @@
 
 <div
 	class="relative py-6"
+	class:fullscreen-container={isFullscreen}
 	bind:this={containerEl}
 >
 	<div class="mb-3">
@@ -127,20 +150,26 @@
 
 		<span class="text-text-muted/30 text-[11px]">·</span>
 
-		<button onclick={handleDownloadCSV} class="text-[11px] text-text-muted hover:text-accent transition-colors cursor-pointer bg-transparent border-none p-0">
+		<button onclick={handleDownloadCSV} aria-label="Download data as CSV" class="text-[11px] text-text-muted hover:text-accent transition-colors cursor-pointer bg-transparent border-none p-0">
 			CSV
 		</button>
 
 		<span class="text-text-muted/30 text-[11px]">·</span>
 
-		<button onclick={handleDownloadPNG} class="text-[11px] text-text-muted hover:text-accent transition-colors cursor-pointer bg-transparent border-none p-0">
+		<button onclick={handleDownloadPNG} aria-label="Download chart as PNG" class="text-[11px] text-text-muted hover:text-accent transition-colors cursor-pointer bg-transparent border-none p-0">
 			PNG
 		</button>
 
 		<span class="text-text-muted/30 text-[11px]">·</span>
 
-		<button onclick={handleCopyLink} class="text-[11px] text-text-muted hover:text-accent transition-colors cursor-pointer bg-transparent border-none p-0">
+		<button onclick={handleCopyLink} aria-label="Copy link to chart" class="text-[11px] text-text-muted hover:text-accent transition-colors cursor-pointer bg-transparent border-none p-0">
 			{linkCopied ? 'Copied!' : 'Link'}
+		</button>
+
+		<span class="text-text-muted/30 text-[11px]">·</span>
+
+		<button onclick={handleFullscreen} aria-label={isFullscreen ? 'Exit fullscreen' : 'View chart fullscreen'} class="text-[11px] text-text-muted hover:text-accent transition-colors cursor-pointer bg-transparent border-none p-0">
+			{isFullscreen ? '⤓' : '⤢'}
 		</button>
 
 		{#if meta.lastUpdated}
@@ -160,5 +189,12 @@
 	@keyframes skeleton-shimmer {
 		0% { background-position: 200% 0; }
 		100% { background-position: -200% 0; }
+	}
+	.fullscreen-container {
+		background: var(--color-surface);
+		padding: 2rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 	}
 </style>
