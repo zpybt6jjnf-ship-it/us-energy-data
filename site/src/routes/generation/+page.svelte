@@ -4,6 +4,7 @@
 	import DivergingBarChart from '$components/charts/DivergingBarChart.svelte';
 	import ChoroplethMap from '$components/charts/ChoroplethMap.svelte';
 	import ChartWrapper from '$components/charts/ChartWrapper.svelte';
+	import MapChartToggle from '$components/charts/MapChartToggle.svelte';
 	import StateSelect from '$components/ui/StateSelect.svelte';
 	import TimeRangeSlider from '$components/ui/TimeRangeSlider.svelte';
 	import { ENERGY_SOURCE_COLORS, CHART_COLORS_CSS, CATEGORY_COLORS, STORAGE_COLOR, CARBON_INTENSITY_COLOR } from '$utils/colors';
@@ -53,6 +54,10 @@
 		lastUpdated: data.lastUpdated,
 		description: 'Natural gas has overtaken coal as the dominant source of US electricity, while wind and solar have grown rapidly from a small base. Nuclear provides steady baseload power.',
 		caveats: 'Generation values represent net generation at the plant level. "Other" includes biomass, geothermal, and other minor sources.',
+		relatedCharts: [
+			{ title: 'Prices by state', href: '/prices' },
+			{ title: 'Fossil fuel production', href: '/fuels' },
+		],
 	});
 
 	// Line chart: Key source trends over time
@@ -189,6 +194,10 @@
 		lastUpdated: data.lastUpdated,
 		description: 'While share data shows the relative shift, absolute generation volumes reveal the full picture. Coal generation has roughly halved since its peak, while natural gas has more than doubled. Wind and solar are growing rapidly but from a much smaller base.',
 		caveats: 'Values represent net generation (thousand MWh). Note the large difference in scale between established sources (coal, gas, nuclear) and newer renewables (wind, solar).',
+		relatedCharts: [
+			{ title: 'Fossil fuel production', href: '/fuels' },
+			{ title: 'Reliability trends', href: '/reliability' },
+		],
 	};
 
 	// Bar chart: Installed capacity by source (latest year)
@@ -256,6 +265,19 @@
 			.filter((d: any) => d.fips)
 	);
 
+	// Bar chart data for map/chart toggle
+	const mapBarData = $derived(
+		[...mapData]
+			.sort((a, b) => b.value - a.value)
+			.slice(0, 15)
+			.map((d) => ({
+				label: d.state,
+				value: d.value,
+			}))
+	);
+
+	let renewMapMode = $state<'map' | 'chart'>('map');
+
 	const mapMeta: ChartMeta = $derived({
 		title: `Renewable Energy Share by State (${latestYear})`,
 		subtitle: 'Wind + Solar + Hydro as % of total generation',
@@ -265,6 +287,10 @@
 		lastUpdated: data.lastUpdated,
 		description: 'Renewable energy penetration varies dramatically by state. Washington and Oregon lead with hydropower, while Iowa and Kansas have high wind shares. Southern states lag due to greater reliance on natural gas and coal.',
 		caveats: 'Renewables include wind, solar, and conventional hydroelectric. Nuclear is excluded despite being zero-carbon. Biomass is not included in this calculation.',
+		relatedCharts: [
+			{ title: 'Prices by state', href: '/prices' },
+			{ title: 'Reliability by state', href: '/reliability' },
+		],
 	});
 
 	// Chart 7: Capacity Factors by Technology Over Time
@@ -438,7 +464,7 @@
 
 	<div class="chart-breakout">
 		<section>
-			<ChartWrapper meta={genTrendMeta} data={timeFilteredGenTrend.flatMap((s) => s.values.map((v) => ({ source: s.name, year: v.date, generation: v.value })))}>
+			<ChartWrapper meta={genTrendMeta} allowLogScale data={timeFilteredGenTrend.flatMap((s) => s.values.map((v) => ({ source: s.name, year: v.date, generation: v.value })))}>
 				{#snippet controls()}
 					<StateSelect
 						selected={selectedStates}
@@ -457,6 +483,7 @@
 					yLabel="thousand MWh"
 					yFormat={formatCompact}
 					unit="thousand MWh"
+					allowLogScale
 				/>
 			</ChartWrapper>
 		</section>
@@ -515,14 +542,28 @@
 	<div class="chart-breakout">
 		<section>
 			<ChartWrapper meta={mapMeta} data={mapData.map((d: any) => ({ state: d.state, renewable_share: d.value }))}>
-				<ChoroplethMap
-					data={mapData}
-					topology={data.topology}
-					colorInterpolator={interpolateGreens}
-					valueFormat={format(',.1f')}
-					unit="%"
-					onStateClick={toggleState}
-				/>
+				{#snippet controls()}
+					<MapChartToggle mode={renewMapMode} onToggle={(m) => { renewMapMode = m; }} />
+				{/snippet}
+				{#if renewMapMode === 'map'}
+					<ChoroplethMap
+						data={mapData}
+						topology={data.topology}
+						colorInterpolator={interpolateGreens}
+						valueFormat={format(',.1f')}
+						unit="%"
+						onStateClick={toggleState}
+					/>
+				{:else}
+					<BarChart
+						data={mapBarData}
+						horizontal
+						yLabel="%"
+						yFormat={format(',.1f')}
+						unit="%"
+						margin={{ top: 20, right: 20, bottom: 60, left: 120 }}
+					/>
+				{/if}
 			</ChartWrapper>
 			{#if selectedStates.length > 0}
 				<p class="text-xs text-text-muted mt-1">National data — not affected by state selection</p>

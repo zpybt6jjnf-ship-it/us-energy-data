@@ -1,10 +1,11 @@
 <script lang="ts">
-	import { scaleLinear, scaleOrdinal } from 'd3-scale';
+	import { scaleLinear, scaleOrdinal, scaleSymlog } from 'd3-scale';
 	import { line as d3line, curveMonotoneX } from 'd3-shape';
 	import { extent } from 'd3-array';
 	import { format } from 'd3-format';
 	import type { DataSeries, Margin, TooltipData } from '$types/chart';
 	import { CHART_COLORS_CSS, REFERENCE_COLOR } from '$utils/colors';
+	import { movingAverage } from '$utils/math';
 	import Tooltip from './Tooltip.svelte';
 	import { getContext } from 'svelte';
 	import type { Readable, Writable } from 'svelte/store';
@@ -27,6 +28,8 @@
 		annotations?: Annotation[];
 		includeZero?: boolean;
 		referenceSeries?: DataSeries;
+		allowLogScale?: boolean;
+		showTrend?: boolean | number;
 	}
 
 	let {
@@ -41,6 +44,8 @@
 		annotations = [],
 		includeZero = true,
 		referenceSeries,
+		allowLogScale = false,
+		showTrend = false,
 	}: Props = $props();
 
 	// Combine main series with optional reference series for scale calculations
@@ -57,6 +62,12 @@
 
 	const chartTitleCtx = getContext<Readable<string> | undefined>('chartTitle');
 	const chartTitle = $derived(chartTitleCtx ? $chartTitleCtx : '');
+
+	// Log scale context from ChartWrapper
+	const chartLogScaleCtx = getContext<Writable<boolean> | undefined>('chartLogScale');
+	const useLogScale = $derived(
+		allowLogScale && chartLogScaleCtx ? $chartLogScaleCtx : false
+	);
 
 	let tooltip: TooltipData | null = $state(null);
 	let tooltipDate: number | null = $state(null);
@@ -80,7 +91,11 @@
 	);
 
 	const xScale = $derived(scaleLinear().domain(xDomain).range([0, innerWidth]));
-	const yScale = $derived(scaleLinear().domain(yDomain).range([innerHeight, 0]).nice());
+	const yScale = $derived(
+		useLogScale
+			? scaleSymlog().domain(yDomain).range([innerHeight, 0]).nice()
+			: scaleLinear().domain(yDomain).range([innerHeight, 0]).nice()
+	);
 
 	const colorScale = $derived(
 		scaleOrdinal<string>()
@@ -97,6 +112,21 @@
 
 	const xTicks = $derived(xScale.ticks(Math.min(10, Math.floor(innerWidth / 80))));
 	const yTicks = $derived(yScale.ticks(Math.min(6, Math.floor(innerHeight / 50))));
+
+	// Trend line (moving average) computation
+	const trendWindow = $derived(
+		showTrend === true ? 5 : typeof showTrend === 'number' ? showTrend : 0
+	);
+
+	const trendSeries = $derived(
+		trendWindow > 0
+			? series.map((s) => ({
+					name: s.name,
+					color: colorScale(s.name),
+					values: movingAverage(s.values, trendWindow),
+				})).filter((s) => s.values.length > 1)
+			: []
+	);
 
 	// End-of-line labels with collision avoidance
 	const endLabels = $derived.by(() => {
@@ -324,6 +354,24 @@
 			{/if}
 		{/each}
 
+		<!-- Trend lines (moving average overlays) -->
+		{#each trendSeries as ts}
+			{@const trendPath = lineFn(ts.values)}
+			{#if trendPath}
+				<path
+					d={trendPath}
+					fill="none"
+					stroke={ts.color}
+					stroke-width="1.5"
+					stroke-dasharray="6 4"
+					stroke-linejoin="round"
+					stroke-linecap="round"
+					opacity="0.5"
+					shape-rendering="geometricPrecision"
+				/>
+			{/if}
+		{/each}
+
 		<!-- Lines -->
 		{#each series as s, si}
 			{@const path = lineFn(s.values)}
@@ -422,6 +470,12 @@
 			<span class="text-text-secondary">{s.name}</span>
 		</div>
 	{/each}
+	{#if trendWindow > 0}
+		<div class="flex items-center gap-1.5">
+			<span class="inline-block h-0 w-4 border-t border-dashed border-text-muted"></span>
+			<span class="text-text-muted">{trendWindow}-yr avg</span>
+		</div>
+	{/if}
 </div>
 
 <Tooltip data={tooltip} {unit} />

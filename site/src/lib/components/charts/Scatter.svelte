@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { scaleLinear, scaleOrdinal } from 'd3-scale';
+	import { scaleLinear, scaleOrdinal, scaleSymlog } from 'd3-scale';
 	import { extent } from 'd3-array';
 	import { format } from 'd3-format';
 	import type { Margin, TooltipData } from '$types/chart';
@@ -25,6 +25,7 @@
 		xFormat?: (v: number) => string;
 		yFormat?: (v: number) => string;
 		unit?: string;
+		allowLogScale?: boolean;
 	}
 
 	let {
@@ -37,6 +38,7 @@
 		xFormat = format(',.0f'),
 		yFormat = format(',.0f'),
 		unit = '',
+		allowLogScale = false,
 	}: Props = $props();
 
 	const chartWidthCtx = getContext<Readable<number> | undefined>('chartWidth');
@@ -50,6 +52,12 @@
 	const chartTitleCtx = getContext<Readable<string> | undefined>('chartTitle');
 	const chartTitle = $derived(chartTitleCtx ? $chartTitleCtx : '');
 
+	// Log scale context from ChartWrapper
+	const chartLogScaleCtx = getContext<Writable<boolean> | undefined>('chartLogScale');
+	const useLogScale = $derived(
+		allowLogScale && chartLogScaleCtx ? $chartLogScaleCtx : false
+	);
+
 	let tooltip: TooltipData | null = $state(null);
 	let hoveredIndex: number | null = $state(null);
 
@@ -59,8 +67,16 @@
 	const xDomain = $derived(extent(data, (d) => d.x) as [number, number]);
 	const yDomain = $derived(extent(data, (d) => d.y) as [number, number]);
 
-	const xScale = $derived(scaleLinear().domain(xDomain).range([0, innerWidth]).nice());
-	const yScale = $derived(scaleLinear().domain(yDomain).range([innerHeight, 0]).nice());
+	const xScale = $derived(
+		useLogScale
+			? scaleSymlog().domain(xDomain).range([0, innerWidth]).nice()
+			: scaleLinear().domain(xDomain).range([0, innerWidth]).nice()
+	);
+	const yScale = $derived(
+		useLogScale
+			? scaleSymlog().domain(yDomain).range([innerHeight, 0]).nice()
+			: scaleLinear().domain(yDomain).range([innerHeight, 0]).nice()
+	);
 
 	const groups = $derived([...new Set(data.map((d) => d.group ?? 'default'))]);
 	const colorScale = $derived(

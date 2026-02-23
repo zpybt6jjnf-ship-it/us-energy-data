@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { FIPS_TO_ABBR } from '$utils/states';
+	import { browser } from '$app/environment';
 
 	interface Props {
 		selected: string[];
@@ -20,6 +21,39 @@
 	// All state abbreviations sorted alphabetically
 	const allStates = Object.values(FIPS_TO_ABBR).sort();
 
+	const STATE_GROUPS: Record<string, string[]> = {
+		'Top 5 by population': ['CA', 'TX', 'FL', 'NY', 'PA'],
+		'Southeast': ['FL', 'GA', 'NC', 'SC', 'VA', 'TN', 'AL'],
+		'Midwest': ['IL', 'OH', 'MI', 'IN', 'WI', 'MN', 'IA', 'MO'],
+		'West Coast': ['CA', 'OR', 'WA'],
+		'Northeast': ['NY', 'NJ', 'PA', 'MA', 'CT'],
+	};
+
+	const RECENT_KEY = 'stateselect-recent';
+
+	// Load recent selections from localStorage
+	let recentSelections = $state<string[][]>(
+		browser ? (() => {
+			try {
+				const raw = localStorage.getItem(RECENT_KEY);
+				return raw ? JSON.parse(raw) : [];
+			} catch { return []; }
+		})() : []
+	);
+
+	// Save to recents when selection changes (debounced by tracking previous)
+	let prevSelected: string[] = [];
+	$effect(() => {
+		if (!browser) return;
+		if (selected.length > 0 && JSON.stringify(selected) !== JSON.stringify(prevSelected)) {
+			prevSelected = [...selected];
+			const key = [...selected].sort().join(',');
+			const existing = recentSelections.filter(r => [...r].sort().join(',') !== key);
+			recentSelections = [[...selected], ...existing].slice(0, 3);
+			try { localStorage.setItem(RECENT_KEY, JSON.stringify(recentSelections)); } catch {}
+		}
+	});
+
 	const filtered = $derived(
 		query.length === 0
 			? allStates
@@ -33,6 +67,16 @@
 			onchange([...selected, abbr]);
 		}
 		query = '';
+	}
+
+	function selectGroup(states: string[]) {
+		const toAdd = states.filter(s => !selected.includes(s));
+		const available = maxSelections - selected.length;
+		onchange([...selected, ...toAdd.slice(0, available)]);
+	}
+
+	function applyRecent(combo: string[]) {
+		onchange(combo.slice(0, maxSelections));
 	}
 
 	function remove(abbr: string) {
@@ -66,6 +110,8 @@
 		const shuffled = [...interestingStates].sort(() => Math.random() - 0.5);
 		onchange(shuffled.slice(0, 3));
 	}
+
+	const showGroups = $derived(query.length === 0 && open);
 </script>
 
 <div class="relative inline-flex flex-col gap-1.5">
@@ -145,7 +191,44 @@
 
 	<!-- Dropdown -->
 	{#if open}
-		<div id="state-select-listbox" role="listbox" class="state-select-dropdown absolute top-full z-50 mt-1 max-h-48 w-full overflow-auto rounded-lg border border-border bg-surface-card shadow-lg">
+		<div id="state-select-listbox" role="listbox" class="state-select-dropdown absolute top-full z-50 mt-1 max-h-64 w-full overflow-auto rounded-lg border border-border bg-surface-card shadow-lg min-w-[220px]">
+			{#if showGroups}
+				<!-- Recent selections -->
+				{#if recentSelections.length > 0}
+					<div class="px-3 pt-2 pb-1">
+						<span class="text-[10px] uppercase tracking-wider font-semibold text-text-muted">Recent</span>
+					</div>
+					{#each recentSelections as combo}
+						<button
+							type="button"
+							class="flex w-full items-center gap-2 px-3 py-1.5 text-sm text-text hover:bg-surface-alt transition-colors cursor-pointer text-left"
+							onmousedown={(e) => { e.preventDefault(); applyRecent(combo); }}
+						>
+							<span class="text-xs text-text-secondary">{combo.join(', ')}</span>
+						</button>
+					{/each}
+				{/if}
+
+				<!-- Region groups -->
+				{#each Object.entries(STATE_GROUPS) as [groupName, groupStates]}
+					<div class="px-3 pt-2 pb-1">
+						<span class="text-[10px] uppercase tracking-wider font-semibold text-text-muted">{groupName}</span>
+					</div>
+					<button
+						type="button"
+						class="flex w-full items-center gap-2 px-3 py-1.5 text-sm text-text hover:bg-surface-alt transition-colors cursor-pointer text-left"
+						onmousedown={(e) => { e.preventDefault(); selectGroup(groupStates); }}
+					>
+						<span class="text-xs text-accent font-medium">Select all ({groupStates.length})</span>
+						<span class="text-[10px] text-text-muted ml-auto">{groupStates.join(', ')}</span>
+					</button>
+				{/each}
+
+				<div class="px-3 pt-2 pb-1 border-t border-border mt-1">
+					<span class="text-[10px] uppercase tracking-wider font-semibold text-text-muted">All states</span>
+				</div>
+			{/if}
+
 			{#if filtered.length === 0}
 				<div class="px-3 py-2 text-sm text-text-muted">No states found</div>
 			{:else}

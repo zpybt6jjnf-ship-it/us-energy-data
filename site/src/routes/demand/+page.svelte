@@ -94,6 +94,10 @@
 		lastUpdated: data.lastUpdated,
 		description: 'Total US electricity consumption has grown modestly over the past two decades, with commercial and residential sectors driving most of the increase. Energy efficiency gains have partially offset growth in economic activity and population. Select states to compare against the national totals.',
 		caveats: 'Consumption data represents retail sales to end-use customers. It excludes direct-use generation and transmission losses, which can add 5-7% to total electricity demand.',
+		relatedCharts: [
+			{ title: 'Prices & Bills', href: '/prices' },
+			{ title: 'Generation sources', href: '/generation' },
+		],
 	};
 
 	// Bar chart: Top 10 states by total consumption (latest year)
@@ -196,6 +200,10 @@
 		description: 'Some states like Wyoming and Louisiana have very high per-capita electricity consumption due to energy-intensive heavy industry (mining, refining, petrochemicals) that inflates usage well beyond household needs. Meanwhile, states like Hawaii and California rank low thanks to mild climates, aggressive efficiency standards, and service-oriented economies.',
 		caveats: '⚠️ Uses 2023 Census population estimates for all years — per-capita figures for earlier years are approximate. Commercial and industrial consumption is included in per-capita calculation, which inflates values for states with heavy industry.',
 	});
+
+	// Per-capita / total toggle state
+	const activeMetric = $derived($chartConfig.metric);
+	const showPerCapita = $derived(activeMetric === 'perCapita');
 </script>
 
 <svelte:head>
@@ -285,7 +293,7 @@
 		</div>
 	</div>
 
-	<!-- Section: State consumption -->
+	<!-- Section: State consumption with per-capita toggle -->
 	<div class="prose-width mt-8">
 		<h2 class="section-heading">Which states consume the most?</h2>
 		<p class="mt-2 text-sm leading-relaxed text-text-secondary">
@@ -294,33 +302,66 @@
 	</div>
 
 	<div class="chart-breakout mt-4">
-		<div class="grid md:grid-cols-2 gap-6">
-			<section>
-				<ChartWrapper meta={barMeta} data={stateRanking.map((d) => ({ state: d.label, consumption: d.value }))}>
-					<BarChart
-						data={stateRanking}
-						horizontal
-						yLabel="million kWh"
-						yFormat={formatCompact}
-						unit="million kWh"
-						margin={{ top: 20, right: 20, bottom: 60, left: 120 }}
-					/>
-				</ChartWrapper>
-			</section>
-
-			<section>
-				<ChartWrapper meta={perCapitaMeta} data={perCapitaRanking.map((d: any) => ({ state: d.label, per_capita_kwh: d.value }))}>
-					<BarChart
-						data={perCapitaRanking}
-						horizontal
-						yLabel="kWh"
-						yFormat={formatCompact}
-						unit="kWh"
-						margin={{ top: 20, right: 20, bottom: 60, left: 120 }}
-					/>
-				</ChartWrapper>
-			</section>
+		<!-- Per-capita / Total toggle -->
+		<div class="mb-3 flex items-center gap-1">
+			<div class="inline-flex rounded-lg border border-border overflow-hidden" role="group" aria-label="View mode">
+				<button
+					type="button"
+					class="px-3 py-1 text-[11px] font-medium transition-colors cursor-pointer {!showPerCapita ? 'bg-accent text-white' : 'bg-transparent text-text-secondary hover:text-accent'}"
+					onclick={() => updateConfig('metric', 'nominal')}
+				>
+					Total
+				</button>
+				<button
+					type="button"
+					class="px-3 py-1 text-[11px] font-medium transition-colors cursor-pointer border-l border-border {showPerCapita ? 'bg-accent text-white' : 'bg-transparent text-text-secondary hover:text-accent'}"
+					onclick={() => updateConfig('metric', 'perCapita')}
+				>
+					Per capita
+				</button>
+			</div>
 		</div>
+
+		{#if showPerCapita}
+			<ChartWrapper meta={perCapitaMeta} data={perCapitaRanking.map((d: any) => ({ state: d.label, per_capita_kwh: d.value }))}>
+				<BarChart
+					data={perCapitaRanking}
+					horizontal
+					yLabel="kWh"
+					yFormat={formatCompact}
+					unit="kWh"
+					margin={{ top: 20, right: 20, bottom: 60, left: 120 }}
+				/>
+			</ChartWrapper>
+		{:else}
+			<div class="grid md:grid-cols-2 gap-6">
+				<section>
+					<ChartWrapper meta={barMeta} data={stateRanking.map((d) => ({ state: d.label, consumption: d.value }))}>
+						<BarChart
+							data={stateRanking}
+							horizontal
+							yLabel="million kWh"
+							yFormat={formatCompact}
+							unit="million kWh"
+							margin={{ top: 20, right: 20, bottom: 60, left: 120 }}
+						/>
+					</ChartWrapper>
+				</section>
+
+				<section>
+					<ChartWrapper meta={perCapitaMeta} data={perCapitaRanking.map((d: any) => ({ state: d.label, per_capita_kwh: d.value }))}>
+						<BarChart
+							data={perCapitaRanking}
+							horizontal
+							yLabel="kWh"
+							yFormat={formatCompact}
+							unit="kWh"
+							margin={{ top: 20, right: 20, bottom: 60, left: 120 }}
+						/>
+					</ChartWrapper>
+				</section>
+			</div>
+		{/if}
 	</div>
 
 	<!-- Cross-link -->

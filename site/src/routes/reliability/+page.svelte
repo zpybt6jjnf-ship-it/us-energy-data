@@ -1,8 +1,10 @@
 <script lang="ts">
 	import LineChart from '$components/charts/LineChart.svelte';
+	import BarChart from '$components/charts/BarChart.svelte';
 	import Scatter from '$components/charts/Scatter.svelte';
 	import ChoroplethMap from '$components/charts/ChoroplethMap.svelte';
 	import ChartWrapper from '$components/charts/ChartWrapper.svelte';
+	import MapChartToggle from '$components/charts/MapChartToggle.svelte';
 	import Dropdown from '$components/ui/Dropdown.svelte';
 	import StateSelect from '$components/ui/StateSelect.svelte';
 	import { chartConfig, updateConfig, toggleState, hasActiveFilters, resetConfig } from '$stores/chartConfig';
@@ -58,6 +60,10 @@
 		caveats: activeMed === 'with_med'
 			? 'Including major event days (hurricanes, ice storms, etc.) causes large year-to-year variation. Toggle to "Without Major Event Days" for a steadier trend.'
 			: 'Excluding major event days removes the impact of catastrophic weather events (hurricanes, ice storms) to show underlying grid reliability trends.',
+		relatedCharts: [
+			{ title: 'Prices by state', href: '/prices' },
+			{ title: 'Generation mix', href: '/generation#generation-mix' },
+		],
 	});
 
 	// --- State comparison overlay on SAIDI trend ---
@@ -85,6 +91,19 @@
 			.filter((d: { fips: string; value: number | null }) => d.fips && d.value != null)
 	);
 
+	// Bar chart data for map/chart toggle
+	const mapBarData = $derived(
+		[...mapData]
+			.sort((a, b) => (b.value ?? 0) - (a.value ?? 0))
+			.slice(0, 15)
+			.map((d) => ({
+				label: d.state,
+				value: d.value ?? 0,
+			}))
+	);
+
+	let reliabilityMapMode = $state<'map' | 'chart'>('map');
+
 	const mapMeta: ChartMeta = $derived({
 		title: 'Power Outage Duration by State',
 		subtitle: `SAIDI by state (${activeMed === 'without_med' ? 'excl.' : 'incl.'} major event days), ${data.byState[0]?.year || 2024}`,
@@ -94,6 +113,10 @@
 		lastUpdated: data.lastUpdated,
 		description: 'Customer-weighted average outage duration (SAIDI) for each state. Darker colors indicate longer average outages. Southeastern and Gulf Coast states tend to experience more outage minutes due to hurricane and severe weather exposure.',
 		caveats: 'State averages are computed from individual utility reports weighted by customers served. States with few reporting utilities may have less reliable averages.',
+		relatedCharts: [
+			{ title: 'Prices by state', href: '/prices' },
+			{ title: 'Renewable share', href: '/generation' },
+		],
 	});
 
 	// --- Chart 2: SAIDI vs SAIFI scatter ---
@@ -217,6 +240,7 @@
 				yFormat={format(',.0f')}
 				unit="min"
 				annotations={activeMed === 'with_med' ? saidiAnnotations : []}
+				showTrend={5}
 			/>
 		</ChartWrapper>
 	</div>
@@ -243,14 +267,28 @@
 
 	<div class="chart-breakout mt-6">
 		<ChartWrapper meta={mapMeta} data={mapData}>
-			<ChoroplethMap
-				data={mapData}
-				topology={data.topology}
-				colorInterpolator={interpolateYlOrRd}
-				valueFormat={format(',.0f')}
-				unit="min"
-				onStateClick={toggleState}
-			/>
+			{#snippet controls()}
+				<MapChartToggle mode={reliabilityMapMode} onToggle={(m) => { reliabilityMapMode = m; }} />
+			{/snippet}
+			{#if reliabilityMapMode === 'map'}
+				<ChoroplethMap
+					data={mapData}
+					topology={data.topology}
+					colorInterpolator={interpolateYlOrRd}
+					valueFormat={format(',.0f')}
+					unit="min"
+					onStateClick={toggleState}
+				/>
+			{:else}
+				<BarChart
+					data={mapBarData}
+					horizontal
+					yLabel="min"
+					yFormat={format(',.0f')}
+					unit="min"
+					margin={{ top: 20, right: 20, bottom: 60, left: 120 }}
+				/>
+			{/if}
 		</ChartWrapper>
 		{#if selectedStates.length > 0}
 			<p class="text-xs text-text-muted mt-1">Shows all states — click a state to add it to the trend chart filter</p>

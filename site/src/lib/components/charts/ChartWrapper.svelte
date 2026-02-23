@@ -4,6 +4,8 @@
 	import { downloadCSV, downloadPNG } from '$utils/download';
 	import { setContext } from 'svelte';
 	import { writable } from 'svelte/store';
+	import DataTable from './DataTable.svelte';
+	import EmbedPopover from '$components/ui/EmbedPopover.svelte';
 
 	interface Props {
 		meta: ChartMeta;
@@ -11,14 +13,17 @@
 		hero?: boolean;
 		children: Snippet;
 		controls?: Snippet;
+		allowLogScale?: boolean;
 	}
 
-	let { meta, data = [], hero = false, children, controls }: Props = $props();
+	let { meta, data = [], hero = false, children, controls, allowLogScale = false }: Props = $props();
 	let containerEl: HTMLDivElement | undefined = $state();
 	let width = $state(800);
 	let visible = $state(false);
 	let linkCopied = $state(false);
 	let isFullscreen = $state(false);
+	let showTable = $state(false);
+	let showEmbed = $state(false);
 
 	const chartWidth = writable(800);
 	setContext('chartWidth', chartWidth);
@@ -32,6 +37,10 @@
 	const chartTitle = writable('');
 	setContext('chartTitle', chartTitle);
 	$effect(() => { chartTitle.set(meta.title); });
+
+	// Log scale context
+	const chartLogScale = writable(false);
+	setContext('chartLogScale', chartLogScale);
 
 	$effect(() => {
 		if (!containerEl) return;
@@ -110,6 +119,14 @@
 			setTimeout(() => { linkCopied = false; }, 2000);
 		}
 	}
+
+	const chartId = $derived(meta.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''));
+
+	function toggleLogScale() {
+		chartLogScale.update((v) => !v);
+	}
+
+	const hasMethodology = $derived(!!(meta.description || meta.caveats));
 </script>
 
 <div
@@ -124,14 +141,28 @@
 		{/if}
 	</div>
 
-	{#if controls}
+	{#if controls || allowLogScale || data.length > 0}
 		<div class="mb-2 flex flex-wrap items-center gap-2">
-			{@render controls()}
+			{#if controls}
+				{@render controls()}
+			{/if}
+
+			{#if allowLogScale}
+				<button
+					onclick={toggleLogScale}
+					class="rounded border border-border px-2 py-0.5 text-[11px] font-medium transition-colors cursor-pointer {$chartLogScale ? 'bg-accent text-white border-accent' : 'bg-transparent text-text-secondary hover:border-accent hover:text-accent'}"
+					aria-label="Toggle logarithmic scale"
+				>
+					{$chartLogScale ? 'Log' : 'Lin'}
+				</button>
+			{/if}
 		</div>
 	{/if}
 
 	{#if !visible}
 		<div class="skeleton" style="width: 100%; height: 300px;"></div>
+	{:else if showTable && data.length > 0}
+		<DataTable {data} unit={meta.unit} />
 	{:else}
 		<div class="chart-container" style="width: 100%; opacity: {visible ? 1 : 0}; transform: translateY({visible ? 0 : 20}px); transition: opacity 0.5s ease-out, transform 0.5s ease-out;">
 			{@render children()}
@@ -149,6 +180,14 @@
 		</a>
 
 		<span class="text-text-muted/30 text-[11px]">·</span>
+
+		{#if data.length > 0}
+			<button onclick={() => { showTable = !showTable; }} aria-label={showTable ? 'Show chart' : 'Show data table'} class="text-[11px] text-text-muted hover:text-accent transition-colors cursor-pointer bg-transparent border-none p-0">
+				{showTable ? 'Chart' : 'Table'}
+			</button>
+
+			<span class="text-text-muted/30 text-[11px]">·</span>
+		{/if}
 
 		<button onclick={handleDownloadCSV} aria-label="Download data as CSV" class="text-[11px] text-text-muted hover:text-accent transition-colors cursor-pointer bg-transparent border-none p-0">
 			CSV
@@ -168,6 +207,17 @@
 
 		<span class="text-text-muted/30 text-[11px]">·</span>
 
+		<div class="relative inline-block">
+			<button onclick={() => { showEmbed = !showEmbed; }} aria-label="Get embed code" class="text-[11px] text-text-muted hover:text-accent transition-colors cursor-pointer bg-transparent border-none p-0">
+				&lt;/&gt;
+			</button>
+			{#if showEmbed}
+				<EmbedPopover {chartId} />
+			{/if}
+		</div>
+
+		<span class="text-text-muted/30 text-[11px]">·</span>
+
 		<button onclick={handleFullscreen} aria-label={isFullscreen ? 'Exit fullscreen' : 'View chart fullscreen'} class="text-[11px] text-text-muted hover:text-accent transition-colors cursor-pointer bg-transparent border-none p-0">
 			{isFullscreen ? '⤓' : '⤢'}
 		</button>
@@ -177,11 +227,34 @@
 		{/if}
 	</div>
 
-	{#if meta.description}
-		<p class="mt-2 text-[12px] leading-relaxed text-text-secondary">{meta.description}</p>
+	{#if hasMethodology}
+		<details class="mt-2">
+			<summary class="text-[12px] font-medium text-text-secondary cursor-pointer select-none hover:text-accent transition-colors">
+				Sources & methodology
+			</summary>
+			<div class="mt-1.5 pl-3 border-l-2 border-border-light">
+				{#if meta.description}
+					<p class="text-[12px] leading-relaxed text-text-secondary">{meta.description}</p>
+				{/if}
+				{#if meta.caveats}
+					<p class="mt-1.5 text-[12px] italic text-text-muted leading-relaxed">{meta.caveats}</p>
+				{/if}
+			</div>
+		</details>
 	{/if}
-	{#if meta.caveats}
-		<p class="mt-1.5 text-[12px] italic text-text-muted leading-relaxed">{meta.caveats}</p>
+
+	{#if meta.relatedCharts && meta.relatedCharts.length > 0}
+		<div class="mt-3 flex flex-wrap items-center gap-1.5">
+			<span class="text-[11px] text-text-muted">Related:</span>
+			{#each meta.relatedCharts as related}
+				<a
+					href={related.href}
+					class="inline-block rounded-full border border-border px-2.5 py-0.5 text-[11px] font-medium text-text-secondary hover:border-accent hover:text-accent no-underline transition-colors"
+				>
+					{related.title}
+				</a>
+			{/each}
+		</div>
 	{/if}
 </div>
 

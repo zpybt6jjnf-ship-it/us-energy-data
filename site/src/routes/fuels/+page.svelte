@@ -307,7 +307,7 @@
 	</div>
 
 	<div class="chart-breakout">
-		<ChartWrapper meta={lineMeta} data={timeFilteredCombined.flatMap((s) => s.values.map((v) => ({ fuel: s.name, year: v.date, production: v.value })))}>
+		<ChartWrapper meta={lineMeta} allowLogScale data={timeFilteredCombined.flatMap((s) => s.values.map((v) => ({ fuel: s.name, year: v.date, production: v.value })))}>
 			{#snippet controls()}
 				<Dropdown
 					options={fuelOptions}
@@ -334,6 +334,7 @@
 				unit={selectedFuel === 'all' ? '' : barUnit}
 				margin={{ top: 20, right: 20, bottom: 40, left: 70 }}
 				annotations={productionAnnotations}
+				allowLogScale
 			/>
 		</ChartWrapper>
 		{#if selectedFuel === 'all'}

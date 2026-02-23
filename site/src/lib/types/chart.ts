@@ -28,6 +28,7 @@ export interface ChartMeta {
 	lastUpdated: string;
 	description?: string;
 	caveats?: string;
+	relatedCharts?: { title: string; href: string }[];
 }
 
 export interface Margin {

@@ -1,8 +1,11 @@
 <script lang="ts">
 	import LineChart from '$components/charts/LineChart.svelte';
+	import BarChart from '$components/charts/BarChart.svelte';
 	import ChoroplethMap from '$components/charts/ChoroplethMap.svelte';
 	import Scatter from '$components/charts/Scatter.svelte';
 	import ChartWrapper from '$components/charts/ChartWrapper.svelte';
+	import MapChartToggle from '$components/charts/MapChartToggle.svelte';
+	import YearSlider from '$components/ui/YearSlider.svelte';
 	import Dropdown from '$components/ui/Dropdown.svelte';
 	import StateSelect from '$components/ui/StateSelect.svelte';
 	import TimeRangeSlider from '$components/ui/TimeRangeSlider.svelte';
@@ -95,10 +98,24 @@
 		lastUpdated: data.lastUpdated,
 		description: 'Average retail electricity prices vary significantly across sectors. Residential customers typically pay the highest rates due to distribution costs, while industrial users benefit from bulk pricing and direct market access. Use the state selector to compare individual states against the national average.',
 		caveats: 'Prices are nominal (not adjusted for inflation). National averages are revenue-weighted across all utilities. Some state-level data may be incomplete for earlier years.',
+		relatedCharts: [
+			{ title: 'Generation mix by state', href: '/generation#generation-mix' },
+			{ title: 'Demand trends', href: '/demand' },
+		],
 	};
 
-	// State-level map data: latest year residential prices
+	// State-level map data
 	const latestYear = $derived(Math.max(...data.national.map((d: any) => d.year)));
+
+	// Available years for map slider
+	const mapAvailableYears = $derived(
+		[...new Set<number>(data.byState.filter((d: any) => d.sector === 'Residential').map((d: any) => d.year as number))].sort((a, b) => a - b)
+	);
+	let mapYear = $state(0); // Will be initialized by effect
+	$effect(() => { if (mapYear === 0 && latestYear > 0) mapYear = latestYear; });
+
+	// Map/chart toggle
+	let mapMode = $state<'map' | 'chart'>('map');
 
 	// Key figures
 	const latestRes = $derived(data.national.filter((d: any) => d.year === latestYear && d.sector === 'Residential'));
@@ -109,17 +126,28 @@
 
 	const mapData = $derived(
 		data.byState
-			.filter((d: any) => d.year === latestYear && d.sector === 'Residential')
+			.filter((d: any) => d.year === mapYear && d.sector === 'Residential')
 			.map((d: any) => ({
-				state: d.state,
+				state: d.state as string,
 				fips: stateFips(d.state),
-				value: d.price,
+				value: d.price as number,
 			}))
-			.filter((d: any) => d.fips)
+			.filter((d: { fips: string | undefined; }) => d.fips)
+	);
+
+	// Bar chart data for map/chart toggle (sorted by value)
+	const mapBarData = $derived(
+		[...mapData]
+			.sort((a, b) => (b.value as number) - (a.value as number))
+			.slice(0, 15)
+			.map((d) => ({
+				label: d.state,
+				value: d.value,
+			}))
 	);
 
 	const mapMeta: ChartMeta = $derived({
-		title: `Residential Electricity Prices by State (${latestYear})`,
+		title: `Residential Electricity Prices by State (${mapYear})`,
 		subtitle: 'Cents per kilowatt-hour',
 		source: 'US Energy Information Administration',
 		sourceUrl: 'https://www.eia.gov/electricity/data.php',
@@ -127,6 +155,10 @@
 		lastUpdated: data.lastUpdated,
 		description: 'Electricity prices vary widely across states, driven by differences in fuel mix, regulatory environment, and infrastructure costs. States with abundant hydropower (e.g., Washington) tend to have the lowest rates, while island states (Hawaii) and those with older infrastructure pay the most.',
 		caveats: 'Residential prices only. Commercial and industrial rates follow different patterns. Colors use a yellow-to-red scale where yellow indicates lower prices.',
+		relatedCharts: [
+			{ title: 'Renewable share by state', href: '/generation#generation-mix' },
+			{ title: 'Per-capita consumption', href: '/demand' },
+		],
 	});
 
 	function colorInterp(t: number): string {
@@ -261,6 +293,7 @@
 				yFormat={format(',.1f')}
 				unit="cents/kWh"
 				annotations={priceAnnotations}
+				showTrend={3}
 			/>
 		</ChartWrapper>
 	</section>
@@ -288,14 +321,33 @@
 
 	<section class="chart-breakout mt-6">
 		<ChartWrapper meta={mapMeta} data={mapData.map((d: any) => ({ state: d.state, price: d.value }))}>
-			<ChoroplethMap
-				data={mapData}
-				topology={data.topology}
-				colorInterpolator={colorInterp}
-				valueFormat={format(',.1f')}
-				unit="cents/kWh"
-				onStateClick={toggleState}
-			/>
+			{#snippet controls()}
+				<MapChartToggle mode={mapMode} onToggle={(m) => { mapMode = m; }} />
+				{#if mapAvailableYears.length > 1}
+					<div class="flex-1 min-w-[200px] max-w-[400px]">
+						<YearSlider min={mapAvailableYears[0]} max={mapAvailableYears[mapAvailableYears.length - 1]} value={mapYear} onchange={(y) => { mapYear = y; }} />
+					</div>
+				{/if}
+			{/snippet}
+			{#if mapMode === 'map'}
+				<ChoroplethMap
+					data={mapData}
+					topology={data.topology}
+					colorInterpolator={colorInterp}
+					valueFormat={format(',.1f')}
+					unit="cents/kWh"
+					onStateClick={toggleState}
+				/>
+			{:else}
+				<BarChart
+					data={mapBarData}
+					horizontal
+					yLabel="cents/kWh"
+					yFormat={format(',.1f')}
+					unit="cents/kWh"
+					margin={{ top: 20, right: 20, bottom: 60, left: 120 }}
+				/>
+			{/if}
 		</ChartWrapper>
 		{#if selectedStates.length > 0}
 			<p class="text-xs text-text-muted mt-1">Shows all states — click a state to add it to the line chart filter</p>
