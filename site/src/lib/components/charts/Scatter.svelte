@@ -136,13 +136,16 @@
 		<!-- Hover label -->
 		{#if hoveredIndex !== null}
 			{@const hd = data[hoveredIndex]}
-			{@const labelX = xScale(hd.x)}
-			{@const labelY = yScale(hd.y) - 14}
 			{@const labelText = hd.label}
+			{@const boxWidth = labelText.length * 6.6 + 8}
+			{@const rawX = xScale(hd.x)}
+			{@const rawY = yScale(hd.y) - 14}
+			{@const clampedX = Math.max(boxWidth / 2, Math.min(innerWidth - boxWidth / 2, rawX))}
+			{@const clampedY = Math.max(10, rawY)}
 			<rect
-				x={labelX - labelText.length * 3.3 - 4}
-				y={labelY - 10}
-				width={labelText.length * 6.6 + 8}
+				x={clampedX - boxWidth / 2}
+				y={clampedY - 10}
+				width={boxWidth}
 				height={16}
 				rx="3"
 				fill="var(--color-surface-card)"
@@ -151,8 +154,8 @@
 				stroke-width="0.5"
 			/>
 			<text
-				x={labelX}
-				y={labelY}
+				x={clampedX}
+				y={clampedY}
 				text-anchor="middle"
 				dominant-baseline="middle"
 				font-size="11"

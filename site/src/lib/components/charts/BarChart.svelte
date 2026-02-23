@@ -247,6 +247,7 @@
 			<g transform="translate(0, {innerHeight})">
 				<line x1={0} x2={innerWidth} stroke="var(--color-border)" />
 				{#each data as d}
+					{@const maxChars = Math.max(3, Math.floor(bandScale.bandwidth() / 8))}
 					<text
 						x={(bandScale(d.label) ?? 0) + bandScale.bandwidth() / 2}
 						y={20}
@@ -255,7 +256,7 @@
 						font-size="13"
 						class="truncate"
 					>
-						{d.label.length > 12 ? d.label.slice(0, 11) + '…' : d.label}
+						{d.label.length > maxChars ? d.label.slice(0, maxChars - 1) + '\u2026' : d.label}
 					</text>
 				{/each}
 			</g>

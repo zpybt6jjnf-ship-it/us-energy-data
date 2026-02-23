@@ -104,6 +104,7 @@
 			const last = s.values[s.values.length - 1];
 			return {
 				name: s.name,
+				displayName: s.name,
 				color: colorScale(s.name),
 				x: last ? xScale(last.date) + 8 : 0,
 				y: last ? yScale(last.value) : 0,
@@ -116,6 +117,18 @@
 			const diff = labels[i].y - labels[i - 1].y;
 			if (diff < minGap) {
 				labels[i].y = labels[i - 1].y + minGap;
+			}
+		}
+		// X overflow protection: truncate labels that would exceed right margin
+		const PX_PER_CHAR = 6.5;
+		const RIGHT_PAD = 8;
+		for (const label of labels) {
+			const maxWidth = innerWidth + margin.right - label.x - RIGHT_PAD;
+			if (label.name.length * PX_PER_CHAR > maxWidth) {
+				const maxChars = Math.max(1, Math.floor(maxWidth / PX_PER_CHAR));
+				label.displayName = label.name.slice(0, maxChars - 1) + '\u2026';
+			} else {
+				label.displayName = label.name;
 			}
 		}
 		return labels;
@@ -280,6 +293,9 @@
 		{#each annotations as anno}
 			{@const x = xScale(anno.date)}
 			{#if x >= 0 && x <= innerWidth}
+				{@const halfW = anno.label.length * 4}
+				{@const anchor = x - halfW < 0 ? 'start' : x + halfW > innerWidth ? 'end' : 'middle'}
+				{@const clampedX = x - halfW < 0 ? 0 : x + halfW > innerWidth ? innerWidth : x}
 				<line
 					x1={x} x2={x}
 					y1={0} y2={innerHeight}
@@ -290,9 +306,9 @@
 					opacity="0.5"
 				/>
 				<text
-					x={x}
+					x={clampedX}
 					y={anno.labelPosition === 'bottom' ? innerHeight - 4 : 8}
-					text-anchor="middle"
+					text-anchor={anchor}
 					class="annotation-label"
 					fill="var(--color-text-muted)"
 					font-size="9"
@@ -352,7 +368,7 @@
 				dominant-baseline="middle"
 				font-family="var(--font-sans)"
 			>
-				{label.name}
+				{label.displayName}
 			</text>
 		{/each}
 

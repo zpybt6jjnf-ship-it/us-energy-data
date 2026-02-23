@@ -158,6 +158,7 @@
             <line x1={0} x2={innerWidth} stroke="var(--color-border)" />
             {#each data as d}
                 {@const x = (xScale(d.label) ?? 0) + xScale.bandwidth() / 2}
+                {@const maxChars = Math.max(3, Math.floor(xScale.bandwidth() / 8))}
                 <text
                     {x}
                     y={16}
@@ -166,7 +167,7 @@
                     font-size="11"
                     font-family="var(--font-mono)"
                 >
-                    {d.label}
+                    {d.label.length > maxChars ? d.label.slice(0, maxChars - 1) + '\u2026' : d.label}
                 </text>
             {/each}
         </g>
