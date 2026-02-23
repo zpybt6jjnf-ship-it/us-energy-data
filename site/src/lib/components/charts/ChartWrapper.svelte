@@ -10,9 +10,10 @@
 		data?: Record<string, unknown>[];
 		hero?: boolean;
 		children: Snippet;
+		controls?: Snippet;
 	}
 
-	let { meta, data = [], hero = false, children }: Props = $props();
+	let { meta, data = [], hero = false, children, controls }: Props = $props();
 	let containerEl: HTMLDivElement | undefined = $state();
 	let width = $state(800);
 	let visible = $state(false);
@@ -99,6 +100,12 @@
 			<p class="mt-0.5 text-sm text-text-muted">{meta.subtitle}</p>
 		{/if}
 	</div>
+
+	{#if controls}
+		<div class="mb-2 flex flex-wrap items-center gap-2">
+			{@render controls()}
+		</div>
+	{/if}
 
 	{#if !visible}
 		<div class="skeleton" style="width: 100%; height: 300px;"></div>

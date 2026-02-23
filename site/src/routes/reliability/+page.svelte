@@ -185,26 +185,6 @@
 		</p>
 	</div>
 
-	<!-- Controls -->
-	<div class="chart-breakout border-y border-border py-3 my-6">
-		<div class="flex flex-wrap items-center gap-3">
-			<span class="text-sm text-text-muted font-medium">Filter:</span>
-			<Dropdown
-				label="Metric"
-				options={medOptions}
-				value={activeMed}
-				onchange={(v) => updateConfig('med', v)}
-			/>
-			<StateSelect
-				selected={selectedStates}
-				onchange={(states) => updateConfig('state', states)}
-			/>
-			{#if hasActiveFilters($chartConfig)}
-				<button onclick={resetConfig} class="text-xs text-text-muted hover:text-accent transition-colors ml-auto">Reset</button>
-			{/if}
-		</div>
-	</div>
-
 	<!-- Section: How long do outages last? -->
 	<h2 class="prose-width section-heading">How long do outages last?</h2>
 	<p class="prose-width narrative-text">
@@ -213,6 +193,23 @@
 
 	<div class="chart-breakout mt-6">
 		<ChartWrapper meta={lineMeta} data={data.national}>
+			{#snippet controls()}
+				<Dropdown
+					label="Metric"
+					options={medOptions}
+					value={activeMed}
+					onchange={(v) => updateConfig('med', v)}
+				/>
+				<StateSelect
+					selected={selectedStates}
+					onchange={(states) => updateConfig('state', states)}
+					label=""
+					compact
+				/>
+				{#if hasActiveFilters($chartConfig)}
+					<button onclick={resetConfig} class="text-xs text-text-muted hover:text-accent transition-colors">Reset</button>
+				{/if}
+			{/snippet}
 			<LineChart
 				series={combinedSaidiSeries}
 				xLabel="Year"

@@ -409,21 +409,6 @@
 		<p class="narrative-text">America's power grid is in the middle of a generational transition. Natural gas now provides roughly <span class="inline-stat">{Math.round(kfGasShare)}%</span> of electricity, overtaking coal which has fallen to <span class="inline-stat">{Math.round(kfCoalShare)}%</span>. Renewables — wind, solar, and hydro — account for <span class="inline-stat">{Math.round(kfRenewShare)}%</span> and growing.</p>
 	</div>
 
-	<!-- Controls -->
-	<div class="chart-breakout border-y border-border py-3 my-6">
-		<div class="flex flex-wrap items-center gap-3">
-			<span class="text-sm text-text-muted font-medium">Filter:</span>
-			<StateSelect
-				selected={selectedStates}
-				onchange={(states) => updateConfig('state', states)}
-			/>
-			<TimeRangeSlider {startYear} {endYear} />
-			{#if hasActiveFilters($chartConfig)}
-				<button onclick={resetConfig} class="text-xs text-text-muted hover:text-accent transition-colors ml-auto">Reset</button>
-			{/if}
-		</div>
-	</div>
-
 	<!-- Section: What powers the grid today? -->
 	<div class="prose-width">
 		<h2 class="section-heading" id="generation-mix">What powers the grid today?</h2>
@@ -454,6 +439,18 @@
 	<div class="chart-breakout">
 		<section>
 			<ChartWrapper meta={genTrendMeta} data={timeFilteredGenTrend.flatMap((s) => s.values.map((v) => ({ source: s.name, year: v.date, generation: v.value })))}>
+				{#snippet controls()}
+					<StateSelect
+						selected={selectedStates}
+						onchange={(states) => updateConfig('state', states)}
+						label=""
+						compact
+					/>
+					<TimeRangeSlider {startYear} {endYear} />
+					{#if hasActiveFilters($chartConfig)}
+						<button onclick={resetConfig} class="text-xs text-text-muted hover:text-accent transition-colors">Reset</button>
+					{/if}
+				{/snippet}
 				<LineChart
 					series={timeFilteredGenTrend}
 					xLabel="Year"

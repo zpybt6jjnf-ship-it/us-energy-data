@@ -6,9 +6,10 @@
 		onchange: (states: string[]) => void;
 		label?: string;
 		maxSelections?: number;
+		compact?: boolean;
 	}
 
-	let { selected, onchange, label = 'Compare states', maxSelections = 6 }: Props = $props();
+	let { selected, onchange, label = 'Compare states', maxSelections = 6, compact = false }: Props = $props();
 
 	const atLimit = $derived(selected.length >= maxSelections);
 
@@ -99,7 +100,7 @@
 			bind:this={inputEl}
 			type="text"
 			class="min-w-[3rem] flex-1 border-0 bg-transparent px-1 py-0.5 text-sm text-text outline-none placeholder:text-text-muted"
-			placeholder={selected.length === 0 ? 'Add states...' : atLimit ? `Max ${maxSelections} states` : ''}
+			placeholder={selected.length === 0 ? (compact ? 'Add state...' : 'Add states...') : atLimit ? `Max ${maxSelections} states` : ''}
 			bind:value={query}
 			onfocus={() => open = true}
 			onblur={handleBlur}
@@ -121,7 +122,7 @@
 	</div>
 
 	<!-- Quick-add chips -->
-	{#if selected.length === 0 && !open}
+	{#if !compact && selected.length === 0 && !open}
 		<div class="flex flex-wrap items-center gap-1.5 mt-1">
 			{#each quickAddStates as abbr}
 				<button

@@ -211,27 +211,6 @@
 		</p>
 	</div>
 
-	<!-- Controls -->
-	<div class="chart-breakout border-y border-border py-3 my-6">
-		<div class="flex flex-wrap items-center gap-3">
-			<span class="text-sm text-text-muted font-medium">Filter:</span>
-			<Dropdown
-				options={sectorOptions}
-				value={activeSector}
-				label="Sector"
-				onchange={(v) => updateConfig('sector', v)}
-			/>
-			<StateSelect
-				selected={selectedStates}
-				onchange={(states) => updateConfig('state', states)}
-			/>
-			<TimeRangeSlider {startYear} {endYear} />
-			{#if hasActiveFilters($chartConfig)}
-				<button onclick={resetConfig} class="text-xs text-text-muted hover:text-accent transition-colors ml-auto">Reset</button>
-			{/if}
-		</div>
-	</div>
-
 	<!-- Section: Consumption trends -->
 	<div class="prose-width">
 		<h2 class="section-heading">How is electricity demand changing?</h2>
@@ -242,6 +221,24 @@
 
 	<div class="chart-breakout mt-4">
 		<ChartWrapper meta={lineMeta} hero data={timeFilteredSeries.flatMap((s) => s.values.map((v) => ({ series: s.name, year: v.date, consumption: v.value })))}>
+			{#snippet controls()}
+				<Dropdown
+					options={sectorOptions}
+					value={activeSector}
+					label="Sector"
+					onchange={(v) => updateConfig('sector', v)}
+				/>
+				<StateSelect
+					selected={selectedStates}
+					onchange={(states) => updateConfig('state', states)}
+					label=""
+					compact
+				/>
+				<TimeRangeSlider {startYear} {endYear} />
+				{#if hasActiveFilters($chartConfig)}
+					<button onclick={resetConfig} class="text-xs text-text-muted hover:text-accent transition-colors">Reset</button>
+				{/if}
+			{/snippet}
 			<LineChart
 				series={timeFilteredSeries}
 				xLabel="Year"

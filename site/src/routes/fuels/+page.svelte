@@ -288,27 +288,6 @@
 		</p>
 	</div>
 
-	<!-- Controls -->
-	<div class="chart-breakout border-y border-border py-3 my-6">
-		<div class="flex flex-wrap items-center gap-3">
-			<span class="text-sm text-text-muted font-medium">Filter:</span>
-			<Dropdown
-				options={fuelOptions}
-				value={selectedFuel}
-				label="Fuel Type"
-				onchange={(v) => updateConfig('fuel', v)}
-			/>
-			<StateSelect
-				selected={selectedStates}
-				onchange={(states) => updateConfig('state', states)}
-			/>
-			<TimeRangeSlider {startYear} {endYear} />
-			{#if hasActiveFilters($chartConfig)}
-				<button onclick={resetConfig} class="text-xs text-text-muted hover:text-accent transition-colors ml-auto">Reset</button>
-			{/if}
-		</div>
-	</div>
-
 	<!-- Section: Production trends -->
 	<div class="prose-width">
 		<h2 class="section-heading">How has fossil fuel production changed?</h2>
@@ -319,6 +298,24 @@
 
 	<div class="chart-breakout">
 		<ChartWrapper meta={lineMeta} data={timeFilteredCombined.flatMap((s) => s.values.map((v) => ({ fuel: s.name, year: v.date, production: v.value })))}>
+			{#snippet controls()}
+				<Dropdown
+					options={fuelOptions}
+					value={selectedFuel}
+					label="Fuel Type"
+					onchange={(v) => updateConfig('fuel', v)}
+				/>
+				<StateSelect
+					selected={selectedStates}
+					onchange={(states) => updateConfig('state', states)}
+					label=""
+					compact
+				/>
+				<TimeRangeSlider {startYear} {endYear} />
+				{#if hasActiveFilters($chartConfig)}
+					<button onclick={resetConfig} class="text-xs text-text-muted hover:text-accent transition-colors">Reset</button>
+				{/if}
+			{/snippet}
 			<LineChart
 				series={timeFilteredCombined}
 				xLabel="Year"
