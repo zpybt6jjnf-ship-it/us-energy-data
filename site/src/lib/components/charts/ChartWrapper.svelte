@@ -94,7 +94,7 @@
 	bind:this={containerEl}
 >
 	<div class="mb-3">
-		<h3 class="text-lg font-semibold font-display tracking-tight text-text">{meta.title}</h3>
+		<h3 class="text-lg font-serif tracking-normal text-text">{meta.title}</h3>
 		{#if meta.subtitle}
 			<p class="mt-0.5 text-sm text-text-muted">{meta.subtitle}</p>
 		{/if}

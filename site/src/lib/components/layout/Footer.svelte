@@ -5,9 +5,9 @@
 <footer class="mt-16 border-t border-border bg-surface-alt">
 	<div class="mx-auto flex max-w-[1100px] flex-col items-center gap-4 px-4 py-8 sm:flex-row sm:justify-between sm:gap-6">
 		<!-- Brand -->
-		<a href="/" class="flex items-center gap-2 font-display text-base text-text no-underline hover:text-text-secondary shrink-0">
+		<a href="/" class="flex items-center gap-2 text-sm text-text no-underline hover:text-text-secondary shrink-0" style="font-family: 'Space Mono', monospace; font-weight: 700; letter-spacing: 0.02em;">
 			<Logo id="footer-logo-grad" />
-			Bottlenecks Labs
+			Bottlenecks Lab
 		</a>
 
 		<!-- Nav links -->
@@ -41,5 +41,8 @@
 			<span class="text-text-muted/30" aria-hidden="true">&middot;</span>
 			<span>Updated weekly</span>
 		</div>
+	</div>
+	<div class="mx-auto max-w-[1100px] px-4 pb-6 text-center">
+		<p class="text-[11px] text-text-muted/60">For demonstration purposes only. Data may be incomplete or out of date.</p>
 	</div>
 </footer>

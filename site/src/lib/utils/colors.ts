@@ -56,11 +56,11 @@ export const BILLS_COLORS = { nominal: '#C98600', real: '#286EA8' } as const;
 
 export const LOGO_GRADIENT = ['#2a9d8f', '#e9c46a', '#e76f51'] as const;
 
-export const MAP_LABEL_COLORS = { dark: '#1D1F23', light: '#FFFFFF' } as const;
+export const MAP_LABEL_COLORS = { dark: '#1C1917', light: '#FFFFFF' } as const;
 
-export const MAP_DEFAULT_RANGE = ['#F5F5F0', '#286EA8'] as const;
+export const MAP_DEFAULT_RANGE = ['#F3F1EC', '#286EA8'] as const;
 
-export const EXPORT_FALLBACKS = { text: '#1D1F23', textSecondary: '#5B6068', surface: '#FAFAF7' } as const;
+export const EXPORT_FALLBACKS = { text: '#1C1917', textSecondary: '#57534E', surface: '#FAF9F6' } as const;
 
 export const REFERENCE_COLOR = '#999' as const;
 

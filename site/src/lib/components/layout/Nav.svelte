@@ -21,23 +21,26 @@
 <header class="fixed top-0 left-0 right-0 z-40 bg-surface/95 backdrop-blur-sm border-b border-border">
 	<div class="flex items-center h-14 px-4 md:px-6 max-w-[1100px] mx-auto">
 		<!-- Logo -->
-		<a href="/" class="flex items-center gap-2 text-sm font-bold font-display text-text no-underline hover:text-text-secondary shrink-0" onclick={closeDrawer}>
+		<a href="/" class="flex items-center gap-2 text-sm text-text no-underline hover:text-text-secondary shrink-0" style="font-family: 'Space Mono', monospace; font-weight: 700; letter-spacing: 0.02em;" onclick={closeDrawer}>
 			<Logo id="nav-logo-grad" />
-			Bottlenecks Labs
+			Bottlenecks Lab
 		</a>
 
 		<!-- Desktop nav links -->
-		<nav class="hidden md:flex items-center gap-1 ml-6">
+		<nav class="hidden md:flex items-center gap-1 ml-6 self-stretch">
 			{#each sections as section}
 				{@const isActive = $page.url.pathname.startsWith(section.href)}
 				<a
 					href={section.href}
-					class="relative px-3 py-1 text-sm no-underline transition-all
+					class="relative flex items-center h-full px-3 text-sm no-underline transition-colors duration-200
 						{isActive
 							? 'text-text font-semibold'
 							: 'text-text-muted hover:text-text'}"
 				>
 					{section.label}
+					{#if isActive}
+						<span class="absolute bottom-[-1px] left-3 right-3 h-0.5 bg-accent rounded-full"></span>
+					{/if}
 				</a>
 			{/each}
 		</nav>
