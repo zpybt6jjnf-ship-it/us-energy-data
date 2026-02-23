@@ -141,7 +141,17 @@
 
 	const latestYear = $derived(Math.max(...data.national.map((d: any) => d.year)));
 
-	const barFuel = $derived(selectedFuel === 'all' ? 'Coal' : selectedFuel);
+	const barFuelOptions = [
+		{ value: 'Coal', label: 'Coal' },
+		{ value: 'Natural Gas', label: 'Natural Gas' },
+		{ value: 'Crude Oil', label: 'Crude Oil' },
+	];
+
+	const barFuel = $derived(
+		selectedFuel === 'Coal' || selectedFuel === 'Natural Gas' || selectedFuel === 'Crude Oil'
+			? selectedFuel
+			: 'Coal'
+	);
 
 	const stateRanking = $derived((() => {
 		const stateData = data.byState.filter(
@@ -345,6 +355,14 @@
 		<div class="grid md:grid-cols-2 gap-6">
 			<section>
 				<ChartWrapper meta={barMeta} data={stateRanking.map((d: any) => ({ state: d.label, production: d.value }))}>
+					{#snippet controls()}
+						<Dropdown
+							options={barFuelOptions}
+							value={barFuel}
+							label="Fuel"
+							onchange={(v) => updateConfig('fuel', v)}
+						/>
+					{/snippet}
 					<BarChart
 						data={stateRanking}
 						horizontal
