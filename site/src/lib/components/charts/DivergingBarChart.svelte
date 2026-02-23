@@ -2,6 +2,7 @@
     import { scaleBand, scaleLinear } from 'd3-scale';
     import { format } from 'd3-format';
     import type { Margin, TooltipData } from '$types/chart';
+    import { SEMANTIC_COLORS } from '$utils/colors';
     import Tooltip from './Tooltip.svelte';
     import { getContext } from 'svelte';
     import type { Readable } from 'svelte/store';
@@ -32,8 +33,8 @@
         yLabel = '',
         yFormat = format('+,.0f'),
         unit = '',
-        positiveColor = '#00E68A',
-        negativeColor = '#F87171',
+        positiveColor = SEMANTIC_COLORS.positive,
+        negativeColor = SEMANTIC_COLORS.negative,
     }: Props = $props();
 
     const chartWidthCtx = getContext<Readable<number> | undefined>('chartWidth');

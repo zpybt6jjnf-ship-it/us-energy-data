@@ -4,7 +4,7 @@
 	import { extent } from 'd3-array';
 	import { format } from 'd3-format';
 	import type { DataSeries, Margin, TooltipData } from '$types/chart';
-	import { CHART_COLORS } from '$utils/colors';
+	import { CHART_COLORS, REFERENCE_COLOR } from '$utils/colors';
 	import Tooltip from './Tooltip.svelte';
 	import { getContext } from 'svelte';
 	import type { Readable, Writable } from 'svelte/store';
@@ -158,7 +158,7 @@
 >
 	<defs>
 		<filter id={filterId} x="-2%" y="-2%" width="104%" height="104%">
-			<feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-opacity="0.3" flood-color="#000"/>
+			<feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-opacity="0.08" flood-color="#000"/>
 		</filter>
 	</defs>
 	<g transform="translate({margin.left}, {margin.top})">
@@ -256,7 +256,7 @@
 				<path
 					d={refPath}
 					fill="none"
-					stroke={referenceSeries.color ?? '#999'}
+					stroke={referenceSeries.color ?? REFERENCE_COLOR}
 					stroke-width="2"
 					stroke-dasharray="6 4"
 					stroke-linejoin="round"

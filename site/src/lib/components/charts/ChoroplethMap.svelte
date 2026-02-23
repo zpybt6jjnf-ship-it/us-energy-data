@@ -5,6 +5,7 @@
 	import { format } from 'd3-format';
 	import type { Margin, TooltipData } from '$types/chart';
 	import Tooltip from './Tooltip.svelte';
+	import { MAP_DEFAULT_RANGE, MAP_LABEL_COLORS } from '$utils/colors';
 	import { FIPS_TO_ABBR } from '$lib/utils/states';
 	import { getContext } from 'svelte';
 	import type { Readable } from 'svelte/store';
@@ -25,8 +26,8 @@
 		unit?: string;
 	}
 
-	/** Custom brand-aligned interpolator: dark base → hot amber */
-	const brandInterpolator = interpolateRgb('#1E2330', '#FF9500');
+	/** Custom brand-aligned interpolator: cream → blue */
+	const brandInterpolator = interpolateRgb(MAP_DEFAULT_RANGE[0], MAP_DEFAULT_RANGE[1]);
 
 	let {
 		data,
@@ -83,11 +84,11 @@
 	 */
 	function labelFill(fips: string): string {
 		const val = valueMap.get(fips);
-		if (!val) return '#E8ECF4';
+		if (!val) return MAP_LABEL_COLORS.dark;
 		const range = domain[1] - domain[0];
-		if (range === 0) return '#E8ECF4';
+		if (range === 0) return MAP_LABEL_COLORS.dark;
 		const t = (val.value - domain[0]) / range;
-		return t > 0.5 ? '#0B0E14' : '#E8ECF4';
+		return t > 0.5 ? MAP_LABEL_COLORS.light : MAP_LABEL_COLORS.dark;
 	}
 
 	function handleStateHover(event: PointerEvent, fips: string) {

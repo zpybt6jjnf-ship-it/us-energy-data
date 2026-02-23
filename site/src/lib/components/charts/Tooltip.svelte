@@ -38,8 +38,8 @@
 {#if data}
 	<div
 		bind:this={tooltipEl}
-		class="pointer-events-none fixed z-50 rounded-lg border border-border px-2.5 py-1.5 shadow-xl"
-		style="left: {tooltipLeft}px; top: {data.y - 8}px; opacity: {visible ? 1 : 0}; transform: translateY({visible ? 0 : 4}px); transition: opacity 0.15s ease, transform 0.15s ease; font-size: 11px; background: var(--color-surface-card, rgba(18,22,31,0.95)); backdrop-filter: blur(12px);"
+		class="pointer-events-none fixed z-50 rounded-lg px-2.5 py-1.5 shadow-md"
+		style="left: {tooltipLeft}px; top: {data.y - 8}px; opacity: {visible ? 1 : 0}; transform: translateY({visible ? 0 : 4}px); transition: opacity 0.15s ease, transform 0.15s ease; font-size: 11px; background: var(--color-tooltip-bg); border: 1px solid var(--color-border); backdrop-filter: blur(8px);"
 	>
 		{#if data.header}
 			<div class="mb-1 text-xs font-bold text-text" style="font-family: var(--font-mono)">{data.header}</div>

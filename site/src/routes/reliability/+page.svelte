@@ -177,15 +177,18 @@
 </svelte:head>
 
 <div>
-	<!-- Header -->
-	<div class="flex items-baseline gap-3 py-3 border-b border-border">
-		<h1 class="text-base font-bold font-display tracking-tight text-text">Reliability & Outages</h1>
-		<span class="text-sm text-text-secondary">How often does the power go out — and for how long?</span>
+	<!-- Title + intro -->
+	<div class="prose-width">
+		<h1 class="text-2xl font-display font-semibold tracking-tight text-text mt-2 mb-4">Reliability & Outages</h1>
+		<p class="narrative-text">
+			The average American experienced about <span class="inline-stat">~{Math.round(kfLatestSaidi / 60)} hours</span> of power outages in {kfLatestYear}. Excluding major events like hurricanes, the baseline is roughly <span class="inline-stat">{Math.round(kfLatestSaidiNoMed)} minutes</span>. Grid reliability has become a growing concern as extreme weather intensifies and aging infrastructure strains under rising demand.
+		</p>
 	</div>
 
-	<!-- Sticky control bar -->
-	<div class="sticky top-12 z-20 -mx-4 md:-mx-6 lg:-mx-8 bg-surface-card/80 backdrop-blur-xl border-b border-border px-4 md:px-6 lg:px-8 py-2">
+	<!-- Controls -->
+	<div class="chart-breakout border-y border-border py-3 my-6">
 		<div class="flex flex-wrap items-center gap-3">
+			<span class="text-sm text-text-muted font-medium">Filter:</span>
 			<Dropdown
 				label="Metric"
 				options={medOptions}
@@ -199,44 +202,27 @@
 		</div>
 	</div>
 
-	<!-- Key figures -->
-	<div class="flex flex-wrap gap-2 mt-3 mb-1">
-		<div class="key-figure">
-			<span class="kf-value" style="color: #C084FC">~{Math.round(kfLatestSaidi / 60)}hr</span>
-			<span class="kf-label">avg outage/yr ({kfLatestYear})</span>
-		</div>
-		<div class="key-figure">
-			<span class="kf-value" style="color: #C084FC">{Math.round(kfLatestSaidiNoMed)}</span>
-			<span class="kf-label">min excl. major events</span>
-		</div>
-		<div class="key-figure">
-			<span class="kf-value" style="color: #C084FC">{kfNumStates}</span>
-			<span class="kf-label">states + DC tracked</span>
-		</div>
-		<div class="key-figure">
-			<span class="kf-value" style="color: #C084FC">{format(',')(kfNumUtilities)}</span>
-			<span class="kf-label">reporting utilities</span>
-		</div>
+	<!-- Section: How long do outages last? -->
+	<h2 class="prose-width section-heading">How long do outages last?</h2>
+	<p class="prose-width narrative-text">
+		The System Average Interruption Duration Index (SAIDI) tracks how many minutes per year the typical customer loses power. The national trend shows a clear upward drift, punctuated by spikes in major-event years.
+	</p>
+
+	<div class="chart-breakout mt-6">
+		<ChartWrapper meta={lineMeta} data={data.national}>
+			<LineChart
+				series={combinedSaidiSeries}
+				xLabel="Year"
+				yLabel="Minutes per customer"
+				yFormat={format(',.0f')}
+				unit="min"
+				annotations={activeMed === 'with_med' ? saidiAnnotations : []}
+			/>
+		</ChartWrapper>
 	</div>
 
-	<!-- Chart grid -->
-	<div class="grid gap-3 lg:grid-cols-2 mt-3">
-		<!-- Hero: SAIDI trend (full-width) -->
-		<section class="lg:col-span-2">
-			<ChartWrapper meta={lineMeta} data={data.national}>
-				<LineChart
-					series={combinedSaidiSeries}
-					xLabel="Year"
-					yLabel="Minutes per customer"
-					yFormat={format(',.0f')}
-					unit="min"
-					annotations={activeMed === 'with_med' ? saidiAnnotations : []}
-				/>
-			</ChartWrapper>
-		</section>
-
-		<!-- Insight (full-width) -->
-		<div class="lg:col-span-2 insight-card">
+	<div class="prose-width mt-6">
+		<div class="insight-card">
 			<div class="flex items-start gap-4">
 				<div class="flex-shrink-0">
 					<span class="text-xl font-bold text-accent font-mono">~{Math.round(kfLatestSaidi / 60)}hr</span>
@@ -247,50 +233,64 @@
 				</p>
 			</div>
 		</div>
+	</div>
 
-		<!-- SAIDI map (full-width) -->
-		<section class="lg:col-span-2">
-			<ChartWrapper meta={mapMeta} data={mapData}>
-				<ChoroplethMap
-					data={mapData}
-					topology={data.topology}
-					colorInterpolator={interpolateYlOrRd}
-					valueFormat={format(',.0f')}
-					unit="min"
-				/>
-			</ChartWrapper>
-		</section>
+	<!-- Section: Where is the grid least reliable? -->
+	<h2 class="prose-width section-heading">Where is the grid least reliable?</h2>
+	<p class="prose-width narrative-text">
+		Reliability varies dramatically by state. Southeastern and Gulf Coast states bear the brunt of hurricane exposure, while states with aging distribution networks or extreme winter weather also see elevated outage durations.
+	</p>
 
-		<!-- Side-by-side: SAIDI vs SAIFI + Reliability vs Prices -->
-		<section>
-			<ChartWrapper meta={scatterMeta} data={data.byState}>
-				<Scatter
-					data={saidiVsSaifi}
-					xLabel="SAIDI (minutes/customer/year)"
-					yLabel="SAIFI (interruptions/customer/year)"
-					xFormat={format(',.0f')}
-					yFormat={format(',.2f')}
-					unit=""
-				/>
-			</ChartWrapper>
-		</section>
+	<div class="chart-breakout mt-6">
+		<ChartWrapper meta={mapMeta} data={mapData}>
+			<ChoroplethMap
+				data={mapData}
+				topology={data.topology}
+				colorInterpolator={interpolateYlOrRd}
+				valueFormat={format(',.0f')}
+				unit="min"
+			/>
+		</ChartWrapper>
+	</div>
 
-		<section>
-			<ChartWrapper meta={priceScatterMeta} data={reliabilityVsPrices}>
-				<Scatter
-					data={reliabilityVsPrices}
-					xLabel="SAIDI (minutes/customer/year)"
-					yLabel="Residential price (cents/kWh)"
-					xFormat={format(',.0f')}
-					yFormat={format('.1f')}
-					unit="c/kWh"
-				/>
-			</ChartWrapper>
-		</section>
+	<!-- Section: Do outages and prices correlate? -->
+	<h2 class="prose-width section-heading">Do outages and prices correlate?</h2>
+	<p class="prose-width narrative-text">
+		States that experience longer outages also tend to have more frequent ones — but the link between reliability and electricity prices is weaker than you might expect. Many factors beyond grid performance drive what you pay per kilowatt-hour.
+	</p>
+
+	<div class="chart-breakout mt-6">
+		<div class="grid md:grid-cols-2 gap-6">
+			<section>
+				<ChartWrapper meta={scatterMeta} data={data.byState}>
+					<Scatter
+						data={saidiVsSaifi}
+						xLabel="SAIDI (minutes/customer/year)"
+						yLabel="SAIFI (interruptions/customer/year)"
+						xFormat={format(',.0f')}
+						yFormat={format(',.2f')}
+						unit=""
+					/>
+				</ChartWrapper>
+			</section>
+
+			<section>
+				<ChartWrapper meta={priceScatterMeta} data={reliabilityVsPrices}>
+					<Scatter
+						data={reliabilityVsPrices}
+						xLabel="SAIDI (minutes/customer/year)"
+						yLabel="Residential price (cents/kWh)"
+						xFormat={format(',.0f')}
+						yFormat={format('.1f')}
+						unit="c/kWh"
+					/>
+				</ChartWrapper>
+			</section>
+		</div>
 	</div>
 
 	<!-- Cross-link -->
-	<p class="mt-3 text-sm">
-		<a href="/prices" class="font-medium text-accent/80 hover:text-accent transition-colors no-underline">Explore electricity prices in more detail &rarr;</a>
+	<p class="prose-width mt-8">
+		<a href="/prices" class="text-accent hover:text-accent-light no-underline font-medium">Explore electricity prices in more detail &rarr;</a>
 	</p>
 </div>

@@ -117,7 +117,6 @@
 			.map(([state, consumption], i) => ({
 				label: state,
 				value: consumption,
-				color: '#00E68A',
 			}));
 	})());
 
@@ -184,7 +183,6 @@
 			.map((d: any, i: number) => ({
 				label: d.state,
 				value: d.per_capita_kwh,
-				color: '#00E68A',
 			}));
 	})());
 
@@ -205,15 +203,18 @@
 </svelte:head>
 
 <div>
-	<!-- Header -->
-	<div class="flex items-baseline gap-3 pb-3 border-b border-border">
-		<h1 class="text-base font-bold font-display tracking-tight text-text">Electricity Demand</h1>
-		<span class="text-sm text-text-secondary">Where does all the electricity go?</span>
+	<!-- Title + intro -->
+	<div class="prose-width">
+		<h1 class="text-2xl font-display font-semibold tracking-tight text-text">Electricity Demand</h1>
+		<p class="mt-3 text-base leading-relaxed text-text-secondary">
+			The US consumes roughly <span class="inline-stat">{latestTWh} TWh</span> of electricity annually, spread across residential, commercial, and industrial sectors. Year-over-year demand grew <span class="inline-stat">{yoyGrowth}%</span> in {latestYear}. While growth has slowed over the past decade, data centers and electrification are changing that trajectory.
+		</p>
 	</div>
 
-	<!-- Sticky control bar -->
-	<div class="sticky top-12 z-20 -mx-4 md:-mx-6 lg:-mx-8 bg-surface-card/80 backdrop-blur-xl border-b border-border px-4 md:px-6 lg:px-8 py-2">
+	<!-- Controls -->
+	<div class="chart-breakout border-y border-border py-3 my-6">
 		<div class="flex flex-wrap items-center gap-3">
+			<span class="text-sm text-text-muted font-medium">Filter:</span>
 			<Dropdown
 				options={sectorOptions}
 				value={activeSector}
@@ -228,57 +229,50 @@
 		</div>
 	</div>
 
-	<!-- Key Figures -->
-	<div class="flex flex-wrap gap-2 mt-3 mb-1">
-		<div class="key-figure">
-			<span class="kf-value" style="color: #00E68A">{latestTWh}T</span>
-			<span class="kf-label">kWh consumed ({latestYear})</span>
-		</div>
-		<div class="key-figure">
-			<span class="kf-value" style="color: #00E68A">{yoyGrowth}%</span>
-			<span class="kf-label">year-over-year growth</span>
-		</div>
-		<div class="key-figure">
-			<span class="kf-value" style="color: #00E68A">{topState ? topState.label.slice(0, 5) : '—'}</span>
-			<span class="kf-label">top consumer</span>
-		</div>
-		<div class="key-figure">
-			<span class="kf-value" style="color: #00E68A">{latestYear}</span>
-			<span class="kf-label">latest year</span>
-		</div>
+	<!-- Section: Consumption trends -->
+	<div class="prose-width">
+		<h2 class="section-heading">How is electricity demand changing?</h2>
+		<p class="mt-2 text-sm leading-relaxed text-text-secondary">
+			Total US electricity consumption has grown modestly over the past two decades, with commercial and residential sectors driving most of the increase. Energy efficiency gains have partially offset growth in economic activity and population.
+		</p>
 	</div>
 
-	<!-- Chart grid -->
-	<div class="grid gap-3 lg:grid-cols-2 mt-3">
-		<!-- Consumption trends (full-width hero) -->
-		<section class="lg:col-span-2">
-			<ChartWrapper meta={lineMeta} hero data={timeFilteredSeries.flatMap((s) => s.values.map((v) => ({ series: s.name, year: v.date, consumption: v.value })))}>
-				<LineChart
-					series={timeFilteredSeries}
-					xLabel="Year"
-					yLabel="million kWh"
-					yFormat={formatCompact}
-					unit="million kWh"
-					margin={{ top: 20, right: 20, bottom: 40, left: 70 }}
-					annotations={consumptionAnnotations}
-				/>
-			</ChartWrapper>
-		</section>
+	<div class="chart-breakout mt-4">
+		<ChartWrapper meta={lineMeta} hero data={timeFilteredSeries.flatMap((s) => s.values.map((v) => ({ series: s.name, year: v.date, consumption: v.value })))}>
+			<LineChart
+				series={timeFilteredSeries}
+				xLabel="Year"
+				yLabel="million kWh"
+				yFormat={formatCompact}
+				unit="million kWh"
+				margin={{ top: 20, right: 20, bottom: 40, left: 70 }}
+				annotations={consumptionAnnotations}
+			/>
+		</ChartWrapper>
+	</div>
 
-		<!-- Growth bar (full-width) -->
-		<section class="lg:col-span-2">
-			<ChartWrapper meta={loadGrowthMeta} data={loadGrowthBars.map((d) => ({ year: d.label, growth_pct: d.value }))}>
-				<DivergingBarChart
-					data={loadGrowthBars}
-					yLabel="% change"
-					yFormat={format('+.1f')}
-					unit="%"
-				/>
-			</ChartWrapper>
-		</section>
+	<!-- Section: Growth rate -->
+	<div class="prose-width mt-8">
+		<h2 class="section-heading">Is demand growth accelerating?</h2>
+		<p class="mt-2 text-sm leading-relaxed text-text-secondary">
+			Annual electricity demand growth has slowed significantly since the 2000s. The 2009 recession caused a sharp drop, followed by tepid recovery. Recent years show signs of acceleration driven by data centers, electrification, and broader economic activity.
+		</p>
+	</div>
 
-		<!-- Insight (full-width) -->
-		<div class="lg:col-span-2 insight-card">
+	<div class="chart-breakout mt-4">
+		<ChartWrapper meta={loadGrowthMeta} data={loadGrowthBars.map((d) => ({ year: d.label, growth_pct: d.value }))}>
+			<DivergingBarChart
+				data={loadGrowthBars}
+				yLabel="% change"
+				yFormat={format('+.1f')}
+				unit="%"
+			/>
+		</ChartWrapper>
+	</div>
+
+	<!-- Insight card -->
+	<div class="prose-width mt-6">
+		<div class="insight-card">
 			<div class="flex items-start gap-4">
 				<div class="flex-shrink-0">
 					<span class="text-xl font-bold text-accent" style="font-family: var(--font-mono)">&lt;1%</span>
@@ -289,37 +283,48 @@
 				</p>
 			</div>
 		</div>
-
-		<!-- Top states + Per-capita (side-by-side) -->
-		<section>
-			<ChartWrapper meta={barMeta} data={stateRanking.map((d) => ({ state: d.label, consumption: d.value }))}>
-				<BarChart
-					data={stateRanking}
-					horizontal
-					yLabel="million kWh"
-					yFormat={formatCompact}
-					unit="million kWh"
-					margin={{ top: 20, right: 20, bottom: 60, left: 120 }}
-				/>
-			</ChartWrapper>
-		</section>
-
-		<section>
-			<ChartWrapper meta={perCapitaMeta} data={perCapitaRanking.map((d: any) => ({ state: d.label, per_capita_kwh: d.value }))}>
-				<BarChart
-					data={perCapitaRanking}
-					horizontal
-					yLabel="kWh"
-					yFormat={formatCompact}
-					unit="kWh"
-					margin={{ top: 20, right: 20, bottom: 60, left: 120 }}
-				/>
-			</ChartWrapper>
-		</section>
 	</div>
 
-	<!-- Cross-links -->
-	<p class="mt-3 text-sm">
-		<a href="/prices" class="font-medium text-accent/80 hover:text-accent transition-colors no-underline">How much does this electricity cost? Explore prices &rarr;</a>
+	<!-- Section: State consumption -->
+	<div class="prose-width mt-8">
+		<h2 class="section-heading">Which states consume the most?</h2>
+		<p class="mt-2 text-sm leading-relaxed text-text-secondary">
+			Texas and California dominate electricity consumption, driven by large populations, industrial activity, and climate-related demand. But total consumption doesn't tell the whole story — per-capita figures reveal which states are truly energy-intensive.
+		</p>
+	</div>
+
+	<div class="chart-breakout mt-4">
+		<div class="grid md:grid-cols-2 gap-6">
+			<section>
+				<ChartWrapper meta={barMeta} data={stateRanking.map((d) => ({ state: d.label, consumption: d.value }))}>
+					<BarChart
+						data={stateRanking}
+						horizontal
+						yLabel="million kWh"
+						yFormat={formatCompact}
+						unit="million kWh"
+						margin={{ top: 20, right: 20, bottom: 60, left: 120 }}
+					/>
+				</ChartWrapper>
+			</section>
+
+			<section>
+				<ChartWrapper meta={perCapitaMeta} data={perCapitaRanking.map((d: any) => ({ state: d.label, per_capita_kwh: d.value }))}>
+					<BarChart
+						data={perCapitaRanking}
+						horizontal
+						yLabel="kWh"
+						yFormat={formatCompact}
+						unit="kWh"
+						margin={{ top: 20, right: 20, bottom: 60, left: 120 }}
+					/>
+				</ChartWrapper>
+			</section>
+		</div>
+	</div>
+
+	<!-- Cross-link -->
+	<p class="prose-width mt-8">
+		<a href="/prices" class="text-accent hover:text-accent-light no-underline font-medium">How much does this electricity cost? Explore prices &rarr;</a>
 	</p>
 </div>

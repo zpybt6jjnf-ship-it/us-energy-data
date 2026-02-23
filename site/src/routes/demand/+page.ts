@@ -1,8 +1,10 @@
+import { fetchJSON } from '$utils/fetch';
+
 export async function load({ fetch }) {
 	const [national, byState, perCapita] = await Promise.all([
-		fetch('/data/demand/consumption-national.json').then((r) => r.json()),
-		fetch('/data/demand/consumption-by-state.json').then((r) => r.json()),
-		fetch('/data/demand/per-capita-by-state.json').then((r) => r.json()),
+		fetchJSON<any>(fetch, '/data/demand/consumption-national.json'),
+		fetchJSON<any>(fetch, '/data/demand/consumption-by-state.json'),
+		fetchJSON<any>(fetch, '/data/demand/per-capita-by-state.json'),
 	]);
 
 	return { national, byState, perCapita };

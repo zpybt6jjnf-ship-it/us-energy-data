@@ -8,7 +8,7 @@
 	import TimeRangeSlider from '$components/ui/TimeRangeSlider.svelte';
 	import { chartConfig, updateConfig } from '$stores/chartConfig';
 	import { stateFips, stateFromAbbr } from '$utils/states';
-	import { CHART_COLORS } from '$utils/colors';
+	import { CHART_COLORS, BILLS_COLORS } from '$utils/colors';
 	import { interpolateYlOrRd } from 'd3-scale-chromatic';
 	import { format } from 'd3-format';
 	import type { DataSeries, ChartMeta } from '$types/chart';
@@ -175,14 +175,14 @@
 	const billsSeries: DataSeries[] = $derived([
 		{
 			name: 'Nominal',
-			color: '#e86c3a',
+			color: BILLS_COLORS.nominal,
 			values: data.bills
 				.map((d: any) => ({ date: d.year, value: d.nominal_bill }))
 				.sort((a: any, b: any) => a.date - b.date),
 		},
 		{
 			name: 'Real (2024$)',
-			color: '#2166ac',
+			color: BILLS_COLORS.real,
 			values: data.bills
 				.filter((d: any) => d.real_bill != null)
 				.map((d: any) => ({ date: d.year, value: d.real_bill }))
@@ -205,7 +205,7 @@
 		unit: '$',
 		lastUpdated: new Date().toISOString().split('T')[0],
 		description: 'Electricity bills have risen in nominal terms but the increase is more modest after adjusting for inflation. The average US household consumes about 900 kWh per month.',
-		caveats: 'Bills estimated as average residential price \u00d7 900 kWh/month. Real values adjusted to 2024 dollars using CPI-U.',
+		caveats: 'Bills estimated as average residential price × 900 kWh/month. Real values adjusted to 2024 dollars using CPI-U.',
 	};
 </script>
 
@@ -214,15 +214,22 @@
 </svelte:head>
 
 <div>
-	<!-- Header -->
-	<div class="flex items-baseline gap-3 pb-3 border-b border-border">
-		<h1 class="text-base font-bold font-display tracking-tight text-text">Prices & Bills</h1>
-		<span class="text-sm text-text-secondary">What does your electricity actually cost?</span>
+	<!-- Title + intro -->
+	<div class="prose-width">
+		<h1 class="text-2xl font-display font-semibold tracking-tight text-text">Prices & Bills</h1>
+		<p class="mt-3 text-text-secondary leading-relaxed">
+			Electricity prices in the US vary widely — by sector, by state, and over time.
+			In {latestYear}, residential customers paid an average of
+			<span class="inline-stat">{resPrice.toFixed(1)}&cent;/kWh</span>, roughly
+			<span class="inline-stat">{sectorGap}%</span> more than industrial users at
+			<span class="inline-stat">{indPrice.toFixed(1)}&cent;/kWh</span>.
+		</p>
 	</div>
 
-	<!-- Sticky control bar -->
-	<div class="sticky top-12 z-20 -mx-4 md:-mx-6 lg:-mx-8 bg-surface-card/80 backdrop-blur-xl border-b border-border px-4 md:px-6 lg:px-8 py-2">
+	<!-- Controls -->
+	<div class="chart-breakout border-y border-border py-3 my-6">
 		<div class="flex flex-wrap items-center gap-3">
+			<span class="text-sm font-medium text-text-muted">Filter:</span>
 			<Dropdown
 				options={sectorOptions}
 				value={activeSector}
@@ -237,69 +244,69 @@
 		</div>
 	</div>
 
-	<!-- Key Figures -->
-	<div class="flex flex-wrap gap-2 mt-3 mb-1">
-		<div class="key-figure">
-			<span class="kf-value" style="color: #5B8DEF">{resPrice.toFixed(1)}&cent;</span>
-			<span class="kf-label">avg residential</span>
-		</div>
-		<div class="key-figure">
-			<span class="kf-value" style="color: #5B8DEF">{indPrice.toFixed(1)}&cent;</span>
-			<span class="kf-label">avg industrial</span>
-		</div>
-		<div class="key-figure">
-			<span class="kf-value" style="color: #5B8DEF">{sectorGap}%</span>
-			<span class="kf-label">sector gap</span>
-		</div>
-		<div class="key-figure">
-			<span class="kf-value" style="color: #5B8DEF">{latestYear}</span>
-			<span class="kf-label">latest year</span>
+	<!-- Section: Price trends over time -->
+	<div class="prose-width">
+		<h2 class="section-heading">How have prices changed over time?</h2>
+		<p class="mt-2 text-text-secondary leading-relaxed">
+			National electricity prices have risen steadily in nominal terms, shaped by recessions, policy shifts, and fuel costs. The gap between residential and industrial rates reflects differences in distribution costs and market access.
+		</p>
+	</div>
+
+	<section class="chart-breakout mt-6">
+		<ChartWrapper meta={lineMeta} hero data={timeFilteredSeries.flatMap((s) => s.values.map((v) => ({ series: s.name, year: v.date, price: v.value })))}>
+			<LineChart
+				series={timeFilteredSeries}
+				xLabel="Year"
+				yLabel="cents/kWh"
+				yFormat={format(',.1f')}
+				unit="cents/kWh"
+				annotations={priceAnnotations}
+			/>
+		</ChartWrapper>
+	</section>
+
+	<!-- Insight card -->
+	<div class="prose-width mt-6 insight-card">
+		<div class="flex items-start gap-4">
+			<div class="flex-shrink-0">
+				<span class="text-xl font-bold text-accent" style="font-family: var(--font-mono)">50%</span>
+				<span class="block text-[10px] uppercase tracking-wider text-text-muted mt-0.5">price gap</span>
+			</div>
+			<p class="text-sm leading-relaxed text-text-secondary">
+				Residential customers pay roughly 50% more per kWh than industrial users — a gap that has widened over the past decade.
+			</p>
 		</div>
 	</div>
 
-	<!-- Chart grid -->
-	<div class="grid gap-3 lg:grid-cols-2 mt-3">
-		<!-- Price trends (full-width hero) -->
-		<section class="lg:col-span-2">
-			<ChartWrapper meta={lineMeta} hero data={timeFilteredSeries.flatMap((s) => s.values.map((v) => ({ series: s.name, year: v.date, price: v.value })))}>
-				<LineChart
-					series={timeFilteredSeries}
-					xLabel="Year"
-					yLabel="cents/kWh"
-					yFormat={format(',.1f')}
-					unit="cents/kWh"
-					annotations={priceAnnotations}
-				/>
-			</ChartWrapper>
-		</section>
+	<!-- Section: State variation -->
+	<div class="prose-width mt-12">
+		<h2 class="section-heading">How do prices vary across states?</h2>
+		<p class="mt-2 text-text-secondary leading-relaxed">
+			Geography matters. States with abundant hydropower like Washington enjoy rates well below the national average, while Hawaii and parts of New England pay the most. Fuel mix, regulation, and infrastructure age all play a role.
+		</p>
+	</div>
 
-		<!-- Insight (full-width) -->
-		<div class="lg:col-span-2 insight-card">
-			<div class="flex items-start gap-4">
-				<div class="flex-shrink-0">
-					<span class="text-xl font-bold text-accent" style="font-family: var(--font-mono)">50%</span>
-					<span class="block text-[10px] uppercase tracking-wider text-text-muted mt-0.5">price gap</span>
-				</div>
-				<p class="text-sm leading-relaxed text-text-secondary">
-					Residential customers pay roughly 50% more per kWh than industrial users — a gap that has widened over the past decade.
-				</p>
-			</div>
-		</div>
+	<section class="chart-breakout mt-6">
+		<ChartWrapper meta={mapMeta} data={mapData.map((d: any) => ({ state: d.state, price: d.value }))}>
+			<ChoroplethMap
+				data={mapData}
+				topology={data.topology}
+				colorInterpolator={colorInterp}
+				valueFormat={format(',.1f')}
+				unit="cents/kWh"
+			/>
+		</ChartWrapper>
+	</section>
 
-		<!-- State map (full-width) -->
-		<section class="lg:col-span-2">
-			<ChartWrapper meta={mapMeta} data={mapData.map((d: any) => ({ state: d.state, price: d.value }))}>
-				<ChoroplethMap
-					data={mapData}
-					topology={data.topology}
-					colorInterpolator={colorInterp}
-					valueFormat={format(',.1f')}
-					unit="cents/kWh"
-				/>
-			</ChartWrapper>
-		</section>
+	<!-- Section: Renewables and prices -->
+	<div class="prose-width mt-12">
+		<h2 class="section-heading">Do renewables make electricity cheaper or more expensive?</h2>
+		<p class="mt-2 text-text-secondary leading-relaxed">
+			The relationship between renewable energy and electricity prices is not straightforward. States with cheap hydropower tend to have both high renewable shares and low prices, but other factors — grid age, regulatory structure, and demand patterns — matter just as much.
+		</p>
+	</div>
 
-		<!-- Scatter (side-by-side with bills) -->
+	<div class="chart-breakout mt-6 grid md:grid-cols-2 gap-3">
 		<section>
 			<ChartWrapper meta={scatterMeta} data={priceVsMixData.map((d) => ({ state: d.label, renewable_share: d.x, price: d.y }))}>
 				<Scatter
@@ -313,7 +320,6 @@
 			</ChartWrapper>
 		</section>
 
-		<!-- Bills -->
 		<section>
 			<ChartWrapper meta={billsMeta} data={timeFilteredBills.flatMap((s) => s.values.map((v) => ({ year: v.date, [s.name === 'Nominal' ? 'nominal_bill' : 'real_bill']: v.value })))}>
 				<LineChart
@@ -328,7 +334,7 @@
 	</div>
 
 	<!-- Cross-link -->
-	<p class="mt-3 text-sm">
-		<a href="/generation" class="font-medium text-accent/80 hover:text-accent transition-colors no-underline">See how these states generate their electricity &rarr;</a>
+	<p class="prose-width mt-8">
+		<a href="/generation" class="text-accent hover:text-accent-light no-underline font-medium">How do these states generate their electricity? &rarr;</a>
 	</p>
 </div>

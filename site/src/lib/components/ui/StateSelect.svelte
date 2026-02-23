@@ -81,11 +81,11 @@
 	>
 		<!-- Selected tags -->
 		{#each selected as abbr}
-			<span class="inline-flex items-center gap-0.5 rounded-md bg-primary/10 px-1.5 py-0.5 text-xs font-semibold text-primary">
+			<span class="inline-flex items-center gap-0.5 rounded-md bg-accent/15 px-1.5 py-0.5 text-xs font-semibold text-accent">
 				{abbr}
 				<button
 					type="button"
-					class="ml-0.5 text-primary/60 hover:text-primary cursor-pointer"
+					class="ml-0.5 text-accent/60 hover:text-accent cursor-pointer"
 					onclick={() => remove(abbr)}
 					aria-label="Remove {abbr}"
 				>

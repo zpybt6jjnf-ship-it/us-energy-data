@@ -1,66 +1,95 @@
 @import 'tailwindcss';
 
 @theme {
-	/* Brand — Infrared dark palette */
-	--color-primary: #1E2330;
-	--color-primary-light: #2A3040;
-	--color-primary-dark: #0B0E14;
-	--color-accent: #FF9500;
-	--color-accent-light: #FFB340;
-	--color-accent-dark: #D97E00;
+	/* Warm light palette — OWID-inspired */
+	--color-surface: #FAFAF7;
+	--color-surface-alt: #F5F5F0;
+	--color-surface-card: #FFFFFF;
+	--color-border: #E5E5E0;
+	--color-border-light: #EDEDEA;
 
-	/* Highlight (vivid green for positive/renewables) */
-	--color-highlight: #00E68A;
-	--color-highlight-muted: #00E68A20;
+	/* Accent — steel blue */
+	--color-accent: #2C6E94;
+	--color-accent-light: #3A8AB8;
+	--color-accent-dark: #1E5474;
 
-	/* Surfaces — near-black depth */
-	--color-surface: #0B0E14;
-	--color-surface-alt: #111620;
-	--color-surface-card: #161B26;
-	--color-border: #1E2636;
-	--color-border-light: #242D3C;
+	/* Highlight (green — positive trends) */
+	--color-highlight: #18A865;
+	--color-highlight-muted: #18A86520;
 
-	/* Text — light on dark */
-	--color-text: #E8ECF4;
-	--color-text-secondary: #9CA3AF;
-	--color-text-muted: #6B7280;
+	/* Text — dark on light */
+	--color-text: #1D1F23;
+	--color-text-secondary: #5B6068;
+	--color-text-muted: #9CA0A8;
 
-	/* Chart palette */
-	--color-chart-1: #5B8DEF;
-	--color-chart-2: #FF9500;
-	--color-chart-3: #00E68A;
-	--color-chart-4: #C084FC;
-	--color-chart-5: #FBBF24;
-	--color-chart-6: #FB923C;
-	--color-chart-7: #8892A4;
-	--color-chart-8: #F87171;
+	/* Chart palette (darkened for light background) */
+	--color-chart-1: #286EA8;
+	--color-chart-2: #C98600;
+	--color-chart-3: #18A865;
+	--color-chart-4: #7C5CC4;
+	--color-chart-5: #D14040;
+	--color-chart-6: #1DA876;
+	--color-chart-7: #6B7280;
+	--color-chart-8: #D4660A;
 
 	/* Typography */
-	--font-display: 'Syne', system-ui, -apple-system, sans-serif;
-	--font-sans: 'Outfit', system-ui, -apple-system, sans-serif;
-	--font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+	--font-display: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+	--font-sans: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+	--font-mono: 'IBM Plex Mono', 'Fira Code', monospace;
 
-	/* Spacing — tighter */
+	/* Spacing */
 	--spacing-section: 1.5rem;
 	--spacing-chart: 1rem;
 
-	/* Type scale */
+	/* Type scale — slightly larger for narrative readability */
 	--text-xs: 0.6875rem;
 	--text-sm: 0.8125rem;
-	--text-base: 0.9375rem;
-	--text-md: 1rem;
+	--text-base: 1rem;
+	--text-md: 1.0625rem;
 	--text-lg: 1.25rem;
 	--text-xl: 1.5rem;
-	--text-2xl: 2.25rem;
+	--text-2xl: 2.5rem;
 
-	/* Radius — tighter */
+	/* Radius */
 	--radius-sm: 0.25rem;
 	--radius-md: 0.375rem;
 	--radius-lg: 0.75rem;
 
-	/* Shadows — eliminated */
-	--shadow-card: none;
-	--shadow-card-hover: none;
+	/* Shadows — subtle for light bg */
+	--shadow-card: 0 1px 3px rgba(0,0,0,0.04);
+	--shadow-card-hover: 0 2px 8px rgba(0,0,0,0.06);
+
+	/* Tooltip */
+	--color-tooltip-bg: rgba(255,255,255,0.97);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-surface: #1a1a1a;
+		--color-surface-alt: #242424;
+		--color-surface-card: #2a2a2a;
+		--color-border: #3a3a3a;
+		--color-border-light: #333333;
+		--color-accent: #4aa3d4;
+		--color-accent-light: #5cb8e8;
+		--color-accent-dark: #3a8ab8;
+		--color-highlight: #2bc87a;
+		--color-highlight-muted: #2bc87a20;
+		--color-text: #e8e8e8;
+		--color-text-secondary: #b0b4bc;
+		--color-text-muted: #7a7e86;
+		--color-chart-1: #4aa3d4;
+		--color-chart-2: #e0a830;
+		--color-chart-3: #2bc87a;
+		--color-chart-4: #9b7ee8;
+		--color-chart-5: #e05858;
+		--color-chart-6: #30c898;
+		--color-chart-7: #8b8f98;
+		--color-chart-8: #e88040;
+		--shadow-card: 0 1px 3px rgba(0,0,0,0.2);
+		--shadow-card-hover: 0 2px 8px rgba(0,0,0,0.3);
+		--color-tooltip-bg: rgba(30,30,30,0.97);
+	}
 }
 
 /* Targeted transitions for interactive elements */
@@ -73,41 +102,9 @@ body {
 	font-family: var(--font-sans);
 	color: var(--color-text);
 	background: var(--color-surface);
-	line-height: 1.5;
+	line-height: 1.65;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-}
-
-/* Noise texture overlay */
-body::before {
-	content: '';
-	position: fixed;
-	inset: 0;
-	z-index: 9999;
-	pointer-events: none;
-	opacity: 0.015;
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-	background-repeat: repeat;
-}
-
-/* Light mode override */
-@media (prefers-color-scheme: light) {
-	:root {
-		--color-surface: #0B0E14;
-		--color-surface-alt: #111620;
-		--color-surface-card: #161B26;
-		--color-border: #1E2636;
-		--color-border-light: #242D3C;
-		--color-text: #E8ECF4;
-		--color-text-secondary: #9CA3AF;
-		--color-text-muted: #6B7280;
-		--color-primary: #1E2330;
-		--color-primary-light: #2A3040;
-		--color-accent: #FF9500;
-		--color-accent-light: #FFB340;
-		--color-highlight: #00E68A;
-		--color-highlight-muted: #00E68A20;
-	}
 }
 
 /* Chart SVG defaults */
@@ -118,44 +115,18 @@ svg.chart {
 svg.chart text {
 	font-family: var(--font-sans);
 	fill: var(--color-text-secondary);
-	font-size: 13px;
+	font-size: 12px;
 }
 
 /* Display font utility */
 .font-display {
 	font-family: var(--font-display);
-	font-weight: 700;
+	font-weight: 600;
 }
 
 /* Mono font utility */
 .font-mono {
 	font-family: var(--font-mono);
-}
-
-/* Glow text utility */
-.glow-text {
-	text-shadow: 0 0 12px currentColor;
-}
-
-/* Ambient radial gradient background */
-.bg-ambient {
-	background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(255, 149, 0, 0.06) 0%, transparent 70%),
-	            var(--color-surface);
-}
-
-/* Fade-in-up animation */
-@keyframes fadeInUp {
-	from {
-		opacity: 0;
-		transform: translateY(12px);
-	}
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
-.animate-fade-in-up {
-	animation: fadeInUp 0.5s ease-out both;
 }
 
 /* ------------------------------------------------
@@ -166,36 +137,29 @@ svg.chart text {
 	100% { background-position: 200% 0; }
 }
 .skeleton {
-	background: linear-gradient(90deg, var(--color-surface-alt) 25%, var(--color-border) 50%, var(--color-surface-alt) 75%);
+	background: linear-gradient(90deg, var(--color-surface-alt) 25%, var(--color-border-light) 50%, var(--color-surface-alt) 75%);
 	background-size: 200% 100%;
 	animation: shimmer 1.5s ease-in-out infinite;
 	border-radius: 0.375rem;
 }
 
 /* ------------------------------------------------
-   Chart card — dark with hover glow
+   Chart card — transparent for narrative flow
    ------------------------------------------------ */
 .chart-card {
-	background: var(--color-surface-card);
-	border: 1px solid var(--color-border);
-	border-radius: 0.375rem;
-	padding: 0.875rem;
-	box-shadow: none;
-	transition: box-shadow 0.3s ease;
-}
-.chart-card:hover {
-	box-shadow: 0 0 20px rgba(255, 149, 0, 0.08);
+	background: transparent;
+	padding: 0;
 }
 
 /* ------------------------------------------------
-   Insight callout card — simplified
+   Insight callout card — left accent border
    ------------------------------------------------ */
 .insight-card {
-	background: var(--color-surface-card);
-	border: 1px solid var(--color-border);
+	background: var(--color-surface-alt);
+	border: none;
 	border-left: 3px solid var(--color-accent);
 	border-radius: 0.375rem;
-	padding: 0.75rem 1rem;
+	padding: 1.25rem 1.5rem;
 }
 
 /* ------------------------------------------------
@@ -228,7 +192,7 @@ svg.chart .annotation-label {
 }
 
 /* ------------------------------------------------
-   Key figures stat strip — compact flex
+   Key figures stat strip — now transparent/inline
    ------------------------------------------------ */
 .key-figures {
 	display: flex;
@@ -237,9 +201,8 @@ svg.chart .annotation-label {
 	margin: 0.5rem 0;
 }
 .key-figure {
-	background: var(--color-surface-card);
-	border: 1px solid var(--color-border);
-	border-radius: 0.25rem;
+	background: transparent;
+	border: none;
 	padding: 0.375rem 0.625rem;
 	display: flex;
 	flex-direction: column;
@@ -250,7 +213,6 @@ svg.chart .annotation-label {
 	font-size: 1rem;
 	font-weight: 700;
 	line-height: 1.2;
-	text-shadow: 0 0 12px currentColor;
 }
 .key-figure .kf-label {
 	font-size: 0.6875rem;
@@ -272,7 +234,53 @@ svg.chart .annotation-label {
 	font-weight: 600;
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
-	background: #f59e0b15;
-	color: #d97706;
-	border: 1px solid #f59e0b30;
+	background: color-mix(in srgb, var(--color-accent) 8%, transparent);
+	color: var(--color-accent-dark);
+	border: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
+}
+
+/* Native select styling */
+select option {
+	background: var(--color-surface-card);
+	color: var(--color-text);
+}
+
+/* ------------------------------------------------
+   OWID narrative layout utilities
+   ------------------------------------------------ */
+.prose-width {
+	max-width: 850px;
+	margin-inline: auto;
+}
+
+.chart-breakout {
+	max-width: 1100px;
+	margin-inline: auto;
+}
+
+.narrative-text {
+	font-size: 1.0625rem;
+	line-height: 1.7;
+	color: var(--color-text-secondary);
+}
+
+.section-heading {
+	font-family: var(--font-display);
+	font-size: 1.375rem;
+	font-weight: 600;
+	margin-top: 3rem;
+	margin-bottom: 0.75rem;
+}
+
+.chart-separator {
+	border: none;
+	height: 1px;
+	background: var(--color-border);
+	margin: 3rem 0;
+}
+
+.inline-stat {
+	font-family: var(--font-mono);
+	font-weight: 600;
+	color: var(--color-text);
 }

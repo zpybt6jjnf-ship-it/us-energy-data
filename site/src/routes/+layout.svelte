@@ -7,10 +7,10 @@
 	let { children }: { children: Snippet } = $props();
 </script>
 
-<div class="min-h-screen bg-ambient">
+<div class="min-h-screen bg-surface">
 	<Nav />
-	<div class="pt-12">
-		<main class="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-8 py-4">
+	<div class="pt-14">
+		<main class="px-4 md:px-6 lg:px-8 py-8">
 			{@render children()}
 		</main>
 		<Footer />

@@ -1,8 +1,10 @@
+import { fetchJSON } from '$utils/fetch';
+
 export async function load({ fetch }) {
 	const [prices, generation, consumption] = await Promise.all([
-		fetch('/data/prices/retail-prices-national.json').then((r) => r.json()),
-		fetch('/data/generation/generation-national.json').then((r) => r.json()),
-		fetch('/data/demand/consumption-national.json').then((r) => r.json()),
+		fetchJSON<any[]>(fetch, '/data/prices/retail-prices-national.json'),
+		fetchJSON<any[]>(fetch, '/data/generation/generation-national.json'),
+		fetchJSON<any[]>(fetch, '/data/demand/consumption-national.json'),
 	]);
 
 	// Latest residential price
@@ -28,29 +30,6 @@ export async function load({ fetch }) {
 	// Convert million kWh to trillion kWh
 	const totalTWh = totalConsumption / 1_000_000;
 
-	// Fetch sparkline data — gracefully degrade on failure
-	let generationData: any[] = [];
-	let priceData: any[] = [];
-	let demandData: any[] = [];
-
-	try {
-		generationData = generation;
-	} catch {
-		generationData = [];
-	}
-
-	try {
-		priceData = prices;
-	} catch {
-		priceData = [];
-	}
-
-	try {
-		demandData = consumption;
-	} catch {
-		demandData = [];
-	}
-
 	return {
 		stats: {
 			avgResPrice: `${avgResPrice.toFixed(1)}\u00a2`,
@@ -60,8 +39,8 @@ export async function load({ fetch }) {
 			totalConsumption: `${totalTWh.toFixed(1)}T kWh`,
 			consumptionLabel: 'annual electricity consumption',
 		},
-		generationData,
-		priceData,
-		demandData,
+		generationData: generation,
+		priceData: prices,
+		demandData: consumption,
 	};
 }

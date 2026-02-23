@@ -6,7 +6,7 @@ Public-facing data platform making US energy data accessible. Based on Hannah Ri
 - **Frontend**: SvelteKit 5 + TypeScript (strict) + Tailwind CSS v4 + Cloudflare adapter
 - **Charts**: D3 (scales, shapes, geo, interpolate) + Svelte reactive SVG — D3 is a utility library only, Svelte handles all DOM
 - **Maps**: d3-geo (AlbersUSA) + topojson-client + us-atlas (`states-10m.json`, NOT `states-albers-10m.json`)
-- **Typography**: Google Fonts — Syne (display, geometric/futuristic), Outfit (body, clean/readable), JetBrains Mono (data)
+- **Typography**: Google Fonts — IBM Plex Sans (display + body, weight 600 for headings), IBM Plex Mono (data)
 - **Data Pipeline**: Python (requests + pandas + openpyxl) → static JSON → `site/static/data/`
 - **Hosting**: Cloudflare Pages
 
@@ -14,8 +14,9 @@ Public-facing data platform making US energy data accessible. Based on Hannah Ri
 - **Pipeline and site are decoupled**: Python pipeline → JSON → SvelteKit prebuild. Site never calls EIA API at runtime. Pipeline stages are independent — partial failures export what succeeded. Safe to re-run.
 - **URL is single source of truth** for chart state: `/prices?state=TX,CA&sector=residential` (managed by `chartConfig.ts` store)
 - **Static JSON per chart** in `site/static/data/` (37 files across 7 categories). No database, no API server. JSON schemas must match TypeScript types in `site/src/lib/types/data.ts` — update both when changing pipeline output.
-- **Brand-first color system**: Custom `@theme` tokens (`bg-primary`, `text-accent`, `bg-surface-alt`, etc.) replace default Tailwind palette. Never use default gray/blue.
-- **Top nav layout**: Full-width horizontal nav with pill-style links and amber glow active state. No sidebar. Content offset via `pt-12` only. Mobile: hamburger drawer with dark overlay.
+- **Brand-first color system**: Custom `@theme` tokens (`bg-surface`, `text-accent`, `bg-surface-alt`, etc.) replace default Tailwind palette. Never use default gray/blue.
+- **OWID-inspired narrative layout**: Single-column narrative flow. Prose at ~850px (`.prose-width`), charts break out to ~1100px (`.chart-breakout`). No dashboard grid. Controls inline (not sticky). Stats woven into prose (`.inline-stat`).
+- **Top nav layout**: Full-width horizontal nav with bold active state. No sidebar. Content offset via `pt-14` only. Mobile: hamburger drawer.
 
 ## Repository Structure
 ```
@@ -68,32 +69,32 @@ cd us-energy-data/pipeline && source .venv/bin/activate && python -m src.main
 - **BarChart**: Hover dimming, multi-color legend, vertical or horizontal
 - **DivergingBarChart**: Centered zero axis, positive/negative color coding
 - **Scatter**: Hover point enlargement + label, white stroke separation
-- **ChoroplethMap**: State abbreviation labels (`FIPS_TO_ABBR` in `states.ts`), cream-to-navy gradient via d3-interpolate
-- **ChartWrapper**: `hero` prop for featured charts, collapsible "About this chart" descriptions, ghost-style CSV/PNG download buttons. No category badge props.
+- **ChoroplethMap**: State abbreviation labels (`FIPS_TO_ABBR` in `states.ts`), cream-to-blue gradient via d3-interpolate
+- **ChartWrapper**: `hero` prop for featured charts, always-visible description/caveats, text-link CSV/PNG/Link downloads. No category badge props.
 - **Fuels special case**: "All Fuels" view uses base year = 100 index; single fuel uses raw values with proper units
-- **Spacing**: `mt-3` between charts/key-figures, `mt-2` for section headers, `mt-1.5`/`mt-0.5` for tight elements
+- **Spacing**: Narrative sections use `.section-heading` (mt-3rem, mb-0.75rem). Charts wrapped in `py-6` via ChartWrapper.
 
-## Design Tokens (app.css @theme) — "Infrared" Dark Theme
+## Design Tokens (app.css @theme) — Warm Light Theme
 | Token | Value | Usage |
 |-------|-------|-------|
-| Primary | `#1E2330` | Nav, headings |
-| Primary-dark | `#0B0E14` | Near-black base |
-| Accent | `#FF9500` | Hot amber — CTAs, active states, energy/heat |
-| Highlight | `#00E68A` | Vivid green — renewables, positive trends |
-| Surface | `#0B0E14` | Body background (near-black) |
-| Surface-alt | `#111620` | Section bands |
-| Surface-card | `#161B26` | Card backgrounds |
-| Text | `#E8ECF4` | Light body text |
-| Text-secondary | `#9CA3AF` | Supporting text |
-| Text-muted | `#6B7280` | Tertiary text |
-| Border | `#1E2636` | Borders |
-| Border-light | `#242D3C` | Subtle borders |
+| Surface | `#FAFAF7` | Body background — warm cream |
+| Surface-alt | `#F5F5F0` | Section bands, callouts |
+| Surface-card | `#FFFFFF` | Card/chart backgrounds |
+| Border | `#E5E5E0` | Default borders |
+| Border-light | `#EDEDEA` | Subtle borders |
+| Accent | `#2C6E94` | Steel blue — links, CTAs |
+| Accent-light | `#3A8AB8` | Hover blue |
+| Accent-dark | `#1E5474` | Pressed blue |
+| Highlight | `#18A865` | Green — positive trends |
+| Text | `#1D1F23` | Primary text — near-black |
+| Text-secondary | `#5B6068` | Body prose |
+| Text-muted | `#9CA0A8` | Tertiary, labels |
 
-Dark-first aesthetic with atmospheric depth: noise texture overlay, radial gradient ambience, hover glow effects on cards (`box-shadow: 0 0 20px rgba(255,149,0,0.08)`), key figure values glow (`text-shadow: 0 0 12px currentColor`).
+Clean, warm-light OWID-inspired aesthetic. No dot-grid overlay, no glow effects, no dark cards. Narrative content flows in `.prose-width` (850px) with charts breaking out to `.chart-breakout` (1100px). Insight callouts use `.insight-card` with left accent border.
 
-Chart colors: `#5B8DEF` (steel blue), `#FF9500` (hot amber), `#00E68A` (vivid green), `#C084FC` (purple), `#FBBF24` (gold), `#F87171` (coral), `#8892A4` (slate), `#FB923C` (orange). Energy source colors in `utils/colors.ts`.
+Chart colors (darkened for light bg): `#286EA8` (blue), `#C98600` (amber), `#18A865` (green), `#7C5CC4` (purple), `#D14040` (red), `#1DA876` (teal), `#6B7280` (slate), `#D4660A` (orange). Energy source colors in `utils/colors.ts`.
 
-Typography classes: `.font-display` for Syne headlines (bold, geometric), `--font-sans` (Outfit), `--font-mono` (JetBrains Mono). Utilities: `.glow-text`, `.bg-ambient`, `.animate-fade-in-up`.
+Typography classes: `.font-display` for IBM Plex Sans headlines (weight 600), `--font-sans` (IBM Plex Sans), `--font-mono` (IBM Plex Mono). Layout utilities: `.prose-width`, `.chart-breakout`, `.narrative-text`, `.section-heading`, `.inline-stat`, `.chart-separator`.
 
 ## Data Sources & EIA API Endpoints
 - **EIA API v2** (`https://api.eia.gov/v2/`): prices, demand, generation, capacity, emissions, fuels, trade
@@ -113,4 +114,4 @@ Key API quirks:
 - [ ] Data archiving: snapshot source data against federal API changes
 - [ ] Mobile/tablet/cross-browser testing
 - [ ] Accessibility: ARIA labels on SVGs, keyboard navigation, screen reader support
-- [ ] Footer: replace hardcoded `bg-[#0f2b44]` with `--color-primary` token
+- [x] ~~Footer: replace hardcoded `bg-[#0f2b44]` with `--color-primary` token~~ (resolved with warm light redesign)
