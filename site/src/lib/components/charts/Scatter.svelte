@@ -67,8 +67,8 @@
 		scaleOrdinal<string>().domain(groups).range(CHART_COLORS_CSS as unknown as string[])
 	);
 
-	const xTicks = $derived(xScale.ticks(6));
-	const yTicks = $derived(yScale.ticks(6));
+	const xTicks = $derived(xScale.ticks(Math.min(6, Math.floor(innerWidth / 80))));
+	const yTicks = $derived(yScale.ticks(Math.min(6, Math.floor(innerHeight / 50))));
 
 	function handleDotHover(event: PointerEvent, d: ScatterPoint, index: number) {
 		hoveredIndex = index;

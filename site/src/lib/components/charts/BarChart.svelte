@@ -79,7 +79,17 @@
 	const uniqueColors = $derived([...new Set(data.map((d, i) => d.color ?? CHART_COLORS_CSS[i % CHART_COLORS_CSS.length]))]);
 	const hasMultipleColors = $derived(uniqueColors.length > 1);
 
-	const valueTicks = $derived(valueScale.ticks(6));
+	const valueTicks = $derived(valueScale.ticks(Math.min(6, Math.floor((horizontal ? innerWidth : innerHeight) / 50))));
+
+	// Label thinning for vertical bar mode: show every Nth label so they don't overlap
+	const xLabelSkip = $derived.by(() => {
+		if (horizontal || data.length === 0) return 1;
+		const maxLabelLen = Math.max(...data.map((d) => d.label.length));
+		const charWidth = 8; // ~8px per char at font-size 13
+		const labelSpace = maxLabelLen * charWidth + 8;
+		const step = bandScale.step();
+		return Math.max(1, Math.ceil(labelSpace / step));
+	});
 
 	function handleBarHover(event: PointerEvent, d: BarData, index: number) {
 		hoveredIndex = index;
@@ -245,21 +255,21 @@
 					{yFormat(tick)}
 				</text>
 			{/each}
-			<!-- Category axis (bottom) -->
+			<!-- Category axis (bottom, thinned to avoid overlap) -->
 			<g transform="translate(0, {innerHeight})">
 				<line x1={0} x2={innerWidth} stroke="var(--color-border)" />
-				{#each data as d}
-					{@const maxChars = Math.max(3, Math.floor(bandScale.bandwidth() / 8))}
-					<text
-						x={(bandScale(d.label) ?? 0) + bandScale.bandwidth() / 2}
-						y={20}
-						text-anchor="middle"
-						fill="var(--color-text-secondary)"
-						font-size="13"
-						class="truncate"
-					>
-						{d.label.length > maxChars ? d.label.slice(0, maxChars - 1) + '\u2026' : d.label}
-					</text>
+				{#each data as d, i}
+					{#if i % xLabelSkip === 0}
+						<text
+							x={(bandScale(d.label) ?? 0) + bandScale.bandwidth() / 2}
+							y={20}
+							text-anchor="middle"
+							fill="var(--color-text-secondary)"
+							font-size="13"
+						>
+							{d.label}
+						</text>
+					{/if}
 				{/each}
 			</g>
 		{/if}

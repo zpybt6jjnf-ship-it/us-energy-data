@@ -95,8 +95,8 @@
 			.curve(curveMonotoneX)
 	);
 
-	const xTicks = $derived(xScale.ticks(Math.min(10, innerWidth / 80)));
-	const yTicks = $derived(yScale.ticks(6));
+	const xTicks = $derived(xScale.ticks(Math.min(10, Math.floor(innerWidth / 80))));
+	const yTicks = $derived(yScale.ticks(Math.min(6, Math.floor(innerHeight / 50))));
 
 	// End-of-line labels with collision avoidance
 	const endLabels = $derived.by(() => {

@@ -74,8 +74,18 @@
             .nice()
     );
 
-    const yTicks = $derived(yScale.ticks(6));
+    const yTicks = $derived(yScale.ticks(Math.min(6, Math.floor(innerHeight / 50))));
     const zeroY = $derived(yScale(0));
+
+    // Label thinning: show every Nth label so they don't overlap
+    const xLabelSkip = $derived.by(() => {
+        if (data.length === 0) return 1;
+        const maxLabelLen = Math.max(...data.map((d) => d.label.length));
+        const charWidth = 7; // ~7px per char at font-size 11
+        const labelSpace = maxLabelLen * charWidth + 8; // + padding
+        const step = xScale.step();
+        return Math.max(1, Math.ceil(labelSpace / step));
+    });
 
     function handleBarHover(event: PointerEvent, d: BarData, index: number) {
         hoveredIndex = index;
@@ -154,22 +164,22 @@
             />
         {/each}
 
-        <!-- X axis labels -->
+        <!-- X axis labels (thinned to avoid overlap) -->
         <g transform="translate(0, {innerHeight})">
             <line x1={0} x2={innerWidth} stroke="var(--color-border)" />
-            {#each data as d}
-                {@const x = (xScale(d.label) ?? 0) + xScale.bandwidth() / 2}
-                {@const maxChars = Math.max(3, Math.floor(xScale.bandwidth() / 8))}
-                <text
-                    {x}
-                    y={16}
-                    text-anchor="middle"
-                    fill="var(--color-text-secondary)"
-                    font-size="11"
-                    font-family="var(--font-mono)"
-                >
-                    {d.label.length > maxChars ? d.label.slice(0, maxChars - 1) + '\u2026' : d.label}
-                </text>
+            {#each data as d, i}
+                {#if i % xLabelSkip === 0}
+                    <text
+                        x={(xScale(d.label) ?? 0) + xScale.bandwidth() / 2}
+                        y={16}
+                        text-anchor="middle"
+                        fill="var(--color-text-secondary)"
+                        font-size="11"
+                        font-family="var(--font-mono)"
+                    >
+                        {d.label}
+                    </text>
+                {/if}
             {/each}
         </g>
 

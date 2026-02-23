@@ -77,7 +77,7 @@
 	);
 
 	const legendSteps = 8;
-	const legendWidth = 300;
+	const legendWidth = $derived(Math.min(300, width - 80));
 	const legendHeight = 12;
 	const noDataColor = 'var(--color-border)';
 
