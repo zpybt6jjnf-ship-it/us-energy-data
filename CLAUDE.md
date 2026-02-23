@@ -1,6 +1,6 @@
 # US Energy Data Platform
 
-Public-facing data platform making US energy data accessible. Based on Hannah Ritchie's proposal (Feb 2026).
+Public-facing data platform making US energy data accessible. Based on Hannah Ritchie's proposal (Feb 2026). Inspired by Our World in Data. 
 
 ## Tech Stack
 - **Frontend**: SvelteKit 5 + TypeScript (strict) + Tailwind CSS v4 + Cloudflare adapter

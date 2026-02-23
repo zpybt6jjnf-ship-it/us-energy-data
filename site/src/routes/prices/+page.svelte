@@ -100,7 +100,7 @@
 	// State-level map data: latest year residential prices
 	const latestYear = $derived(Math.max(...data.national.map((d: any) => d.year)));
 
-	// Key figures (computed in script to avoid @const in template)
+	// Key figures
 	const latestRes = $derived(data.national.filter((d: any) => d.year === latestYear && d.sector === 'Residential'));
 	const latestInd = $derived(data.national.filter((d: any) => d.year === latestYear && d.sector === 'Industrial'));
 	const resPrice = $derived(latestRes.length > 0 ? latestRes[0].price : 0);
@@ -215,15 +215,30 @@
 
 <div>
 	<!-- Header -->
-	<header>
-		<h1 class="text-2xl font-bold tracking-tight text-text font-display">Prices & Bills</h1>
-		<p class="mt-1 max-w-3xl text-base leading-relaxed text-text-secondary">
-			What does your electricity actually cost — and why?
-		</p>
-	</header>
+	<div class="flex items-baseline gap-3 pb-3 border-b border-border">
+		<h1 class="text-base font-semibold text-text">Prices & Bills</h1>
+		<span class="text-sm text-text-secondary">What does your electricity actually cost?</span>
+	</div>
+
+	<!-- Sticky control bar -->
+	<div class="sticky top-12 z-20 -mx-4 md:-mx-6 lg:-mx-8 bg-surface/95 backdrop-blur-sm border-b border-border px-4 md:px-6 lg:px-8 py-2">
+		<div class="flex flex-wrap items-center gap-3">
+			<Dropdown
+				options={sectorOptions}
+				value={activeSector}
+				label="Sector"
+				onchange={(v) => updateConfig('sector', v)}
+			/>
+			<StateSelect
+				selected={selectedStates}
+				onchange={(states) => updateConfig('state', states)}
+			/>
+			<TimeRangeSlider {startYear} {endYear} />
+		</div>
+	</div>
 
 	<!-- Key Figures -->
-	<div class="key-figures">
+	<div class="flex flex-wrap gap-2 mt-3 mb-1">
 		<div class="key-figure">
 			<span class="kf-value" style="color: #2166ac">{resPrice.toFixed(1)}&cent;</span>
 			<span class="kf-label">avg residential</span>
@@ -242,95 +257,78 @@
 		</div>
 	</div>
 
-	<!-- Chart 1: National price trends (hero chart) -->
-	<section class="mt-4">
-		<div class="mb-2 rounded-xl border border-border bg-surface-alt/50 px-4 py-2.5">
-			<div class="flex flex-wrap items-end gap-4">
-				<Dropdown
-					options={sectorOptions}
-					value={activeSector}
-					label="Sector"
-					onchange={(v) => updateConfig('sector', v)}
+	<!-- Chart grid -->
+	<div class="grid gap-3 lg:grid-cols-2 mt-3">
+		<!-- Price trends (full-width hero) -->
+		<section class="lg:col-span-2">
+			<ChartWrapper meta={lineMeta} hero data={timeFilteredSeries.flatMap((s) => s.values.map((v) => ({ series: s.name, year: v.date, price: v.value })))}>
+				<LineChart
+					series={timeFilteredSeries}
+					xLabel="Year"
+					yLabel="cents/kWh"
+					yFormat={format(',.1f')}
+					unit="cents/kWh"
+					annotations={priceAnnotations}
 				/>
-				<StateSelect
-					selected={selectedStates}
-					onchange={(states) => updateConfig('state', states)}
-				/>
-				<TimeRangeSlider {startYear} {endYear} />
+			</ChartWrapper>
+		</section>
+
+		<!-- Insight (full-width) -->
+		<div class="lg:col-span-2 insight-card">
+			<div class="flex items-start gap-4">
+				<div class="flex-shrink-0">
+					<span class="text-xl font-bold text-accent" style="font-family: var(--font-mono)">50%</span>
+					<span class="block text-[10px] uppercase tracking-wider text-text-muted mt-0.5">price gap</span>
+				</div>
+				<p class="text-sm leading-relaxed text-text-secondary">
+					Residential customers pay roughly 50% more per kWh than industrial users — a gap that has widened over the past decade.
+				</p>
 			</div>
 		</div>
 
-		<ChartWrapper meta={lineMeta} hero category="Prices" categoryColor="#2166ac" data={timeFilteredSeries.flatMap((s) => s.values.map((v) => ({ series: s.name, year: v.date, price: v.value })))}>
-			<LineChart
-				series={timeFilteredSeries}
-				xLabel="Year"
-				yLabel="cents/kWh"
-				yFormat={format(',.1f')}
-				unit="cents/kWh"
-				annotations={priceAnnotations}
-			/>
-		</ChartWrapper>
-	</section>
+		<!-- State map (full-width) -->
+		<section class="lg:col-span-2">
+			<ChartWrapper meta={mapMeta} data={mapData.map((d: any) => ({ state: d.state, price: d.value }))}>
+				<ChoroplethMap
+					data={mapData}
+					topology={data.topology}
+					colorInterpolator={colorInterp}
+					valueFormat={format(',.1f')}
+					unit="cents/kWh"
+				/>
+			</ChartWrapper>
+		</section>
 
-	<!-- Insight -->
-	<div class="insight-card my-4">
-		<div class="flex items-start gap-4">
-			<div class="flex-shrink-0">
-				<span class="text-xl font-bold text-accent" style="font-family: var(--font-mono)">50%</span>
-				<span class="block text-[10px] uppercase tracking-wider text-text-muted mt-0.5">price gap</span>
-			</div>
-			<p class="text-base leading-relaxed text-text-secondary">
-				Residential customers pay roughly 50% more per kWh than industrial users — a gap that has widened over the past decade.
-			</p>
-		</div>
+		<!-- Scatter (side-by-side with bills) -->
+		<section>
+			<ChartWrapper meta={scatterMeta} data={priceVsMixData.map((d) => ({ state: d.label, renewable_share: d.x, price: d.y }))}>
+				<Scatter
+					data={priceVsMixData}
+					xLabel="Renewable share (%)"
+					yLabel="Residential price (cents/kWh)"
+					xFormat={format(',.0f')}
+					yFormat={format(',.1f')}
+					unit="cents/kWh"
+				/>
+			</ChartWrapper>
+		</section>
+
+		<!-- Bills -->
+		<section>
+			<ChartWrapper meta={billsMeta} data={timeFilteredBills.flatMap((s) => s.values.map((v) => ({ year: v.date, [s.name === 'Nominal' ? 'nominal_bill' : 'real_bill']: v.value })))}>
+				<LineChart
+					series={timeFilteredBills}
+					xLabel="Year"
+					yLabel="$/month"
+					yFormat={format('$,.0f')}
+					unit="$"
+				/>
+			</ChartWrapper>
+		</section>
 	</div>
 
-	<div class="section-divider"></div>
-
-	<!-- Chart 2: State map -->
-	<section class="-mx-6 bg-surface-alt px-6 py-6 sm:-mx-8 sm:px-8 md:rounded-xl mt-6">
-		<ChartWrapper meta={mapMeta} category="Prices" categoryColor="#2166ac" data={mapData.map((d: any) => ({ state: d.state, price: d.value }))}>
-			<ChoroplethMap
-				data={mapData}
-				topology={data.topology}
-				colorInterpolator={colorInterp}
-				valueFormat={format(',.1f')}
-				unit="cents/kWh"
-			/>
-		</ChartWrapper>
-	</section>
-
 	<!-- Cross-link -->
-	<p class="my-2 mt-4 text-sm">
+	<p class="mt-3 text-sm">
 		<a href="/generation" class="text-accent/80 hover:text-accent transition-colors no-underline">See how these states generate their electricity &rarr;</a>
 	</p>
-
-	<!-- Chart 3: Prices vs Renewable Share scatter -->
-	<section class="mt-8">
-		<ChartWrapper meta={scatterMeta} category="Prices" categoryColor="#2166ac" data={priceVsMixData.map((d) => ({ state: d.label, renewable_share: d.x, price: d.y }))}>
-			<Scatter
-				data={priceVsMixData}
-				xLabel="Renewable share (%)"
-				yLabel="Residential price (cents/kWh)"
-				xFormat={format(',.0f')}
-				yFormat={format(',.1f')}
-				unit="cents/kWh"
-			/>
-		</ChartWrapper>
-	</section>
-
-	<div class="section-divider"></div>
-
-	<!-- Chart 4: Household electricity bills -->
-	<section class="mt-8">
-		<ChartWrapper meta={billsMeta} category="Bills" categoryColor="#e86c3a" data={timeFilteredBills.flatMap((s) => s.values.map((v) => ({ year: v.date, [s.name === 'Nominal' ? 'nominal_bill' : 'real_bill']: v.value })))}>
-			<LineChart
-				series={timeFilteredBills}
-				xLabel="Year"
-				yLabel="$/month"
-				yFormat={format('$,.0f')}
-				unit="$"
-			/>
-		</ChartWrapper>
-	</section>
 </div>

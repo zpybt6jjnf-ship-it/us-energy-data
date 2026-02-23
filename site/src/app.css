@@ -2,9 +2,9 @@
 
 @theme {
 	/* Brand */
-	--color-primary: #0f2b44;
-	--color-primary-light: #1a3f5c;
-	--color-primary-dark: #091c2e;
+	--color-primary: #1a2332;
+	--color-primary-light: #2a3a4c;
+	--color-primary-dark: #0d1117;
 	--color-accent: #e86c3a;
 	--color-accent-light: #f09060;
 	--color-accent-dark: #c85a2e;
@@ -13,12 +13,12 @@
 	--color-highlight: #2dd4a8;
 	--color-highlight-muted: #2dd4a820;
 
-	/* Surfaces */
-	--color-surface: #fafaf8;
-	--color-surface-alt: #f3f2ef;
+	/* Surfaces — cool neutral */
+	--color-surface: #f7f8fa;
+	--color-surface-alt: #f0f2f5;
 	--color-surface-card: #ffffff;
-	--color-border: #e5e2dc;
-	--color-border-light: #efecea;
+	--color-border: #dfe2e6;
+	--color-border-light: #e8eaee;
 
 	/* Text */
 	--color-text: #1a1a2e;
@@ -40,9 +40,9 @@
 	--font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
 	--font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
-	/* Spacing */
-	--spacing-section: 3rem;
-	--spacing-chart: 2rem;
+	/* Spacing — tighter */
+	--spacing-section: 1.5rem;
+	--spacing-chart: 1rem;
 
 	/* Type scale */
 	--text-xs: 0.6875rem;
@@ -53,14 +53,14 @@
 	--text-xl: 1.5rem;
 	--text-2xl: 2.25rem;
 
-	/* Radius */
+	/* Radius — tighter */
 	--radius-sm: 0.25rem;
-	--radius-md: 0.5rem;
+	--radius-md: 0.375rem;
 	--radius-lg: 0.75rem;
 
-	/* Shadows */
-	--shadow-card: 0 1px 2px rgba(0,0,0,0.04);
-	--shadow-card-hover: 0 2px 8px rgba(0,0,0,0.06);
+	/* Shadows — eliminated */
+	--shadow-card: none;
+	--shadow-card-hover: none;
 }
 
 /* Targeted transitions for interactive elements */
@@ -78,15 +78,15 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-/* Dark mode support */
+/* Dark mode — deeper Bloomberg-style */
 @media (prefers-color-scheme: dark) {
 	:root {
-		--color-surface: #141820;
-		--color-surface-alt: #1c2230;
-		--color-surface-card: #202836;
-		--color-border: #2f3846;
-		--color-border-light: #2a3240;
-		--color-text: #e8e6e3;
+		--color-surface: #0d1117;
+		--color-surface-alt: #161b22;
+		--color-surface-card: #1c2128;
+		--color-border: #30363d;
+		--color-border-light: #282e36;
+		--color-text: #e6edf3;
 		--color-text-secondary: #9ca3af;
 		--color-text-muted: #6b7280;
 		--color-primary: #4a9eda;
@@ -131,55 +131,32 @@ svg.chart text {
 	background: linear-gradient(90deg, var(--color-border-light) 25%, var(--color-surface-alt) 50%, var(--color-border-light) 75%);
 	background-size: 200% 100%;
 	animation: shimmer 1.5s ease-in-out infinite;
-	border-radius: 0.5rem;
+	border-radius: 0.375rem;
 }
 
 /* ------------------------------------------------
-   Chart card elevation
+   Chart card — flat and bordered
    ------------------------------------------------ */
 .chart-card {
 	background: var(--color-surface-card);
-	border: 1px solid var(--color-border-light);
-	border-radius: var(--radius-md);
-	padding: 1rem;
-	box-shadow: var(--shadow-card);
-	transition: box-shadow 0.2s ease;
+	border: 1px solid var(--color-border);
+	border-radius: 0.375rem;
+	padding: 0.875rem;
+	box-shadow: none;
 }
 .chart-card:hover {
-	box-shadow: var(--shadow-card-hover);
+	box-shadow: none;
 }
 
 /* ------------------------------------------------
-   Insight callout card
+   Insight callout card — simplified
    ------------------------------------------------ */
 .insight-card {
-	background: linear-gradient(135deg, var(--color-accent)08, var(--color-surface-card) 60%);
-	border: 1px solid var(--color-accent)15;
+	background: var(--color-surface-card);
+	border: 1px solid var(--color-border);
 	border-left: 3px solid var(--color-accent);
-	border-radius: var(--radius-md);
+	border-radius: 0.375rem;
 	padding: 0.75rem 1rem;
-	position: relative;
-	overflow: hidden;
-}
-.insight-card::after {
-	content: '';
-	position: absolute;
-	top: -20px;
-	right: -20px;
-	width: 80px;
-	height: 80px;
-	background: var(--color-accent);
-	opacity: 0.04;
-	border-radius: 50%;
-}
-
-/* ------------------------------------------------
-   Section divider
-   ------------------------------------------------ */
-.section-divider {
-	height: 1px;
-	background: linear-gradient(90deg, transparent, var(--color-border) 20%, var(--color-border) 80%, transparent);
-	margin: 1.5rem 0;
 }
 
 /* ------------------------------------------------
@@ -203,36 +180,35 @@ svg.chart .annotation-label {
    ------------------------------------------------ */
 .stat-card {
 	background: var(--color-surface-card);
-	border: 1px solid var(--color-border-light);
-	border-radius: var(--radius-md);
-	padding: 1.25rem 1.5rem;
+	border: 1px solid var(--color-border);
+	border-radius: 0.375rem;
+	padding: 1rem 1.25rem;
 	display: flex;
 	flex-direction: column;
 	gap: 0.25rem;
 }
 
 /* ------------------------------------------------
-   Key figures stat strip (data pages)
+   Key figures stat strip — compact flex
    ------------------------------------------------ */
 .key-figures {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-	gap: 0.75rem;
-	margin-top: 0.75rem;
-	margin-bottom: 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin: 0.5rem 0;
 }
 .key-figure {
 	background: var(--color-surface-card);
-	border: 1px solid var(--color-border-light);
-	border-radius: var(--radius-sm);
-	padding: 0.5rem 0.75rem;
+	border: 1px solid var(--color-border);
+	border-radius: 0.25rem;
+	padding: 0.375rem 0.625rem;
 	display: flex;
 	flex-direction: column;
 	gap: 0.125rem;
 }
 .key-figure .kf-value {
 	font-family: var(--font-mono);
-	font-size: 1.125rem;
+	font-size: 1rem;
 	font-weight: 700;
 	line-height: 1.2;
 }

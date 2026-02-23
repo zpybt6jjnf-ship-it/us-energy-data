@@ -1,22 +1,19 @@
 <script lang="ts">
 	import '../app.css';
 	import Nav from '$components/layout/Nav.svelte';
-	import Footer from '$components/layout/Footer.svelte';
-	import { page } from '$app/stores';
-	import { fade } from 'svelte/transition';
 	import type { Snippet } from 'svelte';
 
 	let { children }: { children: Snippet } = $props();
 </script>
 
-<div class="flex min-h-screen flex-col bg-surface">
+<div class="min-h-screen bg-surface">
 	<Nav />
-	<main class="mx-auto w-full max-w-5xl flex-1 px-4 py-4">
-		{#key $page.url.pathname}
-			<div in:fade={{ duration: 200, delay: 100 }} out:fade={{ duration: 100 }}>
-				{@render children()}
-			</div>
-		{/key}
-	</main>
-	<Footer />
+	<div class="pt-12 md:pl-48">
+		<main class="max-w-[1400px] px-4 md:px-6 lg:px-8 py-4">
+			{@render children()}
+		</main>
+		<footer class="md:hidden border-t border-border px-4 py-3 text-xs text-text-muted">
+			Data: EIA · GitHub · Updated weekly
+		</footer>
+	</div>
 </div>

@@ -98,21 +98,18 @@
 			{ name: 'Renewable', sources: RENEWABLE_SOURCES, color: '#1b9e77' },
 		];
 
-		// Build a map of year → total generation across all sources
 		const totalByYear = new Map<number, number>();
 		for (const d of data.national) {
 			totalByYear.set(d.year, (totalByYear.get(d.year) ?? 0) + d.generation);
 		}
 
 		return categories.map(({ name, sources, color }) => {
-			// Sum generation for this category by year
 			const catByYear = new Map<number, number>();
 			for (const d of data.national) {
 				if (sources.includes(d.source)) {
 					catByYear.set(d.year, (catByYear.get(d.year) ?? 0) + d.generation);
 				}
 			}
-			// Compute share as % of total for each year
 			const values = [...catByYear.entries()]
 				.map(([year, gen]) => {
 					const total = totalByYear.get(year) ?? 1;
@@ -271,12 +268,9 @@
 	});
 
 	// Chart 7: Capacity Factors by Technology Over Time
-	// Capacity factor = actual generation / theoretical max = generation / (capacity * 8760)
-	// A correction factor of 150 calibrates for aggregation differences between the
-	// generation endpoint (multiple sector categories) and capacity endpoint (single producer type).
 	const CF_SOURCES = ['Coal', 'Hydro', 'Natural Gas', 'Nuclear', 'Petroleum', 'Wind'];
 	const CF_CORRECTION = 150;
-	const CF_START_YEAR = 2010; // Data is consistent from 2010 onwards
+	const CF_START_YEAR = 2010;
 
 	const capacityFactorSeries: DataSeries[] = $derived(
 		CF_SOURCES.map((source) => {
@@ -322,9 +316,9 @@
 		caveats: 'Capacity factors are computed from annual generation and installed capacity data. Values above 100% are capped. Wind and hydro capacity factors vary with weather conditions. Solar is excluded because capacity data for solar is incomplete in this dataset.',
 	};
 
-	// Chart 8: Net Capacity Additions by Source (line chart)
+	// Chart 8: Net Capacity Additions by Source
 	const capChangeSources = ['Coal', 'Natural Gas', 'Wind', 'Nuclear', 'Hydro', 'Petroleum'];
-	const CAP_CHANGE_START_YEAR = 2005; // Focus on the modern transition period
+	const CAP_CHANGE_START_YEAR = 2005;
 
 	const capChangeSeries: DataSeries[] = $derived(
 		capChangeSources.map((source) => ({
@@ -353,10 +347,6 @@
 			.map(([year, value]) => ({ label: String(year), value }));
 	})());
 
-	const capChangeAnnotations = [
-		{ date: 2022, label: 'IRA' },
-	];
-
 	const capChangeMeta: ChartMeta = {
 		title: 'Net Capacity Additions by Source',
 		subtitle: 'Year-over-year change in installed capacity, MW',
@@ -368,7 +358,7 @@
 		caveats: 'Values represent net change in installed capacity (additions minus retirements). Negative values indicate net retirements. Solar is not shown because it is tracked under a separate energy source category in the EIA capability dataset.',
 	};
 
-	// Chart 9: Battery Storage Capacity (line chart)
+	// Chart 9: Battery Storage Capacity
 	const storageSeries: DataSeries[] = $derived([
 		{
 			name: 'Battery Storage',
@@ -412,15 +402,25 @@
 </svelte:head>
 
 <div>
-	<header>
-		<h1 class="text-2xl font-bold tracking-tight text-text font-display">Generation & Resources</h1>
-		<p class="mt-1 max-w-3xl text-base leading-relaxed text-text-secondary">
-			What powers the grid — and how fast is it changing?
-		</p>
-	</header>
+	<!-- Header -->
+	<div class="flex items-baseline gap-3 pb-3 border-b border-border">
+		<h1 class="text-base font-semibold text-text">Generation & Resources</h1>
+		<span class="text-sm text-text-secondary">What powers the grid — and how fast is it changing?</span>
+	</div>
+
+	<!-- Sticky control bar -->
+	<div class="sticky top-12 z-20 -mx-4 md:-mx-6 lg:-mx-8 bg-surface/95 backdrop-blur-sm border-b border-border px-4 md:px-6 lg:px-8 py-2">
+		<div class="flex flex-wrap items-center gap-3">
+			<StateSelect
+				selected={selectedStates}
+				onchange={(states) => updateConfig('state', states)}
+			/>
+			<TimeRangeSlider {startYear} {endYear} />
+		</div>
+	</div>
 
 	<!-- Key Figures -->
-	<div class="key-figures">
+	<div class="flex flex-wrap gap-2 mt-3 mb-1">
 		<div class="key-figure">
 			<span class="kf-value" style="color: #e7a02f">{Math.round(kfGasShare)}%</span>
 			<span class="kf-label">natural gas</span>
@@ -439,175 +439,166 @@
 		</div>
 	</div>
 
-	<h2 class="mt-10 text-lg font-semibold text-text font-display" id="generation-mix">Generation Mix</h2>
+	<!-- Chart grid -->
+	<div class="grid gap-3 lg:grid-cols-2 mt-3">
+		<!-- Sub-section: Generation Mix -->
+		<h2 class="lg:col-span-2 text-sm font-semibold text-text mt-2" id="generation-mix">Generation Mix</h2>
 
-	<!-- Chart 1: Generation by source bar (hero chart) -->
-	<section class="mt-4">
-		<ChartWrapper meta={barMeta} hero category="Generation" categoryColor="#e7a02f" data={sourceBreakdown.map((d: any) => ({ source: d.label, generation: d.value }))}>
-			<BarChart
-				data={sourceBreakdown}
-				horizontal
-				yLabel="thousand MWh"
-				yFormat={formatCompact}
-				unit="thousand MWh"
-				margin={{ top: 20, right: 20, bottom: 60, left: 110 }}
-			/>
-		</ChartWrapper>
-	</section>
-
-	<!-- Chart 2: Absolute generation trends -->
-	<section class="mt-8">
-		<div class="mb-2 rounded-xl border border-border bg-surface-alt/50 px-4 py-2.5">
-			<div class="flex flex-wrap items-end gap-4">
-				<StateSelect
-					selected={selectedStates}
-					onchange={(states) => updateConfig('state', states)}
+		<!-- Chart 1: Generation by source bar (hero, full-width) -->
+		<section class="lg:col-span-2">
+			<ChartWrapper meta={barMeta} hero data={sourceBreakdown.map((d: any) => ({ source: d.label, generation: d.value }))}>
+				<BarChart
+					data={sourceBreakdown}
+					horizontal
+					yLabel="thousand MWh"
+					yFormat={formatCompact}
+					unit="thousand MWh"
+					margin={{ top: 20, right: 20, bottom: 60, left: 110 }}
 				/>
-				<TimeRangeSlider {startYear} {endYear} />
+			</ChartWrapper>
+		</section>
+
+		<!-- Chart 2: Absolute generation trends (full-width) -->
+		<section class="lg:col-span-2">
+			<ChartWrapper meta={genTrendMeta} data={timeFilteredGenTrend.flatMap((s) => s.values.map((v) => ({ source: s.name, year: v.date, generation: v.value })))}>
+				<LineChart
+					series={timeFilteredGenTrend}
+					xLabel="Year"
+					yLabel="thousand MWh"
+					yFormat={formatCompact}
+					unit="thousand MWh"
+				/>
+			</ChartWrapper>
+		</section>
+
+		<!-- Insight (full-width) -->
+		<div class="lg:col-span-2 insight-card">
+			<div class="flex items-start gap-4">
+				<div class="flex-shrink-0">
+					<span class="text-xl font-bold text-accent" style="font-family: var(--font-mono)">50→16%</span>
+					<span class="block text-[10px] uppercase tracking-wider text-text-muted mt-0.5">coal decline</span>
+				</div>
+				<p class="text-sm leading-relaxed text-text-secondary">
+					Coal's share of US electricity has fallen from 50% to roughly 16% in under two decades — replaced mostly by natural gas and renewables.
+				</p>
 			</div>
 		</div>
 
-		<ChartWrapper meta={genTrendMeta} category="Generation" categoryColor="#e7a02f" data={timeFilteredGenTrend.flatMap((s) => s.values.map((v) => ({ source: s.name, year: v.date, generation: v.value })))}>
-			<LineChart
-				series={timeFilteredGenTrend}
-				xLabel="Year"
-				yLabel="thousand MWh"
-				yFormat={formatCompact}
-				unit="thousand MWh"
-			/>
-		</ChartWrapper>
-	</section>
+		<!-- Chart 3: Source share trends + Chart 3b: Fossil vs Nuclear vs Renewable (side-by-side) -->
+		<section>
+			<ChartWrapper meta={lineMeta} data={timeFilteredTrend.flatMap((s) => s.values.map((v) => ({ source: s.name, year: v.date, share: v.value })))}>
+				<LineChart
+					series={timeFilteredTrend}
+					xLabel="Year"
+					yLabel="% of total"
+					yFormat={format(',.1f')}
+					unit="%"
+					annotations={shareAnnotations}
+				/>
+			</ChartWrapper>
+		</section>
 
-	<!-- Insight -->
-	<div class="insight-card my-4">
-		<div class="flex items-start gap-4">
-			<div class="flex-shrink-0">
-				<span class="text-xl font-bold text-accent" style="font-family: var(--font-mono)">50→16%</span>
-				<span class="block text-[10px] uppercase tracking-wider text-text-muted mt-0.5">coal decline</span>
-			</div>
-			<p class="text-base leading-relaxed text-text-secondary">
-				Coal's share of US electricity has fallen from 50% to roughly 16% in under two decades — replaced mostly by natural gas and renewables.
-			</p>
-		</div>
+		<section>
+			<ChartWrapper meta={fossilVsCleanMeta} data={timeFilteredFossilVsClean.flatMap((s) => s.values.map((v) => ({ category: s.name, year: v.date, share: v.value })))}>
+				<LineChart
+					series={timeFilteredFossilVsClean}
+					xLabel="Year"
+					yLabel="% of total"
+					yFormat={format(',.1f')}
+					unit="%"
+					annotations={shareAnnotations}
+				/>
+			</ChartWrapper>
+		</section>
+
+		<!-- Chart 4: Renewable share map (full-width) -->
+		<section class="lg:col-span-2">
+			<ChartWrapper meta={mapMeta} data={mapData.map((d: any) => ({ state: d.state, renewable_share: d.value }))}>
+				<ChoroplethMap
+					data={mapData}
+					topology={data.topology}
+					colorInterpolator={interpolateGreens}
+					valueFormat={format(',.1f')}
+					unit="%"
+				/>
+			</ChartWrapper>
+		</section>
+
+		<!-- Cross-link -->
+		<p class="lg:col-span-2 text-sm">
+			<a href="/fuels" class="text-accent/80 hover:text-accent transition-colors no-underline">Where do these fuels come from? Explore fossil fuel production &rarr;</a>
+		</p>
+
+		<!-- Sub-section: Capacity & Infrastructure -->
+		<h2 class="lg:col-span-2 text-sm font-semibold text-text mt-2" id="capacity">Capacity & Infrastructure</h2>
+
+		<!-- Chart 5: Installed capacity + Chart 7: Capacity factors (side-by-side) -->
+		<section>
+			<ChartWrapper meta={capacityMeta} data={capacityBreakdown.map((d: any) => ({ source: d.label, capacity_mw: d.value }))}>
+				<BarChart
+					data={capacityBreakdown}
+					horizontal
+					yLabel="MW"
+					yFormat={formatCompact}
+					unit="MW"
+					margin={{ top: 20, right: 20, bottom: 60, left: 110 }}
+				/>
+			</ChartWrapper>
+		</section>
+
+		<section>
+			<ChartWrapper meta={capacityFactorMeta} data={timeFilteredCapFactor.flatMap((s) => s.values.map((v) => ({ source: s.name, year: v.date, capacity_factor_pct: v.value })))}>
+				<LineChart
+					series={timeFilteredCapFactor}
+					xLabel="Year"
+					yLabel="%"
+					yFormat={format(',.0f')}
+					unit="%"
+					includeZero={false}
+				/>
+			</ChartWrapper>
+		</section>
+
+		<!-- Chart 8: Net Capacity Additions + Chart 9: Battery Storage (side-by-side) -->
+		<section>
+			<ChartWrapper meta={capChangeMeta} data={capChangeAggregate.map((d) => ({ year: d.label, net_change_mw: d.value }))}>
+				<DivergingBarChart
+					data={capChangeAggregate}
+					yLabel="MW"
+					yFormat={formatCompact}
+					unit="MW"
+				/>
+			</ChartWrapper>
+		</section>
+
+		<section>
+			<ChartWrapper meta={storageMeta} data={timeFilteredStorage[0].values.map((v) => ({ year: v.date, capacity_mw: v.value }))}>
+				<LineChart
+					series={timeFilteredStorage}
+					xLabel="Year"
+					yLabel="MW"
+					yFormat={formatCompact}
+					unit="MW"
+				/>
+			</ChartWrapper>
+		</section>
+
+		<!-- Sub-section: Decarbonization -->
+		<h2 class="lg:col-span-2 text-sm font-semibold text-text mt-2" id="decarbonization">Decarbonization</h2>
+
+		<!-- Chart 6: Carbon intensity (full-width) -->
+		<section class="lg:col-span-2">
+			<ChartWrapper meta={carbonMeta} data={timeFilteredCarbon[0].values.map((v) => ({ year: v.date, carbon_intensity_kg_per_mwh: v.value }))}>
+				<LineChart
+					series={timeFilteredCarbon}
+					xLabel="Year"
+					yLabel="kg CO₂/MWh"
+					yFormat={format(',.0f')}
+					unit="kg CO₂/MWh"
+					annotations={carbonAnnotations}
+					includeZero={false}
+				/>
+			</ChartWrapper>
+		</section>
 	</div>
-
-	<div class="section-divider"></div>
-
-	<!-- Chart 3: Source share trends (line) -->
-	<section class="mt-8">
-		<ChartWrapper meta={lineMeta} category="Generation" categoryColor="#e7a02f" data={timeFilteredTrend.flatMap((s) => s.values.map((v) => ({ source: s.name, year: v.date, share: v.value })))}>
-			<LineChart
-				series={timeFilteredTrend}
-				xLabel="Year"
-				yLabel="% of total"
-				yFormat={format(',.1f')}
-				unit="%"
-				annotations={shareAnnotations}
-			/>
-		</ChartWrapper>
-	</section>
-
-	<!-- Chart 3b: Fossil vs Nuclear vs Renewable -->
-	<section class="mt-8">
-		<ChartWrapper meta={fossilVsCleanMeta} category="Generation" categoryColor="#e7a02f" data={timeFilteredFossilVsClean.flatMap((s) => s.values.map((v) => ({ category: s.name, year: v.date, share: v.value })))}>
-			<LineChart
-				series={timeFilteredFossilVsClean}
-				xLabel="Year"
-				yLabel="% of total"
-				yFormat={format(',.1f')}
-				unit="%"
-				annotations={shareAnnotations}
-			/>
-		</ChartWrapper>
-	</section>
-
-	<!-- Chart 4: Renewable share map -->
-	<section class="-mx-6 bg-surface-alt px-6 py-6 sm:-mx-8 sm:px-8 md:rounded-xl mt-6">
-		<ChartWrapper meta={mapMeta} category="Generation" categoryColor="#e7a02f" data={mapData.map((d: any) => ({ state: d.state, renewable_share: d.value }))}>
-			<ChoroplethMap
-				data={mapData}
-				topology={data.topology}
-				colorInterpolator={interpolateGreens}
-				valueFormat={format(',.1f')}
-				unit="%"
-			/>
-		</ChartWrapper>
-	</section>
-
-	<!-- Cross-link -->
-	<p class="mt-4 text-sm">
-		<a href="/fuels" class="text-accent/80 hover:text-accent transition-colors no-underline">Where do these fuels come from? Explore fossil fuel production &rarr;</a>
-	</p>
-
-	<h2 class="mt-16 text-lg font-semibold text-text font-display" id="capacity">Capacity & Infrastructure</h2>
-
-	<!-- Chart 5: Installed capacity by source -->
-	<section class="mt-4">
-		<ChartWrapper meta={capacityMeta} category="Generation" categoryColor="#e7a02f" data={capacityBreakdown.map((d: any) => ({ source: d.label, capacity_mw: d.value }))}>
-			<BarChart
-				data={capacityBreakdown}
-				horizontal
-				yLabel="MW"
-				yFormat={formatCompact}
-				unit="MW"
-				margin={{ top: 20, right: 20, bottom: 60, left: 110 }}
-			/>
-		</ChartWrapper>
-	</section>
-
-	<!-- Chart 7: Capacity Factors by Technology -->
-	<section class="-mx-6 bg-surface-alt px-6 py-6 sm:-mx-8 sm:px-8 md:rounded-xl mt-6">
-		<ChartWrapper meta={capacityFactorMeta} category="Generation" categoryColor="#e7a02f" data={timeFilteredCapFactor.flatMap((s) => s.values.map((v) => ({ source: s.name, year: v.date, capacity_factor_pct: v.value })))}>
-			<LineChart
-				series={timeFilteredCapFactor}
-				xLabel="Year"
-				yLabel="%"
-				yFormat={format(',.0f')}
-				unit="%"
-				includeZero={false}
-			/>
-		</ChartWrapper>
-	</section>
-
-	<!-- Chart 8: Net Capacity Additions by Source -->
-	<section class="mt-6">
-		<ChartWrapper meta={capChangeMeta} category="Generation" categoryColor="#e7a02f" data={capChangeAggregate.map((d) => ({ year: d.label, net_change_mw: d.value }))}>
-			<DivergingBarChart
-				data={capChangeAggregate}
-				yLabel="MW"
-				yFormat={formatCompact}
-				unit="MW"
-			/>
-		</ChartWrapper>
-	</section>
-
-	<!-- Chart 9: Battery Storage Capacity -->
-	<section class="-mx-6 bg-surface-alt px-6 py-6 sm:-mx-8 sm:px-8 md:rounded-xl mt-6">
-		<ChartWrapper meta={storageMeta} category="Generation" categoryColor="#e7a02f" data={timeFilteredStorage[0].values.map((v) => ({ year: v.date, capacity_mw: v.value }))}>
-			<LineChart
-				series={timeFilteredStorage}
-				xLabel="Year"
-				yLabel="MW"
-				yFormat={formatCompact}
-				unit="MW"
-			/>
-		</ChartWrapper>
-	</section>
-
-	<h2 class="mt-16 text-lg font-semibold text-text font-display" id="decarbonization">Decarbonization</h2>
-
-	<!-- Chart 6: Carbon intensity -->
-	<section class="mt-4">
-		<ChartWrapper meta={carbonMeta} category="Generation" categoryColor="#e7a02f" data={timeFilteredCarbon[0].values.map((v) => ({ year: v.date, carbon_intensity_kg_per_mwh: v.value }))}>
-			<LineChart
-				series={timeFilteredCarbon}
-				xLabel="Year"
-				yLabel="kg CO₂/MWh"
-				yFormat={format(',.0f')}
-				unit="kg CO₂/MWh"
-				annotations={carbonAnnotations}
-				includeZero={false}
-			/>
-		</ChartWrapper>
-	</section>
 </div>

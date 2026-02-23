@@ -38,7 +38,6 @@
 	const startYear = $derived($chartConfig.startYear);
 	const endYear = $derived($chartConfig.endYear);
 
-	// Line chart: National production trends (raw values)
 	const allFuelSeries: DataSeries[] = $derived((() => {
 		const fuels = [...new Set(data.national.map((d: any) => d.fuel))] as string[];
 		return fuels.map((fuel) => ({
@@ -51,7 +50,6 @@
 		}));
 	})());
 
-	// Indexed series for "All Fuels" view: base year = 100
 	const indexedFuelSeries: DataSeries[] = $derived((() => {
 		return allFuelSeries.map((series) => {
 			const baseValue = series.values.length > 0 ? series.values[0].value : 1;
@@ -71,7 +69,6 @@
 			: allFuelSeries.filter((s) => s.name === selectedFuel)
 	);
 
-	// State comparison series
 	const selectedStates = $derived($chartConfig.states);
 
 	const stateSeries: DataSeries[] = $derived(
@@ -79,9 +76,6 @@
 			const fullName = stateFromAbbr(abbr);
 
 			if (selectedFuel === 'all') {
-				// Index each fuel for this state, then average across fuels
-				// Or more useful: sum production per year across fuels, then index
-				// Since units differ, index each fuel separately then average the indices
 				const fuels = [...new Set(data.byState.filter((d: any) => d.state === fullName).map((d: any) => d.fuel))] as string[];
 				const fuelIndices = fuels.map((fuel) => {
 					const rows = data.byState
@@ -95,7 +89,6 @@
 					}));
 				}).filter((v) => v.length > 0);
 
-				// Average the indexed values across fuels for each year
 				const yearMap = new Map<number, { sum: number; count: number }>();
 				for (const series of fuelIndices) {
 					for (const pt of series) {
@@ -114,7 +107,6 @@
 						.sort((a, b) => a.date - b.date),
 				};
 			} else {
-				// Single fuel: use raw production values
 				const rows = data.byState
 					.filter((d: any) => d.state === fullName && d.fuel === selectedFuel)
 					.sort((a: any, b: any) => a.year - b.year);
@@ -153,7 +145,6 @@
 		caveats: 'Units differ by fuel type: coal (short tons), natural gas (million cubic feet), crude oil (thousand barrels). When "All Fuels" is selected, values are indexed to the first available year (= 100) to enable fair cross-fuel comparison despite different units.',
 	};
 
-	// Bar chart: Top 10 producing states for selected fuel
 	const latestYear = $derived(Math.max(...data.national.map((d: any) => d.year)));
 
 	const barFuel = $derived(selectedFuel === 'all' ? 'Coal' : selectedFuel);
@@ -165,7 +156,7 @@
 		return stateData
 			.sort((a: any, b: any) => b.production - a.production)
 			.slice(0, 10)
-			.map((d: any, i: number) => ({
+			.map((d: any) => ({
 				label: d.state,
 				value: d.production,
 				color: '#a6611a',
@@ -176,7 +167,7 @@
 		barFuel === 'Coal' ? 'short tons' : barFuel === 'Natural Gas' ? 'million cu ft' : 'thousand barrels'
 	);
 
-	// Chart 3: Fossil fuel generation over time (from generation data)
+	// Fossil fuel generation over time
 	const GEN_FUEL_COLORS: Record<string, string> = {
 		Coal: '#4a4a4a',
 		'Natural Gas': '#e86c3a',
@@ -213,7 +204,7 @@
 		caveats: 'Generation data represents net generation at utility-scale power plants. Combined heat and power (CHP) facilities are included. Some natural gas generation comes from plants that can also burn oil as backup fuel.',
 	};
 
-	// Chart 4: US Petroleum Trade (Imports, Exports, Net Imports)
+	// US Petroleum Trade
 	const TRADE_COLORS: Record<string, string> = {
 		Imports: '#e31a1c',
 		Exports: '#2166ac',
@@ -226,21 +217,9 @@
 			.sort((a: any, b: any) => a.year - b.year);
 
 		return [
-			{
-				name: 'Imports',
-				color: TRADE_COLORS['Imports'],
-				values: petTrade.map((d: any) => ({ date: d.year, value: d.imports })),
-			},
-			{
-				name: 'Exports',
-				color: TRADE_COLORS['Exports'],
-				values: petTrade.map((d: any) => ({ date: d.year, value: d.exports })),
-			},
-			{
-				name: 'Net Imports',
-				color: TRADE_COLORS['Net Imports'],
-				values: petTrade.map((d: any) => ({ date: d.year, value: d.net_imports })),
-			},
+			{ name: 'Imports', color: TRADE_COLORS['Imports'], values: petTrade.map((d: any) => ({ date: d.year, value: d.imports })) },
+			{ name: 'Exports', color: TRADE_COLORS['Exports'], values: petTrade.map((d: any) => ({ date: d.year, value: d.exports })) },
+			{ name: 'Net Imports', color: TRADE_COLORS['Net Imports'], values: petTrade.map((d: any) => ({ date: d.year, value: d.net_imports })) },
 		];
 	})());
 
@@ -268,7 +247,7 @@
 		caveats: 'Includes crude oil and finished petroleum products. Net imports = imports minus exports. A negative net imports value indicates the US is a net exporter. Data from EIA petroleum movement series.',
 	};
 
-	// Chart 5: US Natural Gas Trade
+	// US Natural Gas Trade
 	const gasTradeSeries: DataSeries[] = $derived((() => {
 		const gasTrade = data.trade
 			.filter((d: any) => d.fuel === 'Natural Gas' && d.year >= 2000)
@@ -300,7 +279,7 @@
 
 	// Key figures
 	const kfTopProducer = $derived(stateRanking.length > 0 ? stateRanking[0].label : '—');
-	const kfNumFuels = 3; // Coal, Natural Gas, Crude Oil
+	const kfNumFuels = 3;
 
 	const barMeta: ChartMeta = $derived({
 		title: `Top 10 ${barFuel} Producing States (${latestYear})`,
@@ -319,15 +298,31 @@
 </svelte:head>
 
 <div>
-	<header>
-		<h1 class="text-2xl font-bold tracking-tight text-text font-display">Fossil Fuels</h1>
-		<p class="mt-1 max-w-3xl text-base leading-relaxed text-text-secondary">
-			How much fossil fuel does the US actually produce?
-		</p>
-	</header>
+	<!-- Header -->
+	<div class="flex items-baseline gap-3 py-3 border-b border-border">
+		<h1 class="text-base font-semibold text-text">Fossil Fuels</h1>
+		<span class="text-sm text-text-secondary">How much fossil fuel does the US actually produce?</span>
+	</div>
 
-	<!-- Key Figures -->
-	<div class="key-figures">
+	<!-- Sticky control bar -->
+	<div class="sticky top-12 z-20 -mx-4 md:-mx-6 lg:-mx-8 bg-surface/95 backdrop-blur-sm border-b border-border px-4 md:px-6 lg:px-8 py-2">
+		<div class="flex flex-wrap items-center gap-3">
+			<Dropdown
+				options={fuelOptions}
+				value={selectedFuel}
+				label="Fuel Type"
+				onchange={(v) => selectedFuel = v}
+			/>
+			<StateSelect
+				selected={selectedStates}
+				onchange={(states) => updateConfig('state', states)}
+			/>
+			<TimeRangeSlider {startYear} {endYear} />
+		</div>
+	</div>
+
+	<!-- Key figures -->
+	<div class="flex flex-wrap gap-2 mt-3 mb-1">
 		<div class="key-figure">
 			<span class="kf-value" style="color: #a6611a">{kfNumFuels}</span>
 			<span class="kf-label">fuel types tracked</span>
@@ -346,112 +341,97 @@
 		</div>
 	</div>
 
-	<!-- Chart 1: Production trends (hero chart) -->
-	<section class="mt-4">
-		<div class="mb-2 rounded-xl border border-border bg-surface-alt/50 px-4 py-2.5">
-			<div class="flex flex-wrap items-end gap-4">
-				<Dropdown
-					options={fuelOptions}
-					value={selectedFuel}
-					label="Fuel Type"
-					onchange={(v) => selectedFuel = v}
+	<!-- Chart grid -->
+	<div class="grid gap-3 lg:grid-cols-2 mt-3">
+		<!-- Hero: Production trends (full-width) -->
+		<section class="lg:col-span-2">
+			<ChartWrapper meta={lineMeta} data={timeFilteredCombined.flatMap((s) => s.values.map((v) => ({ fuel: s.name, year: v.date, production: v.value })))}>
+				<LineChart
+					series={timeFilteredCombined}
+					xLabel="Year"
+					yLabel={lineYLabel}
+					yFormat={selectedFuel === 'all' ? format(',.0f') : formatCompact}
+					unit={selectedFuel === 'all' ? '' : barUnit}
+					margin={{ top: 20, right: 20, bottom: 40, left: 70 }}
+					annotations={productionAnnotations}
 				/>
-				<StateSelect
-					selected={selectedStates}
-					onchange={(states) => updateConfig('state', states)}
+			</ChartWrapper>
+			{#if selectedFuel === 'all'}
+				<p class="mt-1 text-xs text-text-muted">
+					Values indexed to first available year (= 100) to enable comparison across fuels with different units.
+				</p>
+			{/if}
+		</section>
+
+		<!-- Top states + Fossil fuel generation (side-by-side) -->
+		<section>
+			<ChartWrapper meta={barMeta} data={stateRanking.map((d: any) => ({ state: d.label, production: d.value }))}>
+				<BarChart
+					data={stateRanking}
+					horizontal
+					yLabel={barUnit}
+					yFormat={formatCompact}
+					unit={barUnit}
+					margin={{ top: 20, right: 20, bottom: 60, left: 120 }}
 				/>
-				<TimeRangeSlider {startYear} {endYear} />
+			</ChartWrapper>
+		</section>
+
+		<section>
+			<ChartWrapper meta={fuelGenMeta} data={timeFilteredFuelGen.flatMap((s) => s.values.map((v) => ({ fuel: s.name, year: v.date, generation: v.value })))}>
+				<LineChart
+					series={timeFilteredFuelGen}
+					xLabel="Year"
+					yLabel="thousand MWh"
+					yFormat={formatCompact}
+					unit="thousand MWh"
+				/>
+			</ChartWrapper>
+		</section>
+
+		<!-- Insight (full-width) -->
+		<div class="lg:col-span-2 insight-card">
+			<div class="flex items-start gap-4">
+				<div class="flex-shrink-0">
+					<span class="text-xl font-bold text-accent font-mono">2x</span>
+					<span class="block text-[10px] uppercase tracking-wider text-text-muted mt-0.5">gas growth</span>
+				</div>
+				<p class="text-sm leading-relaxed text-text-secondary">
+					US natural gas production has roughly doubled since 2008, while coal output has declined by nearly half — a seismic shift driven by the shale revolution.
+				</p>
 			</div>
 		</div>
 
-		<ChartWrapper meta={lineMeta} hero category="Fuels" categoryColor="#a6611a" data={timeFilteredCombined.flatMap((s) => s.values.map((v) => ({ fuel: s.name, year: v.date, production: v.value })))}>
-			<LineChart
-				series={timeFilteredCombined}
-				xLabel="Year"
-				yLabel={lineYLabel}
-				yFormat={selectedFuel === 'all' ? format(',.0f') : formatCompact}
-				unit={selectedFuel === 'all' ? '' : barUnit}
-				margin={{ top: 20, right: 20, bottom: 40, left: 70 }}
-				annotations={productionAnnotations}
-			/>
-		</ChartWrapper>
-		{#if selectedFuel === 'all'}
-			<p class="mt-3 text-sm text-text-muted">
-				Values indexed to first available year (= 100) to enable comparison across fuels with different units.
-			</p>
-		{/if}
-	</section>
+		<!-- Trade charts (side-by-side) -->
+		<section>
+			<ChartWrapper meta={tradeMeta} data={timeFilteredTrade.flatMap((s) => s.values.map((v) => ({ series: s.name, year: v.date, value: v.value })))}>
+				<LineChart
+					series={timeFilteredTrade}
+					xLabel="Year"
+					yLabel="thousand barrels/day"
+					yFormat={formatCompact}
+					unit="thousand barrels/day"
+					annotations={tradeAnnotations}
+				/>
+			</ChartWrapper>
+		</section>
 
-	<!-- Chart 2: Top producing states -->
-	<section class="-mx-6 bg-surface-alt px-6 py-6 sm:-mx-8 sm:px-8 md:rounded-xl mt-6">
-		<ChartWrapper meta={barMeta} category="Fuels" categoryColor="#a6611a" data={stateRanking.map((d) => ({ state: d.label, production: d.value }))}>
-			<BarChart
-				data={stateRanking}
-				horizontal
-				yLabel={barUnit}
-				yFormat={formatCompact}
-				unit={barUnit}
-				margin={{ top: 20, right: 20, bottom: 60, left: 120 }}
-			/>
-		</ChartWrapper>
-	</section>
-
-	<!-- Insight -->
-	<div class="insight-card my-4">
-		<div class="flex items-start gap-4">
-			<div class="flex-shrink-0">
-				<span class="text-xl font-bold text-accent" style="font-family: var(--font-mono)">2x</span>
-				<span class="block text-[10px] uppercase tracking-wider text-text-muted mt-0.5">gas growth</span>
-			</div>
-			<p class="text-base leading-relaxed text-text-secondary">
-				US natural gas production has roughly doubled since 2008, while coal output has declined by nearly half — a seismic shift driven by the shale revolution.
-			</p>
-		</div>
+		<section>
+			<ChartWrapper meta={gasTradeMeta} data={timeFilteredGasTrade.flatMap((s) => s.values.map((v) => ({ series: s.name, year: v.date, value: v.value })))}>
+				<LineChart
+					series={timeFilteredGasTrade}
+					xLabel="Year"
+					yLabel="million cu ft"
+					yFormat={formatCompact}
+					unit="million cu ft"
+					annotations={tradeAnnotations}
+				/>
+			</ChartWrapper>
+		</section>
 	</div>
 
-	<!-- Chart 3: Fossil fuel generation -->
-	<section class="mt-8">
-		<ChartWrapper meta={fuelGenMeta} category="Fuels" categoryColor="#a6611a" data={timeFilteredFuelGen.flatMap((s) => s.values.map((v) => ({ fuel: s.name, year: v.date, generation: v.value })))}>
-			<LineChart
-				series={timeFilteredFuelGen}
-				xLabel="Year"
-				yLabel="thousand MWh"
-				yFormat={formatCompact}
-				unit="thousand MWh"
-			/>
-		</ChartWrapper>
-
-		<!-- Cross-link -->
-		<p class="mt-4 text-sm">
-			<a href="/generation" class="text-accent/80 hover:text-accent transition-colors no-underline">See how these fuels translate into electricity generation &rarr;</a>
-		</p>
-	</section>
-
-	<!-- Chart 4: US Petroleum Trade -->
-	<section class="-mx-6 bg-surface-alt px-6 py-6 sm:-mx-8 sm:px-8 md:rounded-xl mt-6">
-		<ChartWrapper meta={tradeMeta} category="Fuels" categoryColor="#a6611a" data={timeFilteredTrade.flatMap((s) => s.values.map((v) => ({ series: s.name, year: v.date, value: v.value })))}>
-			<LineChart
-				series={timeFilteredTrade}
-				xLabel="Year"
-				yLabel="thousand barrels/day"
-				yFormat={formatCompact}
-				unit="thousand barrels/day"
-				annotations={tradeAnnotations}
-			/>
-		</ChartWrapper>
-	</section>
-
-	<!-- Chart 5: US Natural Gas Trade -->
-	<section class="mt-8">
-		<ChartWrapper meta={gasTradeMeta} category="Fuels" categoryColor="#a6611a" data={timeFilteredGasTrade.flatMap((s) => s.values.map((v) => ({ series: s.name, year: v.date, value: v.value })))}>
-			<LineChart
-				series={timeFilteredGasTrade}
-				xLabel="Year"
-				yLabel="million cu ft"
-				yFormat={formatCompact}
-				unit="million cu ft"
-				annotations={tradeAnnotations}
-			/>
-		</ChartWrapper>
-	</section>
+	<!-- Cross-link -->
+	<p class="mt-3 text-sm">
+		<a href="/generation" class="text-accent/80 hover:text-accent transition-colors no-underline">See how these fuels translate into electricity generation &rarr;</a>
+	</p>
 </div>

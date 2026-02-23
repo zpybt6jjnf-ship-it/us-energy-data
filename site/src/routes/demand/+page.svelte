@@ -21,12 +21,6 @@
 		{ date: 2022, label: 'IRA' },
 	];
 
-	const loadGrowthAnnotations = [
-		{ date: 2009, label: '09 Recession', labelPosition: 'bottom' as const },
-		{ date: 2020, label: 'COVID-19', labelPosition: 'bottom' as const },
-		{ date: 2022, label: 'IRA' },
-	];
-
 	const sectorOptions = [
 		{ value: 'all', label: 'All Sectors' },
 		{ value: 'residential', label: 'Residential' },
@@ -105,7 +99,7 @@
 	// Bar chart: Top 10 states by total consumption (latest year)
 	const latestYear = $derived(Math.max(...data.national.map((d: any) => d.year)));
 
-	// Key figures (computed in script to avoid @const in template)
+	// Key figures
 	const latestTotal = $derived(data.national.filter((d: any) => d.year === latestYear).reduce((sum: number, d: any) => sum + d.consumption, 0));
 	const latestTWh = $derived((latestTotal / 1_000_000).toFixed(1));
 	const prevYearTotal = $derived(data.national.filter((d: any) => d.year === latestYear - 1).reduce((sum: number, d: any) => sum + d.consumption, 0));
@@ -131,7 +125,6 @@
 
 	// Load Growth chart: year-over-year % change in total consumption
 	const loadGrowthSeries: DataSeries[] = $derived((() => {
-		// Aggregate all sectors by year
 		const yearTotals = new Map<number, number>();
 		for (const d of data.national) {
 			yearTotals.set(d.year, (yearTotals.get(d.year) ?? 0) + d.consumption);
@@ -212,15 +205,31 @@
 </svelte:head>
 
 <div>
-	<header>
-		<h1 class="text-2xl font-bold tracking-tight text-text font-display">Electricity Demand</h1>
-		<p class="mt-1 max-w-3xl text-base leading-relaxed text-text-secondary">
-			Where does all the electricity go?
-		</p>
-	</header>
+	<!-- Header -->
+	<div class="flex items-baseline gap-3 pb-3 border-b border-border">
+		<h1 class="text-base font-semibold text-text">Electricity Demand</h1>
+		<span class="text-sm text-text-secondary">Where does all the electricity go?</span>
+	</div>
+
+	<!-- Sticky control bar -->
+	<div class="sticky top-12 z-20 -mx-4 md:-mx-6 lg:-mx-8 bg-surface/95 backdrop-blur-sm border-b border-border px-4 md:px-6 lg:px-8 py-2">
+		<div class="flex flex-wrap items-center gap-3">
+			<Dropdown
+				options={sectorOptions}
+				value={activeSector}
+				label="Sector"
+				onchange={(v) => updateConfig('sector', v)}
+			/>
+			<StateSelect
+				selected={selectedStates}
+				onchange={(states) => updateConfig('state', states)}
+			/>
+			<TimeRangeSlider {startYear} {endYear} />
+		</div>
+	</div>
 
 	<!-- Key Figures -->
-	<div class="key-figures">
+	<div class="flex flex-wrap gap-2 mt-3 mb-1">
 		<div class="key-figure">
 			<span class="kf-value" style="color: #1b9e77">{latestTWh}T</span>
 			<span class="kf-label">kWh consumed ({latestYear})</span>
@@ -239,68 +248,51 @@
 		</div>
 	</div>
 
-	<!-- Chart 1: Consumption trends (hero chart) -->
-	<section class="mt-4">
-		<div class="mb-2 rounded-xl border border-border bg-surface-alt/50 px-4 py-2.5">
-			<div class="flex flex-wrap items-end gap-4">
-				<Dropdown
-					options={sectorOptions}
-					value={activeSector}
-					label="Sector"
-					onchange={(v) => updateConfig('sector', v)}
+	<!-- Chart grid -->
+	<div class="grid gap-3 lg:grid-cols-2 mt-3">
+		<!-- Consumption trends (full-width hero) -->
+		<section class="lg:col-span-2">
+			<ChartWrapper meta={lineMeta} hero data={timeFilteredSeries.flatMap((s) => s.values.map((v) => ({ series: s.name, year: v.date, consumption: v.value })))}>
+				<LineChart
+					series={timeFilteredSeries}
+					xLabel="Year"
+					yLabel="million kWh"
+					yFormat={formatCompact}
+					unit="million kWh"
+					margin={{ top: 20, right: 20, bottom: 40, left: 70 }}
+					annotations={consumptionAnnotations}
 				/>
-				<StateSelect
-					selected={selectedStates}
-					onchange={(states) => updateConfig('state', states)}
+			</ChartWrapper>
+		</section>
+
+		<!-- Growth bar (full-width) -->
+		<section class="lg:col-span-2">
+			<ChartWrapper meta={loadGrowthMeta} data={loadGrowthBars.map((d) => ({ year: d.label, growth_pct: d.value }))}>
+				<DivergingBarChart
+					data={loadGrowthBars}
+					yLabel="% change"
+					yFormat={format('+.1f')}
+					unit="%"
 				/>
-				<TimeRangeSlider {startYear} {endYear} />
+			</ChartWrapper>
+		</section>
+
+		<!-- Insight (full-width) -->
+		<div class="lg:col-span-2 insight-card">
+			<div class="flex items-start gap-4">
+				<div class="flex-shrink-0">
+					<span class="text-xl font-bold text-accent" style="font-family: var(--font-mono)">&lt;1%</span>
+					<span class="block text-[10px] uppercase tracking-wider text-text-muted mt-0.5">annual growth</span>
+				</div>
+				<p class="text-sm leading-relaxed text-text-secondary">
+					US electricity demand grew less than 1% per year from 2010 to 2020 — but data centers and electrification are accelerating growth again.
+				</p>
 			</div>
 		</div>
 
-		<ChartWrapper meta={lineMeta} hero category="Demand" categoryColor="#1b9e77" data={timeFilteredSeries.flatMap((s) => s.values.map((v) => ({ series: s.name, year: v.date, consumption: v.value })))}>
-			<LineChart
-				series={timeFilteredSeries}
-				xLabel="Year"
-				yLabel="million kWh"
-				yFormat={formatCompact}
-				unit="million kWh"
-				margin={{ top: 20, right: 20, bottom: 40, left: 70 }}
-				annotations={consumptionAnnotations}
-			/>
-		</ChartWrapper>
-	</section>
-
-	<!-- Chart 2: Load Growth -->
-	<section class="mt-8">
-		<ChartWrapper meta={loadGrowthMeta} category="Demand" categoryColor="#1b9e77" data={loadGrowthBars.map((d) => ({ year: d.label, growth_pct: d.value }))}>
-			<DivergingBarChart
-				data={loadGrowthBars}
-				yLabel="% change"
-				yFormat={format('+.1f')}
-				unit="%"
-			/>
-		</ChartWrapper>
-	</section>
-
-	<!-- Insight -->
-	<div class="insight-card my-4">
-		<div class="flex items-start gap-4">
-			<div class="flex-shrink-0">
-				<span class="text-xl font-bold text-accent" style="font-family: var(--font-mono)">&lt;1%</span>
-				<span class="block text-[10px] uppercase tracking-wider text-text-muted mt-0.5">annual growth</span>
-			</div>
-			<p class="text-base leading-relaxed text-text-secondary">
-				US electricity demand grew less than 1% per year from 2010 to 2020 — but data centers and electrification are accelerating growth again.
-			</p>
-		</div>
-	</div>
-
-	<div class="section-divider"></div>
-
-	<!-- Charts 3 & 4: State ranking + Per-Capita (2-column layout) -->
-	<div class="grid gap-6 lg:grid-cols-2 mt-6">
+		<!-- Top states + Per-capita (side-by-side) -->
 		<section>
-			<ChartWrapper meta={barMeta} category="Demand" categoryColor="#1b9e77" data={stateRanking.map((d) => ({ state: d.label, consumption: d.value }))}>
+			<ChartWrapper meta={barMeta} data={stateRanking.map((d) => ({ state: d.label, consumption: d.value }))}>
 				<BarChart
 					data={stateRanking}
 					horizontal
@@ -313,7 +305,7 @@
 		</section>
 
 		<section>
-			<ChartWrapper meta={perCapitaMeta} category="Demand" categoryColor="#1b9e77" data={perCapitaRanking.map((d) => ({ state: d.label, per_capita_kwh: d.value }))}>
+			<ChartWrapper meta={perCapitaMeta} data={perCapitaRanking.map((d: any) => ({ state: d.label, per_capita_kwh: d.value }))}>
 				<BarChart
 					data={perCapitaRanking}
 					horizontal
@@ -327,7 +319,7 @@
 	</div>
 
 	<!-- Cross-links -->
-	<p class="mt-4 text-sm">
+	<p class="mt-3 text-sm">
 		<a href="/prices" class="text-accent/80 hover:text-accent transition-colors no-underline">How much does this electricity cost? Explore prices &rarr;</a>
 	</p>
 </div>
