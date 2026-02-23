@@ -404,12 +404,12 @@
 <div>
 	<!-- Header -->
 	<div class="flex items-baseline gap-3 pb-3 border-b border-border">
-		<h1 class="text-base font-semibold text-text">Generation & Resources</h1>
+		<h1 class="text-base font-bold font-display tracking-tight text-text">Generation & Resources</h1>
 		<span class="text-sm text-text-secondary">What powers the grid — and how fast is it changing?</span>
 	</div>
 
 	<!-- Sticky control bar -->
-	<div class="sticky top-12 z-20 -mx-4 md:-mx-6 lg:-mx-8 bg-surface/95 backdrop-blur-sm border-b border-border px-4 md:px-6 lg:px-8 py-2">
+	<div class="sticky top-12 z-20 -mx-4 md:-mx-6 lg:-mx-8 bg-surface-card/80 backdrop-blur-xl border-b border-border px-4 md:px-6 lg:px-8 py-2">
 		<div class="flex flex-wrap items-center gap-3">
 			<StateSelect
 				selected={selectedStates}
@@ -422,19 +422,19 @@
 	<!-- Key Figures -->
 	<div class="flex flex-wrap gap-2 mt-3 mb-1">
 		<div class="key-figure">
-			<span class="kf-value" style="color: #e7a02f">{Math.round(kfGasShare)}%</span>
+			<span class="kf-value" style="color: #FBBF24">{Math.round(kfGasShare)}%</span>
 			<span class="kf-label">natural gas</span>
 		</div>
 		<div class="key-figure">
-			<span class="kf-value" style="color: #e7a02f">{Math.round(kfCoalShare)}%</span>
+			<span class="kf-value" style="color: #FBBF24">{Math.round(kfCoalShare)}%</span>
 			<span class="kf-label">coal</span>
 		</div>
 		<div class="key-figure">
-			<span class="kf-value" style="color: #e7a02f">{Math.round(kfRenewShare)}%</span>
+			<span class="kf-value" style="color: #FBBF24">{Math.round(kfRenewShare)}%</span>
 			<span class="kf-label">renewables</span>
 		</div>
 		<div class="key-figure">
-			<span class="kf-value" style="color: #e7a02f">{latestYear}</span>
+			<span class="kf-value" style="color: #FBBF24">{latestYear}</span>
 			<span class="kf-label">latest year</span>
 		</div>
 	</div>
@@ -442,7 +442,7 @@
 	<!-- Chart grid -->
 	<div class="grid gap-3 lg:grid-cols-2 mt-3">
 		<!-- Sub-section: Generation Mix -->
-		<h2 class="lg:col-span-2 text-sm font-semibold text-text mt-2" id="generation-mix">Generation Mix</h2>
+		<h2 class="lg:col-span-2 text-sm font-bold font-display tracking-tight uppercase text-text mt-2" id="generation-mix">Generation Mix</h2>
 
 		<!-- Chart 1: Generation by source bar (hero, full-width) -->
 		<section class="lg:col-span-2">
@@ -526,11 +526,11 @@
 
 		<!-- Cross-link -->
 		<p class="lg:col-span-2 text-sm">
-			<a href="/fuels" class="text-accent/80 hover:text-accent transition-colors no-underline">Where do these fuels come from? Explore fossil fuel production &rarr;</a>
+			<a href="/fuels" class="font-medium text-accent/80 hover:text-accent transition-colors no-underline">Where do these fuels come from? Explore fossil fuel production &rarr;</a>
 		</p>
 
 		<!-- Sub-section: Capacity & Infrastructure -->
-		<h2 class="lg:col-span-2 text-sm font-semibold text-text mt-2" id="capacity">Capacity & Infrastructure</h2>
+		<h2 class="lg:col-span-2 text-sm font-bold font-display tracking-tight uppercase text-text mt-2" id="capacity">Capacity & Infrastructure</h2>
 
 		<!-- Chart 5: Installed capacity + Chart 7: Capacity factors (side-by-side) -->
 		<section>
@@ -584,7 +584,7 @@
 		</section>
 
 		<!-- Sub-section: Decarbonization -->
-		<h2 class="lg:col-span-2 text-sm font-semibold text-text mt-2" id="decarbonization">Decarbonization</h2>
+		<h2 class="lg:col-span-2 text-sm font-bold font-display tracking-tight uppercase text-text mt-2" id="decarbonization">Decarbonization</h2>
 
 		<!-- Chart 6: Carbon intensity (full-width) -->
 		<section class="lg:col-span-2">

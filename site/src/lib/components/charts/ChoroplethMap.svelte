@@ -25,8 +25,8 @@
 		unit?: string;
 	}
 
-	/** Custom brand-aligned interpolator: light cream → deep blue */
-	const brandInterpolator = interpolateRgb('#fef9ef', '#0f2b44');
+	/** Custom brand-aligned interpolator: dark base → hot amber */
+	const brandInterpolator = interpolateRgb('#1E2330', '#FF9500');
 
 	let {
 		data,
@@ -79,15 +79,15 @@
 
 	/**
 	 * Determine label fill color based on the normalized position in the domain.
-	 * Values in the upper 50% of the range get white text; lower 50% get dark text.
+	 * High values (bright amber) get dark text; low values (dark base) get light text.
 	 */
 	function labelFill(fips: string): string {
 		const val = valueMap.get(fips);
-		if (!val) return 'var(--color-text)';
+		if (!val) return '#E8ECF4';
 		const range = domain[1] - domain[0];
-		if (range === 0) return 'var(--color-text)';
+		if (range === 0) return '#E8ECF4';
 		const t = (val.value - domain[0]) / range;
-		return t > 0.5 ? '#ffffff' : 'var(--color-text)';
+		return t > 0.5 ? '#0B0E14' : '#E8ECF4';
 	}
 
 	function handleStateHover(event: PointerEvent, fips: string) {

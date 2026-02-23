@@ -21,9 +21,9 @@
 	];
 
 	const FUEL_COLORS: Record<string, string> = {
-		'Coal': '#4a4a4a',
-		'Natural Gas': '#e86c3a',
-		'Crude Oil': '#a6611a',
+		'Coal': '#6B7280',
+		'Natural Gas': '#FF9500',
+		'Crude Oil': '#FB923C',
 	};
 
 	const fuelOptions = [
@@ -159,7 +159,7 @@
 			.map((d: any) => ({
 				label: d.state,
 				value: d.production,
-				color: '#a6611a',
+				color: '#FB923C',
 			}));
 	})());
 
@@ -169,9 +169,9 @@
 
 	// Fossil fuel generation over time
 	const GEN_FUEL_COLORS: Record<string, string> = {
-		Coal: '#4a4a4a',
-		'Natural Gas': '#e86c3a',
-		Petroleum: '#a6611a',
+		Coal: '#6B7280',
+		'Natural Gas': '#FF9500',
+		Petroleum: '#FB923C',
 	};
 
 	const fuelGenSeries: DataSeries[] = $derived((() => {
@@ -206,9 +206,9 @@
 
 	// US Petroleum Trade
 	const TRADE_COLORS: Record<string, string> = {
-		Imports: '#e31a1c',
-		Exports: '#2166ac',
-		'Net Imports': '#1b9e77',
+		Imports: '#F87171',
+		Exports: '#5B8DEF',
+		'Net Imports': '#00E68A',
 	};
 
 	const tradeSeries: DataSeries[] = $derived((() => {
@@ -253,9 +253,9 @@
 			.filter((d: any) => d.fuel === 'Natural Gas' && d.year >= 2000)
 			.sort((a: any, b: any) => a.year - b.year);
 		return [
-			{ name: 'Imports', color: '#e31a1c', values: gasTrade.map((d: any) => ({ date: d.year, value: d.imports })) },
-			{ name: 'Exports', color: '#2166ac', values: gasTrade.map((d: any) => ({ date: d.year, value: d.exports })) },
-			{ name: 'Net Imports', color: '#1b9e77', values: gasTrade.map((d: any) => ({ date: d.year, value: d.net_imports })) },
+			{ name: 'Imports', color: '#F87171', values: gasTrade.map((d: any) => ({ date: d.year, value: d.imports })) },
+			{ name: 'Exports', color: '#5B8DEF', values: gasTrade.map((d: any) => ({ date: d.year, value: d.exports })) },
+			{ name: 'Net Imports', color: '#00E68A', values: gasTrade.map((d: any) => ({ date: d.year, value: d.net_imports })) },
 		];
 	})());
 
@@ -300,12 +300,12 @@
 <div>
 	<!-- Header -->
 	<div class="flex items-baseline gap-3 py-3 border-b border-border">
-		<h1 class="text-base font-semibold text-text">Fossil Fuels</h1>
+		<h1 class="text-base font-bold font-display tracking-tight text-text">Fossil Fuels</h1>
 		<span class="text-sm text-text-secondary">How much fossil fuel does the US actually produce?</span>
 	</div>
 
 	<!-- Sticky control bar -->
-	<div class="sticky top-12 z-20 -mx-4 md:-mx-6 lg:-mx-8 bg-surface/95 backdrop-blur-sm border-b border-border px-4 md:px-6 lg:px-8 py-2">
+	<div class="sticky top-12 z-20 -mx-4 md:-mx-6 lg:-mx-8 bg-surface-card/80 backdrop-blur-xl border-b border-border px-4 md:px-6 lg:px-8 py-2">
 		<div class="flex flex-wrap items-center gap-3">
 			<Dropdown
 				options={fuelOptions}
@@ -324,19 +324,19 @@
 	<!-- Key figures -->
 	<div class="flex flex-wrap gap-2 mt-3 mb-1">
 		<div class="key-figure">
-			<span class="kf-value" style="color: #a6611a">{kfNumFuels}</span>
+			<span class="kf-value" style="color: #FB923C">{kfNumFuels}</span>
 			<span class="kf-label">fuel types tracked</span>
 		</div>
 		<div class="key-figure">
-			<span class="kf-value" style="color: #a6611a">2x</span>
+			<span class="kf-value" style="color: #FB923C">2x</span>
 			<span class="kf-label">gas growth since '08</span>
 		</div>
 		<div class="key-figure">
-			<span class="kf-value" style="color: #a6611a">{kfTopProducer.slice(0, 7)}</span>
+			<span class="kf-value" style="color: #FB923C">{kfTopProducer.slice(0, 7)}</span>
 			<span class="kf-label">top {barFuel.toLowerCase()} state</span>
 		</div>
 		<div class="key-figure">
-			<span class="kf-value" style="color: #a6611a">{latestYear}</span>
+			<span class="kf-value" style="color: #FB923C">{latestYear}</span>
 			<span class="kf-label">latest year</span>
 		</div>
 	</div>
@@ -432,6 +432,6 @@
 
 	<!-- Cross-link -->
 	<p class="mt-3 text-sm">
-		<a href="/generation" class="text-accent/80 hover:text-accent transition-colors no-underline">See how these fuels translate into electricity generation &rarr;</a>
+		<a href="/generation" class="font-medium text-accent/80 hover:text-accent transition-colors no-underline">See how these fuels translate into electricity generation &rarr;</a>
 	</p>
 </div>

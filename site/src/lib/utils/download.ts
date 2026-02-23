@@ -82,7 +82,7 @@ export async function downloadPNG(
 		titleEl.setAttribute('y', '24');
 		titleEl.setAttribute('font-size', '16');
 		titleEl.setAttribute('font-weight', '600');
-		titleEl.setAttribute('fill', '#1a1a2e');
+		titleEl.setAttribute('fill', computedStyle.getPropertyValue('--color-text').trim() || '#E8ECF4');
 		titleEl.setAttribute('font-family', 'system-ui, -apple-system, sans-serif');
 		titleEl.textContent = meta.title;
 		clone.insertBefore(titleEl, clone.firstChild);
@@ -94,7 +94,7 @@ export async function downloadPNG(
 		sourceEl.setAttribute('x', '16');
 		sourceEl.setAttribute('y', String(newHeight - 8));
 		sourceEl.setAttribute('font-size', '11');
-		sourceEl.setAttribute('fill', '#5a6270');
+		sourceEl.setAttribute('fill', computedStyle.getPropertyValue('--color-text-secondary').trim() || '#9CA3AF');
 		sourceEl.setAttribute('font-family', 'system-ui, -apple-system, sans-serif');
 		sourceEl.textContent = `Source: ${meta.source}`;
 		clone.appendChild(sourceEl);
@@ -113,7 +113,7 @@ export async function downloadPNG(
 		canvas.height = img.height * scale;
 		const ctx = canvas.getContext('2d')!;
 		ctx.scale(scale, scale);
-		ctx.fillStyle = '#ffffff';
+		ctx.fillStyle = computedStyle.getPropertyValue('--color-surface').trim() || '#0B0E14';
 		ctx.fillRect(0, 0, img.width, img.height);
 		ctx.drawImage(img, 0, 0);
 		URL.revokeObjectURL(url);

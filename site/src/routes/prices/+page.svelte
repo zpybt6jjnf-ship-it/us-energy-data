@@ -216,12 +216,12 @@
 <div>
 	<!-- Header -->
 	<div class="flex items-baseline gap-3 pb-3 border-b border-border">
-		<h1 class="text-base font-semibold text-text">Prices & Bills</h1>
+		<h1 class="text-base font-bold font-display tracking-tight text-text">Prices & Bills</h1>
 		<span class="text-sm text-text-secondary">What does your electricity actually cost?</span>
 	</div>
 
 	<!-- Sticky control bar -->
-	<div class="sticky top-12 z-20 -mx-4 md:-mx-6 lg:-mx-8 bg-surface/95 backdrop-blur-sm border-b border-border px-4 md:px-6 lg:px-8 py-2">
+	<div class="sticky top-12 z-20 -mx-4 md:-mx-6 lg:-mx-8 bg-surface-card/80 backdrop-blur-xl border-b border-border px-4 md:px-6 lg:px-8 py-2">
 		<div class="flex flex-wrap items-center gap-3">
 			<Dropdown
 				options={sectorOptions}
@@ -240,19 +240,19 @@
 	<!-- Key Figures -->
 	<div class="flex flex-wrap gap-2 mt-3 mb-1">
 		<div class="key-figure">
-			<span class="kf-value" style="color: #2166ac">{resPrice.toFixed(1)}&cent;</span>
+			<span class="kf-value" style="color: #5B8DEF">{resPrice.toFixed(1)}&cent;</span>
 			<span class="kf-label">avg residential</span>
 		</div>
 		<div class="key-figure">
-			<span class="kf-value" style="color: #2166ac">{indPrice.toFixed(1)}&cent;</span>
+			<span class="kf-value" style="color: #5B8DEF">{indPrice.toFixed(1)}&cent;</span>
 			<span class="kf-label">avg industrial</span>
 		</div>
 		<div class="key-figure">
-			<span class="kf-value" style="color: #2166ac">{sectorGap}%</span>
+			<span class="kf-value" style="color: #5B8DEF">{sectorGap}%</span>
 			<span class="kf-label">sector gap</span>
 		</div>
 		<div class="key-figure">
-			<span class="kf-value" style="color: #2166ac">{latestYear}</span>
+			<span class="kf-value" style="color: #5B8DEF">{latestYear}</span>
 			<span class="kf-label">latest year</span>
 		</div>
 	</div>
@@ -329,6 +329,6 @@
 
 	<!-- Cross-link -->
 	<p class="mt-3 text-sm">
-		<a href="/generation" class="text-accent/80 hover:text-accent transition-colors no-underline">See how these states generate their electricity &rarr;</a>
+		<a href="/generation" class="font-medium text-accent/80 hover:text-accent transition-colors no-underline">See how these states generate their electricity &rarr;</a>
 	</p>
 </div>

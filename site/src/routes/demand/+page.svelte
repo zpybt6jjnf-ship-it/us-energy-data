@@ -117,7 +117,7 @@
 			.map(([state, consumption], i) => ({
 				label: state,
 				value: consumption,
-				color: '#1b9e77',
+				color: '#00E68A',
 			}));
 	})());
 
@@ -184,7 +184,7 @@
 			.map((d: any, i: number) => ({
 				label: d.state,
 				value: d.per_capita_kwh,
-				color: '#1b9e77',
+				color: '#00E68A',
 			}));
 	})());
 
@@ -207,12 +207,12 @@
 <div>
 	<!-- Header -->
 	<div class="flex items-baseline gap-3 pb-3 border-b border-border">
-		<h1 class="text-base font-semibold text-text">Electricity Demand</h1>
+		<h1 class="text-base font-bold font-display tracking-tight text-text">Electricity Demand</h1>
 		<span class="text-sm text-text-secondary">Where does all the electricity go?</span>
 	</div>
 
 	<!-- Sticky control bar -->
-	<div class="sticky top-12 z-20 -mx-4 md:-mx-6 lg:-mx-8 bg-surface/95 backdrop-blur-sm border-b border-border px-4 md:px-6 lg:px-8 py-2">
+	<div class="sticky top-12 z-20 -mx-4 md:-mx-6 lg:-mx-8 bg-surface-card/80 backdrop-blur-xl border-b border-border px-4 md:px-6 lg:px-8 py-2">
 		<div class="flex flex-wrap items-center gap-3">
 			<Dropdown
 				options={sectorOptions}
@@ -231,19 +231,19 @@
 	<!-- Key Figures -->
 	<div class="flex flex-wrap gap-2 mt-3 mb-1">
 		<div class="key-figure">
-			<span class="kf-value" style="color: #1b9e77">{latestTWh}T</span>
+			<span class="kf-value" style="color: #00E68A">{latestTWh}T</span>
 			<span class="kf-label">kWh consumed ({latestYear})</span>
 		</div>
 		<div class="key-figure">
-			<span class="kf-value" style="color: #1b9e77">{yoyGrowth}%</span>
+			<span class="kf-value" style="color: #00E68A">{yoyGrowth}%</span>
 			<span class="kf-label">year-over-year growth</span>
 		</div>
 		<div class="key-figure">
-			<span class="kf-value" style="color: #1b9e77">{topState ? topState.label.slice(0, 5) : '—'}</span>
+			<span class="kf-value" style="color: #00E68A">{topState ? topState.label.slice(0, 5) : '—'}</span>
 			<span class="kf-label">top consumer</span>
 		</div>
 		<div class="key-figure">
-			<span class="kf-value" style="color: #1b9e77">{latestYear}</span>
+			<span class="kf-value" style="color: #00E68A">{latestYear}</span>
 			<span class="kf-label">latest year</span>
 		</div>
 	</div>
@@ -320,6 +320,6 @@
 
 	<!-- Cross-links -->
 	<p class="mt-3 text-sm">
-		<a href="/prices" class="text-accent/80 hover:text-accent transition-colors no-underline">How much does this electricity cost? Explore prices &rarr;</a>
+		<a href="/prices" class="font-medium text-accent/80 hover:text-accent transition-colors no-underline">How much does this electricity cost? Explore prices &rarr;</a>
 	</p>
 </div>

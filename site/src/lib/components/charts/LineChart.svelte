@@ -158,7 +158,7 @@
 >
 	<defs>
 		<filter id={filterId} x="-2%" y="-2%" width="104%" height="104%">
-			<feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-opacity="0.08"/>
+			<feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-opacity="0.3" flood-color="#000"/>
 		</filter>
 	</defs>
 	<g transform="translate({margin.left}, {margin.top})">

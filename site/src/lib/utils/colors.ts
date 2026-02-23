@@ -1,25 +1,25 @@
 export const CHART_COLORS = [
-	'#2166ac', // blue
-	'#e86c3a', // orange
-	'#1b9e77', // teal
-	'#984ea3', // purple
-	'#e7a02f', // gold
-	'#a6611a', // brown
-	'#666666', // gray
-	'#e31a1c', // red
+	'#5B8DEF', // steel blue
+	'#FF9500', // hot amber
+	'#00E68A', // vivid green
+	'#C084FC', // purple
+	'#FBBF24', // gold
+	'#F87171', // coral red
+	'#8892A4', // slate
+	'#FB923C', // orange
 ] as const;
 
 export const ENERGY_SOURCE_COLORS: Record<string, string> = {
-	coal: '#4a4a4a',
-	'natural gas': '#e86c3a',
-	nuclear: '#984ea3',
-	wind: '#2166ac',
-	solar: '#e7a02f',
-	hydro: '#1b9e77',
-	petroleum: '#a6611a',
-	biomass: '#66a61e',
-	geothermal: '#e31a1c',
-	other: '#999999',
+	coal: '#6B7280',
+	'natural gas': '#FF9500',
+	nuclear: '#C084FC',
+	wind: '#5B8DEF',
+	solar: '#FBBF24',
+	hydro: '#00E68A',
+	petroleum: '#FB923C',
+	biomass: '#84CC16',
+	geothermal: '#F87171',
+	other: '#8892A4',
 };
 
 export function getSeriesColor(index: number): string {

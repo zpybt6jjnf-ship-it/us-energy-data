@@ -179,12 +179,12 @@
 <div>
 	<!-- Header -->
 	<div class="flex items-baseline gap-3 py-3 border-b border-border">
-		<h1 class="text-base font-semibold text-text">Reliability & Outages</h1>
+		<h1 class="text-base font-bold font-display tracking-tight text-text">Reliability & Outages</h1>
 		<span class="text-sm text-text-secondary">How often does the power go out — and for how long?</span>
 	</div>
 
 	<!-- Sticky control bar -->
-	<div class="sticky top-12 z-20 -mx-4 md:-mx-6 lg:-mx-8 bg-surface/95 backdrop-blur-sm border-b border-border px-4 md:px-6 lg:px-8 py-2">
+	<div class="sticky top-12 z-20 -mx-4 md:-mx-6 lg:-mx-8 bg-surface-card/80 backdrop-blur-xl border-b border-border px-4 md:px-6 lg:px-8 py-2">
 		<div class="flex flex-wrap items-center gap-3">
 			<Dropdown
 				label="Metric"
@@ -202,19 +202,19 @@
 	<!-- Key figures -->
 	<div class="flex flex-wrap gap-2 mt-3 mb-1">
 		<div class="key-figure">
-			<span class="kf-value" style="color: #984ea3">~{Math.round(kfLatestSaidi / 60)}hr</span>
+			<span class="kf-value" style="color: #C084FC">~{Math.round(kfLatestSaidi / 60)}hr</span>
 			<span class="kf-label">avg outage/yr ({kfLatestYear})</span>
 		</div>
 		<div class="key-figure">
-			<span class="kf-value" style="color: #984ea3">{Math.round(kfLatestSaidiNoMed)}</span>
+			<span class="kf-value" style="color: #C084FC">{Math.round(kfLatestSaidiNoMed)}</span>
 			<span class="kf-label">min excl. major events</span>
 		</div>
 		<div class="key-figure">
-			<span class="kf-value" style="color: #984ea3">{kfNumStates}</span>
+			<span class="kf-value" style="color: #C084FC">{kfNumStates}</span>
 			<span class="kf-label">states + DC tracked</span>
 		</div>
 		<div class="key-figure">
-			<span class="kf-value" style="color: #984ea3">{format(',')(kfNumUtilities)}</span>
+			<span class="kf-value" style="color: #C084FC">{format(',')(kfNumUtilities)}</span>
 			<span class="kf-label">reporting utilities</span>
 		</div>
 	</div>
@@ -291,6 +291,6 @@
 
 	<!-- Cross-link -->
 	<p class="mt-3 text-sm">
-		<a href="/prices" class="text-accent/80 hover:text-accent transition-colors no-underline">Explore electricity prices in more detail &rarr;</a>
+		<a href="/prices" class="font-medium text-accent/80 hover:text-accent transition-colors no-underline">Explore electricity prices in more detail &rarr;</a>
 	</p>
 </div>

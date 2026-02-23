@@ -1,43 +1,43 @@
 @import 'tailwindcss';
 
 @theme {
-	/* Brand */
-	--color-primary: #1a2332;
-	--color-primary-light: #2a3a4c;
-	--color-primary-dark: #0d1117;
-	--color-accent: #e86c3a;
-	--color-accent-light: #f09060;
-	--color-accent-dark: #c85a2e;
+	/* Brand — Infrared dark palette */
+	--color-primary: #1E2330;
+	--color-primary-light: #2A3040;
+	--color-primary-dark: #0B0E14;
+	--color-accent: #FF9500;
+	--color-accent-light: #FFB340;
+	--color-accent-dark: #D97E00;
 
-	/* Highlight (vivid teal-green for positive trends/callouts) */
-	--color-highlight: #2dd4a8;
-	--color-highlight-muted: #2dd4a820;
+	/* Highlight (vivid green for positive/renewables) */
+	--color-highlight: #00E68A;
+	--color-highlight-muted: #00E68A20;
 
-	/* Surfaces — cool neutral */
-	--color-surface: #f7f8fa;
-	--color-surface-alt: #f0f2f5;
-	--color-surface-card: #ffffff;
-	--color-border: #dfe2e6;
-	--color-border-light: #e8eaee;
+	/* Surfaces — near-black depth */
+	--color-surface: #0B0E14;
+	--color-surface-alt: #111620;
+	--color-surface-card: #161B26;
+	--color-border: #1E2636;
+	--color-border-light: #242D3C;
 
-	/* Text */
-	--color-text: #1a1a2e;
-	--color-text-secondary: #5a6270;
-	--color-text-muted: #8a919c;
+	/* Text — light on dark */
+	--color-text: #E8ECF4;
+	--color-text-secondary: #9CA3AF;
+	--color-text-muted: #6B7280;
 
-	/* Chart palette (unchanged) */
-	--color-chart-1: #2166ac;
-	--color-chart-2: #e86c3a;
-	--color-chart-3: #1b9e77;
-	--color-chart-4: #984ea3;
-	--color-chart-5: #e7a02f;
-	--color-chart-6: #a6611a;
-	--color-chart-7: #666666;
-	--color-chart-8: #e31a1c;
+	/* Chart palette */
+	--color-chart-1: #5B8DEF;
+	--color-chart-2: #FF9500;
+	--color-chart-3: #00E68A;
+	--color-chart-4: #C084FC;
+	--color-chart-5: #FBBF24;
+	--color-chart-6: #FB923C;
+	--color-chart-7: #8892A4;
+	--color-chart-8: #F87171;
 
 	/* Typography */
-	--font-display: 'Instrument Serif', Georgia, serif;
-	--font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+	--font-display: 'Syne', system-ui, -apple-system, sans-serif;
+	--font-sans: 'Outfit', system-ui, -apple-system, sans-serif;
 	--font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
 	/* Spacing — tighter */
@@ -78,23 +78,35 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-/* Dark mode — deeper Bloomberg-style */
-@media (prefers-color-scheme: dark) {
+/* Noise texture overlay */
+body::before {
+	content: '';
+	position: fixed;
+	inset: 0;
+	z-index: 9999;
+	pointer-events: none;
+	opacity: 0.015;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+	background-repeat: repeat;
+}
+
+/* Light mode override */
+@media (prefers-color-scheme: light) {
 	:root {
-		--color-surface: #0d1117;
-		--color-surface-alt: #161b22;
-		--color-surface-card: #1c2128;
-		--color-border: #30363d;
-		--color-border-light: #282e36;
-		--color-text: #e6edf3;
-		--color-text-secondary: #9ca3af;
-		--color-text-muted: #6b7280;
-		--color-primary: #4a9eda;
-		--color-primary-light: #6bb3e8;
-		--color-accent: #f09060;
-		--color-accent-light: #f4a880;
-		--color-highlight: #34d399;
-		--color-highlight-muted: #34d39920;
+		--color-surface: #0B0E14;
+		--color-surface-alt: #111620;
+		--color-surface-card: #161B26;
+		--color-border: #1E2636;
+		--color-border-light: #242D3C;
+		--color-text: #E8ECF4;
+		--color-text-secondary: #9CA3AF;
+		--color-text-muted: #6B7280;
+		--color-primary: #1E2330;
+		--color-primary-light: #2A3040;
+		--color-accent: #FF9500;
+		--color-accent-light: #FFB340;
+		--color-highlight: #00E68A;
+		--color-highlight-muted: #00E68A20;
 	}
 }
 
@@ -112,6 +124,7 @@ svg.chart text {
 /* Display font utility */
 .font-display {
 	font-family: var(--font-display);
+	font-weight: 700;
 }
 
 /* Mono font utility */
@@ -119,6 +132,31 @@ svg.chart text {
 	font-family: var(--font-mono);
 }
 
+/* Glow text utility */
+.glow-text {
+	text-shadow: 0 0 12px currentColor;
+}
+
+/* Ambient radial gradient background */
+.bg-ambient {
+	background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(255, 149, 0, 0.06) 0%, transparent 70%),
+	            var(--color-surface);
+}
+
+/* Fade-in-up animation */
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(12px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+.animate-fade-in-up {
+	animation: fadeInUp 0.5s ease-out both;
+}
 
 /* ------------------------------------------------
    Skeleton loading animation
@@ -128,14 +166,14 @@ svg.chart text {
 	100% { background-position: 200% 0; }
 }
 .skeleton {
-	background: linear-gradient(90deg, var(--color-border-light) 25%, var(--color-surface-alt) 50%, var(--color-border-light) 75%);
+	background: linear-gradient(90deg, var(--color-surface-alt) 25%, var(--color-border) 50%, var(--color-surface-alt) 75%);
 	background-size: 200% 100%;
 	animation: shimmer 1.5s ease-in-out infinite;
 	border-radius: 0.375rem;
 }
 
 /* ------------------------------------------------
-   Chart card — flat and bordered
+   Chart card — dark with hover glow
    ------------------------------------------------ */
 .chart-card {
 	background: var(--color-surface-card);
@@ -143,9 +181,10 @@ svg.chart text {
 	border-radius: 0.375rem;
 	padding: 0.875rem;
 	box-shadow: none;
+	transition: box-shadow 0.3s ease;
 }
 .chart-card:hover {
-	box-shadow: none;
+	box-shadow: 0 0 20px rgba(255, 149, 0, 0.08);
 }
 
 /* ------------------------------------------------
@@ -211,6 +250,7 @@ svg.chart .annotation-label {
 	font-size: 1rem;
 	font-weight: 700;
 	line-height: 1.2;
+	text-shadow: 0 0 12px currentColor;
 }
 .key-figure .kf-label {
 	font-size: 0.6875rem;

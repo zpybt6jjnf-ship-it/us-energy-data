@@ -94,14 +94,14 @@
 	bind:this={containerEl}
 >
 	<div class="mb-2">
-		<h3 class="text-[13px] font-normal text-text font-display">{meta.title}</h3>
+		<h3 class="text-[13px] font-bold font-display tracking-tight text-text">{meta.title}</h3>
 		{#if meta.subtitle}
 			<p class="mt-0.5 text-xs text-text-muted">{meta.subtitle}</p>
 		{/if}
 	</div>
 
 	{#if !visible}
-		<div class="skeleton" style="width: 100%; height: 300px; border-radius: 0.375rem; background: linear-gradient(90deg, var(--color-surface-alt) 25%, var(--color-border-light) 50%, var(--color-surface-alt) 75%); background-size: 200% 100%; animation: skeleton-shimmer 1.5s ease-in-out infinite;"></div>
+		<div class="skeleton" style="width: 100%; height: 300px;"></div>
 	{:else}
 		<div class="chart-container" style="width: 100%; opacity: {visible ? 1 : 0}; transform: translateY({visible ? 0 : 20}px); transition: opacity 0.5s ease-out, transform 0.5s ease-out;">
 			{@render children()}
@@ -113,22 +113,22 @@
 			href={meta.sourceUrl}
 			target="_blank"
 			rel="noopener noreferrer"
-			class="text-[11px] text-text-muted hover:text-accent transition-colors"
+			class="text-[11px] text-text-muted hover:text-accent no-underline transition-colors"
 		>
 			Source: {meta.source}
 		</a>
 
-		<button onclick={handleDownloadCSV} class="inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[11px] font-medium text-text-muted hover:bg-surface-alt hover:text-text hover:border-border border border-transparent transition-colors cursor-pointer">
+		<button onclick={handleDownloadCSV} class="inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[11px] font-medium text-text-muted hover:bg-surface-alt hover:text-accent hover:border-accent/30 border border-transparent transition-colors cursor-pointer">
 			<svg class="h-3 w-3" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 14V2h5l3 3v9H4z"/><path d="M9 2v3h3"/><path d="M6 8h4M6 10h4M6 12h2"/></svg>
 			CSV
 		</button>
 
-		<button onclick={handleDownloadPNG} class="inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[11px] font-medium text-text-muted hover:bg-surface-alt hover:text-text hover:border-border border border-transparent transition-colors cursor-pointer">
+		<button onclick={handleDownloadPNG} class="inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[11px] font-medium text-text-muted hover:bg-surface-alt hover:text-accent hover:border-accent/30 border border-transparent transition-colors cursor-pointer">
 			<svg class="h-3 w-3" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="12" height="12" rx="1.5"/><circle cx="6" cy="6" r="1.5"/><path d="M2 11l3-3 2 2 3-4 4 5"/></svg>
 			PNG
 		</button>
 
-		<button onclick={handleCopyLink} class="inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[11px] font-medium text-text-muted hover:bg-surface-alt hover:text-text hover:border-border border border-transparent transition-colors cursor-pointer">
+		<button onclick={handleCopyLink} class="inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[11px] font-medium text-text-muted hover:bg-surface-alt hover:text-accent hover:border-accent/30 border border-transparent transition-colors cursor-pointer">
 			<svg class="h-3 w-3" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6.5 9.5l3-3M5.5 7l-1 1a2.12 2.12 0 003 3l1-1M10.5 9l1-1a2.12 2.12 0 00-3-3l-1 1"/></svg>
 			{linkCopied ? 'Copied!' : 'Link'}
 		</button>

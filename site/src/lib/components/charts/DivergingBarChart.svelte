@@ -32,8 +32,8 @@
         yLabel = '',
         yFormat = format('+,.0f'),
         unit = '',
-        positiveColor = '#1b9e77',
-        negativeColor = '#e31a1c',
+        positiveColor = '#00E68A',
+        negativeColor = '#F87171',
     }: Props = $props();
 
     const chartWidthCtx = getContext<Readable<number> | undefined>('chartWidth');

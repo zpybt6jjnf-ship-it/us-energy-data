@@ -6,7 +6,7 @@ Public-facing data platform making US energy data accessible. Based on Hannah Ri
 - **Frontend**: SvelteKit 5 + TypeScript (strict) + Tailwind CSS v4 + Cloudflare adapter
 - **Charts**: D3 (scales, shapes, geo, interpolate) + Svelte reactive SVG — D3 is a utility library only, Svelte handles all DOM
 - **Maps**: d3-geo (AlbersUSA) + topojson-client + us-atlas (`states-10m.json`, NOT `states-albers-10m.json`)
-- **Typography**: Google Fonts — Instrument Serif (display), DM Sans (body), JetBrains Mono (data)
+- **Typography**: Google Fonts — Syne (display, geometric/futuristic), Outfit (body, clean/readable), JetBrains Mono (data)
 - **Data Pipeline**: Python (requests + pandas + openpyxl) → static JSON → `site/static/data/`
 - **Hosting**: Cloudflare Pages
 
@@ -15,7 +15,7 @@ Public-facing data platform making US energy data accessible. Based on Hannah Ri
 - **URL is single source of truth** for chart state: `/prices?state=TX,CA&sector=residential` (managed by `chartConfig.ts` store)
 - **Static JSON per chart** in `site/static/data/` (37 files across 7 categories). No database, no API server. JSON schemas must match TypeScript types in `site/src/lib/types/data.ts` — update both when changing pipeline output.
 - **Brand-first color system**: Custom `@theme` tokens (`bg-primary`, `text-accent`, `bg-surface-alt`, etc.) replace default Tailwind palette. Never use default gray/blue.
-- **Sidebar + top bar layout**: Fixed 12px top bar + fixed 48-unit left sidebar (desktop), drawer overlay (mobile). Content offset via `pt-12 md:pl-48`.
+- **Top nav layout**: Full-width horizontal nav with pill-style links and amber glow active state. No sidebar. Content offset via `pt-12` only. Mobile: hamburger drawer with dark overlay.
 
 ## Repository Structure
 ```
@@ -73,28 +73,27 @@ cd us-energy-data/pipeline && source .venv/bin/activate && python -m src.main
 - **Fuels special case**: "All Fuels" view uses base year = 100 index; single fuel uses raw values with proper units
 - **Spacing**: `mt-3` between charts/key-figures, `mt-2` for section headers, `mt-1.5`/`mt-0.5` for tight elements
 
-## Design Tokens (app.css @theme)
+## Design Tokens (app.css @theme) — "Infrared" Dark Theme
 | Token | Value | Usage |
 |-------|-------|-------|
-| Primary | `#1a2332` | Nav sidebar, headings |
-| Primary-light | `#2a3a4c` | Hover states |
-| Primary-dark | `#0d1117` | Dark accents |
-| Accent | `#e86c3a` | CTAs, stats, active states |
-| Surface | `#f7f8fa` | Body background |
-| Surface-alt | `#f0f2f5` | Section bands |
-| Surface-card | `#ffffff` | Card backgrounds |
-| Text | `#1a1a2e` | Body text |
-| Text-secondary | `#5a6270` | Supporting text |
-| Text-muted | `#8a919c` | Tertiary text |
-| Border | `#dfe2e6` | Borders |
-| Border-light | `#e8eaee` | Subtle borders |
-| Highlight | `#2dd4a8` | Callouts |
+| Primary | `#1E2330` | Nav, headings |
+| Primary-dark | `#0B0E14` | Near-black base |
+| Accent | `#FF9500` | Hot amber — CTAs, active states, energy/heat |
+| Highlight | `#00E68A` | Vivid green — renewables, positive trends |
+| Surface | `#0B0E14` | Body background (near-black) |
+| Surface-alt | `#111620` | Section bands |
+| Surface-card | `#161B26` | Card backgrounds |
+| Text | `#E8ECF4` | Light body text |
+| Text-secondary | `#9CA3AF` | Supporting text |
+| Text-muted | `#6B7280` | Tertiary text |
+| Border | `#1E2636` | Borders |
+| Border-light | `#242D3C` | Subtle borders |
 
-Flat aesthetic: shadows eliminated (`--shadow-card: none`), tighter border-radius (`0.375rem`), compact padding.
+Dark-first aesthetic with atmospheric depth: noise texture overlay, radial gradient ambience, hover glow effects on cards (`box-shadow: 0 0 20px rgba(255,149,0,0.08)`), key figure values glow (`text-shadow: 0 0 12px currentColor`).
 
-Chart colors: `#2166ac` (blue), `#e86c3a` (orange), `#1b9e77` (teal), `#984ea3` (purple), `#e7a02f` (gold), `#a6611a` (brown). Energy source colors in `utils/colors.ts`.
+Chart colors: `#5B8DEF` (steel blue), `#FF9500` (hot amber), `#00E68A` (vivid green), `#C084FC` (purple), `#FBBF24` (gold), `#F87171` (coral), `#8892A4` (slate), `#FB923C` (orange). Energy source colors in `utils/colors.ts`.
 
-Typography classes: `.font-display` for serif headlines, `--font-sans` (DM Sans), `--font-mono` (JetBrains Mono).
+Typography classes: `.font-display` for Syne headlines (bold, geometric), `--font-sans` (Outfit), `--font-mono` (JetBrains Mono). Utilities: `.glow-text`, `.bg-ambient`, `.animate-fade-in-up`.
 
 ## Data Sources & EIA API Endpoints
 - **EIA API v2** (`https://api.eia.gov/v2/`): prices, demand, generation, capacity, emissions, fuels, trade
