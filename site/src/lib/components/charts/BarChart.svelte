@@ -2,7 +2,7 @@
 	import { scaleBand, scaleLinear, scaleOrdinal } from 'd3-scale';
 	import { format } from 'd3-format';
 	import type { Margin, TooltipData } from '$types/chart';
-	import { CHART_COLORS } from '$utils/colors';
+	import { CHART_COLORS_CSS } from '$utils/colors';
 	import Tooltip from './Tooltip.svelte';
 	import { getContext } from 'svelte';
 	import type { Readable, Writable } from 'svelte/store';
@@ -71,12 +71,12 @@
 
 	const colorScale = $derived(
 		scaleOrdinal<string>().domain(labels).range(
-			data.map((d, i) => d.color ?? CHART_COLORS[i % CHART_COLORS.length])
+			data.map((d, i) => d.color ?? CHART_COLORS_CSS[i % CHART_COLORS_CSS.length])
 		)
 	);
 
 	// Detect if bars use multiple distinct colors (for legend)
-	const uniqueColors = $derived([...new Set(data.map((d, i) => d.color ?? CHART_COLORS[i % CHART_COLORS.length]))]);
+	const uniqueColors = $derived([...new Set(data.map((d, i) => d.color ?? CHART_COLORS_CSS[i % CHART_COLORS_CSS.length]))]);
 	const hasMultipleColors = $derived(uniqueColors.length > 1);
 
 	const valueTicks = $derived(valueScale.ticks(6));
@@ -137,6 +137,7 @@
 	}
 </script>
 
+{#if data.length > 0}
 <!-- svelte-ignore a11y_no_noninteractive_tabindex a11y_no_noninteractive_element_interactions -->
 <svg
 	bind:this={svgEl}
@@ -225,6 +226,7 @@
 			</g>
 			<!-- Category axis (left) -->
 			{#each data as d}
+				{@const maxHorizChars = Math.max(3, Math.floor((margin.left - 12) / 7.5))}
 				<text
 					x={-8}
 					y={(bandScale(d.label) ?? 0) + bandScale.bandwidth() / 2}
@@ -233,7 +235,7 @@
 					fill="var(--color-text-secondary)"
 					font-size="13"
 				>
-					{d.label}
+					{d.label.length > maxHorizChars ? d.label.slice(0, maxHorizChars - 1) + '\u2026' : d.label}
 				</text>
 			{/each}
 		{:else}
@@ -278,3 +280,6 @@
 {/if}
 
 <Tooltip data={tooltip} />
+{:else}
+<p class="text-sm text-text-muted py-12 text-center">No data available</p>
+{/if}

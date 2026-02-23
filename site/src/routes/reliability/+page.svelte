@@ -7,7 +7,7 @@
 	import StateSelect from '$components/ui/StateSelect.svelte';
 	import { chartConfig, updateConfig, toggleState, hasActiveFilters, resetConfig } from '$stores/chartConfig';
 	import { stateFromAbbr } from '$utils/states';
-	import { CHART_COLORS } from '$utils/colors';
+	import { CHART_COLORS_CSS } from '$utils/colors';
 	import { format } from 'd3-format';
 	import { interpolateYlOrRd } from 'd3-scale-chromatic';
 	import type { DataSeries, ChartMeta } from '$types/chart';
@@ -67,7 +67,7 @@
 		selectedStates.map((abbr, i) => {
 			return {
 				name: abbr,
-				color: CHART_COLORS[(1 + i) % CHART_COLORS.length],
+				color: CHART_COLORS_CSS[(1 + i) % CHART_COLORS_CSS.length],
 				values: data.byStateTrend
 					.filter((d: any) => d.stateAbbr === abbr && d[saidiField] != null)
 					.map((d: any) => ({ date: d.year, value: d[saidiField] }))

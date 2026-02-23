@@ -8,7 +8,7 @@
 	import TimeRangeSlider from '$components/ui/TimeRangeSlider.svelte';
 	import { chartConfig, updateConfig, hasActiveFilters, resetConfig } from '$stores/chartConfig';
 	import { format } from 'd3-format';
-	import { CHART_COLORS } from '$utils/colors';
+	import { CHART_COLORS_CSS } from '$utils/colors';
 	import { formatCompact } from '$utils/formatting';
 	import { stateFromAbbr } from '$utils/states';
 	import type { DataSeries, ChartMeta } from '$types/chart';
@@ -65,7 +65,7 @@
 			}
 			return {
 				name: `${abbr} (Total)`,
-				color: CHART_COLORS[(filteredSeries.length + i) % CHART_COLORS.length],
+				color: CHART_COLORS_CSS[(filteredSeries.length + i) % CHART_COLORS_CSS.length],
 				values: [...total.entries()]
 					.map(([year, value]) => ({ date: year, value }))
 					.sort((a, b) => a.date - b.date),

@@ -32,6 +32,18 @@
 	--color-chart-7: #6B7280;
 	--color-chart-8: #D4660A;
 
+	/* Fuel / energy source colors */
+	--color-fuel-coal: #6B7280;
+	--color-fuel-gas: #C98600;
+	--color-fuel-nuclear: #7C5CC4;
+	--color-fuel-wind: #286EA8;
+	--color-fuel-solar: #E6A817;
+	--color-fuel-hydro: #18A865;
+	--color-fuel-petroleum: #D4660A;
+	--color-fuel-biomass: #1DA876;
+	--color-fuel-geothermal: #D14040;
+	--color-fuel-other: #6B7280;
+
 	/* Typography — editorial stack */
 	--font-serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
 	--font-display: 'Outfit', system-ui, -apple-system, sans-serif;
@@ -87,6 +99,16 @@
 		--color-chart-6: #40D8A0;
 		--color-chart-7: #908A82;
 		--color-chart-8: #F09060;
+		--color-fuel-coal: #908A82;
+		--color-fuel-gas: #E0A830;
+		--color-fuel-nuclear: #A88AEE;
+		--color-fuel-wind: #5AAFE0;
+		--color-fuel-solar: #F0C040;
+		--color-fuel-hydro: #34D47E;
+		--color-fuel-petroleum: #F09060;
+		--color-fuel-biomass: #40D8A0;
+		--color-fuel-geothermal: #E86060;
+		--color-fuel-other: #908A82;
 		--shadow-card: 0 1px 4px rgba(0,0,0,0.3);
 		--shadow-card-hover: 0 4px 16px rgba(0,0,0,0.4);
 		--color-tooltip-bg: rgba(23, 20, 18, 0.97);

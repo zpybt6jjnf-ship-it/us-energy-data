@@ -6,7 +6,7 @@
 	import ChartWrapper from '$components/charts/ChartWrapper.svelte';
 	import StateSelect from '$components/ui/StateSelect.svelte';
 	import TimeRangeSlider from '$components/ui/TimeRangeSlider.svelte';
-	import { ENERGY_SOURCE_COLORS, CHART_COLORS, CATEGORY_COLORS, STORAGE_COLOR, CARBON_INTENSITY_COLOR } from '$utils/colors';
+	import { ENERGY_SOURCE_COLORS, CHART_COLORS_CSS, CATEGORY_COLORS, STORAGE_COLOR, CARBON_INTENSITY_COLOR } from '$utils/colors';
 	import { stateFips, stateFromAbbr } from '$utils/states';
 	import { formatCompact } from '$utils/formatting';
 	import { chartConfig, updateConfig, toggleState, hasActiveFilters, resetConfig } from '$stores/chartConfig';
@@ -163,7 +163,7 @@
 			}
 			return {
 				name: `${abbr} (Total)`,
-				color: CHART_COLORS[(genTrendSourceSeries.length + i) % CHART_COLORS.length],
+				color: CHART_COLORS_CSS[(genTrendSourceSeries.length + i) % CHART_COLORS_CSS.length],
 				values: [...total.entries()]
 					.map(([year, value]) => ({ date: year, value }))
 					.sort((a, b) => a.date - b.date),

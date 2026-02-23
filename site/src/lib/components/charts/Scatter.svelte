@@ -3,7 +3,7 @@
 	import { extent } from 'd3-array';
 	import { format } from 'd3-format';
 	import type { Margin, TooltipData } from '$types/chart';
-	import { CHART_COLORS } from '$utils/colors';
+	import { CHART_COLORS_CSS } from '$utils/colors';
 	import Tooltip from './Tooltip.svelte';
 	import { getContext } from 'svelte';
 	import type { Readable, Writable } from 'svelte/store';
@@ -64,7 +64,7 @@
 
 	const groups = $derived([...new Set(data.map((d) => d.group ?? 'default'))]);
 	const colorScale = $derived(
-		scaleOrdinal<string>().domain(groups).range(CHART_COLORS as unknown as string[])
+		scaleOrdinal<string>().domain(groups).range(CHART_COLORS_CSS as unknown as string[])
 	);
 
 	const xTicks = $derived(xScale.ticks(6));
@@ -97,6 +97,7 @@
 	}
 </script>
 
+{#if data.length > 0}
 <svg
 	class="chart"
 	viewBox="0 0 {width} {height}"
@@ -217,3 +218,6 @@
 {/if}
 
 <Tooltip data={tooltip} {unit} />
+{:else}
+<p class="text-sm text-text-muted py-12 text-center">No data available</p>
+{/if}

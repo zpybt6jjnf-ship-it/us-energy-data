@@ -6,7 +6,7 @@
 	import StateSelect from '$components/ui/StateSelect.svelte';
 	import TimeRangeSlider from '$components/ui/TimeRangeSlider.svelte';
 	import { chartConfig, updateConfig, hasActiveFilters, resetConfig } from '$stores/chartConfig';
-	import { CHART_COLORS, FUEL_COLORS, FUEL_GEN_COLORS, TRADE_COLORS, STATE_BAR_COLOR } from '$utils/colors';
+	import { CHART_COLORS_CSS, FUEL_COLORS, FUEL_GEN_COLORS, TRADE_COLORS, STATE_BAR_COLOR } from '$utils/colors';
 	import { formatCompact } from '$utils/formatting';
 	import { stateFromAbbr } from '$utils/states';
 	import { format } from 'd3-format';
@@ -95,7 +95,7 @@
 
 				return {
 					name: `${abbr} (Indexed)`,
-					color: CHART_COLORS[(filteredFuelSeries.length + i) % CHART_COLORS.length],
+					color: CHART_COLORS_CSS[(filteredFuelSeries.length + i) % CHART_COLORS_CSS.length],
 					values: [...yearMap.entries()]
 						.map(([date, { sum, count }]) => ({ date, value: sum / count }))
 						.sort((a, b) => a.date - b.date),
@@ -106,7 +106,7 @@
 					.sort((a: any, b: any) => a.year - b.year);
 				return {
 					name: `${abbr} (${selectedFuel})`,
-					color: CHART_COLORS[(filteredFuelSeries.length + i) % CHART_COLORS.length],
+					color: CHART_COLORS_CSS[(filteredFuelSeries.length + i) % CHART_COLORS_CSS.length],
 					values: rows.map((r: any) => ({ date: r.year, value: r.production })),
 				};
 			}

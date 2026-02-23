@@ -99,6 +99,7 @@
     }
 </script>
 
+{#if data.length > 0}
 <svg
     class="chart"
     viewBox="0 0 {width} {height}"
@@ -202,3 +203,6 @@
 </div>
 
 <Tooltip data={tooltip} />
+{:else}
+<p class="text-sm text-text-muted py-12 text-center">No data available</p>
+{/if}

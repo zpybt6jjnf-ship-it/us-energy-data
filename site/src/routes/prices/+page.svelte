@@ -8,7 +8,7 @@
 	import TimeRangeSlider from '$components/ui/TimeRangeSlider.svelte';
 	import { chartConfig, updateConfig, toggleState, hasActiveFilters, resetConfig } from '$stores/chartConfig';
 	import { stateFips, stateFromAbbr } from '$utils/states';
-	import { CHART_COLORS, BILLS_COLORS } from '$utils/colors';
+	import { CHART_COLORS_CSS, BILLS_COLORS } from '$utils/colors';
 	import { interpolateYlOrRd } from 'd3-scale-chromatic';
 	import { format } from 'd3-format';
 	import type { DataSeries, ChartMeta } from '$types/chart';
@@ -65,7 +65,7 @@
 			const sectorLabel = sectorForState.charAt(0).toUpperCase() + sectorForState.slice(1);
 			return {
 				name: `${abbr} (${sectorLabel})`,
-				color: CHART_COLORS[(filteredSeries.length + i) % CHART_COLORS.length],
+				color: CHART_COLORS_CSS[(filteredSeries.length + i) % CHART_COLORS_CSS.length],
 				values: data.byState
 					.filter((d: any) => d.state === fullName && d.sector === sectorLabel)
 					.map((d: any) => ({ date: d.year, value: d.price }))

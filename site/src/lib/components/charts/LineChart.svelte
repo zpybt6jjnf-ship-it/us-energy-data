@@ -4,7 +4,7 @@
 	import { extent } from 'd3-array';
 	import { format } from 'd3-format';
 	import type { DataSeries, Margin, TooltipData } from '$types/chart';
-	import { CHART_COLORS, REFERENCE_COLOR } from '$utils/colors';
+	import { CHART_COLORS_CSS, REFERENCE_COLOR } from '$utils/colors';
 	import Tooltip from './Tooltip.svelte';
 	import { getContext } from 'svelte';
 	import type { Readable, Writable } from 'svelte/store';
@@ -85,7 +85,7 @@
 	const colorScale = $derived(
 		scaleOrdinal<string>()
 			.domain(series.map((s) => s.name))
-			.range(series.map((s, i) => s.color ?? CHART_COLORS[i % CHART_COLORS.length]))
+			.range(series.map((s, i) => s.color ?? CHART_COLORS_CSS[i % CHART_COLORS_CSS.length]))
 	);
 
 	const lineFn = $derived(
@@ -119,19 +119,22 @@
 				labels[i].y = labels[i - 1].y + minGap;
 			}
 		}
-		// X overflow protection: truncate labels that would exceed right margin
+		// X overflow protection: truncate or hide labels that would exceed right margin
 		const PX_PER_CHAR = 6.5;
 		const RIGHT_PAD = 8;
+		const MIN_VISIBLE_CHARS = 3;
 		for (const label of labels) {
 			const maxWidth = innerWidth + margin.right - label.x - RIGHT_PAD;
-			if (label.name.length * PX_PER_CHAR > maxWidth) {
-				const maxChars = Math.max(1, Math.floor(maxWidth / PX_PER_CHAR));
+			const maxChars = Math.floor(maxWidth / PX_PER_CHAR);
+			if (maxChars < MIN_VISIBLE_CHARS) {
+				label.displayName = '';
+			} else if (label.name.length > maxChars) {
 				label.displayName = label.name.slice(0, maxChars - 1) + '\u2026';
 			} else {
 				label.displayName = label.name;
 			}
 		}
-		return labels;
+		return labels.filter((l) => l.displayName !== '');
 	});
 
 	function handlePointerMove(event: PointerEvent) {
@@ -232,6 +235,7 @@
 	}
 </script>
 
+{#if series.length > 0 && series.some(s => s.values.length > 0)}
 <!-- svelte-ignore a11y_no_noninteractive_tabindex a11y_no_noninteractive_element_interactions -->
 <svg
 	bind:this={svgEl}
@@ -421,3 +425,6 @@
 </div>
 
 <Tooltip data={tooltip} {unit} />
+{:else}
+<p class="text-sm text-text-muted py-12 text-center">No data available</p>
+{/if}
