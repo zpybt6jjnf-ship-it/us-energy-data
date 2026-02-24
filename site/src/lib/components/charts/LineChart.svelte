@@ -54,8 +54,8 @@
 	// Use responsive width/height from ChartWrapper context if available
 	const chartWidthCtx = getContext<Readable<number> | undefined>('chartWidth');
 	const chartHeightCtx = getContext<Readable<number> | undefined>('chartHeight');
-	const width = $derived(chartWidthCtx ? $chartWidthCtx : propWidth);
-	const height = $derived(chartHeightCtx ? $chartHeightCtx : propHeight);
+	const width = $derived(chartWidthCtx ? ($chartWidthCtx ?? propWidth) : propWidth);
+	const height = $derived(chartHeightCtx ? ($chartHeightCtx ?? propHeight) : propHeight);
 
 	const chartVisibleCtx = getContext<Writable<boolean> | undefined>('chartVisible');
 	const chartVisible = $derived(chartVisibleCtx ? $chartVisibleCtx : true);

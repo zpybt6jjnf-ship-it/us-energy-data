@@ -43,7 +43,7 @@
 	}: Props = $props();
 
 	const chartWidthCtx = getContext<Readable<number> | undefined>('chartWidth');
-	const width = $derived(chartWidthCtx ? $chartWidthCtx : propWidth);
+	const width = $derived(chartWidthCtx ? ($chartWidthCtx ?? propWidth) : propWidth);
 	const height = $derived(Math.round(width * 0.625));
 
 	const chartVisibleCtx = getContext<Writable<boolean> | undefined>('chartVisible');
