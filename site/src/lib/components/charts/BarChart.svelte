@@ -19,8 +19,6 @@
 		height?: number;
 		margin?: Margin;
 		horizontal?: boolean;
-		xLabel?: string;
-		yLabel?: string;
 		yFormat?: (v: number) => string;
 		unit?: string;
 	}
@@ -31,8 +29,6 @@
 		height: propHeight = 400,
 		margin = { top: 16, right: 16, bottom: 48, left: 52 },
 		horizontal = false,
-		xLabel = '',
-		yLabel = '',
 		yFormat = format(',.0f'),
 		unit = '',
 	}: Props = $props();
@@ -154,7 +150,7 @@
 	class="chart"
 	viewBox="0 0 {width} {height}"
 	style="max-width: {width}px; width: 100%; height: auto; outline-offset: 2px;"
-	role="img"
+	role="figure"
 	aria-label={chartTitle || `Bar chart showing ${data.map(d => d.label).join(', ')}`}
 	tabindex="0"
 	onkeydown={handleKeydown}

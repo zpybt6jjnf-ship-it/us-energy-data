@@ -13,9 +13,31 @@ const DEFAULTS: ChartConfig = {
 	endYear: 2024,
 };
 
+/** Maps URL search-param keys to their corresponding config property names */
+const URL_KEY_TO_CONFIG: Record<string, keyof ChartConfig> = {
+	state: 'states',
+	start: 'startYear',
+	end: 'endYear',
+};
+
+/** Parse a year param, falling back to a default, then clamping to 1950–2100 */
+function parseYear(raw: string | null, fallback: number): number {
+	const parsed = raw != null ? parseInt(raw, 10) : NaN;
+	const year = Number.isNaN(parsed) ? fallback : parsed;
+	return Math.max(1950, Math.min(2100, year));
+}
+
 /** Derived store that reads chart config from URL search params */
 export const chartConfig = derived(page, ($page) => {
 	const params = $page.url.searchParams;
+
+	let startYear = parseYear(params.get('start'), DEFAULTS.startYear);
+	let endYear = parseYear(params.get('end'), DEFAULTS.endYear);
+
+	// Ensure startYear ≤ endYear; swap if inverted
+	if (startYear > endYear) {
+		[startYear, endYear] = [endYear, startYear];
+	}
 
 	return {
 		states: params.get('state')?.split(',').filter(Boolean) ?? DEFAULTS.states,
@@ -23,8 +45,8 @@ export const chartConfig = derived(page, ($page) => {
 		metric: params.get('metric') ?? DEFAULTS.metric,
 		med: params.get('med') ?? DEFAULTS.med,
 		fuel: params.get('fuel') ?? DEFAULTS.fuel,
-		startYear: Number(params.get('start')) || DEFAULTS.startYear,
-		endYear: Number(params.get('end')) || DEFAULTS.endYear,
+		startYear,
+		endYear,
 	} satisfies ChartConfig;
 });
 
@@ -39,7 +61,8 @@ export function updateConfig(key: string, value: string | string[] | number): vo
 			url.searchParams.set(key, value.join(','));
 		}
 	} else {
-		const defaultVal = DEFAULTS[key as keyof ChartConfig];
+		const configKey = URL_KEY_TO_CONFIG[key] ?? (key as keyof ChartConfig);
+		const defaultVal = DEFAULTS[configKey];
 		if (String(value) === String(defaultVal)) {
 			url.searchParams.delete(key);
 		} else {

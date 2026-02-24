@@ -83,12 +83,19 @@
 	const allDates = $derived(allSeries.flatMap((s) => s.values.map((v) => v.date)));
 	const allValues = $derived(allSeries.flatMap((s) => s.values.map((v) => v.value)));
 
-	const xDomain = $derived(extent(allDates) as [number, number]);
-	const yDomain = $derived(
-		includeZero
-			? [Math.min(0, ...allValues), Math.max(...allValues) * 1.05] as [number, number]
-			: [Math.min(...allValues) * 0.95, Math.max(...allValues) * 1.05] as [number, number]
-	);
+	const xDomain = $derived.by((): [number, number] => {
+		if (allDates.length === 0) return [0, 1];
+		const [min, max] = extent(allDates);
+		return min != null && max != null ? [min, max] : [0, 1];
+	});
+	const yDomain = $derived.by((): [number, number] => {
+		if (allValues.length === 0) return [0, 1];
+		const lo = Math.min(...allValues);
+		const hi = Math.max(...allValues);
+		return includeZero
+			? [Math.min(0, lo), hi * 1.05]
+			: [lo * 0.95, hi * 1.05];
+	});
 
 	const xScale = $derived(scaleLinear().domain(xDomain).range([0, innerWidth]));
 	const yScale = $derived(
@@ -143,11 +150,26 @@
 		// Sort by y position for nudging
 		labels.sort((a, b) => a.y - b.y);
 		const minGap = 14;
+		// Downward pass: push overlapping labels down
 		for (let i = 1; i < labels.length; i++) {
 			const diff = labels[i].y - labels[i - 1].y;
 			if (diff < minGap) {
 				labels[i].y = labels[i - 1].y + minGap;
 			}
+		}
+		// Upward pass: if last label overflows, push it and predecessors back up
+		if (labels.length > 0 && labels[labels.length - 1].y > innerHeight) {
+			labels[labels.length - 1].y = innerHeight;
+			for (let i = labels.length - 2; i >= 0; i--) {
+				const diff = labels[i + 1].y - labels[i].y;
+				if (diff < minGap) {
+					labels[i].y = labels[i + 1].y - minGap;
+				}
+			}
+		}
+		// Clamp all label positions to [0, innerHeight]
+		for (const label of labels) {
+			label.y = Math.max(0, Math.min(innerHeight, label.y));
 		}
 		// X overflow protection: truncate or hide labels that would exceed right margin
 		const PX_PER_CHAR = 6.5;
@@ -167,6 +189,14 @@
 		return labels.filter((l) => l.displayName !== '');
 	});
 
+	// Pre-compute date→value lookup map per series for O(1) hover access
+	const seriesDateMap = $derived(
+		new Map(series.map((s) => [
+			s.name,
+			new Map(s.values.map((v) => [v.date, v.value]))
+		]))
+	);
+
 	function handlePointerMove(event: PointerEvent) {
 		const svgEl = (event.currentTarget as SVGElement).closest('svg');
 		if (!svgEl) return;
@@ -176,13 +206,13 @@
 
 		const items = series
 			.map((s) => {
-				const point = s.values.find((v) => v.date === date);
-				if (!point) return null;
+				const val = seriesDateMap.get(s.name)?.get(date);
+				if (val == null) return null;
 				return {
 					label: s.name,
-					value: yFormat(point.value),
+					value: yFormat(val),
 					color: colorScale(s.name),
-					_numericValue: point.value,
+					_numericValue: val,
 				};
 			})
 			.filter((item): item is NonNullable<typeof item> => item !== null)
@@ -212,13 +242,13 @@
 	function updateTooltipForDate(date: number) {
 		const items = series
 			.map((s) => {
-				const point = s.values.find((v) => v.date === date);
-				if (!point) return null;
+				const val = seriesDateMap.get(s.name)?.get(date);
+				if (val == null) return null;
 				return {
 					label: s.name,
-					value: yFormat(point.value),
+					value: yFormat(val),
 					color: colorScale(s.name),
-					_numericValue: point.value,
+					_numericValue: val,
 				};
 			})
 			.filter((item): item is NonNullable<typeof item> => item !== null)
@@ -272,7 +302,7 @@
 	class="chart"
 	viewBox="0 0 {width} {height}"
 	style="max-width: {width}px; width: 100%; height: auto; outline-offset: 2px;"
-	role="img"
+	role="figure"
 	aria-label={chartTitle || `Line chart showing ${series.map(s => s.name).join(', ')} over time`}
 	tabindex="0"
 	onkeydown={handleKeydown}
@@ -280,7 +310,7 @@
 >
 	<defs>
 		<filter id={filterId} x="-2%" y="-2%" width="104%" height="104%">
-			<feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-opacity="0.08" flood-color="#000"/>
+			<feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-opacity="0.08" flood-color="currentColor"/>
 		</filter>
 	</defs>
 	<g transform="translate({margin.left}, {margin.top})">
@@ -437,11 +467,11 @@
 				pointer-events="none"
 			/>
 			{#each series as s}
-				{@const point = s.values.find((v) => v.date === tooltipDate)}
-				{#if point}
+				{@const val = seriesDateMap.get(s.name)?.get(tooltipDate)}
+				{#if val != null}
 					<circle
-						cx={xScale(point.date)}
-						cy={yScale(point.value)}
+						cx={xScale(tooltipDate)}
+						cy={yScale(val)}
 						r={4}
 						fill={colorScale(s.name)}
 						stroke="var(--color-surface)"

@@ -267,7 +267,7 @@
 	</div>
 
 	<section class="chart-breakout mt-6">
-		<ChartWrapper meta={lineMeta} hero data={timeFilteredSeries.flatMap((s) => s.values.map((v) => ({ series: s.name, year: v.date, price: v.value })))}>
+		<ChartWrapper meta={lineMeta} data={timeFilteredSeries.flatMap((s) => s.values.map((v) => ({ series: s.name, year: v.date, price: v.value })))}>
 			{#snippet controls()}
 				<Dropdown
 					options={sectorOptions}
@@ -342,7 +342,6 @@
 				<BarChart
 					data={mapBarData}
 					horizontal
-					yLabel="cents/kWh"
 					yFormat={format(',.1f')}
 					unit="cents/kWh"
 					margin={{ top: 20, right: 20, bottom: 60, left: 120 }}

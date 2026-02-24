@@ -36,6 +36,18 @@
 		}
 	}
 
+	function handleSortKeydown(event: KeyboardEvent, key: string) {
+		if (event.key === 'Enter' || event.key === ' ') {
+			event.preventDefault();
+			handleSort(key);
+		}
+	}
+
+	function ariaSortValue(key: string): 'ascending' | 'descending' | 'none' {
+		if (sortKey !== key) return 'none';
+		return sortDir === 'asc' ? 'ascending' : 'descending';
+	}
+
 	const sortedData = $derived((() => {
 		if (!sortKey) return data;
 		return [...data].sort((a, b) => {
@@ -66,7 +78,11 @@
 				{#each columns as col}
 					<th
 						class="px-3 py-2 text-left font-semibold text-text-secondary border-b border-border cursor-pointer hover:text-accent select-none whitespace-nowrap"
+						role="columnheader"
+						tabindex="0"
+						aria-sort={ariaSortValue(col.key)}
 						onclick={() => handleSort(col.key)}
+						onkeydown={(e) => handleSortKeydown(e, col.key)}
 					>
 						{col.label}
 						{#if sortKey === col.key}

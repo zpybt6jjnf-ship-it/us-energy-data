@@ -18,7 +18,6 @@
         width?: number;
         height?: number;
         margin?: Margin;
-        yLabel?: string;
         yFormat?: (v: number) => string;
         unit?: string;
         positiveColor?: string;
@@ -32,7 +31,6 @@
         width: propWidth = 800,
         height: propHeight = 400,
         margin = { top: 16, right: 20, bottom: 40, left: 60 },
-        yLabel = '',
         yFormat = format('+,.0f'),
         unit = '',
         positiveColor = SEMANTIC_COLORS.positive,
@@ -54,6 +52,7 @@
 
     let tooltip: TooltipData | null = $state(null);
     let hoveredIndex: number | null = $state(null);
+    let svgEl: SVGSVGElement | undefined = $state();
 
     const innerWidth = $derived(width - margin.left - margin.right);
     const innerHeight = $derived(height - margin.top - margin.bottom);
@@ -107,15 +106,60 @@
         hoveredIndex = null;
         tooltip = null;
     }
+
+    function updateTooltipForIndex(index: number) {
+        const d = data[index];
+        if (!d || !svgEl) return;
+        const rect = svgEl.getBoundingClientRect();
+        const bandPos = xScale(d.label) ?? 0;
+        const bandWidth = xScale.bandwidth();
+        const barColor = d.value >= 0 ? (d.color ?? positiveColor) : (d.color ?? negativeColor);
+        hoveredIndex = index;
+        tooltip = {
+            x: rect.left + margin.left + bandPos + bandWidth / 2,
+            y: rect.top + margin.top + yScale(d.value),
+            header: d.label,
+            subtitle: unit || undefined,
+            items: [{ label: yFormat(d.value), value: unit || '', color: barColor }],
+        };
+    }
+
+    function handleKeydown(event: KeyboardEvent) {
+        if (data.length === 0) return;
+
+        if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+            event.preventDefault();
+            const next = hoveredIndex === null ? 0 : Math.min(hoveredIndex + 1, data.length - 1);
+            updateTooltipForIndex(next);
+        } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+            event.preventDefault();
+            const prev = hoveredIndex === null ? data.length - 1 : Math.max(hoveredIndex - 1, 0);
+            updateTooltipForIndex(prev);
+        } else if (event.key === 'Escape') {
+            hoveredIndex = null;
+            tooltip = null;
+            svgEl?.blur();
+        }
+    }
+
+    function handleFocusOut() {
+        hoveredIndex = null;
+        tooltip = null;
+    }
 </script>
 
 {#if data.length > 0}
+<!-- svelte-ignore a11y_no_noninteractive_tabindex a11y_no_noninteractive_element_interactions -->
 <svg
+    bind:this={svgEl}
     class="chart"
     viewBox="0 0 {width} {height}"
-    style="max-width: {width}px; width: 100%; height: auto;"
-    role="img"
+    style="max-width: {width}px; width: 100%; height: auto; outline-offset: 2px;"
+    role="figure"
     aria-label={chartTitle || `Diverging bar chart showing ${data.length} values`}
+    tabindex="0"
+    onkeydown={handleKeydown}
+    onfocusout={handleFocusOut}
 >
     <g transform="translate({margin.left}, {margin.top})">
         <!-- Grid lines -->

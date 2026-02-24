@@ -17,6 +17,24 @@
 	let open = $state(false);
 	let query = $state('');
 	let inputEl: HTMLInputElement | undefined = $state();
+	let highlightedIndex = $state(-1);
+
+	// Reset highlight when filtered list changes or dropdown closes
+	$effect(() => {
+		filtered; // track dependency
+		highlightedIndex = -1;
+	});
+	$effect(() => {
+		if (!open) highlightedIndex = -1;
+	});
+
+	// Scroll highlighted item into view
+	$effect(() => {
+		if (highlightedIndex >= 0 && open) {
+			const el = document.getElementById(`state-option-${highlightedIndex}`);
+			el?.scrollIntoView({ block: 'nearest' });
+		}
+	});
 
 	// All state abbreviations sorted alphabetically
 	const allStates = Object.values(FIPS_TO_ABBR).sort();
@@ -91,6 +109,23 @@
 		if (event.key === 'Escape') {
 			open = false;
 			query = '';
+		} else if (event.key === 'ArrowDown') {
+			event.preventDefault();
+			if (!open) { open = true; return; }
+			highlightedIndex = filtered.length > 0
+				? (highlightedIndex + 1) % filtered.length
+				: -1;
+		} else if (event.key === 'ArrowUp') {
+			event.preventDefault();
+			if (!open) { open = true; return; }
+			highlightedIndex = filtered.length > 0
+				? (highlightedIndex - 1 + filtered.length) % filtered.length
+				: -1;
+		} else if (event.key === 'Enter') {
+			event.preventDefault();
+			if (open && highlightedIndex >= 0 && highlightedIndex < filtered.length) {
+				toggle(filtered[highlightedIndex]);
+			}
 		} else if (event.key === 'Backspace' && query === '' && selected.length > 0) {
 			onchange(selected.slice(0, -1));
 		}
@@ -153,6 +188,7 @@
 			onkeydown={handleKeydown}
 			autocomplete="off"
 			spellcheck="false"
+			aria-activedescendant={open && highlightedIndex >= 0 ? `state-option-${highlightedIndex}` : undefined}
 		/>
 
 		{#if selected.length > 0}
@@ -232,11 +268,15 @@
 			{#if filtered.length === 0}
 				<div class="px-3 py-2 text-sm text-text-muted">No states found</div>
 			{:else}
-				{#each filtered as abbr}
+				{#each filtered as abbr, i}
 					<button
 						type="button"
-						class="flex w-full items-center gap-2 px-3 py-1.5 text-sm text-text hover:bg-surface-alt transition-colors cursor-pointer text-left"
+						id="state-option-{i}"
+						role="option"
+						aria-selected={selected.includes(abbr)}
+						class="flex w-full items-center gap-2 px-3 py-1.5 text-sm text-text hover:bg-surface-alt transition-colors cursor-pointer text-left {highlightedIndex === i ? 'bg-surface-alt ring-1 ring-inset ring-accent/30' : ''}"
 						onmousedown={(e) => { e.preventDefault(); toggle(abbr); }}
+						onmouseenter={() => { highlightedIndex = i; }}
 					>
 						<span class="inline-flex h-4 w-4 items-center justify-center rounded border {selected.includes(abbr) ? 'border-accent bg-accent' : 'border-border'}">
 							{#if selected.includes(abbr)}

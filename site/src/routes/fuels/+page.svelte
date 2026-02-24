@@ -128,16 +128,18 @@
 			: selectedFuel === 'Coal' ? 'short tons' : selectedFuel === 'Natural Gas' ? 'million cu ft' : 'thousand barrels'
 	);
 
-	const lineMeta: ChartMeta = {
+	const lineMeta: ChartMeta = $derived({
 		title: 'US Fossil Fuel Production Over Time',
 		subtitle: 'National annual totals',
 		source: 'US Energy Information Administration',
 		sourceUrl: 'https://www.eia.gov/',
-		unit: 'varies by fuel',
+		unit: selectedFuel === 'all'
+			? 'Index (base year = 100)'
+			: selectedFuel === 'Coal' ? 'short tons' : selectedFuel === 'Natural Gas' ? 'million cu ft' : 'thousand barrels',
 		lastUpdated: data.lastUpdated,
 		description: 'US fossil fuel production has evolved significantly. The shale revolution (post-2008) drove natural gas and crude oil to record levels, while coal production has declined steadily as power plants switch to cheaper gas and renewables.',
 		caveats: 'Units differ by fuel type: coal (short tons), natural gas (million cubic feet), crude oil (thousand barrels). When "All Fuels" is selected, values are indexed to the first available year (= 100) to enable fair cross-fuel comparison despite different units.',
-	};
+	});
 
 	const latestYear = $derived(Math.max(...data.national.map((d: any) => d.year)));
 
@@ -367,7 +369,6 @@
 					<BarChart
 						data={stateRanking}
 						horizontal
-						yLabel={barUnit}
 						yFormat={formatCompact}
 						unit={barUnit}
 						margin={{ top: 20, right: 20, bottom: 60, left: 120 }}

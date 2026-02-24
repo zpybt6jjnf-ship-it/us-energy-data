@@ -10,13 +10,12 @@
 	interface Props {
 		meta: ChartMeta;
 		data?: Record<string, unknown>[];
-		hero?: boolean;
 		children: Snippet;
 		controls?: Snippet;
 		allowLogScale?: boolean;
 	}
 
-	let { meta, data = [], hero = false, children, controls, allowLogScale = false }: Props = $props();
+	let { meta, data = [], children, controls, allowLogScale = false }: Props = $props();
 	let containerEl: HTMLDivElement | undefined = $state();
 	let width = $state(800);
 	let visible = $state(false);
@@ -160,7 +159,7 @@
 	{/if}
 
 	{#if !visible}
-		<div class="skeleton" style="width: 100%; height: 300px;"></div>
+		<div class="skeleton" style="width: 100%; height: {$chartHeight}px;"></div>
 	{:else if showTable && data.length > 0}
 		<DataTable {data} unit={meta.unit} />
 	{:else}
@@ -189,13 +188,13 @@
 			<span class="text-text-muted/30 text-[11px]">·</span>
 		{/if}
 
-		<button onclick={handleDownloadCSV} aria-label="Download data as CSV" class="text-[11px] text-text-muted hover:text-accent transition-colors cursor-pointer bg-transparent border-none p-0">
+		<button onclick={handleDownloadCSV} aria-label="Download data as CSV" class="text-[11px] text-text-muted transition-colors bg-transparent border-none p-0 {data.length > 0 ? 'hover:text-accent cursor-pointer' : 'opacity-40 cursor-not-allowed'}" disabled={data.length === 0}>
 			CSV
 		</button>
 
 		<span class="text-text-muted/30 text-[11px]">·</span>
 
-		<button onclick={handleDownloadPNG} aria-label="Download chart as PNG" class="text-[11px] text-text-muted hover:text-accent transition-colors cursor-pointer bg-transparent border-none p-0">
+		<button onclick={handleDownloadPNG} aria-label="Download chart as PNG" class="text-[11px] text-text-muted transition-colors bg-transparent border-none p-0 {data.length > 0 ? 'hover:text-accent cursor-pointer' : 'opacity-40 cursor-not-allowed'}" disabled={data.length === 0}>
 			PNG
 		</button>
 

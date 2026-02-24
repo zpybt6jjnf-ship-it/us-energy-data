@@ -4,6 +4,7 @@
 	import { interpolateRgb } from 'd3-interpolate';
 	import { format } from 'd3-format';
 	import type { Margin, TooltipData } from '$types/chart';
+	import type { FeatureCollection, Geometry, GeoJsonProperties } from 'geojson';
 	import Tooltip from './Tooltip.svelte';
 	import { MAP_DEFAULT_RANGE, MAP_LABEL_COLORS } from '$utils/colors';
 	import { FIPS_TO_ABBR } from '$lib/utils/states';
@@ -18,7 +19,7 @@
 
 	interface Props {
 		data: MapData[];
-		topology: any;
+		topology: FeatureCollection<Geometry, GeoJsonProperties & { STATEFP?: string }>;
 		width?: number;
 		height?: number;
 		colorInterpolator?: (t: number) => string;
@@ -57,9 +58,16 @@
 	/** Reserve space above the map for the legend */
 	const legendAreaHeight = 50;
 
-	const projection = $derived(
-		geoAlbersUsa().fitSize([width, height - legendAreaHeight], topology)
-	);
+	/** Memoize projection — only recompute when dimensions change */
+	let prevDims = $state({ w: 0, h: 0 });
+	let cachedProjection = $state(geoAlbersUsa());
+	const projection = $derived.by(() => {
+		const h = height - legendAreaHeight;
+		if (prevDims.w === width && prevDims.h === h) return cachedProjection;
+		prevDims = { w: width, h };
+		cachedProjection = geoAlbersUsa().fitSize([width, h], topology);
+		return cachedProjection;
+	});
 
 	const pathGenerator = $derived(geoPath(projection));
 
@@ -85,6 +93,37 @@
 
 	/** FIPS codes of very small states — skip labels to avoid clutter */
 	const smallStateFips = new Set(['11', '44', '09', '34', '10', '24', '25', '33', '50']);
+
+	/** Minimum vertical spacing (px) between labels to avoid overlap */
+	const labelMinSpacing = 13;
+
+	/**
+	 * Collision-free label set: compute centroids, sort by y, then greedily
+	 * skip labels whose vertical position is too close to the previous visible one.
+	 */
+	const visibleLabelFips = $derived.by(() => {
+		const candidates: { fips: string; x: number; y: number }[] = [];
+		for (const feature of topology.features) {
+			const fips = (feature.id ?? feature.properties?.STATEFP) as string;
+			const abbr = FIPS_TO_ABBR[fips];
+			if (!abbr || smallStateFips.has(fips)) continue;
+			const centroid = pathGenerator.centroid(feature);
+			if (!centroid || isNaN(centroid[0]) || isNaN(centroid[1])) continue;
+			candidates.push({ fips, x: centroid[0], y: centroid[1] });
+		}
+		// Sort by y position (top to bottom)
+		candidates.sort((a, b) => a.y - b.y);
+
+		const visible = new Set<string>();
+		let lastY = -Infinity;
+		for (const c of candidates) {
+			if (c.y - lastY >= labelMinSpacing) {
+				visible.add(c.fips);
+				lastY = c.y;
+			}
+		}
+		return visible;
+	});
 
 	/**
 	 * Determine label fill color based on the normalized position in the domain.
@@ -194,7 +233,7 @@
 	<g transform="translate(0, {legendAreaHeight})" opacity={chartVisible ? 1 : 0} style="transition: opacity 0.6s ease;">
 		{#each topology.features as feature}
 			{@const d = pathGenerator(feature)}
-			{@const fips = feature.id ?? feature.properties?.STATEFP}
+			{@const fips = String(feature.id ?? feature.properties?.STATEFP ?? '')}
 			{@const val = valueMap.get(fips)}
 			{@const isHovered = hoveredFips === fips}
 			{#if d}
@@ -224,12 +263,12 @@
 			{/if}
 		{/each}
 
-		<!-- State abbreviation labels -->
+		<!-- State abbreviation labels (collision-filtered) -->
 		{#each topology.features as feature}
-			{@const fips = feature.id ?? feature.properties?.STATEFP}
+			{@const fips = String(feature.id ?? feature.properties?.STATEFP ?? '')}
 			{@const abbr = FIPS_TO_ABBR[fips]}
 			{@const centroid = pathGenerator.centroid(feature)}
-			{#if abbr && centroid && !isNaN(centroid[0]) && !isNaN(centroid[1]) && !smallStateFips.has(fips)}
+			{#if abbr && centroid && !isNaN(centroid[0]) && !isNaN(centroid[1]) && visibleLabelFips.has(fips)}
 				<text
 					x={centroid[0]}
 					y={centroid[1]}

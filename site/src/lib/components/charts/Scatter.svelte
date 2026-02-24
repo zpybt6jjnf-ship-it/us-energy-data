@@ -60,12 +60,19 @@
 
 	let tooltip: TooltipData | null = $state(null);
 	let hoveredIndex: number | null = $state(null);
+	let svgEl: SVGSVGElement | undefined = $state();
 
 	const innerWidth = $derived(width - margin.left - margin.right);
 	const innerHeight = $derived(height - margin.top - margin.bottom);
 
-	const xDomain = $derived(extent(data, (d) => d.x) as [number, number]);
-	const yDomain = $derived(extent(data, (d) => d.y) as [number, number]);
+	const xDomain = $derived.by((): [number, number] => {
+		const [min, max] = extent(data, (d) => d.x);
+		return min != null && max != null ? [min, max] : [0, 1];
+	});
+	const yDomain = $derived.by((): [number, number] => {
+		const [min, max] = extent(data, (d) => d.y);
+		return min != null && max != null ? [min, max] : [0, 1];
+	});
 
 	const xScale = $derived(
 		useLogScale
@@ -80,7 +87,7 @@
 
 	const groups = $derived([...new Set(data.map((d) => d.group ?? 'default'))]);
 	const colorScale = $derived(
-		scaleOrdinal<string>().domain(groups).range(CHART_COLORS_CSS as unknown as string[])
+		scaleOrdinal<string>().domain(groups).range([...CHART_COLORS_CSS])
 	);
 
 	const xTicks = $derived(xScale.ticks(Math.min(6, Math.floor(innerWidth / 80))));
@@ -111,15 +118,67 @@
 		hoveredIndex = null;
 		tooltip = null;
 	}
+
+	function updateTooltipForIndex(index: number) {
+		const d = data[index];
+		if (!d || !svgEl) return;
+		const rect = svgEl.getBoundingClientRect();
+		hoveredIndex = index;
+		tooltip = {
+			x: rect.left + margin.left + xScale(d.x),
+			y: rect.top + margin.top + yScale(d.y),
+			header: d.label,
+			items: [
+				{
+					label: xLabel || 'X',
+					value: xFormat(d.x),
+					color: colorScale(d.group ?? 'default'),
+				},
+				{
+					label: yLabel || 'Y',
+					value: yFormat(d.y),
+					color: colorScale(d.group ?? 'default'),
+				},
+			],
+		};
+	}
+
+	function handleKeydown(event: KeyboardEvent) {
+		if (data.length === 0) return;
+
+		if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+			event.preventDefault();
+			const next = hoveredIndex === null ? 0 : Math.min(hoveredIndex + 1, data.length - 1);
+			updateTooltipForIndex(next);
+		} else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+			event.preventDefault();
+			const prev = hoveredIndex === null ? data.length - 1 : Math.max(hoveredIndex - 1, 0);
+			updateTooltipForIndex(prev);
+		} else if (event.key === 'Escape') {
+			hoveredIndex = null;
+			tooltip = null;
+			svgEl?.blur();
+		}
+	}
+
+	function handleFocusOut() {
+		hoveredIndex = null;
+		tooltip = null;
+	}
 </script>
 
 {#if data.length > 0}
+<!-- svelte-ignore a11y_no_noninteractive_tabindex a11y_no_noninteractive_element_interactions -->
 <svg
+	bind:this={svgEl}
 	class="chart"
 	viewBox="0 0 {width} {height}"
-	style="max-width: {width}px; width: 100%; height: auto;"
-	role="img"
+	style="max-width: {width}px; width: 100%; height: auto; outline-offset: 2px;"
+	role="figure"
 	aria-label={chartTitle || `Scatter plot of ${xLabel} vs ${yLabel} with ${data.length} data points`}
+	tabindex="0"
+	onkeydown={handleKeydown}
+	onfocusout={handleFocusOut}
 >
 	<g transform="translate({margin.left}, {margin.top})">
 		<!-- Grid -->
@@ -158,7 +217,7 @@
 			{@const rawX = xScale(hd.x)}
 			{@const rawY = yScale(hd.y) - 14}
 			{@const clampedX = Math.max(boxWidth / 2, Math.min(innerWidth - boxWidth / 2, rawX))}
-			{@const clampedY = Math.max(10, rawY)}
+			{@const clampedY = Math.max(10, Math.min(innerHeight - 10, rawY))}
 			<rect
 				x={clampedX - boxWidth / 2}
 				y={clampedY - 10}

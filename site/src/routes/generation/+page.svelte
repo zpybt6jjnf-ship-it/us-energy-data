@@ -375,7 +375,7 @@
 	})());
 
 	const capChangeMeta: ChartMeta = {
-		title: 'Net Capacity Additions by Source',
+		title: 'Annual Net Capacity Changes',
 		subtitle: 'Year-over-year change in installed capacity, MW',
 		source: 'US Energy Information Administration',
 		sourceUrl: 'https://www.eia.gov/electricity/state/',
@@ -443,11 +443,10 @@
 
 	<div class="chart-breakout">
 		<section>
-			<ChartWrapper meta={barMeta} hero data={sourceBreakdown.map((d: any) => ({ source: d.label, generation: d.value }))}>
+			<ChartWrapper meta={barMeta} data={sourceBreakdown.map((d: any) => ({ source: d.label, generation: d.value }))}>
 				<BarChart
 					data={sourceBreakdown}
 					horizontal
-					yLabel="thousand MWh"
 					yFormat={formatCompact}
 					unit="thousand MWh"
 					margin={{ top: 20, right: 20, bottom: 60, left: 110 }}
@@ -558,7 +557,6 @@
 					<BarChart
 						data={mapBarData}
 						horizontal
-						yLabel="%"
 						yFormat={format(',.1f')}
 						unit="%"
 						margin={{ top: 20, right: 20, bottom: 60, left: 120 }}
@@ -589,7 +587,6 @@
 					<BarChart
 						data={capacityBreakdown}
 						horizontal
-						yLabel="MW"
 						yFormat={formatCompact}
 						unit="MW"
 						margin={{ top: 20, right: 20, bottom: 60, left: 110 }}
@@ -624,7 +621,6 @@
 				<ChartWrapper meta={capChangeMeta} data={capChangeAggregate.map((d) => ({ year: d.label, net_change_mw: d.value }))}>
 					<DivergingBarChart
 						data={capChangeAggregate}
-						yLabel="MW"
 						yFormat={formatCompact}
 						unit="MW"
 					/>

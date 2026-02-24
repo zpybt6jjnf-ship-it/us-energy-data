@@ -13,23 +13,39 @@
 	let visible = $state(false);
 
 	const TOOLTIP_WIDTH_ESTIMATE = 180;
+	const TOOLTIP_HEIGHT_ESTIMATE = 80;
 	const OFFSET = 12;
+
+	// Cached dimensions updated by ResizeObserver — avoids synchronous layout reads
+	let cachedWidth = $state(TOOLTIP_WIDTH_ESTIMATE);
+	let cachedHeight = $state(TOOLTIP_HEIGHT_ESTIMATE);
+
+	$effect(() => {
+		if (!tooltipEl) return;
+		const ro = new ResizeObserver((entries) => {
+			const entry = entries[0];
+			if (entry) {
+				cachedWidth = entry.contentRect.width;
+				cachedHeight = entry.contentRect.height;
+			}
+		});
+		ro.observe(tooltipEl);
+		return () => ro.disconnect();
+	});
 
 	let tooltipLeft = $derived.by(() => {
 		if (!data) return 0;
-		const width = tooltipEl?.offsetWidth ?? TOOLTIP_WIDTH_ESTIMATE;
-		if (data.x + width + OFFSET > (typeof window !== 'undefined' ? window.innerWidth : 9999)) {
-			return data.x - width - OFFSET;
+		if (data.x + cachedWidth + OFFSET > (typeof window !== 'undefined' ? window.innerWidth : 9999)) {
+			return data.x - cachedWidth - OFFSET;
 		}
 		return data.x + OFFSET;
 	});
 
 	let tooltipTop = $derived.by(() => {
 		if (!data) return 0;
-		const h = tooltipEl?.offsetHeight ?? 80;
 		const viewH = typeof window !== 'undefined' ? window.innerHeight : 9999;
-		if (data.y + h > viewH) {
-			return data.y - h - OFFSET;
+		if (data.y + cachedHeight > viewH) {
+			return data.y - cachedHeight - OFFSET;
 		}
 		return Math.max(4, data.y - 8);
 	});
@@ -51,6 +67,7 @@
 		class="pointer-events-none fixed z-50 rounded-lg px-2.5 py-1.5 shadow-md"
 		style="left: {tooltipLeft}px; top: {tooltipTop}px; opacity: {visible ? 1 : 0}; transform: translateY({visible ? 0 : 4}px); transition: opacity 0.15s ease, transform 0.15s ease; font-size: 11px; background: var(--color-tooltip-bg); border: 1px solid var(--color-border); backdrop-filter: blur(8px);"
 		role="tooltip"
+		aria-live="polite"
 	>
 		{#if data.header}
 			<div class="mb-1 text-xs font-bold text-text" style="font-family: var(--font-mono)">{data.header}</div>

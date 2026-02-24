@@ -107,24 +107,32 @@ export async function downloadPNG(
 	const svgBlob = new Blob([svgString], { type: 'image/svg+xml;charset=utf-8' });
 	const url = URL.createObjectURL(svgBlob);
 
-	const img = new Image();
-	img.onload = () => {
-		const canvas = document.createElement('canvas');
-		const scale = 2; // Retina
-		canvas.width = img.width * scale;
-		canvas.height = img.height * scale;
-		const ctx = canvas.getContext('2d')!;
-		ctx.scale(scale, scale);
-		ctx.fillStyle = computedStyle.getPropertyValue('--color-surface').trim() || EXPORT_FALLBACKS.surface;
-		ctx.fillRect(0, 0, img.width, img.height);
-		ctx.drawImage(img, 0, 0);
-		URL.revokeObjectURL(url);
+	return new Promise<void>((resolve, reject) => {
+		const img = new Image();
+		img.onload = () => {
+			const canvas = document.createElement('canvas');
+			const scale = 2; // Retina
+			canvas.width = img.width * scale;
+			canvas.height = img.height * scale;
+			const ctx = canvas.getContext('2d')!;
+			ctx.scale(scale, scale);
+			ctx.fillStyle = computedStyle.getPropertyValue('--color-surface').trim() || EXPORT_FALLBACKS.surface;
+			ctx.fillRect(0, 0, img.width, img.height);
+			ctx.drawImage(img, 0, 0);
+			URL.revokeObjectURL(url);
 
-		canvas.toBlob((blob) => {
-			if (blob) triggerDownload(blob, `${filename}.png`);
-		}, 'image/png');
-	};
-	img.src = url;
+			canvas.toBlob((blob) => {
+				if (blob) triggerDownload(blob, `${filename}.png`);
+				resolve();
+			}, 'image/png');
+		};
+		img.onerror = () => {
+			URL.revokeObjectURL(url);
+			console.error(`downloadPNG: failed to load SVG image for "${filename}"`);
+			reject(new Error(`Failed to load SVG image for "${filename}"`));
+		};
+		img.src = url;
+	});
 }
 
 function triggerDownload(blob: Blob, filename: string): void {

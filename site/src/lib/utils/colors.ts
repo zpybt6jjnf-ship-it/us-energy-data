@@ -26,7 +26,7 @@ export const ENERGY_SOURCE_COLORS: Record<string, string> = {
 	'natural gas': 'var(--color-fuel-gas, #C98600)',
 	nuclear: 'var(--color-fuel-nuclear, #7C5CC4)',
 	wind: 'var(--color-fuel-wind, #286EA8)',
-	solar: 'var(--color-fuel-solar, #E6A817)',
+	solar: 'var(--color-fuel-solar, #C99200)',
 	hydro: 'var(--color-fuel-hydro, #18A865)',
 	petroleum: 'var(--color-fuel-petroleum, #D4660A)',
 	biomass: 'var(--color-fuel-biomass, #1DA876)',

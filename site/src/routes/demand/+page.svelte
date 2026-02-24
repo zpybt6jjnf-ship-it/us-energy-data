@@ -228,7 +228,7 @@
 	</div>
 
 	<div class="chart-breakout mt-4">
-		<ChartWrapper meta={lineMeta} hero data={timeFilteredSeries.flatMap((s) => s.values.map((v) => ({ series: s.name, year: v.date, consumption: v.value })))}>
+		<ChartWrapper meta={lineMeta} data={timeFilteredSeries.flatMap((s) => s.values.map((v) => ({ series: s.name, year: v.date, consumption: v.value })))}>
 			{#snippet controls()}
 				<Dropdown
 					options={sectorOptions}
@@ -271,7 +271,6 @@
 		<ChartWrapper meta={loadGrowthMeta} data={loadGrowthBars.map((d) => ({ year: d.label, growth_pct: d.value }))}>
 			<DivergingBarChart
 				data={loadGrowthBars}
-				yLabel="% change"
 				yFormat={format('+.1f')}
 				unit="%"
 			/>
@@ -327,7 +326,6 @@
 				<BarChart
 					data={perCapitaRanking}
 					horizontal
-					yLabel="kWh"
 					yFormat={formatCompact}
 					unit="kWh"
 					margin={{ top: 20, right: 20, bottom: 60, left: 120 }}
@@ -340,7 +338,6 @@
 						<BarChart
 							data={stateRanking}
 							horizontal
-							yLabel="million kWh"
 							yFormat={formatCompact}
 							unit="million kWh"
 							margin={{ top: 20, right: 20, bottom: 60, left: 120 }}
@@ -353,7 +350,6 @@
 						<BarChart
 							data={perCapitaRanking}
 							horizontal
-							yLabel="kWh"
 							yFormat={formatCompact}
 							unit="kWh"
 							margin={{ top: 20, right: 20, bottom: 60, left: 120 }}
